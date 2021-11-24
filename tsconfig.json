@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"module": "commonjs",
+		"target": "ES2019",
+		"lib": ["es5", "es6", "es7"],
+		"strict": true,
+		"alwaysStrict": true,
+		"noImplicitReturns": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": true,
+		"declaration": true,
+		"declarationDir": "build",
+		"emitDeclarationOnly": true,
+        "rootDir": "src",
+	},
+	"include": [
+		"src",
+	]
+}

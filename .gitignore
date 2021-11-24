@@ -1,0 +1,9 @@
+# Coverage report
+coverage
+
+# Dependency directories
+node_modules/
+
+# Compiled files
+build
+dist
