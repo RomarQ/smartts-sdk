@@ -1,9 +1,7 @@
 {
     "name": "@tezwell/smartts-sdk",
-    "version": "0.1.1",
+    "version": "0.1.6",
     "description": "SmartPy SDK",
-    "main": "dist/index.js",
-    "module": "dist/index.js",
     "keywords": [
         "Tezos",
         "SmartPy",
@@ -14,19 +12,27 @@
         "email": "rodrigo_quelhas@outlook.pt"
     },
     "license": "MIT",
-    "files": [
-        "dist"
-    ],
-    "typings": "dist/types/index.d.ts",
     "publishConfig": {
         "access": "public"
+    },
+    "main": "index.js",
+    "module": "index.js",
+    "exports": {
+        ".": "./index.js",
+        "./core": "./core/index.js",
+        "./smartml": "./smartml/index.js",
+        "./core/expression": "./core/expression.js",
+        "./core/literal": "./core/literal.js",
+        "./core/command": "./core/command.js",
+        "./core/type": "./core/type.js"
     },
     "scripts": {
         "build": "node --max_old_space_size=8192 scripts/build.js && tsc --build",
         "test": "NODE_OPTIONS=--max-old-space-size=8192 jest --runInBand --detectOpenHandles --watch",
         "ci-test": "NODE_OPTIONS=--max-old-space-size=8192 CI=true jest --collect-coverage --reporters=default --reporters=jest-junit --reporters=jest-html-reporter",
         "prettier:fix": "prettier --write '{src,tests}/**/*.{js,ts,json}'",
-        "lint:fix": "eslint '{src,tests}/**/*.{js,ts,json}' --quiet --fix"
+        "lint:fix": "eslint '{src,tests}/**/*.{js,ts,json}' --quiet --fix",
+        "publish": "cp package.json dist/package.json && npm publish ./dist"
     },
     "devDependencies": {
         "@tezwell/timelock": "0.0.9",

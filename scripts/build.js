@@ -11,6 +11,8 @@ generateBundle([
     './src/core/index.ts',
     './src/core/type.ts',
     './src/core/literal.ts',
+    './src/core/command.ts',
+    './src/core/expression.ts',
 ]);
 
 /**
