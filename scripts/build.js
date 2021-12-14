@@ -1,36 +1,41 @@
 const fs = require('fs');
 const esbuild = require('esbuild');
 
+const DIST_FOLDER = './dist';
+
 // Build steps
 cleanUP();
-generateBundle();
+generateBundle([
+    './src/index.ts',
+    './src/smartml/index.ts',
+    './src/core/index.ts',
+    './src/core/type.ts',
+    './src/core/literal.ts',
+]);
 
 /**
  * Produces the js bundle
  */
-function generateBundle() {
+function generateBundle(entryPoints) {
     esbuild
         .build({
-            entryPoints: ['./src/index.ts'],
+            entryPoints,
             bundle: true,
             minify: true,
-            sourcemap: true,
-            watch: !!process.env.WATCH,
-            outdir: './build',
-            platform: 'node',
+            outdir: DIST_FOLDER,
+            platform: 'browser',
+            format: 'cjs',
         })
         .then((result) => {
-            if (!process.env.WATCH) {
-                console.log();
-                console.log('[SUCCESS]:', result);
-                console.log();
-            }
+            console.log();
+            console.log('[SUCCESS]:', result);
+            console.log();
         })
         .catch((e) => {
             console.log();
             console.log('[FAIL]:', 'Could not produce bundle :(');
             console.log();
-            console.error(e);
+            console.error(JSON.stringify(e, null, 4));
             process.exit(1);
         });
 }
@@ -39,5 +44,5 @@ function generateBundle() {
  * Clean UP build files
  */
 function cleanUP() {
-    fs.rmdirSync('./build', { recursive: true, force: true });
+    fs.rmSync(DIST_FOLDER, { recursive: true, force: true });
 }

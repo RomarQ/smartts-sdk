@@ -1,10 +1,14 @@
 import type { IToString, IToType } from '../typings';
+import type { IType } from '../typings/type';
+import type { ILiteral } from '../typings/literal';
 
-import { LineInfo } from '../misc/utils';
-import { TNat, TString, TMutez, BaseType } from './type';
-import { TList } from '.';
+import { capitalizeBoolean, LineInfo } from '../misc/utils';
+import { TNat, TString, TMutez, TAddress, TBool, TList } from './type';
+import { Expression } from './expression';
 
-export class Literal implements IToString, IToType {
+class Literal implements IToString, IToType, ILiteral {
+    _isLiteral = true as const;
+
     constructor(public name: string, public value: IToString, public type: IToString, public line: LineInfo) {}
 
     toString() {
@@ -16,7 +20,7 @@ export class Literal implements IToString, IToType {
     }
 }
 
-export class _List implements IToString, IToType {
+class ListLeteral implements IToString, IToType {
     constructor(
         public name: string,
         public items: (IToString & IToType)[],
@@ -33,11 +37,30 @@ export class _List implements IToString, IToType {
     }
 }
 
+export const Unit = () => new Expression('unit');
+
 export const Nat = (value: number, line = new LineInfo()) => new Literal('nat', value, TNat, line);
 
 export const Mutez = (value: number, line = new LineInfo()) => new Literal('mutez', value, TMutez, line);
 
 export const String = (value: string, line = new LineInfo()) => new Literal('string', `"${value}"`, TString, line);
 
-export const List = (items: (IToString & IToType)[], innerType: BaseType, line = new LineInfo()) =>
-    new _List('list', items, TList(innerType), line);
+export const Bool = (value: boolean, line = new LineInfo()) =>
+    new Literal('bool', capitalizeBoolean(value), TBool, line);
+
+export const Address = (address: string, line = new LineInfo()) => new Literal('address', address, TAddress, line);
+
+export const List = (items: (IToString & IToType)[], innerType: IType, line = new LineInfo()) =>
+    new ListLeteral('list', items, TList(innerType), line);
+
+const Literals = {
+    Unit,
+    Nat,
+    Mutez,
+    String,
+    Bool,
+    Address,
+    List,
+};
+
+export default Literals;

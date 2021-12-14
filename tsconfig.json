@@ -1,20 +1,23 @@
 {
 	"compilerOptions": {
 		"moduleResolution": "node",
-		"module": "commonjs",
-		"target": "ES2019",
-		"lib": ["es5", "es6", "es7"],
+		"module": "esnext",
+		"target": "es6",
+		"lib": ["es6", "es7", "dom"],
+		"pretty": true,
 		"strict": true,
+		"allowJs": true,
 		"alwaysStrict": true,
 		"noImplicitReturns": true,
-		"allowSyntheticDefaultImports": true,
-		"sourceMap": true,
+		"esModuleInterop": true,
 		"declaration": true,
-		"declarationDir": "build",
+		"declarationDir": "dist/types",
 		"emitDeclarationOnly": true,
-        "rootDir": "src",
 	},
 	"include": [
-		"src",
+		"./src"
+	],
+	"exclude": [
+		"./node_modules",
 	]
 }

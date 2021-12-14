@@ -1,42 +1,61 @@
 {
-    "name": "@smartpy/sdk",
-    "version": "0.0.1",
-    "description": "SmartTS SDK",
+    "name": "@tezwell/smartts-sdk",
+    "version": "0.1.1",
+    "description": "SmartPy SDK",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
     "keywords": [
         "Tezos",
-        "SmartTS",
+        "SmartPy",
         "Smart Contract"
     ],
+    "author": {
+        "name": "Rodrigo Quelhas",
+        "email": "rodrigo_quelhas@outlook.pt"
+    },
     "license": "MIT",
+    "files": [
+        "dist"
+    ],
+    "typings": "dist/types/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
         "build": "node scripts/build.js && tsc --build",
-        "test": "jest --runInBand --detectOpenHandles",
+        "test": "jest --runInBand --detectOpenHandles --watch",
         "ci-test": "CI=true jest --collect-coverage --reporters=default --reporters=jest-junit --reporters=jest-html-reporter",
         "prettier:fix": "prettier --write '{src,tests}/**/*.{js,ts,json}'",
         "lint:fix": "eslint '{src,tests}/**/*.{js,ts,json}' --quiet --fix"
     },
-    "dependencies": {
-        "@smartpy/smartml": "^0.8.5-2"
-    },
     "devDependencies": {
-        "@types/node": "16.11.10",
+        "@tezwell/timelock": "0.0.9",
+        "@tezwell/tezos-bls12-381": "1.2.2",
+        "@types/bs58check": "2.1.0",
         "@types/jest": "27.0.3",
-        "@typescript-eslint/eslint-plugin": "5.4.0",
-        "@typescript-eslint/parser": "5.4.0",
+        "@typescript-eslint/eslint-plugin": "5.7.0",
+        "@typescript-eslint/parser": "5.7.0",
+        "bs58check": "2.1.2",
+        "buffer": "6.0.3",
         "coveralls": "3.1.1",
-        "esbuild": "0.13.15",
-        "eslint": "8.3.0",
+        "esbuild": "0.14.3",
+        "eslint": "8.4.1",
         "eslint-config-prettier": "8.3.0",
         "eslint-plugin-prettier": "4.0.0",
-        "jest": "27.3.1",
+        "events": "3.3.0",
+        "jest": "27.4.5",
         "jest-html-reporter": "3.4.1",
         "jest-junit": "13.0.0",
-        "prettier": "2.4.1",
-        "ts-jest": "27.0.7",
-        "typescript": "4.5.2"
+        "prettier": "2.5.1",
+        "ts-jest": "27.1.1",
+        "typescript": "4.5.4"
+    },
+    "browser": {
+        "fs": false,
+        "constants": false,
+        "stream": false,
+        "tty": false,
+        "child_process": false
     },
     "jest-junit": {
         "suiteName": "jest tests",

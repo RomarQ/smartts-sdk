@@ -1,7 +1,8 @@
 import type { IToString, IToType } from '../typings';
+import type { ILiteral } from '../typings/literal';
 
-import { EntryPointParam } from './expression';
-import { Literal, Mutez } from './literal';
+import { Expression } from './expression';
+import { Mutez } from './literal';
 import Utils, { LineInfo } from '../misc/utils';
 
 export class Flag {
@@ -45,7 +46,7 @@ export class EntryPoint {
     }
 
     body(callback: (arg: IToString) => IToString[]) {
-        this.statements = callback(EntryPointParam());
+        this.statements = callback(new Expression('params', new LineInfo()));
         return this;
     }
 
@@ -59,14 +60,13 @@ export class EntryPoint {
     }
 }
 
-interface ContractOptions {
-    initialBalance?: Literal;
-    flags?: Flag[];
-}
 export class Contract {
-    options = {
+    options: {
+        initialBalance: ILiteral;
+        flags: Flag[];
+    } = {
         initialBalance: Mutez(0),
-        flags: [] as Flag[],
+        flags: [],
     };
     public initialStorage: IToString & IToType;
     public entries: EntryPoint[];
@@ -82,7 +82,7 @@ export class Contract {
         this.entries = args.entries;
     }
 
-    config(options?: ContractOptions) {
+    config(options?: { initialBalance?: ILiteral; flags?: Flag[] }) {
         if (options?.flags) {
             this.options.flags = options.flags;
         }
@@ -110,7 +110,8 @@ export class Contract {
     }
 }
 
-export * from './command';
-export * from './expression';
-export * from './type';
-export * from './literal';
+export { default as Command } from './command';
+export { default as Expression } from './expression';
+export { default as Type } from './type';
+export { default as Literal } from './literal';
+export * from './blockchain_operations';

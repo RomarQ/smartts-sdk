@@ -21,3 +21,21 @@ class C_Verify implements IToString {
 }
 export const Verify = (condition: IToString, errorMsg: IToString, line = new LineInfo()) =>
     new C_Verify(condition, errorMsg, line);
+
+class C_SetValue implements IToString {
+    name = 'set';
+    constructor(public source: string, public value: unknown, public line = new LineInfo()) {}
+
+    toString() {
+        return `(${this.name} ${this.source} ${this.value} ${this.line})`;
+    }
+}
+export const SetValue = (source: string, value: unknown, line = new LineInfo()) => new C_SetValue(source, value, line);
+
+const Commands = {
+    DefineLocal,
+    Verify,
+    SetValue,
+};
+
+export default Commands;
