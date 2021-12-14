@@ -22,9 +22,9 @@
         "access": "public"
     },
     "scripts": {
-        "build": "node scripts/build.js && tsc --build",
-        "test": "jest --runInBand --detectOpenHandles --watch",
-        "ci-test": "CI=true jest --collect-coverage --reporters=default --reporters=jest-junit --reporters=jest-html-reporter",
+        "build": "node --max_old_space_size=8192 scripts/build.js && tsc --build",
+        "test": "NODE_OPTIONS=--max-old-space-size=8192 jest --runInBand --detectOpenHandles --watch",
+        "ci-test": "NODE_OPTIONS=--max-old-space-size=8192 CI=true jest --collect-coverage --reporters=default --reporters=jest-junit --reporters=jest-html-reporter",
         "prettier:fix": "prettier --write '{src,tests}/**/*.{js,ts,json}'",
         "lint:fix": "eslint '{src,tests}/**/*.{js,ts,json}' --quiet --fix"
     },
