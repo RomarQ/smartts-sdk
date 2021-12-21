@@ -3,7 +3,7 @@ import type { IType } from '../typings/type';
 import type { ILiteral } from '../typings/literal';
 
 import { capitalizeBoolean, LineInfo } from '../misc/utils';
-import { TNat, TString, TMutez, TAddress, TBool, TList } from './type';
+import { TNat, TString, TMutez, TAddress, TBool, TList, TTimestamp } from './type';
 import { Expression } from './expression';
 
 class Literal implements IToString, IToType, ILiteral {
@@ -50,6 +50,9 @@ export const Bool = (value: boolean, line = new LineInfo()) =>
 
 export const Address = (address: string, line = new LineInfo()) => new Literal('address', address, TAddress, line);
 
+export const Timestamp = (timestamp: number, line = new LineInfo()) =>
+    new Literal('timestamp', timestamp, TTimestamp, line);
+
 export const List = (items: (IToString & IToType)[], innerType: IType, line = new LineInfo()) =>
     new ListLeteral('list', items, TList(innerType), line);
 
@@ -60,6 +63,7 @@ const Literals = {
     String,
     Bool,
     Address,
+    Timestamp,
     List,
 };
 

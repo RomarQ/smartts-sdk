@@ -37,6 +37,7 @@ export const TMutez = new SimpleType('mutez');
 export const TString = new SimpleType('string');
 export const TBool = new SimpleType('bool');
 export const TAddress = new SimpleType('address');
+export const TTimestamp = new SimpleType('timestamp');
 
 const Types = {
     // Singleton types
@@ -47,6 +48,7 @@ const Types = {
     TString,
     TBool,
     TAddress,
+    TTimestamp,
     //
     TList,
 };
