@@ -10,7 +10,8 @@ export class Expression implements IToString {
     }
 
     toString() {
-        return `(${this.name} ${this.args.map((arg) => arg.toString()).join(' ')})`;
+        const atoms = `${this.name} ${this.args.map((arg) => arg.toString()).join(' ')}`;
+        return `(${atoms.trim()})`;
     }
 }
 

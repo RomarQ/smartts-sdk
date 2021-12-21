@@ -1,0 +1,275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test compilation of blockchain operations Get head level 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 33))
+            storage (literal (nat 1) (\\"blockchain_operations.test.ts\\" 34))
+            storage_type (\\"nat\\")
+            messages ((ep1 True False False True (\\"blockchain_operations.test.ts\\" 35) ((set (data) (level) (\\"blockchain_operations.test.ts\\" 35)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 33))
+        )
+        "
+`;
+
+exports[`Test compilation of blockchain operations Get head level 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "nat",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "args": Array [
+          Object {
+            "string": "Cannot compile missing type: a4",
+          },
+        ],
+        "prim": "ERROR",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CAR",
+        },
+        Object {
+          "prim": "LEVEL",
+        },
+        Object {
+          "prim": "SWAP",
+        },
+        Object {
+          "prim": "DROP",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test compilation of blockchain operations Get head timestamp 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 45))
+            storage (literal (timestamp 0) (\\"blockchain_operations.test.ts\\" 46))
+            storage_type (\\"timestamp\\")
+            messages ((ep1 True False False True (\\"blockchain_operations.test.ts\\" 47) ((set (data) (now) (\\"blockchain_operations.test.ts\\" 47)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 45))
+        )
+        "
+`;
+
+exports[`Test compilation of blockchain operations Get head timestamp 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "timestamp",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "args": Array [
+          Object {
+            "string": "Cannot compile missing type: a4",
+          },
+        ],
+        "prim": "ERROR",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "DROP",
+        },
+        Object {
+          "prim": "NOW",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test compilation of blockchain operations Get sender 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 9))
+            storage (literal (address tz1) (\\"blockchain_operations.test.ts\\" 10))
+            storage_type (\\"address\\")
+            messages ((ep1 True False False True (\\"blockchain_operations.test.ts\\" 11) ((set (data) (sender) (\\"blockchain_operations.test.ts\\" 11)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`Test compilation of blockchain operations Get sender 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "address",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "args": Array [
+          Object {
+            "string": "Cannot compile missing type: a4",
+          },
+        ],
+        "prim": "ERROR",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "DROP",
+        },
+        Object {
+          "prim": "SENDER",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test compilation of blockchain operations Get source 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 21))
+            storage (literal (address tz1) (\\"blockchain_operations.test.ts\\" 22))
+            storage_type (\\"address\\")
+            messages ((ep1 True False False True (\\"blockchain_operations.test.ts\\" 23) ((set (data) (source) (\\"blockchain_operations.test.ts\\" 23)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 21))
+        )
+        "
+`;
+
+exports[`Test compilation of blockchain operations Get source 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "address",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "args": Array [
+          Object {
+            "string": "Cannot compile missing type: a4",
+          },
+        ],
+        "prim": "ERROR",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "DROP",
+        },
+        Object {
+          "prim": "SOURCE",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;

@@ -29,7 +29,8 @@ export class T_TList extends BaseType {
 }
 
 export const TList = (innerType: BaseType) => new T_TList(innerType);
-// Singleton
+
+// Singleton types
 export const TUnit = new SimpleType('unit');
 export const TNat = new SimpleType('nat');
 export const TInt = new SimpleType('int');
@@ -49,7 +50,7 @@ const Types = {
     TBool,
     TAddress,
     TTimestamp,
-    //
+    // Container types
     TList,
 };
 

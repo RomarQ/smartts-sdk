@@ -35,8 +35,8 @@
         "publish": "cp package.json dist/package.json && npm publish ./dist"
     },
     "devDependencies": {
-        "@tezwell/timelock": "0.0.9",
         "@tezwell/tezos-bls12-381": "1.2.2",
+        "@tezwell/timelock": "0.0.9",
         "@types/bs58check": "2.1.0",
         "@types/jest": "27.0.3",
         "@typescript-eslint/eslint-plugin": "5.7.0",
