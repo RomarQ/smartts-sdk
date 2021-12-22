@@ -1,27 +1,35 @@
-import { TNat } from '../src/core/type';
-import { Bool, List, Mutez, Nat, String } from '../src/core/literal';
-import { Contract, EntryPoint, Flag } from '../src/core';
-import { Equal, GetLocal } from '../src/core/expression';
-import { DefineLocal, Verify } from '../src/core/command';
+import { TBool, TNat } from '../src/core/type';
+import { Address, Bool, List, Mutez, Nat, String } from '../src/core/literal';
+import { Contract, EntryPoint, Flag, GetSender } from '../src/core';
+import { ContractStorage, Equal, GetLocal } from '../src/core/expression';
+import { DefineVar, Require, SetValue } from '../src/core/command';
 import SmartML from '../src/smartml';
+
+const verifyMichelsonOutput = (contract: string) => {
+    const michelson = SmartML.compileContract(contract);
+
+    // No errors expected
+    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
+    // Check snapshot
+    expect(michelson).toMatchSnapshot();
+};
 
 describe('Compile Contracts', () => {
     it('Simple 1', () => {
         const contract = new Contract({
             initialStorage: Nat(1),
             entries: [
-                new EntryPoint('ep1').body((arg) => [
-                    DefineLocal('A', Nat(1)),
-                    Verify(Equal(GetLocal('A'), arg), String('Error Message')),
-                ]),
+                new EntryPoint('ep1')
+                    .inputType(TNat)
+                    .code((arg) => [
+                        DefineVar('A', Nat(1)),
+                        Require(Equal(GetLocal('A'), arg), String('Error Message')),
+                    ]),
             ],
         }).toString();
 
         expect(contract).toMatchSnapshot();
-
-        const michelson = SmartML.compileContract(contract);
-
-        expect(michelson).toMatchSnapshot();
+        verifyMichelsonOutput(contract);
     });
 
     it('Simple 2', () => {
@@ -30,9 +38,10 @@ describe('Compile Contracts', () => {
             entries: [
                 new EntryPoint('ep1')
                     .config({ lazy: false })
-                    .body((arg) => [
-                        DefineLocal('A', Bool(false)),
-                        Verify(Equal(GetLocal('A'), arg), String('Error Message')),
+                    .inputType(TBool)
+                    .code((arg) => [
+                        DefineVar('A', Bool(false)),
+                        Require(Equal(GetLocal('A'), arg), String('Error Message')),
                     ]),
             ],
         })
@@ -43,9 +52,25 @@ describe('Compile Contracts', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
+        verifyMichelsonOutput(contract);
+    });
 
-        const michelson = SmartML.compileContract(contract);
+    it('Simple 3', () => {
+        const contract = new Contract({
+            initialStorage: List([], TNat),
+            entries: [
+                new EntryPoint('ep1').inputType(TNat).code((arg) => [
+                    // Define a variable named "some_address"
+                    DefineVar('some_address', Address('tz1')),
+                    // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
+                    Require(Equal(GetLocal('some_address'), GetSender()), String('Not Admin!')),
+                    // Replace the storage value with entry point argument
+                    SetValue(ContractStorage(), arg),
+                ]),
+            ],
+        }).toString();
 
-        expect(michelson).toMatchSnapshot();
+        expect(contract).toMatchSnapshot();
+        verifyMichelsonOutput(contract);
     });
 });

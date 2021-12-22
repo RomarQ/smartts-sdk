@@ -3,16 +3,16 @@
 exports[`Compile Contracts Simple 1 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 10))
-            storage (literal (nat 1) (\\"Compilation.test.ts\\" 11))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 19))
+            storage (literal (nat 1) (\\"Compilation.test.ts\\" 20))
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 13) ((defineLocal \\"A\\" (literal (nat 1) (\\"Compilation.test.ts\\" 13)) (\\"Compilation.test.ts\\" 13)) (verify (eq (getLocal \\"A\\" (\\"Compilation.test.ts\\" 13)) (params (\\"Compilation.test.ts\\" 13)) (\\"Compilation.test.ts\\" 13)) (literal (string \\"Error Message\\") (\\"Compilation.test.ts\\" 13)) (\\"Compilation.test.ts\\" 13)))))
+            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 22) ((defineLocal \\"A\\" (literal (nat 1) (\\"Compilation.test.ts\\" 24)) True (\\"Compilation.test.ts\\" 24)) (verify (eq (getLocal \\"A\\" (\\"Compilation.test.ts\\" 24)) (params (\\"Compilation.test.ts\\" 24)) (\\"Compilation.test.ts\\" 24)) (literal (string \\"Error Message\\") (\\"Compilation.test.ts\\" 24)) (\\"Compilation.test.ts\\" 24)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 10))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 19))
         )
         "
 `;
@@ -104,16 +104,16 @@ Array [
 exports[`Compile Contracts Simple 2 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 28))
-            storage (list (\\"Compilation.test.ts\\" 29)  (literal (nat 1) (\\"Compilation.test.ts\\" 29)))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 36))
+            storage (list (\\"Compilation.test.ts\\" 37)  (literal (nat 1) (\\"Compilation.test.ts\\" 37)))
             storage_type ((list \\"nat\\"))
-            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 31) ((defineLocal \\"A\\" (literal (bool False) (\\"Compilation.test.ts\\" 33)) (\\"Compilation.test.ts\\" 33)) (verify (eq (getLocal \\"A\\" (\\"Compilation.test.ts\\" 33)) (params (\\"Compilation.test.ts\\" 33)) (\\"Compilation.test.ts\\" 33)) (literal (string \\"Error Message\\") (\\"Compilation.test.ts\\" 33)) (\\"Compilation.test.ts\\" 33)))))
+            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 39) ((defineLocal \\"A\\" (literal (bool False) (\\"Compilation.test.ts\\" 42)) True (\\"Compilation.test.ts\\" 42)) (verify (eq (getLocal \\"A\\" (\\"Compilation.test.ts\\" 42)) (params (\\"Compilation.test.ts\\" 42)) (\\"Compilation.test.ts\\" 42)) (literal (string \\"Error Message\\") (\\"Compilation.test.ts\\" 42)) (\\"Compilation.test.ts\\" 42)))))
             flags ((erase-comments))
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 100) (\\"Compilation.test.ts\\" 40))
+            balance (literal (mutez 100) (\\"Compilation.test.ts\\" 49))
         )
         "
 `;
@@ -178,6 +178,120 @@ Array [
                   },
                   Object {
                     "string": "Error Message",
+                  },
+                ],
+                "prim": "PUSH",
+              },
+              Object {
+                "prim": "FAILWITH",
+              },
+            ],
+          ],
+          "prim": "IF",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Compile Contracts Simple 3 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 59))
+            storage (list (\\"Compilation.test.ts\\" 60)  )
+            storage_type ((list \\"nat\\"))
+            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 62) ((defineLocal \\"some_address\\" (literal (address tz1) (\\"Compilation.test.ts\\" 62)) True (\\"Compilation.test.ts\\" 62)) (verify (eq (getLocal \\"some_address\\" (\\"Compilation.test.ts\\" 62)) (sender) (\\"Compilation.test.ts\\" 62)) (literal (string \\"Not Admin!\\") (\\"Compilation.test.ts\\" 62)) (\\"Compilation.test.ts\\" 62)) (set (data) (params (\\"Compilation.test.ts\\" 62)) (\\"Compilation.test.ts\\" 62)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 59))
+        )
+        "
+`;
+
+exports[`Compile Contracts Simple 3 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "args": Array [
+          Object {
+            "prim": "nat",
+          },
+        ],
+        "prim": "list",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "args": Array [
+          Object {
+            "prim": "nat",
+          },
+        ],
+        "prim": "list",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CAR",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "address",
+            },
+            Object {
+              "string": "tz1",
+            },
+          ],
+          "prim": "PUSH",
+        },
+        Object {
+          "prim": "SENDER",
+        },
+        Object {
+          "prim": "COMPARE",
+        },
+        Object {
+          "prim": "EQ",
+        },
+        Object {
+          "args": Array [
+            Array [],
+            Array [
+              Object {
+                "args": Array [
+                  Object {
+                    "prim": "string",
+                  },
+                  Object {
+                    "string": "Not Admin!",
                   },
                 ],
                 "prim": "PUSH",

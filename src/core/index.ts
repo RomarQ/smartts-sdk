@@ -1,9 +1,11 @@
 import type { IToString, IToType } from '../typings';
 import type { ILiteral } from '../typings/literal';
+import type { IType } from '../typings/type';
 
 import { Expression } from './expression';
 import { Mutez } from './literal';
 import Utils, { LineInfo } from '../misc/utils';
+import { TUnit } from './type';
 
 export class Flag {
     args: string[] = [];
@@ -28,6 +30,7 @@ export class EntryPoint {
         lazy: false,
         lazyAndCodeless: false,
     };
+    inType?: IType;
     statements: IToString[] = [];
 
     constructor(public name: string, public line = new LineInfo()) {}
@@ -45,7 +48,12 @@ export class EntryPoint {
         return this;
     }
 
-    body(callback: (arg: IToString) => IToString[]) {
+    inputType(type: IType) {
+        this.inType = type;
+        return this;
+    }
+
+    code(callback: (arg: IToString) => IToString[]) {
         this.statements = callback(new Expression('params', new LineInfo()));
         return this;
     }
@@ -54,9 +62,10 @@ export class EntryPoint {
         const notMock = Utils.capitalizeBoolean(!this.options.mock);
         const isLazy = Utils.capitalizeBoolean(this.options.lazy);
         const isLazyAndCodeless = Utils.capitalizeBoolean(this.options.lazyAndCodeless);
-        return `(${this.name} ${notMock} ${isLazy} ${isLazyAndCodeless} True ${this.line} (${this.statements.join(
-            ' ',
-        )}))`;
+        const hasParams = Utils.capitalizeBoolean(!!this.inType);
+        return `(${this.name} ${notMock} ${isLazy} ${isLazyAndCodeless} ${hasParams} ${
+            this.line
+        } (${this.statements.join(' ')}))`;
     }
 }
 

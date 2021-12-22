@@ -39,6 +39,7 @@ export const TString = new SimpleType('string');
 export const TBool = new SimpleType('bool');
 export const TAddress = new SimpleType('address');
 export const TTimestamp = new SimpleType('timestamp');
+export const TChainID = new SimpleType('chain_id');
 
 const Types = {
     // Singleton types
@@ -50,6 +51,7 @@ const Types = {
     TBool,
     TAddress,
     TTimestamp,
+    TChainID,
     // Container types
     TList,
 };
