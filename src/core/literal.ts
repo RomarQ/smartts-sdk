@@ -20,7 +20,7 @@ class Literal implements IToString, IToType, ILiteral {
     }
 }
 
-class ListLeteral implements IToString, IToType {
+class ListLiteral implements IToString, IToType {
     constructor(
         public name: string,
         public items: (IToString & IToType)[],
@@ -58,7 +58,7 @@ export const ChainID = (chainID: string, line = new LineInfo()) => new Literal('
 export const Bytes = (bytes: string, line = new LineInfo()) => new Literal('bytes', bytes, TBytes, line);
 
 export const List = (items: (IToString & IToType)[], innerType: IType, line = new LineInfo()) =>
-    new ListLeteral('list', items, TList(innerType), line);
+    new ListLiteral('list', items, TList(innerType), line);
 
 const Literals = {
     Unit,
