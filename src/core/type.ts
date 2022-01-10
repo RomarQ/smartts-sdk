@@ -40,6 +40,7 @@ export const TBool = new SimpleType('bool');
 export const TAddress = new SimpleType('address');
 export const TTimestamp = new SimpleType('timestamp');
 export const TChainID = new SimpleType('chain_id');
+export const TBytes = new SimpleType('bytes');
 
 const Types = {
     // Singleton types
