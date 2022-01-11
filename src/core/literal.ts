@@ -1,4 +1,3 @@
-import type { IToString, IToType } from '../typings';
 import type { IType } from '../typings/type';
 import type { ILiteral } from '../typings/literal';
 
@@ -20,10 +19,15 @@ import {
 import { Expression } from './expression';
 import { Prim } from './enums/prim';
 
-class Literal implements IToString, IToType, ILiteral {
+class Literal implements ILiteral {
     _isLiteral = true as const;
 
-    constructor(public name: string, public value: IToString, public type: IType, public line: LineInfo) {}
+    constructor(
+        public name: string,
+        public value: number | string | boolean,
+        public type: IType,
+        public line: LineInfo,
+    ) {}
 
     toString() {
         return `(literal (${this.name} ${this.value}) ${this.line})`;
@@ -34,15 +38,10 @@ class Literal implements IToString, IToType, ILiteral {
     }
 }
 
-class ListLiteral implements IToString, IToType, ILiteral {
+class ListLiteral implements ILiteral {
     _isLiteral = true as const;
 
-    constructor(
-        public name: string,
-        public items: (IToString & IToType)[],
-        public type: IType,
-        public line: LineInfo,
-    ) {}
+    constructor(public name: string, public items: ILiteral[], public type: IType, public line: LineInfo) {}
 
     toString() {
         return `(${this.name} ${this.line}  ${this.items.map((item) => item.toString()).join(' ')})`;
@@ -53,14 +52,14 @@ class ListLiteral implements IToString, IToType, ILiteral {
     }
 }
 
-class OptionLiteral implements IToString, IToType, ILiteral {
+class OptionLiteral implements ILiteral {
     _isLiteral = true as const;
 
     type: IType;
 
     constructor(
         public prim: Prim.Some | Prim.None,
-        public value: (IToString & IToType) | undefined,
+        public value: ILiteral | undefined,
         public innerType: IType = TUnknown,
         public line: LineInfo,
     ) {
@@ -96,10 +95,10 @@ export const ChainID = (chainID: string, line = new LineInfo()) => new Literal('
 
 export const Bytes = (bytes: string, line = new LineInfo()) => new Literal(Prim.bytes, bytes, TBytes, line);
 
-export const List = (items: (IToString & IToType)[], innerType: IType, line = new LineInfo()) =>
+export const List = (items: ILiteral[], innerType: IType, line = new LineInfo()) =>
     new ListLiteral(Prim.list, items, TList(innerType), line);
 
-export const Some = (value: IToString & IToType, innerType?: IType, line = new LineInfo()) =>
+export const Some = (value: ILiteral, innerType?: IType, line = new LineInfo()) =>
     new OptionLiteral(Prim.Some, value, innerType, line);
 
 export const None = (innerType?: IType, line = new LineInfo()) =>

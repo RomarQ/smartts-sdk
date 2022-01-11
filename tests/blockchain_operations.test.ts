@@ -16,7 +16,7 @@ const verifyMichelsonOutput = (contract: string) => {
 describe('Test compilation of blockchain operations', () => {
     it('Get sender', () => {
         const contract = new Contract({
-            initialStorage: Address('tz1'),
+            storage: Address('tz1'),
             entries: [new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), GetSender())])],
         }).toString();
 
@@ -25,7 +25,7 @@ describe('Test compilation of blockchain operations', () => {
     });
     it('Get source', () => {
         const contract = new Contract({
-            initialStorage: Address('tz1'),
+            storage: Address('tz1'),
             entries: [new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), GetSource())])],
         }).toString();
 
@@ -34,7 +34,7 @@ describe('Test compilation of blockchain operations', () => {
     });
     it('Get head level', () => {
         const contract = new Contract({
-            initialStorage: Nat(1),
+            storage: Nat(1),
             entries: [new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), GetLevel())])],
         }).toString();
 
@@ -43,7 +43,7 @@ describe('Test compilation of blockchain operations', () => {
     });
     it('Get head timestamp', () => {
         const contract = new Contract({
-            initialStorage: Timestamp(0),
+            storage: Timestamp(0),
             entries: [new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), GetCurrentTime())])],
         }).toString();
 
@@ -52,7 +52,7 @@ describe('Test compilation of blockchain operations', () => {
     });
     it('Get chain identifier', () => {
         const contract = new Contract({
-            initialStorage: ChainID('0x00'),
+            storage: ChainID('0x00'),
             entries: [new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), GetChainID())])],
         }).toString();
 

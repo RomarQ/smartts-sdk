@@ -17,7 +17,7 @@ const verifyMichelsonOutput = (contract: string) => {
 describe('Compile Contracts', () => {
     it('Simple 1', () => {
         const contract = new Contract({
-            initialStorage: Nat(1),
+            storage: Nat(1),
             entries: [
                 new EntryPoint('ep1')
                     .inputType(TNat)
@@ -34,7 +34,7 @@ describe('Compile Contracts', () => {
 
     it('Simple 2', () => {
         const contract = new Contract({
-            initialStorage: List([Nat(1)], TNat),
+            storage: List([Nat(1)], TNat),
             entries: [
                 new EntryPoint('ep1')
                     .config({ lazy: false })
@@ -57,7 +57,7 @@ describe('Compile Contracts', () => {
 
     it('Simple 3', () => {
         const contract = new Contract({
-            initialStorage: List([], TNat),
+            storage: List([], TNat),
             entries: [
                 new EntryPoint('ep1').inputType(TNat).code((arg) => [
                     // Define a variable named "some_address"
@@ -76,7 +76,7 @@ describe('Compile Contracts', () => {
 
     it('Storage (Some)', () => {
         const contract = new Contract({
-            initialStorage: Some(Nat(1)),
+            storage: Some(Nat(1)),
             entries: [],
         }).toString();
 
@@ -85,7 +85,7 @@ describe('Compile Contracts', () => {
     });
     it('Storage (None)', () => {
         const contract = new Contract({
-            initialStorage: None(TNat),
+            storage: None(TNat),
             entries: [],
         }).toString();
 

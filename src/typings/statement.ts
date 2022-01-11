@@ -1,3 +1,3 @@
 import { IToString } from './shared';
 
-export type IType = IToString;
+export type IStatement = IToString;

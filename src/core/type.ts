@@ -1,4 +1,3 @@
-import type { IToString } from '../typings';
 import { IType } from '../typings/type';
 import { Prim } from './enums/prim';
 
@@ -20,7 +19,7 @@ export class SimpleType extends BaseType {
 }
 
 export class Type_1 extends BaseType {
-    constructor(public type: IToString, public innerType: IToString) {
+    constructor(public type: string, public innerType: IType) {
         super();
     }
 
@@ -29,7 +28,9 @@ export class Type_1 extends BaseType {
     }
 }
 
-export const TUnknown = new Type_1('unknown', '0');
+export const TUnknown: IType = {
+    toString: () => '(unknown 0)',
+};
 // Singleton types
 export const TUnit = new SimpleType(Prim.unit);
 export const TNat = new SimpleType(Prim.nat);
@@ -42,8 +43,8 @@ export const TTimestamp = new SimpleType(Prim.timestamp);
 export const TChainID = new SimpleType(Prim.chain_id);
 export const TBytes = new SimpleType(Prim.bytes);
 // Container types
-export const TList = (innerType: BaseType) => new Type_1(Prim.list, innerType);
-export const TOption = (innerType: BaseType) => new Type_1(Prim.option, innerType);
+export const TList = (innerType: IType) => new Type_1(Prim.list, innerType);
+export const TOption = (innerType: IType) => new Type_1(Prim.option, innerType);
 
 const Types = {
     TUnknown,

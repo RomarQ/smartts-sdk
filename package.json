@@ -1,6 +1,6 @@
 {
     "name": "@tezwell/smartts-sdk",
-    "version": "0.1.8",
+    "version": "0.1.10",
     "description": "SmartPy SDK",
     "keywords": [
         "Tezos",
@@ -32,7 +32,7 @@
         "ci-test": "NODE_OPTIONS=--max-old-space-size=8192 CI=true jest --collect-coverage --reporters=default --reporters=jest-junit --reporters=jest-html-reporter",
         "prettier:fix": "prettier --write '{src,tests}/**/*.{js,ts,json}'",
         "lint:fix": "eslint '{src,tests}/**/*.{js,ts,json}' --quiet --fix",
-        "publish": "cp package.json dist/package.json && npm publish ./dist"
+        "publish": "sh scripts/publish.sh"
     },
     "devDependencies": {
         "@tezwell/tezos-bls12-381": "1.2.2",

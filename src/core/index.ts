@@ -1,11 +1,11 @@
-import type { IToString, IToType } from '../typings';
 import type { ILiteral } from '../typings/literal';
 import type { IType } from '../typings/type';
 
 import { Expression } from './expression';
 import { Mutez } from './literal';
 import Utils, { LineInfo } from '../misc/utils';
-import { TUnit } from './type';
+import { IStatement } from '../typings/statement';
+import { IExpression } from '../typings/expression';
 
 export class Flag {
     args: string[] = [];
@@ -31,7 +31,7 @@ export class EntryPoint {
         lazyAndCodeless: false,
     };
     inType?: IType;
-    statements: IToString[] = [];
+    statements: IStatement[] = [];
 
     constructor(public name: string, public line = new LineInfo()) {}
 
@@ -53,7 +53,7 @@ export class EntryPoint {
         return this;
     }
 
-    code(callback: (arg: IToString) => IToString[]) {
+    code(callback: (arg: IExpression) => IStatement[]) {
         this.statements = callback(new Expression('params', new LineInfo()));
         return this;
     }
@@ -77,17 +77,17 @@ export class Contract {
         initialBalance: Mutez(0),
         flags: [],
     };
-    public initialStorage: IToString & IToType;
+    public storage: ILiteral;
     public entries: EntryPoint[];
 
     constructor(
         args: {
-            initialStorage: IToString & IToType;
+            storage: ILiteral;
             entries: EntryPoint[];
         },
         public line = new LineInfo(),
     ) {
-        this.initialStorage = args.initialStorage;
+        this.storage = args.storage;
         this.entries = args.entries;
     }
 
@@ -105,8 +105,8 @@ export class Contract {
         return `
         (
             template_id (static_id 0 ${this.line})
-            storage ${this.initialStorage.toString()}
-            storage_type (${this.initialStorage.toType()})
+            storage ${this.storage.toString()}
+            storage_type (${this.storage.toType()})
             messages (${this.entries.map((entry) => entry.toString()).join(' ')})
             flags (${this.options.flags.map((flag) => flag.toString())})
             privates ()

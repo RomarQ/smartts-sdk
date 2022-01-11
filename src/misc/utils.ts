@@ -1,4 +1,4 @@
-import type { IToString } from '../typings';
+import { IToString } from '../typings/shared';
 
 export const capitalizeBoolean = (bool: boolean): string => (bool ? 'True' : 'False');
 
