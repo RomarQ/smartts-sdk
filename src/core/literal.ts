@@ -3,13 +3,27 @@ import type { IType } from '../typings/type';
 import type { ILiteral } from '../typings/literal';
 
 import { capitalizeBoolean, LineInfo } from '../misc/utils';
-import { TNat, TString, TMutez, TAddress, TBool, TList, TTimestamp, TChainID, TInt, TBytes } from './type';
+import {
+    TNat,
+    TString,
+    TMutez,
+    TAddress,
+    TBool,
+    TList,
+    TTimestamp,
+    TChainID,
+    TInt,
+    TBytes,
+    TOption,
+    TUnknown,
+} from './type';
 import { Expression } from './expression';
+import { Prim } from './enums/prim';
 
 class Literal implements IToString, IToType, ILiteral {
     _isLiteral = true as const;
 
-    constructor(public name: string, public value: IToString, public type: IToString, public line: LineInfo) {}
+    constructor(public name: string, public value: IToString, public type: IType, public line: LineInfo) {}
 
     toString() {
         return `(literal (${this.name} ${this.value}) ${this.line})`;
@@ -20,11 +34,13 @@ class Literal implements IToString, IToType, ILiteral {
     }
 }
 
-class ListLiteral implements IToString, IToType {
+class ListLiteral implements IToString, IToType, ILiteral {
+    _isLiteral = true as const;
+
     constructor(
         public name: string,
         public items: (IToString & IToType)[],
-        public type: IToString,
+        public type: IType,
         public line: LineInfo,
     ) {}
 
@@ -37,28 +53,57 @@ class ListLiteral implements IToString, IToType {
     }
 }
 
-export const Unit = () => new Expression('unit');
+class OptionLiteral implements IToString, IToType, ILiteral {
+    _isLiteral = true as const;
 
-export const Nat = (value: number, line = new LineInfo()) => new Literal('nat', value, TNat, line);
-export const Int = (value: number, line = new LineInfo()) => new Literal('int', value, TInt, line);
-export const Mutez = (value: number, line = new LineInfo()) => new Literal('mutez', value, TMutez, line);
+    type: IType;
 
-export const String = (value: string, line = new LineInfo()) => new Literal('string', `"${value}"`, TString, line);
+    constructor(
+        public prim: Prim.Some | Prim.None,
+        public value: (IToString & IToType) | undefined,
+        public innerType: IType = TUnknown,
+        public line: LineInfo,
+    ) {
+        this.type = TOption(innerType);
+    }
+
+    toString(): string {
+        return `(variant "${this.prim}" ${this.value?.toString() || '(unit)'} ${this.line})`;
+    }
+
+    toType() {
+        return this.type.toString();
+    }
+}
+
+export const Unit = () => new Expression(Prim.unit);
+
+export const Nat = (value: number, line = new LineInfo()) => new Literal(Prim.nat, value, TNat, line);
+export const Int = (value: number, line = new LineInfo()) => new Literal(Prim.int, value, TInt, line);
+export const Mutez = (value: number, line = new LineInfo()) => new Literal(Prim.mutez, value, TMutez, line);
+
+export const String = (value: string, line = new LineInfo()) => new Literal(Prim.string, `"${value}"`, TString, line);
 
 export const Bool = (value: boolean, line = new LineInfo()) =>
-    new Literal('bool', capitalizeBoolean(value), TBool, line);
+    new Literal(Prim.bool, capitalizeBoolean(value), TBool, line);
 
-export const Address = (address: string, line = new LineInfo()) => new Literal('address', address, TAddress, line);
+export const Address = (address: string, line = new LineInfo()) => new Literal(Prim.address, address, TAddress, line);
 
 export const Timestamp = (timestamp: number, line = new LineInfo()) =>
-    new Literal('timestamp', timestamp, TTimestamp, line);
+    new Literal(Prim.timestamp, timestamp, TTimestamp, line);
 
 export const ChainID = (chainID: string, line = new LineInfo()) => new Literal('chain_id_cst', chainID, TChainID, line);
 
-export const Bytes = (bytes: string, line = new LineInfo()) => new Literal('bytes', bytes, TBytes, line);
+export const Bytes = (bytes: string, line = new LineInfo()) => new Literal(Prim.bytes, bytes, TBytes, line);
 
 export const List = (items: (IToString & IToType)[], innerType: IType, line = new LineInfo()) =>
-    new ListLiteral('list', items, TList(innerType), line);
+    new ListLiteral(Prim.list, items, TList(innerType), line);
+
+export const Some = (value: IToString & IToType, innerType?: IType, line = new LineInfo()) =>
+    new OptionLiteral(Prim.Some, value, innerType, line);
+
+export const None = (innerType?: IType, line = new LineInfo()) =>
+    new OptionLiteral(Prim.None, undefined, innerType, line);
 
 const Literals = {
     Unit,
@@ -72,6 +117,8 @@ const Literals = {
     ChainID,
     Bytes,
     List,
+    Some,
+    None,
 };
 
 export default Literals;
