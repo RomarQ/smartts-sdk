@@ -324,8 +324,8 @@ Array [
 exports[`Compile Contracts Storage (None) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 87))
-            storage (variant \\"None\\" (unit) (\\"Compilation.test.ts\\" 88))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 97))
+            storage (variant \\"None\\" (unit) (\\"Compilation.test.ts\\" 98))
             storage_type ((option \\"nat\\"))
             messages ()
             flags ()
@@ -333,7 +333,7 @@ exports[`Compile Contracts Storage (None) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 87))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 97))
         )
         "
 `;
@@ -388,8 +388,8 @@ Array [
 exports[`Compile Contracts Storage (Some) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 78))
-            storage (variant \\"Some\\" (literal (nat 1) (\\"Compilation.test.ts\\" 79)) (\\"Compilation.test.ts\\" 79))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 88))
+            storage (variant \\"Some\\" (literal (nat 1) (\\"Compilation.test.ts\\" 89)) (\\"Compilation.test.ts\\" 89))
             storage_type ((option (unknown 0)))
             messages ()
             flags ()
@@ -397,7 +397,7 @@ exports[`Compile Contracts Storage (Some) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 78))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 88))
         )
         "
 `;
@@ -413,6 +413,65 @@ Array [
           },
         ],
         "prim": "option",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "prim": "unit",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CDR",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Compile Contracts Storage (Unit) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 78))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ()
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 78))
+        )
+        "
+`;
+
+exports[`Compile Contracts Storage (Unit) 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "unit",
       },
     ],
     "prim": "storage",

@@ -1,6 +1,6 @@
 {
     "name": "@tezwell/smartts-sdk",
-    "version": "0.1.10",
+    "version": "0.1.13",
     "description": "SmartPy SDK",
     "keywords": [
         "Tezos",

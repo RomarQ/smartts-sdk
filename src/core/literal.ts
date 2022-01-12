@@ -15,21 +15,25 @@ import {
     TBytes,
     TOption,
     TUnknown,
+    TUnit,
 } from './type';
-import { Expression } from './expression';
 import { Prim } from './enums/prim';
+import { IExpressionKind } from '../typings/expression';
 
 class Literal implements ILiteral {
     _isLiteral = true as const;
 
     constructor(
         public name: string,
-        public value: number | string | boolean,
+        public value: number | string | boolean | undefined,
         public type: IType,
         public line: LineInfo,
     ) {}
 
     toString() {
+        if (typeof this.value === 'undefined') {
+            return `(${this.name})`;
+        }
         return `(literal (${this.name} ${this.value}) ${this.line})`;
     }
 
@@ -41,7 +45,7 @@ class Literal implements ILiteral {
 class ListLiteral implements ILiteral {
     _isLiteral = true as const;
 
-    constructor(public name: string, public items: ILiteral[], public type: IType, public line: LineInfo) {}
+    constructor(public name: string, public items: IExpressionKind[], public type: IType, public line: LineInfo) {}
 
     toString() {
         return `(${this.name} ${this.line}  ${this.items.map((item) => item.toString()).join(' ')})`;
@@ -59,7 +63,7 @@ class OptionLiteral implements ILiteral {
 
     constructor(
         public prim: Prim.Some | Prim.None,
-        public value: ILiteral | undefined,
+        public value: IExpressionKind | undefined,
         public innerType: IType = TUnknown,
         public line: LineInfo,
     ) {
@@ -75,7 +79,7 @@ class OptionLiteral implements ILiteral {
     }
 }
 
-export const Unit = () => new Expression(Prim.unit);
+export const Unit = (line = new LineInfo()) => new Literal(Prim.unit, undefined, TUnit, line);
 
 export const Nat = (value: number, line = new LineInfo()) => new Literal(Prim.nat, value, TNat, line);
 export const Int = (value: number, line = new LineInfo()) => new Literal(Prim.int, value, TInt, line);
@@ -95,10 +99,10 @@ export const ChainID = (chainID: string, line = new LineInfo()) => new Literal('
 
 export const Bytes = (bytes: string, line = new LineInfo()) => new Literal(Prim.bytes, bytes, TBytes, line);
 
-export const List = (items: ILiteral[], innerType: IType, line = new LineInfo()) =>
+export const List = (items: IExpressionKind[], innerType: IType, line = new LineInfo()) =>
     new ListLiteral(Prim.list, items, TList(innerType), line);
 
-export const Some = (value: ILiteral, innerType?: IType, line = new LineInfo()) =>
+export const Some = (value: IExpressionKind, innerType?: IType, line = new LineInfo()) =>
     new OptionLiteral(Prim.Some, value, innerType, line);
 
 export const None = (innerType?: IType, line = new LineInfo()) =>
