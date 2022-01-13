@@ -1,5 +1,5 @@
-import { TBool, TNat } from '../src/core/type';
-import { Address, Bool, List, Mutez, Nat, None, Some, String, Unit } from '../src/core/literal';
+import { TBool, TNat, TString } from '../src/core/type';
+import { Address, Bool, List, Mutez, Nat, None, Record, Some, String, Unit } from '../src/core/literal';
 import { Contract, EntryPoint, Flag, GetSender } from '../src/core';
 import { ContractStorage, Equal, GetLocal } from '../src/core/expression';
 import { DefineVar, Require, SetValue } from '../src/core/command';
@@ -96,6 +96,19 @@ describe('Compile Contracts', () => {
     it('Storage (None)', () => {
         const contract = new Contract({
             storage: None(TNat),
+            entries: [],
+        }).toString();
+
+        expect(contract).toMatchSnapshot();
+        verifyMichelsonOutput(contract);
+    });
+
+    it('Storage (Record)', () => {
+        const contract = new Contract({
+            storage: Record({
+                testField1: Nat(1),
+                testField2: List([String('Hello World')], TString),
+            }),
             entries: [],
         }).toString();
 

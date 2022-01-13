@@ -385,6 +385,84 @@ Array [
 ]
 `;
 
+exports[`Compile Contracts Storage (Record) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 107))
+            storage (record (\\"Compilation.test.ts\\" 108) (testField1 (literal (nat 1) (\\"Compilation.test.ts\\" 109))) (testField2 (list (\\"Compilation.test.ts\\" 110)  (literal (string \\"Hello World\\") (\\"Compilation.test.ts\\" 110)))))
+            storage_type ((record ((testField1 \\"nat\\") (testField2 (list \\"string\\"))) (Some Right)))
+            messages ()
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 107))
+        )
+        "
+`;
+
+exports[`Compile Contracts Storage (Record) 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "args": Array [
+          Object {
+            "annots": Array [
+              "%testField1",
+            ],
+            "prim": "nat",
+          },
+          Object {
+            "annots": Array [
+              "%testField2",
+            ],
+            "args": Array [
+              Object {
+                "prim": "string",
+              },
+            ],
+            "prim": "list",
+          },
+        ],
+        "prim": "pair",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "prim": "unit",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CDR",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
 exports[`Compile Contracts Storage (Some) 1`] = `
 "
         (

@@ -16,9 +16,11 @@ import {
     TOption,
     TUnknown,
     TUnit,
+    TRecord,
 } from './type';
 import { Prim } from './enums/prim';
 import { IExpressionKind } from '../typings/expression';
+import { Layout } from './enums/layout';
 
 class Literal implements ILiteral {
     _isLiteral = true as const;
@@ -79,6 +81,38 @@ class OptionLiteral implements ILiteral {
     }
 }
 
+class RecordLiteral implements ILiteral {
+    _isLiteral = true as const;
+
+    type: IType;
+
+    constructor(public fields: Record<string, ILiteral>, public line: LineInfo) {
+        // Compute the record type (use rightcombs by default)
+        this.type = TRecord(
+            Object.entries(fields).reduce(
+                (pv, [field, expr]) => ({
+                    ...pv,
+                    [field]: expr.toType(),
+                }),
+                {},
+            ),
+            Layout.right_comb,
+        );
+    }
+
+    static buildFields = (fields: Record<string, IExpressionKind>) => {
+        return Object.entries(fields).map(([field, expr]) => `(${field} ${expr.toString()})`);
+    };
+
+    toString(): string {
+        return `(record ${this.line} ${RecordLiteral.buildFields(this.fields).join(' ')})`;
+    }
+
+    toType() {
+        return this.type.toString();
+    }
+}
+
 export const Unit = (line = new LineInfo()) => new Literal(Prim.unit, undefined, TUnit, line);
 
 export const Nat = (value: number, line = new LineInfo()) => new Literal(Prim.nat, value, TNat, line);
@@ -107,6 +141,8 @@ export const Some = (value: IExpressionKind, innerType?: IType, line = new LineI
 
 export const None = (innerType?: IType, line = new LineInfo()) =>
     new OptionLiteral(Prim.None, undefined, innerType, line);
+
+export const Record = (fields: Record<string, ILiteral>, line = new LineInfo()) => new RecordLiteral(fields, line);
 
 const Literals = {
     Unit,
