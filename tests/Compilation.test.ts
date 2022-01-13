@@ -16,26 +16,26 @@ const verifyMichelsonOutput = (contract: string) => {
 
 describe('Compile Contracts', () => {
     it('Simple 1', () => {
-        const contract = new Contract({
-            storage: Nat(1),
-            entries: [
+        const contract = new Contract()
+            .setStorage(Nat(1))
+            .addEntrypoint(
                 new EntryPoint('ep1')
                     .inputType(TNat)
                     .code((arg) => [
                         DefineVar('A', Nat(1)),
                         Require(Equal(GetLocal('A'), arg), String('Error Message')),
                     ]),
-            ],
-        }).toString();
+            )
+            .toString();
 
         expect(contract).toMatchSnapshot();
         verifyMichelsonOutput(contract);
     });
 
     it('Simple 2', () => {
-        const contract = new Contract({
-            storage: List([Nat(1)], TNat),
-            entries: [
+        const contract = new Contract()
+            .setStorage(List([Nat(1)], TNat))
+            .addEntrypoint(
                 new EntryPoint('ep1')
                     .config({ lazy: false })
                     .inputType(TBool)
@@ -43,9 +43,8 @@ describe('Compile Contracts', () => {
                         DefineVar('A', Bool(false)),
                         Require(Equal(GetLocal('A'), arg), String('Error Message')),
                     ]),
-            ],
-        })
-            .config({
+            )
+            .setConfig({
                 initialBalance: Mutez(100),
                 flags: [new Flag('erase-comments')],
             })
@@ -56,9 +55,9 @@ describe('Compile Contracts', () => {
     });
 
     it('Simple 3', () => {
-        const contract = new Contract({
-            storage: List([], TNat),
-            entries: [
+        const contract = new Contract()
+            .setStorage(List([], TNat))
+            .addEntrypoint(
                 new EntryPoint('ep1').inputType(TNat).code((arg) => [
                     // Define a variable named "some_address"
                     DefineVar('some_address', Address('tz1')),
@@ -67,50 +66,42 @@ describe('Compile Contracts', () => {
                     // Replace the storage value with entry point argument
                     SetValue(ContractStorage(), arg),
                 ]),
-            ],
-        }).toString();
+            )
+            .toString();
 
         expect(contract).toMatchSnapshot();
         verifyMichelsonOutput(contract);
     });
 
     it('Storage (Unit)', () => {
-        const contract = new Contract({
-            storage: Unit(),
-            entries: [],
-        }).toString();
+        const contract = new Contract().setStorage(Unit()).toString();
 
         expect(contract).toMatchSnapshot();
         verifyMichelsonOutput(contract);
     });
 
     it('Storage (Some)', () => {
-        const contract = new Contract({
-            storage: Some(Nat(1)),
-            entries: [],
-        }).toString();
+        const contract = new Contract().setStorage(Some(Nat(1))).toString();
 
         expect(contract).toMatchSnapshot();
         verifyMichelsonOutput(contract);
     });
     it('Storage (None)', () => {
-        const contract = new Contract({
-            storage: None(TNat),
-            entries: [],
-        }).toString();
+        const contract = new Contract().setStorage(None(TNat)).toString();
 
         expect(contract).toMatchSnapshot();
         verifyMichelsonOutput(contract);
     });
 
     it('Storage (Record)', () => {
-        const contract = new Contract({
-            storage: Record({
-                testField1: Nat(1),
-                testField2: List([String('Hello World')], TString),
-            }),
-            entries: [],
-        }).toString();
+        const contract = new Contract()
+            .setStorage(
+                Record({
+                    testField1: Nat(1),
+                    testField2: List([String('Hello World')], TString),
+                }),
+            )
+            .toString();
 
         expect(contract).toMatchSnapshot();
         verifyMichelsonOutput(contract);

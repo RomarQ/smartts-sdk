@@ -113,7 +113,7 @@ exports[`Compile Contracts Simple 2 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 100) (\\"Compilation.test.ts\\" 49))
+            balance (literal (mutez 100) (\\"Compilation.test.ts\\" 48))
         )
         "
 `;
@@ -210,16 +210,16 @@ Array [
 exports[`Compile Contracts Simple 3 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 59))
-            storage (list (\\"Compilation.test.ts\\" 60)  )
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 58))
+            storage (list (\\"Compilation.test.ts\\" 59)  )
             storage_type ((list \\"nat\\"))
-            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 62) ((defineLocal \\"some_address\\" (literal (address tz1) (\\"Compilation.test.ts\\" 62)) True (\\"Compilation.test.ts\\" 62)) (verify (eq (getLocal \\"some_address\\" (\\"Compilation.test.ts\\" 62)) (sender) (\\"Compilation.test.ts\\" 62)) (literal (string \\"Not Admin!\\") (\\"Compilation.test.ts\\" 62)) (\\"Compilation.test.ts\\" 62)) (set (data) (params (\\"Compilation.test.ts\\" 62)) (\\"Compilation.test.ts\\" 62)))))
+            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 61) ((defineLocal \\"some_address\\" (literal (address tz1) (\\"Compilation.test.ts\\" 61)) True (\\"Compilation.test.ts\\" 61)) (verify (eq (getLocal \\"some_address\\" (\\"Compilation.test.ts\\" 61)) (sender) (\\"Compilation.test.ts\\" 61)) (literal (string \\"Not Admin!\\") (\\"Compilation.test.ts\\" 61)) (\\"Compilation.test.ts\\" 61)) (set (data) (params (\\"Compilation.test.ts\\" 61)) (\\"Compilation.test.ts\\" 61)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 59))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 58))
         )
         "
 `;
@@ -324,8 +324,8 @@ Array [
 exports[`Compile Contracts Storage (None) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 97))
-            storage (variant \\"None\\" (unit) (\\"Compilation.test.ts\\" 98))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 90))
+            storage (variant \\"None\\" (unit) (\\"Compilation.test.ts\\" 90))
             storage_type ((option \\"nat\\"))
             messages ()
             flags ()
@@ -333,7 +333,7 @@ exports[`Compile Contracts Storage (None) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 97))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 90))
         )
         "
 `;
@@ -388,8 +388,8 @@ Array [
 exports[`Compile Contracts Storage (Record) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 107))
-            storage (record (\\"Compilation.test.ts\\" 108) (testField1 (literal (nat 1) (\\"Compilation.test.ts\\" 109))) (testField2 (list (\\"Compilation.test.ts\\" 110)  (literal (string \\"Hello World\\") (\\"Compilation.test.ts\\" 110)))))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 97))
+            storage (record (\\"Compilation.test.ts\\" 99) (testField1 (literal (nat 1) (\\"Compilation.test.ts\\" 100))) (testField2 (list (\\"Compilation.test.ts\\" 101)  (literal (string \\"Hello World\\") (\\"Compilation.test.ts\\" 101)))))
             storage_type ((record ((testField1 \\"nat\\") (testField2 (list \\"string\\"))) (Some Right)))
             messages ()
             flags ()
@@ -397,7 +397,7 @@ exports[`Compile Contracts Storage (Record) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 107))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 97))
         )
         "
 `;
@@ -466,8 +466,8 @@ Array [
 exports[`Compile Contracts Storage (Some) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 88))
-            storage (variant \\"Some\\" (literal (nat 1) (\\"Compilation.test.ts\\" 89)) (\\"Compilation.test.ts\\" 89))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 84))
+            storage (variant \\"Some\\" (literal (nat 1) (\\"Compilation.test.ts\\" 84)) (\\"Compilation.test.ts\\" 84))
             storage_type ((option (unknown 0)))
             messages ()
             flags ()
@@ -475,7 +475,7 @@ exports[`Compile Contracts Storage (Some) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 88))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 84))
         )
         "
 `;
@@ -530,7 +530,7 @@ Array [
 exports[`Compile Contracts Storage (Unit) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 78))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 77))
             storage (unit)
             storage_type (\\"unit\\")
             messages ()
@@ -539,7 +539,7 @@ exports[`Compile Contracts Storage (Unit) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 78))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 77))
         )
         "
 `;

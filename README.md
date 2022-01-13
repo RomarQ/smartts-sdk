@@ -12,9 +12,9 @@ import { Contract, EntryPoint, GetSender } from '@tezwell/smartts-sdk/core';
 import { ContractStorage, Equal, GetLocal } from '@tezwell/smartts-sdk/core/expression';
 import SmartML from '@tezwell/smartts-sdk/smartml';
 
-const contract = new Contract({
-    storage: Nat(0),
-    entries: [
+const contract = new Contract()
+    .setStorage(Nat(0))
+    .addEntrypoint(
         new EntryPoint('ep1')
             .inputType(TNat)
             .code((arg) => [
@@ -24,9 +24,8 @@ const contract = new Contract({
                 Require(Equal(GetLocal('some_address'), GetSender()), String('Not Admin!')),
                 // Replace the storage value with entry point argument
                 SetValue(ContractStorage(), arg),
-            ]),
-    ],
-}).toString();
+            ])
+    ).toString();
 
 SmartML.compileContract(contract);
 ```

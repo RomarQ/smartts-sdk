@@ -2,7 +2,7 @@ import type { ILiteral } from '../typings/literal';
 import type { IType } from '../typings/type';
 
 import { Expression } from './expression';
-import { Mutez } from './literal';
+import { Mutez, Unit } from './literal';
 import Utils, { LineInfo } from '../misc/utils';
 import { IStatement } from '../typings/statement';
 import { IExpression } from '../typings/expression';
@@ -70,50 +70,67 @@ export class EntryPoint {
 }
 
 export class Contract {
-    options: {
+    #options: {
         initialBalance: ILiteral;
         flags: Flag[];
     } = {
         initialBalance: Mutez(0),
         flags: [],
     };
-    public storage: ILiteral;
-    public entries: EntryPoint[];
 
-    constructor(
-        args: {
-            storage: ILiteral;
-            entries: EntryPoint[];
-        },
-        public line = new LineInfo(),
-    ) {
-        this.storage = args.storage;
-        this.entries = args.entries;
+    #storage: ILiteral = Unit();
+    #entries: EntryPoint[] = [];
+
+    constructor(public line = new LineInfo()) {}
+
+    public setStorage(storage: ILiteral) {
+        this.#storage = storage;
+        return this;
     }
 
-    config(options?: { initialBalance?: ILiteral; flags?: Flag[] }) {
+    public addEntrypoint(entrypoint: EntryPoint) {
+        this.#entries.push(entrypoint);
+        return this;
+    }
+
+    public setConfig(options?: { initialBalance?: ILiteral; flags?: Flag[] }) {
         if (options?.flags) {
-            this.options.flags = options.flags;
+            this.#options.flags = options.flags;
         }
         if (options?.initialBalance) {
-            this.options.initialBalance = options.initialBalance;
+            this.#options.initialBalance = options.initialBalance;
         }
         return this;
     }
 
-    toString() {
+    public get storage(): Readonly<ILiteral> {
+        return this.#storage;
+    }
+
+    public get entrypoints(): Readonly<EntryPoint[]> {
+        return this.#entries;
+    }
+
+    public get config(): Readonly<{
+        initialBalance: ILiteral;
+        flags: Flag[];
+    }> {
+        return this.#options;
+    }
+
+    public toString() {
         return `
         (
             template_id (static_id 0 ${this.line})
-            storage ${this.storage.toString()}
-            storage_type (${this.storage.toType()})
-            messages (${this.entries.map((entry) => entry.toString()).join(' ')})
-            flags (${this.options.flags.map((flag) => flag.toString())})
+            storage ${this.#storage.toString()}
+            storage_type (${this.#storage.toType()})
+            messages (${this.#entries.map((entry) => entry.toString()).join(' ')})
+            flags (${this.#options.flags.map((flag) => flag.toString())})
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance ${this.options.initialBalance}
+            balance ${this.#options.initialBalance}
         )
         `;
     }
