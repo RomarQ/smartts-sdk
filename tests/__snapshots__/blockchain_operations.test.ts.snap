@@ -5,7 +5,7 @@ exports[`Test compilation of blockchain operations Get chain identifier 1`] = `
         (
             template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 54))
             storage (literal (chain_id_cst 0x00) (\\"blockchain_operations.test.ts\\" 55))
-            storage_type (\\"chain_id\\")
+            storage_type (())
             messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 56) ((set (data) (chain_id) (\\"blockchain_operations.test.ts\\" 56)))))
             flags ()
             privates ()
@@ -76,7 +76,7 @@ exports[`Test compilation of blockchain operations Get head level 1`] = `
         (
             template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 36))
             storage (literal (nat 1) (\\"blockchain_operations.test.ts\\" 37))
-            storage_type (\\"nat\\")
+            storage_type (())
             messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 38) ((set (data) (level) (\\"blockchain_operations.test.ts\\" 38)))))
             flags ()
             privates ()
@@ -147,7 +147,7 @@ exports[`Test compilation of blockchain operations Get head timestamp 1`] = `
         (
             template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 45))
             storage (literal (timestamp 0) (\\"blockchain_operations.test.ts\\" 46))
-            storage_type (\\"timestamp\\")
+            storage_type (())
             messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 47) ((set (data) (now) (\\"blockchain_operations.test.ts\\" 47)))))
             flags ()
             privates ()
@@ -212,7 +212,7 @@ exports[`Test compilation of blockchain operations Get sender 1`] = `
         (
             template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 18))
             storage (literal (address tz1) (\\"blockchain_operations.test.ts\\" 19))
-            storage_type (\\"address\\")
+            storage_type (())
             messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 20) ((set (data) (sender) (\\"blockchain_operations.test.ts\\" 20)))))
             flags ()
             privates ()
@@ -277,7 +277,7 @@ exports[`Test compilation of blockchain operations Get source 1`] = `
         (
             template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 27))
             storage (literal (address tz1) (\\"blockchain_operations.test.ts\\" 28))
-            storage_type (\\"address\\")
+            storage_type (())
             messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 29) ((set (data) (source) (\\"blockchain_operations.test.ts\\" 29)))))
             flags ()
             privates ()

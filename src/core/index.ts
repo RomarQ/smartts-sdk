@@ -78,10 +78,16 @@ export class Contract {
         flags: [],
     };
 
+    #storage_type?: IType;
     #storage: ILiteral = Unit();
     #entries: EntryPoint[] = [];
 
     constructor(public line = new LineInfo()) {}
+
+    public setStorageType(type: IType) {
+        this.#storage_type = type;
+        return this;
+    }
 
     public setStorage(storage: ILiteral) {
         this.#storage = storage;
@@ -123,7 +129,7 @@ export class Contract {
         (
             template_id (static_id 0 ${this.line})
             storage ${this.#storage.toString()}
-            storage_type (${this.#storage.toType()})
+            storage_type (${this.#storage_type ? this.#storage_type.toString() : '()'})
             messages (${this.#entries.map((entry) => entry.toString()).join(' ')})
             flags (${this.#options.flags.map((flag) => flag.toString())})
             privates ()

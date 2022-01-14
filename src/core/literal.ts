@@ -92,7 +92,7 @@ class RecordLiteral implements ILiteral {
             Object.entries(fields).reduce(
                 (pv, [field, expr]) => ({
                     ...pv,
-                    [field]: expr.toType(),
+                    [field]: expr.type.toString(),
                 }),
                 {},
             ),
@@ -158,6 +158,7 @@ const Literals = {
     List,
     Some,
     None,
+    Record,
 };
 
 export default Literals;

@@ -95,6 +95,7 @@ const Types = {
     // Container types
     TList,
     TOption,
+    TRecord,
 };
 
 export default Types;

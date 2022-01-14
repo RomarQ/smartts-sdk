@@ -1,4 +1,4 @@
-import { TBool, TNat, TString } from '../src/core/type';
+import { TBool, TList, TNat, TOption, TString } from '../src/core/type';
 import { Address, Bool, List, Mutez, Nat, None, Record, Some, String, Unit } from '../src/core/literal';
 import { Contract, EntryPoint, Flag, GetSender } from '../src/core';
 import { ContractStorage, Equal, GetLocal } from '../src/core/expression';
@@ -56,6 +56,7 @@ describe('Compile Contracts', () => {
 
     it('Simple 3', () => {
         const contract = new Contract()
+            .setStorageType(TList(TNat))
             .setStorage(List([], TNat))
             .addEntrypoint(
                 new EntryPoint('ep1').inputType(TNat).code((arg) => [
@@ -87,7 +88,7 @@ describe('Compile Contracts', () => {
         verifyMichelsonOutput(contract);
     });
     it('Storage (None)', () => {
-        const contract = new Contract().setStorage(None(TNat)).toString();
+        const contract = new Contract().setStorageType(TOption(TNat)).setStorage(None()).toString();
 
         expect(contract).toMatchSnapshot();
         verifyMichelsonOutput(contract);
