@@ -17,9 +17,11 @@ import {
     TUnknown,
     TUnit,
     TRecord,
+    TMap,
+    TBigMap,
 } from './type';
 import { Prim } from './enums/prim';
-import { IExpressionKind } from '../typings/expression';
+import { IExpression, IExpressionKind } from '../typings/expression';
 import { Layout } from './enums/layout';
 
 class Literal implements ILiteral {
@@ -100,12 +102,44 @@ class RecordLiteral implements ILiteral {
         );
     }
 
-    static buildFields = (fields: Record<string, IExpressionKind>) => {
+    private buildFields = (fields: Record<string, IExpressionKind>) => {
         return Object.entries(fields).map(([field, expr]) => `(${field} ${expr.toString()})`);
     };
 
     toString(): string {
-        return `(record ${this.line} ${RecordLiteral.buildFields(this.fields).join(' ')})`;
+        return `(record ${this.line} ${this.buildFields(this.fields).join(' ')})`;
+    }
+
+    toType() {
+        return this.type.toString();
+    }
+}
+
+class MapLiteral implements ILiteral {
+    _isLiteral = true as const;
+
+    type: IType;
+
+    constructor(
+        public prim: Prim.map | Prim.big_map,
+        public rows: IExpression[][],
+        keyType: IType,
+        valueType: IType,
+        public line: LineInfo,
+    ) {
+        if (prim === Prim.map) {
+            this.type = TMap(keyType, valueType);
+        } else {
+            this.type = TBigMap(keyType, valueType);
+        }
+    }
+
+    private buildEntry = ([key, value]: IExpression[]) => {
+        return `(${key.toString()} ${value.toString()})`;
+    };
+
+    toString() {
+        return `(${this.prim} ${this.line} ${this.rows.map(this.buildEntry).join(' ')})`;
     }
 
     toType() {
@@ -133,16 +167,29 @@ export const ChainID = (chainID: string, line = new LineInfo()) => new Literal('
 
 export const Bytes = (bytes: string, line = new LineInfo()) => new Literal(Prim.bytes, bytes, TBytes, line);
 
+// Containers
 export const List = (items: IExpressionKind[], innerType: IType, line = new LineInfo()) =>
     new ListLiteral(Prim.list, items, TList(innerType), line);
-
 export const Some = (value: IExpressionKind, innerType?: IType, line = new LineInfo()) =>
     new OptionLiteral(Prim.Some, value, innerType, line);
-
 export const None = (innerType?: IType, line = new LineInfo()) =>
     new OptionLiteral(Prim.None, undefined, innerType, line);
 
 export const Record = (fields: Record<string, ILiteral>, line = new LineInfo()) => new RecordLiteral(fields, line);
+
+export const SmallMap = (
+    rows: IExpression[][] = [],
+    keyType: IType = TUnknown,
+    valueType: IType = TUnknown,
+    line = new LineInfo(),
+) => new MapLiteral(Prim.map, rows, keyType, valueType, line);
+
+export const BigMap = (
+    rows: IExpression[][] = [],
+    keyType: IType = TUnknown,
+    valueType: IType = TUnknown,
+    line = new LineInfo(),
+) => new MapLiteral(Prim.big_map, rows, keyType, valueType, line);
 
 const Literals = {
     Unit,
@@ -159,6 +206,8 @@ const Literals = {
     Some,
     None,
     Record,
+    SmallMap,
+    BigMap,
 };
 
 export default Literals;

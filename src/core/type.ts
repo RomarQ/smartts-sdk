@@ -1,7 +1,7 @@
 import { ILayout } from '../typings/literal';
 import { IType } from '../typings/type';
 import { Layout } from './enums/layout';
-import { Prim } from './enums/prim';
+import { Prim, SmartPyAtom } from './enums/prim';
 
 /**
  * @description All Type classes must extend this class. It identifies Type classes.
@@ -20,13 +20,13 @@ export class SimpleType extends BaseType {
     }
 }
 
-export class Type_1 extends BaseType {
-    constructor(public type: string, public innerType: IType) {
+export class ContainerType extends BaseType {
+    constructor(public type: string, public innerTypes: IType[]) {
         super();
     }
 
     toString() {
-        return `(${this.type} ${this.innerType})`;
+        return `(${this.type} ${this.innerTypes.map((t) => t.toString()).join(' ')})`;
     }
 }
 
@@ -52,12 +52,12 @@ export class Type_Record extends BaseType {
         return '(Some Right)';
     };
 
-    static buildFields = (fields: Record<string, IType>) => {
+    private buildFields = (fields: Record<string, IType>) => {
         return Object.entries(fields).map(([field, ty]) => `(${field} ${ty.toString()})`);
     };
 
     toString() {
-        return `(record (${Type_Record.buildFields(this.fields).join(' ')}) ${this.translateLayout(this.layout)})`;
+        return `(record (${this.buildFields(this.fields).join(' ')}) ${this.translateLayout(this.layout)})`;
     }
 }
 
@@ -76,9 +76,13 @@ export const TTimestamp = new SimpleType(Prim.timestamp);
 export const TChainID = new SimpleType(Prim.chain_id);
 export const TBytes = new SimpleType(Prim.bytes);
 // Container types
-export const TList = (innerType: IType) => new Type_1(Prim.list, innerType);
-export const TOption = (innerType: IType) => new Type_1(Prim.option, innerType);
+export const TList = (innerType: IType) => new ContainerType(Prim.list, [innerType]);
+export const TOption = (innerType: IType) => new ContainerType(Prim.option, [innerType]);
 export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) => new Type_Record(fields, layout);
+export const TMap = (keyType: IType, valueType: IType) => new ContainerType(Prim.map, [keyType, valueType]);
+export const TBigMap = (keyType: IType, valueType: IType) =>
+    new ContainerType(SmartPyAtom.bigmap, [keyType, valueType]);
+export const TTuple = (...types: IType[]) => new ContainerType(SmartPyAtom.tuple, types);
 
 const Types = {
     TUnknown,
@@ -96,6 +100,9 @@ const Types = {
     TList,
     TOption,
     TRecord,
+    TMap,
+    TBigMap,
+    TTuple,
 };
 
 export default Types;

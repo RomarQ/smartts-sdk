@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test contract templates FA2.ts 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"FA2.ts\\" 27))
+            storage (record (\\"FA2.ts\\" 44) (config (record (\\"FA2.ts\\" 45) (admin (literal (address tz1) (\\"FA2.ts\\" 46))) (paused (literal (bool False) (\\"FA2.ts\\" 47))))) (assets (record (\\"FA2.ts\\" 49) (ledger (big_map (\\"FA2.ts\\" 50) )) (operators (big_map (\\"FA2.ts\\" 51) )) (token_metadata (big_map (\\"FA2.ts\\" 52) )) (token_total_supply (big_map (\\"FA2.ts\\" 53) )))) (metadata (big_map (\\"FA2.ts\\" 55) )))
+            storage_type ((record ((config (record ((admin \\"address\\") (paused \\"bool\\")) (Some ((\\"admin\\") (\\"paused\\"))))) (assets (record ((ledger (bigmap (tuple \\"address\\" \\"nat\\") (record ((balance \\"nat\\")) (Some Right)))) (operators (bigmap (record ((operator \\"address\\") (owner \\"address\\") (token_id \\"nat\\")) (Some Right)) \\"unit\\")) (token_metadata (bigmap \\"nat\\" (record ((token_id \\"nat\\") (token_info (map \\"string\\" \\"bytes\\"))) (Some Right)))) (token_total_supply (bigmap \\"nat\\" \\"nat\\"))) (Some ((((\\"ledger\\") (\\"operators\\")) (\\"token_metadata\\")) (\\"token_total_supply\\"))))) (metadata (bigmap \\"string\\" \\"bytes\\"))) (Some (((\\"config\\") (\\"assets\\")) (\\"metadata\\")))))
+            messages ((transfer True False False False (\\"FA2.ts\\" 58) ()) (update_operators True False False False (\\"FA2.ts\\" 59) ()) (mint True False False False (\\"FA2.ts\\" 60) ()) (pause True False False False (\\"FA2.ts\\" 61) ()) (set_admin True False False False (\\"FA2.ts\\" 62) ()) (update_metadata True False False False (\\"FA2.ts\\" 63) ()))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"FA2.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test contract templates FA2.ts 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "annots": Array [
+                  "%config",
+                ],
+                "args": Array [
+                  Object {
+                    "annots": Array [
+                      "%admin",
+                    ],
+                    "prim": "address",
+                  },
+                  Object {
+                    "annots": Array [
+                      "%paused",
+                    ],
+                    "prim": "bool",
+                  },
+                ],
+                "prim": "pair",
+              },
+              Object {
+                "annots": Array [
+                  "%assets",
+                ],
+                "args": Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "annots": Array [
+                              "%ledger",
+                            ],
+                            "args": Array [
+                              Object {
+                                "args": Array [
+                                  Object {
+                                    "prim": "address",
+                                  },
+                                  Object {
+                                    "prim": "nat",
+                                  },
+                                ],
+                                "prim": "pair",
+                              },
+                              Object {
+                                "prim": "nat",
+                              },
+                            ],
+                            "prim": "big_map",
+                          },
+                          Object {
+                            "annots": Array [
+                              "%operators",
+                            ],
+                            "args": Array [
+                              Object {
+                                "args": Array [
+                                  Object {
+                                    "annots": Array [
+                                      "%operator",
+                                    ],
+                                    "prim": "address",
+                                  },
+                                  Object {
+                                    "args": Array [
+                                      Object {
+                                        "annots": Array [
+                                          "%owner",
+                                        ],
+                                        "prim": "address",
+                                      },
+                                      Object {
+                                        "annots": Array [
+                                          "%token_id",
+                                        ],
+                                        "prim": "nat",
+                                      },
+                                    ],
+                                    "prim": "pair",
+                                  },
+                                ],
+                                "prim": "pair",
+                              },
+                              Object {
+                                "prim": "unit",
+                              },
+                            ],
+                            "prim": "big_map",
+                          },
+                        ],
+                        "prim": "pair",
+                      },
+                      Object {
+                        "annots": Array [
+                          "%token_metadata",
+                        ],
+                        "args": Array [
+                          Object {
+                            "prim": "nat",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "annots": Array [
+                                  "%token_id",
+                                ],
+                                "prim": "nat",
+                              },
+                              Object {
+                                "annots": Array [
+                                  "%token_info",
+                                ],
+                                "args": Array [
+                                  Object {
+                                    "prim": "string",
+                                  },
+                                  Object {
+                                    "prim": "bytes",
+                                  },
+                                ],
+                                "prim": "map",
+                              },
+                            ],
+                            "prim": "pair",
+                          },
+                        ],
+                        "prim": "big_map",
+                      },
+                    ],
+                    "prim": "pair",
+                  },
+                  Object {
+                    "annots": Array [
+                      "%token_total_supply",
+                    ],
+                    "args": Array [
+                      Object {
+                        "prim": "nat",
+                      },
+                      Object {
+                        "prim": "nat",
+                      },
+                    ],
+                    "prim": "big_map",
+                  },
+                ],
+                "prim": "pair",
+              },
+            ],
+            "prim": "pair",
+          },
+          Object {
+            "annots": Array [
+              "%metadata",
+            ],
+            "args": Array [
+              Object {
+                "prim": "string",
+              },
+              Object {
+                "prim": "bytes",
+              },
+            ],
+            "prim": "big_map",
+          },
+        ],
+        "prim": "pair",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "annots": Array [
+                  "%mint",
+                ],
+                "prim": "unit",
+              },
+              Object {
+                "args": Array [
+                  Object {
+                    "annots": Array [
+                      "%pause",
+                    ],
+                    "prim": "unit",
+                  },
+                  Object {
+                    "annots": Array [
+                      "%set_admin",
+                    ],
+                    "prim": "unit",
+                  },
+                ],
+                "prim": "or",
+              },
+            ],
+            "prim": "or",
+          },
+          Object {
+            "args": Array [
+              Object {
+                "annots": Array [
+                  "%transfer",
+                ],
+                "prim": "unit",
+              },
+              Object {
+                "args": Array [
+                  Object {
+                    "annots": Array [
+                      "%update_metadata",
+                    ],
+                    "prim": "unit",
+                  },
+                  Object {
+                    "annots": Array [
+                      "%update_operators",
+                    ],
+                    "prim": "unit",
+                  },
+                ],
+                "prim": "or",
+              },
+            ],
+            "prim": "or",
+          },
+        ],
+        "prim": "or",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "UNPAIR",
+        },
+        Object {
+          "args": Array [
+            Array [
+              Object {
+                "args": Array [
+                  Array [
+                    Object {
+                      "prim": "DROP",
+                    },
+                  ],
+                  Array [
+                    Object {
+                      "args": Array [
+                        Array [
+                          Object {
+                            "prim": "DROP",
+                          },
+                        ],
+                        Array [
+                          Object {
+                            "prim": "DROP",
+                          },
+                        ],
+                      ],
+                      "prim": "IF_LEFT",
+                    },
+                  ],
+                ],
+                "prim": "IF_LEFT",
+              },
+            ],
+            Array [
+              Object {
+                "args": Array [
+                  Array [
+                    Object {
+                      "prim": "DROP",
+                    },
+                  ],
+                  Array [
+                    Object {
+                      "args": Array [
+                        Array [
+                          Object {
+                            "prim": "DROP",
+                          },
+                        ],
+                        Array [
+                          Object {
+                            "prim": "DROP",
+                          },
+                        ],
+                      ],
+                      "prim": "IF_LEFT",
+                    },
+                  ],
+                ],
+                "prim": "IF_LEFT",
+              },
+            ],
+          ],
+          "prim": "IF_LEFT",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
