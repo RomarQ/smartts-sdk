@@ -3,16 +3,16 @@
 exports[`Test contract templates FA2.ts 1`] = `
 "
         (
-            template_id (static_id 0 (\\"FA2.ts\\" 27))
-            storage (record (\\"FA2.ts\\" 44) (config (record (\\"FA2.ts\\" 45) (admin (literal (address tz1) (\\"FA2.ts\\" 46))) (paused (literal (bool False) (\\"FA2.ts\\" 47))))) (assets (record (\\"FA2.ts\\" 49) (ledger (big_map (\\"FA2.ts\\" 50) )) (operators (big_map (\\"FA2.ts\\" 51) )) (token_metadata (big_map (\\"FA2.ts\\" 52) )) (token_total_supply (big_map (\\"FA2.ts\\" 53) )))) (metadata (big_map (\\"FA2.ts\\" 55) )))
-            storage_type ((record ((config (record ((admin \\"address\\") (paused \\"bool\\")) (Some ((\\"admin\\") (\\"paused\\"))))) (assets (record ((ledger (bigmap (tuple \\"address\\" \\"nat\\") (record ((balance \\"nat\\")) (Some Right)))) (operators (bigmap (record ((operator \\"address\\") (owner \\"address\\") (token_id \\"nat\\")) (Some Right)) \\"unit\\")) (token_metadata (bigmap \\"nat\\" (record ((token_id \\"nat\\") (token_info (map \\"string\\" \\"bytes\\"))) (Some Right)))) (token_total_supply (bigmap \\"nat\\" \\"nat\\"))) (Some ((((\\"ledger\\") (\\"operators\\")) (\\"token_metadata\\")) (\\"token_total_supply\\"))))) (metadata (bigmap \\"string\\" \\"bytes\\"))) (Some (((\\"config\\") (\\"assets\\")) (\\"metadata\\")))))
-            messages ((transfer True False False False (\\"FA2.ts\\" 58) ()) (update_operators True False False False (\\"FA2.ts\\" 59) ()) (mint True False False False (\\"FA2.ts\\" 60) ()) (pause True False False False (\\"FA2.ts\\" 61) ()) (set_admin True False False False (\\"FA2.ts\\" 62) ()) (update_metadata True False False False (\\"FA2.ts\\" 63) ()))
+            template_id (static_id 0 (\\"FA2.ts\\" 36))
+            storage (record (\\"FA2.ts\\" 56) (config (record (\\"FA2.ts\\" 57) (administrator (literal (address tz1) (\\"FA2.ts\\" 58))) (paused (literal (bool False) (\\"FA2.ts\\" 59))))) (assets (record (\\"FA2.ts\\" 61) (ledger (big_map (\\"FA2.ts\\" 62) )) (operators (big_map (\\"FA2.ts\\" 63) )) (token_metadata (big_map (\\"FA2.ts\\" 64) )) (token_total_supply (big_map (\\"FA2.ts\\" 65) )))) (metadata (big_map (\\"FA2.ts\\" 67) )))
+            storage_type ((record ((config (record ((administrator \\"address\\") (paused \\"bool\\")) (Some ((\\"administrator\\") (\\"paused\\"))))) (assets (record ((ledger (bigmap (tuple \\"address\\" \\"nat\\") (record ((balance \\"nat\\")) (Some Right)))) (operators (bigmap (record ((operator \\"address\\") (owner \\"address\\") (token_id \\"nat\\")) (Some Right)) \\"unit\\")) (token_metadata (bigmap \\"nat\\" (record ((token_id \\"nat\\") (token_info (map \\"string\\" \\"bytes\\"))) (Some Right)))) (token_total_supply (bigmap \\"nat\\" \\"nat\\"))) (Some ((((\\"ledger\\") (\\"operators\\")) (\\"token_metadata\\")) (\\"token_total_supply\\"))))) (metadata (bigmap \\"string\\" \\"bytes\\"))) (Some Right)))
+            messages ((transfer True False False False (\\"FA2.ts\\" 70) ()) (update_operators True False False False (\\"FA2.ts\\" 71) ()) (mint True False False False (\\"FA2.ts\\" 72) ()) (pause True False False True (\\"FA2.ts\\" 74) ((verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 25)) \\"administrator\\" (\\"expression.ts\\" 25)) (\\"FA2.ts\\" 74)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 74)) (\\"FA2.ts\\" 74)) (set (attr (attr (data) \\"config\\" (\\"expression.ts\\" 25)) \\"paused\\" (\\"expression.ts\\" 25)) (params (\\"FA2.ts\\" 74)) (\\"FA2.ts\\" 74)))) (set_admin True False False True (\\"FA2.ts\\" 82) ((verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 25)) \\"administrator\\" (\\"expression.ts\\" 25)) (\\"FA2.ts\\" 82)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 82)) (\\"FA2.ts\\" 82)) (set (attr (attr (data) \\"config\\" (\\"FA2.ts\\" 82)) \\"administrator\\" (\\"FA2.ts\\" 82)) (params (\\"FA2.ts\\" 82)) (\\"FA2.ts\\" 82)))) (update_metadata True False False False (\\"FA2.ts\\" 89) ()))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"FA2.ts\\" 27))
+            balance (literal (mutez 0) (\\"FA2.ts\\" 36))
         )
         "
 `;
@@ -24,27 +24,27 @@ Array [
       Object {
         "args": Array [
           Object {
+            "annots": Array [
+              "%config",
+            ],
             "args": Array [
               Object {
                 "annots": Array [
-                  "%config",
+                  "%administrator",
                 ],
-                "args": Array [
-                  Object {
-                    "annots": Array [
-                      "%admin",
-                    ],
-                    "prim": "address",
-                  },
-                  Object {
-                    "annots": Array [
-                      "%paused",
-                    ],
-                    "prim": "bool",
-                  },
-                ],
-                "prim": "pair",
+                "prim": "address",
               },
+              Object {
+                "annots": Array [
+                  "%paused",
+                ],
+                "prim": "bool",
+              },
+            ],
+            "prim": "pair",
+          },
+          Object {
+            "args": Array [
               Object {
                 "annots": Array [
                   "%assets",
@@ -174,22 +174,22 @@ Array [
                 ],
                 "prim": "pair",
               },
+              Object {
+                "annots": Array [
+                  "%metadata",
+                ],
+                "args": Array [
+                  Object {
+                    "prim": "string",
+                  },
+                  Object {
+                    "prim": "bytes",
+                  },
+                ],
+                "prim": "big_map",
+              },
             ],
             "prim": "pair",
-          },
-          Object {
-            "annots": Array [
-              "%metadata",
-            ],
-            "args": Array [
-              Object {
-                "prim": "string",
-              },
-              Object {
-                "prim": "bytes",
-              },
-            ],
-            "prim": "big_map",
           },
         ],
         "prim": "pair",
@@ -215,13 +215,13 @@ Array [
                     "annots": Array [
                       "%pause",
                     ],
-                    "prim": "unit",
+                    "prim": "bool",
                   },
                   Object {
                     "annots": Array [
                       "%set_admin",
                     ],
-                    "prim": "unit",
+                    "prim": "address",
                   },
                 ],
                 "prim": "or",
@@ -284,12 +284,174 @@ Array [
                       "args": Array [
                         Array [
                           Object {
-                            "prim": "DROP",
+                            "prim": "SWAP",
+                          },
+                          Object {
+                            "prim": "DUP",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "int": "2",
+                              },
+                            ],
+                            "prim": "DUG",
+                          },
+                          Object {
+                            "prim": "CAR",
+                          },
+                          Object {
+                            "prim": "CAR",
+                          },
+                          Object {
+                            "prim": "SENDER",
+                          },
+                          Object {
+                            "prim": "COMPARE",
+                          },
+                          Object {
+                            "prim": "EQ",
+                          },
+                          Object {
+                            "args": Array [
+                              Array [],
+                              Array [
+                                Object {
+                                  "args": Array [
+                                    Object {
+                                      "prim": "string",
+                                    },
+                                    Object {
+                                      "string": "FA2__Not_Admin",
+                                    },
+                                  ],
+                                  "prim": "PUSH",
+                                },
+                                Object {
+                                  "prim": "FAILWITH",
+                                },
+                              ],
+                            ],
+                            "prim": "IF",
+                          },
+                          Object {
+                            "prim": "SWAP",
+                          },
+                          Object {
+                            "prim": "DUP",
+                          },
+                          Object {
+                            "prim": "CAR",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "int": "2",
+                              },
+                            ],
+                            "prim": "DIG",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "int": "2",
+                              },
+                            ],
+                            "prim": "UPDATE",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "int": "1",
+                              },
+                            ],
+                            "prim": "UPDATE",
                           },
                         ],
                         Array [
                           Object {
-                            "prim": "DROP",
+                            "prim": "SWAP",
+                          },
+                          Object {
+                            "prim": "DUP",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "int": "2",
+                              },
+                            ],
+                            "prim": "DUG",
+                          },
+                          Object {
+                            "prim": "CAR",
+                          },
+                          Object {
+                            "prim": "CAR",
+                          },
+                          Object {
+                            "prim": "SENDER",
+                          },
+                          Object {
+                            "prim": "COMPARE",
+                          },
+                          Object {
+                            "prim": "EQ",
+                          },
+                          Object {
+                            "args": Array [
+                              Array [],
+                              Array [
+                                Object {
+                                  "args": Array [
+                                    Object {
+                                      "prim": "string",
+                                    },
+                                    Object {
+                                      "string": "FA2__Not_Admin",
+                                    },
+                                  ],
+                                  "prim": "PUSH",
+                                },
+                                Object {
+                                  "prim": "FAILWITH",
+                                },
+                              ],
+                            ],
+                            "prim": "IF",
+                          },
+                          Object {
+                            "prim": "SWAP",
+                          },
+                          Object {
+                            "prim": "DUP",
+                          },
+                          Object {
+                            "prim": "CAR",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "int": "2",
+                              },
+                            ],
+                            "prim": "DIG",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "int": "1",
+                              },
+                            ],
+                            "prim": "UPDATE",
+                          },
+                          Object {
+                            "args": Array [
+                              Object {
+                                "int": "1",
+                              },
+                            ],
+                            "prim": "UPDATE",
                           },
                         ],
                       ],

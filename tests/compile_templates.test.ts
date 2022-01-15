@@ -7,9 +7,9 @@ const verifyMichelsonOutput = (contract: string) => {
     const michelson = SmartML.compileContract(contract);
 
     // No errors expected
-    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
     // Check snapshot
     expect(michelson).toMatchSnapshot();
+    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
 };
 
 async function runTests() {
