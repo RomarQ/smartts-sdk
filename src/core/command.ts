@@ -32,10 +32,58 @@ class C_SetValue implements IStatement {
 }
 export const SetValue = (source: unknown, value: unknown, line = new LineInfo()) => new C_SetValue(source, value, line);
 
+class IfStatment implements IStatement {
+    #condition: IExpression;
+    #thenStatements: IStatement[];
+    #elseStatements: IStatement[];
+    #line: LineInfo;
+
+    constructor(
+        condition: IExpression,
+        line = new LineInfo(),
+        thenStatements?: IStatement[],
+        elseStatements?: IStatement[],
+    ) {
+        this.#condition = condition;
+        this.#thenStatements = thenStatements || [];
+        this.#elseStatements = elseStatements || [];
+        this.#line = line;
+    }
+
+    public Then(statements: IStatement[]) {
+        this.#thenStatements = statements;
+        return this;
+    }
+
+    public Else(statements: IStatement[]) {
+        this.#elseStatements = statements;
+        return this;
+    }
+
+    private ifBlock() {
+        return `(ifBlock ${this.#condition} (${this.#thenStatements.join(' ')}) ${this.#line})`;
+    }
+
+    private elseBlock() {
+        return `(elseBlock (${this.#elseStatements.join(' ')}))`;
+    }
+
+    [Symbol.toPrimitive]() {
+        let expression = this.ifBlock();
+        if (this.#elseStatements.length) {
+            expression = `${expression} ${this.elseBlock()}`;
+        }
+        return expression;
+    }
+}
+export const If = (condition: IExpression, thenStatements?: IStatement[], elseStatements?: IStatement[]) =>
+    new IfStatment(condition, new LineInfo(), thenStatements, elseStatements);
+
 const Commands = {
     DefineVar,
     Require,
     SetValue,
+    If,
 };
 
 export default Commands;

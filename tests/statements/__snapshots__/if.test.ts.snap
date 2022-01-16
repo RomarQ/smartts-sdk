@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test (If) statement With (Then) and (Else) - [chaining version] 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"if.test.ts\\" 64))
+            storage (literal (nat 1) (\\"if.test.ts\\" 65))
+            storage_type (())
+            messages ((ep1 True False False True (\\"if.test.ts\\" 67) ((ifBlock (ge (params (\\"if.test.ts\\" 67)) (literal (nat 5) (\\"if.test.ts\\" 67)) (\\"if.test.ts\\" 67)) ((set (data) (params (\\"if.test.ts\\" 67)) (\\"if.test.ts\\" 67))) (\\"if.test.ts\\" 67)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 67)) (\\"if.test.ts\\" 67)))))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"if.test.ts\\" 64))
+        )
+        "
+`;
+
+exports[`Test (If) statement With (Then) and (Else) - [chaining version] 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "nat",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "prim": "nat",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CAR",
+        },
+        Object {
+          "prim": "DUP",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "nat",
+            },
+            Object {
+              "int": "5",
+            },
+          ],
+          "prim": "PUSH",
+        },
+        Object {
+          "prim": "SWAP",
+        },
+        Object {
+          "prim": "COMPARE",
+        },
+        Object {
+          "prim": "GE",
+        },
+        Object {
+          "args": Array [
+            Array [],
+            Array [
+              Object {
+                "prim": "DROP",
+              },
+              Object {
+                "args": Array [
+                  Object {
+                    "prim": "nat",
+                  },
+                  Object {
+                    "int": "5",
+                  },
+                ],
+                "prim": "PUSH",
+              },
+            ],
+          ],
+          "prim": "IF",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test (If) statement With (Then) and (Else) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"if.test.ts\\" 45))
+            storage (literal (nat 1) (\\"if.test.ts\\" 46))
+            storage_type (())
+            messages ((ep1 True False False True (\\"if.test.ts\\" 48) ((ifBlock (ge (params (\\"if.test.ts\\" 50)) (literal (nat 5) (\\"if.test.ts\\" 50)) (\\"if.test.ts\\" 50)) ((set (data) (params (\\"if.test.ts\\" 50)) (\\"if.test.ts\\" 50))) (\\"if.test.ts\\" 50)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 50)) (\\"if.test.ts\\" 50)))))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"if.test.ts\\" 45))
+        )
+        "
+`;
+
+exports[`Test (If) statement With (Then) and (Else) 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "nat",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "prim": "nat",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CAR",
+        },
+        Object {
+          "prim": "DUP",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "nat",
+            },
+            Object {
+              "int": "5",
+            },
+          ],
+          "prim": "PUSH",
+        },
+        Object {
+          "prim": "SWAP",
+        },
+        Object {
+          "prim": "COMPARE",
+        },
+        Object {
+          "prim": "GE",
+        },
+        Object {
+          "args": Array [
+            Array [],
+            Array [
+              Object {
+                "prim": "DROP",
+              },
+              Object {
+                "args": Array [
+                  Object {
+                    "prim": "nat",
+                  },
+                  Object {
+                    "int": "5",
+                  },
+                ],
+                "prim": "PUSH",
+              },
+            ],
+          ],
+          "prim": "IF",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test (If) statement Without (Else) - [chaining version] 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"if.test.ts\\" 32))
+            storage (literal (nat 1) (\\"if.test.ts\\" 33))
+            storage_type (())
+            messages ((ep1 True False False True (\\"if.test.ts\\" 35) ((ifBlock (ge (params (\\"if.test.ts\\" 37)) (literal (nat 5) (\\"if.test.ts\\" 37)) (\\"if.test.ts\\" 37)) ((set (data) (params (\\"if.test.ts\\" 37)) (\\"if.test.ts\\" 37))) (\\"if.test.ts\\" 37)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"if.test.ts\\" 32))
+        )
+        "
+`;
+
+exports[`Test (If) statement Without (Else) - [chaining version] 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "nat",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "prim": "nat",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "UNPAIR",
+        },
+        Object {
+          "prim": "DUP",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "nat",
+            },
+            Object {
+              "int": "5",
+            },
+          ],
+          "prim": "PUSH",
+        },
+        Object {
+          "prim": "SWAP",
+        },
+        Object {
+          "prim": "COMPARE",
+        },
+        Object {
+          "prim": "GE",
+        },
+        Object {
+          "args": Array [
+            Array [
+              Object {
+                "prim": "SWAP",
+              },
+              Object {
+                "prim": "DROP",
+              },
+            ],
+            Array [
+              Object {
+                "prim": "DROP",
+              },
+            ],
+          ],
+          "prim": "IF",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test (If) statement Without (Else) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"if.test.ts\\" 19))
+            storage (literal (nat 1) (\\"if.test.ts\\" 20))
+            storage_type (())
+            messages ((ep1 True False False True (\\"if.test.ts\\" 22) ((ifBlock (ge (params (\\"if.test.ts\\" 24)) (literal (nat 5) (\\"if.test.ts\\" 24)) (\\"if.test.ts\\" 24)) ((set (data) (params (\\"if.test.ts\\" 24)) (\\"if.test.ts\\" 24))) (\\"if.test.ts\\" 24)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"if.test.ts\\" 19))
+        )
+        "
+`;
+
+exports[`Test (If) statement Without (Else) 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "nat",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "prim": "nat",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "UNPAIR",
+        },
+        Object {
+          "prim": "DUP",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "nat",
+            },
+            Object {
+              "int": "5",
+            },
+          ],
+          "prim": "PUSH",
+        },
+        Object {
+          "prim": "SWAP",
+        },
+        Object {
+          "prim": "COMPARE",
+        },
+        Object {
+          "prim": "GE",
+        },
+        Object {
+          "args": Array [
+            Array [
+              Object {
+                "prim": "SWAP",
+              },
+              Object {
+                "prim": "DROP",
+              },
+            ],
+            Array [
+              Object {
+                "prim": "DROP",
+              },
+            ],
+          ],
+          "prim": "IF",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;

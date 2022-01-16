@@ -1,5 +1,5 @@
 import { Contract, EntryPoint, GetSender } from '../../src/core';
-import { Require, SetValue } from '../../src/core/command';
+import { If, Require, SetValue } from '../../src/core/command';
 import { Layout } from '../../src/core/enums/layout';
 import { GetProperty, ContractStorage, Equal } from '../../src/core/expression';
 import { Address, BigMap, Bool, Record, String } from '../../src/core/literal';
@@ -32,6 +32,12 @@ const CommonTypes = {
         Layout.right_comb,
     ),
 };
+
+/**
+ * Common Expressions
+ */
+const FailIfSenderIsNotAdmin = () =>
+    Require(Equal(GetSender(), ContractStorage().config.administrator), String(FA2_Error.NOT_ADMIN));
 
 const FA2Contract = new Contract()
     .setStorageType(
@@ -69,19 +75,24 @@ const FA2Contract = new Contract()
     )
     .addEntrypoint(new EntryPoint('transfer'))
     .addEntrypoint(new EntryPoint('update_operators'))
-    .addEntrypoint(new EntryPoint('mint'))
+    .addEntrypoint(
+        new EntryPoint('mint').code(() => [
+            // Sender must be the administrator
+            FailIfSenderIsNotAdmin(),
+        ]),
+    )
     .addEntrypoint(
         new EntryPoint('pause').inputType(TBool).code((bool) => [
             // Sender must be the administrator
-            Require(Equal(GetSender(), ContractStorage().config.administrator), String(FA2_Error.NOT_ADMIN)),
+            FailIfSenderIsNotAdmin(),
             // Update paused state
             SetValue(ContractStorage().config.paused, bool),
         ]),
     )
     .addEntrypoint(
         new EntryPoint('set_admin').inputType(TAddress).code((address) => [
-            // Sender must be the current administrator
-            Require(Equal(GetSender(), ContractStorage().config.administrator), String(FA2_Error.NOT_ADMIN)),
+            // Sender must be the administrator
+            FailIfSenderIsNotAdmin(),
             // Update administrator address
             SetValue(GetProperty('administrator', GetProperty('config', ContractStorage())), address),
         ]),
