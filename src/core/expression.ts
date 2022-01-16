@@ -30,13 +30,19 @@ export class Expression implements IExpression {
         },
     };
 
-    toString() {
-        const atoms = `${this.name} ${this.args.map((arg) => arg.toString()).join(' ')}`;
-        return `(${atoms.trim()})`;
+    [Symbol.toPrimitive]() {
+        return `(${[this.name, ...this.args].join(' ')})`;
     }
 }
 
 export const GetLocal = (name: string, line = new LineInfo()) => new Expression('getLocal', `"${name}"`, line);
+
+export const ContractStorage = () => proxy(new Expression('data'));
+
+export const GetProperty = (attr: string, from: IExpression, line = new LineInfo()) =>
+    proxy(new Expression('attr', from, `"${attr}"`, line));
+
+// Binary Expressions
 
 export const Equal = (left: IExpression, right: IExpression, line = new LineInfo()) =>
     new Expression('eq', left, right, line);
@@ -56,21 +62,33 @@ export const LessThanOrEqual = (left: IExpression, right: IExpression, line = ne
 export const GreaterThanOrEqual = (left: IExpression, right: IExpression, line = new LineInfo()) =>
     new Expression('ge', left, right, line);
 
-export const ContractStorage = () => proxy(new Expression('data'));
+export const Add = (left: IExpression, right: IExpression, line = new LineInfo()) =>
+    new Expression('add', left, right, line);
 
-export const GetProperty = (attr: string, from: IExpression, line = new LineInfo()) =>
-    proxy(new Expression('attr', from, `"${attr}"`, line));
+export const Mul = (left: IExpression, right: IExpression, line = new LineInfo()) =>
+    new Expression('mul', left, right, line);
+
+export const Sub = (left: IExpression, right: IExpression, line = new LineInfo()) =>
+    new Expression('sub', left, right, line);
+
+export const Div = (left: IExpression, right: IExpression, line = new LineInfo()) =>
+    new Expression('truediv', left, right, line);
 
 const Expressions = {
     GetLocal,
+    ContractStorage,
+    GetProperty,
+    // Binary Expressions
     Equal,
     NotEqual,
     LessThan,
     GreaterThan,
     LessThanOrEqual,
     GreaterThanOrEqual,
-    ContractStorage,
-    GetProperty,
+    Add,
+    Mul,
+    Sub,
+    Div,
 };
 
 export default Expressions;

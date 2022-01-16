@@ -1,3 +1,4 @@
+import { Expression } from './expression';
 import Utils, { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { IStatement } from '../typings/statement';
@@ -76,14 +77,41 @@ class IfStatment implements IStatement {
         return expression;
     }
 }
-export const If = (condition: IExpression, thenStatements?: IStatement[], elseStatements?: IStatement[]) =>
-    new IfStatment(condition, new LineInfo(), thenStatements, elseStatements);
+export const If = (
+    condition: IExpression,
+    thenStatements?: IStatement[],
+    elseStatements?: IStatement[],
+    line = new LineInfo(),
+) => new IfStatment(condition, line, thenStatements, elseStatements);
+
+class ForEachStatement implements IStatement {
+    #list: IExpression;
+    #statements: IStatement[] = [];
+    #line: LineInfo;
+
+    constructor(list: IExpression, line = new LineInfo()) {
+        this.#list = list;
+        this.#line = line;
+    }
+
+    public Do(callback: (iterator: IExpression) => IStatement[]) {
+        const iterator = new Expression('iter', '"__ITERATOR__"', new LineInfo());
+        this.#statements = callback(iterator);
+        return this;
+    }
+
+    [Symbol.toPrimitive]() {
+        return `(forGroup "__ITERATOR__" ${this.#list} (${this.#statements.join(' ')}) ${this.#line})`;
+    }
+}
+export const ForEachOf = (list: IExpression, line = new LineInfo()) => new ForEachStatement(list, line);
 
 const Commands = {
     DefineVar,
     Require,
     SetValue,
     If,
+    ForEachOf,
 };
 
 export default Commands;

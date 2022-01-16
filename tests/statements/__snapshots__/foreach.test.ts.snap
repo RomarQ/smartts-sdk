@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test (ForEach) statement Sum values of a list 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"foreach.test.ts\\" 19))
+            storage (literal (nat 1) (\\"foreach.test.ts\\" 20))
+            storage_type (())
+            messages ((ep1 True False False True (\\"foreach.test.ts\\" 22) ((forGroup \\"__ITERATOR__\\" (params (\\"foreach.test.ts\\" 24)) ((set (data) (add (data) (iter \\"__ITERATOR__\\" (\\"foreach.test.ts\\" 24)) (\\"foreach.test.ts\\" 24)) (\\"foreach.test.ts\\" 24))) (\\"foreach.test.ts\\" 24)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"foreach.test.ts\\" 19))
+        )
+        "
+`;
+
+exports[`Test (ForEach) statement Sum values of a list 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "nat",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "args": Array [
+          Object {
+            "prim": "nat",
+          },
+        ],
+        "prim": "list",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "UNPAIR",
+        },
+        Object {
+          "prim": "DUP",
+        },
+        Object {
+          "args": Array [
+            Array [
+              Object {
+                "args": Array [
+                  Object {
+                    "int": "2",
+                  },
+                ],
+                "prim": "DIG",
+              },
+              Object {
+                "prim": "ADD",
+              },
+              Object {
+                "prim": "SWAP",
+              },
+            ],
+          ],
+          "prim": "ITER",
+        },
+        Object {
+          "prim": "DROP",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
