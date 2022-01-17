@@ -1,5 +1,6 @@
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
+import { IType } from '../typings/type';
 
 type ProxyedExpression = Expression & { [prop: string]: ProxyedExpression };
 /**
@@ -41,6 +42,11 @@ export const ContractStorage = () => proxy(new Expression('data'));
 
 export const GetProperty = (attr: string, from: IExpression, line = new LineInfo()) =>
     proxy(new Expression('attr', from, `"${attr}"`, line));
+
+// Typing
+
+export const SetType = (expr: IExpression, type: IType, line = new LineInfo()) =>
+    new Expression('set_type', expr, type, line);
 
 // Binary Expressions
 

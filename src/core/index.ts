@@ -1,7 +1,7 @@
 import type { ILiteral } from '../typings/literal';
 import type { IType } from '../typings/type';
 
-import { Expression } from './expression';
+import { Expression, SetType } from './expression';
 import { Mutez, Unit } from './literal';
 import Utils, { LineInfo } from '../misc/utils';
 import { IStatement } from '../typings/statement';
@@ -25,47 +25,57 @@ interface EntryPointOptions {
     lazyAndCodeless?: boolean;
 }
 export class EntryPoint {
-    options = {
+    #options = {
         mock: false,
         lazy: false,
         lazyAndCodeless: false,
     };
-    inType?: IType;
-    statements: IStatement[] = [];
+    #inType?: IType;
+    #statements: IStatement[] = [];
+    #name: string;
+    #line: LineInfo;
 
-    constructor(public name: string, public line = new LineInfo()) {}
+    constructor(name: string, line = new LineInfo()) {
+        this.#name = name;
+        this.#line = line;
+    }
 
-    config(options?: EntryPointOptions) {
+    public config(options?: EntryPointOptions) {
         if (options?.mock) {
-            this.options.mock = options.mock;
+            this.#options.mock = options.mock;
         }
         if (options?.lazy) {
-            this.options.lazy = options.lazy;
+            this.#options.lazy = options.lazy;
         }
         if (options?.lazyAndCodeless) {
-            this.options.lazyAndCodeless = options.lazyAndCodeless;
+            this.#options.lazyAndCodeless = options.lazyAndCodeless;
         }
         return this;
     }
 
-    inputType(type: IType) {
-        this.inType = type;
+    public inputType(type: IType) {
+        this.#inType = type;
         return this;
     }
 
-    code(callback: (arg: IExpression) => IStatement[]) {
-        this.statements = callback(new Expression('params', new LineInfo()));
+    public code(callback: (arg: IExpression) => IStatement[]) {
+        const param = new Expression('params', new LineInfo());
+        if (this.#inType) {
+            // Add type annotation if an input type was provided
+            this.#statements = [SetType(param, this.#inType)];
+        }
+        this.#statements = [...this.#statements, ...callback(param)];
         return this;
     }
 
-    toString() {
-        const notMock = Utils.capitalizeBoolean(!this.options.mock);
-        const isLazy = Utils.capitalizeBoolean(this.options.lazy);
-        const isLazyAndCodeless = Utils.capitalizeBoolean(this.options.lazyAndCodeless);
-        const hasParams = Utils.capitalizeBoolean(!!this.inType);
-        return `(${this.name} ${notMock} ${isLazy} ${isLazyAndCodeless} ${hasParams} ${
-            this.line
-        } (${this.statements.join(' ')}))`;
+    [Symbol.toPrimitive]() {
+        const notMock = Utils.capitalizeBoolean(!this.#options.mock);
+        const isLazy = Utils.capitalizeBoolean(this.#options.lazy);
+        const isLazyAndCodeless = Utils.capitalizeBoolean(this.#options.lazyAndCodeless);
+        const hasParams = Utils.capitalizeBoolean(!!this.#inType);
+        return `(${this.#name} ${notMock} ${isLazy} ${isLazyAndCodeless} ${hasParams} ${
+            this.#line
+        } (${this.#statements.join(' ')}))`;
     }
 }
 
@@ -130,7 +140,7 @@ export class Contract {
             template_id (static_id 0 ${this.line})
             storage ${this.#storage.toString()}
             storage_type (${this.#storage_type ? this.#storage_type.toString() : '()'})
-            messages (${this.#entries.map((entry) => entry.toString()).join(' ')})
+            messages (${this.#entries.join(' ')})
             flags (${this.#options.flags.map((flag) => flag.toString())})
             privates ()
             views ()

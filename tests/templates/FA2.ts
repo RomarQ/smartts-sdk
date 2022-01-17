@@ -1,5 +1,5 @@
 import { Contract, EntryPoint, GetSender } from '../../src/core';
-import { If, Require, SetValue } from '../../src/core/command';
+import { Require, SetValue } from '../../src/core/command';
 import { Layout } from '../../src/core/enums/layout';
 import { GetProperty, ContractStorage, Equal } from '../../src/core/expression';
 import { Address, BigMap, Bool, Record, String } from '../../src/core/literal';
@@ -97,6 +97,6 @@ const FA2Contract = new Contract()
             SetValue(GetProperty('administrator', GetProperty('config', ContractStorage())), address),
         ]),
     )
-    .addEntrypoint(new EntryPoint('update_metadata').code(() => []));
+    .addEntrypoint(new EntryPoint('update_metadata').inputType(TMap(TString, TBytes)).code(() => []));
 
 export default FA2Contract;
