@@ -5,4 +5,6 @@ module.exports = {
     },
     testRegex: '.*.test\\.ts$',
     moduleFileExtensions: ['ts', 'js'],
+    // Exclude coverage on generated code
+    coveragePathIgnorePatterns: ['<rootDir>/src/smartml/smartML.js'],
 };
