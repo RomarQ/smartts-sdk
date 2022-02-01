@@ -152,8 +152,8 @@ export class Contract {
     }
 }
 
-export { default as Command } from './command';
-export { default as Expression } from './expression';
-export { default as Type } from './type';
-export { default as Literal } from './literal';
+export * from './command';
+export * from './expression';
+export * from './type';
+export * from './literal';
 export * from './blockchain_operations';

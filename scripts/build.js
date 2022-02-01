@@ -13,6 +13,7 @@ generateBundle([
     './src/core/literal/index.ts',
     './src/core/command.ts',
     './src/core/expression.ts',
+    './src/core/blockchain_operations.ts',
 ]);
 
 /**
