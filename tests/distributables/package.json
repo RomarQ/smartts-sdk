@@ -1,0 +1,10 @@
+{
+  "ame": "commonjs-dist",
+  "private": true,
+  "scripts": {
+    "test": "node ./commonjs.js"
+  },
+  "dependencies": {
+    "@tezwell/smartts-sdk": "../../dist"
+  }
+}
