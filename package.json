@@ -1,11 +1,13 @@
 {
     "name": "@tezwell/smartts-sdk",
-    "version": "0.1.20",
-    "description": "SmartPy SDK",
+    "version": "0.1.21",
+    "description": "SmartTS SDK is a metaprogramming framework for building Tezos smart contracts from Javascript.",
     "keywords": [
         "Tezos",
         "SmartPy",
-        "Smart Contract"
+        "Smart Contract",
+        "Compiler",
+        "Michelson"
     ],
     "author": {
         "name": "Rodrigo Quelhas",
@@ -15,16 +17,31 @@
     "publishConfig": {
         "access": "public"
     },
-    "main": "index.js",
-    "module": "index.js",
     "exports": {
-        ".": "./index.js",
-        "./core": "./core/index.js",
-        "./smartml": "./smartml/index.js",
-        "./core/expression": "./core/expression.js",
-        "./core/literal": "./core/literal.js",
-        "./core/command": "./core/command.js",
-        "./core/type": "./core/type.js"
+        ".": {
+            "require": "./index.cjs",
+            "import": "./index.mjs"
+        },
+        "./core/smartml": {
+            "require": "./smartml/index.cjs",
+            "import": "./smartml/index.mjs"
+        },
+        "./core/literal": {
+            "require": "./core/literal/index.cjs",
+            "import": "./core/literal/index.mjs"
+        },
+        "./core/type": {
+            "require": "./core/type/index.cjs",
+            "import": "./core/type/index.mjs"
+        },
+        "./core/expression": {
+            "require": "./core/expression.cjs",
+            "import": "./core/expression.mjs"
+        },
+        "./core/command": {
+            "require": "./core/command.cjs",
+            "import": "./core/command.mjs"
+        }
     },
     "scripts": {
         "build": "node --max_old_space_size=8192 scripts/build.js && tsc --build",
@@ -38,14 +55,14 @@
         "@tezwell/tezos-bls12-381": "1.2.2",
         "@tezwell/timelock": "0.0.9",
         "@types/bs58check": "2.1.0",
-        "@types/jest": "27.0.3",
-        "@typescript-eslint/eslint-plugin": "5.7.0",
-        "@typescript-eslint/parser": "5.7.0",
+        "@types/jest": "27.4.0",
+        "@typescript-eslint/eslint-plugin": "5.10.2",
+        "@typescript-eslint/parser": "5.10.2",
         "bs58check": "2.1.2",
         "buffer": "6.0.3",
         "coveralls": "3.1.1",
-        "esbuild": "0.14.3",
-        "eslint": "8.4.1",
+        "esbuild": "0.14.14",
+        "eslint": "8.8.0",
         "eslint-config-prettier": "8.3.0",
         "eslint-plugin-prettier": "4.0.0",
         "events": "3.3.0",

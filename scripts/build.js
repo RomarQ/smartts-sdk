@@ -9,8 +9,8 @@ generateBundle([
     './src/index.ts',
     './src/smartml/index.ts',
     './src/core/index.ts',
-    './src/core/type.ts',
-    './src/core/literal.ts',
+    './src/core/type/index.ts',
+    './src/core/literal/index.ts',
     './src/core/command.ts',
     './src/core/expression.ts',
 ]);
@@ -19,27 +19,22 @@ generateBundle([
  * Produces the js bundle
  */
 function generateBundle(entryPoints) {
-    esbuild
-        .build({
-            entryPoints,
-            bundle: true,
-            minify: true,
-            outdir: DIST_FOLDER,
-            platform: 'browser',
-            format: 'cjs',
-        })
-        .then((result) => {
-            console.log();
-            console.log('[SUCCESS]:', result);
-            console.log();
-        })
-        .catch((e) => {
-            console.log();
-            console.log('[FAIL]:', 'Could not produce bundle :(');
-            console.log();
-            console.error(JSON.stringify(e, null, 4));
-            process.exit(1);
-        });
+    esbuild.buildSync({
+        entryPoints,
+        bundle: true,
+        outdir: DIST_FOLDER,
+        platform: 'browser',
+        format: 'esm',
+        outExtension: { '.js': '.mjs' },
+    });
+    esbuild.buildSync({
+        entryPoints,
+        bundle: true,
+        outdir: DIST_FOLDER,
+        platform: 'browser',
+        format: 'cjs',
+        outExtension: { '.js': '.cjs' },
+    });
 }
 
 /**

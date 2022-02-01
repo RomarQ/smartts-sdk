@@ -1,7 +1,7 @@
-import type { IType } from '../typings/type';
-import type { ILiteral } from '../typings/literal';
+import type { IType } from '../../typings/type';
+import type { ILiteral } from '../../typings/literal';
 
-import { capitalizeBoolean, LineInfo } from '../misc/utils';
+import { capitalizeBoolean, LineInfo } from '../../misc/utils';
 import {
     TNat,
     TString,
@@ -19,10 +19,10 @@ import {
     TRecord,
     TMap,
     TBigMap,
-} from './type';
-import { Prim } from './enums/prim';
-import { IExpression, IExpressionKind } from '../typings/expression';
-import { Layout } from './enums/layout';
+} from '../type';
+import { Prim } from '../enums/prim';
+import { IExpression, IExpressionKind } from '../../typings/expression';
+import { Layout } from '../enums/layout';
 
 class Literal implements ILiteral {
     _isLiteral = true as const;

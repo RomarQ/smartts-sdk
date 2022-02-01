@@ -1,7 +1,7 @@
-import { ILayout } from '../typings/literal';
-import { IType } from '../typings/type';
-import { Layout } from './enums/layout';
-import { Prim, SmartPyAtom } from './enums/prim';
+import { ILayout } from '../../typings/literal';
+import { IType } from '../../typings/type';
+import { Layout } from '../enums/layout';
+import { Prim, SmartPyAtom } from '../enums/prim';
 
 /**
  * @description All Type classes must extend this class. It identifies Type classes.
