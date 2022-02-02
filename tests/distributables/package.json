@@ -1,8 +1,8 @@
 {
-  "ame": "commonjs-dist",
   "private": true,
   "scripts": {
-    "test": "node ./commonjs.js"
+    "test-cjs": "node ./commonjs.cjs",
+    "test-esm": "node ./esm.mjs"
   },
   "dependencies": {
     "@tezwell/smartts-sdk": "../../dist"
