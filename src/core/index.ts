@@ -138,10 +138,10 @@ export class Contract {
         return `
         (
             template_id (static_id 0 ${this.line})
-            storage ${this.#storage.toString()}
-            storage_type (${this.#storage_type ? this.#storage_type.toString() : '()'})
+            storage ${this.#storage}
+            storage_type (${this.#storage_type || '()'})
             messages (${this.#entries.join(' ')})
-            flags (${this.#options.flags.map((flag) => flag.toString())})
+            flags (${this.#options.flags.join(' ')})
             privates ()
             views ()
             entry_points_layout ()

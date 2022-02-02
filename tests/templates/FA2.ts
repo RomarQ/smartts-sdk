@@ -3,7 +3,7 @@ import { Require, SetValue } from '../../src/core/command';
 import { Layout } from '../../src/core/enums/layout';
 import { GetProperty, ContractStorage, Equal } from '../../src/core/expression';
 import { Address, BigMap, Bool, Record, String } from '../../src/core/literal';
-import { TAddress, TBigMap, TBool, TBytes, TMap, TNat, TRecord, TString, TTuple, TUnit } from '../../src/core/type';
+import { TAddress, TBig_map, TBool, TBytes, TMap, TNat, TRecord, TString, TPair, TUnit } from '../../src/core/type';
 
 /**
  * Error Codes
@@ -16,18 +16,18 @@ enum FA2_Error {
  * Common Types
  */
 const CommonTypes = {
-    LedgerKey: TTuple(TAddress, TNat),
+    LedgerKey: TPair(TAddress(), TNat()),
     LedgerValue: TRecord(
         {
-            balance: TNat,
+            balance: TNat(),
         },
         Layout.right_comb,
     ),
-    OperatorKey: TRecord({ operator: TAddress, owner: TAddress, token_id: TNat }, Layout.right_comb),
+    OperatorKey: TRecord({ operator: TAddress(), owner: TAddress(), token_id: TNat() }, Layout.right_comb),
     TokenMetadata: TRecord(
         {
-            token_id: TNat,
-            token_info: TMap(TString, TBytes),
+            token_id: TNat(),
+            token_info: TMap(TString(), TBytes()),
         },
         Layout.right_comb,
     ),
@@ -44,16 +44,16 @@ const FA2Contract = new Contract()
         TRecord(
             {
                 config: TRecord({
-                    administrator: TAddress,
-                    paused: TBool,
+                    administrator: TAddress(),
+                    paused: TBool(),
                 }),
                 assets: TRecord({
-                    ledger: TBigMap(CommonTypes.LedgerKey, CommonTypes.LedgerValue),
-                    operators: TBigMap(CommonTypes.OperatorKey, TUnit),
-                    token_metadata: TBigMap(TNat, CommonTypes.TokenMetadata),
-                    token_total_supply: TBigMap(TNat, TNat),
+                    ledger: TBig_map(CommonTypes.LedgerKey, CommonTypes.LedgerValue),
+                    operators: TBig_map(CommonTypes.OperatorKey, TUnit()),
+                    token_metadata: TBig_map(TNat(), CommonTypes.TokenMetadata),
+                    token_total_supply: TBig_map(TNat(), TNat()),
                 }),
-                metadata: TBigMap(TString, TBytes),
+                metadata: TBig_map(TString(), TBytes()),
             },
             Layout.right_comb,
         ),
@@ -66,9 +66,9 @@ const FA2Contract = new Contract()
             }),
             assets: Record({
                 ledger: BigMap([], CommonTypes.LedgerKey, CommonTypes.LedgerValue),
-                operators: BigMap([], CommonTypes.OperatorKey, TUnit),
-                token_metadata: BigMap([], TNat, CommonTypes.TokenMetadata),
-                token_total_supply: BigMap([], TNat, TNat),
+                operators: BigMap([], CommonTypes.OperatorKey, TUnit()),
+                token_metadata: BigMap([], TNat(), CommonTypes.TokenMetadata),
+                token_total_supply: BigMap([], TNat(), TNat()),
             }),
             metadata: BigMap(),
         }),
@@ -82,7 +82,7 @@ const FA2Contract = new Contract()
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('pause').inputType(TBool).code((bool) => [
+        new EntryPoint('pause').inputType(TBool()).code((bool) => [
             // Sender must be the administrator
             FailIfSenderIsNotAdmin(),
             // Update paused state
@@ -90,13 +90,13 @@ const FA2Contract = new Contract()
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('set_admin').inputType(TAddress).code((address) => [
+        new EntryPoint('set_admin').inputType(TAddress()).code((address) => [
             // Sender must be the administrator
             FailIfSenderIsNotAdmin(),
             // Update administrator address
             SetValue(GetProperty('administrator', GetProperty('config', ContractStorage())), address),
         ]),
     )
-    .addEntrypoint(new EntryPoint('update_metadata').inputType(TMap(TString, TBytes)).code(() => []));
+    .addEntrypoint(new EntryPoint('update_metadata').inputType(TMap(TString(), TBytes())).code(() => []));
 
 export default FA2Contract;

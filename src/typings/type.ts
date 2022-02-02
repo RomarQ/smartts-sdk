@@ -1,3 +1,5 @@
 import { IToString } from './shared';
 
-export type IType = IToString;
+export interface IType {
+    toString: () => string;
+}
