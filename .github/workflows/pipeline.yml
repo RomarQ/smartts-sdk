@@ -40,7 +40,8 @@ jobs:
           cp package.json dist
           cd tests/distributables
           yarn
-          yarn test
+          yarn test-esm
+          yarn test-cjs
 
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@master
