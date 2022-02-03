@@ -24,9 +24,12 @@ import {
     TOption,
     TPair,
     TRecord,
+    TSapling_state,
+    TSapling_transaction,
     TSet,
     TSignature,
     TString,
+    TTicket,
     TTimestamp,
     TUnit,
 } from '../../src/core/type';
@@ -83,10 +86,10 @@ describe('Test Types', () => {
     verifyType('map', TMap(TNat(), TNat()));
     verifyType('big_map', TBig_map(TNat(), TNat()));
     verifyType('lambda', TLambda(TNat(), TUnit()));
-    // TTicket,
+    verifyType('ticket', TTicket(TNat()));
     verifyType('contract', TContract(TNat()));
-    // TSapling_state,
-    // TSapling_transaction,
+    verifyType('sapling_state', TSapling_state(8));
+    verifyType('sapling_transaction', TSapling_transaction(16));
     // Artificial Types
     verifyType(
         'record (right comb)',

@@ -81,7 +81,10 @@ export const TBig_map = (keyType: IType, valueType: IType) =>
     new ContainerType(SmartPyAtom.bigmap, [keyType, valueType]);
 export const TPair = (left: IType, right: IType) => new ContainerType(SmartPyAtom.tuple, [left, right]);
 export const TLambda = (left: IType, right: IType) => new ContainerType(Prim.lambda, [left, right]);
+export const TTicket = (innerType: IType) => new ContainerType(Prim.ticket, [innerType]);
 export const TContract = (innerType: IType) => new ContainerType(Prim.contract, [innerType]);
+export const TSapling_state = (memo: number) => new ContainerType(Prim.sapling_state, [memo]);
+export const TSapling_transaction = (memo: number) => new ContainerType(Prim.sapling_transaction, [memo]);
 // Artificial Types
 export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) => new Type_Record(fields, layout);
 
@@ -114,10 +117,10 @@ const Types = {
     TMap,
     TBig_map,
     TLambda,
-    // TTicket,
+    TTicket,
     TContract,
-    // TSapling_state,
-    // TSapling_transaction,
+    TSapling_state,
+    TSapling_transaction,
     // Artificial Types
     TRecord,
     // TVariant,

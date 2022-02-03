@@ -5,7 +5,7 @@ exports[`Test contract templates FA2.ts 1`] = `
         (
             template_id (static_id 0 (\\"FA2.ts\\" 42))
             storage (record (\\"FA2.ts\\" 62) (config (record (\\"FA2.ts\\" 63) (administrator (literal (address tz1) (\\"FA2.ts\\" 64))) (paused (literal (bool False) (\\"FA2.ts\\" 65))))) (assets (record (\\"FA2.ts\\" 67) (ledger (big_map (\\"FA2.ts\\" 68) )) (operators (big_map (\\"FA2.ts\\" 69) )) (token_metadata (big_map (\\"FA2.ts\\" 70) )) (token_total_supply (big_map (\\"FA2.ts\\" 71) )))) (metadata (big_map (\\"FA2.ts\\" 73) )))
-            storage_type ((record ((config (record ((administrator \\"address\\") (paused \\"bool\\")) (Some ((\\"administrator\\") (\\"paused\\"))))) (assets (record ((ledger (bigmap (tuple \\"address\\" \\"nat\\") (record ((balance \\"nat\\")) (Some Right)))) (operators (bigmap (record ((operator \\"address\\") (owner \\"address\\") (token_id \\"nat\\")) (Some Right)) \\"unit\\")) (token_metadata (bigmap \\"nat\\" (record ((token_id \\"nat\\") (token_info (map \\"string\\" \\"bytes\\"))) (Some Right)))) (token_total_supply (bigmap \\"nat\\" \\"nat\\"))) (Some ((((\\"ledger\\") (\\"operators\\")) (\\"token_metadata\\")) (\\"token_total_supply\\"))))) (metadata (bigmap \\"string\\" \\"bytes\\"))) (Some Right)))
+            storage_type ((record ((config (record ((administrator \\"address\\") (paused \\"bool\\")) (Some ((\\"administrator\\") (\\"paused\\"))))) (assets (record ((ledger (bigmap (tuple \\"address\\" \\"nat\\") (record ((balance \\"nat\\")) (Some Right)))) (operators (bigmap (record ((operator \\"address\\") (owner \\"address\\") (token_id \\"nat\\")) (Some Right)) \\"unit\\")) (token_metadata (bigmap \\"nat\\" (record ((token_id \\"nat\\") (token_info (map \\"string\\" \\"bytes\\"))) (Some Right)))) (token_total_supply (bigmap \\"nat\\" \\"nat\\"))) (Some ((\\"ledger\\") ((\\"operators\\") ((\\"token_metadata\\") (\\"token_total_supply\\"))))))) (metadata (bigmap \\"string\\" \\"bytes\\"))) (Some Right)))
             messages ((transfer True False False False (\\"FA2.ts\\" 76) ()) (update_operators True False False False (\\"FA2.ts\\" 77) ()) (mint True False False False (\\"FA2.ts\\" 79) ((verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 26)) \\"administrator\\" (\\"expression.ts\\" 26)) (\\"FA2.ts\\" 79)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 79)) (\\"FA2.ts\\" 79)))) (pause True False False True (\\"FA2.ts\\" 85) ((set_type (params (\\"FA2.ts\\" 85)) \\"bool\\" (\\"FA2.ts\\" 85)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 26)) \\"administrator\\" (\\"expression.ts\\" 26)) (\\"FA2.ts\\" 85)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 85)) (\\"FA2.ts\\" 85)) (set (attr (attr (data) \\"config\\" (\\"expression.ts\\" 26)) \\"paused\\" (\\"expression.ts\\" 26)) (params (\\"FA2.ts\\" 85)) (\\"FA2.ts\\" 85)))) (set_admin True False False True (\\"FA2.ts\\" 93) ((set_type (params (\\"FA2.ts\\" 93)) \\"address\\" (\\"FA2.ts\\" 93)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 26)) \\"administrator\\" (\\"expression.ts\\" 26)) (\\"FA2.ts\\" 93)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 93)) (\\"FA2.ts\\" 93)) (set (attr (attr (data) \\"config\\" (\\"FA2.ts\\" 93)) \\"administrator\\" (\\"FA2.ts\\" 93)) (params (\\"FA2.ts\\" 93)) (\\"FA2.ts\\" 93)))) (update_metadata True False False True (\\"FA2.ts\\" 100) ((set_type (params (\\"FA2.ts\\" 100)) (map \\"string\\" \\"bytes\\") (\\"FA2.ts\\" 100)))))
             flags ()
             privates ()
@@ -51,66 +51,116 @@ Array [
                 ],
                 "args": Array [
                   Object {
+                    "annots": Array [
+                      "%ledger",
+                    ],
                     "args": Array [
                       Object {
                         "args": Array [
                           Object {
-                            "annots": Array [
-                              "%ledger",
-                            ],
+                            "prim": "address",
+                          },
+                          Object {
+                            "prim": "nat",
+                          },
+                        ],
+                        "prim": "pair",
+                      },
+                      Object {
+                        "prim": "nat",
+                      },
+                    ],
+                    "prim": "big_map",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "annots": Array [
+                          "%operators",
+                        ],
+                        "args": Array [
+                          Object {
                             "args": Array [
+                              Object {
+                                "annots": Array [
+                                  "%operator",
+                                ],
+                                "prim": "address",
+                              },
                               Object {
                                 "args": Array [
                                   Object {
+                                    "annots": Array [
+                                      "%owner",
+                                    ],
                                     "prim": "address",
                                   },
                                   Object {
+                                    "annots": Array [
+                                      "%token_id",
+                                    ],
                                     "prim": "nat",
                                   },
                                 ],
                                 "prim": "pair",
                               },
+                            ],
+                            "prim": "pair",
+                          },
+                          Object {
+                            "prim": "unit",
+                          },
+                        ],
+                        "prim": "big_map",
+                      },
+                      Object {
+                        "args": Array [
+                          Object {
+                            "annots": Array [
+                              "%token_metadata",
+                            ],
+                            "args": Array [
                               Object {
                                 "prim": "nat",
+                              },
+                              Object {
+                                "args": Array [
+                                  Object {
+                                    "annots": Array [
+                                      "%token_id",
+                                    ],
+                                    "prim": "nat",
+                                  },
+                                  Object {
+                                    "annots": Array [
+                                      "%token_info",
+                                    ],
+                                    "args": Array [
+                                      Object {
+                                        "prim": "string",
+                                      },
+                                      Object {
+                                        "prim": "bytes",
+                                      },
+                                    ],
+                                    "prim": "map",
+                                  },
+                                ],
+                                "prim": "pair",
                               },
                             ],
                             "prim": "big_map",
                           },
                           Object {
                             "annots": Array [
-                              "%operators",
+                              "%token_total_supply",
                             ],
                             "args": Array [
                               Object {
-                                "args": Array [
-                                  Object {
-                                    "annots": Array [
-                                      "%operator",
-                                    ],
-                                    "prim": "address",
-                                  },
-                                  Object {
-                                    "args": Array [
-                                      Object {
-                                        "annots": Array [
-                                          "%owner",
-                                        ],
-                                        "prim": "address",
-                                      },
-                                      Object {
-                                        "annots": Array [
-                                          "%token_id",
-                                        ],
-                                        "prim": "nat",
-                                      },
-                                    ],
-                                    "prim": "pair",
-                                  },
-                                ],
-                                "prim": "pair",
+                                "prim": "nat",
                               },
                               Object {
-                                "prim": "unit",
+                                "prim": "nat",
                               },
                             ],
                             "prim": "big_map",
@@ -118,58 +168,8 @@ Array [
                         ],
                         "prim": "pair",
                       },
-                      Object {
-                        "annots": Array [
-                          "%token_metadata",
-                        ],
-                        "args": Array [
-                          Object {
-                            "prim": "nat",
-                          },
-                          Object {
-                            "args": Array [
-                              Object {
-                                "annots": Array [
-                                  "%token_id",
-                                ],
-                                "prim": "nat",
-                              },
-                              Object {
-                                "annots": Array [
-                                  "%token_info",
-                                ],
-                                "args": Array [
-                                  Object {
-                                    "prim": "string",
-                                  },
-                                  Object {
-                                    "prim": "bytes",
-                                  },
-                                ],
-                                "prim": "map",
-                              },
-                            ],
-                            "prim": "pair",
-                          },
-                        ],
-                        "prim": "big_map",
-                      },
                     ],
                     "prim": "pair",
-                  },
-                  Object {
-                    "annots": Array [
-                      "%token_total_supply",
-                    ],
-                    "args": Array [
-                      Object {
-                        "prim": "nat",
-                      },
-                      Object {
-                        "prim": "nat",
-                      },
-                    ],
-                    "prim": "big_map",
                   },
                 ],
                 "prim": "pair",
