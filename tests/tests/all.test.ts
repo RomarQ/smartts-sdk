@@ -10,9 +10,11 @@ import {
     TBool,
     TBytes,
     TChain_id,
+    TContract,
     TInt,
     TKey,
     TKey_hash,
+    TLambda,
     TList,
     TMap,
     TMutez,
@@ -21,6 +23,7 @@ import {
     TOperation,
     TOption,
     TPair,
+    TRecord,
     TSet,
     TSignature,
     TString,
@@ -32,10 +35,12 @@ import { IType } from '../../src/typings/type';
 const verifyMichelsonOutput = (contract: string) => {
     const michelson = smartML.compileContract(contract);
 
-    // No errors expected
-    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
     // Check snapshot
     expect(michelson).toMatchSnapshot();
+
+    // No errors expected
+    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
+    expect(JSON.stringify(michelson).includes('error')).toBeFalsy();
 };
 
 const verifyType = (testName: string, type: IType) => {
@@ -77,4 +82,30 @@ describe('Test Types', () => {
     verifyType('option', TPair(TNat(), TNat()));
     verifyType('map', TMap(TNat(), TNat()));
     verifyType('big_map', TBig_map(TNat(), TNat()));
+    verifyType('lambda', TLambda(TNat(), TUnit()));
+    // TTicket,
+    verifyType('contract', TContract(TNat()));
+    // TSapling_state,
+    // TSapling_transaction,
+    // Artificial Types
+    verifyType(
+        'record (right comb)',
+        TRecord({
+            field1: TNat(),
+            field2: TUnit(),
+            field3: TString(),
+        }),
+    );
+    verifyType(
+        'record (left comb)',
+        TRecord(
+            {
+                field1: TNat(),
+                field2: TUnit(),
+                field3: TString(),
+            },
+            [['field1', 'field2'], 'field3'],
+        ),
+    );
+    // TVariant,
 });

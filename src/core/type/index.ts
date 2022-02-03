@@ -1,3 +1,4 @@
+import { composeRightCombLayout, parenthesis } from '../../misc/utils';
 import { ILayout } from '../../typings/literal';
 import { IType } from '../../typings/type';
 import { Layout } from '../enums/layout';
@@ -20,20 +21,20 @@ export class ContainerType implements IType {
 }
 
 export class Type_Record implements IType {
-    layout: ILayout | Layout;
+    private layout: ILayout | Layout;
     constructor(public fields: Record<string, IType>, layout?: ILayout | Layout) {
-        this.layout = layout || Object.keys(fields);
+        this.layout = layout || composeRightCombLayout(Object.keys(fields));
     }
 
     private translateLayout = (layout: ILayout | Layout): string => {
-        const normalizeTuple = (elements: ILayout): string =>
-            elements.reduce<string>((pv, cv) => {
-                if (Array.isArray(cv)) {
-                    return `(${[pv, normalizeTuple(cv)].join(' ')})`;
-                }
-                const field = `("${cv}")`;
-                return !!pv ? `(${pv} ${field})` : field;
-            }, '');
+        const normalizeTuple = (layout: string | ILayout): string => {
+            if (typeof layout === 'string') {
+                return `("${layout}")`;
+            }
+            const [left, right] = layout;
+            return parenthesis([normalizeTuple(left), normalizeTuple(right)].join(' '));
+        };
+
         if (Array.isArray(layout)) {
             return layout.length ? `(Some ${normalizeTuple(layout)})` : 'None';
         }
@@ -78,7 +79,9 @@ export const TOption = (innerType: IType) => new ContainerType(Prim.option, [inn
 export const TMap = (keyType: IType, valueType: IType) => new ContainerType(Prim.map, [keyType, valueType]);
 export const TBig_map = (keyType: IType, valueType: IType) =>
     new ContainerType(SmartPyAtom.bigmap, [keyType, valueType]);
-export const TPair = (...types: IType[]) => new ContainerType(SmartPyAtom.tuple, types);
+export const TPair = (left: IType, right: IType) => new ContainerType(SmartPyAtom.tuple, [left, right]);
+export const TLambda = (left: IType, right: IType) => new ContainerType(Prim.lambda, [left, right]);
+export const TContract = (innerType: IType) => new ContainerType(Prim.contract, [innerType]);
 // Artificial Types
 export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) => new Type_Record(fields, layout);
 
@@ -110,9 +113,9 @@ const Types = {
     TPair,
     TMap,
     TBig_map,
-    // TLambda,
+    TLambda,
     // TTicket,
-    // TContract,
+    TContract,
     // TSapling_state,
     // TSapling_transaction,
     // Artificial Types

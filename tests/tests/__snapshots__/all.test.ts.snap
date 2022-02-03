@@ -3,16 +3,16 @@
 exports[`Test Types addres 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"address\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"address\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -65,16 +65,16 @@ Array [
 exports[`Test Types big_map 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) (bigmap \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (bigmap \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -135,16 +135,16 @@ Array [
 exports[`Test Types bls12_381_fr 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"bls12_381_fr\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"bls12_381_fr\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -197,16 +197,16 @@ Array [
 exports[`Test Types bls12_381_g1 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"bls12_381_g1\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"bls12_381_g1\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -259,16 +259,16 @@ Array [
 exports[`Test Types bls12_381_g2 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"bls12_381_g2\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"bls12_381_g2\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -321,16 +321,16 @@ Array [
 exports[`Test Types bool 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"bool\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"bool\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -383,16 +383,16 @@ Array [
 exports[`Test Types bytes 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"bytes\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"bytes\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -445,16 +445,16 @@ Array [
 exports[`Test Types chain_id 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"chain_id\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"chain_id\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -504,19 +504,86 @@ Array [
 ]
 `;
 
-exports[`Test Types int 1`] = `
+exports[`Test Types contract 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"int\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (contract \\"nat\\") (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
+        )
+        "
+`;
+
+exports[`Test Types contract 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "unit",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "args": Array [
+          Object {
+            "prim": "nat",
+          },
+        ],
+        "prim": "contract",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CDR",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test Types int 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"int\\" (\\"all.test.ts\\" 51)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -569,16 +636,16 @@ Array [
 exports[`Test Types key 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"key\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"key\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -631,16 +698,16 @@ Array [
 exports[`Test Types key_hash 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"key_hash\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"key_hash\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -690,19 +757,89 @@ Array [
 ]
 `;
 
-exports[`Test Types list 1`] = `
+exports[`Test Types lambda 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) (list \\"nat\\") (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (lambda \\"nat\\" \\"unit\\") (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
+        )
+        "
+`;
+
+exports[`Test Types lambda 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "unit",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "args": Array [
+          Object {
+            "prim": "nat",
+          },
+          Object {
+            "prim": "unit",
+          },
+        ],
+        "prim": "lambda",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CDR",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test Types list 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (list \\"nat\\") (\\"all.test.ts\\" 51)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -760,16 +897,16 @@ Array [
 exports[`Test Types map 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) (map \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (map \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -830,16 +967,16 @@ Array [
 exports[`Test Types mutez 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"mutez\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"mutez\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -892,16 +1029,16 @@ Array [
 exports[`Test Types nat 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"nat\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"nat\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -954,16 +1091,16 @@ Array [
 exports[`Test Types never 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"never\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"never\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -1016,16 +1153,16 @@ Array [
 exports[`Test Types operation 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"operation\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"operation\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -1078,16 +1215,16 @@ Array [
 exports[`Test Types option 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) (option \\"nat\\") (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (option \\"nat\\") (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -1145,16 +1282,16 @@ Array [
 exports[`Test Types option 3`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) (tuple \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (tuple \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -1212,19 +1349,193 @@ Array [
 ]
 `;
 
-exports[`Test Types set 1`] = `
+exports[`Test Types record (left comb) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) (set \\"nat\\") (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (record ((field1 \\"nat\\") (field2 \\"unit\\") (field3 \\"string\\")) (Some (((\\"field1\\") (\\"field2\\")) (\\"field3\\")))) (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
+        )
+        "
+`;
+
+exports[`Test Types record (left comb) 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "unit",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "annots": Array [
+                  "%field1",
+                ],
+                "prim": "nat",
+              },
+              Object {
+                "annots": Array [
+                  "%field2",
+                ],
+                "prim": "unit",
+              },
+            ],
+            "prim": "pair",
+          },
+          Object {
+            "annots": Array [
+              "%field3",
+            ],
+            "prim": "string",
+          },
+        ],
+        "prim": "pair",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CDR",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test Types record (right comb) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (record ((field1 \\"nat\\") (field2 \\"unit\\") (field3 \\"string\\")) (Some ((\\"field1\\") ((\\"field2\\") (\\"field3\\"))))) (\\"all.test.ts\\" 51)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
+        )
+        "
+`;
+
+exports[`Test Types record (right comb) 2`] = `
+Array [
+  Object {
+    "args": Array [
+      Object {
+        "prim": "unit",
+      },
+    ],
+    "prim": "storage",
+  },
+  Object {
+    "args": Array [
+      Object {
+        "annots": Array [
+          "%ep1",
+        ],
+        "args": Array [
+          Object {
+            "annots": Array [
+              "%field1",
+            ],
+            "prim": "nat",
+          },
+          Object {
+            "args": Array [
+              Object {
+                "annots": Array [
+                  "%field2",
+                ],
+                "prim": "unit",
+              },
+              Object {
+                "annots": Array [
+                  "%field3",
+                ],
+                "prim": "string",
+              },
+            ],
+            "prim": "pair",
+          },
+        ],
+        "prim": "pair",
+      },
+    ],
+    "prim": "parameter",
+  },
+  Object {
+    "args": Array [
+      Array [
+        Object {
+          "prim": "CDR",
+        },
+        Object {
+          "args": Array [
+            Object {
+              "prim": "operation",
+            },
+          ],
+          "prim": "NIL",
+        },
+        Object {
+          "prim": "PAIR",
+        },
+      ],
+    ],
+    "prim": "code",
+  },
+]
+`;
+
+exports[`Test Types set 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) (set \\"nat\\") (\\"all.test.ts\\" 51)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -1282,16 +1593,16 @@ Array [
 exports[`Test Types signature 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"signature\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"signature\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -1344,16 +1655,16 @@ Array [
 exports[`Test Types string 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"string\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"string\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -1406,16 +1717,16 @@ Array [
 exports[`Test Types timestamp 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"timestamp\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"timestamp\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
@@ -1468,16 +1779,16 @@ Array [
 exports[`Test Types unit 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 43))
+            template_id (static_id 0 (\\"all.test.ts\\" 48))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 46) ((set_type (params (\\"all.test.ts\\" 46)) \\"unit\\" (\\"all.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 51) ((set_type (params (\\"all.test.ts\\" 51)) \\"unit\\" (\\"all.test.ts\\" 51)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 48))
         )
         "
 `;
