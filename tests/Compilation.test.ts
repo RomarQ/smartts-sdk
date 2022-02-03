@@ -20,7 +20,7 @@ describe('Compile Contracts', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat)
+                    .inputType(TNat())
                     .code((arg) => [
                         DefineVar('A', Nat(1)),
                         Require(Equal(GetLocal('A'), arg), String('Error Message')),
@@ -34,11 +34,11 @@ describe('Compile Contracts', () => {
 
     it('Simple 2', () => {
         const contract = new Contract()
-            .setStorage(List([Nat(1)], TNat))
+            .setStorage(List([Nat(1)], TNat()))
             .addEntrypoint(
                 new EntryPoint('ep1')
                     .config({ lazy: false })
-                    .inputType(TBool)
+                    .inputType(TBool())
                     .code((arg) => [
                         DefineVar('A', Bool(false)),
                         Require(Equal(GetLocal('A'), arg), String('Error Message')),
@@ -56,10 +56,10 @@ describe('Compile Contracts', () => {
 
     it('Simple 3', () => {
         const contract = new Contract()
-            .setStorageType(TList(TNat))
-            .setStorage(List([], TNat))
+            .setStorageType(TList(TNat()))
+            .setStorage(List([], TNat()))
             .addEntrypoint(
-                new EntryPoint('ep1').inputType(TList(TNat)).code((arg) => [
+                new EntryPoint('ep1').inputType(TList(TNat())).code((arg) => [
                     // Define a variable named "some_address"
                     DefineVar('some_address', Address('tz1')),
                     // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
@@ -88,7 +88,7 @@ describe('Compile Contracts', () => {
         verifyMichelsonOutput(contract);
     });
     it('Storage (None)', () => {
-        const contract = new Contract().setStorageType(TOption(TNat)).setStorage(None()).toString();
+        const contract = new Contract().setStorageType(TOption(TNat())).setStorage(None()).toString();
 
         expect(contract).toMatchSnapshot();
         verifyMichelsonOutput(contract);
@@ -99,7 +99,7 @@ describe('Compile Contracts', () => {
             .setStorage(
                 Record({
                     testField1: Nat(1),
-                    testField2: List([String('Hello World')], TString),
+                    testField2: List([String('Hello World')], TString()),
                 }),
             )
             .toString();

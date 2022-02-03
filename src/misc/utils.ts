@@ -1,5 +1,7 @@
+import { ILayout } from '../typings/literal';
 import { IToString } from '../typings/shared';
 
+export const parenthesis = (str: string) => `(${str})`;
 export const capitalizeBoolean = (bool: boolean): string => (bool ? 'True' : 'False');
 
 export class LineInfo implements IToString {
@@ -21,8 +23,23 @@ export class LineInfo implements IToString {
     }
 }
 
+/**
+ * @description Build right aligned nested binary pairs
+ * @see https://tezos.gitlab.io/active/michelson.html#operations-on-pairs-and-right-combs
+ * @param fields A sequence of strings
+ * @returns {ILayout}
+ */
+export const composeRightCombLayout = (fields: string[]): ILayout => {
+    if (fields.length > 2) {
+        return [fields[0], composeRightCombLayout(fields.slice(1))];
+    }
+    return fields;
+};
+
 const Utils = {
     capitalizeBoolean,
+    composeRightCombLayout,
+    parenthesis,
 };
 
 export default Utils;

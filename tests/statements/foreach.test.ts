@@ -20,7 +20,7 @@ describe('Test (ForEach) statement', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TList(TNat))
+                    .inputType(TList(TNat()))
                     .code((arg) => [
                         ForEachOf(arg).Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))]),
                     ]),

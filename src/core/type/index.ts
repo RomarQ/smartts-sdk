@@ -1,51 +1,40 @@
+import { composeRightCombLayout, parenthesis } from '../../misc/utils';
 import { ILayout } from '../../typings/literal';
 import { IType } from '../../typings/type';
 import { Layout } from '../enums/layout';
 import { Prim, SmartPyAtom } from '../enums/prim';
 
-/**
- * @description All Type classes must extend this class. It identifies Type classes.
- */
-export class BaseType implements IType {
-    _isType = true as const;
-}
-
-export class SimpleType extends BaseType {
-    constructor(public name: string) {
-        super();
-    }
+export class SimpleType implements IType {
+    constructor(public name: string) {}
 
     toString() {
         return `"${this.name}"`;
     }
 }
 
-export class ContainerType extends BaseType {
-    constructor(public type: string, public innerTypes: IType[]) {
-        super();
-    }
+export class ContainerType implements IType {
+    constructor(public type: string, public innerTypes: IType[]) {}
 
     toString() {
-        return `(${this.type} ${this.innerTypes.map((t) => t.toString()).join(' ')})`;
+        return `(${this.type} ${this.innerTypes.join(' ')})`;
     }
 }
 
-export class Type_Record extends BaseType {
-    layout: ILayout | Layout;
+export class Type_Record implements IType {
+    private layout: ILayout | Layout;
     constructor(public fields: Record<string, IType>, layout?: ILayout | Layout) {
-        super();
-        this.layout = layout || Object.keys(fields);
+        this.layout = layout || composeRightCombLayout(Object.keys(fields));
     }
 
     private translateLayout = (layout: ILayout | Layout): string => {
-        const normalizeTuple = (elements: ILayout): string =>
-            elements.reduce<string>((pv, cv) => {
-                if (Array.isArray(cv)) {
-                    return `(${[pv, normalizeTuple(cv)].join(' ')})`;
-                }
-                const field = `("${cv}")`;
-                return !!pv ? `(${pv} ${field})` : field;
-            }, '');
+        const normalizeTuple = (layout: string | ILayout): string => {
+            if (typeof layout === 'string') {
+                return `("${layout}")`;
+            }
+            const [left, right] = layout;
+            return parenthesis([normalizeTuple(left), normalizeTuple(right)].join(' '));
+        };
+
         if (Array.isArray(layout)) {
             return layout.length ? `(Some ${normalizeTuple(layout)})` : 'None';
         }
@@ -65,24 +54,36 @@ export const TUnknown: IType = {
     toString: () => '(unknown 0)',
 };
 // Singleton types
-export const TUnit = new SimpleType(Prim.unit);
-export const TNat = new SimpleType(Prim.nat);
-export const TInt = new SimpleType(Prim.int);
-export const TMutez = new SimpleType(Prim.mutez);
-export const TString = new SimpleType(Prim.string);
-export const TBool = new SimpleType(Prim.bool);
-export const TAddress = new SimpleType(Prim.address);
-export const TTimestamp = new SimpleType(Prim.timestamp);
-export const TChainID = new SimpleType(Prim.chain_id);
-export const TBytes = new SimpleType(Prim.bytes);
+export const TUnit = () => new SimpleType(Prim.unit);
+export const TNat = () => new SimpleType(Prim.nat);
+export const TInt = () => new SimpleType(Prim.int);
+export const TMutez = () => new SimpleType(Prim.mutez);
+export const TString = () => new SimpleType(Prim.string);
+export const TBool = () => new SimpleType(Prim.bool);
+export const TAddress = () => new SimpleType(Prim.address);
+export const TTimestamp = () => new SimpleType(Prim.timestamp);
+export const TChain_id = () => new SimpleType(Prim.chain_id);
+export const TBytes = () => new SimpleType(Prim.bytes);
+export const TBls12_381_fr = () => new SimpleType(Prim.bls12_381_fr);
+export const TBls12_381_g1 = () => new SimpleType(Prim.bls12_381_g1);
+export const TBls12_381_g2 = () => new SimpleType(Prim.bls12_381_g2);
+export const TKey = () => new SimpleType(Prim.key);
+export const TKey_hash = () => new SimpleType(Prim.key_hash);
+export const TSignature = () => new SimpleType(Prim.signature);
+export const TOperation = () => new SimpleType(Prim.operation);
+export const TNever = () => new SimpleType(Prim.never);
 // Container types
 export const TList = (innerType: IType) => new ContainerType(Prim.list, [innerType]);
+export const TSet = (innerType: IType) => new ContainerType(Prim.set, [innerType]);
 export const TOption = (innerType: IType) => new ContainerType(Prim.option, [innerType]);
-export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) => new Type_Record(fields, layout);
 export const TMap = (keyType: IType, valueType: IType) => new ContainerType(Prim.map, [keyType, valueType]);
-export const TBigMap = (keyType: IType, valueType: IType) =>
+export const TBig_map = (keyType: IType, valueType: IType) =>
     new ContainerType(SmartPyAtom.bigmap, [keyType, valueType]);
-export const TTuple = (...types: IType[]) => new ContainerType(SmartPyAtom.tuple, types);
+export const TPair = (left: IType, right: IType) => new ContainerType(SmartPyAtom.tuple, [left, right]);
+export const TLambda = (left: IType, right: IType) => new ContainerType(Prim.lambda, [left, right]);
+export const TContract = (innerType: IType) => new ContainerType(Prim.contract, [innerType]);
+// Artificial Types
+export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) => new Type_Record(fields, layout);
 
 const Types = {
     TUnknown,
@@ -93,16 +94,33 @@ const Types = {
     TMutez,
     TString,
     TBool,
+    TBytes,
     TAddress,
     TTimestamp,
-    TChainID,
+    TChain_id,
+    TBls12_381_fr,
+    TBls12_381_g1,
+    TBls12_381_g2,
+    TKey,
+    TKey_hash,
+    TSignature,
+    TOperation,
+    TNever,
     // Container types
     TList,
+    TSet,
     TOption,
-    TRecord,
+    TPair,
     TMap,
-    TBigMap,
-    TTuple,
+    TBig_map,
+    TLambda,
+    // TTicket,
+    TContract,
+    // TSapling_state,
+    // TSapling_transaction,
+    // Artificial Types
+    TRecord,
+    // TVariant,
 };
 
 export default Types;

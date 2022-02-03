@@ -10,7 +10,7 @@ import {
     TBool,
     TList,
     TTimestamp,
-    TChainID,
+    TChain_id,
     TInt,
     TBytes,
     TOption,
@@ -18,7 +18,7 @@ import {
     TUnit,
     TRecord,
     TMap,
-    TBigMap,
+    TBig_map,
 } from '../type';
 import { Prim } from '../enums/prim';
 import { IExpression, IExpressionKind } from '../../typings/expression';
@@ -130,7 +130,7 @@ class MapLiteral implements ILiteral {
         if (prim === Prim.map) {
             this.type = TMap(keyType, valueType);
         } else {
-            this.type = TBigMap(keyType, valueType);
+            this.type = TBig_map(keyType, valueType);
         }
     }
 
@@ -147,25 +147,26 @@ class MapLiteral implements ILiteral {
     }
 }
 
-export const Unit = (line = new LineInfo()) => new Literal(Prim.unit, undefined, TUnit, line);
+export const Unit = (line = new LineInfo()) => new Literal(Prim.unit, undefined, TUnit(), line);
 
-export const Nat = (value: number, line = new LineInfo()) => new Literal(Prim.nat, value, TNat, line);
-export const Int = (value: number, line = new LineInfo()) => new Literal(Prim.int, value, TInt, line);
-export const Mutez = (value: number, line = new LineInfo()) => new Literal(Prim.mutez, value, TMutez, line);
+export const Nat = (value: number, line = new LineInfo()) => new Literal(Prim.nat, value, TNat(), line);
+export const Int = (value: number, line = new LineInfo()) => new Literal(Prim.int, value, TInt(), line);
+export const Mutez = (value: number, line = new LineInfo()) => new Literal(Prim.mutez, value, TMutez(), line);
 
-export const String = (value: string, line = new LineInfo()) => new Literal(Prim.string, `"${value}"`, TString, line);
+export const String = (value: string, line = new LineInfo()) => new Literal(Prim.string, `"${value}"`, TString(), line);
 
 export const Bool = (value: boolean, line = new LineInfo()) =>
-    new Literal(Prim.bool, capitalizeBoolean(value), TBool, line);
+    new Literal(Prim.bool, capitalizeBoolean(value), TBool(), line);
 
-export const Address = (address: string, line = new LineInfo()) => new Literal(Prim.address, address, TAddress, line);
+export const Address = (address: string, line = new LineInfo()) => new Literal(Prim.address, address, TAddress(), line);
 
 export const Timestamp = (timestamp: number, line = new LineInfo()) =>
-    new Literal(Prim.timestamp, timestamp, TTimestamp, line);
+    new Literal(Prim.timestamp, timestamp, TTimestamp(), line);
 
-export const ChainID = (chainID: string, line = new LineInfo()) => new Literal('chain_id_cst', chainID, TChainID, line);
+export const ChainID = (chainID: string, line = new LineInfo()) =>
+    new Literal('chain_id_cst', chainID, TChain_id(), line);
 
-export const Bytes = (bytes: string, line = new LineInfo()) => new Literal(Prim.bytes, bytes, TBytes, line);
+export const Bytes = (bytes: string, line = new LineInfo()) => new Literal(Prim.bytes, bytes, TBytes(), line);
 
 // Containers
 export const List = (items: IExpressionKind[], innerType: IType, line = new LineInfo()) =>
