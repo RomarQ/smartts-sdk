@@ -18,544 +18,544 @@ exports[`Test contract templates FA2.ts 1`] = `
 `;
 
 exports[`Test contract templates FA2.ts 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "args": Array [
-          Object {
-            "annots": Array [
-              "%config",
-            ],
-            "args": Array [
-              Object {
-                "annots": Array [
-                  "%administrator",
-                ],
-                "prim": "address",
-              },
-              Object {
-                "annots": Array [
-                  "%paused",
-                ],
-                "prim": "bool",
-              },
-            ],
-            "prim": "pair",
-          },
-          Object {
-            "args": Array [
-              Object {
-                "annots": Array [
-                  "%assets",
-                ],
-                "args": Array [
-                  Object {
-                    "annots": Array [
-                      "%ledger",
-                    ],
-                    "args": Array [
-                      Object {
-                        "args": Array [
-                          Object {
-                            "prim": "address",
-                          },
-                          Object {
-                            "prim": "nat",
-                          },
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"pair\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"pair\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"address\\",
+                                \\"annots\\": [
+                                    \\"%administrator\\"
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"bool\\",
+                                \\"annots\\": [
+                                    \\"%paused\\"
+                                ]
+                            }
                         ],
-                        "prim": "pair",
-                      },
-                      Object {
-                        "prim": "nat",
-                      },
-                    ],
-                    "prim": "big_map",
-                  },
-                  Object {
-                    "args": Array [
-                      Object {
-                        "annots": Array [
-                          "%operators",
-                        ],
-                        "args": Array [
-                          Object {
-                            "args": Array [
-                              Object {
-                                "annots": Array [
-                                  "%operator",
+                        \\"annots\\": [
+                            \\"%config\\"
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"pair\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"pair\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"big_map\\",
+                                        \\"args\\": [
+                                            {
+                                                \\"prim\\": \\"pair\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"prim\\": \\"address\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"nat\\"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"nat\\"
+                                            }
+                                        ],
+                                        \\"annots\\": [
+                                            \\"%ledger\\"
+                                        ]
+                                    },
+                                    {
+                                        \\"prim\\": \\"pair\\",
+                                        \\"args\\": [
+                                            {
+                                                \\"prim\\": \\"big_map\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"prim\\": \\"pair\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"prim\\": \\"address\\",
+                                                                \\"annots\\": [
+                                                                    \\"%operator\\"
+                                                                ]
+                                                            },
+                                                            {
+                                                                \\"prim\\": \\"pair\\",
+                                                                \\"args\\": [
+                                                                    {
+                                                                        \\"prim\\": \\"address\\",
+                                                                        \\"annots\\": [
+                                                                            \\"%owner\\"
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"nat\\",
+                                                                        \\"annots\\": [
+                                                                            \\"%token_id\\"
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"unit\\"
+                                                    }
+                                                ],
+                                                \\"annots\\": [
+                                                    \\"%operators\\"
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"pair\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"prim\\": \\"big_map\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"prim\\": \\"nat\\"
+                                                            },
+                                                            {
+                                                                \\"prim\\": \\"pair\\",
+                                                                \\"args\\": [
+                                                                    {
+                                                                        \\"prim\\": \\"nat\\",
+                                                                        \\"annots\\": [
+                                                                            \\"%token_id\\"
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"map\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"prim\\": \\"string\\"
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"bytes\\"
+                                                                            }
+                                                                        ],
+                                                                        \\"annots\\": [
+                                                                            \\"%token_info\\"
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        \\"annots\\": [
+                                                            \\"%token_metadata\\"
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"big_map\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"prim\\": \\"nat\\"
+                                                            },
+                                                            {
+                                                                \\"prim\\": \\"nat\\"
+                                                            }
+                                                        ],
+                                                        \\"annots\\": [
+                                                            \\"%token_total_supply\\"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
                                 ],
-                                "prim": "address",
-                              },
-                              Object {
-                                "args": Array [
-                                  Object {
-                                    "annots": Array [
-                                      "%owner",
-                                    ],
-                                    "prim": "address",
-                                  },
-                                  Object {
-                                    "annots": Array [
-                                      "%token_id",
-                                    ],
-                                    "prim": "nat",
-                                  },
+                                \\"annots\\": [
+                                    \\"%assets\\"
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"big_map\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"string\\"
+                                    },
+                                    {
+                                        \\"prim\\": \\"bytes\\"
+                                    }
                                 ],
-                                "prim": "pair",
-                              },
-                            ],
-                            "prim": "pair",
-                          },
-                          Object {
-                            "prim": "unit",
-                          },
-                        ],
-                        "prim": "big_map",
-                      },
-                      Object {
-                        "args": Array [
-                          Object {
-                            "annots": Array [
-                              "%token_metadata",
-                            ],
-                            "args": Array [
-                              Object {
-                                "prim": "nat",
-                              },
-                              Object {
-                                "args": Array [
-                                  Object {
-                                    "annots": Array [
-                                      "%token_id",
+                                \\"annots\\": [
+                                    \\"%metadata\\"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"or\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"or\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"unit\\",
+                                \\"annots\\": [
+                                    \\"%mint\\"
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"or\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"bool\\",
+                                        \\"annots\\": [
+                                            \\"%pause\\"
+                                        ]
+                                    },
+                                    {
+                                        \\"prim\\": \\"address\\",
+                                        \\"annots\\": [
+                                            \\"%set_admin\\"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"or\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"unit\\",
+                                \\"annots\\": [
+                                    \\"%transfer\\"
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"or\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"map\\",
+                                        \\"args\\": [
+                                            {
+                                                \\"prim\\": \\"string\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"bytes\\"
+                                            }
+                                        ],
+                                        \\"annots\\": [
+                                            \\"%update_metadata\\"
+                                        ]
+                                    },
+                                    {
+                                        \\"prim\\": \\"unit\\",
+                                        \\"annots\\": [
+                                            \\"%update_operators\\"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"IF_LEFT\\",
+                    \\"args\\": [
+                        [
+                            {
+                                \\"prim\\": \\"IF_LEFT\\",
+                                \\"args\\": [
+                                    [
+                                        {
+                                            \\"prim\\": \\"DROP\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"DUP\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"CAR\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"CAR\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"SENDER\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"COMPARE\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"EQ\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"IF\\",
+                                            \\"args\\": [
+                                                [],
+                                                [
+                                                    {
+                                                        \\"prim\\": \\"PUSH\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"prim\\": \\"string\\"
+                                                            },
+                                                            {
+                                                                \\"string\\": \\"FA2__Not_Admin\\"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"FAILWITH\\"
+                                                    }
+                                                ]
+                                            ]
+                                        }
                                     ],
-                                    "prim": "nat",
-                                  },
-                                  Object {
-                                    "annots": Array [
-                                      "%token_info",
+                                    [
+                                        {
+                                            \\"prim\\": \\"IF_LEFT\\",
+                                            \\"args\\": [
+                                                [
+                                                    {
+                                                        \\"prim\\": \\"SWAP\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"DUP\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"DUG\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"int\\": \\"2\\"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"CAR\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"CAR\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"SENDER\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"COMPARE\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"EQ\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"IF\\",
+                                                        \\"args\\": [
+                                                            [],
+                                                            [
+                                                                {
+                                                                    \\"prim\\": \\"PUSH\\",
+                                                                    \\"args\\": [
+                                                                        {
+                                                                            \\"prim\\": \\"string\\"
+                                                                        },
+                                                                        {
+                                                                            \\"string\\": \\"FA2__Not_Admin\\"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    \\"prim\\": \\"FAILWITH\\"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"SWAP\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"DUP\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"CAR\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"DIG\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"int\\": \\"2\\"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"UPDATE\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"int\\": \\"2\\"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"UPDATE\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"int\\": \\"1\\"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                [
+                                                    {
+                                                        \\"prim\\": \\"SWAP\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"DUP\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"DUG\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"int\\": \\"2\\"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"CAR\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"CAR\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"SENDER\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"COMPARE\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"EQ\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"IF\\",
+                                                        \\"args\\": [
+                                                            [],
+                                                            [
+                                                                {
+                                                                    \\"prim\\": \\"PUSH\\",
+                                                                    \\"args\\": [
+                                                                        {
+                                                                            \\"prim\\": \\"string\\"
+                                                                        },
+                                                                        {
+                                                                            \\"string\\": \\"FA2__Not_Admin\\"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    \\"prim\\": \\"FAILWITH\\"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"SWAP\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"DUP\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"CAR\\"
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"DIG\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"int\\": \\"2\\"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"UPDATE\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"int\\": \\"1\\"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        \\"prim\\": \\"UPDATE\\",
+                                                        \\"args\\": [
+                                                            {
+                                                                \\"int\\": \\"1\\"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                \\"prim\\": \\"IF_LEFT\\",
+                                \\"args\\": [
+                                    [
+                                        {
+                                            \\"prim\\": \\"DROP\\"
+                                        }
                                     ],
-                                    "args": Array [
-                                      Object {
-                                        "prim": "string",
-                                      },
-                                      Object {
-                                        "prim": "bytes",
-                                      },
-                                    ],
-                                    "prim": "map",
-                                  },
-                                ],
-                                "prim": "pair",
-                              },
-                            ],
-                            "prim": "big_map",
-                          },
-                          Object {
-                            "annots": Array [
-                              "%token_total_supply",
-                            ],
-                            "args": Array [
-                              Object {
-                                "prim": "nat",
-                              },
-                              Object {
-                                "prim": "nat",
-                              },
-                            ],
-                            "prim": "big_map",
-                          },
-                        ],
-                        "prim": "pair",
-                      },
-                    ],
-                    "prim": "pair",
-                  },
-                ],
-                "prim": "pair",
-              },
-              Object {
-                "annots": Array [
-                  "%metadata",
-                ],
-                "args": Array [
-                  Object {
-                    "prim": "string",
-                  },
-                  Object {
-                    "prim": "bytes",
-                  },
-                ],
-                "prim": "big_map",
-              },
-            ],
-            "prim": "pair",
-          },
-        ],
-        "prim": "pair",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "args": Array [
-          Object {
-            "args": Array [
-              Object {
-                "annots": Array [
-                  "%mint",
-                ],
-                "prim": "unit",
-              },
-              Object {
-                "args": Array [
-                  Object {
-                    "annots": Array [
-                      "%pause",
-                    ],
-                    "prim": "bool",
-                  },
-                  Object {
-                    "annots": Array [
-                      "%set_admin",
-                    ],
-                    "prim": "address",
-                  },
-                ],
-                "prim": "or",
-              },
-            ],
-            "prim": "or",
-          },
-          Object {
-            "args": Array [
-              Object {
-                "annots": Array [
-                  "%transfer",
-                ],
-                "prim": "unit",
-              },
-              Object {
-                "args": Array [
-                  Object {
-                    "annots": Array [
-                      "%update_metadata",
-                    ],
-                    "args": Array [
-                      Object {
-                        "prim": "string",
-                      },
-                      Object {
-                        "prim": "bytes",
-                      },
-                    ],
-                    "prim": "map",
-                  },
-                  Object {
-                    "annots": Array [
-                      "%update_operators",
-                    ],
-                    "prim": "unit",
-                  },
-                ],
-                "prim": "or",
-              },
-            ],
-            "prim": "or",
-          },
-        ],
-        "prim": "or",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "UNPAIR",
-        },
-        Object {
-          "args": Array [
-            Array [
-              Object {
-                "args": Array [
-                  Array [
-                    Object {
-                      "prim": "DROP",
-                    },
-                    Object {
-                      "prim": "DUP",
-                    },
-                    Object {
-                      "prim": "CAR",
-                    },
-                    Object {
-                      "prim": "CAR",
-                    },
-                    Object {
-                      "prim": "SENDER",
-                    },
-                    Object {
-                      "prim": "COMPARE",
-                    },
-                    Object {
-                      "prim": "EQ",
-                    },
-                    Object {
-                      "args": Array [
-                        Array [],
-                        Array [
-                          Object {
-                            "args": Array [
-                              Object {
-                                "prim": "string",
-                              },
-                              Object {
-                                "string": "FA2__Not_Admin",
-                              },
-                            ],
-                            "prim": "PUSH",
-                          },
-                          Object {
-                            "prim": "FAILWITH",
-                          },
-                        ],
-                      ],
-                      "prim": "IF",
-                    },
-                  ],
-                  Array [
-                    Object {
-                      "args": Array [
-                        Array [
-                          Object {
-                            "prim": "SWAP",
-                          },
-                          Object {
-                            "prim": "DUP",
-                          },
-                          Object {
-                            "args": Array [
-                              Object {
-                                "int": "2",
-                              },
-                            ],
-                            "prim": "DUG",
-                          },
-                          Object {
-                            "prim": "CAR",
-                          },
-                          Object {
-                            "prim": "CAR",
-                          },
-                          Object {
-                            "prim": "SENDER",
-                          },
-                          Object {
-                            "prim": "COMPARE",
-                          },
-                          Object {
-                            "prim": "EQ",
-                          },
-                          Object {
-                            "args": Array [
-                              Array [],
-                              Array [
-                                Object {
-                                  "args": Array [
-                                    Object {
-                                      "prim": "string",
-                                    },
-                                    Object {
-                                      "string": "FA2__Not_Admin",
-                                    },
-                                  ],
-                                  "prim": "PUSH",
-                                },
-                                Object {
-                                  "prim": "FAILWITH",
-                                },
-                              ],
-                            ],
-                            "prim": "IF",
-                          },
-                          Object {
-                            "prim": "SWAP",
-                          },
-                          Object {
-                            "prim": "DUP",
-                          },
-                          Object {
-                            "prim": "CAR",
-                          },
-                          Object {
-                            "args": Array [
-                              Object {
-                                "int": "2",
-                              },
-                            ],
-                            "prim": "DIG",
-                          },
-                          Object {
-                            "args": Array [
-                              Object {
-                                "int": "2",
-                              },
-                            ],
-                            "prim": "UPDATE",
-                          },
-                          Object {
-                            "args": Array [
-                              Object {
-                                "int": "1",
-                              },
-                            ],
-                            "prim": "UPDATE",
-                          },
-                        ],
-                        Array [
-                          Object {
-                            "prim": "SWAP",
-                          },
-                          Object {
-                            "prim": "DUP",
-                          },
-                          Object {
-                            "args": Array [
-                              Object {
-                                "int": "2",
-                              },
-                            ],
-                            "prim": "DUG",
-                          },
-                          Object {
-                            "prim": "CAR",
-                          },
-                          Object {
-                            "prim": "CAR",
-                          },
-                          Object {
-                            "prim": "SENDER",
-                          },
-                          Object {
-                            "prim": "COMPARE",
-                          },
-                          Object {
-                            "prim": "EQ",
-                          },
-                          Object {
-                            "args": Array [
-                              Array [],
-                              Array [
-                                Object {
-                                  "args": Array [
-                                    Object {
-                                      "prim": "string",
-                                    },
-                                    Object {
-                                      "string": "FA2__Not_Admin",
-                                    },
-                                  ],
-                                  "prim": "PUSH",
-                                },
-                                Object {
-                                  "prim": "FAILWITH",
-                                },
-                              ],
-                            ],
-                            "prim": "IF",
-                          },
-                          Object {
-                            "prim": "SWAP",
-                          },
-                          Object {
-                            "prim": "DUP",
-                          },
-                          Object {
-                            "prim": "CAR",
-                          },
-                          Object {
-                            "args": Array [
-                              Object {
-                                "int": "2",
-                              },
-                            ],
-                            "prim": "DIG",
-                          },
-                          Object {
-                            "args": Array [
-                              Object {
-                                "int": "1",
-                              },
-                            ],
-                            "prim": "UPDATE",
-                          },
-                          Object {
-                            "args": Array [
-                              Object {
-                                "int": "1",
-                              },
-                            ],
-                            "prim": "UPDATE",
-                          },
-                        ],
-                      ],
-                      "prim": "IF_LEFT",
-                    },
-                  ],
-                ],
-                "prim": "IF_LEFT",
-              },
-            ],
-            Array [
-              Object {
-                "args": Array [
-                  Array [
-                    Object {
-                      "prim": "DROP",
-                    },
-                  ],
-                  Array [
-                    Object {
-                      "args": Array [
-                        Array [
-                          Object {
-                            "prim": "DROP",
-                          },
-                        ],
-                        Array [
-                          Object {
-                            "prim": "DROP",
-                          },
-                        ],
-                      ],
-                      "prim": "IF_LEFT",
-                    },
-                  ],
-                ],
-                "prim": "IF_LEFT",
-              },
-            ],
-          ],
-          "prim": "IF_LEFT",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+                                    [
+                                        {
+                                            \\"prim\\": \\"IF_LEFT\\",
+                                            \\"args\\": [
+                                                [
+                                                    {
+                                                        \\"prim\\": \\"DROP\\"
+                                                    }
+                                                ],
+                                                [
+                                                    {
+                                                        \\"prim\\": \\"DROP\\"
+                                                    }
+                                                ]
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;

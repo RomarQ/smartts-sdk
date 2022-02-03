@@ -1,0 +1,2040 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Types addres 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"address\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types addres 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"address\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types big_map 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (bigmap \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types big_map 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"big_map\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    },
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types bls12_381_fr 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"bls12_381_fr\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types bls12_381_fr 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"bls12_381_fr\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types bls12_381_g1 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"bls12_381_g1\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types bls12_381_g1 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"bls12_381_g1\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types bls12_381_g2 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"bls12_381_g2\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types bls12_381_g2 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"bls12_381_g2\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types bool 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"bool\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types bool 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"bool\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types bytes 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"bytes\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types bytes 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"bytes\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types chain_id 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"chain_id\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types chain_id 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"chain_id\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types contract 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (contract \\"nat\\") (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types contract 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"contract\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types int 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"int\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types int 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"int\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types key 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"key\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types key 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"key\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types key_hash 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"key_hash\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types key_hash 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"key_hash\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types lambda 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (lambda \\"nat\\" \\"unit\\") (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types lambda 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"lambda\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    },
+                    {
+                        \\"prim\\": \\"unit\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types list 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (list \\"nat\\") (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types list 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"list\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types map 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (map \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types map 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"map\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    },
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types mutez 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"mutez\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types mutez 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"mutez\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types nat 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"nat\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types nat 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types never 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"never\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types never 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"never\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types operation 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"operation\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types operation 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"operation\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types option 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (option \\"nat\\") (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types option 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"option\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types option 3`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (tuple \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types option 4`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"pair\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    },
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types record (left comb) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (record ((field1 \\"nat\\") (field2 \\"unit\\") (field3 \\"string\\")) (Some (((\\"field1\\") (\\"field2\\")) (\\"field3\\")))) (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types record (left comb) 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"pair\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"pair\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\",
+                                \\"annots\\": [
+                                    \\"%field1\\"
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"unit\\",
+                                \\"annots\\": [
+                                    \\"%field2\\"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"string\\",
+                        \\"annots\\": [
+                            \\"%field3\\"
+                        ]
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types record (right comb) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (record ((field1 \\"nat\\") (field2 \\"unit\\") (field3 \\"string\\")) (Some ((\\"field1\\") ((\\"field2\\") (\\"field3\\"))))) (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types record (right comb) 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"pair\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\",
+                        \\"annots\\": [
+                            \\"%field1\\"
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"pair\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"unit\\",
+                                \\"annots\\": [
+                                    \\"%field2\\"
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"string\\",
+                                \\"annots\\": [
+                                    \\"%field3\\"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types sapling_state 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (sapling_state 8) (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types sapling_state 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"sapling_state\\",
+                \\"args\\": [
+                    {
+                        \\"int\\": \\"8\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types sapling_transaction 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (sapling_transaction 16) (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types sapling_transaction 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"sapling_transaction\\",
+                \\"args\\": [
+                    {
+                        \\"int\\": \\"16\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types set 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (set \\"nat\\") (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types set 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"set\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types signature 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"signature\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types signature 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"signature\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types string 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"string\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types string 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"string\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types ticket 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) (ticket \\"nat\\") (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types ticket 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"ticket\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ],
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types timestamp 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"timestamp\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types timestamp 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"timestamp\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Types unit 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 40))
+            storage (unit)
+            storage_type (\\"unit\\")
+            messages ((ep1 True False False True (\\"all.test.ts\\" 43) ((set_type (params (\\"all.test.ts\\" 43)) \\"unit\\" (\\"all.test.ts\\" 43)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 40))
+        )
+        "
+`;
+
+exports[`Test Types unit 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;

@@ -1,16 +1,7 @@
 import fs from 'fs';
-import SmartML from '../src/smartml';
+import { verifyMichelsonOutput } from './util';
 
 jest.setTimeout(50000);
-
-const verifyMichelsonOutput = (contract: string) => {
-    const michelson = SmartML.compileContract(contract);
-
-    // No errors expected
-    // Check snapshot
-    expect(michelson).toMatchSnapshot();
-    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
-};
 
 async function runTests() {
     const files = fs.readdirSync('./tests/templates', { encoding: 'utf-8' });

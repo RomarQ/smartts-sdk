@@ -1,4 +1,3 @@
-import smartML from '../../src/smartml';
 import { Contract, EntryPoint } from '../../src/core';
 import { Unit } from '../../src/core/literal';
 import {
@@ -34,17 +33,7 @@ import {
     TUnit,
 } from '../../src/core/type';
 import { IType } from '../../src/typings/type';
-
-const verifyMichelsonOutput = (contract: string) => {
-    const michelson = smartML.compileContract(contract);
-
-    // Check snapshot
-    expect(michelson).toMatchSnapshot();
-
-    // No errors expected
-    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
-    expect(JSON.stringify(michelson).includes('error')).toBeFalsy();
-};
+import { verifyMichelsonOutput } from '../util';
 
 const verifyType = (testName: string, type: IType) => {
     it(testName, () => {
