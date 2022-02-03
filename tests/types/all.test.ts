@@ -1,4 +1,3 @@
-import smartML from '../../src/smartml';
 import { Contract, EntryPoint } from '../../src/core';
 import { Unit } from '../../src/core/literal';
 import {
@@ -24,24 +23,18 @@ import {
     TOption,
     TPair,
     TRecord,
+    TSapling_state,
+    TSapling_transaction,
     TSet,
     TSignature,
     TString,
+    TTicket,
     TTimestamp,
     TUnit,
+    TVariant,
 } from '../../src/core/type';
 import { IType } from '../../src/typings/type';
-
-const verifyMichelsonOutput = (contract: string) => {
-    const michelson = smartML.compileContract(contract);
-
-    // Check snapshot
-    expect(michelson).toMatchSnapshot();
-
-    // No errors expected
-    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
-    expect(JSON.stringify(michelson).includes('error')).toBeFalsy();
-};
+import { verifyMichelsonOutput } from '../util';
 
 const verifyType = (testName: string, type: IType) => {
     it(testName, () => {
@@ -83,10 +76,10 @@ describe('Test Types', () => {
     verifyType('map', TMap(TNat(), TNat()));
     verifyType('big_map', TBig_map(TNat(), TNat()));
     verifyType('lambda', TLambda(TNat(), TUnit()));
-    // TTicket,
+    verifyType('ticket', TTicket(TNat()));
     verifyType('contract', TContract(TNat()));
-    // TSapling_state,
-    // TSapling_transaction,
+    verifyType('sapling_state', TSapling_state(8));
+    verifyType('sapling_transaction', TSapling_transaction(16));
     // Artificial Types
     verifyType(
         'record (right comb)',
@@ -107,5 +100,12 @@ describe('Test Types', () => {
             [['field1', 'field2'], 'field3'],
         ),
     );
-    // TVariant,
+    verifyType(
+        'variant',
+        TVariant({
+            match1: TNat(),
+            match2: TUnit(),
+            match3: TString(),
+        }),
+    );
 });

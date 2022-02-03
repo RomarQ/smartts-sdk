@@ -3,152 +3,10 @@
 exports[`Test compilation of blockchain operations Get chain identifier 1`] = `
 "
         (
-            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 54))
-            storage (literal (chain_id_cst 0x00) (\\"blockchain_operations.test.ts\\" 55))
-            storage_type (())
-            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 56) ((set (data) (chain_id) (\\"blockchain_operations.test.ts\\" 56)))))
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 54))
-        )
-        "
-`;
-
-exports[`Test compilation of blockchain operations Get chain identifier 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "chain_id",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "unit",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "CAR",
-        },
-        Object {
-          "prim": "CHAIN_ID",
-        },
-        Object {
-          "prim": "SWAP",
-        },
-        Object {
-          "prim": "DROP",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
-`;
-
-exports[`Test compilation of blockchain operations Get head level 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 36))
-            storage (literal (nat 1) (\\"blockchain_operations.test.ts\\" 37))
-            storage_type (())
-            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 38) ((set (data) (level) (\\"blockchain_operations.test.ts\\" 38)))))
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 36))
-        )
-        "
-`;
-
-exports[`Test compilation of blockchain operations Get head level 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "nat",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "unit",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "CAR",
-        },
-        Object {
-          "prim": "LEVEL",
-        },
-        Object {
-          "prim": "SWAP",
-        },
-        Object {
-          "prim": "DROP",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
-`;
-
-exports[`Test compilation of blockchain operations Get head timestamp 1`] = `
-"
-        (
             template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 45))
-            storage (literal (timestamp 0) (\\"blockchain_operations.test.ts\\" 46))
+            storage (literal (chain_id_cst 0x00) (\\"blockchain_operations.test.ts\\" 46))
             storage_type (())
-            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 47) ((set (data) (now) (\\"blockchain_operations.test.ts\\" 47)))))
+            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 47) ((set (data) (chain_id) (\\"blockchain_operations.test.ts\\" 47)))))
             flags ()
             privates ()
             views ()
@@ -159,126 +17,67 @@ exports[`Test compilation of blockchain operations Get head timestamp 1`] = `
         "
 `;
 
-exports[`Test compilation of blockchain operations Get head timestamp 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "timestamp",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "unit",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "DROP",
-        },
-        Object {
-          "prim": "NOW",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+exports[`Test compilation of blockchain operations Get chain identifier 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"chain_id\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"CHAIN_ID\\"
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
-exports[`Test compilation of blockchain operations Get sender 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 18))
-            storage (literal (address tz1) (\\"blockchain_operations.test.ts\\" 19))
-            storage_type (())
-            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 20) ((set (data) (sender) (\\"blockchain_operations.test.ts\\" 20)))))
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 18))
-        )
-        "
-`;
-
-exports[`Test compilation of blockchain operations Get sender 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "address",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "unit",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "DROP",
-        },
-        Object {
-          "prim": "SENDER",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
-`;
-
-exports[`Test compilation of blockchain operations Get source 1`] = `
+exports[`Test compilation of blockchain operations Get head level 1`] = `
 "
         (
             template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 27))
-            storage (literal (address tz1) (\\"blockchain_operations.test.ts\\" 28))
+            storage (literal (nat 1) (\\"blockchain_operations.test.ts\\" 28))
             storage_type (())
-            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 29) ((set (data) (source) (\\"blockchain_operations.test.ts\\" 29)))))
+            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 29) ((set (data) (level) (\\"blockchain_operations.test.ts\\" 29)))))
             flags ()
             privates ()
             views ()
@@ -289,50 +88,251 @@ exports[`Test compilation of blockchain operations Get source 1`] = `
         "
 `;
 
+exports[`Test compilation of blockchain operations Get head level 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"LEVEL\\"
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test compilation of blockchain operations Get head timestamp 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 36))
+            storage (literal (timestamp 0) (\\"blockchain_operations.test.ts\\" 37))
+            storage_type (())
+            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 38) ((set (data) (now) (\\"blockchain_operations.test.ts\\" 38)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 36))
+        )
+        "
+`;
+
+exports[`Test compilation of blockchain operations Get head timestamp 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"timestamp\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"NOW\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test compilation of blockchain operations Get sender 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 9))
+            storage (literal (address tz1) (\\"blockchain_operations.test.ts\\" 10))
+            storage_type (())
+            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 11) ((set (data) (sender) (\\"blockchain_operations.test.ts\\" 11)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`Test compilation of blockchain operations Get sender 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"address\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"SENDER\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test compilation of blockchain operations Get source 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_operations.test.ts\\" 18))
+            storage (literal (address tz1) (\\"blockchain_operations.test.ts\\" 19))
+            storage_type (())
+            messages ((ep1 True False False False (\\"blockchain_operations.test.ts\\" 20) ((set (data) (source) (\\"blockchain_operations.test.ts\\" 20)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_operations.test.ts\\" 18))
+        )
+        "
+`;
+
 exports[`Test compilation of blockchain operations Get source 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "address",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "unit",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "DROP",
-        },
-        Object {
-          "prim": "SOURCE",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"address\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"SOURCE\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;

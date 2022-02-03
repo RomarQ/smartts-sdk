@@ -2,16 +2,7 @@ import { Address, ChainID, Nat, Timestamp } from '../src/core/literal';
 import { GetChainID, Contract, EntryPoint, GetCurrentTime, GetLevel, GetSender, GetSource } from '../src/core';
 import { ContractStorage } from '../src/core/expression';
 import { SetValue } from '../src/core/command';
-import SmartML from '../src/smartml';
-
-const verifyMichelsonOutput = (contract: string) => {
-    const michelson = SmartML.compileContract(contract);
-
-    // No errors expected
-    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
-    // Check snapshot
-    expect(michelson).toMatchSnapshot();
-};
+import { verifyMichelsonOutput } from './util';
 
 describe('Test compilation of blockchain operations', () => {
     it('Get sender', () => {

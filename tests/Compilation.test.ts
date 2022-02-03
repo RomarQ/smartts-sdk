@@ -3,16 +3,7 @@ import { Address, Bool, List, Mutez, Nat, None, Record, Some, String, Unit } fro
 import { Contract, EntryPoint, Flag, GetSender } from '../src/core';
 import { ContractStorage, Equal, GetLocal } from '../src/core/expression';
 import { DefineVar, Require, SetValue } from '../src/core/command';
-import SmartML from '../src/smartml';
-
-const verifyMichelsonOutput = (contract: string) => {
-    const michelson = SmartML.compileContract(contract);
-
-    // No errors expected
-    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
-    // Check snapshot
-    expect(michelson).toMatchSnapshot();
-};
+import { verifyMichelsonOutput } from './util';
 
 describe('Compile Contracts', () => {
     it('Simple 1', () => {

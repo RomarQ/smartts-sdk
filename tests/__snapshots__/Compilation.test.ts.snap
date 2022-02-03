@@ -3,329 +3,329 @@
 exports[`Compile Contracts Simple 1 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 19))
-            storage (literal (nat 1) (\\"Compilation.test.ts\\" 20))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 10))
+            storage (literal (nat 1) (\\"Compilation.test.ts\\" 11))
             storage_type (())
-            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 22) ((set_type (params (\\"Compilation.test.ts\\" 24)) \\"nat\\" (\\"Compilation.test.ts\\" 24)) (defineLocal \\"A\\" (literal (nat 1) (\\"Compilation.test.ts\\" 24)) True (\\"Compilation.test.ts\\" 24)) (verify (eq (getLocal \\"A\\" (\\"Compilation.test.ts\\" 24)) (params (\\"Compilation.test.ts\\" 24)) (\\"Compilation.test.ts\\" 24)) (literal (string \\"Error Message\\") (\\"Compilation.test.ts\\" 24)) (\\"Compilation.test.ts\\" 24)))))
+            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 13) ((set_type (params (\\"Compilation.test.ts\\" 15)) \\"nat\\" (\\"Compilation.test.ts\\" 15)) (defineLocal \\"A\\" (literal (nat 1) (\\"Compilation.test.ts\\" 15)) True (\\"Compilation.test.ts\\" 15)) (verify (eq (getLocal \\"A\\" (\\"Compilation.test.ts\\" 15)) (params (\\"Compilation.test.ts\\" 15)) (\\"Compilation.test.ts\\" 15)) (literal (string \\"Error Message\\") (\\"Compilation.test.ts\\" 15)) (\\"Compilation.test.ts\\" 15)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 19))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 10))
         )
         "
 `;
 
 exports[`Compile Contracts Simple 1 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "nat",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "nat",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "UNPAIR",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "nat",
-            },
-            Object {
-              "int": "1",
-            },
-          ],
-          "prim": "PUSH",
-        },
-        Object {
-          "prim": "COMPARE",
-        },
-        Object {
-          "prim": "EQ",
-        },
-        Object {
-          "args": Array [
-            Array [],
-            Array [
-              Object {
-                "args": Array [
-                  Object {
-                    "prim": "string",
-                  },
-                  Object {
-                    "string": "Error Message",
-                  },
-                ],
-                "prim": "PUSH",
-              },
-              Object {
-                "prim": "FAILWITH",
-              },
-            ],
-          ],
-          "prim": "IF",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"int\\": \\"1\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"COMPARE\\"
+                },
+                {
+                    \\"prim\\": \\"EQ\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [],
+                        [
+                            {
+                                \\"prim\\": \\"PUSH\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"string\\"
+                                    },
+                                    {
+                                        \\"string\\": \\"Error Message\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"FAILWITH\\"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
 exports[`Compile Contracts Simple 2 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 36))
-            storage (list (\\"Compilation.test.ts\\" 37)  (literal (nat 1) (\\"Compilation.test.ts\\" 37)))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 27))
+            storage (list (\\"Compilation.test.ts\\" 28)  (literal (nat 1) (\\"Compilation.test.ts\\" 28)))
             storage_type (())
-            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 39) ((set_type (params (\\"Compilation.test.ts\\" 42)) \\"bool\\" (\\"Compilation.test.ts\\" 42)) (defineLocal \\"A\\" (literal (bool False) (\\"Compilation.test.ts\\" 42)) True (\\"Compilation.test.ts\\" 42)) (verify (eq (getLocal \\"A\\" (\\"Compilation.test.ts\\" 42)) (params (\\"Compilation.test.ts\\" 42)) (\\"Compilation.test.ts\\" 42)) (literal (string \\"Error Message\\") (\\"Compilation.test.ts\\" 42)) (\\"Compilation.test.ts\\" 42)))))
+            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 30) ((set_type (params (\\"Compilation.test.ts\\" 33)) \\"bool\\" (\\"Compilation.test.ts\\" 33)) (defineLocal \\"A\\" (literal (bool False) (\\"Compilation.test.ts\\" 33)) True (\\"Compilation.test.ts\\" 33)) (verify (eq (getLocal \\"A\\" (\\"Compilation.test.ts\\" 33)) (params (\\"Compilation.test.ts\\" 33)) (\\"Compilation.test.ts\\" 33)) (literal (string \\"Error Message\\") (\\"Compilation.test.ts\\" 33)) (\\"Compilation.test.ts\\" 33)))))
             flags ((erase-comments))
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 100) (\\"Compilation.test.ts\\" 48))
+            balance (literal (mutez 100) (\\"Compilation.test.ts\\" 39))
         )
         "
 `;
 
 exports[`Compile Contracts Simple 2 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "args": Array [
-          Object {
-            "prim": "nat",
-          },
-        ],
-        "prim": "list",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "bool",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "UNPAIR",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "bool",
-            },
-            Object {
-              "prim": "False",
-            },
-          ],
-          "prim": "PUSH",
-        },
-        Object {
-          "prim": "COMPARE",
-        },
-        Object {
-          "prim": "EQ",
-        },
-        Object {
-          "args": Array [
-            Array [],
-            Array [
-              Object {
-                "args": Array [
-                  Object {
-                    "prim": "string",
-                  },
-                  Object {
-                    "string": "Error Message",
-                  },
-                ],
-                "prim": "PUSH",
-              },
-              Object {
-                "prim": "FAILWITH",
-              },
-            ],
-          ],
-          "prim": "IF",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"list\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"bool\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"bool\\"
+                        },
+                        {
+                            \\"prim\\": \\"False\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"COMPARE\\"
+                },
+                {
+                    \\"prim\\": \\"EQ\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [],
+                        [
+                            {
+                                \\"prim\\": \\"PUSH\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"string\\"
+                                    },
+                                    {
+                                        \\"string\\": \\"Error Message\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"FAILWITH\\"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
 exports[`Compile Contracts Simple 3 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 58))
-            storage (list (\\"Compilation.test.ts\\" 60)  )
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 49))
+            storage (list (\\"Compilation.test.ts\\" 51)  )
             storage_type ((list \\"nat\\"))
-            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 62) ((set_type (params (\\"Compilation.test.ts\\" 62)) (list \\"nat\\") (\\"Compilation.test.ts\\" 62)) (defineLocal \\"some_address\\" (literal (address tz1) (\\"Compilation.test.ts\\" 62)) True (\\"Compilation.test.ts\\" 62)) (verify (eq (getLocal \\"some_address\\" (\\"Compilation.test.ts\\" 62)) (sender) (\\"Compilation.test.ts\\" 62)) (literal (string \\"Not Admin!\\") (\\"Compilation.test.ts\\" 62)) (\\"Compilation.test.ts\\" 62)) (set (data) (params (\\"Compilation.test.ts\\" 62)) (\\"Compilation.test.ts\\" 62)))))
+            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 53) ((set_type (params (\\"Compilation.test.ts\\" 53)) (list \\"nat\\") (\\"Compilation.test.ts\\" 53)) (defineLocal \\"some_address\\" (literal (address tz1) (\\"Compilation.test.ts\\" 53)) True (\\"Compilation.test.ts\\" 53)) (verify (eq (getLocal \\"some_address\\" (\\"Compilation.test.ts\\" 53)) (sender) (\\"Compilation.test.ts\\" 53)) (literal (string \\"Not Admin!\\") (\\"Compilation.test.ts\\" 53)) (\\"Compilation.test.ts\\" 53)) (set (data) (params (\\"Compilation.test.ts\\" 53)) (\\"Compilation.test.ts\\" 53)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 58))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 49))
         )
         "
 `;
 
 exports[`Compile Contracts Simple 3 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "args": Array [
-          Object {
-            "prim": "nat",
-          },
-        ],
-        "prim": "list",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "args": Array [
-          Object {
-            "prim": "nat",
-          },
-        ],
-        "prim": "list",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "CAR",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "address",
-            },
-            Object {
-              "string": "tz1",
-            },
-          ],
-          "prim": "PUSH",
-        },
-        Object {
-          "prim": "SENDER",
-        },
-        Object {
-          "prim": "COMPARE",
-        },
-        Object {
-          "prim": "EQ",
-        },
-        Object {
-          "args": Array [
-            Array [],
-            Array [
-              Object {
-                "args": Array [
-                  Object {
-                    "prim": "string",
-                  },
-                  Object {
-                    "string": "Not Admin!",
-                  },
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"list\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"list\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
                 ],
-                "prim": "PUSH",
-              },
-              Object {
-                "prim": "FAILWITH",
-              },
-            ],
-          ],
-          "prim": "IF",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"address\\"
+                        },
+                        {
+                            \\"string\\": \\"tz1\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"SENDER\\"
+                },
+                {
+                    \\"prim\\": \\"COMPARE\\"
+                },
+                {
+                    \\"prim\\": \\"EQ\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [],
+                        [
+                            {
+                                \\"prim\\": \\"PUSH\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"string\\"
+                                    },
+                                    {
+                                        \\"string\\": \\"Not Admin!\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"FAILWITH\\"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
 exports[`Compile Contracts Storage (None) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 91))
-            storage (variant \\"None\\" (unit) (\\"Compilation.test.ts\\" 91))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 82))
+            storage (variant \\"None\\" (unit) (\\"Compilation.test.ts\\" 82))
             storage_type ((option \\"nat\\"))
             messages ()
             flags ()
@@ -333,63 +333,63 @@ exports[`Compile Contracts Storage (None) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 91))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 82))
         )
         "
 `;
 
 exports[`Compile Contracts Storage (None) 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "args": Array [
-          Object {
-            "prim": "nat",
-          },
-        ],
-        "prim": "option",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "prim": "unit",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "CDR",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"option\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
 exports[`Compile Contracts Storage (Record) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 98))
-            storage (record (\\"Compilation.test.ts\\" 100) (testField1 (literal (nat 1) (\\"Compilation.test.ts\\" 101))) (testField2 (list (\\"Compilation.test.ts\\" 102)  (literal (string \\"Hello World\\") (\\"Compilation.test.ts\\" 102)))))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 89))
+            storage (record (\\"Compilation.test.ts\\" 91) (testField1 (literal (nat 1) (\\"Compilation.test.ts\\" 92))) (testField2 (list (\\"Compilation.test.ts\\" 93)  (literal (string \\"Hello World\\") (\\"Compilation.test.ts\\" 93)))))
             storage_type (())
             messages ()
             flags ()
@@ -397,77 +397,77 @@ exports[`Compile Contracts Storage (Record) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 98))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 89))
         )
         "
 `;
 
 exports[`Compile Contracts Storage (Record) 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "args": Array [
-          Object {
-            "annots": Array [
-              "%testField1",
-            ],
-            "prim": "nat",
-          },
-          Object {
-            "annots": Array [
-              "%testField2",
-            ],
-            "args": Array [
-              Object {
-                "prim": "string",
-              },
-            ],
-            "prim": "list",
-          },
-        ],
-        "prim": "pair",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "prim": "unit",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "CDR",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"pair\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\",
+                        \\"annots\\": [
+                            \\"%testField1\\"
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"list\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"string\\"
+                            }
+                        ],
+                        \\"annots\\": [
+                            \\"%testField2\\"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
 exports[`Compile Contracts Storage (Some) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 85))
-            storage (variant \\"Some\\" (literal (nat 1) (\\"Compilation.test.ts\\" 85)) (\\"Compilation.test.ts\\" 85))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 76))
+            storage (variant \\"Some\\" (literal (nat 1) (\\"Compilation.test.ts\\" 76)) (\\"Compilation.test.ts\\" 76))
             storage_type (())
             messages ()
             flags ()
@@ -475,62 +475,62 @@ exports[`Compile Contracts Storage (Some) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 85))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 76))
         )
         "
 `;
 
 exports[`Compile Contracts Storage (Some) 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "args": Array [
-          Object {
-            "prim": "nat",
-          },
-        ],
-        "prim": "option",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "prim": "unit",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "CDR",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"option\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
 exports[`Compile Contracts Storage (Unit) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 78))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 69))
             storage (unit)
             storage_type (())
             messages ()
@@ -539,49 +539,49 @@ exports[`Compile Contracts Storage (Unit) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 78))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 69))
         )
         "
 `;
 
 exports[`Compile Contracts Storage (Unit) 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "unit",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "prim": "unit",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "CDR",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
