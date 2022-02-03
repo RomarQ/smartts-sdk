@@ -31,6 +31,7 @@ import {
     TTicket,
     TTimestamp,
     TUnit,
+    TVariant,
 } from '../../src/core/type';
 import { IType } from '../../src/typings/type';
 import { verifyMichelsonOutput } from '../util';
@@ -99,5 +100,12 @@ describe('Test Types', () => {
             [['field1', 'field2'], 'field3'],
         ),
     );
-    // TVariant,
+    verifyType(
+        'variant',
+        TVariant({
+            match1: TNat(),
+            match2: TUnit(),
+            match3: TString(),
+        }),
+    );
 });

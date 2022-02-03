@@ -22,7 +22,8 @@ export class ContainerType implements IType {
 
 export class Type_Record implements IType {
     private layout: ILayout | Layout;
-    constructor(public fields: Record<string, IType>, layout?: ILayout | Layout) {
+
+    constructor(private atom: string, private fields: Record<string, IType>, layout?: ILayout | Layout) {
         this.layout = layout || composeRightCombLayout(Object.keys(fields));
     }
 
@@ -46,7 +47,7 @@ export class Type_Record implements IType {
     };
 
     toString() {
-        return `(record (${this.buildFields(this.fields).join(' ')}) ${this.translateLayout(this.layout)})`;
+        return `(${this.atom} (${this.buildFields(this.fields).join(' ')}) ${this.translateLayout(this.layout)})`;
     }
 }
 
@@ -86,7 +87,10 @@ export const TContract = (innerType: IType) => new ContainerType(Prim.contract, 
 export const TSapling_state = (memo: number) => new ContainerType(Prim.sapling_state, [memo]);
 export const TSapling_transaction = (memo: number) => new ContainerType(Prim.sapling_transaction, [memo]);
 // Artificial Types
-export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) => new Type_Record(fields, layout);
+export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) =>
+    new Type_Record('record', fields, layout);
+export const TVariant = (fields: Record<string, IType>, layout?: ILayout | Layout) =>
+    new Type_Record('variant', fields, layout);
 
 const Types = {
     TUnknown,
@@ -123,7 +127,7 @@ const Types = {
     TSapling_transaction,
     // Artificial Types
     TRecord,
-    // TVariant,
+    TVariant,
 };
 
 export default Types;
