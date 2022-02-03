@@ -19,16 +19,17 @@ import {
     TRecord,
     TMap,
     TBig_map,
+    TKey_hash,
 } from '../type';
 import { Prim } from '../enums/prim';
 import { IExpression, IExpressionKind } from '../../typings/expression';
 import { Layout } from '../enums/layout';
 
-class Literal implements ILiteral {
-    _isLiteral = true as const;
+class Literal<T extends string> implements ILiteral<T> {
+    _isExpression = true as const;
 
     constructor(
-        public name: string,
+        public name: T,
         public value: number | string | boolean | undefined,
         public type: IType,
         public line: LineInfo,
@@ -46,10 +47,10 @@ class Literal implements ILiteral {
     }
 }
 
-class ListLiteral implements ILiteral {
-    _isLiteral = true as const;
+class ListLiteral<T> implements ILiteral<T> {
+    _isExpression = true as const;
 
-    constructor(public name: string, public items: IExpressionKind[], public type: IType, public line: LineInfo) {}
+    constructor(public name: T, public items: IExpressionKind[], public type: IType, public line: LineInfo) {}
 
     toString() {
         return `(${this.name} ${this.line}  ${this.items.map((item) => item.toString()).join(' ')})`;
@@ -60,8 +61,9 @@ class ListLiteral implements ILiteral {
     }
 }
 
-class OptionLiteral implements ILiteral {
-    _isLiteral = true as const;
+class OptionLiteral implements ILiteral<'option'> {
+    _isExpression = true as const;
+    name = 'option' as const;
 
     type: IType;
 
@@ -83,12 +85,13 @@ class OptionLiteral implements ILiteral {
     }
 }
 
-class RecordLiteral implements ILiteral {
-    _isLiteral = true as const;
+class RecordLiteral implements ILiteral<'record'> {
+    _isExpression = true as const;
+    name = 'record' as const;
 
     type: IType;
 
-    constructor(public fields: Record<string, ILiteral>, public line: LineInfo) {
+    constructor(public fields: Record<string, ILiteral<unknown>>, public line: LineInfo) {
         // Compute the record type (use rightcombs by default)
         this.type = TRecord(
             Object.entries(fields).reduce(
@@ -115,18 +118,14 @@ class RecordLiteral implements ILiteral {
     }
 }
 
-class MapLiteral implements ILiteral {
-    _isLiteral = true as const;
+class MapLiteral<T extends Prim.map | Prim.big_map> implements ILiteral<T> {
+    _isExpression = true as const;
+    name: T;
 
     type: IType;
 
-    constructor(
-        public prim: Prim.map | Prim.big_map,
-        public rows: IExpression[][],
-        keyType: IType,
-        valueType: IType,
-        public line: LineInfo,
-    ) {
+    constructor(public prim: T, public rows: IExpression[][], keyType: IType, valueType: IType, public line: LineInfo) {
+        this.name = prim;
         if (prim === Prim.map) {
             this.type = TMap(keyType, valueType);
         } else {
@@ -168,6 +167,9 @@ export const ChainID = (chainID: string, line = new LineInfo()) =>
 
 export const Bytes = (bytes: string, line = new LineInfo()) => new Literal(Prim.bytes, bytes, TBytes(), line);
 
+export const Key_hash = (key_hash: string, line = new LineInfo()) =>
+    new Literal<'key_hash'>(Prim.key_hash, key_hash, TKey_hash(), line);
+
 // Containers
 export const List = (items: IExpressionKind[], innerType: IType, line = new LineInfo()) =>
     new ListLiteral(Prim.list, items, TList(innerType), line);
@@ -176,9 +178,10 @@ export const Some = (value: IExpressionKind, innerType?: IType, line = new LineI
 export const None = (innerType?: IType, line = new LineInfo()) =>
     new OptionLiteral(Prim.None, undefined, innerType, line);
 
-export const Record = (fields: Record<string, ILiteral>, line = new LineInfo()) => new RecordLiteral(fields, line);
+export const Record = (fields: Record<string, ILiteral<unknown>>, line = new LineInfo()) =>
+    new RecordLiteral(fields, line);
 
-export const SmallMap = (
+export const Map = (
     rows: IExpression[][] = [],
     keyType: IType = TUnknown,
     valueType: IType = TUnknown,
@@ -207,7 +210,7 @@ const Literals = {
     Some,
     None,
     Record,
-    SmallMap,
+    Map,
     BigMap,
 };
 

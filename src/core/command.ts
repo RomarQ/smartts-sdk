@@ -2,6 +2,7 @@ import { Expression } from './expression';
 import Utils, { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { IStatement } from '../typings/statement';
+import { ILiteral } from '../typings/literal';
 
 class C_DefineLocal implements IStatement {
     constructor(public name: string, public value: unknown, public mutable: boolean, public line = new LineInfo()) {}
@@ -20,7 +21,7 @@ class C_Verify implements IStatement {
         return `(verify ${this.condition} ${this.errorMsg} ${this.line})`;
     }
 }
-export const Require = (condition: IExpression, errorMsg: IExpression, line = new LineInfo()) =>
+export const Require = (condition: IExpression, errorMsg: ILiteral<unknown> | IExpression, line = new LineInfo()) =>
     new C_Verify(condition, errorMsg, line);
 
 class C_SetValue implements IStatement {

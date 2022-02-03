@@ -1,3 +1,5 @@
-export interface IType {
-    toString: () => string;
+import { IToString } from './shared';
+
+export interface IType extends IToString {
+    _isType: true;
 }

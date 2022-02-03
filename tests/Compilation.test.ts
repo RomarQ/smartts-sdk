@@ -14,7 +14,7 @@ describe('Compile Contracts', () => {
                     .inputType(TNat())
                     .code((arg) => [
                         DefineVar('A', Nat(1)),
-                        Require(Equal(GetLocal('A'), arg), String('Error Message')),
+                        Require(Equal(GetLocal('A'), arg), String('Debug Message')),
                     ]),
             )
             .toString();
@@ -32,7 +32,7 @@ describe('Compile Contracts', () => {
                     .inputType(TBool())
                     .code((arg) => [
                         DefineVar('A', Bool(false)),
-                        Require(Equal(GetLocal('A'), arg), String('Error Message')),
+                        Require(Equal(GetLocal('A'), arg), String('Debug Message')),
                     ]),
             )
             .setConfig({

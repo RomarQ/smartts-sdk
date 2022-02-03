@@ -1,8 +1,9 @@
-import { IToString, IToType } from './shared';
+import { IExpression } from './expression';
 import { IType } from './type';
 
 export type ILayout = (string | ILayout)[];
 
-export interface ILiteral extends IToString, IToType {
+export interface ILiteral<T> extends IExpression {
+    name: T;
     type: IType;
 }
