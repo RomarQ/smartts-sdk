@@ -1,5 +1,6 @@
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
+import { ILiteral } from '../typings/literal';
 import { IType } from '../typings/type';
 
 type ProxyedExpression = Expression & { [prop: string]: ProxyedExpression };
@@ -12,9 +13,10 @@ const proxy = (instance: Expression): ProxyedExpression =>
     new Proxy(instance, Expression.proxyHandler) as ProxyedExpression;
 
 export class Expression implements IExpression {
-    args: IExpression[];
+    _isExpression = true as const;
+    args;
 
-    constructor(public name: string, ...args: (IExpression | LineInfo)[]) {
+    constructor(public name: string, ...args: (IExpression | LineInfo | IType | string | ILiteral)[]) {
         this.args = args || [];
     }
 
@@ -31,7 +33,7 @@ export class Expression implements IExpression {
         },
     };
 
-    [Symbol.toPrimitive]() {
+    toString() {
         return `(${[this.name, ...this.args].join(' ')})`;
     }
 }

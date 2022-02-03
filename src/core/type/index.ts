@@ -5,6 +5,8 @@ import { Layout } from '../enums/layout';
 import { Prim, SmartPyAtom } from '../enums/prim';
 
 export class SimpleType implements IType {
+    _isType = true as const;
+
     constructor(public name: string) {}
 
     toString() {
@@ -13,7 +15,9 @@ export class SimpleType implements IType {
 }
 
 export class ContainerType implements IType {
-    constructor(public type: string, public innerTypes: IType[]) {}
+    _isType = true as const;
+
+    constructor(public type: string, public innerTypes: (IType | number)[]) {}
 
     toString() {
         return `(${this.type} ${this.innerTypes.join(' ')})`;
@@ -21,6 +25,8 @@ export class ContainerType implements IType {
 }
 
 export class Type_Record implements IType {
+    _isType = true as const;
+
     private layout: ILayout | Layout;
 
     constructor(private atom: string, private fields: Record<string, IType>, layout?: ILayout | Layout) {
@@ -52,6 +58,7 @@ export class Type_Record implements IType {
 }
 
 export const TUnknown: IType = {
+    _isType: true as const,
     toString: () => '(unknown 0)',
 };
 // Singleton types

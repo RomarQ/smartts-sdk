@@ -81,7 +81,7 @@ export class EntryPoint {
 
 export class Contract {
     #options: {
-        initialBalance: ILiteral;
+        initialBalance: IExpression;
         flags: Flag[];
     } = {
         initialBalance: Mutez(0),
@@ -89,7 +89,7 @@ export class Contract {
     };
 
     #storage_type?: IType;
-    #storage: ILiteral = Unit();
+    #storage: IExpression = Unit();
     #entries: EntryPoint[] = [];
 
     constructor(public line = new LineInfo()) {}
@@ -119,7 +119,7 @@ export class Contract {
         return this;
     }
 
-    public get storage(): Readonly<ILiteral> {
+    public get storage(): Readonly<IExpression> {
         return this.#storage;
     }
 
@@ -128,7 +128,7 @@ export class Contract {
     }
 
     public get config(): Readonly<{
-        initialBalance: ILiteral;
+        initialBalance: IExpression;
         flags: Flag[];
     }> {
         return this.#options;

@@ -25,6 +25,7 @@ import { IExpression, IExpressionKind } from '../../typings/expression';
 import { Layout } from '../enums/layout';
 
 class Literal implements ILiteral {
+    _isExpression = true as const;
     _isLiteral = true as const;
 
     constructor(
@@ -47,6 +48,7 @@ class Literal implements ILiteral {
 }
 
 class ListLiteral implements ILiteral {
+    _isExpression = true as const;
     _isLiteral = true as const;
 
     constructor(public name: string, public items: IExpressionKind[], public type: IType, public line: LineInfo) {}
@@ -61,6 +63,7 @@ class ListLiteral implements ILiteral {
 }
 
 class OptionLiteral implements ILiteral {
+    _isExpression = true as const;
     _isLiteral = true as const;
 
     type: IType;
@@ -84,6 +87,7 @@ class OptionLiteral implements ILiteral {
 }
 
 class RecordLiteral implements ILiteral {
+    _isExpression = true as const;
     _isLiteral = true as const;
 
     type: IType;
@@ -116,6 +120,7 @@ class RecordLiteral implements ILiteral {
 }
 
 class MapLiteral implements ILiteral {
+    _isExpression = true as const;
     _isLiteral = true as const;
 
     type: IType;
@@ -178,7 +183,7 @@ export const None = (innerType?: IType, line = new LineInfo()) =>
 
 export const Record = (fields: Record<string, ILiteral>, line = new LineInfo()) => new RecordLiteral(fields, line);
 
-export const SmallMap = (
+export const Map = (
     rows: IExpression[][] = [],
     keyType: IType = TUnknown,
     valueType: IType = TUnknown,
@@ -207,7 +212,7 @@ const Literals = {
     Some,
     None,
     Record,
-    SmallMap,
+    Map,
     BigMap,
 };
 
