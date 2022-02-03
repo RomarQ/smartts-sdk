@@ -1,4 +1,4 @@
-import { None, Some } from '../../src/core/literal';
+import { Key_hash, None, Some } from '../../src/core/literal';
 import {
     GetChain_id,
     Contract,
@@ -13,6 +13,15 @@ import {
     TTimestamp,
     TChain_id,
     TNat,
+    GetAmount,
+    TMutez,
+    GetBalance,
+    TInt,
+    GetSelf,
+    GetSelfAddress,
+    GetTotalVotingPower,
+    GetVotingPower,
+    TContract,
 } from '../../src/core';
 import { ContractStorage } from '../../src/core/expression';
 import { SetValue } from '../../src/core/command';
@@ -36,9 +45,15 @@ const verify = (testName: string, type: IType, operation: IExpression) => {
 };
 
 describe('Test blockchain operations', () => {
-    verify('Get Sender', TAddress(), GetSender());
-    verify('Get Source', TAddress(), GetSource());
-    verify('Get Block Level', TNat(), GetLevel());
-    verify('Get Timestamp', TTimestamp(), GetTimestamp());
-    verify('Get Chain ID', TChain_id(), GetChain_id());
+    verify('SENDER', TAddress(), GetSender());
+    verify('SOURCE', TAddress(), GetSource());
+    verify('LEVEL', TNat(), GetLevel());
+    verify('NOW', TTimestamp(), GetTimestamp());
+    verify('CHAIN_ID', TChain_id(), GetChain_id());
+    verify('AMOUNT', TMutez(), GetAmount());
+    verify('BALANCE', TMutez(), GetBalance());
+    verify('SELF', TContract(TUnit()), GetSelf());
+    verify('SELF_ADDRESS', TAddress(), GetSelfAddress());
+    verify('TOTAL_VOTING_POWER', TNat(), GetTotalVotingPower());
+    verify('VOTING_POWER', TNat(), GetVotingPower(Key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')));
 });

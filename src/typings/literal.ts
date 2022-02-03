@@ -3,7 +3,7 @@ import { IType } from './type';
 
 export type ILayout = (string | ILayout)[];
 
-export interface ILiteral extends IExpression {
-    _isLiteral: true;
+export interface ILiteral<T> extends IExpression {
+    name: T;
     type: IType;
 }

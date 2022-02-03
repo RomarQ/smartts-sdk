@@ -5,4 +5,4 @@ export interface IExpression extends IToString {
     _isExpression: true;
 }
 
-export type IExpressionKind = string | IExpression | ILiteral;
+export type IExpressionKind = string | IExpression | ILiteral<any>;

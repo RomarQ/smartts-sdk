@@ -99,7 +99,7 @@ export class Contract {
         return this;
     }
 
-    public setStorage(storage: ILiteral) {
+    public setStorage(storage: ILiteral<unknown>) {
         this.#storage = storage;
         return this;
     }
@@ -109,7 +109,7 @@ export class Contract {
         return this;
     }
 
-    public setConfig(options?: { initialBalance?: ILiteral; flags?: Flag[] }) {
+    public setConfig(options?: { initialBalance?: ILiteral<unknown>; flags?: Flag[] }) {
         if (options?.flags) {
             this.#options.flags = options.flags;
         }

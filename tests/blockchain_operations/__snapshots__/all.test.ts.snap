@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test blockchain operations Get Block Level 1`] = `
+exports[`Test blockchain operations AMOUNT 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 25))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 27))
-            storage_type ((option \\"nat\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 29) ((set_type (params (\\"all.test.ts\\" 29)) \\"unit\\" (\\"all.test.ts\\" 29)) (set (data) (variant \\"Some\\" (level) (\\"all.test.ts\\" 29)) (\\"all.test.ts\\" 29)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option \\"mutez\\"))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (amount) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 25))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
         )
         "
 `;
 
-exports[`Test blockchain operations Get Block Level 2`] = `
+exports[`Test blockchain operations AMOUNT 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
@@ -26,7 +26,7 @@ exports[`Test blockchain operations Get Block Level 2`] = `
                 \\"prim\\": \\"option\\",
                 \\"args\\": [
                     {
-                        \\"prim\\": \\"nat\\"
+                        \\"prim\\": \\"mutez\\"
                     }
                 ]
             }
@@ -48,16 +48,10 @@ exports[`Test blockchain operations Get Block Level 2`] = `
         \\"args\\": [
             [
                 {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"LEVEL\\"
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
                     \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"AMOUNT\\"
                 },
                 {
                     \\"prim\\": \\"SOME\\"
@@ -79,24 +73,97 @@ exports[`Test blockchain operations Get Block Level 2`] = `
 ]"
 `;
 
-exports[`Test blockchain operations Get Chain ID 1`] = `
+exports[`Test blockchain operations BALANCE 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 25))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 27))
-            storage_type ((option \\"chain_id\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 29) ((set_type (params (\\"all.test.ts\\" 29)) \\"unit\\" (\\"all.test.ts\\" 29)) (set (data) (variant \\"Some\\" (chain_id) (\\"all.test.ts\\" 29)) (\\"all.test.ts\\" 29)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option \\"mutez\\"))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (balance) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 25))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
         )
         "
 `;
 
-exports[`Test blockchain operations Get Chain ID 2`] = `
+exports[`Test blockchain operations BALANCE 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"option\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"mutez\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"BALANCE\\"
+                },
+                {
+                    \\"prim\\": \\"SOME\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test blockchain operations CHAIN_ID 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option \\"chain_id\\"))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (chain_id) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+        )
+        "
+`;
+
+exports[`Test blockchain operations CHAIN_ID 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
@@ -158,24 +225,268 @@ exports[`Test blockchain operations Get Chain ID 2`] = `
 ]"
 `;
 
-exports[`Test blockchain operations Get Sender 1`] = `
+exports[`Test blockchain operations LEVEL 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 25))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 27))
-            storage_type ((option \\"address\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 29) ((set_type (params (\\"all.test.ts\\" 29)) \\"unit\\" (\\"all.test.ts\\" 29)) (set (data) (variant \\"Some\\" (sender) (\\"all.test.ts\\" 29)) (\\"all.test.ts\\" 29)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option \\"nat\\"))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (level) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 25))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
         )
         "
 `;
 
-exports[`Test blockchain operations Get Sender 2`] = `
+exports[`Test blockchain operations LEVEL 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"option\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"LEVEL\\"
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"SOME\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test blockchain operations NOW 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option \\"timestamp\\"))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (now) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+        )
+        "
+`;
+
+exports[`Test blockchain operations NOW 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"option\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"timestamp\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"NOW\\"
+                },
+                {
+                    \\"prim\\": \\"SOME\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test blockchain operations SELF 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option (contract \\"unit\\")))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (self \\"\\" (\\"all.test.ts\\" 47)) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+        )
+        "
+`;
+
+exports[`Test blockchain operations SELF 2`] = `"\\"import: params type yet unknown\\""`;
+
+exports[`Test blockchain operations SELF_ADDRESS 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option \\"address\\"))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (self_address) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+        )
+        "
+`;
+
+exports[`Test blockchain operations SELF_ADDRESS 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"option\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"address\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"SELF_ADDRESS\\"
+                },
+                {
+                    \\"prim\\": \\"SOME\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test blockchain operations SENDER 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option \\"address\\"))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (sender) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+        )
+        "
+`;
+
+exports[`Test blockchain operations SENDER 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
@@ -231,24 +542,24 @@ exports[`Test blockchain operations Get Sender 2`] = `
 ]"
 `;
 
-exports[`Test blockchain operations Get Source 1`] = `
+exports[`Test blockchain operations SOURCE 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 25))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 27))
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
             storage_type ((option \\"address\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 29) ((set_type (params (\\"all.test.ts\\" 29)) \\"unit\\" (\\"all.test.ts\\" 29)) (set (data) (variant \\"Some\\" (source) (\\"all.test.ts\\" 29)) (\\"all.test.ts\\" 29)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (source) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 25))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
         )
         "
 `;
 
-exports[`Test blockchain operations Get Source 2`] = `
+exports[`Test blockchain operations SOURCE 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
@@ -304,24 +615,24 @@ exports[`Test blockchain operations Get Source 2`] = `
 ]"
 `;
 
-exports[`Test blockchain operations Get Timestamp 1`] = `
+exports[`Test blockchain operations TOTAL_VOTING_POWER 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 25))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 27))
-            storage_type ((option \\"timestamp\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 29) ((set_type (params (\\"all.test.ts\\" 29)) \\"unit\\" (\\"all.test.ts\\" 29)) (set (data) (variant \\"Some\\" (now) (\\"all.test.ts\\" 29)) (\\"all.test.ts\\" 29)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option \\"nat\\"))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (total_voting_power) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 25))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
         )
         "
 `;
 
-exports[`Test blockchain operations Get Timestamp 2`] = `
+exports[`Test blockchain operations TOTAL_VOTING_POWER 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
@@ -330,7 +641,86 @@ exports[`Test blockchain operations Get Timestamp 2`] = `
                 \\"prim\\": \\"option\\",
                 \\"args\\": [
                     {
-                        \\"prim\\": \\"timestamp\\"
+                        \\"prim\\": \\"nat\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"TOTAL_VOTING_POWER\\"
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"SOME\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test blockchain operations VOTING_POWER 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            storage_type ((option \\"nat\\"))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (voting_power (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"all.test.ts\\" 47)) (\\"all.test.ts\\" 47)) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+        )
+        "
+`;
+
+exports[`Test blockchain operations VOTING_POWER 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"option\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
                     }
                 ]
             }
@@ -355,7 +745,18 @@ exports[`Test blockchain operations Get Timestamp 2`] = `
                     \\"prim\\": \\"DROP\\"
                 },
                 {
-                    \\"prim\\": \\"NOW\\"
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"key_hash\\"
+                        },
+                        {
+                            \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"VOTING_POWER\\"
                 },
                 {
                     \\"prim\\": \\"SOME\\"

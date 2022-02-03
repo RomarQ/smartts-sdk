@@ -21,7 +21,7 @@ class C_Verify implements IStatement {
         return `(verify ${this.condition} ${this.errorMsg} ${this.line})`;
     }
 }
-export const Require = (condition: IExpression, errorMsg: ILiteral | IExpression, line = new LineInfo()) =>
+export const Require = (condition: IExpression, errorMsg: ILiteral<unknown> | IExpression, line = new LineInfo()) =>
     new C_Verify(condition, errorMsg, line);
 
 class C_SetValue implements IStatement {

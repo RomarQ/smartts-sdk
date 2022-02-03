@@ -1,3 +1,5 @@
+import { LineInfo } from '../misc/utils';
+import { ILiteral } from '../typings/literal';
 import { Expression } from './expression';
 
 /**
@@ -23,7 +25,7 @@ export const GetTimestamp = () => new Expression('now');
 /**
  * @see https://tezos.gitlab.io/michelson-reference/#instr-SELF_ADDRESS
  */
-export const GetSelf = () => new Expression('self');
+export const GetSelf = (entry_point = '', line = new LineInfo()) => new Expression('self', `"${entry_point}"`, line);
 /**
  * @see https://tezos.gitlab.io/michelson-reference/#instr-SELF_ADDRESS
  */
@@ -43,4 +45,5 @@ export const GetTotalVotingPower = () => new Expression('total_voting_power');
 /**
  * @see https://tezos.gitlab.io/michelson-reference/#instr-VOTING_POWER
  */
-export const GetVotingPower = (key_hash: string) => new Expression('voting_power', key_hash);
+export const GetVotingPower = (key_hash: ILiteral<'key_hash'>, line = new LineInfo()) =>
+    new Expression('voting_power', `${key_hash}`, line);

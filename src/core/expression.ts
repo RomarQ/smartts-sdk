@@ -16,7 +16,7 @@ export class Expression implements IExpression {
     _isExpression = true as const;
     args;
 
-    constructor(public name: string, ...args: (IExpression | LineInfo | IType | string | ILiteral)[]) {
+    constructor(public name: string, ...args: (IExpression | LineInfo | IType | string | ILiteral<unknown>)[]) {
         this.args = args || [];
     }
 
