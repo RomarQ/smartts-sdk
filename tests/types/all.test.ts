@@ -57,7 +57,7 @@ describe('Test Types', () => {
     verifyType('string', TString());
     verifyType('bool', TBool());
     verifyType('bytes', TBytes());
-    verifyType('addres', TAddress());
+    verifyType('address', TAddress());
     verifyType('timestamp', TTimestamp());
     verifyType('chain_id', TChain_id());
     verifyType('bls12_381_fr', TBls12_381_fr());

@@ -105,7 +105,7 @@ exports[`Compile Contracts Simple 2 1`] = `
 "
         (
             template_id (static_id 0 (\\"Compilation.test.ts\\" 27))
-            storage (list (\\"Compilation.test.ts\\" 28)  (literal (nat 1) (\\"Compilation.test.ts\\" 28)))
+            storage (list (\\"Compilation.test.ts\\" 28) (literal (nat 1) (\\"Compilation.test.ts\\" 28)))
             storage_type (())
             messages ((ep1 True False False True (\\"Compilation.test.ts\\" 30) ((set_type (params (\\"Compilation.test.ts\\" 33)) \\"bool\\" (\\"Compilation.test.ts\\" 33)) (defineLocal \\"A\\" (literal (bool False) (\\"Compilation.test.ts\\" 33)) True (\\"Compilation.test.ts\\" 33)) (verify (eq (getLocal \\"A\\" (\\"Compilation.test.ts\\" 33)) (params (\\"Compilation.test.ts\\" 33)) (\\"Compilation.test.ts\\" 33)) (literal (string \\"Debug Message\\") (\\"Compilation.test.ts\\" 33)) (\\"Compilation.test.ts\\" 33)))))
             flags ((erase-comments))
@@ -211,7 +211,7 @@ exports[`Compile Contracts Simple 3 1`] = `
 "
         (
             template_id (static_id 0 (\\"Compilation.test.ts\\" 49))
-            storage (list (\\"Compilation.test.ts\\" 51)  )
+            storage (list (\\"Compilation.test.ts\\" 51) )
             storage_type ((list \\"nat\\"))
             messages ((ep1 True False False True (\\"Compilation.test.ts\\" 53) ((set_type (params (\\"Compilation.test.ts\\" 53)) (list \\"nat\\") (\\"Compilation.test.ts\\" 53)) (defineLocal \\"some_address\\" (literal (address tz1) (\\"Compilation.test.ts\\" 53)) True (\\"Compilation.test.ts\\" 53)) (verify (eq (getLocal \\"some_address\\" (\\"Compilation.test.ts\\" 53)) (sender) (\\"Compilation.test.ts\\" 53)) (literal (string \\"Not Admin!\\") (\\"Compilation.test.ts\\" 53)) (\\"Compilation.test.ts\\" 53)) (set (data) (params (\\"Compilation.test.ts\\" 53)) (\\"Compilation.test.ts\\" 53)))))
             flags ()
@@ -389,7 +389,7 @@ exports[`Compile Contracts Storage (Record) 1`] = `
 "
         (
             template_id (static_id 0 (\\"Compilation.test.ts\\" 89))
-            storage (record (\\"Compilation.test.ts\\" 91) (testField1 (literal (nat 1) (\\"Compilation.test.ts\\" 92))) (testField2 (list (\\"Compilation.test.ts\\" 93)  (literal (string \\"Hello World\\") (\\"Compilation.test.ts\\" 93)))))
+            storage (record (\\"Compilation.test.ts\\" 91) (testField1 (literal (nat 1) (\\"Compilation.test.ts\\" 92))) (testField2 (list (\\"Compilation.test.ts\\" 93) (literal (string \\"Hello World\\") (\\"Compilation.test.ts\\" 93)))))
             storage_type (())
             messages ()
             flags ()

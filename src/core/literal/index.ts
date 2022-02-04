@@ -1,7 +1,7 @@
 import type { IType } from '../../typings/type';
 import type { ILiteral } from '../../typings/literal';
 
-import { capitalizeBoolean, LineInfo } from '../../misc/utils';
+import { capitalizeBoolean, LineInfo, parenthesis } from '../../misc/utils';
 import {
     TNat,
     TString,
@@ -24,24 +24,29 @@ import {
     TBls12_381_fr,
     TBls12_381_g1,
     TBls12_381_g2,
+    TSignature,
+    TSet,
 } from '../type';
-import { Prim } from '../enums/prim';
 import { IExpression, IExpressionKind } from '../../typings/expression';
 import { Layout } from '../enums/layout';
+import LiteralAtom from '../enums/literal';
+import TypeAtom from '../enums/type';
 
-class Literal<T extends string> implements ILiteral<T> {
+class Literal<T extends TypeAtom> implements ILiteral<T> {
     _isExpression = true as const;
+    // Used for type checking
+    _type = null as unknown as T;
 
     constructor(
-        public name: T,
-        public value: number | string | boolean | undefined,
+        private name: LiteralAtom,
+        private value: number | string | boolean | undefined,
         public type: IType,
-        public line: LineInfo,
+        private line: LineInfo,
     ) {}
 
     toString() {
         if (typeof this.value === 'undefined') {
-            return `(${this.name})`;
+            return parenthesis(this.name);
         }
         return `(literal (${this.name} ${this.value}) ${this.line})`;
     }
@@ -51,13 +56,38 @@ class Literal<T extends string> implements ILiteral<T> {
     }
 }
 
-class ListLiteral<T> implements ILiteral<T> {
+class LiteralExpression<T extends TypeAtom> implements ILiteral<T> {
     _isExpression = true as const;
+    // Used for type checking
+    _type = null as unknown as T;
+    type = {} as unknown as IType;
 
-    constructor(public name: T, public items: IExpressionKind[], public type: IType, public line: LineInfo) {}
+    constructor(private name: LiteralAtom, private values: IExpression[], private line: LineInfo) {}
 
     toString() {
-        return `(${this.name} ${this.line}  ${this.items.map((item) => item.toString()).join(' ')})`;
+        if (this.values.length === 0) {
+            return parenthesis(this.name);
+        }
+        return `(${this.name} ${this.values.join(' ')} ${this.line})`;
+    }
+}
+
+class ListLiteral<T> implements ILiteral<T> {
+    _isExpression = true as const;
+    _type: T;
+
+    constructor(
+        private name: LiteralAtom,
+        private items: IExpressionKind[],
+        public type: IType,
+        private line: LineInfo,
+    ) {
+        // Just for typing purposes
+        this._type = null as unknown as T;
+    }
+
+    toString() {
+        return `(${this.name} ${this.line} ${this.items.join(' ')})`;
     }
 
     toType() {
@@ -65,23 +95,25 @@ class ListLiteral<T> implements ILiteral<T> {
     }
 }
 
-class OptionLiteral implements ILiteral<'option'> {
+class OptionLiteral implements ILiteral<TypeAtom.option> {
     _isExpression = true as const;
-    name = 'option' as const;
+    _type = TypeAtom.option as const;
 
     type: IType;
 
     constructor(
-        public prim: Prim.Some | Prim.None,
-        public value: IExpressionKind | undefined,
-        public innerType: IType = TUnknown,
-        public line: LineInfo,
+        private prim: LiteralAtom.Some | LiteralAtom.None,
+        private value: IExpressionKind | undefined,
+        private innerType: IType = TUnknown,
+        private line: LineInfo,
     ) {
         this.type = TOption(innerType);
     }
 
     toString(): string {
-        return `(variant "${this.prim}" ${this.value?.toString() || '(unit)'} ${this.line})`;
+        return `(${LiteralAtom.variant} "${this.prim}" ${this.value?.toString() || `(${LiteralAtom.unit})`} ${
+            this.line
+        })`;
     }
 
     toType() {
@@ -89,13 +121,13 @@ class OptionLiteral implements ILiteral<'option'> {
     }
 }
 
-class RecordLiteral implements ILiteral<'record'> {
+class RecordLiteral implements ILiteral<TypeAtom.record> {
     _isExpression = true as const;
-    name = 'record' as const;
+    _type = TypeAtom.record as const;
 
     type: IType;
 
-    constructor(public fields: Record<string, ILiteral<unknown>>, public line: LineInfo) {
+    constructor(private fields: Record<string, ILiteral<unknown>>, private line: LineInfo) {
         // Compute the record type (use rightcombs by default)
         this.type = TRecord(
             Object.entries(fields).reduce(
@@ -114,7 +146,7 @@ class RecordLiteral implements ILiteral<'record'> {
     };
 
     toString(): string {
-        return `(record ${this.line} ${this.buildFields(this.fields).join(' ')})`;
+        return `(${TypeAtom.record} ${this.line} ${this.buildFields(this.fields).join(' ')})`;
     }
 
     toType() {
@@ -122,19 +154,26 @@ class RecordLiteral implements ILiteral<'record'> {
     }
 }
 
-class MapLiteral<T extends Prim.map | Prim.big_map> implements ILiteral<T> {
+class MapLiteral<T extends TypeAtom.map | TypeAtom.big_map> implements ILiteral<T> {
     _isExpression = true as const;
-    name: T;
+    _type: T;
 
     type: IType;
 
-    constructor(public prim: T, public rows: IExpression[][], keyType: IType, valueType: IType, public line: LineInfo) {
-        this.name = prim;
-        if (prim === Prim.map) {
+    constructor(
+        private prim: LiteralAtom.map | LiteralAtom.big_map,
+        private rows: IExpression[][],
+        keyType: IType,
+        valueType: IType,
+        private line: LineInfo,
+    ) {
+        if (prim === LiteralAtom.map) {
             this.type = TMap(keyType, valueType);
         } else {
             this.type = TBig_map(keyType, valueType);
         }
+        // Just for typing purposes
+        this._type = null as unknown as T;
     }
 
     private buildEntry = ([key, value]: IExpression[]) => {
@@ -150,51 +189,66 @@ class MapLiteral<T extends Prim.map | Prim.big_map> implements ILiteral<T> {
     }
 }
 
-export const Unit = () => new Literal(Prim.unit, undefined, TUnit(), new LineInfo());
-export const Nat = (value: number) => new Literal(Prim.nat, value, TNat(), new LineInfo());
-export const Int = (value: number) => new Literal(Prim.int, value, TInt(), new LineInfo());
-export const Mutez = (value: number) => new Literal(Prim.mutez, value, TMutez(), new LineInfo());
-export const String = (value: string) => new Literal(Prim.string, `"${value}"`, TString(), new LineInfo());
-export const Bool = (value: boolean) => new Literal(Prim.bool, capitalizeBoolean(value), TBool(), new LineInfo());
-export const Address = (address: string) => new Literal(Prim.address, address, TAddress(), new LineInfo());
-export const Timestamp = (timestamp: number) => new Literal(Prim.timestamp, timestamp, TTimestamp(), new LineInfo());
-export const Chain_id = (chainID: string) => new Literal('chain_id_cst', chainID, TChain_id(), new LineInfo());
-export const Bytes = (bytes: string) => new Literal(Prim.bytes, bytes, TBytes(), new LineInfo());
-export const Bls12_381_fr = (fr: string | number) =>
-    new Literal(Prim.bls12_381_fr, fr, TBls12_381_fr(), new LineInfo());
-export const Bls12_381_g1 = (bytes: string) => new Literal(Prim.bls12_381_g1, bytes, TBls12_381_g1(), new LineInfo());
-export const Bls12_381_g2 = (bytes: string) => new Literal(Prim.bls12_381_g2, bytes, TBls12_381_g2(), new LineInfo());
-export const Key = (key: string) => new Literal(Prim.key, key, TKey(), new LineInfo());
-export const Key_hash = (key_hash: string) => new Literal(Prim.key_hash, key_hash, TKey_hash(), new LineInfo());
+export const Unit = (line = new LineInfo()) => new Literal<TypeAtom.unit>(LiteralAtom.unit, undefined, TUnit(), line);
+export const Nat = (value: number, line = new LineInfo()) =>
+    new Literal<TypeAtom.nat>(LiteralAtom.nat, value, TNat(), line);
+export const Int = (value: number, line = new LineInfo()) =>
+    new Literal<TypeAtom.int>(LiteralAtom.int, value, TInt(), line);
+export const Mutez = (value: number, line = new LineInfo()) =>
+    new Literal<TypeAtom.mutez>(LiteralAtom.mutez, value, TMutez(), line);
+export const String = (value: string, line = new LineInfo()) =>
+    new Literal<TypeAtom.string>(LiteralAtom.string, `"${value}"`, TString(), line);
+export const Bool = (value: boolean, line = new LineInfo()) =>
+    new Literal<TypeAtom.bool>(LiteralAtom.bool, capitalizeBoolean(value), TBool(), line);
+export const Address = (address: string, line = new LineInfo()) =>
+    new Literal<TypeAtom.address>(LiteralAtom.address, address, TAddress(), line);
+export const Timestamp = (timestamp: number, line = new LineInfo()) =>
+    new Literal<TypeAtom.timestamp>(LiteralAtom.timestamp, timestamp, TTimestamp(), line);
+export const Chain_id = (chainID: string, line = new LineInfo()) =>
+    new Literal<TypeAtom.chain_id>(LiteralAtom.chain_id_cst, chainID, TChain_id(), line);
+export const Bytes = (bytes: string, line = new LineInfo()) =>
+    new Literal<TypeAtom.bytes>(LiteralAtom.bytes, bytes, TBytes(), line);
+export const Bls12_381_fr = (fr: string | number, line = new LineInfo()) =>
+    new Literal<TypeAtom.bls12_381_fr>(LiteralAtom.bls12_381_fr, fr, TBls12_381_fr(), line);
+export const Bls12_381_g1 = (bytes: string, line = new LineInfo()) =>
+    new Literal<TypeAtom.bls12_381_g1>(LiteralAtom.bls12_381_g1, bytes, TBls12_381_g1(), line);
+export const Bls12_381_g2 = (bytes: string, line = new LineInfo()) =>
+    new Literal<TypeAtom.bls12_381_g2>(LiteralAtom.bls12_381_g2, bytes, TBls12_381_g2(), line);
+export const Key = (key: string, line = new LineInfo()) =>
+    new Literal<TypeAtom.key>(LiteralAtom.key, key, TKey(), line);
+export const Key_hash = (key_hash: string, line = new LineInfo()) =>
+    new Literal<TypeAtom.key_hash>(LiteralAtom.key_hash, key_hash, TKey_hash(), line);
+export const Signature = (signature: string, line = new LineInfo()) =>
+    new Literal<TypeAtom.signature>(LiteralAtom.signature, signature, TSignature(), line);
 
 // Containers
 export const List = (items: IExpressionKind[], innerType: IType, line = new LineInfo()) =>
-    new ListLiteral(Prim.list, items, TList(innerType), line);
+    new ListLiteral<TypeAtom.list>(LiteralAtom.list, items, TList(innerType), line);
+export const Set = (items: IExpressionKind[], innerType: IType, line = new LineInfo()) =>
+    new ListLiteral<TypeAtom.set>(LiteralAtom.set, items, TSet(innerType), line);
 export const Some = (value: IExpressionKind, innerType?: IType, line = new LineInfo()) =>
-    new OptionLiteral(Prim.Some, value, innerType, line);
+    new OptionLiteral(LiteralAtom.Some, value, innerType, line);
 export const None = (innerType?: IType, line = new LineInfo()) =>
-    new OptionLiteral(Prim.None, undefined, innerType, line);
+    new OptionLiteral(LiteralAtom.None, undefined, innerType, line);
 export const Map = (
     rows: IExpression[][] = [],
     keyType: IType = TUnknown,
     valueType: IType = TUnknown,
     line = new LineInfo(),
-) => new MapLiteral(Prim.map, rows, keyType, valueType, line);
-
+) => new MapLiteral<TypeAtom.map>(LiteralAtom.map, rows, keyType, valueType, line);
 export const Big_map = (
     rows: IExpression[][] = [],
     keyType: IType = TUnknown,
     valueType: IType = TUnknown,
     line = new LineInfo(),
-) => new MapLiteral(Prim.big_map, rows, keyType, valueType, line);
+) => new MapLiteral<TypeAtom.big_map>(LiteralAtom.big_map, rows, keyType, valueType, line);
+export const Pair = (left: IExpression, right: IExpression, line = new LineInfo()) =>
+    new LiteralExpression<TypeAtom.tuple>(LiteralAtom.tuple, [left, right], line);
 
 export const Record = (fields: Record<string, ILiteral<unknown>>, line = new LineInfo()) =>
     new RecordLiteral(fields, line);
 
 const Literals = {
-    Some,
-    None,
-    Record,
     // Singletons
     Unit,
     Nat,
@@ -211,11 +265,23 @@ const Literals = {
     Bls12_381_g2,
     Key,
     Key_hash,
+    Signature,
     // Container types
     List,
+    Set,
+    Some,
+    None,
+    Pair,
     Map,
     Big_map,
+    // Lambda,
+    // Ticket,
+    // Contract,
+    // Sapling_state,
+    // Sapling_transaction,
     // Artificial Types
+    Record,
+    // Variant,
 };
 
 export default Literals;

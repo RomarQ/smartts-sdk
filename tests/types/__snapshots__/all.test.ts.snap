@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Types addres 1`] = `
+exports[`Test Types address 1`] = `
 "
         (
             template_id (static_id 0 (\\"all.test.ts\\" 41))
@@ -17,7 +17,7 @@ exports[`Test Types addres 1`] = `
         "
 `;
 
-exports[`Test Types addres 2`] = `
+exports[`Test Types address 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
