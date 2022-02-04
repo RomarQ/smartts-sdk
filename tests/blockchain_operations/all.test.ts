@@ -1,4 +1,3 @@
-import { Key_hash, None, Some } from '../../src/core/literal';
 import {
     GetChain_id,
     Contract,
@@ -16,14 +15,13 @@ import {
     GetAmount,
     TMutez,
     GetBalance,
-    TInt,
     GetSelf,
     GetSelfAddress,
     GetTotalVotingPower,
     GetVotingPower,
     TContract,
 } from '../../src/core';
-import { ContractStorage } from '../../src/core/expression';
+import { ContractStorage, Key_hash, None, Some } from '../../src/core/expression';
 import { SetValue } from '../../src/core/command';
 import { verifyMichelsonOutput } from '../util';
 import { IType } from '../../src/typings/type';

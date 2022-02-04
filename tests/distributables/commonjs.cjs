@@ -1,10 +1,9 @@
 const assert = require('assert');
 
+const { Contract, EntryPoint, GetSender } = require('@tezwell/smartts-sdk');
 const { DefineVar, Require, SetValue } = require('@tezwell/smartts-sdk/core/command');
 const { TNat } = require('@tezwell/smartts-sdk/core/type');
-const { Address, Nat, String } = require('@tezwell/smartts-sdk/core/literal');
-const { Contract, EntryPoint, GetSender } = require('@tezwell/smartts-sdk');
-const { ContractStorage, Equal, GetLocal } = require('@tezwell/smartts-sdk/core/expression');
+const { ContractStorage, Equal, GetLocal, Address, Nat, String } = require('@tezwell/smartts-sdk/core/expression');
 const SmartML = require('@tezwell/smartts-sdk/smartml');
 
 const contract = new Contract()

@@ -32,7 +32,18 @@ class C_SetValue implements IStatement {
         return `(${this.name} ${this.source} ${this.value} ${this.line})`;
     }
 }
-export const SetValue = (source: unknown, value: unknown, line = new LineInfo()) => new C_SetValue(source, value, line);
+export const SetValue = (source: IExpression, value: IExpression, line = new LineInfo()) =>
+    new C_SetValue(source, value, line);
+
+class C_Return implements IStatement {
+    name = 'result';
+    constructor(private expr: IExpression, private line: LineInfo) {}
+
+    toString() {
+        return `(${this.name} ${this.expr} ${this.line})`;
+    }
+}
+export const Return = (expr: IExpression, line = new LineInfo()) => new C_Return(expr, line);
 
 class IfStatment implements IStatement {
     #condition: IExpression;
@@ -113,6 +124,7 @@ const Commands = {
     SetValue,
     If,
     ForEachOf,
+    Return,
 };
 
 export default Commands;

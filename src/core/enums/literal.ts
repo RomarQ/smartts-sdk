@@ -24,6 +24,8 @@ export enum LiteralAtom {
     big_map = 'big_map',
     signature = 'signature',
     tuple = 'tuple',
+    ticket = 'ticket',
+    sapling_state = 'sapling_empty_state',
 }
 
 export default LiteralAtom;

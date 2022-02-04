@@ -2,11 +2,13 @@ import type { IType } from '../../typings/type';
 import type { ILiteral } from '../../typings/literal';
 
 import { capitalizeBoolean, LineInfo, parenthesis, quote } from '../../misc/utils';
-import { TOption, TUnknown, TRecord, TMap, TBig_map } from '../type';
+import { TUnknown, TRecord, TMap, TBig_map } from '../type';
 import { IExpression, IExpressionKind } from '../../typings/expression';
 import { Layout } from '../enums/layout';
 import LiteralAtom from '../enums/literal';
 import TypeAtom from '../enums/type';
+import { IStatement } from '../../typings/statement';
+import { Expression } from '.';
 
 class LiteralExpression<T extends TypeAtom> implements ILiteral<T> {
     _isExpression = true as const;
@@ -42,36 +44,16 @@ class LiteralExpression<T extends TypeAtom> implements ILiteral<T> {
                 return `(literal (${this.name} ${this.values.join(' ')}) ${this.line})`;
             case LiteralAtom.list:
             case LiteralAtom.set:
+            case LiteralAtom.tuple:
                 return `(${this.name} ${this.line} ${this.values.join(' ')})`;
+            case LiteralAtom.Some:
+            case LiteralAtom.None:
+                return `(${LiteralAtom.variant} "${this.name}" ${this.values.join(' ') || `(${LiteralAtom.unit})`} ${
+                    this.line
+                })`;
             default:
                 return `(${this.name} ${this.values.join(' ')} ${this.line})`;
         }
-    }
-}
-
-class OptionLiteral implements ILiteral<TypeAtom.option> {
-    _isExpression = true as const;
-    _type = TypeAtom.option as const;
-
-    type: IType;
-
-    constructor(
-        private prim: LiteralAtom.Some | LiteralAtom.None,
-        private value: IExpressionKind | undefined,
-        private innerType: IType = TUnknown,
-        private line: LineInfo,
-    ) {
-        this.type = TOption(innerType);
-    }
-
-    toString(): string {
-        return `(${LiteralAtom.variant} "${this.prim}" ${this.value?.toString() || `(${LiteralAtom.unit})`} ${
-            this.line
-        })`;
-    }
-
-    toType() {
-        return this.type.toString();
     }
 }
 
@@ -143,6 +125,39 @@ class MapLiteral<T extends TypeAtom.map | TypeAtom.big_map> implements ILiteral<
     }
 }
 
+class LambdaLiteral implements ILiteral<TypeAtom.lambda> {
+    _isExpression = true as const;
+    // Used for type checking
+    _type = TypeAtom.lambda as const;
+    type = {} as unknown as IType;
+    static idCounter = 0;
+    private id: number;
+    private withStorage = false;
+    private withOperations = false;
+    private statements: IStatement[] = [];
+
+    constructor(private inType: IType, private line: LineInfo) {
+        this.id = ++LambdaLiteral.idCounter;
+    }
+
+    public inputType(type: IType) {
+        this.inType = type;
+        return this;
+    }
+
+    public code(buildStatements: (arg: IExpression) => IStatement[]) {
+        const param = new Expression('lambdaParams', `${this.id}`, '"arg"', new LineInfo(), this.inType);
+        this.statements = buildStatements(param);
+        return this;
+    }
+
+    toString() {
+        return `(lambda ${this.id} ${capitalizeBoolean(this.withStorage)} ${capitalizeBoolean(
+            this.withOperations,
+        )} "arg" ${this.line} (${this.statements.join(' ')}))`;
+    }
+}
+
 // Singletons
 export const Unit = (line = new LineInfo()) => new LiteralExpression<TypeAtom.unit>(LiteralAtom.unit, [], line);
 export const Nat = (value: number, line = new LineInfo()) =>
@@ -180,10 +195,9 @@ export const List = (items: IExpression[], line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.list>(LiteralAtom.list, items, line);
 export const Set = (items: IExpression[], line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.set>(LiteralAtom.set, items, line);
-export const Some = (value: IExpressionKind, innerType?: IType, line = new LineInfo()) =>
-    new OptionLiteral(LiteralAtom.Some, value, innerType, line);
-export const None = (innerType?: IType, line = new LineInfo()) =>
-    new OptionLiteral(LiteralAtom.None, undefined, innerType, line);
+export const Some = (value: IExpressionKind, line = new LineInfo()) =>
+    new LiteralExpression(LiteralAtom.Some, [value], line);
+export const None = (line = new LineInfo()) => new LiteralExpression(LiteralAtom.None, [], line);
 export const Map = (
     rows: IExpression[][] = [],
     keyType: IType = TUnknown,
@@ -198,9 +212,15 @@ export const Big_map = (
 ) => new MapLiteral<TypeAtom.big_map>(LiteralAtom.big_map, rows, keyType, valueType, line);
 export const Pair = (left: IExpression, right: IExpression, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.tuple>(LiteralAtom.tuple, [left, right], line);
-
+export const Ticket = (content: IExpression, amount: LiteralExpression<TypeAtom.nat>, line = new LineInfo()) =>
+    new LiteralExpression<TypeAtom.ticket>(LiteralAtom.ticket, [content, amount], line);
+export const Sapling_state = (memo: number, line = new LineInfo()) =>
+    new LiteralExpression<TypeAtom.sapling_state>(LiteralAtom.sapling_state, [memo], line);
+export const Lambda = (inType: IType = TUnknown, line = new LineInfo()) => new LambdaLiteral(inType, line);
 export const Record = (fields: Record<string, ILiteral<unknown>>, line = new LineInfo()) =>
     new RecordLiteral(fields, line);
+export const Variant = (field: string, value: IExpression, line = new LineInfo()) =>
+    new LiteralExpression<TypeAtom.variant>(LiteralAtom.variant, [field, value], line);
 
 const Literals = {
     // Singletons
@@ -220,7 +240,7 @@ const Literals = {
     Key,
     Key_hash,
     Signature,
-    // Container types
+    // Containers
     List,
     Set,
     Some,
@@ -229,13 +249,10 @@ const Literals = {
     Map,
     Big_map,
     // Lambda,
-    // Ticket,
-    // Contract,
-    // Sapling_state,
-    // Sapling_transaction,
-    // Artificial Types
+    Ticket,
+    Sapling_state,
     Record,
-    // Variant,
+    Variant,
 };
 
 export default Literals;

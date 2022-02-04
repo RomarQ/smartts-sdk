@@ -1,7 +1,20 @@
-import { TBool, TList, TNat, TOption, TString } from '../src/core/type';
-import { Address, Bool, List, Mutez, Nat, None, Record, Some, String, Unit } from '../src/core/literal';
+import { TBool, TList, TNat, TOption } from '../src/core/type';
+import {
+    Address,
+    Bool,
+    List,
+    Mutez,
+    Nat,
+    None,
+    Record,
+    Some,
+    String,
+    Unit,
+    ContractStorage,
+    Equal,
+    GetLocal,
+} from '../src/core/expression';
 import { Contract, EntryPoint, Flag, GetSender } from '../src/core';
-import { ContractStorage, Equal, GetLocal } from '../src/core/expression';
 import { DefineVar, Require, SetValue } from '../src/core/command';
 import { verifyMichelsonOutput } from './util';
 

@@ -3,16 +3,16 @@
 exports[`Test (If) statement With (Then) and (Else) - [chaining version] 1`] = `
 "
         (
-            template_id (static_id 0 (\\"if.test.ts\\" 64))
-            storage (literal (nat 1) (\\"if.test.ts\\" 65))
+            template_id (static_id 0 (\\"if.test.ts\\" 63))
+            storage (literal (nat 1) (\\"if.test.ts\\" 64))
             storage_type (())
-            messages ((ep1 True False False True (\\"if.test.ts\\" 67) ((set_type (params (\\"if.test.ts\\" 67)) \\"nat\\" (\\"if.test.ts\\" 67)) (ifBlock (ge (params (\\"if.test.ts\\" 67)) (literal (nat 5) (\\"if.test.ts\\" 67)) (\\"if.test.ts\\" 67)) ((set (data) (params (\\"if.test.ts\\" 67)) (\\"if.test.ts\\" 67))) (\\"if.test.ts\\" 67)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 67)) (\\"if.test.ts\\" 67)))))))
+            messages ((ep1 True False False True (\\"if.test.ts\\" 66) ((set_type (params (\\"if.test.ts\\" 66)) \\"nat\\" (\\"if.test.ts\\" 66)) (ifBlock (ge (params (\\"if.test.ts\\" 66)) (literal (nat 5) (\\"if.test.ts\\" 66)) (\\"if.test.ts\\" 66)) ((set (data) (params (\\"if.test.ts\\" 66)) (\\"if.test.ts\\" 66))) (\\"if.test.ts\\" 66)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 66)) (\\"if.test.ts\\" 66)))))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"if.test.ts\\" 64))
+            balance (literal (mutez 0) (\\"if.test.ts\\" 63))
         )
         "
 `;
@@ -110,16 +110,16 @@ Array [
 exports[`Test (If) statement With (Then) and (Else) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"if.test.ts\\" 45))
-            storage (literal (nat 1) (\\"if.test.ts\\" 46))
+            template_id (static_id 0 (\\"if.test.ts\\" 44))
+            storage (literal (nat 1) (\\"if.test.ts\\" 45))
             storage_type (())
-            messages ((ep1 True False False True (\\"if.test.ts\\" 48) ((set_type (params (\\"if.test.ts\\" 50)) \\"nat\\" (\\"if.test.ts\\" 50)) (ifBlock (ge (params (\\"if.test.ts\\" 50)) (literal (nat 5) (\\"if.test.ts\\" 50)) (\\"if.test.ts\\" 50)) ((set (data) (params (\\"if.test.ts\\" 50)) (\\"if.test.ts\\" 50))) (\\"if.test.ts\\" 50)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 50)) (\\"if.test.ts\\" 50)))))))
+            messages ((ep1 True False False True (\\"if.test.ts\\" 47) ((set_type (params (\\"if.test.ts\\" 49)) \\"nat\\" (\\"if.test.ts\\" 49)) (ifBlock (ge (params (\\"if.test.ts\\" 49)) (literal (nat 5) (\\"if.test.ts\\" 49)) (\\"if.test.ts\\" 49)) ((set (data) (params (\\"if.test.ts\\" 49)) (\\"if.test.ts\\" 49))) (\\"if.test.ts\\" 49)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 49)) (\\"if.test.ts\\" 49)))))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"if.test.ts\\" 45))
+            balance (literal (mutez 0) (\\"if.test.ts\\" 44))
         )
         "
 `;
@@ -217,16 +217,16 @@ Array [
 exports[`Test (If) statement Without (Else) - [chaining version] 1`] = `
 "
         (
-            template_id (static_id 0 (\\"if.test.ts\\" 32))
-            storage (literal (nat 1) (\\"if.test.ts\\" 33))
+            template_id (static_id 0 (\\"if.test.ts\\" 31))
+            storage (literal (nat 1) (\\"if.test.ts\\" 32))
             storage_type (())
-            messages ((ep1 True False False True (\\"if.test.ts\\" 35) ((set_type (params (\\"if.test.ts\\" 37)) \\"nat\\" (\\"if.test.ts\\" 37)) (ifBlock (ge (params (\\"if.test.ts\\" 37)) (literal (nat 5) (\\"if.test.ts\\" 37)) (\\"if.test.ts\\" 37)) ((set (data) (params (\\"if.test.ts\\" 37)) (\\"if.test.ts\\" 37))) (\\"if.test.ts\\" 37)))))
+            messages ((ep1 True False False True (\\"if.test.ts\\" 34) ((set_type (params (\\"if.test.ts\\" 36)) \\"nat\\" (\\"if.test.ts\\" 36)) (ifBlock (ge (params (\\"if.test.ts\\" 36)) (literal (nat 5) (\\"if.test.ts\\" 36)) (\\"if.test.ts\\" 36)) ((set (data) (params (\\"if.test.ts\\" 36)) (\\"if.test.ts\\" 36))) (\\"if.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"if.test.ts\\" 32))
+            balance (literal (mutez 0) (\\"if.test.ts\\" 31))
         )
         "
 `;
@@ -320,16 +320,16 @@ Array [
 exports[`Test (If) statement Without (Else) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"if.test.ts\\" 19))
-            storage (literal (nat 1) (\\"if.test.ts\\" 20))
+            template_id (static_id 0 (\\"if.test.ts\\" 18))
+            storage (literal (nat 1) (\\"if.test.ts\\" 19))
             storage_type (())
-            messages ((ep1 True False False True (\\"if.test.ts\\" 22) ((set_type (params (\\"if.test.ts\\" 24)) \\"nat\\" (\\"if.test.ts\\" 24)) (ifBlock (ge (params (\\"if.test.ts\\" 24)) (literal (nat 5) (\\"if.test.ts\\" 24)) (\\"if.test.ts\\" 24)) ((set (data) (params (\\"if.test.ts\\" 24)) (\\"if.test.ts\\" 24))) (\\"if.test.ts\\" 24)))))
+            messages ((ep1 True False False True (\\"if.test.ts\\" 21) ((set_type (params (\\"if.test.ts\\" 23)) \\"nat\\" (\\"if.test.ts\\" 23)) (ifBlock (ge (params (\\"if.test.ts\\" 23)) (literal (nat 5) (\\"if.test.ts\\" 23)) (\\"if.test.ts\\" 23)) ((set (data) (params (\\"if.test.ts\\" 23)) (\\"if.test.ts\\" 23))) (\\"if.test.ts\\" 23)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"if.test.ts\\" 19))
+            balance (literal (mutez 0) (\\"if.test.ts\\" 18))
         )
         "
 `;

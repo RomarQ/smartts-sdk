@@ -1,8 +1,7 @@
 import SmartML from '../../src/smartml';
 import { ForEachOf, SetValue } from '../../src/core/command';
-import { Add, ContractStorage } from '../../src/core/expression';
+import { Add, ContractStorage, Nat } from '../../src/core/expression';
 import { Contract, EntryPoint } from '../../src/core';
-import { Nat } from '../../src/core/literal';
 import { TList, TNat } from '../../src/core/type';
 
 const verifyMichelsonOutput = (contract: string) => {

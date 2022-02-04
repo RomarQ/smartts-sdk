@@ -10,9 +10,8 @@ generateBundle([
     './src/smartml/index.ts',
     './src/core/index.ts',
     './src/core/type/index.ts',
-    './src/core/literal/index.ts',
+    './src/core/expression/index.ts',
     './src/core/command.ts',
-    './src/core/expression.ts',
     './src/core/blockchain_operations.ts',
 ]);
 fs.copyFileSync('package.json', `${DIST_FOLDER}/package.json`);

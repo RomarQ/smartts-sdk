@@ -1,5 +1,6 @@
 import {
     TAddress,
+    TBig_map,
     TBls12_381_fr,
     TBls12_381_g1,
     TBls12_381_g2,
@@ -9,14 +10,22 @@ import {
     TInt,
     TKey,
     TKey_hash,
+    TLambda,
     TList,
+    TMap,
     TMutez,
     TNat,
+    TOption,
+    TPair,
+    TRecord,
+    TSapling_state,
     TSet,
     TSignature,
     TString,
+    TTicket,
     TTimestamp,
     TUnit,
+    TVariant,
 } from '../../src/core/type';
 import {
     Int,
@@ -37,11 +46,22 @@ import {
     Key,
     List,
     Set,
-} from '../../src/core/literal';
+    Some,
+    None,
+    Pair,
+    Map,
+    Big_map,
+    Ticket,
+    Sapling_state,
+    Variant,
+    Record,
+    Lambda,
+    GreaterThan,
+} from '../../src/core/expression';
 import { ILiteral } from '../../src/typings/literal';
 import { IType } from '../../src/typings/type';
 import { verifyMichelsonOutput } from '../util';
-import { Contract } from '../../src';
+import { Contract, If, Return } from '../../src';
 
 const verifyLiteral = (testName: string, type: IType, literal: ILiteral<unknown>) => {
     it(testName, () => {
@@ -78,4 +98,55 @@ describe('Test Literals', () => {
     // Containers
     verifyLiteral('list', TList(TString()), List([String('HELLO'), String('WORLD')]));
     verifyLiteral('set', TSet(TString()), Set([String('HELLO'), String('WORLD')]));
+    verifyLiteral('some', TOption(TString()), Some(String('HELLO')));
+    verifyLiteral('none', TOption(TString()), None());
+    verifyLiteral('pair', TPair(TNat(), TString()), Pair(Nat(1), String('WORD')));
+    verifyLiteral(
+        'map',
+        TMap(TNat(), TString()),
+        Map([
+            [Nat(1), String('WORD1')],
+            [Nat(2), String('WORD2')],
+        ]),
+    );
+    verifyLiteral(
+        'big_map',
+        TBig_map(TNat(), TString()),
+        Big_map([
+            [Nat(1), String('WORD1')],
+            [Nat(2), String('WORD2')],
+        ]),
+    );
+    verifyLiteral('ticket', TTicket(TString()), Ticket(String('A Ticket'), Nat(1)));
+    verifyLiteral('sapling_state', TSapling_state(8), Sapling_state(8));
+    verifyLiteral(
+        'lambda',
+        TLambda(TNat(), TString()),
+        Lambda().code((arg) => [If(GreaterThan(arg, Nat(2)), [Return(String('YES'))], [Return(String('NO'))])]),
+    );
+    verifyLiteral(
+        'record',
+        TRecord(
+            {
+                field1: TNat(),
+                field2: TInt(),
+                field3: TBytes(),
+            },
+            [['field1', 'field2'], 'field3'],
+        ),
+        Record({
+            field1: Nat(1),
+            field2: Int(2),
+            field3: Bytes('0x00'),
+        }),
+    );
+    verifyLiteral(
+        'variant',
+        TVariant({
+            match1: TNat(),
+            match2: TInt(),
+            match3: TBytes(),
+        }),
+        Variant('match2', Int(1)),
+    );
 });

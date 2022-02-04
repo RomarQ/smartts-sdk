@@ -1,8 +1,7 @@
 import { Contract, EntryPoint, GetSender } from '../../src/core';
 import { Require, SetValue } from '../../src/core/command';
 import { Layout } from '../../src/core/enums/layout';
-import { GetProperty, ContractStorage, Equal } from '../../src/core/expression';
-import { Address, Big_map, Bool, Record, String } from '../../src/core/literal';
+import { GetProperty, ContractStorage, Equal, Address, Big_map, Bool, Record, String } from '../../src/core/expression';
 import { TAddress, TBig_map, TBool, TBytes, TMap, TNat, TRecord, TString, TPair, TUnit } from '../../src/core/type';
 
 /**

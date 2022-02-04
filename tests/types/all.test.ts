@@ -1,5 +1,5 @@
 import { Contract, EntryPoint } from '../../src/core';
-import { Unit } from '../../src/core/literal';
+import { Unit } from '../../src/core/expression';
 import {
     TAddress,
     TBig_map,
