@@ -4,6 +4,6 @@ import { IType } from './type';
 export type ILayout = (string | ILayout)[];
 
 export interface ILiteral<T> extends IExpression {
-    name: T;
+    _type: T;
     type: IType;
 }

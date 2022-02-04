@@ -1,6 +1,7 @@
 import { LineInfo } from '../misc/utils';
 import { ILiteral } from '../typings/literal';
-import BlockchainOperations from './enums/blockchain_operations';
+import BlockchainOperations from './enums/blockchain_operation';
+import TypeAtom from './enums/type';
 import { Expression } from './expression';
 
 /**
@@ -47,5 +48,21 @@ export const GetTotalVotingPower = () => new Expression(BlockchainOperations.tot
 /**
  * @see https://tezos.gitlab.io/michelson-reference/#instr-VOTING_POWER
  */
-export const GetVotingPower = (key_hash: ILiteral<'key_hash'>, line = new LineInfo()) =>
+export const GetVotingPower = (key_hash: ILiteral<TypeAtom.key_hash>, line = new LineInfo()) =>
     new Expression(BlockchainOperations.voting_power, `${key_hash}`, line);
+
+const Operations = {
+    GetAmount,
+    GetBalance,
+    GetChain_id,
+    GetLevel,
+    GetTimestamp,
+    GetSelf,
+    GetSelfAddress,
+    GetSender,
+    GetSource,
+    GetTotalVotingPower,
+    GetVotingPower,
+};
+
+export default Operations;

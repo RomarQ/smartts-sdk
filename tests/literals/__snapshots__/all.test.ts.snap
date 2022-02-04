@@ -1,29 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Types address 1`] = `
+exports[`Test Literals address 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"address\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"all.test.ts\\" 75))
+            storage_type (\\"address\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types address 2`] = `
+exports[`Test Literals address 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"address\\"
             }
         ]
     },
@@ -31,10 +31,7 @@ exports[`Test Types address 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"address\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -62,35 +59,27 @@ exports[`Test Types address 2`] = `
 ]"
 `;
 
-exports[`Test Types big_map 1`] = `
+exports[`Test Literals big_map 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (bigmap \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (big_map (\\"all.test.ts\\" 75) ((literal (nat 1) (\\"all.test.ts\\" 75)) (literal (string \\"WORD1\\") (\\"all.test.ts\\" 75))) ((literal (nat 2) (\\"all.test.ts\\" 75)) (literal (string \\"WORD2\\") (\\"all.test.ts\\" 75))))
+            storage_type ((bigmap \\"nat\\" \\"string\\"))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types big_map 2`] = `
+exports[`Test Literals big_map 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"big_map\\",
@@ -99,12 +88,17 @@ exports[`Test Types big_map 2`] = `
                         \\"prim\\": \\"nat\\"
                     },
                     {
-                        \\"prim\\": \\"nat\\"
+                        \\"prim\\": \\"string\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -132,30 +126,30 @@ exports[`Test Types big_map 2`] = `
 ]"
 `;
 
-exports[`Test Types bls12_381_fr 1`] = `
+exports[`Test Literals bls12_381_fr 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"bls12_381_fr\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (bls12_381_fr 0x01) (\\"all.test.ts\\" 75))
+            storage_type (\\"bls12_381_fr\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types bls12_381_fr 2`] = `
+exports[`Test Literals bls12_381_fr 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"bls12_381_fr\\"
             }
         ]
     },
@@ -163,10 +157,7 @@ exports[`Test Types bls12_381_fr 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"bls12_381_fr\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -194,30 +185,30 @@ exports[`Test Types bls12_381_fr 2`] = `
 ]"
 `;
 
-exports[`Test Types bls12_381_g1 1`] = `
+exports[`Test Literals bls12_381_fr 3`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"bls12_381_g1\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (bls12_381_fr 1) (\\"all.test.ts\\" 75))
+            storage_type (\\"bls12_381_fr\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types bls12_381_g1 2`] = `
+exports[`Test Literals bls12_381_fr 4`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"bls12_381_fr\\"
             }
         ]
     },
@@ -225,10 +216,7 @@ exports[`Test Types bls12_381_g1 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"bls12_381_g1\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -256,30 +244,30 @@ exports[`Test Types bls12_381_g1 2`] = `
 ]"
 `;
 
-exports[`Test Types bls12_381_g2 1`] = `
+exports[`Test Literals bls12_381_g1 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"bls12_381_g2\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (bls12_381_g1 0x00) (\\"all.test.ts\\" 75))
+            storage_type (\\"bls12_381_g1\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types bls12_381_g2 2`] = `
+exports[`Test Literals bls12_381_g1 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"bls12_381_g1\\"
             }
         ]
     },
@@ -287,10 +275,7 @@ exports[`Test Types bls12_381_g2 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"bls12_381_g2\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -318,30 +303,30 @@ exports[`Test Types bls12_381_g2 2`] = `
 ]"
 `;
 
-exports[`Test Types bool 1`] = `
+exports[`Test Literals bls12_381_g2 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"bool\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (bls12_381_g2 0x00) (\\"all.test.ts\\" 75))
+            storage_type (\\"bls12_381_g2\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types bool 2`] = `
+exports[`Test Literals bls12_381_g2 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"bls12_381_g2\\"
             }
         ]
     },
@@ -349,10 +334,7 @@ exports[`Test Types bool 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"bool\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -380,30 +362,30 @@ exports[`Test Types bool 2`] = `
 ]"
 `;
 
-exports[`Test Types bytes 1`] = `
+exports[`Test Literals bool 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"bytes\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (bool True) (\\"all.test.ts\\" 75))
+            storage_type (\\"bool\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types bytes 2`] = `
+exports[`Test Literals bool 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"bool\\"
             }
         ]
     },
@@ -411,10 +393,7 @@ exports[`Test Types bytes 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"bytes\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -442,30 +421,30 @@ exports[`Test Types bytes 2`] = `
 ]"
 `;
 
-exports[`Test Types chain_id 1`] = `
+exports[`Test Literals bytes 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"chain_id\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (bytes 0x00) (\\"all.test.ts\\" 75))
+            storage_type (\\"bytes\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types chain_id 2`] = `
+exports[`Test Literals bytes 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"bytes\\"
             }
         ]
     },
@@ -473,10 +452,7 @@ exports[`Test Types chain_id 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"chain_id\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -504,30 +480,30 @@ exports[`Test Types chain_id 2`] = `
 ]"
 `;
 
-exports[`Test Types contract 1`] = `
+exports[`Test Literals chain_id 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (contract \\"nat\\") (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (chain_id_cst 0x00) (\\"all.test.ts\\" 75))
+            storage_type (\\"chain_id\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types contract 2`] = `
+exports[`Test Literals chain_id 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"chain_id\\"
             }
         ]
     },
@@ -535,15 +511,7 @@ exports[`Test Types contract 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"contract\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -571,30 +539,30 @@ exports[`Test Types contract 2`] = `
 ]"
 `;
 
-exports[`Test Types int 1`] = `
+exports[`Test Literals int 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"int\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (int 2) (\\"all.test.ts\\" 75))
+            storage_type (\\"int\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types int 2`] = `
+exports[`Test Literals int 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"int\\"
             }
         ]
     },
@@ -602,10 +570,7 @@ exports[`Test Types int 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"int\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -633,30 +598,30 @@ exports[`Test Types int 2`] = `
 ]"
 `;
 
-exports[`Test Types key 1`] = `
+exports[`Test Literals key 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"key\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"all.test.ts\\" 75))
+            storage_type (\\"key\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types key 2`] = `
+exports[`Test Literals key 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"key\\"
             }
         ]
     },
@@ -664,10 +629,7 @@ exports[`Test Types key 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"key\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -695,30 +657,30 @@ exports[`Test Types key 2`] = `
 ]"
 `;
 
-exports[`Test Types key_hash 1`] = `
+exports[`Test Literals key_hash 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"key_hash\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"all.test.ts\\" 75))
+            storage_type (\\"key_hash\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types key_hash 2`] = `
+exports[`Test Literals key_hash 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"key_hash\\"
             }
         ]
     },
@@ -726,10 +688,7 @@ exports[`Test Types key_hash 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"key_hash\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -757,35 +716,27 @@ exports[`Test Types key_hash 2`] = `
 ]"
 `;
 
-exports[`Test Types lambda 1`] = `
+exports[`Test Literals lambda 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (lambda \\"nat\\" \\"unit\\") (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (lambda 1 False False \\"arg\\" (\\"all.test.ts\\" 75) ((ifBlock (gt (lambdaParams 1 \\"arg\\" (\\"all.test.ts\\" 75) (unknown 0)) (literal (nat 2) (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75)) ((result (literal (string \\"YES\\") (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))) (\\"all.test.ts\\" 75)) (elseBlock ((result (literal (string \\"NO\\") (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))))))
+            storage_type ((lambda \\"nat\\" \\"string\\"))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types lambda 2`] = `
+exports[`Test Literals lambda 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"lambda\\",
@@ -794,12 +745,17 @@ exports[`Test Types lambda 2`] = `
                         \\"prim\\": \\"nat\\"
                     },
                     {
-                        \\"prim\\": \\"unit\\"
+                        \\"prim\\": \\"string\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -827,46 +783,43 @@ exports[`Test Types lambda 2`] = `
 ]"
 `;
 
-exports[`Test Types list 1`] = `
+exports[`Test Literals list 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (list \\"nat\\") (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (list (\\"all.test.ts\\" 75) (literal (string \\"HELLO\\") (\\"all.test.ts\\" 75)) (literal (string \\"WORLD\\") (\\"all.test.ts\\" 75)))
+            storage_type ((list \\"string\\"))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types list 2`] = `
+exports[`Test Literals list 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"list\\",
                 \\"args\\": [
                     {
-                        \\"prim\\": \\"nat\\"
+                        \\"prim\\": \\"string\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -894,35 +847,27 @@ exports[`Test Types list 2`] = `
 ]"
 `;
 
-exports[`Test Types map 1`] = `
+exports[`Test Literals map 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (map \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (map (\\"all.test.ts\\" 75) ((literal (nat 1) (\\"all.test.ts\\" 75)) (literal (string \\"WORD1\\") (\\"all.test.ts\\" 75))) ((literal (nat 2) (\\"all.test.ts\\" 75)) (literal (string \\"WORD2\\") (\\"all.test.ts\\" 75))))
+            storage_type ((map \\"nat\\" \\"string\\"))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types map 2`] = `
+exports[`Test Literals map 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"map\\",
@@ -931,12 +876,17 @@ exports[`Test Types map 2`] = `
                         \\"prim\\": \\"nat\\"
                     },
                     {
-                        \\"prim\\": \\"nat\\"
+                        \\"prim\\": \\"string\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -964,30 +914,30 @@ exports[`Test Types map 2`] = `
 ]"
 `;
 
-exports[`Test Types mutez 1`] = `
+exports[`Test Literals mutez 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"mutez\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (mutez 2) (\\"all.test.ts\\" 75))
+            storage_type (\\"mutez\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types mutez 2`] = `
+exports[`Test Literals mutez 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"mutez\\"
             }
         ]
     },
@@ -995,10 +945,7 @@ exports[`Test Types mutez 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"mutez\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1026,30 +973,30 @@ exports[`Test Types mutez 2`] = `
 ]"
 `;
 
-exports[`Test Types nat 1`] = `
+exports[`Test Literals nat 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"nat\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (nat 1) (\\"all.test.ts\\" 75))
+            storage_type (\\"nat\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types nat 2`] = `
+exports[`Test Literals nat 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"nat\\"
             }
         ]
     },
@@ -1057,10 +1004,7 @@ exports[`Test Types nat 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"nat\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1088,170 +1032,43 @@ exports[`Test Types nat 2`] = `
 ]"
 `;
 
-exports[`Test Types never 1`] = `
+exports[`Test Literals none 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"never\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 75))
+            storage_type ((option \\"string\\"))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types never 2`] = `
+exports[`Test Literals none 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"never\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
-            ]
-        ]
-    }
-]"
-`;
-
-exports[`Test Types operation 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"operation\\" (\\"all.test.ts\\" 44)))))
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
-        )
-        "
-`;
-
-exports[`Test Types operation 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"operation\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
-            ]
-        ]
-    }
-]"
-`;
-
-exports[`Test Types option 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (option \\"nat\\") (\\"all.test.ts\\" 44)))))
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
-        )
-        "
-`;
-
-exports[`Test Types option 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"option\\",
                 \\"args\\": [
                     {
-                        \\"prim\\": \\"nat\\"
+                        \\"prim\\": \\"string\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1279,35 +1096,27 @@ exports[`Test Types option 2`] = `
 ]"
 `;
 
-exports[`Test Types option 3`] = `
+exports[`Test Literals pair 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (tuple \\"nat\\" \\"nat\\") (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (tuple (\\"all.test.ts\\" 75) (literal (nat 1) (\\"all.test.ts\\" 75)) (literal (string \\"WORD\\") (\\"all.test.ts\\" 75)))
+            storage_type ((tuple \\"nat\\" \\"string\\"))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types option 4`] = `
+exports[`Test Literals pair 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"pair\\",
@@ -1316,12 +1125,17 @@ exports[`Test Types option 4`] = `
                         \\"prim\\": \\"nat\\"
                     },
                     {
-                        \\"prim\\": \\"nat\\"
+                        \\"prim\\": \\"string\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1349,35 +1163,27 @@ exports[`Test Types option 4`] = `
 ]"
 `;
 
-exports[`Test Types record (left comb) 1`] = `
+exports[`Test Literals record 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (record ((field1 \\"nat\\") (field2 \\"unit\\") (field3 \\"string\\")) (Some (((\\"field1\\") (\\"field2\\")) (\\"field3\\")))) (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (record (\\"all.test.ts\\" 75) (field1 (literal (nat 1) (\\"all.test.ts\\" 75))) (field2 (literal (int 2) (\\"all.test.ts\\" 75))) (field3 (literal (bytes 0x00) (\\"all.test.ts\\" 75))))
+            storage_type ((record ((field1 \\"nat\\") (field2 \\"int\\") (field3 \\"bytes\\")) (Some (((\\"field1\\") (\\"field2\\")) (\\"field3\\")))))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types record (left comb) 2`] = `
+exports[`Test Literals record 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"pair\\",
@@ -1392,7 +1198,7 @@ exports[`Test Types record (left comb) 2`] = `
                                 ]
                             },
                             {
-                                \\"prim\\": \\"unit\\",
+                                \\"prim\\": \\"int\\",
                                 \\"annots\\": [
                                     \\"%field2\\"
                                 ]
@@ -1400,15 +1206,20 @@ exports[`Test Types record (left comb) 2`] = `
                         ]
                     },
                     {
-                        \\"prim\\": \\"string\\",
+                        \\"prim\\": \\"bytes\\",
                         \\"annots\\": [
                             \\"%field3\\"
                         ]
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1436,122 +1247,27 @@ exports[`Test Types record (left comb) 2`] = `
 ]"
 `;
 
-exports[`Test Types record (right comb) 1`] = `
+exports[`Test Literals sapling_state 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (record ((field1 \\"nat\\") (field2 \\"unit\\") (field3 \\"string\\")) (Some ((\\"field1\\") ((\\"field2\\") (\\"field3\\"))))) (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (sapling_empty_state 8 (\\"all.test.ts\\" 75))
+            storage_type ((sapling_state 8))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types record (right comb) 2`] = `
+exports[`Test Literals sapling_state 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"pair\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\",
-                        \\"annots\\": [
-                            \\"%field1\\"
-                        ]
-                    },
-                    {
-                        \\"prim\\": \\"pair\\",
-                        \\"args\\": [
-                            {
-                                \\"prim\\": \\"unit\\",
-                                \\"annots\\": [
-                                    \\"%field2\\"
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"string\\",
-                                \\"annots\\": [
-                                    \\"%field3\\"
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
-            ]
-        ]
-    }
-]"
-`;
-
-exports[`Test Types sapling_state 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (sapling_state 8) (\\"all.test.ts\\" 44)))))
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
-        )
-        "
-`;
-
-exports[`Test Types sapling_state 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"sapling_state\\",
@@ -1559,10 +1275,15 @@ exports[`Test Types sapling_state 2`] = `
                     {
                         \\"int\\": \\"8\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1590,113 +1311,43 @@ exports[`Test Types sapling_state 2`] = `
 ]"
 `;
 
-exports[`Test Types sapling_transaction 1`] = `
+exports[`Test Literals set 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (sapling_transaction 16) (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (set (\\"all.test.ts\\" 75) (literal (string \\"HELLO\\") (\\"all.test.ts\\" 75)) (literal (string \\"WORLD\\") (\\"all.test.ts\\" 75)))
+            storage_type ((set \\"string\\"))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types sapling_transaction 2`] = `
+exports[`Test Literals set 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"sapling_transaction\\",
-                \\"args\\": [
-                    {
-                        \\"int\\": \\"16\\"
-                    }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
-            ]
-        ]
-    }
-]"
-`;
-
-exports[`Test Types set 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (set \\"nat\\") (\\"all.test.ts\\" 44)))))
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
-        )
-        "
-`;
-
-exports[`Test Types set 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"set\\",
                 \\"args\\": [
                     {
-                        \\"prim\\": \\"nat\\"
+                        \\"prim\\": \\"string\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1724,30 +1375,30 @@ exports[`Test Types set 2`] = `
 ]"
 `;
 
-exports[`Test Types signature 1`] = `
+exports[`Test Literals signature 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"signature\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (signature sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe) (\\"all.test.ts\\" 75))
+            storage_type (\\"signature\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types signature 2`] = `
+exports[`Test Literals signature 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"signature\\"
             }
         ]
     },
@@ -1755,10 +1406,7 @@ exports[`Test Types signature 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"signature\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1786,108 +1434,43 @@ exports[`Test Types signature 2`] = `
 ]"
 `;
 
-exports[`Test Types string 1`] = `
+exports[`Test Literals some 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"string\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (variant \\"Some\\" (literal (string \\"HELLO\\") (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))
+            storage_type ((option \\"string\\"))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types string 2`] = `
+exports[`Test Literals some 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"string\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
-            ]
-        ]
-    }
-]"
-`;
-
-exports[`Test Types ticket 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (ticket \\"nat\\") (\\"all.test.ts\\" 44)))))
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
-        )
-        "
-`;
-
-exports[`Test Types ticket 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"ticket\\",
+                \\"prim\\": \\"option\\",
                 \\"args\\": [
                     {
-                        \\"prim\\": \\"nat\\"
+                        \\"prim\\": \\"string\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1915,30 +1498,30 @@ exports[`Test Types ticket 2`] = `
 ]"
 `;
 
-exports[`Test Types timestamp 1`] = `
+exports[`Test Literals string 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"timestamp\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (string \\"TEST STRING\\") (\\"all.test.ts\\" 75))
+            storage_type (\\"string\\")
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types timestamp 2`] = `
+exports[`Test Literals string 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"string\\"
             }
         ]
     },
@@ -1946,10 +1529,7 @@ exports[`Test Types timestamp 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"timestamp\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -1977,30 +1557,49 @@ exports[`Test Types timestamp 2`] = `
 ]"
 `;
 
-exports[`Test Types unit 1`] = `
+exports[`Test Literals ticket 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
-            storage (unit)
-            storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) \\"unit\\" (\\"all.test.ts\\" 44)))))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (ticket (literal (string \\"A Ticket\\") (\\"all.test.ts\\" 75)) (literal (nat 1) (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))
+            storage_type ((ticket \\"string\\"))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types unit 2`] = `
+exports[`Test Literals ticket 2`] = `"\\"Missing environment to compute ETicket\\\\nCompute storage\\""`;
+
+exports[`Test Literals timestamp 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (literal (timestamp 100) (\\"all.test.ts\\" 75))
+            storage_type (\\"timestamp\\")
+            messages ()
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+        )
+        "
+`;
+
+exports[`Test Literals timestamp 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\"
+                \\"prim\\": \\"timestamp\\"
             }
         ]
     },
@@ -2008,10 +1607,7 @@ exports[`Test Types unit 2`] = `
         \\"prim\\": \\"parameter\\",
         \\"args\\": [
             {
-                \\"prim\\": \\"unit\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
+                \\"prim\\": \\"unit\\"
             }
         ]
     },
@@ -2039,24 +1635,24 @@ exports[`Test Types unit 2`] = `
 ]"
 `;
 
-exports[`Test Types variant 1`] = `
+exports[`Test Literals unit 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 41))
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
             storage (unit)
             storage_type (\\"unit\\")
-            messages ((ep1 True False False True (\\"all.test.ts\\" 44) ((set_type (params (\\"all.test.ts\\" 44)) (variant ((match1 \\"nat\\") (match2 \\"unit\\") (match3 \\"string\\")) (Some ((\\"match1\\") ((\\"match2\\") (\\"match3\\"))))) (\\"all.test.ts\\" 44)))))
+            messages ()
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
         )
         "
 `;
 
-exports[`Test Types variant 2`] = `
+exports[`Test Literals unit 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
@@ -2068,6 +1664,57 @@ exports[`Test Types variant 2`] = `
     },
     {
         \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Literals variant 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            storage (variant match2 (literal (int 1) (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))
+            storage_type ((variant ((match1 \\"nat\\") (match2 \\"int\\") (match3 \\"bytes\\")) (Some ((\\"match1\\") ((\\"match2\\") (\\"match3\\"))))))
+            messages ()
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+        )
+        "
+`;
+
+exports[`Test Literals variant 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
         \\"args\\": [
             {
                 \\"prim\\": \\"or\\",
@@ -2082,23 +1729,28 @@ exports[`Test Types variant 2`] = `
                         \\"prim\\": \\"or\\",
                         \\"args\\": [
                             {
-                                \\"prim\\": \\"unit\\",
+                                \\"prim\\": \\"int\\",
                                 \\"annots\\": [
                                     \\"%match2\\"
                                 ]
                             },
                             {
-                                \\"prim\\": \\"string\\",
+                                \\"prim\\": \\"bytes\\",
                                 \\"annots\\": [
                                     \\"%match3\\"
                                 ]
                             }
                         ]
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
             }
         ]
     },

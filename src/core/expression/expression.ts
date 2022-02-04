@@ -1,7 +1,7 @@
-import { LineInfo } from '../misc/utils';
-import { IExpression } from '../typings/expression';
-import { ILiteral } from '../typings/literal';
-import { IType } from '../typings/type';
+import { LineInfo } from '../../misc/utils';
+import { IExpression } from '../../typings/expression';
+import { ILiteral } from '../../typings/literal';
+import { IType } from '../../typings/type';
 
 type ProxyedExpression = Expression & { [prop: string]: ProxyedExpression };
 /**

@@ -1,8 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test-cjs": "node ./commonjs.cjs",
-    "test-esm": "node ./esm.mjs"
+    "test": "node ./commonjs.cjs; node ./esm.mjs"
   },
   "dependencies": {
     "@tezwell/smartts-sdk": "../../dist"

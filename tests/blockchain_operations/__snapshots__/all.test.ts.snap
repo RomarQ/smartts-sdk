@@ -3,16 +3,16 @@
 exports[`Test blockchain operations AMOUNT 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"mutez\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (amount) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (amount) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -76,16 +76,16 @@ exports[`Test blockchain operations AMOUNT 2`] = `
 exports[`Test blockchain operations BALANCE 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"mutez\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (balance) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (balance) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -149,16 +149,16 @@ exports[`Test blockchain operations BALANCE 2`] = `
 exports[`Test blockchain operations CHAIN_ID 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"chain_id\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (chain_id) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (chain_id) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -228,16 +228,16 @@ exports[`Test blockchain operations CHAIN_ID 2`] = `
 exports[`Test blockchain operations LEVEL 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"nat\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (level) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (level) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -307,16 +307,16 @@ exports[`Test blockchain operations LEVEL 2`] = `
 exports[`Test blockchain operations NOW 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"timestamp\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (now) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (now) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -380,16 +380,16 @@ exports[`Test blockchain operations NOW 2`] = `
 exports[`Test blockchain operations SELF 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option (contract \\"unit\\")))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (self \\"\\" (\\"all.test.ts\\" 47)) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (self \\"\\" (\\"all.test.ts\\" 45)) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -399,16 +399,16 @@ exports[`Test blockchain operations SELF 2`] = `"\\"import: params type yet unkn
 exports[`Test blockchain operations SELF_ADDRESS 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"address\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (self_address) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (self_address) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -472,16 +472,16 @@ exports[`Test blockchain operations SELF_ADDRESS 2`] = `
 exports[`Test blockchain operations SENDER 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"address\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (sender) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (sender) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -545,16 +545,16 @@ exports[`Test blockchain operations SENDER 2`] = `
 exports[`Test blockchain operations SOURCE 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"address\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (source) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (source) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -618,16 +618,16 @@ exports[`Test blockchain operations SOURCE 2`] = `
 exports[`Test blockchain operations TOTAL_VOTING_POWER 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"nat\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (total_voting_power) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (total_voting_power) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;
@@ -697,16 +697,16 @@ exports[`Test blockchain operations TOTAL_VOTING_POWER 2`] = `
 exports[`Test blockchain operations VOTING_POWER 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 36))
+            template_id (static_id 0 (\\"all.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 34))
             storage_type ((option \\"nat\\"))
-            messages ((ep1 True False False True (\\"all.test.ts\\" 38) ((set_type (params (\\"all.test.ts\\" 38)) \\"unit\\" (\\"all.test.ts\\" 38)) (set (data) (variant \\"Some\\" (voting_power (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"all.test.ts\\" 47)) (\\"all.test.ts\\" 47)) (\\"all.test.ts\\" 38)) (\\"all.test.ts\\" 38)))))
+            messages ((ep1 True False False True (\\"all.test.ts\\" 36) ((set_type (params (\\"all.test.ts\\" 36)) \\"unit\\" (\\"all.test.ts\\" 36)) (set (data) (variant \\"Some\\" (voting_power (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"all.test.ts\\" 45)) (\\"all.test.ts\\" 45)) (\\"all.test.ts\\" 36)) (\\"all.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 32))
         )
         "
 `;

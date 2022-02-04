@@ -2,7 +2,7 @@ import { composeRightCombLayout, parenthesis } from '../../misc/utils';
 import { ILayout } from '../../typings/literal';
 import { IType } from '../../typings/type';
 import { Layout } from '../enums/layout';
-import { Prim, SmartPyAtom } from '../enums/prim';
+import TypeAtom from '../enums/type';
 
 export class SimpleType implements IType {
     _isType = true as const;
@@ -62,42 +62,41 @@ export const TUnknown: IType = {
     toString: () => '(unknown 0)',
 };
 // Singleton types
-export const TUnit = () => new SimpleType(Prim.unit);
-export const TNat = () => new SimpleType(Prim.nat);
-export const TInt = () => new SimpleType(Prim.int);
-export const TMutez = () => new SimpleType(Prim.mutez);
-export const TString = () => new SimpleType(Prim.string);
-export const TBool = () => new SimpleType(Prim.bool);
-export const TAddress = () => new SimpleType(Prim.address);
-export const TTimestamp = () => new SimpleType(Prim.timestamp);
-export const TChain_id = () => new SimpleType(Prim.chain_id);
-export const TBytes = () => new SimpleType(Prim.bytes);
-export const TBls12_381_fr = () => new SimpleType(Prim.bls12_381_fr);
-export const TBls12_381_g1 = () => new SimpleType(Prim.bls12_381_g1);
-export const TBls12_381_g2 = () => new SimpleType(Prim.bls12_381_g2);
-export const TKey = () => new SimpleType(Prim.key);
-export const TKey_hash = () => new SimpleType(Prim.key_hash);
-export const TSignature = () => new SimpleType(Prim.signature);
-export const TOperation = () => new SimpleType(Prim.operation);
-export const TNever = () => new SimpleType(Prim.never);
+export const TUnit = () => new SimpleType(TypeAtom.unit);
+export const TNat = () => new SimpleType(TypeAtom.nat);
+export const TInt = () => new SimpleType(TypeAtom.int);
+export const TMutez = () => new SimpleType(TypeAtom.mutez);
+export const TString = () => new SimpleType(TypeAtom.string);
+export const TBool = () => new SimpleType(TypeAtom.bool);
+export const TAddress = () => new SimpleType(TypeAtom.address);
+export const TTimestamp = () => new SimpleType(TypeAtom.timestamp);
+export const TChain_id = () => new SimpleType(TypeAtom.chain_id);
+export const TBytes = () => new SimpleType(TypeAtom.bytes);
+export const TBls12_381_fr = () => new SimpleType(TypeAtom.bls12_381_fr);
+export const TBls12_381_g1 = () => new SimpleType(TypeAtom.bls12_381_g1);
+export const TBls12_381_g2 = () => new SimpleType(TypeAtom.bls12_381_g2);
+export const TKey = () => new SimpleType(TypeAtom.key);
+export const TKey_hash = () => new SimpleType(TypeAtom.key_hash);
+export const TSignature = () => new SimpleType(TypeAtom.signature);
+export const TOperation = () => new SimpleType(TypeAtom.operation);
+export const TNever = () => new SimpleType(TypeAtom.never);
 // Container types
-export const TList = (innerType: IType) => new ContainerType(Prim.list, [innerType]);
-export const TSet = (innerType: IType) => new ContainerType(Prim.set, [innerType]);
-export const TOption = (innerType: IType) => new ContainerType(Prim.option, [innerType]);
-export const TMap = (keyType: IType, valueType: IType) => new ContainerType(Prim.map, [keyType, valueType]);
-export const TBig_map = (keyType: IType, valueType: IType) =>
-    new ContainerType(SmartPyAtom.bigmap, [keyType, valueType]);
-export const TPair = (left: IType, right: IType) => new ContainerType(SmartPyAtom.tuple, [left, right]);
-export const TLambda = (left: IType, right: IType) => new ContainerType(Prim.lambda, [left, right]);
-export const TTicket = (innerType: IType) => new ContainerType(Prim.ticket, [innerType]);
-export const TContract = (innerType: IType) => new ContainerType(Prim.contract, [innerType]);
-export const TSapling_state = (memo: number) => new ContainerType(Prim.sapling_state, [memo]);
-export const TSapling_transaction = (memo: number) => new ContainerType(Prim.sapling_transaction, [memo]);
+export const TList = (innerType: IType) => new ContainerType(TypeAtom.list, [innerType]);
+export const TSet = (innerType: IType) => new ContainerType(TypeAtom.set, [innerType]);
+export const TOption = (innerType: IType) => new ContainerType(TypeAtom.option, [innerType]);
+export const TMap = (keyType: IType, valueType: IType) => new ContainerType(TypeAtom.map, [keyType, valueType]);
+export const TBig_map = (keyType: IType, valueType: IType) => new ContainerType(TypeAtom.big_map, [keyType, valueType]);
+export const TPair = (left: IType, right: IType) => new ContainerType(TypeAtom.tuple, [left, right]);
+export const TLambda = (left: IType, right: IType) => new ContainerType(TypeAtom.lambda, [left, right]);
+export const TTicket = (innerType: IType) => new ContainerType(TypeAtom.ticket, [innerType]);
+export const TContract = (innerType: IType) => new ContainerType(TypeAtom.contract, [innerType]);
+export const TSapling_state = (memo: number) => new ContainerType(TypeAtom.sapling_state, [memo]);
+export const TSapling_transaction = (memo: number) => new ContainerType(TypeAtom.sapling_transaction, [memo]);
 // Artificial Types
 export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) =>
-    new Type_Record('record', fields, layout);
+    new Type_Record(TypeAtom.record, fields, layout);
 export const TVariant = (fields: Record<string, IType>, layout?: ILayout | Layout) =>
-    new Type_Record('variant', fields, layout);
+    new Type_Record(TypeAtom.variant, fields, layout);
 
 const Types = {
     TUnknown,

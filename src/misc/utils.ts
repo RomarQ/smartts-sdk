@@ -1,8 +1,10 @@
+import { Prim } from '../core/enums/prim';
 import { ILayout } from '../typings/literal';
 import { IToString } from '../typings/shared';
 
 export const parenthesis = (str: string) => `(${str})`;
-export const capitalizeBoolean = (bool: boolean): string => (bool ? 'True' : 'False');
+export const quote = (str: string) => `"${str}"`;
+export const capitalizeBoolean = (bool: boolean): string => (bool ? Prim.True : Prim.False);
 
 export class LineInfo implements IToString {
     constructor(public fileName = '', public lineNumber = '-1') {
@@ -40,6 +42,7 @@ const Utils = {
     capitalizeBoolean,
     composeRightCombLayout,
     parenthesis,
+    quote,
 };
 
 export default Utils;

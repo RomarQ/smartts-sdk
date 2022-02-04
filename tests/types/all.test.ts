@@ -1,5 +1,5 @@
 import { Contract, EntryPoint } from '../../src/core';
-import { Unit } from '../../src/core/literal';
+import { Unit } from '../../src/core/expression';
 import {
     TAddress,
     TBig_map,
@@ -57,7 +57,7 @@ describe('Test Types', () => {
     verifyType('string', TString());
     verifyType('bool', TBool());
     verifyType('bytes', TBytes());
-    verifyType('addres', TAddress());
+    verifyType('address', TAddress());
     verifyType('timestamp', TTimestamp());
     verifyType('chain_id', TChain_id());
     verifyType('bls12_381_fr', TBls12_381_fr());

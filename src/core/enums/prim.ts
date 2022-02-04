@@ -1,8 +1,3 @@
-export enum SmartPyAtom {
-    bigmap = 'bigmap', // Is used to define the bigmap type
-    tuple = 'tuple', // Is used to define tuple types
-}
-
 export enum Prim {
     // Type
     unit = 'unit',

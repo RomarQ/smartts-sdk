@@ -1,8 +1,7 @@
 import { Contract, EntryPoint, GetSender } from '../../src/core';
 import { Require, SetValue } from '../../src/core/command';
 import { Layout } from '../../src/core/enums/layout';
-import { GetProperty, ContractStorage, Equal } from '../../src/core/expression';
-import { Address, BigMap, Bool, Record, String } from '../../src/core/literal';
+import { GetProperty, ContractStorage, Equal, Address, Big_map, Bool, Record, String } from '../../src/core/expression';
 import { TAddress, TBig_map, TBool, TBytes, TMap, TNat, TRecord, TString, TPair, TUnit } from '../../src/core/type';
 
 /**
@@ -65,12 +64,12 @@ const FA2Contract = new Contract()
                 paused: Bool(false),
             }),
             assets: Record({
-                ledger: BigMap([], CommonTypes.LedgerKey, CommonTypes.LedgerValue),
-                operators: BigMap([], CommonTypes.OperatorKey, TUnit()),
-                token_metadata: BigMap([], TNat(), CommonTypes.TokenMetadata),
-                token_total_supply: BigMap([], TNat(), TNat()),
+                ledger: Big_map([], CommonTypes.LedgerKey, CommonTypes.LedgerValue),
+                operators: Big_map([], CommonTypes.OperatorKey, TUnit()),
+                token_metadata: Big_map([], TNat(), CommonTypes.TokenMetadata),
+                token_total_supply: Big_map([], TNat(), TNat()),
             }),
-            metadata: BigMap(),
+            metadata: Big_map(),
         }),
     )
     .addEntrypoint(new EntryPoint('transfer'))
