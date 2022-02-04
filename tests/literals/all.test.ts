@@ -9,8 +9,10 @@ import {
     TInt,
     TKey,
     TKey_hash,
+    TList,
     TMutez,
     TNat,
+    TSet,
     TSignature,
     TString,
     TTimestamp,
@@ -33,6 +35,8 @@ import {
     Key_hash,
     Signature,
     Key,
+    List,
+    Set,
 } from '../../src/core/literal';
 import { ILiteral } from '../../src/typings/literal';
 import { IType } from '../../src/typings/type';
@@ -49,6 +53,7 @@ const verifyLiteral = (testName: string, type: IType, literal: ILiteral<unknown>
 };
 
 describe('Test Literals', () => {
+    // Singletons
     verifyLiteral('unit', TUnit(), Unit());
     verifyLiteral('nat', TNat(), Nat(1));
     verifyLiteral('int', TInt(), Int(2));
@@ -70,4 +75,7 @@ describe('Test Literals', () => {
         TSignature(),
         Signature('sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe'),
     );
+    // Containers
+    verifyLiteral('list', TList(TString()), List([String('HELLO'), String('WORLD')]));
+    verifyLiteral('set', TSet(TString()), Set([String('HELLO'), String('WORLD')]));
 });

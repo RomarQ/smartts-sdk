@@ -2,6 +2,7 @@ import { ILayout } from '../typings/literal';
 import { IToString } from '../typings/shared';
 
 export const parenthesis = (str: string) => `(${str})`;
+export const quote = (str: string) => `"${str}"`;
 export const capitalizeBoolean = (bool: boolean): string => (bool ? 'True' : 'False');
 
 export class LineInfo implements IToString {
@@ -40,6 +41,7 @@ const Utils = {
     capitalizeBoolean,
     composeRightCombLayout,
     parenthesis,
+    quote,
 };
 
 export default Utils;

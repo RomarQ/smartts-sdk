@@ -25,7 +25,7 @@ describe('Compile Contracts', () => {
 
     it('Simple 2', () => {
         const contract = new Contract()
-            .setStorage(List([Nat(1)], TNat()))
+            .setStorage(List([Nat(1)]))
             .addEntrypoint(
                 new EntryPoint('ep1')
                     .config({ lazy: false })
@@ -48,7 +48,7 @@ describe('Compile Contracts', () => {
     it('Simple 3', () => {
         const contract = new Contract()
             .setStorageType(TList(TNat()))
-            .setStorage(List([], TNat()))
+            .setStorage(List([]))
             .addEntrypoint(
                 new EntryPoint('ep1').inputType(TList(TNat())).code((arg) => [
                     // Define a variable named "some_address"
@@ -90,7 +90,7 @@ describe('Compile Contracts', () => {
             .setStorage(
                 Record({
                     testField1: Nat(1),
-                    testField2: List([String('Hello World')], TString()),
+                    testField2: List([String('Hello World')]),
                 }),
             )
             .toString();
