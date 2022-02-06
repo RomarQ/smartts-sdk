@@ -1,8 +1,8 @@
 import { Expression } from '../expression';
 import { LineInfo } from '../../misc/utils';
-import { IExpression } from '../../typings/expression';
 import { IStatement } from '../../typings/statement';
-import { ILiteral } from '../../typings/literal';
+import { Proxied, proxy } from '../../misc/proxy';
+import { IExpression } from '../../typings/expression';
 
 class C_Verify implements IStatement {
     constructor(public condition: IExpression, public errorMsg: IExpression, public line = new LineInfo()) {}
@@ -11,7 +11,7 @@ class C_Verify implements IStatement {
         return `(verify ${this.condition} ${this.errorMsg} ${this.line})`;
     }
 }
-export const Require = (condition: IExpression, errorMsg: ILiteral<unknown> | IExpression, line = new LineInfo()) =>
+export const Require = (condition: IExpression, errorMsg: IExpression, line = new LineInfo()) =>
     new C_Verify(condition, errorMsg, line);
 
 class IfStatment implements IStatement {
@@ -75,8 +75,8 @@ class ForEachStatement implements IStatement {
         this.#line = line;
     }
 
-    public Do(callback: (iterator: IExpression) => IStatement[]) {
-        const iterator = new Expression('iter', '"__ITERATOR__"', new LineInfo());
+    public Do(callback: (iterator: Proxied<IExpression>) => IStatement[], line = new LineInfo()) {
+        const iterator = proxy(new Expression('iter', '"__ITERATOR__"', line), Expression.proxyHandler);
         this.#statements = callback(iterator);
         return this;
     }
