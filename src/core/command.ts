@@ -1,4 +1,4 @@
-import { Expression } from './expression';
+import { Expression, IProxiableExpression } from './expression';
 import Utils, { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { IStatement } from '../typings/statement';
@@ -32,7 +32,7 @@ class C_SetValue implements IStatement {
         return `(${this.name} ${this.source} ${this.value} ${this.line})`;
     }
 }
-export const SetValue = (source: IExpression, value: IExpression, line = new LineInfo()) =>
+export const SetValue = (source: IProxiableExpression, value: IProxiableExpression, line = new LineInfo()) =>
     new C_SetValue(source, value, line);
 
 class C_Return implements IStatement {
