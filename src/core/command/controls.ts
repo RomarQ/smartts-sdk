@@ -1,4 +1,4 @@
-import { Expression } from '../expression';
+import { Expression } from '../expression/expression';
 import { LineInfo } from '../../misc/utils';
 import { IStatement } from '../../typings/statement';
 import { Proxied, proxy } from '../../misc/proxy';

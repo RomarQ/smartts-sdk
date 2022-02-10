@@ -1,3 +1,3 @@
-export * from './control';
-export * from './variable';
+export * from './controls';
+export * from './variables';
 export * from './function';

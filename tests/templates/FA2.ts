@@ -111,7 +111,7 @@ const FA2Contract = new Contract()
             FailIfSenderIsNotAdmin(),
             // Update metadata entries
             ForEachOf(GetEntries(metadata)).Do((item) => [
-                SetValue(GetItem(item.key, GetProperty('metadata', ContractStorage())), item.value),
+                SetValue(GetItem(item.key, GetProperty(ContractStorage(), 'metadata')), item.value),
             ]),
         ]),
     );

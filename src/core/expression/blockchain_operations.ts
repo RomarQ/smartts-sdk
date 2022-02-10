@@ -1,7 +1,7 @@
-import { LineInfo } from '../misc/utils';
-import { ILiteral } from '../typings/literal';
-import BlockchainOperations from './enums/blockchain_operation';
-import TypeAtom from './enums/type';
+import { LineInfo } from '../../misc/utils';
+import { ILiteral } from '../../typings/literal';
+import BlockchainOperations from '../enums/blockchain_operation';
+import TypeAtom from '../enums/type';
 import { Expression } from './expression';
 
 /**

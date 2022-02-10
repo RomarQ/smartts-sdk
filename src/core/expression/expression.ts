@@ -17,7 +17,7 @@ export class Expression implements IExpression {
             if (prop in target || typeof prop === 'symbol') {
                 return Reflect.get(target, prop, receiver);
             }
-            return GetProperty(prop, target);
+            return Expression.getAttr(target, prop);
         },
         apply: function (target, thisArg, argumentsList) {
             console.log(target, thisArg, argumentsList);
@@ -25,27 +25,10 @@ export class Expression implements IExpression {
         },
     };
 
+    static getAttr = (from: IExpression, attr: string, line = new LineInfo()) =>
+        proxy(new Expression('attr', from, `"${attr}"`, line), Expression.proxyHandler);
+
     toString() {
         return `(${[this.name, ...this.args].join(' ')})`;
     }
 }
-
-export const GetLocal = (name: string, line = new LineInfo()) => new Expression('getLocal', `"${name}"`, line);
-
-export const ContractStorage = () => proxy(new Expression('data'), Expression.proxyHandler);
-
-export const GetProperty = (attr: string, from: IExpression, line = new LineInfo()) =>
-    proxy(new Expression('attr', from, `"${attr}"`, line), Expression.proxyHandler);
-
-// Typing
-
-export const SetType = (expr: IExpression, type: IType, line = new LineInfo()) =>
-    new Expression('set_type', expr, type, line);
-
-const Expressions = {
-    GetLocal,
-    ContractStorage,
-    GetProperty,
-};
-
-export default Expressions;

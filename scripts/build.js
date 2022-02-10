@@ -12,7 +12,6 @@ generateBundle([
     './src/core/type/index.ts',
     './src/core/expression/index.ts',
     './src/core/command/index.ts',
-    './src/core/blockchain_operations.ts',
 ]);
 fs.copyFileSync('package.json', `${DIST_FOLDER}/package.json`);
 fs.copyFileSync('src/smartml/smartML.js', `${DIST_FOLDER}/smartml/smartML.js`);

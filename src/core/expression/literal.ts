@@ -8,7 +8,7 @@ import { Layout } from '../enums/layout';
 import LiteralAtom from '../enums/literal';
 import TypeAtom from '../enums/type';
 import { IStatement } from '../../typings/statement';
-import { Expression } from '.';
+import { Expression } from './expression';
 
 class LiteralExpression<T extends TypeAtom> implements ILiteral<T> {
     _isExpression = true as const;
