@@ -1,18 +1,8 @@
-import { Expression, IProxiableExpression } from './expression';
-import Utils, { LineInfo } from '../misc/utils';
-import { IExpression } from '../typings/expression';
-import { IStatement } from '../typings/statement';
-import { ILiteral } from '../typings/literal';
-
-class C_DefineLocal implements IStatement {
-    constructor(public name: string, public value: unknown, public mutable: boolean, public line = new LineInfo()) {}
-
-    toString() {
-        return `(defineLocal "${this.name}" ${this.value} ${Utils.capitalizeBoolean(this.mutable)} ${this.line})`;
-    }
-}
-export const DefineVar = (name: string, value: unknown, mutable = true, line = new LineInfo()) =>
-    new C_DefineLocal(name, value, mutable, line);
+import { Expression } from '../expression';
+import { LineInfo } from '../../misc/utils';
+import { IExpression } from '../../typings/expression';
+import { IStatement } from '../../typings/statement';
+import { ILiteral } from '../../typings/literal';
 
 class C_Verify implements IStatement {
     constructor(public condition: IExpression, public errorMsg: IExpression, public line = new LineInfo()) {}
@@ -23,27 +13,6 @@ class C_Verify implements IStatement {
 }
 export const Require = (condition: IExpression, errorMsg: ILiteral<unknown> | IExpression, line = new LineInfo()) =>
     new C_Verify(condition, errorMsg, line);
-
-class C_SetValue implements IStatement {
-    name = 'set';
-    constructor(public source: unknown, public value: unknown, public line = new LineInfo()) {}
-
-    toString() {
-        return `(${this.name} ${this.source} ${this.value} ${this.line})`;
-    }
-}
-export const SetValue = (source: IProxiableExpression, value: IProxiableExpression, line = new LineInfo()) =>
-    new C_SetValue(source, value, line);
-
-class C_Return implements IStatement {
-    name = 'result';
-    constructor(private expr: IExpression, private line: LineInfo) {}
-
-    toString() {
-        return `(${this.name} ${this.expr} ${this.line})`;
-    }
-}
-export const Return = (expr: IExpression, line = new LineInfo()) => new C_Return(expr, line);
 
 class IfStatment implements IStatement {
     #condition: IExpression;
@@ -118,13 +87,10 @@ class ForEachStatement implements IStatement {
 }
 export const ForEachOf = (list: IExpression, line = new LineInfo()) => new ForEachStatement(list, line);
 
-const Commands = {
-    DefineVar,
+const Control = {
     Require,
-    SetValue,
     If,
     ForEachOf,
-    Return,
 };
 
-export default Commands;
+export default Control;

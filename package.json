@@ -22,7 +22,7 @@
         "./smartml": "./smartml/index.js",
         "./core/type":"./core/type/index.js",
         "./core/expression": "./core/expression/index.js",
-        "./core/command": "./core/command.js",
+        "./core/command": "./core/command/index.js",
         "./core/blockchain_operations": "./core/blockchain_operations.js"
     },
     "scripts": {

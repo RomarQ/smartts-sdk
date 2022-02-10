@@ -11,7 +11,7 @@ generateBundle([
     './src/core/index.ts',
     './src/core/type/index.ts',
     './src/core/expression/index.ts',
-    './src/core/command.ts',
+    './src/core/command/index.ts',
     './src/core/blockchain_operations.ts',
 ]);
 fs.copyFileSync('package.json', `${DIST_FOLDER}/package.json`);
