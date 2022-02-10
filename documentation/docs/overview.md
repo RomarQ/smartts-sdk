@@ -9,6 +9,12 @@ slug: /
 
 **`SmartTS SDK`** is a metaprogramming framework for building Tezos smart contracts from Javascript.
 
+<hr/>
+
+## [TypeDoc](https://romarq.github.io/smartts-sdk/api)
+
+<hr/>
+
 ## Getting Started
 
 ### Install the package

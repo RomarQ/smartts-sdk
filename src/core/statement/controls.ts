@@ -1,18 +1,13 @@
 import { Expression } from '../expression/expression';
+import StatementAtom from '../enums/statement';
 import { LineInfo } from '../../misc/utils';
 import { IStatement } from '../../typings/statement';
 import { Proxied, proxy } from '../../misc/proxy';
 import { IExpression } from '../../typings/expression';
+import { Satement } from './base';
 
-class C_Verify implements IStatement {
-    constructor(public condition: IExpression, public errorMsg: IExpression, public line = new LineInfo()) {}
-
-    toString() {
-        return `(verify ${this.condition} ${this.errorMsg} ${this.line})`;
-    }
-}
 export const Require = (condition: IExpression, errorMsg: IExpression, line = new LineInfo()) =>
-    new C_Verify(condition, errorMsg, line);
+    new Satement(StatementAtom.verify, condition, errorMsg, line);
 
 class IfStatment implements IStatement {
     #condition: IExpression;
@@ -43,11 +38,11 @@ class IfStatment implements IStatement {
     }
 
     private ifBlock() {
-        return `(ifBlock ${this.#condition} (${this.#thenStatements.join(' ')}) ${this.#line})`;
+        return `(${StatementAtom.ifBlock} ${this.#condition} (${this.#thenStatements.join(' ')}) ${this.#line})`;
     }
 
     private elseBlock() {
-        return `(elseBlock (${this.#elseStatements.join(' ')}))`;
+        return `(${StatementAtom.elseBlock} (${this.#elseStatements.join(' ')}))`;
     }
 
     [Symbol.toPrimitive]() {

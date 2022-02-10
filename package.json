@@ -20,7 +20,7 @@
     "exports": {
         ".": "./index.js",
         "./smartml": "./smartml/index.js",
-        "./core/type":"./core/type/index.js",
+        "./core/type": "./core/type/index.js",
         "./core/expression": "./core/expression/index.js",
         "./core/command": "./core/command/index.js"
     },
@@ -28,6 +28,7 @@
         "build": "node --max_old_space_size=8192 scripts/build.js && tsc --build",
         "test": "NODE_OPTIONS=--max-old-space-size=8192 jest --runInBand --detectOpenHandles --watch",
         "ci-test": "NODE_OPTIONS=--max-old-space-size=8192 CI=true jest --collect-coverage --reporters=default --reporters=jest-junit --reporters=jest-html-reporter",
+        "generate:doc": "typedoc",
         "prettier:fix": "prettier --write '{src,tests}/**/*.{js,ts,json}'",
         "lint:fix": "eslint '{src,tests}/**/*.{js,ts,json}' --quiet --fix",
         "publish": "sh scripts/publish.sh"
@@ -51,6 +52,7 @@
         "jest-junit": "13.0.0",
         "prettier": "2.5.1",
         "ts-jest": "27.1.3",
+        "typedoc": "^0.22.11",
         "typescript": "4.5.5"
     },
     "browser": {

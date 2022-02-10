@@ -4,6 +4,12 @@
 
 `SmartTS SDK` is a metaprogramming framework for building Tezos smart contracts from Javascript. It uses the SmartPy compiler.
 
+<hr/>
+
+## [TypeDoc](https://romarq.github.io/smartts-sdk/api)
+
+<hr/>
+
 ```js
 const { Contract, EntryPoint, GetSender } = require('@tezwell/smartts-sdk');
 const { DefineVar, Require, SetValue } = require('@tezwell/smartts-sdk/core/command');

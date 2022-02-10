@@ -4,28 +4,31 @@ import { IType } from '../../typings/type';
 import { Layout } from '../enums/layout';
 import TypeAtom from '../enums/type';
 
-export class SimpleType implements IType {
-    _isType = true as const;
+class SimpleType<T extends TypeAtom> implements IType<T> {
+    // Used for type checking
+    _type = {} as unknown as T;
 
-    constructor(public name: string) {}
+    constructor(public name: T) {}
 
     toString() {
         return `"${this.name}"`;
     }
 }
 
-export class ContainerType implements IType {
-    _isType = true as const;
+class ContainerType<T extends TypeAtom> implements IType<T> {
+    // Used for type checking
+    _type = {} as unknown as T;
 
-    constructor(public type: string, public innerTypes: (IType | number)[]) {}
+    constructor(public type: T, public innerTypes: (IType | number)[]) {}
 
     toString() {
         return `(${this.type} ${this.innerTypes.join(' ')})`;
     }
 }
 
-export class Type_Record implements IType {
-    _isType = true as const;
+class Type_Record implements IType<TypeAtom> {
+    // Used for type checking
+    _type = TypeAtom.record;
 
     private layout: ILayout | Layout;
 
@@ -58,12 +61,30 @@ export class Type_Record implements IType {
 }
 
 export const TUnknown: IType = {
-    _isType: true as const,
+    // Used for type checking
+    _type: {} as unknown,
     toString: () => '(unknown 0)',
 };
+
 // Singleton types
+
+/**
+ * @description The type whose only value is Unit
+ * @see https://tezos.gitlab.io/michelson-reference/#type-unit
+ * @return {IType<TypeAtom.unit>}
+ */
 export const TUnit = () => new SimpleType(TypeAtom.unit);
+/**
+ * @description The type whose only value an arbitrary-precision natural number
+ * @see https://tezos.gitlab.io/michelson-reference/#type-nat
+ * @return {IType<TypeAtom.nat>}
+ */
 export const TNat = () => new SimpleType(TypeAtom.nat);
+/**
+ * @description The type whose only value an arbitrary-precision integer
+ * @see https://tezos.gitlab.io/michelson-reference/#type-int
+ * @return {IType<TypeAtom.int>}
+ */
 export const TInt = () => new SimpleType(TypeAtom.int);
 export const TMutez = () => new SimpleType(TypeAtom.mutez);
 export const TString = () => new SimpleType(TypeAtom.string);

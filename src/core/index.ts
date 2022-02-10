@@ -153,6 +153,6 @@ export class Contract {
     }
 }
 
-export * from './command';
+export * from './statement';
 export * from './expression';
 export * from './type';

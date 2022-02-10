@@ -2,9 +2,8 @@ import type { IType } from '../../typings/type';
 import type { ILiteral } from '../../typings/literal';
 
 import { capitalizeBoolean, LineInfo, parenthesis, quote } from '../../misc/utils';
-import { TUnknown, TRecord, TMap, TBig_map } from '../type';
+import { TUnknown } from '../type';
 import { IExpression, IExpressionKind } from '../../typings/expression';
-import { Layout } from '../enums/layout';
 import LiteralAtom from '../enums/literal';
 import TypeAtom from '../enums/type';
 import { IStatement } from '../../typings/statement';
@@ -59,23 +58,11 @@ class LiteralExpression<T extends TypeAtom> implements ILiteral<T> {
 
 class RecordLiteral implements ILiteral<TypeAtom.record> {
     _isExpression = true as const;
-    _type = TypeAtom.record as const;
+    // Used for type checking
+    _type = null as unknown as TypeAtom.record;
+    type = {} as unknown as IType;
 
-    type: IType;
-
-    constructor(private fields: Record<string, ILiteral<unknown>>, private line: LineInfo) {
-        // Compute the record type (use rightcombs by default)
-        this.type = TRecord(
-            Object.entries(fields).reduce(
-                (pv, [field, expr]) => ({
-                    ...pv,
-                    [field]: expr.type.toString(),
-                }),
-                {},
-            ),
-            Layout.right_comb,
-        );
-    }
+    constructor(private fields: Record<string, ILiteral<unknown>>, private line: LineInfo) {}
 
     private buildFields = (fields: Record<string, IExpressionKind>) => {
         return Object.entries(fields).map(([field, expr]) => `(${field} ${expr.toString()})`);
@@ -93,8 +80,7 @@ class RecordLiteral implements ILiteral<TypeAtom.record> {
 class MapLiteral<T extends TypeAtom.map | TypeAtom.big_map> implements ILiteral<T> {
     _isExpression = true as const;
     _type: T;
-
-    type: IType;
+    type = {} as unknown as IType;
 
     constructor(
         private prim: LiteralAtom.map | LiteralAtom.big_map,
@@ -103,11 +89,6 @@ class MapLiteral<T extends TypeAtom.map | TypeAtom.big_map> implements ILiteral<
         valueType: IType,
         private line: LineInfo,
     ) {
-        if (prim === LiteralAtom.map) {
-            this.type = TMap(keyType, valueType);
-        } else {
-            this.type = TBig_map(keyType, valueType);
-        }
         // Just for typing purposes
         this._type = null as unknown as T;
     }
