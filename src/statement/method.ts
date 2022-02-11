@@ -5,8 +5,8 @@ import { Statement } from '../core/statement';
 
 export const Return = (expr: IExpression, line = new LineInfo()) => new Statement(StatementAtom.result, expr, line);
 
-const Function = {
+const Method = {
     Return,
 };
 
-export default Function;
+export default Method;
