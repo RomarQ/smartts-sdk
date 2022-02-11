@@ -1,5 +1,5 @@
 import { IToString } from './shared';
 
-export interface IType extends IToString {
-    _isType: true;
+export interface IType<T = unknown> extends IToString {
+    _type: T;
 }

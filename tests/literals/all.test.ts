@@ -26,7 +26,7 @@ import {
     TTimestamp,
     TUnit,
     TVariant,
-} from '../../src/core/type';
+} from '../../src/type';
 import {
     Int,
     Mutez,
@@ -57,11 +57,12 @@ import {
     Record,
     Lambda,
     GreaterThan,
-} from '../../src/core/expression';
+} from '../../src/expression';
+import { If, Return } from '../../src/statement';
 import { ILiteral } from '../../src/typings/literal';
 import { IType } from '../../src/typings/type';
 import { verifyMichelsonOutput } from '../util';
-import { Contract, If, Return } from '../../src';
+import { Contract } from '../../src/core';
 
 const verifyLiteral = (testName: string, type: IType, literal: ILiteral<unknown>) => {
     it(testName, () => {

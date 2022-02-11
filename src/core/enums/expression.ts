@@ -1,4 +1,9 @@
-export enum BlockchainOperations {
+export enum ExpressionAtom {
+    items = 'items',
+    update_map = 'update_map',
+    getItem = 'getItem',
+    attr = 'attr',
+    // Blockchain operation
     amount = 'amount',
     balance = 'balance',
     chain_id = 'chain_id',
@@ -12,4 +17,4 @@ export enum BlockchainOperations {
     voting_power = 'voting_power',
 }
 
-export default BlockchainOperations;
+export default ExpressionAtom;

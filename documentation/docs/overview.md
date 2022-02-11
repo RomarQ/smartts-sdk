@@ -1,14 +1,31 @@
-# SmartTS SDK
-![CI](https://github.com/RomarQ/smartts-sdk/workflows/CI/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/RomarQ/smartts-sdk/badge.svg?branch=main)](https://coveralls.io/github/RomarQ/smartts-sdk?branch=main)
+---
+sidebar_position: 1
+slug: /
+---
 
-`SmartTS SDK` is a metaprogramming framework for building Tezos smart contracts from Javascript. It uses the SmartPy compiler.
+# Overview
+![CI](https://github.com/RomarQ/smartts-sdk/workflows/CI/badge.svg)
+![Coverage Status](https://coveralls.io/repos/github/RomarQ/smartts-sdk/badge.svg?branch=main)
+
+**`SmartTS SDK`** is a metaprogramming framework for building Tezos smart contracts from Javascript.
 
 <hr/>
 
 # [TypeDoc](https://romarq.github.io/smartts-sdk/api)
 
 <hr/>
+
+## Getting Started
+
+### Install the package
+
+```shell
+npm install @tezwell/smartts-sdk
+```
+
+### Use the package
+
+#### Build and compile contract
 
 ```js
 const {
@@ -44,7 +61,3 @@ const contract = new Contract()
 
 SmartML.compileContract(contract);
 ```
-
-## **About**
-
-Project was supported by **Tezos Foundation**.

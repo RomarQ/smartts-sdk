@@ -1,8 +1,8 @@
-import SmartML from '../../src/smartml';
-import { If, SetValue } from '../../src/core/command';
-import { ContractStorage, GreaterThanOrEqual, Nat } from '../../src/core/expression';
+import SmartML from '../../src/compiler';
+import { If, SetValue } from '../../src/statement';
+import { ContractStorage, GreaterThanOrEqual, Nat } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
-import { TNat } from '../../src/core/type';
+import { TNat } from '../../src/type';
 
 const verifyMichelsonOutput = (contract: string) => {
     const michelson = SmartML.compileContract(contract);

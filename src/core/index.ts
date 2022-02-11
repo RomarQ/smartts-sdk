@@ -1,11 +1,11 @@
 import type { ILiteral } from '../typings/literal';
 import type { IType } from '../typings/type';
 
-import { Expression, SetType } from './expression';
-import { Mutez, Unit } from './expression';
 import Utils, { LineInfo } from '../misc/utils';
 import { IStatement } from '../typings/statement';
 import { IExpression } from '../typings/expression';
+import { Expression } from './expression';
+import { SetType, Mutez, Unit } from '../expression';
 
 export class Flag {
     args: string[] = [];
@@ -151,8 +151,3 @@ export class Contract {
         `;
     }
 }
-
-export * from './command';
-export * from './expression';
-export * from './type';
-export * from './blockchain_operations';

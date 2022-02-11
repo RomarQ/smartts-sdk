@@ -1,18 +1,13 @@
-import { Expression } from '../expression';
-import { LineInfo } from '../../misc/utils';
-import { IExpression } from '../../typings/expression';
-import { IStatement } from '../../typings/statement';
-import { ILiteral } from '../../typings/literal';
+import { Expression } from '../core/expression';
+import StatementAtom from '../core/enums/statement';
+import { LineInfo } from '../misc/utils';
+import { IStatement } from '../typings/statement';
+import { Proxied, proxy } from '../misc/proxy';
+import { IExpression } from '../typings/expression';
+import { Statement } from '../core/statement';
 
-class C_Verify implements IStatement {
-    constructor(public condition: IExpression, public errorMsg: IExpression, public line = new LineInfo()) {}
-
-    toString() {
-        return `(verify ${this.condition} ${this.errorMsg} ${this.line})`;
-    }
-}
-export const Require = (condition: IExpression, errorMsg: ILiteral<unknown> | IExpression, line = new LineInfo()) =>
-    new C_Verify(condition, errorMsg, line);
+export const Require = (condition: IExpression, errorMsg: IExpression, line = new LineInfo()) =>
+    new Statement(StatementAtom.verify, condition, errorMsg, line);
 
 class IfStatment implements IStatement {
     #condition: IExpression;
@@ -43,11 +38,11 @@ class IfStatment implements IStatement {
     }
 
     private ifBlock() {
-        return `(ifBlock ${this.#condition} (${this.#thenStatements.join(' ')}) ${this.#line})`;
+        return `(${StatementAtom.ifBlock} ${this.#condition} (${this.#thenStatements.join(' ')}) ${this.#line})`;
     }
 
     private elseBlock() {
-        return `(elseBlock (${this.#elseStatements.join(' ')}))`;
+        return `(${StatementAtom.elseBlock} (${this.#elseStatements.join(' ')}))`;
     }
 
     [Symbol.toPrimitive]() {
@@ -75,8 +70,8 @@ class ForEachStatement implements IStatement {
         this.#line = line;
     }
 
-    public Do(callback: (iterator: IExpression) => IStatement[]) {
-        const iterator = new Expression('iter', '"__ITERATOR__"', new LineInfo());
+    public Do(callback: (iterator: Proxied<IExpression>) => IStatement[], line = new LineInfo()) {
+        const iterator = proxy(new Expression('iter', '"__ITERATOR__"', line), Expression.proxyHandler);
         this.#statements = callback(iterator);
         return this;
     }

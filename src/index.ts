@@ -1,5 +1,8 @@
 // Load polyfills needed by SmartML
-import './smartml/polyfills';
+import './compiler/polyfills';
 
-export * as CompilerAPI from './smartml';
+export { default as CompilerAPI } from './compiler';
 export * from './core';
+export * from './type';
+export * from './expression';
+export * from './statement';

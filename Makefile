@@ -6,6 +6,8 @@ test-all:
 	yarn --cwd tests/distributables
 	yarn --cwd tests/distributables test
 
+deploy-docs:
+	./scripts/deploy_docs.sh
 
 .PHONY: clear
 clear:

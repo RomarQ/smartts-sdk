@@ -19,5 +19,9 @@
 	],
 	"exclude": [
 		"./node_modules",
-	]
+	],
+	"typedocOptions": {
+        "entryPoints": ["src/compiler/index.ts", "src/type/index.ts", "src/expression/index.ts", "src/statement/index.ts", "src/core/index.ts"],
+        "out": "api_documentation"
+    }
 }

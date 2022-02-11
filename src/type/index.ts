@@ -1,31 +1,34 @@
-import { composeRightCombLayout, parenthesis } from '../../misc/utils';
-import { ILayout } from '../../typings/literal';
-import { IType } from '../../typings/type';
-import { Layout } from '../enums/layout';
-import TypeAtom from '../enums/type';
+import { composeRightCombLayout, parenthesis } from '../misc/utils';
+import { ILayout } from '../typings/literal';
+import { IType } from '../typings/type';
+import { Layout } from '../core/enums/layout';
+import TypeAtom from '../core/enums/type';
 
-export class SimpleType implements IType {
-    _isType = true as const;
+class SimpleType<T extends TypeAtom> implements IType<T> {
+    // Used for type checking
+    _type = {} as unknown as T;
 
-    constructor(public name: string) {}
+    constructor(public name: T) {}
 
     toString() {
         return `"${this.name}"`;
     }
 }
 
-export class ContainerType implements IType {
-    _isType = true as const;
+class ContainerType<T extends TypeAtom> implements IType<T> {
+    // Used for type checking
+    _type = {} as unknown as T;
 
-    constructor(public type: string, public innerTypes: (IType | number)[]) {}
+    constructor(public type: T, public innerTypes: (IType | number)[]) {}
 
     toString() {
         return `(${this.type} ${this.innerTypes.join(' ')})`;
     }
 }
 
-export class Type_Record implements IType {
-    _isType = true as const;
+class Type_VariantOrRecord implements IType<TypeAtom> {
+    // Used for type checking
+    _type = TypeAtom.record;
 
     private layout: ILayout | Layout;
 
@@ -57,13 +60,31 @@ export class Type_Record implements IType {
     }
 }
 
-export const TUnknown: IType = {
-    _isType: true as const,
+export const TUnknown = (): IType => ({
+    // Used for type checking
+    _type: {} as unknown,
     toString: () => '(unknown 0)',
-};
+});
+
 // Singleton types
+
+/**
+ * @description The type whose only value is Unit
+ * @see https://tezos.gitlab.io/michelson-reference/#type-unit
+ * @return {IType<TypeAtom.unit>}
+ */
 export const TUnit = () => new SimpleType(TypeAtom.unit);
+/**
+ * @description The type whose only value an arbitrary-precision natural number
+ * @see https://tezos.gitlab.io/michelson-reference/#type-nat
+ * @return {IType<TypeAtom.nat>}
+ */
 export const TNat = () => new SimpleType(TypeAtom.nat);
+/**
+ * @description The type whose only value an arbitrary-precision integer
+ * @see https://tezos.gitlab.io/michelson-reference/#type-int
+ * @return {IType<TypeAtom.int>}
+ */
 export const TInt = () => new SimpleType(TypeAtom.int);
 export const TMutez = () => new SimpleType(TypeAtom.mutez);
 export const TString = () => new SimpleType(TypeAtom.string);
@@ -94,9 +115,9 @@ export const TSapling_state = (memo: number) => new ContainerType(TypeAtom.sapli
 export const TSapling_transaction = (memo: number) => new ContainerType(TypeAtom.sapling_transaction, [memo]);
 // Artificial Types
 export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) =>
-    new Type_Record(TypeAtom.record, fields, layout);
+    new Type_VariantOrRecord(TypeAtom.record, fields, layout);
 export const TVariant = (fields: Record<string, IType>, layout?: ILayout | Layout) =>
-    new Type_Record(TypeAtom.variant, fields, layout);
+    new Type_VariantOrRecord(TypeAtom.variant, fields, layout);
 
 const Types = {
     TUnknown,
