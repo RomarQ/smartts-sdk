@@ -9,3 +9,4 @@ node_modules/
 # Compiled files
 build
 dist
+api_documentation

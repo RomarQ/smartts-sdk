@@ -1,5 +1,5 @@
-import { Contract, EntryPoint, GetSender } from '../../src/core';
-import { ForEachOf, Require, SetValue } from '../../src/core/command';
+import { Contract, EntryPoint } from '../../src/core';
+import { ForEachOf, Require, SetValue } from '../../src/statement';
 import { Layout } from '../../src/core/enums/layout';
 import {
     GetProperty,
@@ -12,8 +12,9 @@ import {
     String,
     GetEntries,
     GetItem,
-} from '../../src/core/expression';
-import { TAddress, TBig_map, TBool, TBytes, TMap, TNat, TRecord, TString, TPair, TUnit } from '../../src/core/type';
+    GetSender,
+} from '../../src/expression';
+import { TAddress, TBig_map, TBool, TBytes, TMap, TNat, TRecord, TString, TPair, TUnit } from '../../src/type';
 
 /**
  * Error Codes

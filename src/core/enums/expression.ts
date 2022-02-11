@@ -2,6 +2,7 @@ export enum ExpressionAtom {
     items = 'items',
     update_map = 'update_map',
     getItem = 'getItem',
+    attr = 'attr',
     // Blockchain operation
     amount = 'amount',
     balance = 'balance',

@@ -1,8 +1,9 @@
-import { proxy } from '../../misc/proxy';
-import { LineInfo } from '../../misc/utils';
-import { IExpression } from '../../typings/expression';
-import { ILiteral } from '../../typings/literal';
-import { IType } from '../../typings/type';
+import { proxy } from '../misc/proxy';
+import { LineInfo } from '../misc/utils';
+import { IExpression } from '../typings/expression';
+import { ILiteral } from '../typings/literal';
+import { IType } from '../typings/type';
+import ExpressionAtom from './enums/expression';
 
 export class Expression implements IExpression {
     _isExpression = true as const;
@@ -26,7 +27,7 @@ export class Expression implements IExpression {
     };
 
     static getAttr = (from: IExpression, attr: string, line = new LineInfo()) =>
-        proxy(new Expression('attr', from, `"${attr}"`, line), Expression.proxyHandler);
+        proxy(new Expression(ExpressionAtom.attr, from, `"${attr}"`, line), Expression.proxyHandler);
 
     toString() {
         return `(${[this.name, ...this.args].join(' ')})`;

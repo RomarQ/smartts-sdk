@@ -1,8 +1,8 @@
-import { proxy } from '../../misc/proxy';
-import { LineInfo } from '../../misc/utils';
-import { IExpression } from '../../typings/expression';
-import ExpressionAtom from '../enums/expression';
-import { Expression } from './expression';
+import { proxy } from '../misc/proxy';
+import { LineInfo } from '../misc/utils';
+import { IExpression } from '../typings/expression';
+import ExpressionAtom from '../core/enums/expression';
+import { Expression } from '../core/expression';
 
 export const GetEntries = (source: IExpression, line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.items, source, line), Expression.proxyHandler);

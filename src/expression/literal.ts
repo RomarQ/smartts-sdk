@@ -1,13 +1,13 @@
-import type { IType } from '../../typings/type';
-import type { ILiteral } from '../../typings/literal';
+import type { IType } from '../typings/type';
+import type { ILiteral } from '../typings/literal';
+import type { IStatement } from '../typings/statement';
+import type { IExpression, IExpressionKind } from '../typings/expression';
 
-import { capitalizeBoolean, LineInfo, parenthesis, quote } from '../../misc/utils';
+import { capitalizeBoolean, LineInfo, parenthesis, quote } from '../misc/utils';
 import { TUnknown } from '../type';
-import { IExpression, IExpressionKind } from '../../typings/expression';
-import LiteralAtom from '../enums/literal';
-import TypeAtom from '../enums/type';
-import { IStatement } from '../../typings/statement';
-import { Expression } from './expression';
+import LiteralAtom from '../core/enums/literal';
+import TypeAtom from '../core/enums/type';
+import { Expression } from '../core/expression';
 
 class LiteralExpression<T extends TypeAtom> implements ILiteral<T> {
     _isExpression = true as const;
@@ -181,14 +181,14 @@ export const Some = (value: IExpressionKind, line = new LineInfo()) =>
 export const None = (line = new LineInfo()) => new LiteralExpression(LiteralAtom.None, [], line);
 export const Map = (
     rows: IExpression[][] = [],
-    keyType: IType = TUnknown,
-    valueType: IType = TUnknown,
+    keyType: IType = TUnknown(),
+    valueType: IType = TUnknown(),
     line = new LineInfo(),
 ) => new MapLiteral<TypeAtom.map>(LiteralAtom.map, rows, keyType, valueType, line);
 export const Big_map = (
     rows: IExpression[][] = [],
-    keyType: IType = TUnknown,
-    valueType: IType = TUnknown,
+    keyType: IType = TUnknown(),
+    valueType: IType = TUnknown(),
     line = new LineInfo(),
 ) => new MapLiteral<TypeAtom.big_map>(LiteralAtom.big_map, rows, keyType, valueType, line);
 export const Pair = (left: IExpression, right: IExpression, line = new LineInfo()) =>
@@ -197,7 +197,7 @@ export const Ticket = (content: IExpression, amount: LiteralExpression<TypeAtom.
     new LiteralExpression<TypeAtom.ticket>(LiteralAtom.ticket, [content, amount], line);
 export const Sapling_state = (memo: number, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.sapling_state>(LiteralAtom.sapling_state, [memo], line);
-export const Lambda = (inType: IType = TUnknown, line = new LineInfo()) => new LambdaLiteral(inType, line);
+export const Lambda = (inType: IType = TUnknown(), line = new LineInfo()) => new LambdaLiteral(inType, line);
 export const Record = (fields: Record<string, ILiteral<unknown>>, line = new LineInfo()) =>
     new RecordLiteral(fields, line);
 export const Variant = (field: string, value: IExpression, line = new LineInfo()) =>

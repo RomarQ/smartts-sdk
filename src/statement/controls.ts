@@ -1,13 +1,13 @@
-import { Expression } from '../expression/expression';
-import StatementAtom from '../enums/statement';
-import { LineInfo } from '../../misc/utils';
-import { IStatement } from '../../typings/statement';
-import { Proxied, proxy } from '../../misc/proxy';
-import { IExpression } from '../../typings/expression';
-import { Satement } from './base';
+import { Expression } from '../core/expression';
+import StatementAtom from '../core/enums/statement';
+import { LineInfo } from '../misc/utils';
+import { IStatement } from '../typings/statement';
+import { Proxied, proxy } from '../misc/proxy';
+import { IExpression } from '../typings/expression';
+import { Statement } from '../core/statement';
 
 export const Require = (condition: IExpression, errorMsg: IExpression, line = new LineInfo()) =>
-    new Satement(StatementAtom.verify, condition, errorMsg, line);
+    new Statement(StatementAtom.verify, condition, errorMsg, line);
 
 class IfStatment implements IStatement {
     #condition: IExpression;

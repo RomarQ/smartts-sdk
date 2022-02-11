@@ -1,5 +1,5 @@
 import { Contract, EntryPoint } from '../../src/core';
-import { Unit } from '../../src/core/expression';
+import { Unit } from '../../src/expression';
 import {
     TAddress,
     TBig_map,
@@ -32,7 +32,7 @@ import {
     TTimestamp,
     TUnit,
     TVariant,
-} from '../../src/core/type';
+} from '../../src/type';
 import { IType } from '../../src/typings/type';
 import { verifyMichelsonOutput } from '../util';
 

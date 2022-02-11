@@ -1,31 +1,26 @@
 import {
     GetChain_id,
-    Contract,
-    EntryPoint,
     GetTimestamp,
     GetLevel,
     GetSender,
     GetSource,
-    TOption,
-    TUnit,
-    TAddress,
-    TTimestamp,
-    TChain_id,
-    TNat,
     GetAmount,
-    TMutez,
     GetBalance,
     GetSelf,
     GetSelfAddress,
     GetTotalVotingPower,
     GetVotingPower,
-    TContract,
-} from '../../src/core';
-import { ContractStorage, Key_hash, None, Some } from '../../src/core/expression';
-import { SetValue } from '../../src/core/command';
+    ContractStorage,
+    Key_hash,
+    None,
+    Some,
+} from '../../src/expression';
+import { TOption, TUnit, TAddress, TTimestamp, TChain_id, TNat, TMutez, TContract } from '../../src/type';
+import { SetValue } from '../../src/statement';
 import { verifyMichelsonOutput } from '../util';
 import { IType } from '../../src/typings/type';
 import { IExpression } from '../../src/typings/expression';
+import { Contract, EntryPoint } from '../../src/core';
 
 const verify = (testName: string, type: IType, operation: IExpression) => {
     it(testName, () => {

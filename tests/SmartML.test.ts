@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 
-import '../src/smartml/polyfills';
-import * as smartML from '../src/smartml/smartML';
+import '../src/compiler/polyfills';
+import * as smartML from '../src/compiler/smartML';
 
 describe('Namespace (Private)', () => {
     it('List all available methods', () => {

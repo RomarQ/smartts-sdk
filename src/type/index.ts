@@ -1,8 +1,8 @@
-import { composeRightCombLayout, parenthesis } from '../../misc/utils';
-import { ILayout } from '../../typings/literal';
-import { IType } from '../../typings/type';
-import { Layout } from '../enums/layout';
-import TypeAtom from '../enums/type';
+import { composeRightCombLayout, parenthesis } from '../misc/utils';
+import { ILayout } from '../typings/literal';
+import { IType } from '../typings/type';
+import { Layout } from '../core/enums/layout';
+import TypeAtom from '../core/enums/type';
 
 class SimpleType<T extends TypeAtom> implements IType<T> {
     // Used for type checking
@@ -26,7 +26,7 @@ class ContainerType<T extends TypeAtom> implements IType<T> {
     }
 }
 
-class Type_Record implements IType<TypeAtom> {
+class Type_VariantOrRecord implements IType<TypeAtom> {
     // Used for type checking
     _type = TypeAtom.record;
 
@@ -60,11 +60,11 @@ class Type_Record implements IType<TypeAtom> {
     }
 }
 
-export const TUnknown: IType = {
+export const TUnknown = (): IType => ({
     // Used for type checking
     _type: {} as unknown,
     toString: () => '(unknown 0)',
-};
+});
 
 // Singleton types
 
@@ -115,9 +115,9 @@ export const TSapling_state = (memo: number) => new ContainerType(TypeAtom.sapli
 export const TSapling_transaction = (memo: number) => new ContainerType(TypeAtom.sapling_transaction, [memo]);
 // Artificial Types
 export const TRecord = (fields: Record<string, IType>, layout?: ILayout | Layout) =>
-    new Type_Record(TypeAtom.record, fields, layout);
+    new Type_VariantOrRecord(TypeAtom.record, fields, layout);
 export const TVariant = (fields: Record<string, IType>, layout?: ILayout | Layout) =>
-    new Type_Record(TypeAtom.variant, fields, layout);
+    new Type_VariantOrRecord(TypeAtom.variant, fields, layout);
 
 const Types = {
     TUnknown,

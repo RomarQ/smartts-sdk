@@ -19,10 +19,10 @@
     },
     "exports": {
         ".": "./index.js",
-        "./smartml": "./smartml/index.js",
-        "./core/type": "./core/type/index.js",
-        "./core/expression": "./core/expression/index.js",
-        "./core/command": "./core/command/index.js"
+        "./compiler": "./compiler/index.js",
+        "./type": "./type/index.js",
+        "./expression": "./expression/index.js",
+        "./statement": "./statement/index.js"
     },
     "scripts": {
         "build": "node --max_old_space_size=8192 scripts/build.js && tsc --build",

@@ -16,7 +16,7 @@ const {
     GetLocal,
     GetSender,
 } = SmartTS;
-import SmartML from '@tezwell/smartts-sdk/smartml';
+import SmartML from '@tezwell/smartts-sdk/compiler';
 
 const contract = new Contract()
     .setStorage(Nat(0))

@@ -1,4 +1,4 @@
-import SmartML from '../src/smartml';
+import SmartML from '../src/compiler';
 
 export const verifyMichelsonOutput = (contract: string) => {
     const michelson = SmartML.compileContract(contract);

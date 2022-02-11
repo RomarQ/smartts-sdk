@@ -1,6 +1,6 @@
-import { LineInfo } from '../../misc/utils';
-import { IExpression } from '../../typings/expression';
-import { Expression } from './expression';
+import { LineInfo } from '../misc/utils';
+import { IExpression } from '../typings/expression';
+import { Expression } from '../core/expression';
 
 export const Equal = (left: IExpression, right: IExpression, line = new LineInfo()) =>
     new Expression('eq', left, right, line);

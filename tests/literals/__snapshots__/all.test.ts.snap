@@ -3,8 +3,8 @@
 exports[`Test Literals address 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"all.test.ts\\" 76))
             storage_type (\\"address\\")
             messages ()
             flags ()
@@ -12,7 +12,7 @@ exports[`Test Literals address 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -62,8 +62,8 @@ exports[`Test Literals address 2`] = `
 exports[`Test Literals big_map 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (big_map (\\"all.test.ts\\" 75) ((literal (nat 1) (\\"all.test.ts\\" 75)) (literal (string \\"WORD1\\") (\\"all.test.ts\\" 75))) ((literal (nat 2) (\\"all.test.ts\\" 75)) (literal (string \\"WORD2\\") (\\"all.test.ts\\" 75))))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (big_map (\\"all.test.ts\\" 76) ((literal (nat 1) (\\"all.test.ts\\" 76)) (literal (string \\"WORD1\\") (\\"all.test.ts\\" 76))) ((literal (nat 2) (\\"all.test.ts\\" 76)) (literal (string \\"WORD2\\") (\\"all.test.ts\\" 76))))
             storage_type ((bigmap \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -71,7 +71,7 @@ exports[`Test Literals big_map 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -129,8 +129,8 @@ exports[`Test Literals big_map 2`] = `
 exports[`Test Literals bls12_381_fr 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (bls12_381_fr 0x01) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (bls12_381_fr 0x01) (\\"all.test.ts\\" 76))
             storage_type (\\"bls12_381_fr\\")
             messages ()
             flags ()
@@ -138,7 +138,7 @@ exports[`Test Literals bls12_381_fr 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -188,8 +188,8 @@ exports[`Test Literals bls12_381_fr 2`] = `
 exports[`Test Literals bls12_381_fr 3`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (bls12_381_fr 1) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (bls12_381_fr 1) (\\"all.test.ts\\" 76))
             storage_type (\\"bls12_381_fr\\")
             messages ()
             flags ()
@@ -197,7 +197,7 @@ exports[`Test Literals bls12_381_fr 3`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -247,8 +247,8 @@ exports[`Test Literals bls12_381_fr 4`] = `
 exports[`Test Literals bls12_381_g1 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (bls12_381_g1 0x00) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (bls12_381_g1 0x00) (\\"all.test.ts\\" 76))
             storage_type (\\"bls12_381_g1\\")
             messages ()
             flags ()
@@ -256,7 +256,7 @@ exports[`Test Literals bls12_381_g1 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -306,8 +306,8 @@ exports[`Test Literals bls12_381_g1 2`] = `
 exports[`Test Literals bls12_381_g2 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (bls12_381_g2 0x00) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (bls12_381_g2 0x00) (\\"all.test.ts\\" 76))
             storage_type (\\"bls12_381_g2\\")
             messages ()
             flags ()
@@ -315,7 +315,7 @@ exports[`Test Literals bls12_381_g2 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -365,8 +365,8 @@ exports[`Test Literals bls12_381_g2 2`] = `
 exports[`Test Literals bool 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (bool True) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (bool True) (\\"all.test.ts\\" 76))
             storage_type (\\"bool\\")
             messages ()
             flags ()
@@ -374,7 +374,7 @@ exports[`Test Literals bool 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -424,8 +424,8 @@ exports[`Test Literals bool 2`] = `
 exports[`Test Literals bytes 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (bytes 0x00) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (bytes 0x00) (\\"all.test.ts\\" 76))
             storage_type (\\"bytes\\")
             messages ()
             flags ()
@@ -433,7 +433,7 @@ exports[`Test Literals bytes 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -483,8 +483,8 @@ exports[`Test Literals bytes 2`] = `
 exports[`Test Literals chain_id 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (chain_id_cst 0x00) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (chain_id_cst 0x00) (\\"all.test.ts\\" 76))
             storage_type (\\"chain_id\\")
             messages ()
             flags ()
@@ -492,7 +492,7 @@ exports[`Test Literals chain_id 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -542,8 +542,8 @@ exports[`Test Literals chain_id 2`] = `
 exports[`Test Literals int 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (int 2) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (int 2) (\\"all.test.ts\\" 76))
             storage_type (\\"int\\")
             messages ()
             flags ()
@@ -551,7 +551,7 @@ exports[`Test Literals int 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -601,8 +601,8 @@ exports[`Test Literals int 2`] = `
 exports[`Test Literals key 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"all.test.ts\\" 76))
             storage_type (\\"key\\")
             messages ()
             flags ()
@@ -610,7 +610,7 @@ exports[`Test Literals key 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -660,8 +660,8 @@ exports[`Test Literals key 2`] = `
 exports[`Test Literals key_hash 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"all.test.ts\\" 76))
             storage_type (\\"key_hash\\")
             messages ()
             flags ()
@@ -669,7 +669,7 @@ exports[`Test Literals key_hash 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -719,8 +719,8 @@ exports[`Test Literals key_hash 2`] = `
 exports[`Test Literals lambda 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (lambda 1 False False \\"arg\\" (\\"all.test.ts\\" 75) ((ifBlock (gt (lambdaParams 1 \\"arg\\" (\\"all.test.ts\\" 75) (unknown 0)) (literal (nat 2) (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75)) ((result (literal (string \\"YES\\") (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))) (\\"all.test.ts\\" 75)) (elseBlock ((result (literal (string \\"NO\\") (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))))))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (lambda 1 False False \\"arg\\" (\\"all.test.ts\\" 76) ((ifBlock (gt (lambdaParams 1 \\"arg\\" (\\"all.test.ts\\" 76) (unknown 0)) (literal (nat 2) (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76)) ((result (literal (string \\"YES\\") (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))) (\\"all.test.ts\\" 76)) (elseBlock ((result (literal (string \\"NO\\") (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))))))
             storage_type ((lambda \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -728,7 +728,7 @@ exports[`Test Literals lambda 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -786,8 +786,8 @@ exports[`Test Literals lambda 2`] = `
 exports[`Test Literals list 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (list (\\"all.test.ts\\" 75) (literal (string \\"HELLO\\") (\\"all.test.ts\\" 75)) (literal (string \\"WORLD\\") (\\"all.test.ts\\" 75)))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (list (\\"all.test.ts\\" 76) (literal (string \\"HELLO\\") (\\"all.test.ts\\" 76)) (literal (string \\"WORLD\\") (\\"all.test.ts\\" 76)))
             storage_type ((list \\"string\\"))
             messages ()
             flags ()
@@ -795,7 +795,7 @@ exports[`Test Literals list 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -850,8 +850,8 @@ exports[`Test Literals list 2`] = `
 exports[`Test Literals map 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (map (\\"all.test.ts\\" 75) ((literal (nat 1) (\\"all.test.ts\\" 75)) (literal (string \\"WORD1\\") (\\"all.test.ts\\" 75))) ((literal (nat 2) (\\"all.test.ts\\" 75)) (literal (string \\"WORD2\\") (\\"all.test.ts\\" 75))))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (map (\\"all.test.ts\\" 76) ((literal (nat 1) (\\"all.test.ts\\" 76)) (literal (string \\"WORD1\\") (\\"all.test.ts\\" 76))) ((literal (nat 2) (\\"all.test.ts\\" 76)) (literal (string \\"WORD2\\") (\\"all.test.ts\\" 76))))
             storage_type ((map \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -859,7 +859,7 @@ exports[`Test Literals map 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -917,8 +917,8 @@ exports[`Test Literals map 2`] = `
 exports[`Test Literals mutez 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (mutez 2) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (mutez 2) (\\"all.test.ts\\" 76))
             storage_type (\\"mutez\\")
             messages ()
             flags ()
@@ -926,7 +926,7 @@ exports[`Test Literals mutez 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -976,8 +976,8 @@ exports[`Test Literals mutez 2`] = `
 exports[`Test Literals nat 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (nat 1) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (nat 1) (\\"all.test.ts\\" 76))
             storage_type (\\"nat\\")
             messages ()
             flags ()
@@ -985,7 +985,7 @@ exports[`Test Literals nat 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1035,8 +1035,8 @@ exports[`Test Literals nat 2`] = `
 exports[`Test Literals none 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (variant \\"None\\" (unit) (\\"all.test.ts\\" 76))
             storage_type ((option \\"string\\"))
             messages ()
             flags ()
@@ -1044,7 +1044,7 @@ exports[`Test Literals none 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1099,8 +1099,8 @@ exports[`Test Literals none 2`] = `
 exports[`Test Literals pair 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (tuple (\\"all.test.ts\\" 75) (literal (nat 1) (\\"all.test.ts\\" 75)) (literal (string \\"WORD\\") (\\"all.test.ts\\" 75)))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (tuple (\\"all.test.ts\\" 76) (literal (nat 1) (\\"all.test.ts\\" 76)) (literal (string \\"WORD\\") (\\"all.test.ts\\" 76)))
             storage_type ((tuple \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -1108,7 +1108,7 @@ exports[`Test Literals pair 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1166,8 +1166,8 @@ exports[`Test Literals pair 2`] = `
 exports[`Test Literals record 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (record (\\"all.test.ts\\" 75) (field1 (literal (nat 1) (\\"all.test.ts\\" 75))) (field2 (literal (int 2) (\\"all.test.ts\\" 75))) (field3 (literal (bytes 0x00) (\\"all.test.ts\\" 75))))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (record (\\"all.test.ts\\" 76) (field1 (literal (nat 1) (\\"all.test.ts\\" 76))) (field2 (literal (int 2) (\\"all.test.ts\\" 76))) (field3 (literal (bytes 0x00) (\\"all.test.ts\\" 76))))
             storage_type ((record ((field1 \\"nat\\") (field2 \\"int\\") (field3 \\"bytes\\")) (Some (((\\"field1\\") (\\"field2\\")) (\\"field3\\")))))
             messages ()
             flags ()
@@ -1175,7 +1175,7 @@ exports[`Test Literals record 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1250,8 +1250,8 @@ exports[`Test Literals record 2`] = `
 exports[`Test Literals sapling_state 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (sapling_empty_state 8 (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (sapling_empty_state 8 (\\"all.test.ts\\" 76))
             storage_type ((sapling_state 8))
             messages ()
             flags ()
@@ -1259,7 +1259,7 @@ exports[`Test Literals sapling_state 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1314,8 +1314,8 @@ exports[`Test Literals sapling_state 2`] = `
 exports[`Test Literals set 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (set (\\"all.test.ts\\" 75) (literal (string \\"HELLO\\") (\\"all.test.ts\\" 75)) (literal (string \\"WORLD\\") (\\"all.test.ts\\" 75)))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (set (\\"all.test.ts\\" 76) (literal (string \\"HELLO\\") (\\"all.test.ts\\" 76)) (literal (string \\"WORLD\\") (\\"all.test.ts\\" 76)))
             storage_type ((set \\"string\\"))
             messages ()
             flags ()
@@ -1323,7 +1323,7 @@ exports[`Test Literals set 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1378,8 +1378,8 @@ exports[`Test Literals set 2`] = `
 exports[`Test Literals signature 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (signature sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (signature sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe) (\\"all.test.ts\\" 76))
             storage_type (\\"signature\\")
             messages ()
             flags ()
@@ -1387,7 +1387,7 @@ exports[`Test Literals signature 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1437,8 +1437,8 @@ exports[`Test Literals signature 2`] = `
 exports[`Test Literals some 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (variant \\"Some\\" (literal (string \\"HELLO\\") (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (variant \\"Some\\" (literal (string \\"HELLO\\") (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))
             storage_type ((option \\"string\\"))
             messages ()
             flags ()
@@ -1446,7 +1446,7 @@ exports[`Test Literals some 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1501,8 +1501,8 @@ exports[`Test Literals some 2`] = `
 exports[`Test Literals string 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (string \\"TEST STRING\\") (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (string \\"TEST STRING\\") (\\"all.test.ts\\" 76))
             storage_type (\\"string\\")
             messages ()
             flags ()
@@ -1510,7 +1510,7 @@ exports[`Test Literals string 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1560,8 +1560,8 @@ exports[`Test Literals string 2`] = `
 exports[`Test Literals ticket 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (ticket (literal (string \\"A Ticket\\") (\\"all.test.ts\\" 75)) (literal (nat 1) (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (ticket (literal (string \\"A Ticket\\") (\\"all.test.ts\\" 76)) (literal (nat 1) (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))
             storage_type ((ticket \\"string\\"))
             messages ()
             flags ()
@@ -1569,7 +1569,7 @@ exports[`Test Literals ticket 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1579,8 +1579,8 @@ exports[`Test Literals ticket 2`] = `"\\"Missing environment to compute ETicket\
 exports[`Test Literals timestamp 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (literal (timestamp 100) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (literal (timestamp 100) (\\"all.test.ts\\" 76))
             storage_type (\\"timestamp\\")
             messages ()
             flags ()
@@ -1588,7 +1588,7 @@ exports[`Test Literals timestamp 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1638,7 +1638,7 @@ exports[`Test Literals timestamp 2`] = `
 exports[`Test Literals unit 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
             storage (unit)
             storage_type (\\"unit\\")
             messages ()
@@ -1647,7 +1647,7 @@ exports[`Test Literals unit 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;
@@ -1697,8 +1697,8 @@ exports[`Test Literals unit 2`] = `
 exports[`Test Literals variant 1`] = `
 "
         (
-            template_id (static_id 0 (\\"all.test.ts\\" 68))
-            storage (variant match2 (literal (int 1) (\\"all.test.ts\\" 75)) (\\"all.test.ts\\" 75))
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (variant match2 (literal (int 1) (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))
             storage_type ((variant ((match1 \\"nat\\") (match2 \\"int\\") (match3 \\"bytes\\")) (Some ((\\"match1\\") ((\\"match2\\") (\\"match3\\"))))))
             messages ()
             flags ()
@@ -1706,7 +1706,7 @@ exports[`Test Literals variant 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"all.test.ts\\" 68))
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
         )
         "
 `;

@@ -11,7 +11,7 @@ slug: /
 
 <hr/>
 
-## [TypeDoc](https://romarq.github.io/smartts-sdk/api)
+# [TypeDoc](https://romarq.github.io/smartts-sdk/api)
 
 <hr/>
 
@@ -28,11 +28,22 @@ npm install @tezwell/smartts-sdk
 #### Build and compile contract
 
 ```js
-const { Contract, EntryPoint, GetSender } = require('@tezwell/smartts-sdk');
-const { DefineVar, Require, SetValue } = require('@tezwell/smartts-sdk/core/command');
-const { TNat } = require('@tezwell/smartts-sdk/core/type');
-const { ContractStorage, Equal, GetLocal, Address, Nat, String } = require('@tezwell/smartts-sdk/core/expression');
-const SmartML = require('@tezwell/smartts-sdk/smartml');
+const {
+    Contract,
+    EntryPoint,
+    GetSender,
+    DefineVar,
+    Require,
+    SetValue,
+    TNat,
+    ContractStorage,
+    Equal,
+    GetLocal,
+    Address,
+    Nat,
+    String
+} = require('@tezwell/smartts-sdk');
+const SmartML = require('@tezwell/smartts-sdk/compiler');
 
 const contract = new Contract()
     .setStorage(Nat(0))

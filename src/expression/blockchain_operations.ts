@@ -1,8 +1,8 @@
-import { LineInfo } from '../../misc/utils';
-import { ILiteral } from '../../typings/literal';
-import ExpressionAtom from '../enums/expression';
-import TypeAtom from '../enums/type';
-import { Expression } from './expression';
+import { LineInfo } from '../misc/utils';
+import { ILiteral } from '../typings/literal';
+import ExpressionAtom from '../core/enums/expression';
+import TypeAtom from '../core/enums/type';
+import { Expression } from '../core/expression';
 
 /**
  * @see https://tezos.gitlab.io/michelson-reference/#instr-AMOUNT

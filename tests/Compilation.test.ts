@@ -1,4 +1,4 @@
-import { TBool, TList, TNat, TOption } from '../src/core/type';
+import { TBool, TList, TNat, TOption } from '../src/type';
 import {
     Address,
     Bool,
@@ -13,9 +13,10 @@ import {
     ContractStorage,
     Equal,
     GetLocal,
-} from '../src/core/expression';
-import { Contract, EntryPoint, Flag, GetSender } from '../src/core';
-import { DefineVar, Require, SetValue } from '../src/core/command';
+    GetSender,
+} from '../src/expression';
+import { Contract, EntryPoint, Flag } from '../src/core';
+import { DefineVar, Require, SetValue } from '../src/statement';
 import { verifyMichelsonOutput } from './util';
 
 describe('Compile Contracts', () => {
