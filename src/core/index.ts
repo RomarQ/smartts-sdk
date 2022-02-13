@@ -4,8 +4,8 @@ import type { IType } from '../typings/type';
 import Utils, { LineInfo } from '../misc/utils';
 import { IStatement } from '../typings/statement';
 import { IExpression } from '../typings/expression';
-import { Expression } from './expression';
 import { SetType, Mutez, Unit } from '../expression';
+import { MethodArgument } from '../expression/method';
 
 export class Flag {
     args: string[] = [];
@@ -59,7 +59,7 @@ export class EntryPoint {
     }
 
     public code(callback: (arg: IExpression) => IStatement[]) {
-        const param = new Expression('params', new LineInfo());
+        const param = MethodArgument(this.#line);
         if (this.#inType) {
             // Add type annotation if an input type was provided
             this.#statements = [SetType(param, this.#inType)];
