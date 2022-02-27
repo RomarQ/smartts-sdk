@@ -62,26 +62,34 @@ export const If = (
 ) => new IfStatment(condition, line, thenStatements, elseStatements);
 
 class ForEachStatement implements IStatement {
-    #list: IExpression;
-    #statements: IStatement[] = [];
-    #line: LineInfo;
+    private list: IExpression;
+    private iteratorName: string;
+    private statements: IStatement[] = [];
+    private line: LineInfo;
 
-    constructor(list: IExpression, line = new LineInfo()) {
-        this.#list = list;
-        this.#line = line;
+    constructor(list: IExpression, iteratorName = '__ITERATOR__', line = new LineInfo()) {
+        this.list = list;
+        this.iteratorName = iteratorName;
+        this.line = line;
+    }
+
+    public setIteratorName(iteratorName: string): this {
+        this.iteratorName = iteratorName;
+        return this;
     }
 
     public Do(callback: (iterator: Proxied<IExpression>) => IStatement[], line = new LineInfo()) {
-        const iterator = Iterator('__ITERATOR__', line);
-        this.#statements = callback(iterator);
+        const iterator = Iterator(this.iteratorName, line);
+        this.statements = callback(iterator);
         return this;
     }
 
     [Symbol.toPrimitive]() {
-        return `(forGroup "__ITERATOR__" ${this.#list} (${this.#statements.join(' ')}) ${this.#line})`;
+        return `(forGroup "${this.iteratorName}" ${this.list} (${this.statements.join(' ')}) ${this.line})`;
     }
 }
-export const ForEachOf = (list: IExpression, line = new LineInfo()) => new ForEachStatement(list, line);
+export const ForEachOf = (list: IExpression, iteratorName?: string, line = new LineInfo()) =>
+    new ForEachStatement(list, iteratorName, line);
 
 const Control = {
     Require,
