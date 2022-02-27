@@ -25,7 +25,7 @@ export const GetLevel = () => new Expression(ExpressionAtom.level);
  */
 export const GetTimestamp = () => new Expression(ExpressionAtom.now);
 /**
- * @see https://tezos.gitlab.io/michelson-reference/#instr-SELF_ADDRESS
+ * @see https://tezos.gitlab.io/michelson-reference/#instr-SELF
  */
 export const GetSelf = (entry_point = '', line = new LineInfo()) =>
     new Expression(ExpressionAtom.self, `"${entry_point}"`, line);
