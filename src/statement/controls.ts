@@ -5,6 +5,7 @@ import { IStatement } from '../typings/statement';
 import { Proxied, proxy } from '../misc/proxy';
 import { IExpression } from '../typings/expression';
 import { Statement } from '../core/statement';
+import { Iterator } from '../expression/variables';
 
 export const Require = (condition: IExpression, errorMsg: IExpression, line = new LineInfo()) =>
     new Statement(StatementAtom.verify, condition, errorMsg, line);
@@ -71,7 +72,7 @@ class ForEachStatement implements IStatement {
     }
 
     public Do(callback: (iterator: Proxied<IExpression>) => IStatement[], line = new LineInfo()) {
-        const iterator = proxy(new Expression('iter', '"__ITERATOR__"', line), Expression.proxyHandler);
+        const iterator = Iterator('__ITERATOR__', line);
         this.#statements = callback(iterator);
         return this;
     }
