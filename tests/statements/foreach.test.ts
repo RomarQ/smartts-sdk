@@ -1,17 +1,8 @@
-import SmartML from '../../src/compiler';
 import { ForEachOf, SetValue } from '../../src/statement';
 import { Add, ContractStorage, Nat } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { TList, TNat } from '../../src/type';
-
-const verifyMichelsonOutput = (contract: string) => {
-    const michelson = SmartML.compileContract(contract);
-
-    // No errors expected
-    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
-    // Check snapshot
-    expect(michelson).toMatchSnapshot();
-};
+import { verifyMichelsonOutput } from '../util';
 
 describe('Test (ForEach) statement', () => {
     it('Sum values of a list', () => {

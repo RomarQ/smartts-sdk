@@ -3,419 +3,419 @@
 exports[`Test (If) statement With (Then) and (Else) - [chaining version] 1`] = `
 "
         (
-            template_id (static_id 0 (\\"if.test.ts\\" 63))
-            storage (literal (nat 1) (\\"if.test.ts\\" 64))
+            template_id (static_id 0 (\\"if.test.ts\\" 54))
+            storage (literal (nat 1) (\\"if.test.ts\\" 55))
             storage_type (())
-            messages ((ep1 True False False True (\\"if.test.ts\\" 66) ((set_type (params (\\"if.test.ts\\" 66)) \\"nat\\" (\\"if.test.ts\\" 66)) (ifBlock (ge (params (\\"if.test.ts\\" 66)) (literal (nat 5) (\\"if.test.ts\\" 66)) (\\"if.test.ts\\" 66)) ((set (data) (params (\\"if.test.ts\\" 66)) (\\"if.test.ts\\" 66))) (\\"if.test.ts\\" 66)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 66)) (\\"if.test.ts\\" 66)))))))
+            messages ((ep1 True False False True (\\"if.test.ts\\" 57) ((set_type (params (\\"if.test.ts\\" 57)) \\"nat\\" (\\"if.test.ts\\" 57)) (ifBlock (ge (params (\\"if.test.ts\\" 57)) (literal (nat 5) (\\"if.test.ts\\" 57)) (\\"if.test.ts\\" 57)) ((set (data) (params (\\"if.test.ts\\" 57)) (\\"if.test.ts\\" 57))) (\\"if.test.ts\\" 57)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 57)) (\\"if.test.ts\\" 57)))))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"if.test.ts\\" 63))
+            balance (literal (mutez 0) (\\"if.test.ts\\" 54))
         )
         "
 `;
 
 exports[`Test (If) statement With (Then) and (Else) - [chaining version] 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "nat",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "nat",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "CAR",
-        },
-        Object {
-          "prim": "DUP",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "nat",
-            },
-            Object {
-              "int": "5",
-            },
-          ],
-          "prim": "PUSH",
-        },
-        Object {
-          "prim": "SWAP",
-        },
-        Object {
-          "prim": "COMPARE",
-        },
-        Object {
-          "prim": "GE",
-        },
-        Object {
-          "args": Array [
-            Array [],
-            Array [
-              Object {
-                "prim": "DROP",
-              },
-              Object {
-                "args": Array [
-                  Object {
-                    "prim": "nat",
-                  },
-                  Object {
-                    "int": "5",
-                  },
-                ],
-                "prim": "PUSH",
-              },
-            ],
-          ],
-          "prim": "IF",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"int\\": \\"5\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"COMPARE\\"
+                },
+                {
+                    \\"prim\\": \\"GE\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [],
+                        [
+                            {
+                                \\"prim\\": \\"DROP\\"
+                            },
+                            {
+                                \\"prim\\": \\"PUSH\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"nat\\"
+                                    },
+                                    {
+                                        \\"int\\": \\"5\\"
+                                    }
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
 exports[`Test (If) statement With (Then) and (Else) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"if.test.ts\\" 44))
-            storage (literal (nat 1) (\\"if.test.ts\\" 45))
+            template_id (static_id 0 (\\"if.test.ts\\" 35))
+            storage (literal (nat 1) (\\"if.test.ts\\" 36))
             storage_type (())
-            messages ((ep1 True False False True (\\"if.test.ts\\" 47) ((set_type (params (\\"if.test.ts\\" 47)) \\"nat\\" (\\"if.test.ts\\" 49)) (ifBlock (ge (params (\\"if.test.ts\\" 47)) (literal (nat 5) (\\"if.test.ts\\" 49)) (\\"if.test.ts\\" 49)) ((set (data) (params (\\"if.test.ts\\" 47)) (\\"if.test.ts\\" 49))) (\\"if.test.ts\\" 49)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 49)) (\\"if.test.ts\\" 49)))))))
+            messages ((ep1 True False False True (\\"if.test.ts\\" 38) ((set_type (params (\\"if.test.ts\\" 38)) \\"nat\\" (\\"if.test.ts\\" 40)) (ifBlock (ge (params (\\"if.test.ts\\" 38)) (literal (nat 5) (\\"if.test.ts\\" 40)) (\\"if.test.ts\\" 40)) ((set (data) (params (\\"if.test.ts\\" 38)) (\\"if.test.ts\\" 40))) (\\"if.test.ts\\" 40)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 40)) (\\"if.test.ts\\" 40)))))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"if.test.ts\\" 44))
+            balance (literal (mutez 0) (\\"if.test.ts\\" 35))
         )
         "
 `;
 
 exports[`Test (If) statement With (Then) and (Else) 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "nat",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "nat",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "CAR",
-        },
-        Object {
-          "prim": "DUP",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "nat",
-            },
-            Object {
-              "int": "5",
-            },
-          ],
-          "prim": "PUSH",
-        },
-        Object {
-          "prim": "SWAP",
-        },
-        Object {
-          "prim": "COMPARE",
-        },
-        Object {
-          "prim": "GE",
-        },
-        Object {
-          "args": Array [
-            Array [],
-            Array [
-              Object {
-                "prim": "DROP",
-              },
-              Object {
-                "args": Array [
-                  Object {
-                    "prim": "nat",
-                  },
-                  Object {
-                    "int": "5",
-                  },
-                ],
-                "prim": "PUSH",
-              },
-            ],
-          ],
-          "prim": "IF",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"int\\": \\"5\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"COMPARE\\"
+                },
+                {
+                    \\"prim\\": \\"GE\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [],
+                        [
+                            {
+                                \\"prim\\": \\"DROP\\"
+                            },
+                            {
+                                \\"prim\\": \\"PUSH\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"nat\\"
+                                    },
+                                    {
+                                        \\"int\\": \\"5\\"
+                                    }
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
 exports[`Test (If) statement Without (Else) - [chaining version] 1`] = `
 "
         (
-            template_id (static_id 0 (\\"if.test.ts\\" 31))
-            storage (literal (nat 1) (\\"if.test.ts\\" 32))
+            template_id (static_id 0 (\\"if.test.ts\\" 22))
+            storage (literal (nat 1) (\\"if.test.ts\\" 23))
             storage_type (())
-            messages ((ep1 True False False True (\\"if.test.ts\\" 34) ((set_type (params (\\"if.test.ts\\" 34)) \\"nat\\" (\\"if.test.ts\\" 36)) (ifBlock (ge (params (\\"if.test.ts\\" 34)) (literal (nat 5) (\\"if.test.ts\\" 36)) (\\"if.test.ts\\" 36)) ((set (data) (params (\\"if.test.ts\\" 34)) (\\"if.test.ts\\" 36))) (\\"if.test.ts\\" 36)))))
+            messages ((ep1 True False False True (\\"if.test.ts\\" 25) ((set_type (params (\\"if.test.ts\\" 25)) \\"nat\\" (\\"if.test.ts\\" 27)) (ifBlock (ge (params (\\"if.test.ts\\" 25)) (literal (nat 5) (\\"if.test.ts\\" 27)) (\\"if.test.ts\\" 27)) ((set (data) (params (\\"if.test.ts\\" 25)) (\\"if.test.ts\\" 27))) (\\"if.test.ts\\" 27)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"if.test.ts\\" 31))
+            balance (literal (mutez 0) (\\"if.test.ts\\" 22))
         )
         "
 `;
 
 exports[`Test (If) statement Without (Else) - [chaining version] 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "nat",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "nat",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "UNPAIR",
-        },
-        Object {
-          "prim": "DUP",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "nat",
-            },
-            Object {
-              "int": "5",
-            },
-          ],
-          "prim": "PUSH",
-        },
-        Object {
-          "prim": "SWAP",
-        },
-        Object {
-          "prim": "COMPARE",
-        },
-        Object {
-          "prim": "GE",
-        },
-        Object {
-          "args": Array [
-            Array [
-              Object {
-                "prim": "SWAP",
-              },
-              Object {
-                "prim": "DROP",
-              },
-            ],
-            Array [
-              Object {
-                "prim": "DROP",
-              },
-            ],
-          ],
-          "prim": "IF",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"int\\": \\"5\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"COMPARE\\"
+                },
+                {
+                    \\"prim\\": \\"GE\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [
+                            {
+                                \\"prim\\": \\"SWAP\\"
+                            },
+                            {
+                                \\"prim\\": \\"DROP\\"
+                            }
+                        ],
+                        [
+                            {
+                                \\"prim\\": \\"DROP\\"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
 
 exports[`Test (If) statement Without (Else) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"if.test.ts\\" 18))
-            storage (literal (nat 1) (\\"if.test.ts\\" 19))
+            template_id (static_id 0 (\\"if.test.ts\\" 9))
+            storage (literal (nat 1) (\\"if.test.ts\\" 10))
             storage_type (())
-            messages ((ep1 True False False True (\\"if.test.ts\\" 21) ((set_type (params (\\"if.test.ts\\" 21)) \\"nat\\" (\\"if.test.ts\\" 23)) (ifBlock (ge (params (\\"if.test.ts\\" 21)) (literal (nat 5) (\\"if.test.ts\\" 23)) (\\"if.test.ts\\" 23)) ((set (data) (params (\\"if.test.ts\\" 21)) (\\"if.test.ts\\" 23))) (\\"if.test.ts\\" 23)))))
+            messages ((ep1 True False False True (\\"if.test.ts\\" 12) ((set_type (params (\\"if.test.ts\\" 12)) \\"nat\\" (\\"if.test.ts\\" 14)) (ifBlock (ge (params (\\"if.test.ts\\" 12)) (literal (nat 5) (\\"if.test.ts\\" 14)) (\\"if.test.ts\\" 14)) ((set (data) (params (\\"if.test.ts\\" 12)) (\\"if.test.ts\\" 14))) (\\"if.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"if.test.ts\\" 18))
+            balance (literal (mutez 0) (\\"if.test.ts\\" 9))
         )
         "
 `;
 
 exports[`Test (If) statement Without (Else) 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "nat",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "prim": "nat",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "UNPAIR",
-        },
-        Object {
-          "prim": "DUP",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "nat",
-            },
-            Object {
-              "int": "5",
-            },
-          ],
-          "prim": "PUSH",
-        },
-        Object {
-          "prim": "SWAP",
-        },
-        Object {
-          "prim": "COMPARE",
-        },
-        Object {
-          "prim": "GE",
-        },
-        Object {
-          "args": Array [
-            Array [
-              Object {
-                "prim": "SWAP",
-              },
-              Object {
-                "prim": "DROP",
-              },
-            ],
-            Array [
-              Object {
-                "prim": "DROP",
-              },
-            ],
-          ],
-          "prim": "IF",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"int\\": \\"5\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"COMPARE\\"
+                },
+                {
+                    \\"prim\\": \\"GE\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [
+                            {
+                                \\"prim\\": \\"SWAP\\"
+                            },
+                            {
+                                \\"prim\\": \\"DROP\\"
+                            }
+                        ],
+                        [
+                            {
+                                \\"prim\\": \\"DROP\\"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;

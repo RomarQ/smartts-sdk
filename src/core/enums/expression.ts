@@ -1,4 +1,17 @@
 export enum ExpressionAtom {
+    // Math
+    add = 'add',
+    mul = 'mul',
+    sub = 'sub',
+    truediv = 'truediv',
+    // Comparison
+    eq = 'eq',
+    neq = 'neq',
+    lt = 'lt',
+    gt = 'gt',
+    le = 'le',
+    ge = 'ge',
+    //
     items = 'items',
     update_map = 'update_map',
     getItem = 'getItem',

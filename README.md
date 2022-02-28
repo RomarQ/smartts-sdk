@@ -12,6 +12,7 @@
 
 ```js
 const {
+    Comparison,
     Contract,
     EntryPoint,
     GetSender,
@@ -20,7 +21,6 @@ const {
     SetValue,
     TNat,
     ContractStorage,
-    Equal,
     GetLocal,
     Address,
     Nat,
@@ -35,7 +35,7 @@ const contract = new Contract()
             // Define a variable named "some_address"
             DefineVar('some_address', Address('tz1')),
             // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
-            Require(Equal(GetLocal('some_address'), GetSender()), String('Not Admin!')),
+            Require(Comparison.Equal(GetLocal('some_address'), GetSender()), String('Not Admin!')),
             // Replace the storage value with entry point argument
             SetValue(ContractStorage(), arg),
         ]),
