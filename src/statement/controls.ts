@@ -1,8 +1,7 @@
-import { Expression } from '../core/expression';
 import StatementAtom from '../core/enums/statement';
 import { LineInfo } from '../misc/utils';
 import { IStatement } from '../typings/statement';
-import { Proxied, proxy } from '../misc/proxy';
+import { Proxied } from '../misc/proxy';
 import { IExpression } from '../typings/expression';
 import { Statement } from '../core/statement';
 import { Iterator } from '../expression/variables';
@@ -62,16 +61,12 @@ export const If = (
 ) => new IfStatment(condition, line, thenStatements, elseStatements);
 
 class ForEachStatement implements IStatement {
-    private list: IExpression;
-    private iteratorName: string;
-    private statements: IStatement[] = [];
-    private line: LineInfo;
-
-    constructor(list: IExpression, iteratorName = '__ITERATOR__', line = new LineInfo()) {
-        this.list = list;
-        this.iteratorName = iteratorName;
-        this.line = line;
-    }
+    constructor(
+        private list: IExpression,
+        private statements: IStatement[] = [],
+        private iteratorName = '__ITERATOR__',
+        private line = new LineInfo(),
+    ) {}
 
     public setIteratorName(iteratorName: string): this {
         this.iteratorName = iteratorName;
@@ -88,8 +83,8 @@ class ForEachStatement implements IStatement {
         return `(forGroup "${this.iteratorName}" ${this.list} (${this.statements.join(' ')}) ${this.line})`;
     }
 }
-export const ForEachOf = (list: IExpression, iteratorName?: string, line = new LineInfo()) =>
-    new ForEachStatement(list, iteratorName, line);
+export const ForEachOf = (list: IExpression, statements?: IStatement[], iteratorName?: string, line = new LineInfo()) =>
+    new ForEachStatement(list, statements, iteratorName, line);
 
 const Control = {
     Require,
