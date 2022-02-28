@@ -80,16 +80,34 @@ class ForEachStatement implements IStatement {
     }
 
     [Symbol.toPrimitive]() {
-        return `(forGroup "${this.iteratorName}" ${this.list} (${this.statements.join(' ')}) ${this.line})`;
+        return `(${StatementAtom.forGroup} "${this.iteratorName}" ${this.list} (${this.statements.join(' ')}) ${
+            this.line
+        })`;
     }
 }
 export const ForEachOf = (list: IExpression, statements?: IStatement[], iteratorName?: string, line = new LineInfo()) =>
     new ForEachStatement(list, statements, iteratorName, line);
 
+class WhileStatement implements IStatement {
+    constructor(private condition: IExpression, private statements: IStatement[] = [], private line = new LineInfo()) {}
+
+    public Do(statements: IStatement[]) {
+        this.statements = statements;
+        return this;
+    }
+
+    [Symbol.toPrimitive]() {
+        return `(${StatementAtom.whileGroup} ${this.condition} (${this.statements.join(' ')}) ${this.line})`;
+    }
+}
+export const While = (list: IExpression, statements?: IStatement[], line = new LineInfo()) =>
+    new WhileStatement(list, statements, line);
+
 const Control = {
     Require,
     If,
     ForEachOf,
+    While,
 };
 
 export default Control;

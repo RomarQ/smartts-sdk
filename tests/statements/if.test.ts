@@ -1,17 +1,8 @@
-import SmartML from '../../src/compiler';
 import { If, SetValue } from '../../src/statement';
 import { ContractStorage, GreaterThanOrEqual, Nat } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { TNat } from '../../src/type';
-
-const verifyMichelsonOutput = (contract: string) => {
-    const michelson = SmartML.compileContract(contract);
-
-    // No errors expected
-    expect(JSON.stringify(michelson).includes('ERROR')).toBeFalsy();
-    // Check snapshot
-    expect(michelson).toMatchSnapshot();
-};
+import { verifyMichelsonOutput } from '../util';
 
 describe('Test (If) statement', () => {
     it('Without (Else)', () => {

@@ -3,93 +3,93 @@
 exports[`Test (ForEach) statement Sum values of a list 1`] = `
 "
         (
-            template_id (static_id 0 (\\"foreach.test.ts\\" 18))
-            storage (literal (nat 1) (\\"foreach.test.ts\\" 19))
+            template_id (static_id 0 (\\"foreach.test.ts\\" 9))
+            storage (literal (nat 1) (\\"foreach.test.ts\\" 10))
             storage_type (())
-            messages ((ep1 True False False True (\\"foreach.test.ts\\" 21) ((set_type (params (\\"foreach.test.ts\\" 21)) (list \\"nat\\") (\\"foreach.test.ts\\" 23)) (forGroup \\"__ITERATOR__\\" (params (\\"foreach.test.ts\\" 21)) ((set (data) (add (data) (iter \\"__ITERATOR__\\" (\\"foreach.test.ts\\" 23)) (\\"foreach.test.ts\\" 23)) (\\"foreach.test.ts\\" 23))) (\\"foreach.test.ts\\" 23)))))
+            messages ((ep1 True False False True (\\"foreach.test.ts\\" 12) ((set_type (params (\\"foreach.test.ts\\" 12)) (list \\"nat\\") (\\"foreach.test.ts\\" 14)) (forGroup \\"__ITERATOR__\\" (params (\\"foreach.test.ts\\" 12)) ((set (data) (add (data) (iter \\"__ITERATOR__\\" (\\"foreach.test.ts\\" 14)) (\\"foreach.test.ts\\" 14)) (\\"foreach.test.ts\\" 14))) (\\"foreach.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"foreach.test.ts\\" 18))
+            balance (literal (mutez 0) (\\"foreach.test.ts\\" 9))
         )
         "
 `;
 
 exports[`Test (ForEach) statement Sum values of a list 2`] = `
-Array [
-  Object {
-    "args": Array [
-      Object {
-        "prim": "nat",
-      },
-    ],
-    "prim": "storage",
-  },
-  Object {
-    "args": Array [
-      Object {
-        "annots": Array [
-          "%ep1",
-        ],
-        "args": Array [
-          Object {
-            "prim": "nat",
-          },
-        ],
-        "prim": "list",
-      },
-    ],
-    "prim": "parameter",
-  },
-  Object {
-    "args": Array [
-      Array [
-        Object {
-          "prim": "UNPAIR",
-        },
-        Object {
-          "prim": "DUP",
-        },
-        Object {
-          "args": Array [
-            Array [
-              Object {
-                "args": Array [
-                  Object {
-                    "int": "2",
-                  },
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"list\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    }
                 ],
-                "prim": "DIG",
-              },
-              Object {
-                "prim": "ADD",
-              },
-              Object {
-                "prim": "SWAP",
-              },
-            ],
-          ],
-          "prim": "ITER",
-        },
-        Object {
-          "prim": "DROP",
-        },
-        Object {
-          "args": Array [
-            Object {
-              "prim": "operation",
-            },
-          ],
-          "prim": "NIL",
-        },
-        Object {
-          "prim": "PAIR",
-        },
-      ],
-    ],
-    "prim": "code",
-  },
-]
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"ITER\\",
+                    \\"args\\": [
+                        [
+                            {
+                                \\"prim\\": \\"DIG\\",
+                                \\"args\\": [
+                                    {
+                                        \\"int\\": \\"2\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"ADD\\"
+                            },
+                            {
+                                \\"prim\\": \\"SWAP\\"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
 `;
