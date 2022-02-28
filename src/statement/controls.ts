@@ -1,10 +1,14 @@
+import type { IExpression } from '../typings/expression';
+import type { IStatement } from '../typings/statement';
+
 import StatementAtom from '../core/enums/statement';
-import { LineInfo } from '../misc/utils';
-import { IStatement } from '../typings/statement';
-import { Proxied } from '../misc/proxy';
-import { IExpression } from '../typings/expression';
 import { Statement } from '../core/statement';
-import { Iterator } from '../expression/variables';
+import { LineInfo } from '../misc/utils';
+import { Proxied } from '../misc/proxy';
+import { GetLocal, Iterator } from '../expression/variables';
+import { Comparison } from '../expression/comparison';
+import { Math } from '../expression/math';
+import { DefineVar, SetValue } from './variables';
 
 export const Require = (condition: IExpression, errorMsg: IExpression, line = new LineInfo()) =>
     new Statement(StatementAtom.verify, condition, errorMsg, line);
@@ -85,6 +89,15 @@ class ForEachStatement implements IStatement {
         })`;
     }
 }
+/**
+ * @description A (forEach) loop.
+ *
+ * @param list The list to be iterated over
+ * @param statements The statements inside the loop body
+ * @param iteratorName The iterator name
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ * @returns {IStatement} A statement
+ */
 export const ForEachOf = (list: IExpression, statements?: IStatement[], iteratorName?: string, line = new LineInfo()) =>
     new ForEachStatement(list, statements, iteratorName, line);
 
@@ -100,13 +113,75 @@ class WhileStatement implements IStatement {
         return `(${StatementAtom.whileGroup} ${this.condition} (${this.statements.join(' ')}) ${this.line})`;
     }
 }
-export const While = (list: IExpression, statements?: IStatement[], line = new LineInfo()) =>
-    new WhileStatement(list, statements, line);
+/**
+ * @description A basic (while) loop.
+ *
+ * @param condition
+ * @param statements The statements inside the loop body
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ * @returns {IStatement} A statement
+ */
+export const While = (condition: IExpression, statements?: IStatement[], line = new LineInfo()) =>
+    new WhileStatement(condition, statements, line);
+
+class ForStatement implements IStatement {
+    constructor(
+        private from: IExpression,
+        private to: IExpression,
+        private increment: IExpression,
+        private statements: IStatement[] = [],
+        private iteratorName = '__ITERATOR__',
+        private line = new LineInfo(),
+    ) {}
+
+    public setIteratorName(iteratorName: string): this {
+        this.iteratorName = iteratorName;
+        return this;
+    }
+
+    public Do(callback: (iterator: Proxied<IExpression>) => IStatement[], line = new LineInfo()) {
+        const iterator = GetLocal(this.iteratorName, line);
+        this.statements = callback(iterator);
+        return this;
+    }
+
+    [Symbol.toPrimitive]() {
+        const variable = DefineVar(this.iteratorName, this.from);
+        const condition = Comparison.LessThanOrEqual(GetLocal(this.iteratorName), this.to);
+        const stmts = [
+            ...this.statements,
+            SetValue(GetLocal(this.iteratorName), Math.Add(GetLocal(this.iteratorName), this.increment)),
+        ];
+        return `${variable} (${StatementAtom.whileGroup} ${condition} (${stmts.join(' ')}) ${this.line})`;
+    }
+}
+/**
+ * @description A basic (for) loop.
+ *
+ * @example For(Nat(0), Nat(10), Nat(1)).Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))])
+ *
+ * @param from The initial value
+ * @param to The target value
+ * @param increment The incrementor
+ * @param statements The statements inside the loop body
+ * @param variableName The variable name being incremented inside the loop
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ * @returns {IStatement} A statement
+ */
+export const For = (
+    from: IExpression,
+    to: IExpression,
+    increment: IExpression,
+    statements?: IStatement[],
+    iteratorName?: string,
+    line = new LineInfo(),
+) => new ForStatement(from, to, increment, statements, iteratorName, line);
 
 const Control = {
     Require,
     If,
     ForEachOf,
+    For,
     While,
 };
 
