@@ -2,7 +2,7 @@ import { TNat } from '../../src/type';
 import { Nat, ContractStorage, GetVariable, Math } from '../../src/expression';
 import { NewVariable, SetValue } from '../../src/statement';
 import { Contract, EntryPoint } from '../../src/core';
-import { verifyMichelsonOutput } from '../util';
+import { verifyContractCompilationOutput } from '../util';
 
 describe('Test (NewVariable) statement', () => {
     it('Declares a variable named (A)', () => {
@@ -19,6 +19,6 @@ describe('Test (NewVariable) statement', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 });

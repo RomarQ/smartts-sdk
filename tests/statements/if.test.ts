@@ -2,7 +2,7 @@ import { If, SetValue } from '../../src/statement';
 import { ContractStorage, GreaterThanOrEqual, Nat } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { TNat } from '../../src/type';
-import { verifyMichelsonOutput } from '../util';
+import { verifyContractCompilationOutput } from '../util';
 
 describe('Test (If) statement', () => {
     it('Without (Else)', () => {
@@ -16,7 +16,7 @@ describe('Test (If) statement', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
     it('Without (Else) - [chaining version]', () => {
         const contract = new Contract()
@@ -29,7 +29,7 @@ describe('Test (If) statement', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
     it('With (Then) and (Else)', () => {
         const contract = new Contract()
@@ -48,7 +48,7 @@ describe('Test (If) statement', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
     it('With (Then) and (Else) - [chaining version]', () => {
         const contract = new Contract()
@@ -63,6 +63,6 @@ describe('Test (If) statement', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 });

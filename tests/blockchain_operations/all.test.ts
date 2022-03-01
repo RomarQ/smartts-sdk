@@ -17,7 +17,7 @@ import {
 } from '../../src/expression';
 import { TOption, TUnit, TAddress, TTimestamp, TChain_id, TNat, TMutez, TContract } from '../../src/type';
 import { SetValue } from '../../src/statement';
-import { verifyMichelsonOutput } from '../util';
+import { verifyContractCompilationOutput } from '../util';
 import { IType } from '../../src/typings/type';
 import { IExpression } from '../../src/typings/expression';
 import { Contract, EntryPoint } from '../../src/core';
@@ -33,7 +33,7 @@ const verify = (testName: string, type: IType, operation: IExpression) => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 };
 

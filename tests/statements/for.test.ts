@@ -2,7 +2,7 @@ import { For, SetValue } from '../../src/statement';
 import { Add, ContractStorage, Nat } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { TNat } from '../../src/type';
-import { verifyMichelsonOutput } from '../util';
+import { verifyContractCompilationOutput } from '../util';
 
 describe('Test (For) statement', () => {
     it('Sum values from 0 to 10 (Inclusive)', () => {
@@ -18,6 +18,6 @@ describe('Test (For) statement', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 });

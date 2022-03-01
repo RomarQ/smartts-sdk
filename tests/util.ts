@@ -1,6 +1,15 @@
 import SmartML from '../src/compiler';
 
-export const verifyMichelsonOutput = (contract: string) => {
+export const verifyLambdaCompilationOutput = (lambda: string) => {
+    const result = SmartML.compileLambda(lambda);
+
+    // Check snapshot
+    expect(JSON.stringify(result, null, 4)).toMatchSnapshot();
+    // No errors expected
+    expect(JSON.stringify(result).match(/[Ee][Rr][Rr][Oo][rR]/)).toBeFalsy();
+};
+
+export const verifyContractCompilationOutput = (contract: string) => {
     const michelson = SmartML.compileContract(contract);
 
     // Check snapshot

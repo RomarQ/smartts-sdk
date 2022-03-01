@@ -3,10 +3,11 @@ export enum StatementAtom {
     ifBlock = 'ifBlock',
     elseBlock = 'elseBlock',
     forGroup = 'forGroup',
-    whileGroup = 'whileBlock',
+    whileBlock = 'whileBlock',
     set = 'set',
     defineLocal = 'defineLocal',
     result = 'result',
+    failwith = 'failwith',
 }
 
 export default StatementAtom;

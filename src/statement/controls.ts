@@ -9,8 +9,24 @@ import { GetVariable, Iterator } from '../expression/variables';
 import { Comparison } from '../expression/comparison';
 import { Math } from '../expression/math';
 import { NewVariable, SetValue } from './variables';
+import { Unit } from '..';
 
-export const Require = (condition: IExpression, errorMsg: IExpression, line = new LineInfo()) =>
+/**
+ * @description Interrupt the smart-contract execution. (The whole operation is rollbacked)
+ * @param errorMsg The value to be included in the error trace.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ * @returns {IStatement} A statement
+ */
+export const FailWith = (errorMsg: IExpression = Unit(), line = new LineInfo()) =>
+    new Statement(StatementAtom.failwith, errorMsg, line);
+
+/**
+ * @description Test a condition and interrupt the smart-contract execution if the condition is false. (The whole operation is rollbacked)
+ * @param errorMsg The value to be included in the error trace.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ * @returns {IStatement} A statement
+ */
+export const Require = (condition: IExpression, errorMsg: IExpression = Unit(), line = new LineInfo()) =>
     new Statement(StatementAtom.verify, condition, errorMsg, line);
 
 class IfStatment implements IStatement {
@@ -110,7 +126,7 @@ class WhileStatement implements IStatement {
     }
 
     [Symbol.toPrimitive]() {
-        return `(${StatementAtom.whileGroup} ${this.condition} (${this.statements.join(' ')}) ${this.line})`;
+        return `(${StatementAtom.whileBlock} ${this.condition} (${this.statements.join(' ')}) ${this.line})`;
     }
 }
 /**
@@ -152,7 +168,7 @@ class ForStatement implements IStatement {
             ...this.statements,
             SetValue(GetVariable(this.iteratorName), Math.Add(GetVariable(this.iteratorName), this.increment)),
         ];
-        return `${variable} (${StatementAtom.whileGroup} ${condition} (${stmts.join(' ')}) ${this.line})`;
+        return `${variable} (${StatementAtom.whileBlock} ${condition} (${stmts.join(' ')}) ${this.line})`;
     }
 }
 /**
@@ -177,12 +193,6 @@ export const For = (
     line = new LineInfo(),
 ) => new ForStatement(from, to, increment, statements, iteratorName, line);
 
-const Control = {
-    Require,
-    If,
-    ForEachOf,
-    For,
-    While,
-};
+const Control = { FailWith, Require, If, ForEachOf, For, While };
 
 export default Control;

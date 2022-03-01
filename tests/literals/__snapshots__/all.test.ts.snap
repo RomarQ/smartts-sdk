@@ -720,8 +720,8 @@ exports[`Test Literals lambda 1`] = `
 "
         (
             template_id (static_id 0 (\\"all.test.ts\\" 69))
-            storage (lambda 1 False False \\"arg\\" (\\"all.test.ts\\" 76) ((ifBlock (gt (lambdaParams 1 \\"arg\\" (\\"all.test.ts\\" 76) (unknown 0)) (literal (nat 2) (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76)) ((result (literal (string \\"YES\\") (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))) (\\"all.test.ts\\" 76)) (elseBlock ((result (literal (string \\"NO\\") (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))))))
-            storage_type ((lambda \\"nat\\" \\"string\\"))
+            storage (lambda 1 None False \\"arg\\" (\\"all.test.ts\\" 76) ((result (lambdaParams 1 \\"arg\\" (\\"all.test.ts\\" 76) \\"string\\") (\\"all.test.ts\\" 76))))
+            storage_type ((lambda \\"string\\" \\"string\\"))
             messages ()
             flags ()
             privates ()
@@ -734,6 +734,73 @@ exports[`Test Literals lambda 1`] = `
 `;
 
 exports[`Test Literals lambda 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"lambda\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"string\\"
+                    },
+                    {
+                        \\"prim\\": \\"string\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test Literals lambda 3`] = `
+"
+        (
+            template_id (static_id 0 (\\"all.test.ts\\" 69))
+            storage (lambda 2 None False \\"arg\\" (\\"all.test.ts\\" 76) ((ifBlock (gt (lambdaParams 2 \\"arg\\" (\\"all.test.ts\\" 76) (unknown 0)) (literal (nat 2) (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76)) ((result (literal (string \\"YES\\") (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))) (\\"all.test.ts\\" 76)) (elseBlock ((result (literal (string \\"NO\\") (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))))))
+            storage_type ((lambda \\"nat\\" \\"string\\"))
+            messages ()
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"all.test.ts\\" 69))
+        )
+        "
+`;
+
+exports[`Test Literals lambda 4`] = `
 "[
     {
         \\"prim\\": \\"storage\\",

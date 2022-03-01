@@ -1,23 +1,39 @@
-import { TBool, TList, TNat, TOption } from '../src/type';
+import { TBool, TList, TNat, TOption, TString } from '../src/type';
 import {
     Address,
     Bool,
     List,
     Mutez,
     Nat,
+    String,
     None,
     Record,
     Some,
-    String,
     Unit,
     ContractStorage,
-    Equal,
+    Comparison,
     GetVariable,
     GetSender,
+    Lambda,
 } from '../src/expression';
 import { Contract, EntryPoint, Flag } from '../src/core';
-import { NewVariable, Require, SetValue } from '../src/statement';
-import { verifyMichelsonOutput } from './util';
+import { FailWith, If, NewVariable, Require, Return, SetValue } from '../src/statement';
+import { verifyContractCompilationOutput, verifyLambdaCompilationOutput } from './util';
+
+describe('Compile Lambdas', () => {
+    it('Lambda that returns the argument', () => {
+        const lambda = Lambda(TString())
+            .code((arg) => [
+                If(Comparison.Equal(arg, String('TEST')))
+                    .Then([Return(arg)])
+                    .Else([FailWith(arg)]),
+            ])
+            .toString();
+
+        expect(lambda).toMatchSnapshot();
+        verifyLambdaCompilationOutput(lambda);
+    });
+});
 
 describe('Compile Contracts', () => {
     it('Simple 1', () => {
@@ -28,13 +44,13 @@ describe('Compile Contracts', () => {
                     .inputType(TNat())
                     .code((arg) => [
                         NewVariable('A', Nat(1)),
-                        Require(Equal(GetVariable('A'), arg), String('Debug Message')),
+                        Require(Comparison.Equal(GetVariable('A'), arg), String('Debug Message')),
                     ]),
             )
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 
     it('Simple 2', () => {
@@ -46,7 +62,7 @@ describe('Compile Contracts', () => {
                     .inputType(TBool())
                     .code((arg) => [
                         NewVariable('A', Bool(false)),
-                        Require(Equal(GetVariable('A'), arg), String('Debug Message')),
+                        Require(Comparison.Equal(GetVariable('A'), arg), String('Debug Message')),
                     ]),
             )
             .setConfig({
@@ -56,7 +72,7 @@ describe('Compile Contracts', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 
     it('Simple 3', () => {
@@ -68,7 +84,7 @@ describe('Compile Contracts', () => {
                     // Define a variable named "some_address"
                     NewVariable('some_address', Address('tz1')),
                     // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
-                    Require(Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
+                    Require(Comparison.Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
                     // Replace the storage value with entry point argument
                     SetValue(ContractStorage(), arg),
                 ]),
@@ -76,27 +92,27 @@ describe('Compile Contracts', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 
     it('Storage (Unit)', () => {
         const contract = new Contract().setStorage(Unit()).toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 
     it('Storage (Some)', () => {
         const contract = new Contract().setStorage(Some(Nat(1))).toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
     it('Storage (None)', () => {
         const contract = new Contract().setStorageType(TOption(TNat())).setStorage(None()).toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 
     it('Storage (Record)', () => {
@@ -110,6 +126,6 @@ describe('Compile Contracts', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 });
