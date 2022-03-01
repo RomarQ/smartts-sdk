@@ -56,7 +56,9 @@ class Type_VariantOrRecord implements IType<TypeAtom> {
     };
 
     toString() {
-        return `(${this.atom} (${this.buildFields(this.fields).join(' ')}) ${this.translateLayout(this.layout)})`;
+        return `(${this.atom} (${this.buildFields(this.fields).join(' ')}) ${this.translateLayout(
+            this.layout,
+        )} ("" -1))`;
     }
 }
 

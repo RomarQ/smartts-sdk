@@ -11,7 +11,7 @@ import { Statement } from '../core/statement';
  * @param line An optional line for error information
  * @returns {IStatement}
  */
-export function DefineVar(name: string, value: IExpression, mutable = true, line = new LineInfo()) {
+export function NewVariable(name: string, value: IExpression, mutable = true, line = new LineInfo()) {
     return new Statement(StatementAtom.defineLocal, `"${name}"`, value, Utils.capitalizeBoolean(mutable), line);
 }
 
@@ -27,7 +27,7 @@ export function SetValue(source: IExpression, value: IExpression, line = new Lin
 }
 
 const Variable = {
-    DefineVar,
+    NewVariable,
     SetValue,
 };
 

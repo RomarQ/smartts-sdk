@@ -33,12 +33,12 @@ const {
     Contract,
     EntryPoint,
     GetSender,
-    DefineVar,
+    NewVariable,
     Require,
     SetValue,
     TNat,
     ContractStorage,
-    GetLocal,
+    GetVariable,
     Address,
     Nat,
     String
@@ -50,9 +50,9 @@ const contract = new Contract()
     .addEntrypoint(
         new EntryPoint('ep1').inputType(TNat()).code((arg) => [
             // Define a variable named "some_address"
-            DefineVar('some_address', Address('tz1')),
+            NewVariable('some_address', Address('tz1')),
             // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
-            Require(Comparison.Equal(GetLocal('some_address'), GetSender()), String('Not Admin!')),
+            Require(Comparison.Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
             // Replace the storage value with entry point argument
             SetValue(ContractStorage(), arg),
         ]),
