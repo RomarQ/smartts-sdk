@@ -19,8 +19,6 @@ describe('Namespace (Private)', () => {
             'js_string',
             'callGui',
             'explore',
-            'runSmartMLScript',
-            'runSmartMLScriptScenarioName',
             'runScenarioInBrowser',
             'lazy_tab',
             'default',

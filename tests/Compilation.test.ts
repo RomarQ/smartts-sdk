@@ -12,11 +12,11 @@ import {
     Unit,
     ContractStorage,
     Equal,
-    GetLocal,
+    GetVariable,
     GetSender,
 } from '../src/expression';
 import { Contract, EntryPoint, Flag } from '../src/core';
-import { DefineVar, Require, SetValue } from '../src/statement';
+import { NewVariable, Require, SetValue } from '../src/statement';
 import { verifyMichelsonOutput } from './util';
 
 describe('Compile Contracts', () => {
@@ -27,8 +27,8 @@ describe('Compile Contracts', () => {
                 new EntryPoint('ep1')
                     .inputType(TNat())
                     .code((arg) => [
-                        DefineVar('A', Nat(1)),
-                        Require(Equal(GetLocal('A'), arg), String('Debug Message')),
+                        NewVariable('A', Nat(1)),
+                        Require(Equal(GetVariable('A'), arg), String('Debug Message')),
                     ]),
             )
             .toString();
@@ -45,8 +45,8 @@ describe('Compile Contracts', () => {
                     .config({ lazy: false })
                     .inputType(TBool())
                     .code((arg) => [
-                        DefineVar('A', Bool(false)),
-                        Require(Equal(GetLocal('A'), arg), String('Debug Message')),
+                        NewVariable('A', Bool(false)),
+                        Require(Equal(GetVariable('A'), arg), String('Debug Message')),
                     ]),
             )
             .setConfig({
@@ -66,9 +66,9 @@ describe('Compile Contracts', () => {
             .addEntrypoint(
                 new EntryPoint('ep1').inputType(TList(TNat())).code((arg) => [
                     // Define a variable named "some_address"
-                    DefineVar('some_address', Address('tz1')),
+                    NewVariable('some_address', Address('tz1')),
                     // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
-                    Require(Equal(GetLocal('some_address'), GetSender()), String('Not Admin!')),
+                    Require(Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
                     // Replace the storage value with entry point argument
                     SetValue(ContractStorage(), arg),
                 ]),

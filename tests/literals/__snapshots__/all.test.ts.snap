@@ -1168,7 +1168,7 @@ exports[`Test Literals record 1`] = `
         (
             template_id (static_id 0 (\\"all.test.ts\\" 69))
             storage (record (\\"all.test.ts\\" 76) (field1 (literal (nat 1) (\\"all.test.ts\\" 76))) (field2 (literal (int 2) (\\"all.test.ts\\" 76))) (field3 (literal (bytes 0x00) (\\"all.test.ts\\" 76))))
-            storage_type ((record ((field1 \\"nat\\") (field2 \\"int\\") (field3 \\"bytes\\")) (Some (((\\"field1\\") (\\"field2\\")) (\\"field3\\")))))
+            storage_type ((record ((field1 \\"nat\\") (field2 \\"int\\") (field3 \\"bytes\\")) (Some (((\\"field1\\") (\\"field2\\")) (\\"field3\\"))) (\\"\\" -1)))
             messages ()
             flags ()
             privates ()
@@ -1699,7 +1699,7 @@ exports[`Test Literals variant 1`] = `
         (
             template_id (static_id 0 (\\"all.test.ts\\" 69))
             storage (variant match2 (literal (int 1) (\\"all.test.ts\\" 76)) (\\"all.test.ts\\" 76))
-            storage_type ((variant ((match1 \\"nat\\") (match2 \\"int\\") (match3 \\"bytes\\")) (Some ((\\"match1\\") ((\\"match2\\") (\\"match3\\"))))))
+            storage_type ((variant ((match1 \\"nat\\") (match2 \\"int\\") (match3 \\"bytes\\")) (Some ((\\"match1\\") ((\\"match2\\") (\\"match3\\")))) (\\"\\" -1)))
             messages ()
             flags ()
             privates ()

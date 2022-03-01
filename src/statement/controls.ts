@@ -5,10 +5,10 @@ import StatementAtom from '../core/enums/statement';
 import { Statement } from '../core/statement';
 import { LineInfo } from '../misc/utils';
 import { Proxied } from '../misc/proxy';
-import { GetLocal, Iterator } from '../expression/variables';
+import { GetVariable, Iterator } from '../expression/variables';
 import { Comparison } from '../expression/comparison';
 import { Math } from '../expression/math';
-import { DefineVar, SetValue } from './variables';
+import { NewVariable, SetValue } from './variables';
 
 export const Require = (condition: IExpression, errorMsg: IExpression, line = new LineInfo()) =>
     new Statement(StatementAtom.verify, condition, errorMsg, line);
@@ -140,17 +140,17 @@ class ForStatement implements IStatement {
     }
 
     public Do(callback: (iterator: Proxied<IExpression>) => IStatement[], line = new LineInfo()) {
-        const iterator = GetLocal(this.iteratorName, line);
+        const iterator = GetVariable(this.iteratorName, line);
         this.statements = callback(iterator);
         return this;
     }
 
     [Symbol.toPrimitive]() {
-        const variable = DefineVar(this.iteratorName, this.from);
-        const condition = Comparison.LessThanOrEqual(GetLocal(this.iteratorName), this.to);
+        const variable = NewVariable(this.iteratorName, this.from);
+        const condition = Comparison.LessThanOrEqual(GetVariable(this.iteratorName), this.to);
         const stmts = [
             ...this.statements,
-            SetValue(GetLocal(this.iteratorName), Math.Add(GetLocal(this.iteratorName), this.increment)),
+            SetValue(GetVariable(this.iteratorName), Math.Add(GetVariable(this.iteratorName), this.increment)),
         ];
         return `${variable} (${StatementAtom.whileGroup} ${condition} (${stmts.join(' ')}) ${this.line})`;
     }
