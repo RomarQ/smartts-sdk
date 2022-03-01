@@ -34,7 +34,7 @@ import {
     TVariant,
 } from '../../src/type';
 import { IType } from '../../src/typings/type';
-import { verifyMichelsonOutput } from '../util';
+import { verifyContractCompilationOutput } from '../util';
 
 const verifyType = (testName: string, type: IType) => {
     it(testName, () => {
@@ -45,7 +45,7 @@ const verifyType = (testName: string, type: IType) => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 };
 

@@ -2,7 +2,7 @@ import { ForEachOf, SetValue } from '../../src/statement';
 import { Add, ContractStorage, Nat } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { TList, TNat } from '../../src/type';
-import { verifyMichelsonOutput } from '../util';
+import { verifyContractCompilationOutput } from '../util';
 
 describe('Test (ForEach) statement', () => {
     it('Sum values of a list', () => {
@@ -18,6 +18,6 @@ describe('Test (ForEach) statement', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 });

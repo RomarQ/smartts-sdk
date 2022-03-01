@@ -61,7 +61,7 @@ import {
 import { If, Return } from '../../src/statement';
 import { ILiteral } from '../../src/typings/literal';
 import { IType } from '../../src/typings/type';
-import { verifyMichelsonOutput } from '../util';
+import { verifyContractCompilationOutput } from '../util';
 import { Contract } from '../../src/core';
 
 const verifyLiteral = (testName: string, type: IType, literal: ILiteral<unknown>) => {
@@ -69,7 +69,7 @@ const verifyLiteral = (testName: string, type: IType, literal: ILiteral<unknown>
         const contract = new Contract().setStorageType(type).setStorage(literal).toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 };
 
@@ -118,13 +118,18 @@ describe('Test Literals', () => {
             [Nat(2), String('WORD2')],
         ]),
     );
-    verifyLiteral('ticket', TTicket(TString()), Ticket(String('A Ticket'), Nat(1)));
-    verifyLiteral('sapling_state', TSapling_state(8), Sapling_state(8));
+    verifyLiteral(
+        'lambda',
+        TLambda(TString(), TString()),
+        Lambda(TString()).code((arg) => [Return(arg)]),
+    );
     verifyLiteral(
         'lambda',
         TLambda(TNat(), TString()),
         Lambda().code((arg) => [If(GreaterThan(arg, Nat(2)), [Return(String('YES'))], [Return(String('NO'))])]),
     );
+    verifyLiteral('ticket', TTicket(TString()), Ticket(String('A Ticket'), Nat(1)));
+    verifyLiteral('sapling_state', TSapling_state(8), Sapling_state(8));
     verifyLiteral(
         'record',
         TRecord(

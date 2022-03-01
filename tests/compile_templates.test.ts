@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { verifyMichelsonOutput } from './util';
+import { verifyContractCompilationOutput } from './util';
 
 jest.setTimeout(50000);
 
@@ -10,7 +10,7 @@ async function runTests() {
             try {
                 const contract = (await import(`./templates/${fileName}`)).default.toString();
                 expect(contract).toMatchSnapshot();
-                verifyMichelsonOutput(contract);
+                verifyContractCompilationOutput(contract);
             } catch (e) {
                 console.debug(e);
             }

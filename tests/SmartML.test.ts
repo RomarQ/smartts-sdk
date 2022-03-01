@@ -5,7 +5,7 @@
 import '../src/compiler/polyfills';
 import * as smartML from '../src/compiler/smartML';
 
-describe('Namespace (Private)', () => {
+describe('Namespace (Internal)', () => {
     it('List all available methods', () => {
         expect(Object.keys(smartML)).toEqual([
             'importType',
@@ -13,6 +13,7 @@ describe('Namespace (Private)', () => {
             'compileContractStorage',
             'compileContract',
             'compile_contract',
+            'compile_lambda',
             'update_michelson_view',
             'buildTransfer',
             'stringOfException',

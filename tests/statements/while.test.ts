@@ -2,7 +2,7 @@ import { SetValue, While } from '../../src/statement';
 import { ContractStorage, Nat, Comparison, Math } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { TNat } from '../../src/type';
-import { verifyMichelsonOutput } from '../util';
+import { verifyContractCompilationOutput } from '../util';
 
 describe('Test (While) statement', () => {
     it('Loop while condition is true', () => {
@@ -20,6 +20,6 @@ describe('Test (While) statement', () => {
             .toString();
 
         expect(contract).toMatchSnapshot();
-        verifyMichelsonOutput(contract);
+        verifyContractCompilationOutput(contract);
     });
 });
