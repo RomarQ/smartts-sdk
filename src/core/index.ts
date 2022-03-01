@@ -5,7 +5,7 @@ import Utils, { LineInfo } from '../misc/utils';
 import { IStatement } from '../typings/statement';
 import { IExpression } from '../typings/expression';
 import { SetType, Mutez, Unit } from '../expression';
-import { MethodArgument } from '../expression/method';
+import { MethodArgument } from '../expression/variables';
 
 export class Flag {
     args: string[] = [];

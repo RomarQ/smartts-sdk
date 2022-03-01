@@ -121,7 +121,9 @@ describe('Test Literals', () => {
     verifyLiteral(
         'lambda',
         TLambda(TString(), TString()),
-        Lambda(TString()).code((arg) => [Return(arg)]),
+        Lambda()
+            .inputType(TString())
+            .code((arg) => [Return(arg)]),
     );
     verifyLiteral(
         'lambda',

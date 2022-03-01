@@ -17,6 +17,8 @@ export enum ExpressionAtom {
     getItem = 'getItem',
     attr = 'attr',
     params = 'params',
+    getLocal = 'getLocal',
+    iter = 'iter',
     // Blockchain operation
     amount = 'amount',
     balance = 'balance',
