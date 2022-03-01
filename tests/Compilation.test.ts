@@ -21,12 +21,24 @@ import { FailWith, If, NewVariable, Require, Return, SetValue } from '../src/sta
 import { verifyContractCompilationOutput, verifyLambdaCompilationOutput } from './util';
 
 describe('Compile Lambdas', () => {
-    it('Lambda that returns the argument', () => {
+    it('A Lambda that returns the argument', () => {
         const lambda = Lambda()
             .code((arg) => [
                 If(Comparison.Equal(arg, String('TEST')))
                     .Then([Return(arg)])
                     .Else([FailWith(arg)]),
+            ])
+            .toString();
+
+        expect(lambda).toMatchSnapshot();
+        verifyLambdaCompilationOutput(lambda);
+    });
+    it(' A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise', () => {
+        const lambda = Lambda()
+            .code((arg) => [
+                If(Comparison.GreaterThanOrEqual(arg, Nat(1)))
+                    .Then([Return(String('YES'))])
+                    .Else([Return(String('NO'))]),
             ])
             .toString();
 

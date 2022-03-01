@@ -4,7 +4,7 @@ import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { IType } from '../typings/type';
 import { Expression } from '../core/expression';
-import { TUnknown } from '..';
+import { TUnknown } from '../type';
 
 export const GetProperty = Expression.getAttr;
 
