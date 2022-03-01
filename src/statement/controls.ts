@@ -5,11 +5,8 @@ import StatementAtom from '../core/enums/statement';
 import { Statement } from '../core/statement';
 import { LineInfo } from '../misc/utils';
 import { Proxied } from '../misc/proxy';
-import { GetVariable, Iterator } from '../expression/variables';
-import { Comparison } from '../expression/comparison';
-import { Math } from '../expression/math';
 import { NewVariable, SetValue } from './variables';
-import { Unit } from '..';
+import { GetVariable, Iterator, Comparison, Unit, Math } from '../expression';
 
 /**
  * @description Interrupt the smart-contract execution. (The whole operation is rollbacked)

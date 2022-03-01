@@ -22,7 +22,7 @@ import { verifyContractCompilationOutput, verifyLambdaCompilationOutput } from '
 
 describe('Compile Lambdas', () => {
     it('Lambda that returns the argument', () => {
-        const lambda = Lambda(TString())
+        const lambda = Lambda()
             .code((arg) => [
                 If(Comparison.Equal(arg, String('TEST')))
                     .Then([Return(arg)])

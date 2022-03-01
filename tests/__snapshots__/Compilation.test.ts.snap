@@ -586,7 +586,7 @@ exports[`Compile Contracts Storage (Unit) 2`] = `
 ]"
 `;
 
-exports[`Compile Lambdas Lambda that returns the argument 1`] = `"(lambda 1 None False \\"arg\\" (\\"Compilation.test.ts\\" 25) ((ifBlock (eq (lambdaParams 1 \\"arg\\" (\\"Compilation.test.ts\\" 26) \\"string\\") (literal (string \\"TEST\\") (\\"Compilation.test.ts\\" 26)) (\\"comparison.ts\\" 6)) ((result (lambdaParams 1 \\"arg\\" (\\"Compilation.test.ts\\" 26) \\"string\\") (\\"Compilation.test.ts\\" 26))) (\\"Compilation.test.ts\\" 26)) (elseBlock ((failwith (lambdaParams 1 \\"arg\\" (\\"Compilation.test.ts\\" 26) \\"string\\") (\\"Compilation.test.ts\\" 26))))))"`;
+exports[`Compile Lambdas Lambda that returns the argument 1`] = `"(lambda 1 None False \\"arg\\" (\\"Compilation.test.ts\\" 25) ((ifBlock (eq (lambdaParams 1 \\"arg\\" (\\"Compilation.test.ts\\" 25) (unknown 0)) (literal (string \\"TEST\\") (\\"Compilation.test.ts\\" 26)) (\\"comparison.ts\\" 6)) ((result (lambdaParams 1 \\"arg\\" (\\"Compilation.test.ts\\" 25) (unknown 0)) (\\"Compilation.test.ts\\" 26))) (\\"Compilation.test.ts\\" 26)) (elseBlock ((failwith (lambdaParams 1 \\"arg\\" (\\"Compilation.test.ts\\" 25) (unknown 0)) (\\"Compilation.test.ts\\" 26))))))"`;
 
 exports[`Compile Lambdas Lambda that returns the argument 2`] = `
 "{
