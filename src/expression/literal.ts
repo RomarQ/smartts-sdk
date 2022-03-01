@@ -113,7 +113,7 @@ class LambdaLiteral implements ILiteral<TypeAtom.lambda> {
     type = {} as unknown as IType;
     static idCounter = 0;
     private id: number;
-    private withStorage = false;
+    private withStorage?: 'read-write' | 'read-only';
     private withOperations = false;
     private statements: IStatement[] = [];
 
@@ -133,9 +133,9 @@ class LambdaLiteral implements ILiteral<TypeAtom.lambda> {
     }
 
     toString() {
-        return `(lambda ${this.id} ${capitalizeBoolean(this.withStorage)} ${capitalizeBoolean(
-            this.withOperations,
-        )} "arg" ${this.line} (${this.statements.join(' ')}))`;
+        return `(lambda ${this.id} ${this.withStorage || 'None'} ${capitalizeBoolean(this.withOperations)} "arg" ${
+            this.line
+        } (${this.statements.join(' ')}))`;
     }
 }
 
@@ -193,11 +193,11 @@ export const Big_map = (
 ) => new MapLiteral<TypeAtom.big_map>(LiteralAtom.big_map, rows, keyType, valueType, line);
 export const Pair = (left: IExpression, right: IExpression, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.tuple>(LiteralAtom.tuple, [left, right], line);
+export const Lambda = (inType: IType = TUnknown(), line = new LineInfo()) => new LambdaLiteral(inType, line);
 export const Ticket = (content: IExpression, amount: LiteralExpression<TypeAtom.nat>, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.ticket>(LiteralAtom.ticket, [content, amount], line);
 export const Sapling_state = (memo: number, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.sapling_state>(LiteralAtom.sapling_state, [memo], line);
-export const Lambda = (inType: IType = TUnknown(), line = new LineInfo()) => new LambdaLiteral(inType, line);
 export const Record = (fields: Record<string, ILiteral<unknown>>, line = new LineInfo()) =>
     new RecordLiteral(fields, line);
 export const Variant = (field: string, value: IExpression, line = new LineInfo()) =>
@@ -229,7 +229,7 @@ const Literals = {
     Pair,
     Map,
     Big_map,
-    // Lambda,
+    Lambda,
     Ticket,
     Sapling_state,
     Record,
