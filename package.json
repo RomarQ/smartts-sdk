@@ -22,7 +22,8 @@
         "./compiler": "./compiler/index.js",
         "./type": "./type/index.js",
         "./expression": "./expression/index.js",
-        "./statement": "./statement/index.js"
+        "./statement": "./statement/index.js",
+        "./misc/utils": "./misc/utils.js"
     },
     "scripts": {
         "build": "node --max_old_space_size=8192 scripts/build.js && tsc --build",

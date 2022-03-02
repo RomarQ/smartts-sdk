@@ -55,7 +55,7 @@ export const MethodArgument = (line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const LambdaArgument = (name: string, argumentType = TUnknown(), id = 0, line = new LineInfo()) =>
+export const LambdaArgument = (name = 'lambda_arg', argumentType = TUnknown(), id = 0, line = new LineInfo()) =>
     new Expression('lambdaParams', `${id}`, `"${name}"`, line, argumentType);
 
 export const SetType = (expr: IExpression, type: IType, line = new LineInfo()) =>
