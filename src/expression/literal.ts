@@ -117,7 +117,12 @@ class LambdaLiteral implements ILiteral<TypeAtom.lambda> {
     private withStorage?: 'read-write' | 'read-only';
     private withOperations = false;
 
-    constructor(private statements: IStatement[], private inType: IType, private line: LineInfo) {
+    constructor(
+        private statements: IStatement[],
+        private inType: IType,
+        private argumentName: string,
+        private line: LineInfo,
+    ) {
         this.identifier = ++LambdaLiteral.idCounter;
     }
 
@@ -131,15 +136,15 @@ class LambdaLiteral implements ILiteral<TypeAtom.lambda> {
     }
 
     public code(buildStatements: (arg: IExpression) => IStatement[]) {
-        const param = LambdaArgument('arg', this.inType, this.id, this.line);
+        const param = LambdaArgument(this.argumentName, this.inType, this.id, this.line);
         this.statements = buildStatements(param);
         return this;
     }
 
     toString() {
-        return `(lambda ${this.id} ${this.withStorage || 'None'} ${capitalizeBoolean(this.withOperations)} "arg" ${
-            this.line
-        } (${this.statements.join(' ')}))`;
+        return `(lambda ${this.id} ${this.withStorage || 'None'} ${capitalizeBoolean(this.withOperations)} "${
+            this.argumentName
+        }" ${this.line} (${this.statements.join(' ')}))`;
     }
 }
 
@@ -197,8 +202,12 @@ export const Big_map = (
 ) => new MapLiteral<TypeAtom.big_map>(LiteralAtom.big_map, rows, keyType, valueType, line);
 export const Pair = (left: IExpression, right: IExpression, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.tuple>(LiteralAtom.tuple, [left, right], line);
-export const Lambda = (statements: IStatement[] = [], inType: IType = TUnknown(), line = new LineInfo()) =>
-    new LambdaLiteral(statements, inType, line);
+export const Lambda = (
+    statements: IStatement[] = [],
+    inType: IType = TUnknown(),
+    argumentName = 'lambda_arg',
+    line = new LineInfo(),
+) => new LambdaLiteral(statements, inType, argumentName, line);
 export const Ticket = (content: IExpression, amount: LiteralExpression<TypeAtom.nat>, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.ticket>(LiteralAtom.ticket, [content, amount], line);
 export const Sapling_state = (memo: number, line = new LineInfo()) =>
