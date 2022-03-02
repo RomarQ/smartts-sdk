@@ -16,6 +16,7 @@ import {
     TMutez,
     TNat,
     TOption,
+    TOr,
     TPair,
     TRecord,
     TSapling_state,
@@ -57,6 +58,8 @@ import {
     Record,
     Lambda,
     GreaterThan,
+    Right,
+    Left,
 } from '../../src/expression';
 import { If, Return } from '../../src/statement';
 import { ILiteral } from '../../src/typings/literal';
@@ -157,4 +160,6 @@ describe('Test Literals', () => {
         }),
         Variant('match2', Int(1)),
     );
+    verifyLiteral('Left variant', TOr(TNat(), TInt()), Left(Nat(1)));
+    verifyLiteral('Right variant', TOr(TNat(), TInt()), Right(Int(1)));
 });

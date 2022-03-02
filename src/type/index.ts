@@ -110,6 +110,7 @@ export const TOption = (innerType: IType) => new ContainerType(TypeAtom.option, 
 export const TMap = (keyType: IType, valueType: IType) => new ContainerType(TypeAtom.map, [keyType, valueType]);
 export const TBig_map = (keyType: IType, valueType: IType) => new ContainerType(TypeAtom.big_map, [keyType, valueType]);
 export const TPair = (left: IType, right: IType) => new ContainerType(TypeAtom.tuple, [left, right]);
+export const TOr = (left: IType, right: IType) => TVariant({ Left: left, Right: right });
 export const TLambda = (left: IType, right: IType) => new ContainerType(TypeAtom.lambda, [left, right]);
 export const TTicket = (innerType: IType) => new ContainerType(TypeAtom.ticket, [innerType]);
 export const TContract = (innerType: IType) => new ContainerType(TypeAtom.contract, [innerType]);
@@ -147,6 +148,7 @@ const Types = {
     TSet,
     TOption,
     TPair,
+    TOr,
     TMap,
     TBig_map,
     TLambda,

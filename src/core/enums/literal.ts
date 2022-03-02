@@ -20,6 +20,8 @@ export enum LiteralAtom {
     set = 'set',
     Some = 'Some',
     None = 'None',
+    Left = 'Left',
+    Right = 'Right',
     map = 'map',
     big_map = 'big_map',
     signature = 'signature',

@@ -216,6 +216,10 @@ export const Record = (fields: Record<string, ILiteral<unknown>>, line = new Lin
     new RecordLiteral(fields, line);
 export const Variant = (field: string, value: IExpression, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.variant>(LiteralAtom.variant, [field, value], line);
+export const Left = (value: IExpressionKind, line = new LineInfo()) =>
+    new LiteralExpression<TypeAtom.variant>(LiteralAtom.variant, [LiteralAtom.Left, value], line);
+export const Right = (value: IExpressionKind, line = new LineInfo()) =>
+    new LiteralExpression<TypeAtom.variant>(LiteralAtom.variant, [LiteralAtom.Right, value], line);
 
 const Literals = {
     // Singletons
@@ -248,6 +252,8 @@ const Literals = {
     Sapling_state,
     Record,
     Variant,
+    Left,
+    Right,
 };
 
 export default Literals;
