@@ -35,6 +35,7 @@ export enum ExpressionAtom {
     operations = 'operations',
     transfer = 'transfer',
     set_delegate = 'set_delegate',
+    create_contract = 'create_contract',
     // List instructions
     cons = 'cons',
     //

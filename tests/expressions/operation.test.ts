@@ -1,4 +1,4 @@
-import { Address, GetContract, GetOperations, Mutez, Transfer, Unit, AppendToList, SetDelegate, Key_hash, Some, None } from '../../src/expression';
+import { Address, GetContract, GetOperations, Mutez, Transfer, Unit, AppendToList, SetDelegate, Key_hash, Some, None, CreateContract } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { SetValue } from '../../src/statement';
@@ -96,6 +96,41 @@ describe('Delegation operation', () => {
             .setStorage(Unit())
             .addEntrypoint(
                 new EntryPoint('ep1').code(() => [SetDelegate(None()).send()]),
+            )
+            .toString();
+
+        expect(contract).toMatchSnapshot();
+        verifyContractCompilationOutput(contract);
+    });
+});
+
+describe('Origination operation', () => {
+    it('Build operation (Desugared version)', () => {
+        const contract = new Contract()
+            .setStorage(Unit())
+            .addEntrypoint(
+                new EntryPoint('ep1').code((arg) => [
+                    SetValue(
+                        GetOperations(),
+                        AppendToList(
+                            GetOperations(),
+                            CreateContract(new Contract(), Unit()).getOperation(),
+                        ),
+                    ),
+                ]),
+            )
+            .toString();
+
+        expect(contract).toMatchSnapshot();
+        verifyContractCompilationOutput(contract);
+    });
+    it('Build operation (Sugared version)', () => {
+        const contract = new Contract()
+            .setStorage(Unit())
+            .addEntrypoint(
+                new EntryPoint('ep1').code((arg) => [
+                    CreateContract(new Contract(), arg, Mutez(100), Some(Key_hash("tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN"))).send()
+                ]),
             )
             .toString();
 

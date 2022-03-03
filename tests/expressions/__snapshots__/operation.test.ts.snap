@@ -239,6 +239,374 @@ exports[`Delegation operation Build operation to set delegator (Sugared version)
 ]"
 `;
 
+exports[`Origination operation Build operation (Desugared version) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"operation.test.ts\\" 109))
+            storage (unit)
+            storage_type (())
+            messages ((ep1 True False False False (\\"operation.test.ts\\" 112) ((set (operations (\\"operation.test.ts\\" 112)) (cons (attr (create_contract (contract 
+        (
+            template_id (static_id 0 (\\"operation.test.ts\\" 112))
+            storage (unit)
+            storage_type (())
+            messages ()
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 112))
+        )
+        ) (storage (unit)) (baker (variant \\"None\\" (unit) (\\"operation.test.ts\\" 112))) (amount (literal (mutez 0) (\\"operation.test.ts\\" 112))) (\\"operation.test.ts\\" 112)) \\"operation\\" (\\"expression.ts\\" 29)) (operations (\\"operation.test.ts\\" 112)) (\\"operation.test.ts\\" 112)) (\\"operation.test.ts\\" 112)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 109))
+        )
+        "
+`;
+
+exports[`Origination operation Build operation (Desugared version) 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"UNIT\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"mutez\\"
+                        },
+                        {
+                            \\"int\\": \\"0\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NONE\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"key_hash\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"CREATE_CONTRACT\\",
+                    \\"args\\": [
+                        [
+                            {
+                                \\"prim\\": \\"parameter\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"unit\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"storage\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"unit\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"code\\",
+                                \\"args\\": [
+                                    [
+                                        {
+                                            \\"prim\\": \\"CDR\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"NIL\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"operation\\"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"PAIR\\"
+                                        }
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"DIG\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"2\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"DIG\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"2\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"CONS\\"
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Origination operation Build operation (Sugared version) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"operation.test.ts\\" 128))
+            storage (unit)
+            storage_type (())
+            messages ((ep1 True False False False (\\"operation.test.ts\\" 131) ((set (operations (\\"operation.test.ts\\" 131)) (cons (attr (create_contract (contract 
+        (
+            template_id (static_id 0 (\\"operation.test.ts\\" 131))
+            storage (unit)
+            storage_type (())
+            messages ()
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 131))
+        )
+        ) (storage (params (\\"operation.test.ts\\" 131))) (baker (variant \\"Some\\" (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 131)) (\\"operation.test.ts\\" 131))) (amount (literal (mutez 100) (\\"operation.test.ts\\" 131))) (\\"operation.test.ts\\" 131)) \\"operation\\" (\\"expression.ts\\" 29)) (operations (\\"operation.test.ts\\" 131)) (\\"operation.test.ts\\" 131)) (\\"operation.test.ts\\" 131)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 128))
+        )
+        "
+`;
+
+exports[`Origination operation Build operation (Sugared version) 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"DUP\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"3\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"mutez\\"
+                        },
+                        {
+                            \\"int\\": \\"100\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"option\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"key_hash\\"
+                                }
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"Some\\",
+                            \\"args\\": [
+                                {
+                                    \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"CREATE_CONTRACT\\",
+                    \\"args\\": [
+                        [
+                            {
+                                \\"prim\\": \\"parameter\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"unit\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"storage\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"unit\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"code\\",
+                                \\"args\\": [
+                                    [
+                                        {
+                                            \\"prim\\": \\"CDR\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"NIL\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"operation\\"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"PAIR\\"
+                                        }
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"DIG\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"2\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"DIG\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"2\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"DROP\\"
+                },
+                {
+                    \\"prim\\": \\"CONS\\"
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
 exports[`Transaction operation Build operation (Desugared version) 1`] = `
 "
         (
