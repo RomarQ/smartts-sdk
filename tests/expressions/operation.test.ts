@@ -1,4 +1,17 @@
-import { Address, GetContract, GetOperations, Mutez, Transfer, Unit, AppendToList, SetDelegate, Key_hash, Some, None, CreateContract } from '../../src/expression';
+import {
+    Address,
+    GetContract,
+    GetOperations,
+    Mutez,
+    Transfer,
+    Unit,
+    AppendToList,
+    SetDelegate,
+    Key_hash,
+    Some,
+    None,
+    CreateContract,
+} from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { SetValue } from '../../src/statement';
@@ -68,7 +81,7 @@ describe('Delegation operation', () => {
                         GetOperations(),
                         AppendToList(
                             GetOperations(),
-                            SetDelegate(Some(Key_hash("tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN"))),
+                            SetDelegate(Some(Key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))),
                         ),
                     ),
                 ]),
@@ -81,11 +94,7 @@ describe('Delegation operation', () => {
     it('Build operation to set delegator (Sugared version)', () => {
         const contract = new Contract()
             .setStorage(Unit())
-            .addEntrypoint(
-                new EntryPoint('ep1').inputType(TKey_hash()).code((arg) => [
-                    SetDelegate(Some(arg)).send(),
-                ]),
-            )
+            .addEntrypoint(new EntryPoint('ep1').inputType(TKey_hash()).code((arg) => [SetDelegate(Some(arg)).send()]))
             .toString();
 
         expect(contract).toMatchSnapshot();
@@ -94,9 +103,7 @@ describe('Delegation operation', () => {
     it('Build operation to clear the delegation (Sugared version)', () => {
         const contract = new Contract()
             .setStorage(Unit())
-            .addEntrypoint(
-                new EntryPoint('ep1').code(() => [SetDelegate(None()).send()]),
-            )
+            .addEntrypoint(new EntryPoint('ep1').code(() => [SetDelegate(None()).send()]))
             .toString();
 
         expect(contract).toMatchSnapshot();
@@ -112,10 +119,7 @@ describe('Origination operation', () => {
                 new EntryPoint('ep1').code((arg) => [
                     SetValue(
                         GetOperations(),
-                        AppendToList(
-                            GetOperations(),
-                            CreateContract(new Contract(), Unit()).getOperation(),
-                        ),
+                        AppendToList(GetOperations(), CreateContract(new Contract(), Unit()).getOperation()),
                     ),
                 ]),
             )
@@ -129,7 +133,12 @@ describe('Origination operation', () => {
             .setStorage(Unit())
             .addEntrypoint(
                 new EntryPoint('ep1').code((arg) => [
-                    CreateContract(new Contract(), arg, Mutez(100), Some(Key_hash("tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN"))).send()
+                    CreateContract(
+                        new Contract(),
+                        arg,
+                        Mutez(100),
+                        Some(Key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')),
+                    ).send(),
                 ]),
             )
             .toString();
