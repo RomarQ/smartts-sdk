@@ -1,11 +1,11 @@
-import { Address, GetContract, GetOperations, Mutez, Transfer, Unit, AppendToList } from '../../src/expression';
+import { Address, GetContract, GetOperations, Mutez, Transfer, Unit, AppendToList, SetDelegate, Key_hash, Some, None } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { SetValue } from '../../src/statement';
-import { TNat } from '../../src/type';
+import { TKey_hash, TNat } from '../../src/type';
 
-describe('Test operation expressions', () => {
-    it('Build a transfer operation (Desugared)', () => {
+describe('Transaction operation', () => {
+    it('Build operation (Desugared version)', () => {
         const contract = new Contract()
             .setStorage(Unit())
             .addEntrypoint(
@@ -24,7 +24,7 @@ describe('Test operation expressions', () => {
         expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
-    it('Send transfer (Sugared)', () => {
+    it('Build operation (Sugared version)', () => {
         const contract = new Contract()
             .setStorage(Unit())
             .addEntrypoint(
@@ -37,7 +37,7 @@ describe('Test operation expressions', () => {
         expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
-    it('Send transfer to originated contract', () => {
+    it('Build operation to an originated contract', () => {
         const contract = new Contract()
             .setStorage(Unit())
             .addEntrypoint(
@@ -50,6 +50,52 @@ describe('Test operation expressions', () => {
                             arg,
                         ).send(),
                     ]),
+            )
+            .toString();
+
+        expect(contract).toMatchSnapshot();
+        verifyContractCompilationOutput(contract);
+    });
+});
+
+describe('Delegation operation', () => {
+    it('Build operation (Desugared version)', () => {
+        const contract = new Contract()
+            .setStorage(Unit())
+            .addEntrypoint(
+                new EntryPoint('ep1').code((arg) => [
+                    SetValue(
+                        GetOperations(),
+                        AppendToList(
+                            GetOperations(),
+                            SetDelegate(Some(Key_hash("tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN"))),
+                        ),
+                    ),
+                ]),
+            )
+            .toString();
+
+        expect(contract).toMatchSnapshot();
+        verifyContractCompilationOutput(contract);
+    });
+    it('Build operation to set delegator (Sugared version)', () => {
+        const contract = new Contract()
+            .setStorage(Unit())
+            .addEntrypoint(
+                new EntryPoint('ep1').inputType(TKey_hash()).code((arg) => [
+                    SetDelegate(Some(arg)).send(),
+                ]),
+            )
+            .toString();
+
+        expect(contract).toMatchSnapshot();
+        verifyContractCompilationOutput(contract);
+    });
+    it('Build operation to clear the delegation (Sugared version)', () => {
+        const contract = new Contract()
+            .setStorage(Unit())
+            .addEntrypoint(
+                new EntryPoint('ep1').code(() => [SetDelegate(None()).send()]),
             )
             .toString();
 
