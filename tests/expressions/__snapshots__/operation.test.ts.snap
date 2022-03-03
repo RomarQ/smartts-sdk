@@ -1,0 +1,419 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test operation expressions Build a transfer operation (Desugared) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"operation.test.ts\\" 9))
+            storage (unit)
+            storage_type (())
+            messages ((ep1 True False False False (\\"operation.test.ts\\" 12) ((set (operations (\\"operation.test.ts\\" 12)) (cons (transfer (params (\\"operation.test.ts\\" 12)) (literal (mutez 100) (\\"operation.test.ts\\" 12)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 12)) (\\"operation.test.ts\\" 12)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 12)) (\\"operation.test.ts\\" 12)) (\\"operation.test.ts\\" 12)) (\\"operation.test.ts\\" 12)) (operations (\\"operation.test.ts\\" 12)) (\\"operation.test.ts\\" 12)) (\\"operation.test.ts\\" 12)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`Test operation expressions Build a transfer operation (Desugared) 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"address\\"
+                        },
+                        {
+                            \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"CONTRACT\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"unit\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%default\\"
+                    ]
+                },
+                {
+                    \\"prim\\": \\"IF_NONE\\",
+                    \\"args\\": [
+                        [
+                            {
+                                \\"prim\\": \\"PUSH\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"option\\",
+                                        \\"args\\": [
+                                            {
+                                                \\"prim\\": \\"string\\"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        \\"prim\\": \\"Some\\",
+                                        \\"args\\": [
+                                            {
+                                                \\"string\\": \\"CONTRACT_NOT_FOUND\\"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"FAILWITH\\"
+                            }
+                        ],
+                        []
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"mutez\\"
+                        },
+                        {
+                            \\"int\\": \\"100\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"DIG\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"3\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"TRANSFER_TOKENS\\"
+                },
+                {
+                    \\"prim\\": \\"CONS\\"
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test operation expressions Send transfer (Sugared) 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"operation.test.ts\\" 28))
+            storage (unit)
+            storage_type (())
+            messages ((ep1 True False False False (\\"operation.test.ts\\" 31) ((set (operations (\\"operation.test.ts\\" 31)) (cons (transfer (unit) (literal (mutez 100) (\\"operation.test.ts\\" 31)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 31)) (\\"operation.test.ts\\" 31)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 31)) (\\"operation.test.ts\\" 31)) (\\"operation.test.ts\\" 31)) (\\"operation.test.ts\\" 31)) (operations (\\"operation.test.ts\\" 31)) (\\"operation.test.ts\\" 31)) (\\"operation.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 28))
+        )
+        "
+`;
+
+exports[`Test operation expressions Send transfer (Sugared) 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"address\\"
+                        },
+                        {
+                            \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"CONTRACT\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"unit\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%default\\"
+                    ]
+                },
+                {
+                    \\"prim\\": \\"IF_NONE\\",
+                    \\"args\\": [
+                        [
+                            {
+                                \\"prim\\": \\"PUSH\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"option\\",
+                                        \\"args\\": [
+                                            {
+                                                \\"prim\\": \\"string\\"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        \\"prim\\": \\"Some\\",
+                                        \\"args\\": [
+                                            {
+                                                \\"string\\": \\"CONTRACT_NOT_FOUND\\"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"FAILWITH\\"
+                            }
+                        ],
+                        []
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"mutez\\"
+                        },
+                        {
+                            \\"int\\": \\"100\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"UNIT\\"
+                },
+                {
+                    \\"prim\\": \\"TRANSFER_TOKENS\\"
+                },
+                {
+                    \\"prim\\": \\"CONS\\"
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Test operation expressions Send transfer to originated contract 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"operation.test.ts\\" 41))
+            storage (unit)
+            storage_type (())
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 44) ((set_type (params (\\"operation.test.ts\\" 44)) \\"nat\\" (\\"operation.test.ts\\" 46)) (set (operations (\\"operation.test.ts\\" 46)) (cons (transfer (params (\\"operation.test.ts\\" 44)) (literal (mutez 100) (\\"operation.test.ts\\" 46)) (openVariant (contract ep1 \\"nat\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"operation.test.ts\\" 46)) (\\"operation.test.ts\\" 46)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 46)) (\\"operation.test.ts\\" 46)) (\\"operation.test.ts\\" 46)) (\\"operation.test.ts\\" 46)) (operations (\\"operation.test.ts\\" 46)) (\\"operation.test.ts\\" 46)) (\\"operation.test.ts\\" 46)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 41))
+        )
+        "
+`;
+
+exports[`Test operation expressions Send transfer to originated contract 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\"
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"nat\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"address\\"
+                        },
+                        {
+                            \\"string\\": \\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"CONTRACT\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                },
+                {
+                    \\"prim\\": \\"IF_NONE\\",
+                    \\"args\\": [
+                        [
+                            {
+                                \\"prim\\": \\"PUSH\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"option\\",
+                                        \\"args\\": [
+                                            {
+                                                \\"prim\\": \\"string\\"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        \\"prim\\": \\"Some\\",
+                                        \\"args\\": [
+                                            {
+                                                \\"string\\": \\"CONTRACT_NOT_FOUND\\"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"FAILWITH\\"
+                            }
+                        ],
+                        []
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"mutez\\"
+                        },
+                        {
+                            \\"int\\": \\"100\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"DIG\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"3\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"TRANSFER_TOKENS\\"
+                },
+                {
+                    \\"prim\\": \\"CONS\\"
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
