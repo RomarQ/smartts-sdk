@@ -27,7 +27,7 @@
     },
     "scripts": {
         "build": "node --max_old_space_size=8192 scripts/build.js && tsc --build",
-        "test": "NODE_OPTIONS=--max-old-space-size=8192 jest --runInBand --detectOpenHandles --watch",
+        "test": "NODE_OPTIONS=--max-old-space-size=8192 jest --runInBand --detectOpenHandles --watch --no-cache",
         "ci-test": "NODE_OPTIONS=--max-old-space-size=8192 CI=true jest --collect-coverage --reporters=default --reporters=jest-junit --reporters=jest-html-reporter",
         "generate:doc": "typedoc",
         "prettier:fix": "prettier --write '{src,tests}/**/*.{js,ts,json}'",
