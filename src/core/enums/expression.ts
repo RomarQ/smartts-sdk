@@ -19,7 +19,7 @@ export enum ExpressionAtom {
     params = 'params',
     getLocal = 'getLocal',
     iter = 'iter',
-    // Blockchain operation
+    // Blockchain property
     amount = 'amount',
     balance = 'balance',
     chain_id = 'chain_id',
@@ -31,6 +31,17 @@ export enum ExpressionAtom {
     source = 'source',
     total_voting_power = 'total_voting_power',
     voting_power = 'voting_power',
+    // Operation
+    operations = 'operations',
+    transfer = 'transfer',
+    set_delegate = 'set_delegate',
+    create_contract = 'create_contract',
+    // List instructions
+    cons = 'cons',
+    //
+    contract = 'contract',
+    // Variant
+    openVariant = 'openVariant',
 }
 
 export default ExpressionAtom;
