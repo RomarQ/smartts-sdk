@@ -5,22 +5,34 @@ import StatementAtom from '../core/enums/statement';
 import { Statement } from '../core/statement';
 import { LineInfo } from '../misc/utils';
 import { Proxied } from '../misc/proxy';
-import { NewVariable, SetValue } from './variables';
+import { NewVariable, SetValue } from './variable';
 import { GetVariable, Iterator, Comparison, Unit, Math } from '../expression';
 
 /**
- * @description Interrupt the smart-contract execution. (The whole operation is rollbacked)
+ * Interrupt the smart-contract execution. (The whole operation is rollbacked)
+ *
+ * ```typescript
+ * FailWith(String("SOME ERROR MESSAGE"));
+ * ```
+ *
  * @param errorMsg The value to be included in the error trace.
  * @param {LineInfo} line Source code line information (Used in error messages)
+ *
  * @returns {IStatement} A statement
  */
 export const FailWith = (errorMsg: IExpression = Unit(), line = new LineInfo()) =>
     new Statement(StatementAtom.failwith, errorMsg, line);
 
 /**
- * @description Test a condition and interrupt the smart-contract execution if the condition is false. (The whole operation is rollbacked)
+ * Test a condition and interrupt the smart-contract execution if the condition is false. (The whole operation is rollbacked)
+ *
+ * ```typescript
+ * Require(LessThanOrEqual(ContractStorage(), Nat(10)), String("LessThanOrEqual to 10"));
+ * ```
+ *
  * @param errorMsg The value to be included in the error trace.
  * @param {LineInfo} line Source code line information (Used in error messages)
+ *
  * @returns {IStatement} A statement
  */
 export const Require = (condition: IExpression, errorMsg: IExpression = Unit(), line = new LineInfo()) =>
@@ -70,6 +82,22 @@ class IfStatment implements IStatement {
         return expression;
     }
 }
+/**
+ * A (If) statement.
+ *
+ * ```typescript
+    If(GreaterThan(ContractStorage(), Nat(5)))
+        .Then([SetValue(ContractStorage(), Nat(5))])
+        .Else([])
+ * ```
+ *
+ * @param condition
+ * @param thenStatements Statements to be applied if the condition is true.
+ * @param elseStatements Statements to be applied if the condition is false.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IStatement} A statement
+ */
 export const If = (
     condition: IExpression,
     thenStatements?: IStatement[],
@@ -103,12 +131,17 @@ class ForEachStatement implements IStatement {
     }
 }
 /**
- * @description A (forEach) loop.
+ * A (forEach) loop.
+ *
+ * ```typescript
+ * ForEachOf(arg).Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))]);
+ * ```
  *
  * @param list The list to be iterated over
  * @param statements The statements inside the loop body
  * @param iteratorName The iterator name
  * @param {LineInfo} line Source code line information (Used in error messages)
+ *
  * @returns {IStatement} A statement
  */
 export const ForEachOf = (list: IExpression, statements?: IStatement[], iteratorName?: string, line = new LineInfo()) =>
@@ -127,11 +160,16 @@ class WhileStatement implements IStatement {
     }
 }
 /**
- * @description A basic (while) loop.
+ * A basic (while) loop.
+ *
+ * ```typescript
+ * While(LessThanOrEqual(ContractStorage(), Nat(10))).Do([SetValue(ContractStorage(), Add(ContractStorage(), Nat(1)))]);
+ * ```
  *
  * @param condition
  * @param statements The statements inside the loop body
  * @param {LineInfo} line Source code line information (Used in error messages)
+ *
  * @returns {IStatement} A statement
  */
 export const While = (condition: IExpression, statements?: IStatement[], line = new LineInfo()) =>
@@ -169,9 +207,11 @@ class ForStatement implements IStatement {
     }
 }
 /**
- * @description A basic (for) loop.
+ * A basic (for) loop.
  *
- * @example For(Nat(0), Nat(10), Nat(1)).Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))])
+ * ```typescript
+ * For(Nat(0), Nat(10), Nat(1)).Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))]);
+ * ```
  *
  * @param from The initial value
  * @param to The target value
@@ -179,6 +219,7 @@ class ForStatement implements IStatement {
  * @param statements The statements inside the loop body
  * @param variableName The variable name being incremented inside the loop
  * @param {LineInfo} line Source code line information (Used in error messages)
+ *
  * @returns {IStatement} A statement
  */
 export const For = (
