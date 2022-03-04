@@ -13,16 +13,6 @@ export enum ExpressionAtom {
     ge = 'ge',
     // Unary
     not = 'not',
-    //
-    items = 'items',
-    update_map = 'update_map',
-    getItem = 'getItem',
-    getItemDefault = 'getItemDefault',
-    getItemMessage = 'getItemMessage',
-    attr = 'attr',
-    params = 'params',
-    getLocal = 'getLocal',
-    iter = 'iter',
     // Blockchain property
     amount = 'amount',
     balance = 'balance',
@@ -42,13 +32,23 @@ export enum ExpressionAtom {
     create_contract = 'create_contract',
     // List instructions
     cons = 'cons',
-    //
-    contract = 'contract',
     // Variant
     openVariant = 'openVariant',
     isVariant = 'isVariant',
     cases_arg = 'cases_arg',
     variant_arg = 'variant_arg',
+    // Generic
+    contains = 'contains',
+    items = 'items',
+    update_map = 'update_map',
+    getItem = 'getItem',
+    getItemDefault = 'getItemDefault',
+    getItemMessage = 'getItemMessage',
+    attr = 'attr',
+    params = 'params',
+    getLocal = 'getLocal',
+    iter = 'iter',
+    contract = 'contract',
 }
 
 export default ExpressionAtom;

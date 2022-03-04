@@ -5,7 +5,7 @@ import {
     Mutez,
     Transfer,
     Unit,
-    AppendToList,
+    PrependToList,
     SetDelegate,
     Key_hash,
     Some,
@@ -25,7 +25,7 @@ describe('Transaction operation', () => {
                 new EntryPoint('ep1').code((arg) => [
                     SetValue(
                         GetOperations(),
-                        AppendToList(
+                        PrependToList(
                             GetOperations(),
                             Transfer(GetContract(Address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')), Mutez(100), arg),
                         ),
@@ -76,10 +76,10 @@ describe('Delegation operation', () => {
         const contract = new Contract()
             .setStorage(Unit())
             .addEntrypoint(
-                new EntryPoint('ep1').code((arg) => [
+                new EntryPoint('ep1').code(() => [
                     SetValue(
                         GetOperations(),
-                        AppendToList(
+                        PrependToList(
                             GetOperations(),
                             SetDelegate(Some(Key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))),
                         ),
@@ -116,10 +116,10 @@ describe('Origination operation', () => {
         const contract = new Contract()
             .setStorage(Unit())
             .addEntrypoint(
-                new EntryPoint('ep1').code((arg) => [
+                new EntryPoint('ep1').code(() => [
                     SetValue(
                         GetOperations(),
-                        AppendToList(GetOperations(), CreateContract(new Contract(), Unit()).getOperation()),
+                        PrependToList(GetOperations(), CreateContract(new Contract(), Unit()).getOperation()),
                     ),
                 ]),
             )

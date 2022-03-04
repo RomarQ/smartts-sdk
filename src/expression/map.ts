@@ -8,7 +8,7 @@ import { Expression } from '../core/expression';
  * Get map entries.
  *
  * ```typescript
- * GetEntries(
+ * GetMapEntries(
  *  Map(
         [
             [String("some_key_a"), Nat(1)],
@@ -23,7 +23,7 @@ import { Expression } from '../core/expression';
  *
  * @returns {IExpression} An expression of type TList(TRecord({ key: ..., value: ... })).
  */
-export const GetEntries = (source: IExpression, line = new LineInfo()) =>
+export const GetMapEntries = (source: IExpression, line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.items, source, line), Expression.proxyHandler);
 
 /**
@@ -84,10 +84,28 @@ export const GetMapValue = (
     return proxy(new Expression(ExpressionAtom.getItem, source, key, line), Expression.proxyHandler);
 };
 
+/**
+ * Checks if a given key exists in map or big_map.
+ *
+ * ```typescript
+ * MapContainsKey(ContractStorage().metadata, String("sone_key"))
+ * ```
+ *
+ * @param expression Map expression
+ * @param key Map key.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression that resolves to a boolean value.
+ */
+export const MapContainsKey = (expression: IExpression, key: IExpression, line = new LineInfo()) => {
+    return new Expression(ExpressionAtom.contains, expression, key, line);
+};
+
 const MapExpressions = {
-    GetEntries,
+    GetMapEntries,
     UpdateMap,
     GetMapValue,
+    MapContainsKey,
 };
 
 export default MapExpressions;

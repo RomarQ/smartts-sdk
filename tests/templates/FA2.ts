@@ -9,7 +9,7 @@ import {
     Bool,
     Record,
     String,
-    GetEntries,
+    GetMapEntries,
     GetSender,
     Pair,
     GetMapValue,
@@ -18,6 +18,12 @@ import {
     Nat,
     Comparison,
     Unit,
+    Not,
+    List,
+    Transfer,
+    Mutez,
+    MapContainsKey,
+    PrependToList,
 } from '../../src/expression';
 import {
     TAddress,
@@ -41,6 +47,8 @@ import {
 enum FA2_Error {
     NOT_ADMIN = 'FA2__Not_Admin',
     NOT_OWNER = 'FA2__NOT_OWNER',
+    PAUSED = 'FA2__PAUSED',
+    TOKEN_UNDEFINED = 'FA2__TOKEN_UNDEFINED',
 }
 
 /**
@@ -123,8 +131,13 @@ const TEntrypointBalanceOf = TRecord(
 /**
  * Common Expressions
  */
+
+// Terminate contract execution and fail if the sender is not the administrator
 const FailIfSenderIsNotAdmin = () =>
     Require(Equal(GetSender(), ContractStorage().config.administrator), String(FA2_Error.NOT_ADMIN));
+
+// Terminate contract execution and fail if the contract is paused
+const FailIfContractIsPaused = () => Require(Not(ContractStorage().config.paused), String(FA2_Error.PAUSED));
 
 const FA2Contract = new Contract()
     .setStorageType(
@@ -162,8 +175,11 @@ const FA2Contract = new Contract()
     )
     .addEntrypoint(new EntryPoint('transfer'))
     .addEntrypoint(
-        new EntryPoint('update_operators').inputType(TEntrypointUpdateOperators).code((arg) => [
-            ForEachOf(arg).Do((item) => [
+        new EntryPoint('update_operators').inputType(TEntrypointUpdateOperators).code((entrypoint_arg) => [
+            // The contract must not be paused
+            FailIfContractIsPaused(),
+            // Apply actions
+            ForEachOf(entrypoint_arg).Do((item) => [
                 MatchVariant(item)
                     .Case('add_operator', (payload) => [
                         Require(Comparison.Equal(payload.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
@@ -176,7 +192,37 @@ const FA2Contract = new Contract()
             ]),
         ]),
     )
-    .addEntrypoint(new EntryPoint('balance_of').inputType(TEntrypointBalanceOf))
+    .addEntrypoint(
+        new EntryPoint('balance_of').inputType(TEntrypointBalanceOf).code((entrypoint_arg) => [
+            // Fail if contract is paused
+            FailIfContractIsPaused(),
+            // Iterate over each request "list(requests)" and compute responses
+            NewVariable('responses', List([])),
+            ForEachOf(entrypoint_arg.requests).Do((request) => [
+                // Fail if the token does not exist
+                Require(
+                    MapContainsKey(ContractStorage().assets.token_total_supply, request.token_id),
+                    String(FA2_Error.TOKEN_UNDEFINED),
+                ),
+                SetValue(
+                    GetVariable('responses'),
+                    PrependToList(
+                        GetVariable('responses'),
+                        Record({
+                            request,
+                            balance: GetMapValue(
+                                ContractStorage().assets.ledger,
+                                Pair(request.owner, request.token_id),
+                                Record({ balance: Nat(0) }),
+                            ).balance,
+                        }),
+                    ),
+                ),
+            ]),
+            // Callback the requester with a response
+            Transfer(entrypoint_arg.callback, Mutez(0), GetVariable('responses')).send(),
+        ]),
+    )
     .addEntrypoint(
         new EntryPoint('mint').inputType(TEntrypointMint).code((arg) => [
             // Sender must be the administrator
@@ -214,7 +260,7 @@ const FA2Contract = new Contract()
             // Sender must be the administrator
             FailIfSenderIsNotAdmin(),
             // Update metadata entries
-            ForEachOf(GetEntries(metadata)).Do((item) => [
+            ForEachOf(GetMapEntries(metadata)).Do((item) => [
                 SetValue(GetMapValue(ContractStorage().metadata, item.key), item.value),
             ]),
         ]),
