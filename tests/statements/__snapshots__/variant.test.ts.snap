@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test (VariantMatch) statement Example 1 1`] = `
+exports[`Test Variant statements MatchVariant 1 1`] = `
 "
         (
             template_id (static_id 0 (\\"variant.test.ts\\" 9))
@@ -17,7 +17,7 @@ exports[`Test (VariantMatch) statement Example 1 1`] = `
         "
 `;
 
-exports[`Test (VariantMatch) statement Example 1 2`] = `
+exports[`Test Variant statements MatchVariant 1 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",
@@ -83,7 +83,7 @@ exports[`Test (VariantMatch) statement Example 1 2`] = `
 ]"
 `;
 
-exports[`Test (VariantMatch) statement Example 2 1`] = `
+exports[`Test Variant statements MatchVariant 2 1`] = `
 "
         (
             template_id (static_id 0 (\\"variant.test.ts\\" 24))
@@ -100,7 +100,7 @@ exports[`Test (VariantMatch) statement Example 2 1`] = `
         "
 `;
 
-exports[`Test (VariantMatch) statement Example 2 2`] = `
+exports[`Test Variant statements MatchVariant 2 2`] = `
 "[
     {
         \\"prim\\": \\"storage\\",

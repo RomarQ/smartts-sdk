@@ -11,6 +11,7 @@ export enum StatementAtom {
     match = 'match',
     match_cases = 'match_cases',
     set_type = 'set_type',
+    delItem = 'delItem',
 }
 
 export default StatementAtom;

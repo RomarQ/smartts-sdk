@@ -8,7 +8,14 @@ import { Expression } from '../core/expression';
  * Get map entries.
  *
  * ```typescript
- * GetEntries(Map([ ["a", 1], ["b", 2] ]));
+ * GetEntries(
+ *  Map(
+        [
+            [String("some_key_a"), Nat(1)],
+            [String("some_key_b"), Nat(2)]
+        ]
+    )
+   );
  * ```
  *
  * @param source Map expression

@@ -17,9 +17,3 @@ import { Statement } from '../core/statement';
  */
 export const Return = (expression: IExpression, line = new LineInfo()) =>
     new Statement(StatementAtom.result, expression, line);
-
-const Method = {
-    Return,
-};
-
-export default Method;

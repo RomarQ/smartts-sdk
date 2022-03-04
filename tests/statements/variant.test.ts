@@ -4,8 +4,8 @@ import { Contract, EntryPoint } from '../../src/core';
 import { TList, TString, TVariant } from '../../src/type';
 import { verifyContractCompilationOutput } from '../util';
 
-describe('Test (VariantMatch) statement', () => {
-    it('Example 1', () => {
+describe('Test Variant statements', () => {
+    it('MatchVariant 1', () => {
         const contract = new Contract()
             .setStorage(String(''))
             .addEntrypoint(
@@ -20,7 +20,7 @@ describe('Test (VariantMatch) statement', () => {
         expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
-    it('Example 2', () => {
+    it('MatchVariant 2', () => {
         const contract = new Contract()
             .setStorage(String(''))
             .addEntrypoint(

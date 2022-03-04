@@ -299,7 +299,3 @@ export const MatchVariant = (
     argumentName = `__MATCH_${VariantMatchStatement.nextID}__`,
     line = new LineInfo(),
 ) => new VariantMatchStatement(variant, argumentName, line);
-
-const Control = { FailWith, Require, If, ForEachOf, For, While, MatchVariant };
-
-export default Control;

@@ -40,10 +40,3 @@ export function NewVariable(name: string, value: IExpression, mutable = true, li
 export function SetValue(source: IExpression, value: IExpression, line = new LineInfo()) {
     return new Statement(StatementAtom.set, source, value, line);
 }
-
-const Variable = {
-    NewVariable,
-    SetValue,
-};
-
-export default Variable;
