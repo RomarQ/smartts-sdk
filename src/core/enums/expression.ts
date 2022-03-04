@@ -53,6 +53,7 @@ export enum ExpressionAtom {
     getLocal = 'getLocal',
     iter = 'iter',
     contract = 'contract',
+    call_lambda = 'call_lambda',
 }
 
 export default ExpressionAtom;

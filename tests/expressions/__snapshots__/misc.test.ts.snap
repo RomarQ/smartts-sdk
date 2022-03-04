@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Misc expressions CallLambda 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"misc.test.ts\\" 9))
+            storage (lambda 1 None False \\"lambda_arg\\" (\\"misc.test.ts\\" 11) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"misc.test.ts\\" 11) \\"bool\\") (\\"misc.test.ts\\" 13))))
+            storage_type (())
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 16) ((set_type (params (\\"misc.test.ts\\" 16)) \\"bool\\" (\\"misc.test.ts\\" 18)) (verify (call_lambda (data) (params (\\"misc.test.ts\\" 16)) (\\"misc.test.ts\\" 16)) (unit) (\\"misc.test.ts\\" 16)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`Misc expressions CallLambda 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"lambda\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"bool\\"
+                    },
+                    {
+                        \\"prim\\": \\"bool\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"bool\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"UNPAIR\\"
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"DUG\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"2\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"EXEC\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [],
+                        [
+                            {
+                                \\"prim\\": \\"UNIT\\"
+                            },
+                            {
+                                \\"prim\\": \\"FAILWITH\\"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
