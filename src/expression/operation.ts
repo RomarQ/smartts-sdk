@@ -3,7 +3,7 @@ import ExpressionAtom from '../core/enums/expression';
 import { Expression } from '../core/expression';
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
-import { AppendToList } from './list';
+import { PrependToList } from './list';
 import { Mutez, None, Unit } from './literal';
 import { Contract } from '../core';
 import { GetProperty } from './variables';
@@ -11,7 +11,7 @@ import { GetProperty } from './variables';
 class OperationExpression extends Expression {
     send(line = new LineInfo()) {
         const operations = GetOperations();
-        return SetValue(operations, AppendToList(operations, this, line), line);
+        return SetValue(operations, PrependToList(operations, this, line), line);
     }
 }
 
@@ -26,7 +26,7 @@ class OriginationExpression extends Expression {
 
     send(line = new LineInfo()) {
         const operations = GetOperations();
-        return SetValue(operations, AppendToList(operations, this.getOperation(), line), line);
+        return SetValue(operations, PrependToList(operations, this.getOperation(), line), line);
     }
 }
 

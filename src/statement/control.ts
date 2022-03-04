@@ -2,11 +2,13 @@ import type { IExpression } from '../typings/expression';
 import type { IStatement } from '../typings/statement';
 
 import StatementAtom from '../core/enums/statement';
+import ExpressionAtom from '../core/enums/expression';
 import { Statement } from '../core/statement';
+import { Expression } from '../core/expression';
 import { LineInfo } from '../misc/utils';
-import { Proxied } from '../misc/proxy';
-import { NewVariable, SetValue } from './variable';
+import { Proxied, proxy } from '../misc/proxy';
 import { GetVariable, Iterator, Comparison, Unit, Math } from '../expression';
+import { NewVariable, SetValue } from './variable';
 
 /**
  * Interrupt the smart-contract execution. (The whole operation is rollbacked)
@@ -106,10 +108,16 @@ export const If = (
 ) => new IfStatment(condition, line, thenStatements, elseStatements);
 
 class ForEachStatement implements IStatement {
+    static idCounter = 0;
+
+    static get nextID() {
+        return ++VariantMatchStatement.idCounter;
+    }
+
     constructor(
         private list: IExpression,
-        private statements: IStatement[] = [],
-        private iteratorName = '__ITERATOR__',
+        private statements: IStatement[],
+        private iteratorName: string,
         private line = new LineInfo(),
     ) {}
 
@@ -144,8 +152,12 @@ class ForEachStatement implements IStatement {
  *
  * @returns {IStatement} A statement
  */
-export const ForEachOf = (list: IExpression, statements?: IStatement[], iteratorName?: string, line = new LineInfo()) =>
-    new ForEachStatement(list, statements, iteratorName, line);
+export const ForEachOf = (
+    list: IExpression,
+    statements: IStatement[] = [],
+    iteratorName = `__ITERATOR_FOREACH_${ForEachStatement.nextID}__`,
+    line = new LineInfo(),
+) => new ForEachStatement(list, statements, iteratorName, line);
 
 class WhileStatement implements IStatement {
     constructor(private condition: IExpression, private statements: IStatement[] = [], private line = new LineInfo()) {}
@@ -176,12 +188,18 @@ export const While = (condition: IExpression, statements?: IStatement[], line = 
     new WhileStatement(condition, statements, line);
 
 class ForStatement implements IStatement {
+    static idCounter = 0;
+
+    static get nextID() {
+        return ++VariantMatchStatement.idCounter;
+    }
+
     constructor(
         private from: IExpression,
         private to: IExpression,
         private increment: IExpression,
         private statements: IStatement[] = [],
-        private iteratorName = '__ITERATOR__',
+        private iteratorName: string,
         private line = new LineInfo(),
     ) {}
 
@@ -217,7 +235,7 @@ class ForStatement implements IStatement {
  * @param to The target value
  * @param increment The incrementor
  * @param statements The statements inside the loop body
- * @param variableName The variable name being incremented inside the loop
+ * @param iteratorName The variable name being incremented inside the loop
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
  * @returns {IStatement} A statement
@@ -227,10 +245,73 @@ export const For = (
     to: IExpression,
     increment: IExpression,
     statements?: IStatement[],
-    iteratorName?: string,
+    iteratorName = `__ITERATOR_FOR_${ForStatement.nextID}__`,
     line = new LineInfo(),
 ) => new ForStatement(from, to, increment, statements, iteratorName, line);
 
-const Control = { FailWith, Require, If, ForEachOf, For, While };
+class VariantMatchStatement implements IStatement {
+    static idCounter = 0;
+    private cases: Record<string, IStatement[]> = {};
 
-export default Control;
+    static get nextID() {
+        return ++VariantMatchStatement.idCounter;
+    }
+
+    constructor(private variant: IExpression, private argumentName: string, private line = new LineInfo()) {}
+
+    public setArgumentName(argumentName: string): this {
+        this.argumentName = argumentName;
+        return this;
+    }
+
+    public Case(branch: string, buildStatements: (arg: Proxied<IExpression>) => IStatement[]): this {
+        const variantArgument = this.variantArgument(`${this.argumentName}_${branch}`, this.line);
+        this.cases[branch] = buildStatements(variantArgument);
+        return this;
+    }
+
+    private caseArgument(argumentName: string, line: LineInfo) {
+        return new Expression(ExpressionAtom.cases_arg, `"${argumentName}"`, line);
+    }
+
+    private variantArgument(argumentName: string, line: LineInfo) {
+        return proxy(new Expression(ExpressionAtom.variant_arg, `"${argumentName}"`, line), Expression.proxyHandler);
+    }
+
+    [Symbol.toPrimitive]() {
+        const caseArgument = this.caseArgument(this.argumentName, this.line);
+        const matchCases = Object.keys(this.cases).map((branch) => {
+            return new Statement(
+                StatementAtom.match,
+                caseArgument,
+                branch,
+                `"${this.argumentName}_${branch}"`,
+                `(${this.cases[branch].join(' ')})`,
+                this.line,
+            );
+        });
+        return `(${StatementAtom.match_cases} ${this.variant} "${this.argumentName}" (${matchCases.join(' ')}) ${
+            this.line
+        })`;
+    }
+}
+/**
+ * Switch statement used to match branches on variant expressions.
+ *
+ * ```typescript
+ * MatchVariant(arg)
+    .Case('action1', (action) => [SetValue(ContractStorage(), action)])
+    .Case('action2', (action) => [SetValue(ContractStorage(), action)])
+ * ```
+ *
+ * @param variant Variant expression
+ * @param argumentName An optional argument name
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IStatement} A statement
+ */
+export const MatchVariant = (
+    variant: IExpression,
+    argumentName = `__MATCH_${VariantMatchStatement.nextID}__`,
+    line = new LineInfo(),
+) => new VariantMatchStatement(variant, argumentName, line);

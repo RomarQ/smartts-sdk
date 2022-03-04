@@ -4,8 +4,45 @@ import { IExpression } from '../typings/expression';
 import ExpressionAtom from '../core/enums/expression';
 import { Expression } from '../core/expression';
 
-export const GetEntries = (source: IExpression, line = new LineInfo()) =>
+/**
+ * Get map entries.
+ *
+ * ```typescript
+ * GetMapEntries(
+ *  Map(
+        [
+            [String("some_key_a"), Nat(1)],
+            [String("some_key_b"), Nat(2)]
+        ]
+    )
+   );
+ * ```
+ *
+ * @param source Map expression
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression of type TList(TRecord({ key: ..., value: ... })).
+ */
+export const GetMapEntries = (source: IExpression, line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.items, source, line), Expression.proxyHandler);
+
+/**
+ * Update an entry on map or big map.
+ *
+ * ```typescript
+ * // Update/Insert entry
+ * UpdateMap(ContractStorage().metadata, String("some_key"), Some(Nat(10)));
+ * // Remove entry
+ * UpdateMap(ContractStorage().metadata, String("some_key"), None());
+ * ```
+ *
+ * @param source A map expression.
+ * @param key The map key.
+ * @param value An optional value to be indexed by the given key. (The entry is removed if None() is provided as value)
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression
+ */
 export const UpdateMap = (source: IExpression, key: IExpression, value: IExpression, line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.update_map, source, key, value, line), Expression.proxyHandler);
 
@@ -13,12 +50,13 @@ export const UpdateMap = (source: IExpression, key: IExpression, value: IExpress
  * Accesss by key the value stored in a map or big map.
  *
  * ```typescript
+ * GetMapValue(ContractStorage().metadata, String("key"))
  * ```
-
- * @param source
- * @param key
- * @param default_value
- * @param error_message
+ *
+ * @param source Map expression
+ * @param key Map key.
+ * @param default_value An optional default value when the key does not exist.
+ * @param error_message An optional value to be included in the error trace.
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
  * @returns {IExpression} An expression
@@ -46,10 +84,28 @@ export const GetMapValue = (
     return proxy(new Expression(ExpressionAtom.getItem, source, key, line), Expression.proxyHandler);
 };
 
+/**
+ * Checks if a given key exists in map or big_map.
+ *
+ * ```typescript
+ * MapContainsKey(ContractStorage().metadata, String("sone_key"))
+ * ```
+ *
+ * @param expression Map expression
+ * @param key Map key.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression that resolves to a boolean value.
+ */
+export const MapContainsKey = (expression: IExpression, key: IExpression, line = new LineInfo()) => {
+    return new Expression(ExpressionAtom.contains, expression, key, line);
+};
+
 const MapExpressions = {
-    GetEntries,
+    GetMapEntries,
     UpdateMap,
     GetMapValue,
+    MapContainsKey,
 };
 
 export default MapExpressions;

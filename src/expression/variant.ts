@@ -3,13 +3,13 @@ import { Expression } from '../core/expression';
 import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
-import { None, Some } from './literal';
+import { Some } from './literal';
 
 /**
  * Open a variant
  *
  * ```typescript
- * OpenVariant(Left(Nat(1)), "Left")
+ * OpenVariant(Left(Nat(1)), "Left", String("COULD NOT OPEN VARIANT"))
  * ```
  *
  * @param variant Variant expression
@@ -25,9 +25,23 @@ export const OpenVariant = (variant: IExpression, branch = 'Some', errorMsg?: IE
         Expression.proxyHandler,
     );
 
+/**
+ * Check if a variant literal matches a given branch.
+ *
+ * ```typescript
+ * IsVariant(Left(Nat(1)), "Left") // true
+ * IsVariant(Right(Nat(1)), "Left") // false
+ * ```
+ *
+ * @param variant Variant expression
+ * @param branch The branch name of the variant
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression
+ */
 export const IsVariant = (variant: IExpression, branch: string, line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.isVariant, variant, `"${branch}"`, line), Expression.proxyHandler);
 
-const Variant = { OpenVariant };
+const Variant = { OpenVariant, IsVariant };
 
 export default Variant;
