@@ -1,9 +1,7 @@
-import { TBool, TList, TNat, TOption, TString } from '../src/type';
+import { TList, TNat, TOption } from '../src/type';
 import {
     Address,
-    Bool,
     List,
-    Mutez,
     Nat,
     String,
     None,
@@ -15,8 +13,9 @@ import {
     GetVariable,
     GetSender,
     Lambda,
+    Mutez,
 } from '../src/expression';
-import { Contract, EntryPoint, Flag } from '../src/core';
+import { Contract, EntryPoint, Flag, OffChainView, OnChainView } from '../src/core';
 import { FailWith, If, NewVariable, Require, Return, SetValue } from '../src/statement';
 import { verifyContractCompilationOutput, verifyLambdaCompilationOutput } from './util';
 
@@ -47,60 +46,29 @@ describe('Compile Lambdas', () => {
     });
 });
 
-describe('Compile Contracts', () => {
-    it('Simple 1', () => {
+describe('Compile Contract', () => {
+    it('Contract 1', () => {
         const contract = new Contract()
-            .setStorage(Nat(1))
-            .addEntrypoint(
-                new EntryPoint('ep1')
-                    .inputType(TNat())
-                    .code((arg) => [
-                        NewVariable('A', Nat(1)),
-                        Require(Comparison.Equal(GetVariable('A'), arg), String('Debug Message')),
-                    ]),
-            )
-            .toString();
-
-        expect(contract).toMatchSnapshot();
-        verifyContractCompilationOutput(contract);
-    });
-
-    it('Simple 2', () => {
-        const contract = new Contract()
-            .setStorage(List([Nat(1)]))
-            .addEntrypoint(
-                new EntryPoint('ep1')
-                    .config({ lazy: false })
-                    .inputType(TBool())
-                    .code((arg) => [
-                        NewVariable('A', Bool(false)),
-                        Require(Comparison.Equal(GetVariable('A'), arg), String('Debug Message')),
-                    ]),
-            )
+            .setStorageType(TList(TNat()))
+            .setStorage(List([]))
             .setConfig({
                 initialBalance: Mutez(100),
                 flags: [new Flag('erase-comments')],
             })
-            .toString();
-
-        expect(contract).toMatchSnapshot();
-        verifyContractCompilationOutput(contract);
-    });
-
-    it('Simple 3', () => {
-        const contract = new Contract()
-            .setStorageType(TList(TNat()))
-            .setStorage(List([]))
             .addEntrypoint(
-                new EntryPoint('ep1').inputType(TList(TNat())).code((arg) => [
-                    // Define a variable named "some_address"
-                    NewVariable('some_address', Address('tz1')),
-                    // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
-                    Require(Comparison.Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
-                    // Replace the storage value with entry point argument
-                    SetValue(ContractStorage(), arg),
-                ]),
+                new EntryPoint('ep1')
+                    .config({ lazy: false })
+                    .inputType(TList(TNat()))
+                    .code((arg) => [
+                        // Define a variable named "some_address"
+                        NewVariable('some_address', Address('tz1')),
+                        // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
+                        Require(Comparison.Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
+                        // Replace the storage value with entry point argument
+                        SetValue(ContractStorage(), arg),
+                    ]),
             )
+            .addView(new OnChainView('view').code((argument) => [Return(argument)]))
             .toString();
 
         expect(contract).toMatchSnapshot();
