@@ -11,6 +11,9 @@ export enum ExpressionAtom {
     gt = 'gt',
     le = 'le',
     ge = 'ge',
+    // Logic
+    and = 'and',
+    or = 'or',
     // Unary
     not = 'not',
     // Blockchain property
@@ -38,6 +41,7 @@ export enum ExpressionAtom {
     cases_arg = 'cases_arg',
     variant_arg = 'variant_arg',
     // Generic
+    isNat = 'isNat',
     contains = 'contains',
     items = 'items',
     update_map = 'update_map',

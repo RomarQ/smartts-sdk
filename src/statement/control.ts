@@ -108,10 +108,16 @@ export const If = (
 ) => new IfStatment(condition, line, thenStatements, elseStatements);
 
 class ForEachStatement implements IStatement {
+    static idCounter = 0;
+
+    static get nextID() {
+        return ++VariantMatchStatement.idCounter;
+    }
+
     constructor(
         private list: IExpression,
-        private statements: IStatement[] = [],
-        private iteratorName = '__ITERATOR__',
+        private statements: IStatement[],
+        private iteratorName: string,
         private line = new LineInfo(),
     ) {}
 
@@ -146,8 +152,12 @@ class ForEachStatement implements IStatement {
  *
  * @returns {IStatement} A statement
  */
-export const ForEachOf = (list: IExpression, statements?: IStatement[], iteratorName?: string, line = new LineInfo()) =>
-    new ForEachStatement(list, statements, iteratorName, line);
+export const ForEachOf = (
+    list: IExpression,
+    statements: IStatement[] = [],
+    iteratorName = `__ITERATOR_FOREACH_${ForEachStatement.nextID}__`,
+    line = new LineInfo(),
+) => new ForEachStatement(list, statements, iteratorName, line);
 
 class WhileStatement implements IStatement {
     constructor(private condition: IExpression, private statements: IStatement[] = [], private line = new LineInfo()) {}
@@ -178,12 +188,18 @@ export const While = (condition: IExpression, statements?: IStatement[], line = 
     new WhileStatement(condition, statements, line);
 
 class ForStatement implements IStatement {
+    static idCounter = 0;
+
+    static get nextID() {
+        return ++VariantMatchStatement.idCounter;
+    }
+
     constructor(
         private from: IExpression,
         private to: IExpression,
         private increment: IExpression,
         private statements: IStatement[] = [],
-        private iteratorName = '__ITERATOR__',
+        private iteratorName: string,
         private line = new LineInfo(),
     ) {}
 
@@ -219,7 +235,7 @@ class ForStatement implements IStatement {
  * @param to The target value
  * @param increment The incrementor
  * @param statements The statements inside the loop body
- * @param variableName The variable name being incremented inside the loop
+ * @param iteratorName The variable name being incremented inside the loop
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
  * @returns {IStatement} A statement
@@ -229,7 +245,7 @@ export const For = (
     to: IExpression,
     increment: IExpression,
     statements?: IStatement[],
-    iteratorName?: string,
+    iteratorName = `__ITERATOR_FOR_${ForStatement.nextID}__`,
     line = new LineInfo(),
 ) => new ForStatement(from, to, increment, statements, iteratorName, line);
 
