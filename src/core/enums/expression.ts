@@ -44,6 +44,7 @@ export enum ExpressionAtom {
     contract = 'contract',
     // Variant
     openVariant = 'openVariant',
+    isVariant = 'isVariant',
 }
 
 export default ExpressionAtom;
