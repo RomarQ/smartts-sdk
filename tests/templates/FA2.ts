@@ -1,8 +1,7 @@
 import { Contract, EntryPoint } from '../../src/core';
-import { ForEachOf, If, MatchVariant, NewVariable, Require, SetValue } from '../../src/statement';
+import { DeleteMapEntry, ForEachOf, MatchVariant, NewVariable, Require, SetValue } from '../../src/statement';
 import { Layout } from '../../src/core/enums/layout';
 import {
-    GetProperty,
     ContractStorage,
     Equal,
     Address,
@@ -17,8 +16,8 @@ import {
     GetVariable,
     Math,
     Nat,
-    IsVariant,
     Comparison,
+    Unit,
 } from '../../src/expression';
 import {
     TAddress,
@@ -54,7 +53,14 @@ const TLedgerValue = TRecord(
     },
     Layout.right_comb,
 );
-const TOperatorKey = TRecord({ operator: TAddress(), owner: TAddress(), token_id: TNat() }, Layout.right_comb);
+const TOperatorKey = TRecord(
+    {
+        owner: TAddress(),
+        operator: TAddress(),
+        token_id: TNat(),
+    },
+    ['owner', ['operator', 'token_id']],
+);
 const TTokenMetadata = TRecord(
     {
         token_id: TNat(),
@@ -75,22 +81,8 @@ const TEntrypointMint = TRecord(
 const TEntrypointUpdateOperators = TList(
     TVariant(
         {
-            add_operator: TRecord(
-                {
-                    owner: TAddress(),
-                    operator: TAddress(),
-                    token_id: TNat(),
-                },
-                ['owner', ['operator', 'token_id']],
-            ),
-            remove_operator: TRecord(
-                {
-                    owner: TAddress(),
-                    operator: TAddress(),
-                    token_id: TNat(),
-                },
-                ['owner', ['operator', 'token_id']],
-            ),
+            add_operator: TOperatorKey,
+            remove_operator: TOperatorKey,
         },
         ['add_operator', 'remove_operator'],
     ),
@@ -173,11 +165,13 @@ const FA2Contract = new Contract()
         new EntryPoint('update_operators').inputType(TEntrypointUpdateOperators).code((arg) => [
             ForEachOf(arg).Do((item) => [
                 MatchVariant(item)
-                    .Case('add_operator', (arg) => [
-                        Require(Comparison.Equal(arg.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
+                    .Case('add_operator', (payload) => [
+                        Require(Comparison.Equal(payload.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
+                        SetValue(GetMapValue(ContractStorage().assets.operators, payload), Unit()),
                     ])
-                    .Case('remove_operator', (arg) => [
-                        Require(Comparison.Equal(arg.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
+                    .Case('remove_operator', (payload) => [
+                        Require(Comparison.Equal(payload.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
+                        DeleteMapEntry(ContractStorage().assets.operators, payload),
                     ]),
             ]),
         ]),

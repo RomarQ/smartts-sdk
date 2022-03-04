@@ -3,16 +3,16 @@
 exports[`Test contract templates FA2.ts 1`] = `
 "
         (
-            template_id (static_id 0 (\\"FA2.ts\\" 137))
-            storage (record (\\"FA2.ts\\" 157) (config (record (\\"FA2.ts\\" 158) (administrator (literal (address tz1) (\\"FA2.ts\\" 159))) (paused (literal (bool False) (\\"FA2.ts\\" 160))))) (assets (record (\\"FA2.ts\\" 162) (ledger (big_map (\\"FA2.ts\\" 163) )) (operators (big_map (\\"FA2.ts\\" 164) )) (token_metadata (big_map (\\"FA2.ts\\" 165) )) (token_total_supply (big_map (\\"FA2.ts\\" 166) )))) (metadata (big_map (\\"FA2.ts\\" 168) )))
-            storage_type ((record ((config (record ((administrator \\"address\\") (paused \\"bool\\")) (Some ((\\"administrator\\") (\\"paused\\"))) (\\"\\" -1))) (assets (record ((ledger (bigmap (tuple \\"address\\" \\"nat\\") (record ((balance \\"nat\\")) (Some Right) (\\"\\" -1)))) (operators (bigmap (record ((operator \\"address\\") (owner \\"address\\") (token_id \\"nat\\")) (Some Right) (\\"\\" -1)) \\"unit\\")) (token_metadata (bigmap \\"nat\\" (record ((token_id \\"nat\\") (token_info (map \\"string\\" \\"bytes\\"))) (Some Right) (\\"\\" -1)))) (token_total_supply (bigmap \\"nat\\" \\"nat\\"))) (Some ((\\"ledger\\") ((\\"operators\\") ((\\"token_metadata\\") (\\"token_total_supply\\"))))) (\\"\\" -1))) (metadata (bigmap \\"string\\" \\"bytes\\"))) (Some Right) (\\"\\" -1)))
-            messages ((transfer True False False True (\\"FA2.ts\\" 171) ((set_type (params (\\"FA2.ts\\" 171)) \\"unit\\" (\\"\\" -1)))) (update_operators True False False True (\\"FA2.ts\\" 173) ((set_type (params (\\"FA2.ts\\" 173)) (list (variant ((add_operator (record ((owner \\"address\\") (operator \\"address\\") (token_id \\"nat\\")) (Some ((\\"owner\\") ((\\"operator\\") (\\"token_id\\")))) (\\"\\" -1))) (remove_operator (record ((owner \\"address\\") (operator \\"address\\") (token_id \\"nat\\")) (Some ((\\"owner\\") ((\\"operator\\") (\\"token_id\\")))) (\\"\\" -1)))) (Some ((\\"add_operator\\") (\\"remove_operator\\"))) (\\"\\" -1))) (\\"\\" -1)) (forGroup \\"__ITERATOR__\\" (params (\\"FA2.ts\\" 173)) ((match_cases (iter \\"__ITERATOR__\\" (\\"FA2.ts\\" 173)) \\"__MATCH_1__\\" ((match (cases_arg \\"__MATCH_1__\\" (\\"FA2.ts\\" 173)) add_operator \\"__MATCH_1___add_operator\\" ((verify (eq (attr (variant_arg \\"__MATCH_1___add_operator\\" (\\"FA2.ts\\" 173)) \\"owner\\" (\\"expression.ts\\" 29)) (sender) (\\"comparison.ts\\" 6)) (literal (string \\"FA2__NOT_OWNER\\") (\\"FA2.ts\\" 173)) (\\"FA2.ts\\" 173))) (\\"FA2.ts\\" 173)) (match (cases_arg \\"__MATCH_1__\\" (\\"FA2.ts\\" 173)) remove_operator \\"__MATCH_1___remove_operator\\" ((verify (eq (attr (variant_arg \\"__MATCH_1___remove_operator\\" (\\"FA2.ts\\" 173)) \\"owner\\" (\\"expression.ts\\" 29)) (sender) (\\"comparison.ts\\" 6)) (literal (string \\"FA2__NOT_OWNER\\") (\\"FA2.ts\\" 173)) (\\"FA2.ts\\" 173))) (\\"FA2.ts\\" 173))) (\\"FA2.ts\\" 173))) (\\"FA2.ts\\" 173)))) (balance_of True False False True (\\"FA2.ts\\" 185) ((set_type (params (\\"FA2.ts\\" 185)) (record ((requests (list (record ((owner \\"address\\") (token_id \\"nat\\")) (Some ((\\"owner\\") (\\"token_id\\"))) (\\"\\" -1)))) (callback (contract (list (record ((request (record ((owner \\"address\\") (token_id \\"nat\\")) (Some ((\\"owner\\") (\\"token_id\\"))) (\\"\\" -1))) (balance \\"nat\\")) (Some ((\\"request\\") (\\"balance\\"))) (\\"\\" -1)))))) (Some ((\\"requests\\") (\\"callback\\"))) (\\"\\" -1)) (\\"\\" -1)))) (mint True False False True (\\"FA2.ts\\" 187) ((set_type (params (\\"FA2.ts\\" 187)) (record ((address \\"address\\") (amount \\"nat\\") (token_id \\"nat\\")) (Some Right) (\\"\\" -1)) (\\"\\" -1)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 187)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 187)) (\\"FA2.ts\\" 187)) (defineLocal \\"ledger_key\\" (tuple (\\"FA2.ts\\" 187) (attr (params (\\"FA2.ts\\" 187)) \\"address\\" (\\"expression.ts\\" 29)) (attr (params (\\"FA2.ts\\" 187)) \\"token_id\\" (\\"expression.ts\\" 29))) True (\\"FA2.ts\\" 187)) (defineLocal \\"balance\\" (attr (getItemDefault (attr (attr (data) \\"assets\\" (\\"expression.ts\\" 29)) \\"ledger\\" (\\"expression.ts\\" 29)) (getLocal \\"ledger_key\\" (\\"FA2.ts\\" 187)) (record (\\"FA2.ts\\" 187) (balance (literal (nat 0) (\\"FA2.ts\\" 187)))) (\\"FA2.ts\\" 187)) \\"balance\\" (\\"expression.ts\\" 29)) True (\\"FA2.ts\\" 187)) (set (getItem (attr (attr (data) \\"assets\\" (\\"expression.ts\\" 29)) \\"ledger\\" (\\"expression.ts\\" 29)) (getLocal \\"ledger_key\\" (\\"FA2.ts\\" 187)) (\\"FA2.ts\\" 187)) (record (\\"FA2.ts\\" 187) (balance (add (getLocal \\"balance\\" (\\"FA2.ts\\" 187)) (attr (params (\\"FA2.ts\\" 187)) \\"amount\\" (\\"expression.ts\\" 29)) (\\"math.ts\\" 6)))) (\\"FA2.ts\\" 187)))) (pause True False False True (\\"FA2.ts\\" 203) ((set_type (params (\\"FA2.ts\\" 203)) \\"bool\\" (\\"\\" -1)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 203)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 203)) (\\"FA2.ts\\" 203)) (set (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"paused\\" (\\"expression.ts\\" 29)) (params (\\"FA2.ts\\" 203)) (\\"FA2.ts\\" 203)))) (set_admin True False False True (\\"FA2.ts\\" 211) ((set_type (params (\\"FA2.ts\\" 211)) \\"address\\" (\\"\\" -1)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 211)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 211)) (\\"FA2.ts\\" 211)) (set (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (params (\\"FA2.ts\\" 211)) (\\"FA2.ts\\" 211)))) (update_metadata True False False True (\\"FA2.ts\\" 219) ((set_type (params (\\"FA2.ts\\" 219)) (map \\"string\\" \\"bytes\\") (\\"\\" -1)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 219)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 219)) (\\"FA2.ts\\" 219)) (forGroup \\"__ITERATOR__\\" (items (params (\\"FA2.ts\\" 219)) (\\"FA2.ts\\" 219)) ((set (getItem (attr (data) \\"metadata\\" (\\"expression.ts\\" 29)) (attr (iter \\"__ITERATOR__\\" (\\"FA2.ts\\" 219)) \\"key\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 219)) (attr (iter \\"__ITERATOR__\\" (\\"FA2.ts\\" 219)) \\"value\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 219))) (\\"FA2.ts\\" 219)))))
+            template_id (static_id 0 (\\"FA2.ts\\" 129))
+            storage (record (\\"FA2.ts\\" 149) (config (record (\\"FA2.ts\\" 150) (administrator (literal (address tz1) (\\"FA2.ts\\" 151))) (paused (literal (bool False) (\\"FA2.ts\\" 152))))) (assets (record (\\"FA2.ts\\" 154) (ledger (big_map (\\"FA2.ts\\" 155) )) (operators (big_map (\\"FA2.ts\\" 156) )) (token_metadata (big_map (\\"FA2.ts\\" 157) )) (token_total_supply (big_map (\\"FA2.ts\\" 158) )))) (metadata (big_map (\\"FA2.ts\\" 160) )))
+            storage_type ((record ((config (record ((administrator \\"address\\") (paused \\"bool\\")) (Some ((\\"administrator\\") (\\"paused\\"))) (\\"\\" -1))) (assets (record ((ledger (bigmap (tuple \\"address\\" \\"nat\\") (record ((balance \\"nat\\")) (Some Right) (\\"\\" -1)))) (operators (bigmap (record ((owner \\"address\\") (operator \\"address\\") (token_id \\"nat\\")) (Some ((\\"owner\\") ((\\"operator\\") (\\"token_id\\")))) (\\"\\" -1)) \\"unit\\")) (token_metadata (bigmap \\"nat\\" (record ((token_id \\"nat\\") (token_info (map \\"string\\" \\"bytes\\"))) (Some Right) (\\"\\" -1)))) (token_total_supply (bigmap \\"nat\\" \\"nat\\"))) (Some ((\\"ledger\\") ((\\"operators\\") ((\\"token_metadata\\") (\\"token_total_supply\\"))))) (\\"\\" -1))) (metadata (bigmap \\"string\\" \\"bytes\\"))) (Some Right) (\\"\\" -1)))
+            messages ((transfer True False False True (\\"FA2.ts\\" 163) ((set_type (params (\\"FA2.ts\\" 163)) \\"unit\\" (\\"\\" -1)))) (update_operators True False False True (\\"FA2.ts\\" 165) ((set_type (params (\\"FA2.ts\\" 165)) (list (variant ((add_operator (record ((owner \\"address\\") (operator \\"address\\") (token_id \\"nat\\")) (Some ((\\"owner\\") ((\\"operator\\") (\\"token_id\\")))) (\\"\\" -1))) (remove_operator (record ((owner \\"address\\") (operator \\"address\\") (token_id \\"nat\\")) (Some ((\\"owner\\") ((\\"operator\\") (\\"token_id\\")))) (\\"\\" -1)))) (Some ((\\"add_operator\\") (\\"remove_operator\\"))) (\\"\\" -1))) (\\"\\" -1)) (forGroup \\"__ITERATOR__\\" (params (\\"FA2.ts\\" 165)) ((match_cases (iter \\"__ITERATOR__\\" (\\"FA2.ts\\" 165)) \\"__MATCH_1__\\" ((match (cases_arg \\"__MATCH_1__\\" (\\"FA2.ts\\" 165)) add_operator \\"__MATCH_1___add_operator\\" ((verify (eq (attr (variant_arg \\"__MATCH_1___add_operator\\" (\\"FA2.ts\\" 165)) \\"owner\\" (\\"expression.ts\\" 29)) (sender) (\\"comparison.ts\\" 6)) (literal (string \\"FA2__NOT_OWNER\\") (\\"FA2.ts\\" 165)) (\\"FA2.ts\\" 165)) (set (getItem (attr (attr (data) \\"assets\\" (\\"expression.ts\\" 29)) \\"operators\\" (\\"expression.ts\\" 29)) (variant_arg \\"__MATCH_1___add_operator\\" (\\"FA2.ts\\" 165)) (\\"FA2.ts\\" 165)) (unit) (\\"FA2.ts\\" 165))) (\\"FA2.ts\\" 165)) (match (cases_arg \\"__MATCH_1__\\" (\\"FA2.ts\\" 165)) remove_operator \\"__MATCH_1___remove_operator\\" ((verify (eq (attr (variant_arg \\"__MATCH_1___remove_operator\\" (\\"FA2.ts\\" 165)) \\"owner\\" (\\"expression.ts\\" 29)) (sender) (\\"comparison.ts\\" 6)) (literal (string \\"FA2__NOT_OWNER\\") (\\"FA2.ts\\" 165)) (\\"FA2.ts\\" 165)) (delItem (attr (attr (data) \\"assets\\" (\\"expression.ts\\" 29)) \\"operators\\" (\\"expression.ts\\" 29)) (variant_arg \\"__MATCH_1___remove_operator\\" (\\"FA2.ts\\" 165)) (\\"FA2.ts\\" 165))) (\\"FA2.ts\\" 165))) (\\"FA2.ts\\" 165))) (\\"FA2.ts\\" 165)))) (balance_of True False False True (\\"FA2.ts\\" 179) ((set_type (params (\\"FA2.ts\\" 179)) (record ((requests (list (record ((owner \\"address\\") (token_id \\"nat\\")) (Some ((\\"owner\\") (\\"token_id\\"))) (\\"\\" -1)))) (callback (contract (list (record ((request (record ((owner \\"address\\") (token_id \\"nat\\")) (Some ((\\"owner\\") (\\"token_id\\"))) (\\"\\" -1))) (balance \\"nat\\")) (Some ((\\"request\\") (\\"balance\\"))) (\\"\\" -1)))))) (Some ((\\"requests\\") (\\"callback\\"))) (\\"\\" -1)) (\\"\\" -1)))) (mint True False False True (\\"FA2.ts\\" 181) ((set_type (params (\\"FA2.ts\\" 181)) (record ((address \\"address\\") (amount \\"nat\\") (token_id \\"nat\\")) (Some Right) (\\"\\" -1)) (\\"\\" -1)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 181)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 181)) (\\"FA2.ts\\" 181)) (defineLocal \\"ledger_key\\" (tuple (\\"FA2.ts\\" 181) (attr (params (\\"FA2.ts\\" 181)) \\"address\\" (\\"expression.ts\\" 29)) (attr (params (\\"FA2.ts\\" 181)) \\"token_id\\" (\\"expression.ts\\" 29))) True (\\"FA2.ts\\" 181)) (defineLocal \\"balance\\" (attr (getItemDefault (attr (attr (data) \\"assets\\" (\\"expression.ts\\" 29)) \\"ledger\\" (\\"expression.ts\\" 29)) (getLocal \\"ledger_key\\" (\\"FA2.ts\\" 181)) (record (\\"FA2.ts\\" 181) (balance (literal (nat 0) (\\"FA2.ts\\" 181)))) (\\"FA2.ts\\" 181)) \\"balance\\" (\\"expression.ts\\" 29)) True (\\"FA2.ts\\" 181)) (set (getItem (attr (attr (data) \\"assets\\" (\\"expression.ts\\" 29)) \\"ledger\\" (\\"expression.ts\\" 29)) (getLocal \\"ledger_key\\" (\\"FA2.ts\\" 181)) (\\"FA2.ts\\" 181)) (record (\\"FA2.ts\\" 181) (balance (add (getLocal \\"balance\\" (\\"FA2.ts\\" 181)) (attr (params (\\"FA2.ts\\" 181)) \\"amount\\" (\\"expression.ts\\" 29)) (\\"math.ts\\" 6)))) (\\"FA2.ts\\" 181)))) (pause True False False True (\\"FA2.ts\\" 197) ((set_type (params (\\"FA2.ts\\" 197)) \\"bool\\" (\\"\\" -1)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 197)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 197)) (\\"FA2.ts\\" 197)) (set (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"paused\\" (\\"expression.ts\\" 29)) (params (\\"FA2.ts\\" 197)) (\\"FA2.ts\\" 197)))) (set_admin True False False True (\\"FA2.ts\\" 205) ((set_type (params (\\"FA2.ts\\" 205)) \\"address\\" (\\"\\" -1)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 205)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 205)) (\\"FA2.ts\\" 205)) (set (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (params (\\"FA2.ts\\" 205)) (\\"FA2.ts\\" 205)))) (update_metadata True False False True (\\"FA2.ts\\" 213) ((set_type (params (\\"FA2.ts\\" 213)) (map \\"string\\" \\"bytes\\") (\\"\\" -1)) (verify (eq (sender) (attr (attr (data) \\"config\\" (\\"expression.ts\\" 29)) \\"administrator\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 213)) (literal (string \\"FA2__Not_Admin\\") (\\"FA2.ts\\" 213)) (\\"FA2.ts\\" 213)) (forGroup \\"__ITERATOR__\\" (items (params (\\"FA2.ts\\" 213)) (\\"FA2.ts\\" 213)) ((set (getItem (attr (data) \\"metadata\\" (\\"expression.ts\\" 29)) (attr (iter \\"__ITERATOR__\\" (\\"FA2.ts\\" 213)) \\"key\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 213)) (attr (iter \\"__ITERATOR__\\" (\\"FA2.ts\\" 213)) \\"value\\" (\\"expression.ts\\" 29)) (\\"FA2.ts\\" 213))) (\\"FA2.ts\\" 213)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"FA2.ts\\" 137))
+            balance (literal (mutez 0) (\\"FA2.ts\\" 129))
         )
         "
 `;
@@ -85,7 +85,7 @@ exports[`Test contract templates FA2.ts 2`] = `
                                                             {
                                                                 \\"prim\\": \\"address\\",
                                                                 \\"annots\\": [
-                                                                    \\"%operator\\"
+                                                                    \\"%owner\\"
                                                                 ]
                                                             },
                                                             {
@@ -94,7 +94,7 @@ exports[`Test contract templates FA2.ts 2`] = `
                                                                     {
                                                                         \\"prim\\": \\"address\\",
                                                                         \\"annots\\": [
-                                                                            \\"%owner\\"
+                                                                            \\"%operator\\"
                                                                         ]
                                                                     },
                                                                     {
@@ -1026,6 +1026,9 @@ exports[`Test contract templates FA2.ts 2`] = `
                                                                     \\"args\\": [
                                                                         [
                                                                             {
+                                                                                \\"prim\\": \\"DUP\\"
+                                                                            },
+                                                                            {
                                                                                 \\"prim\\": \\"CAR\\"
                                                                             },
                                                                             {
@@ -1058,10 +1061,94 @@ exports[`Test contract templates FA2.ts 2`] = `
                                                                                         }
                                                                                     ]
                                                                                 ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"DIG\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"2\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"DUP\\"
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"GET\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"3\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"DUP\\"
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"GET\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"3\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"PUSH\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"prim\\": \\"option\\",
+                                                                                        \\"args\\": [
+                                                                                            {
+                                                                                                \\"prim\\": \\"unit\\"
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        \\"prim\\": \\"Some\\",
+                                                                                        \\"args\\": [
+                                                                                            {
+                                                                                                \\"prim\\": \\"Unit\\"
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"DIG\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"4\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"UPDATE\\"
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"UPDATE\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"3\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"UPDATE\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"3\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"SWAP\\"
                                                                             }
                                                                         ],
                                                                         [
                                                                             {
+                                                                                \\"prim\\": \\"DUP\\"
+                                                                            },
+                                                                            {
                                                                                 \\"prim\\": \\"CAR\\"
                                                                             },
                                                                             {
@@ -1094,6 +1181,74 @@ exports[`Test contract templates FA2.ts 2`] = `
                                                                                         }
                                                                                     ]
                                                                                 ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"DIG\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"2\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"DUP\\"
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"GET\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"3\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"DUP\\"
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"GET\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"3\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"NONE\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"prim\\": \\"unit\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"DIG\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"4\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"UPDATE\\"
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"UPDATE\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"3\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"UPDATE\\",
+                                                                                \\"args\\": [
+                                                                                    {
+                                                                                        \\"int\\": \\"3\\"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"SWAP\\"
                                                                             }
                                                                         ]
                                                                     ]
