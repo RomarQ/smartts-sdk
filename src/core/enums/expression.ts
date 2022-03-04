@@ -15,6 +15,8 @@ export enum ExpressionAtom {
     items = 'items',
     update_map = 'update_map',
     getItem = 'getItem',
+    getItemDefault = 'getItemDefault',
+    getItemMessage = 'getItemMessage',
     attr = 'attr',
     params = 'params',
     getLocal = 'getLocal',

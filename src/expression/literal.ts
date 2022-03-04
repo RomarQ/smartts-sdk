@@ -63,7 +63,7 @@ class RecordLiteral implements ILiteral<TypeAtom.record> {
     _type = null as unknown as TypeAtom.record;
     type = {} as unknown as IType;
 
-    constructor(private fields: Record<string, ILiteral<unknown>>, private line: LineInfo) {}
+    constructor(private fields: Record<string, IExpression>, private line: LineInfo) {}
 
     private buildFields = (fields: Record<string, IExpressionKind>) => {
         return Object.entries(fields).map(([field, expr]) => `(${field} ${expr.toString()})`);
@@ -212,8 +212,7 @@ export const Ticket = (content: IExpression, amount: LiteralExpression<TypeAtom.
     new LiteralExpression<TypeAtom.ticket>(LiteralAtom.ticket, [content, amount], line);
 export const Sapling_state = (memo: number, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.sapling_state>(LiteralAtom.sapling_state, [memo], line);
-export const Record = (fields: Record<string, ILiteral<unknown>>, line = new LineInfo()) =>
-    new RecordLiteral(fields, line);
+export const Record = (fields: Record<string, IExpression>, line = new LineInfo()) => new RecordLiteral(fields, line);
 export const Variant = (field: string, value: IExpression, line = new LineInfo()) =>
     new LiteralExpression<TypeAtom.variant>(LiteralAtom.variant, [field, value], line);
 export const Left = (value: IExpressionKind, line = new LineInfo()) =>

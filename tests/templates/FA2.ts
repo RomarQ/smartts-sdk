@@ -1,5 +1,5 @@
 import { Contract, EntryPoint } from '../../src/core';
-import { ForEachOf, Require, SetValue } from '../../src/statement';
+import { ForEachOf, NewVariable, Require, SetValue } from '../../src/statement';
 import { Layout } from '../../src/core/enums/layout';
 import {
     GetProperty,
@@ -11,8 +11,12 @@ import {
     Record,
     String,
     GetEntries,
-    GetItem,
     GetSender,
+    Pair,
+    GetMapValue,
+    GetVariable,
+    Math,
+    Nat,
 } from '../../src/expression';
 import { TAddress, TBig_map, TBool, TBytes, TMap, TNat, TRecord, TString, TPair, TUnit } from '../../src/type';
 
@@ -38,6 +42,15 @@ const TTokenMetadata = TRecord(
     {
         token_id: TNat(),
         token_info: TMap(TString(), TBytes()),
+    },
+    Layout.right_comb,
+);
+
+const TMintArgument = TRecord(
+    {
+        address: TAddress(),
+        amount: TNat(),
+        token_id: TNat(),
     },
     Layout.right_comb,
 );
@@ -85,9 +98,19 @@ const FA2Contract = new Contract()
     .addEntrypoint(new EntryPoint('transfer'))
     .addEntrypoint(new EntryPoint('update_operators'))
     .addEntrypoint(
-        new EntryPoint('mint').code(() => [
+        new EntryPoint('mint').inputType(TMintArgument).code((arg) => [
             // Sender must be the administrator
             FailIfSenderIsNotAdmin(),
+            NewVariable('ledger_key', Pair(arg.address, arg.token_id)),
+            NewVariable(
+                'balance',
+                GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key'), Record({ balance: Nat(0) }))
+                    .balance,
+            ),
+            SetValue(
+                GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key')),
+                Record({ balance: Math.Add(GetVariable('balance'), arg.amount) }),
+            ),
         ]),
     )
     .addEntrypoint(
@@ -112,7 +135,7 @@ const FA2Contract = new Contract()
             FailIfSenderIsNotAdmin(),
             // Update metadata entries
             ForEachOf(GetEntries(metadata)).Do((item) => [
-                SetValue(GetItem(item.key, GetProperty(ContractStorage(), 'metadata')), item.value),
+                SetValue(GetMapValue(ContractStorage().metadata, item.key), item.value),
             ]),
         ]),
     );

@@ -4,6 +4,8 @@ import { IExpression } from '../typings/expression';
 import { ILiteral } from '../typings/literal';
 import { IType } from '../typings/type';
 import { IStatement } from '../typings/statement';
+import { Expression } from './expression';
+import { Proxied, proxy } from '../misc/proxy';
 
 interface EntryPointOptions {
     mock?: boolean;
@@ -55,8 +57,8 @@ export class EntryPoint {
         return this;
     }
 
-    public code(callback: (arg: IExpression) => IStatement[]) {
-        const param = MethodArgument(this.#line);
+    public code(callback: (arg: Proxied<IExpression>) => IStatement[]) {
+        const param = proxy(MethodArgument(this.#line), Expression.proxyHandler);
         if (this.#inType) {
             // Add type annotation if an input type was provided
             this.#statements = [SetType(param, this.#inType)];

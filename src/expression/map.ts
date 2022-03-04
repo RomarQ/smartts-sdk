@@ -8,13 +8,48 @@ export const GetEntries = (source: IExpression, line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.items, source, line), Expression.proxyHandler);
 export const UpdateMap = (source: IExpression, key: IExpression, value: IExpression, line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.update_map, source, key, value, line), Expression.proxyHandler);
-export const GetItem = (source: IExpression, key: IExpression, line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.getItem, key, source, line), Expression.proxyHandler);
+
+/**
+ * Accesss by key the value stored in a map or big map.
+ *
+ * ```typescript
+ * ```
+
+ * @param source
+ * @param key
+ * @param default_value
+ * @param error_message
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression
+ */
+export const GetMapValue = (
+    source: IExpression,
+    key: IExpression,
+    default_value?: IExpression,
+    error_message?: IExpression,
+    line = new LineInfo(),
+) => {
+    if (default_value) {
+        return proxy(
+            new Expression(ExpressionAtom.getItemDefault, source, key, default_value, line),
+            Expression.proxyHandler,
+        );
+    }
+    if (error_message) {
+        return proxy(
+            new Expression(ExpressionAtom.getItemMessage, source, key, error_message, line),
+            Expression.proxyHandler,
+        );
+    }
+
+    return proxy(new Expression(ExpressionAtom.getItem, source, key, line), Expression.proxyHandler);
+};
 
 const MapExpressions = {
     GetEntries,
     UpdateMap,
-    GetItem,
+    GetMapValue,
 };
 
 export default MapExpressions;
