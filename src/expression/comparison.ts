@@ -29,5 +29,3 @@ export const Comparison = {
     LessThanOrEqual,
     GreaterThanOrEqual,
 };
-
-export default Comparison;

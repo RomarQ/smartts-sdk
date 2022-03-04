@@ -11,6 +11,8 @@ export enum ExpressionAtom {
     gt = 'gt',
     le = 'le',
     ge = 'ge',
+    // Unary
+    not = 'not',
     //
     items = 'items',
     update_map = 'update_map',
