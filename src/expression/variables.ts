@@ -1,8 +1,6 @@
 import ExpressionAtom from '../core/enums/expression';
 import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
-import { IExpression } from '../typings/expression';
-import { IType } from '../typings/type';
 import { Expression } from '../core/expression';
 import { TUnknown } from '../type';
 
@@ -58,9 +56,6 @@ export const MethodArgument = (line = new LineInfo()) =>
 export const LambdaArgument = (name = 'lambda_arg', argumentType = TUnknown(), id = 0, line = new LineInfo()) =>
     new Expression('lambdaParams', `${id}`, `"${name}"`, line, argumentType);
 
-export const SetType = (expr: IExpression, type: IType, line = new LineInfo()) =>
-    new Expression('set_type', expr, type, line);
-
 const Expressions = {
     GetVariable,
     ContractStorage,
@@ -68,7 +63,6 @@ const Expressions = {
     Iterator,
     MethodArgument,
     LambdaArgument,
-    SetType,
 };
 
 export default Expressions;

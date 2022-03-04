@@ -1,4 +1,4 @@
-import { MethodArgument, Mutez, SetType, Unit } from '../expression';
+import { MethodArgument, Mutez, Unit } from '../expression';
 import Utils, { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { ILiteral } from '../typings/literal';
@@ -6,6 +6,8 @@ import { IType } from '../typings/type';
 import { IStatement } from '../typings/statement';
 import { Expression } from './expression';
 import { Proxied, proxy } from '../misc/proxy';
+import { SetType } from '../statement';
+import { TUnit } from '..';
 
 interface EntryPointOptions {
     mock?: boolean;
@@ -24,18 +26,18 @@ interface EntryPointOptions {
  * ```
  */
 export class EntryPoint {
+    public name: string;
     #options = {
         mock: false,
         lazy: false,
         lazyAndCodeless: false,
     };
-    #inType?: IType;
+    #inType: IType = TUnit();
     #statements: IStatement[] = [];
-    #name: string;
     #line: LineInfo;
 
     constructor(name: string, line = new LineInfo()) {
-        this.#name = name;
+        this.name = name;
         this.#line = line;
     }
 
@@ -58,13 +60,12 @@ export class EntryPoint {
     }
 
     public code(callback: (arg: Proxied<IExpression>) => IStatement[]) {
-        const param = proxy(MethodArgument(this.#line), Expression.proxyHandler);
-        if (this.#inType) {
-            // Add type annotation if an input type was provided
-            this.#statements = [SetType(param, this.#inType)];
-        }
-        this.#statements = [...this.#statements, ...callback(param)];
+        this.#statements = [...this.#statements, ...callback(this.entrypointArgument)];
         return this;
+    }
+
+    private get entrypointArgument() {
+        return proxy(MethodArgument(this.#line), Expression.proxyHandler);
     }
 
     [Symbol.toPrimitive]() {
@@ -72,9 +73,10 @@ export class EntryPoint {
         const isLazy = Utils.capitalizeBoolean(this.#options.lazy);
         const isLazyAndCodeless = Utils.capitalizeBoolean(this.#options.lazyAndCodeless);
         const hasParams = Utils.capitalizeBoolean(!!this.#inType);
-        return `(${this.#name} ${notMock} ${isLazy} ${isLazyAndCodeless} ${hasParams} ${
-            this.#line
-        } (${this.#statements.join(' ')}))`;
+        const stmts = [SetType(this.entrypointArgument, this.#inType), ...this.#statements];
+        return `(${this.name} ${notMock} ${isLazy} ${isLazyAndCodeless} ${hasParams} ${this.#line} (${stmts.join(
+            ' ',
+        )}))`;
     }
 }
 
@@ -124,7 +126,7 @@ export class Contract {
 
     #storage_type?: IType;
     #storage: IExpression = Unit();
-    #entries: EntryPoint[] = [];
+    #entries: Record<string, EntryPoint> = {};
 
     constructor(public line = new LineInfo()) {}
 
@@ -139,7 +141,7 @@ export class Contract {
     }
 
     public addEntrypoint(entrypoint: EntryPoint) {
-        this.#entries.push(entrypoint);
+        this.#entries[entrypoint.name] = entrypoint;
         return this;
     }
 
@@ -158,7 +160,7 @@ export class Contract {
     }
 
     public get entrypoints(): Readonly<EntryPoint[]> {
-        return this.#entries;
+        return Object.values(this.#entries);
     }
 
     public get config(): Readonly<{
@@ -174,7 +176,7 @@ export class Contract {
             template_id (static_id 0 ${this.line})
             storage ${this.#storage}
             storage_type (${this.#storage_type || '()'})
-            messages (${this.#entries.join(' ')})
+            messages (${this.entrypoints.join(' ')})
             flags (${this.#options.flags.join(' ')})
             privates ()
             views ()

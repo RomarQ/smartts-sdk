@@ -2,11 +2,13 @@ import type { IExpression } from '../typings/expression';
 import type { IStatement } from '../typings/statement';
 
 import StatementAtom from '../core/enums/statement';
+import ExpressionAtom from '../core/enums/expression';
 import { Statement } from '../core/statement';
+import { Expression } from '../core/expression';
 import { LineInfo } from '../misc/utils';
-import { Proxied } from '../misc/proxy';
-import { NewVariable, SetValue } from './variable';
+import { Proxied, proxy } from '../misc/proxy';
 import { GetVariable, Iterator, Comparison, Unit, Math } from '../expression';
+import { NewVariable, SetValue } from './variable';
 
 /**
  * Interrupt the smart-contract execution. (The whole operation is rollbacked)
@@ -231,6 +233,73 @@ export const For = (
     line = new LineInfo(),
 ) => new ForStatement(from, to, increment, statements, iteratorName, line);
 
-const Control = { FailWith, Require, If, ForEachOf, For, While };
+class VariantMatchStatement implements IStatement {
+    static idCounter = 0;
+    private cases: Record<string, IStatement[]> = {};
+
+    static get nextID() {
+        return ++VariantMatchStatement.idCounter;
+    }
+
+    constructor(private variant: IExpression, private argumentName: string, private line = new LineInfo()) {}
+
+    public setArgumentName(argumentName: string): this {
+        this.argumentName = argumentName;
+        return this;
+    }
+
+    public Case(branch: string, buildStatements: (arg: Proxied<IExpression>) => IStatement[]): this {
+        const variantArgument = this.variantArgument(`${this.argumentName}_${branch}`, this.line);
+        this.cases[branch] = buildStatements(variantArgument);
+        return this;
+    }
+
+    private caseArgument(argumentName: string, line: LineInfo) {
+        return new Expression(ExpressionAtom.cases_arg, `"${argumentName}"`, line);
+    }
+
+    private variantArgument(argumentName: string, line: LineInfo) {
+        return proxy(new Expression(ExpressionAtom.variant_arg, `"${argumentName}"`, line), Expression.proxyHandler);
+    }
+
+    [Symbol.toPrimitive]() {
+        const caseArgument = this.caseArgument(this.argumentName, this.line);
+        const matchCases = Object.keys(this.cases).map((branch) => {
+            return new Statement(
+                StatementAtom.match,
+                caseArgument,
+                branch,
+                `"${this.argumentName}_${branch}"`,
+                `(${this.cases[branch].join(' ')})`,
+                this.line,
+            );
+        });
+        return `(${StatementAtom.match_cases} ${this.variant} "${this.argumentName}" (${matchCases.join(' ')}) ${
+            this.line
+        })`;
+    }
+}
+/**
+ * Switch statement used to match branches on variant expressions.
+ *
+ * ```typescript
+ * MatchVariant(arg)
+    .Case('action1', (action) => [SetValue(ContractStorage(), action)])
+    .Case('action2', (action) => [SetValue(ContractStorage(), action)])
+ * ```
+ *
+ * @param variant Variant expression
+ * @param argumentName An optional argument name
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IStatement} A statement
+ */
+export const MatchVariant = (
+    variant: IExpression,
+    argumentName = `__MATCH_${VariantMatchStatement.nextID}__`,
+    line = new LineInfo(),
+) => new VariantMatchStatement(variant, argumentName, line);
+
+const Control = { FailWith, Require, If, ForEachOf, For, While, MatchVariant };
 
 export default Control;

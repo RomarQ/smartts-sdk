@@ -13,12 +13,13 @@ export const UpdateMap = (source: IExpression, key: IExpression, value: IExpress
  * Accesss by key the value stored in a map or big map.
  *
  * ```typescript
+ * GetMapValue(ContractStorage().metadata, String("key"))
  * ```
-
- * @param source
- * @param key
- * @param default_value
- * @param error_message
+ *
+ * @param source Map expression
+ * @param key Map key.
+ * @param default_value An optional default value when the key does not exist.
+ * @param error_message An optional value to be included in the error trace.
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
  * @returns {IExpression} An expression

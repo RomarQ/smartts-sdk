@@ -45,6 +45,8 @@ export enum ExpressionAtom {
     // Variant
     openVariant = 'openVariant',
     isVariant = 'isVariant',
+    cases_arg = 'cases_arg',
+    variant_arg = 'variant_arg',
 }
 
 export default ExpressionAtom;

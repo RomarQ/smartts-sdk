@@ -1,5 +1,5 @@
 import { Contract, EntryPoint } from '../../src/core';
-import { ForEachOf, NewVariable, Require, SetValue } from '../../src/statement';
+import { ForEachOf, If, MatchVariant, NewVariable, Require, SetValue } from '../../src/statement';
 import { Layout } from '../../src/core/enums/layout';
 import {
     GetProperty,
@@ -17,14 +17,31 @@ import {
     GetVariable,
     Math,
     Nat,
+    IsVariant,
+    Comparison,
 } from '../../src/expression';
-import { TAddress, TBig_map, TBool, TBytes, TMap, TNat, TRecord, TString, TPair, TUnit } from '../../src/type';
+import {
+    TAddress,
+    TBig_map,
+    TBool,
+    TBytes,
+    TMap,
+    TNat,
+    TRecord,
+    TString,
+    TPair,
+    TUnit,
+    TList,
+    TContract,
+    TVariant,
+} from '../../src/type';
 
 /**
  * Error Codes
  */
 enum FA2_Error {
     NOT_ADMIN = 'FA2__Not_Admin',
+    NOT_OWNER = 'FA2__NOT_OWNER',
 }
 
 /**
@@ -45,14 +62,70 @@ const TTokenMetadata = TRecord(
     },
     Layout.right_comb,
 );
-
-const TMintArgument = TRecord(
+// "mint" Entrypoint argument
+const TEntrypointMint = TRecord(
     {
         address: TAddress(),
         amount: TNat(),
         token_id: TNat(),
     },
     Layout.right_comb,
+);
+// "update_operators" Entrypoint argument
+const TEntrypointUpdateOperators = TList(
+    TVariant(
+        {
+            add_operator: TRecord(
+                {
+                    owner: TAddress(),
+                    operator: TAddress(),
+                    token_id: TNat(),
+                },
+                ['owner', ['operator', 'token_id']],
+            ),
+            remove_operator: TRecord(
+                {
+                    owner: TAddress(),
+                    operator: TAddress(),
+                    token_id: TNat(),
+                },
+                ['owner', ['operator', 'token_id']],
+            ),
+        },
+        ['add_operator', 'remove_operator'],
+    ),
+);
+// "balance_of" Entrypoint argument
+const TEntrypointBalanceOf = TRecord(
+    {
+        requests: TList(
+            TRecord(
+                {
+                    owner: TAddress(),
+                    token_id: TNat(),
+                },
+                ['owner', 'token_id'],
+            ),
+        ),
+        callback: TContract(
+            TList(
+                TRecord(
+                    {
+                        request: TRecord(
+                            {
+                                owner: TAddress(),
+                                token_id: TNat(),
+                            },
+                            ['owner', 'token_id'],
+                        ),
+                        balance: TNat(),
+                    },
+                    ['request', 'balance'],
+                ),
+            ),
+        ),
+    },
+    ['requests', 'callback'],
 );
 
 /**
@@ -96,9 +169,22 @@ const FA2Contract = new Contract()
         }),
     )
     .addEntrypoint(new EntryPoint('transfer'))
-    .addEntrypoint(new EntryPoint('update_operators'))
     .addEntrypoint(
-        new EntryPoint('mint').inputType(TMintArgument).code((arg) => [
+        new EntryPoint('update_operators').inputType(TEntrypointUpdateOperators).code((arg) => [
+            ForEachOf(arg).Do((item) => [
+                MatchVariant(item)
+                    .Case('add_operator', (arg) => [
+                        Require(Comparison.Equal(arg.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
+                    ])
+                    .Case('remove_operator', (arg) => [
+                        Require(Comparison.Equal(arg.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
+                    ]),
+            ]),
+        ]),
+    )
+    .addEntrypoint(new EntryPoint('balance_of').inputType(TEntrypointBalanceOf))
+    .addEntrypoint(
+        new EntryPoint('mint').inputType(TEntrypointMint).code((arg) => [
             // Sender must be the administrator
             FailIfSenderIsNotAdmin(),
             NewVariable('ledger_key', Pair(arg.address, arg.token_id)),
