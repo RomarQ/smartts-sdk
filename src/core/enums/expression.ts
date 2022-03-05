@@ -54,6 +54,7 @@ export enum ExpressionAtom {
     iter = 'iter',
     contract = 'contract',
     call_lambda = 'call_lambda',
+    view = 'view',
 }
 
 export default ExpressionAtom;
