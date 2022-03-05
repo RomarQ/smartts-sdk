@@ -9,6 +9,50 @@ import { Proxied, proxy } from '../misc/proxy';
 import { SetType } from '../statement';
 import { TUnit } from '..';
 
+abstract class View {
+    public name: string;
+    protected inType: IType = TUnit();
+    protected statements: IStatement[] = [];
+    protected line: LineInfo;
+
+    constructor(name: string, line = new LineInfo()) {
+        this.name = name;
+        this.line = line;
+    }
+
+    public inputType(type: IType) {
+        this.inType = type;
+        return this;
+    }
+
+    public code(callback: (arg: Proxied<IExpression>) => IStatement[]) {
+        this.statements = [...this.statements, ...callback(this.viewArgument)];
+        return this;
+    }
+
+    protected get viewArgument() {
+        return proxy(MethodArgument(this.line), Expression.proxyHandler);
+    }
+}
+
+export class OnChainView extends View {
+    [Symbol.toPrimitive]() {
+        const hasParams = Utils.capitalizeBoolean(true);
+        const isPure = Utils.capitalizeBoolean(false);
+        const stmts = [SetType(this.viewArgument, this.inType), ...this.statements];
+        return `(onchain ${this.name} ${hasParams} ${this.line} ${isPure} ${'""'} (${stmts.join(' ')}))`;
+    }
+}
+
+export class OffChainView extends View {
+    [Symbol.toPrimitive]() {
+        const hasParams = Utils.capitalizeBoolean(true);
+        const isPure = Utils.capitalizeBoolean(false);
+        const stmts = [SetType(this.viewArgument, this.inType), ...this.statements];
+        return `(offchain ${this.name} ${hasParams} ${this.line} ${isPure} ${''} (${stmts.join(' ')}))`;
+    }
+}
+
 interface EntryPointOptions {
     mock?: boolean;
     lazy?: boolean;
@@ -18,7 +62,7 @@ interface EntryPointOptions {
  * Class that represents a contract entrypoint.
  *
  * ```typescript
- * new EntryPoint('ep1')
+   new EntryPoint('ep1')
     .inputType(TNat())
     .code((arg) => [
         SetValue(ContractStorage(), arg);
@@ -72,7 +116,7 @@ export class EntryPoint {
         const notMock = Utils.capitalizeBoolean(!this.#options.mock);
         const isLazy = Utils.capitalizeBoolean(this.#options.lazy);
         const isLazyAndCodeless = Utils.capitalizeBoolean(this.#options.lazyAndCodeless);
-        const hasParams = Utils.capitalizeBoolean(!!this.#inType);
+        const hasParams = Utils.capitalizeBoolean(true);
         const stmts = [SetType(this.entrypointArgument, this.#inType), ...this.#statements];
         return `(${this.name} ${notMock} ${isLazy} ${isLazyAndCodeless} ${hasParams} ${this.#line} (${stmts.join(
             ' ',
@@ -127,6 +171,7 @@ export class Contract {
     #storage_type?: IType;
     #storage: IExpression = Unit();
     #entries: Record<string, EntryPoint> = {};
+    #onChainViews: Record<string, View> = {};
 
     constructor(public line = new LineInfo()) {}
 
@@ -142,6 +187,13 @@ export class Contract {
 
     public addEntrypoint(entrypoint: EntryPoint) {
         this.#entries[entrypoint.name] = entrypoint;
+        return this;
+    }
+
+    public addView(view: View) {
+        if (view instanceof OnChainView) {
+            this.#onChainViews[view.name] = view;
+        }
         return this;
     }
 
@@ -163,6 +215,10 @@ export class Contract {
         return Object.values(this.#entries);
     }
 
+    public get onChainViews(): Readonly<View[]> {
+        return Object.values(this.#onChainViews);
+    }
+
     public get config(): Readonly<{
         initialBalance: IExpression;
         flags: Flag[];
@@ -179,7 +235,7 @@ export class Contract {
             messages (${this.entrypoints.join(' ')})
             flags (${this.#options.flags.join(' ')})
             privates ()
-            views ()
+            views (${this.onChainViews.join(' ')})
             entry_points_layout ()
             initial_metadata ()
             balance ${this.#options.initialBalance}

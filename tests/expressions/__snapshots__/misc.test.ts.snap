@@ -103,3 +103,109 @@ exports[`Misc expressions CallLambda 2`] = `
     }
 ]"
 `;
+
+exports[`Misc expressions CallView 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"misc.test.ts\\" 24))
+            storage (variant \\"None\\" (unit) (\\"misc.test.ts\\" 25))
+            storage_type (())
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 28) ((set_type (params (\\"misc.test.ts\\" 28)) \\"bool\\" (\\"misc.test.ts\\" 34)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 28)) \\"bool\\" (\\"misc.test.ts\\" 30)) (\\"misc.test.ts\\" 30)))))
+            flags ()
+            privates ()
+            views ((onchain some_view True (\\"misc.test.ts\\" 26) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 26)) \\"bool\\" (\\"misc.test.ts\\" 34)) (result (not (params (\\"misc.test.ts\\" 26)) (\\"misc.test.ts\\" 26)) (\\"misc.test.ts\\" 26)))))
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 24))
+        )
+        "
+`;
+
+exports[`Misc expressions CallView 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"option\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"bool\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"bool\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"SELF_ADDRESS\\"
+                },
+                {
+                    \\"prim\\": \\"SWAP\\"
+                },
+                {
+                    \\"prim\\": \\"VIEW\\",
+                    \\"args\\": [
+                        {
+                            \\"string\\": \\"some_view\\"
+                        },
+                        {
+                            \\"prim\\": \\"bool\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    },
+    {
+        \\"prim\\": \\"view\\",
+        \\"args\\": [
+            {
+                \\"string\\": \\"some_view\\"
+            },
+            {
+                \\"prim\\": \\"bool\\"
+            },
+            {
+                \\"prim\\": \\"bool\\"
+            },
+            [
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"NOT\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
