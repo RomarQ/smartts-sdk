@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expressions specific to Pair values FirstElement 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"pair.test.ts\\" 8))
+            storage (tuple (\\"pair.test.ts\\" 9) (literal (nat 1) (\\"pair.test.ts\\" 9)) (literal (string \\"A String\\") (\\"pair.test.ts\\" 9)))
+            storage_type (())
+            messages ((ep1 True False False True (\\"pair.test.ts\\" 10) ((set_type (params (\\"pair.test.ts\\" 10)) \\"unit\\" (\\"pair.test.ts\\" 11)) (verify (eq (first (data) (\\"pair.test.ts\\" 10)) (literal (nat 1) (\\"pair.test.ts\\" 10)) (\\"pair.test.ts\\" 10)) (unit) (\\"pair.test.ts\\" 10)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"pair.test.ts\\" 8))
+        )
+        "
+`;
+
+exports[`Expressions specific to Pair values FirstElement 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"pair\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    },
+                    {
+                        \\"prim\\": \\"string\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"CAR\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"int\\": \\"1\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"COMPARE\\"
+                },
+                {
+                    \\"prim\\": \\"EQ\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [],
+                        [
+                            {
+                                \\"prim\\": \\"UNIT\\"
+                            },
+                            {
+                                \\"prim\\": \\"FAILWITH\\"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;
+
+exports[`Expressions specific to Pair values SecondElement 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"pair.test.ts\\" 17))
+            storage (tuple (\\"pair.test.ts\\" 18) (literal (nat 1) (\\"pair.test.ts\\" 18)) (literal (string \\"A String\\") (\\"pair.test.ts\\" 18)))
+            storage_type (())
+            messages ((ep1 True False False True (\\"pair.test.ts\\" 20) ((set_type (params (\\"pair.test.ts\\" 20)) \\"unit\\" (\\"pair.test.ts\\" 24)) (verify (eq (second (data) (\\"pair.test.ts\\" 20)) (literal (string \\"A String\\") (\\"pair.test.ts\\" 20)) (\\"pair.test.ts\\" 20)) (unit) (\\"pair.test.ts\\" 20)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"pair.test.ts\\" 17))
+        )
+        "
+`;
+
+exports[`Expressions specific to Pair values SecondElement 2`] = `
+"[
+    {
+        \\"prim\\": \\"storage\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"pair\\",
+                \\"args\\": [
+                    {
+                        \\"prim\\": \\"nat\\"
+                    },
+                    {
+                        \\"prim\\": \\"string\\"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"parameter\\",
+        \\"args\\": [
+            {
+                \\"prim\\": \\"unit\\",
+                \\"annots\\": [
+                    \\"%ep1\\"
+                ]
+            }
+        ]
+    },
+    {
+        \\"prim\\": \\"code\\",
+        \\"args\\": [
+            [
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"DUP\\"
+                },
+                {
+                    \\"prim\\": \\"CDR\\"
+                },
+                {
+                    \\"prim\\": \\"PUSH\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"string\\"
+                        },
+                        {
+                            \\"string\\": \\"A String\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"COMPARE\\"
+                },
+                {
+                    \\"prim\\": \\"EQ\\"
+                },
+                {
+                    \\"prim\\": \\"IF\\",
+                    \\"args\\": [
+                        [],
+                        [
+                            {
+                                \\"prim\\": \\"UNIT\\"
+                            },
+                            {
+                                \\"prim\\": \\"FAILWITH\\"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    \\"prim\\": \\"NIL\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"operation\\"
+                        }
+                    ]
+                },
+                {
+                    \\"prim\\": \\"PAIR\\"
+                }
+            ]
+        ]
+    }
+]"
+`;

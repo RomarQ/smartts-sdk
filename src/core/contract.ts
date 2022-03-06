@@ -7,7 +7,7 @@ import { IStatement } from '../typings/statement';
 import { Expression } from './expression';
 import { Proxied, proxy } from '../misc/proxy';
 import { SetType } from '../statement';
-import { TUnit } from '..';
+import { TUnit } from '../type';
 
 abstract class View {
     public name: string;

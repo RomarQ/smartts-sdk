@@ -11,3 +11,4 @@ export * from './operation';
 export * from './unary';
 export * from './variables';
 export * from './variant';
+export * from './pair';

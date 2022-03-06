@@ -1,4 +1,3 @@
-import { TUnit } from '..';
 import ExpressionAtom from '../core/enums/expression';
 import { Expression } from '../core/expression';
 import { proxy } from '../misc/proxy';
@@ -6,6 +5,7 @@ import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { IType } from '../typings/type';
 import { Unit } from './literal';
+import { TUnit } from '../type';
 import { OpenVariant } from './variant';
 
 /**

@@ -7,8 +7,7 @@ import { capitalizeBoolean, LineInfo, parenthesis, quote } from '../misc/utils';
 import { TUnknown } from '../type';
 import LiteralAtom from '../core/enums/literal';
 import TypeAtom from '../core/enums/type';
-import { Expression } from '../core/expression';
-import { LambdaArgument } from '.';
+import { LambdaArgument } from './variables';
 
 class LiteralExpression<T extends TypeAtom> implements ILiteral<T> {
     _isExpression = true as const;
