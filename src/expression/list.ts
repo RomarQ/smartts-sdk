@@ -10,6 +10,8 @@ import { IExpression } from '../typings/expression';
  * PrependToList(List([Nat(1)]), Nat(2));
  * ```
  *
+ * @category | List expressions
+ *
  * @param list
  * @param value The value to be appended to the list
  * @param {LineInfo} line Source code line information (Used in error messages)

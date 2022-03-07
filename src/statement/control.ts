@@ -82,7 +82,8 @@ export const MatchVariant = (
  * A (forEach) loop.
  *
  * ```typescript
- * ForEachOf(arg).Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))]);
+ * ForEachOf(arg)
+ *  .Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))]);
  * ```
  *
  * @category | Loop
@@ -105,7 +106,8 @@ export const ForEachOf = (
  * A basic (while) loop.
  *
  * ```typescript
- * While(LessThanOrEqual(ContractStorage(), Nat(10))).Do([SetValue(ContractStorage(), Add(ContractStorage(), Nat(1)))]);
+ * While(LessThanOrEqual(ContractStorage(), Nat(10)))
+ *  .Do([SetValue(ContractStorage(), Add(ContractStorage(), Nat(1)))]);
  * ```
  *
  * @category | Loop

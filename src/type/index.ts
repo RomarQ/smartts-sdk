@@ -71,20 +71,26 @@ export const TUnknown = (): IType => ({
 // Singleton types
 
 /**
- * @description The type whose only value is Unit
+ * The type whose only value is Unit
+ *
  * @see https://tezos.gitlab.io/michelson-reference/#type-unit
+ *
  * @return {IType<TypeAtom.unit>}
  */
 export const TUnit = () => new SimpleType(TypeAtom.unit);
 /**
- * @description The type whose only value an arbitrary-precision natural number
+ * The type whose only value an arbitrary-precision natural number
+ *
  * @see https://tezos.gitlab.io/michelson-reference/#type-nat
+ *
  * @return {IType<TypeAtom.nat>}
  */
 export const TNat = () => new SimpleType(TypeAtom.nat);
 /**
- * @description The type whose only value an arbitrary-precision integer
+ * The type whose only value an arbitrary-precision integer
+ *
  * @see https://tezos.gitlab.io/michelson-reference/#type-int
+ *
  * @return {IType<TypeAtom.int>}
  */
 export const TInt = () => new SimpleType(TypeAtom.int);
