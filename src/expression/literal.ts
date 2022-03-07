@@ -11,6 +11,7 @@ import { LambdaLiteral, LiteralExpression, MapLiteral, RecordLiteral } from '../
 /**
  * Build a literal of type unit.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-unit
  *
  * ```typescript
@@ -26,6 +27,7 @@ export const Unit = (line = new LineInfo()) => new LiteralExpression<TypeAtom.un
 /**
  * Build a literal of type nat.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-nat
  *
  * ```typescript
@@ -42,6 +44,7 @@ export const Nat = (value: number, line = new LineInfo()) =>
 /**
  * Build a literal of type int.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-int
  *
  * ```typescript
@@ -58,6 +61,7 @@ export const Int = (value: number, line = new LineInfo()) =>
 /**
  * Build a literal of type mutez.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-mutez
  *
  * ```typescript
@@ -74,6 +78,7 @@ export const Mutez = (value: number, line = new LineInfo()) =>
 /**
  * Build a literal of type string.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-string
  *
  * ```typescript
@@ -90,6 +95,7 @@ export const String = (value: string, line = new LineInfo()) =>
 /**
  * Build a literal of type bool.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-bool
  *
  * ```typescript
@@ -106,6 +112,7 @@ export const Bool = (value: boolean, line = new LineInfo()) =>
 /**
  * Build a literal of type address.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-address
  *
  * ```typescript
@@ -122,6 +129,7 @@ export const Address = (address: string, line = new LineInfo()) =>
 /**
  * Build a literal of type timestamp. (The input is the number of seconds since Epoch)
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-timestamp
  *
  * ```typescript
@@ -138,6 +146,7 @@ export const Timestamp = (timestamp: number, line = new LineInfo()) =>
 /**
  * Build a literal of type chain_id. (Represents a chain identifier)
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-chain_id
  *
  * ```typescript
@@ -154,6 +163,7 @@ export const Chain_id = (chainID: string, line = new LineInfo()) =>
 /**
  * Build a literal of type bytes.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-bytes
  *
  * ```typescript
@@ -170,6 +180,7 @@ export const Bytes = (bytes: string, line = new LineInfo()) =>
 /**
  * Build a literal of type bls12_381_fr.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-bls12_381_fr
  *
  * ```typescript
@@ -186,6 +197,7 @@ export const Bls12_381_fr = (fr: string | number, line = new LineInfo()) =>
 /**
  * Build a literal of type bls12_381_g1.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-bls12_381_g1
  *
  * ```typescript
@@ -202,6 +214,7 @@ export const Bls12_381_g1 = (bytes: string, line = new LineInfo()) =>
 /**
  * Build a literal of type bls12_381_g2.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-bls12_381_g2
  *
  * ```typescript
@@ -218,6 +231,7 @@ export const Bls12_381_g2 = (bytes: string, line = new LineInfo()) =>
 /**
  * Build a literal of type key.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-key
  *
  * ```typescript
@@ -234,6 +248,7 @@ export const Key = (key: string, line = new LineInfo()) =>
 /**
  * Build a literal of type key_hash.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-key_hash
  *
  * ```typescript
@@ -250,6 +265,7 @@ export const Key_hash = (key_hash: string, line = new LineInfo()) =>
 /**
  * Build a literal of type signature.
  *
+ * @category of Singleton Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-signature
  *
  * ```typescript
@@ -266,6 +282,7 @@ export const Signature = (signature: string, line = new LineInfo()) =>
 /**
  * Build a literal of type list.
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-list
  *
  * ```typescript
@@ -282,6 +299,7 @@ export const List = (items: IExpression[], line = new LineInfo()) =>
 /**
  * Build a literal of type set.
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-set
  *
  * ```typescript
@@ -298,6 +316,7 @@ export const Set = (items: IExpression[], line = new LineInfo()) =>
 /**
  * Build a literal of type option. (Wraps an existing optional value)
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#instr-SOME
  *
  * ```typescript
@@ -314,6 +333,7 @@ export const Some = (value: IExpressionKind, line = new LineInfo()) =>
 /**
  * Build a literal of type option. (Used to represent an absent optional value)
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#instr-NONE
  *
  * ```typescript
@@ -329,6 +349,7 @@ export const None = (line = new LineInfo()) => new LiteralExpression(LiteralAtom
 /**
  * Build a literal of type map.
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-map
  *
     ```typescript
@@ -352,6 +373,7 @@ export const Map = (
 /**
  * Build a literal of type big_map.
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-big_map
  *
     ```typescript
@@ -375,6 +397,7 @@ export const Big_map = (
 /**
  * Build a literal of type pair. (A binary tuple of values)
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-pair
  *
     ```typescript
@@ -391,6 +414,7 @@ export const Pair = (left: IExpression, right: IExpression, line = new LineInfo(
 /**
  * Build a literal of type lambda.
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-lambda
  *
     ```typescript
@@ -413,6 +437,7 @@ export const Lambda = (
 /**
  * Build a literal of type ticket.
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-ticket
  *
     ```typescript
@@ -429,6 +454,7 @@ export const Ticket = (content: IExpression, amount: LiteralExpression<TypeAtom.
 /**
  * Build a literal of type sapling_state.
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-sapling_state
  *
     ```typescript
@@ -445,6 +471,7 @@ export const Sapling_state = (memo: number, line = new LineInfo()) =>
 /**
  * Build a literal of type or. (Wrap a value in a union. It represents the left branch.)
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#instr-LEFT
  *
     ```typescript
@@ -461,6 +488,7 @@ export const Left = (value: IExpressionKind, line = new LineInfo()) =>
 /**
  * Build a literal of type or. (Wrap a value in a union. It represents the right branch.)
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#instr-RIGHT
  *
     ```typescript
@@ -477,6 +505,7 @@ export const Right = (value: IExpressionKind, line = new LineInfo()) =>
 /**
  * An artificial literal of type pair. (Uses nested annotated pair's to simulate an object value)
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-pair
  *
     ```typescript
@@ -496,6 +525,7 @@ export const Record = (fields: Record<string, IExpression>, line = new LineInfo(
 /**
  * An artificial literal of type or. (Uses nested annotated or's)
  *
+ * @category of Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-or
  *
     ```typescript
