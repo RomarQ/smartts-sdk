@@ -28,6 +28,7 @@ export enum LiteralAtom {
     tuple = 'tuple',
     ticket = 'ticket',
     sapling_state = 'sapling_empty_state',
+    lambda = 'lambda',
 }
 
 export default LiteralAtom;

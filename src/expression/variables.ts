@@ -1,9 +1,8 @@
 import ExpressionAtom from '../core/enums/expression';
 import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
-import { Expression } from '../core/expression';
+import { Expression, LambdaLiteral } from '../core/expression';
 import { TUnknown } from '../type';
-import { LambdaLiteral } from './literal';
 import { IExpression } from '../typings/expression';
 
 /**
