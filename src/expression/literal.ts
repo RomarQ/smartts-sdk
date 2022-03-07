@@ -106,7 +106,7 @@ class MapLiteral<T extends TypeAtom.map | TypeAtom.big_map> implements ILiteral<
     }
 }
 
-class LambdaLiteral implements ILiteral<TypeAtom.lambda> {
+export class LambdaLiteral implements ILiteral<TypeAtom.lambda> {
     _isExpression = true as const;
     // Used for type checking
     _type = TypeAtom.lambda as const;

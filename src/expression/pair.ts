@@ -20,7 +20,7 @@ export const FirstElement = (expression: IExpression, line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.first, expression, line), Expression.proxyHandler);
 
 /**
- * Access the left part of a pair
+ * Access the right part of a pair
  *
  * ```typescript
  * SecondElement(Pair(Nat(1), String("A String"))); // String("A String")
