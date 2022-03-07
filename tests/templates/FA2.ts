@@ -216,7 +216,7 @@ const FA2Contract = new Contract()
                     // Verify if sender has permissions
                     Require(
                         Or(
-                            Comparison.Equal(GetSender(), transfer.from_),
+                            Equal(GetSender(), transfer.from_),
                             MapContainsKey(
                                 ContractStorage().assets.operators,
                                 Record({
@@ -273,11 +273,11 @@ const FA2Contract = new Contract()
             ForEachOf(entrypoint_arg).Do((item) => [
                 MatchVariant(item)
                     .Case('add_operator', (payload) => [
-                        Require(Comparison.Equal(payload.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
+                        Require(Equal(payload.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
                         SetValue(GetMapValue(ContractStorage().assets.operators, payload), Unit()),
                     ])
                     .Case('remove_operator', (payload) => [
-                        Require(Comparison.Equal(payload.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
+                        Require(Equal(payload.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
                         DeleteMapEntry(ContractStorage().assets.operators, payload),
                     ]),
             ]),

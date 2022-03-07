@@ -6,7 +6,7 @@ import { IExpression } from '../typings/expression';
 import { PrependToList } from './list';
 import { Mutez, None, Unit } from './literal';
 import { Contract } from '../core';
-import { GetProperty } from './variables';
+import { GetOperations, GetProperty } from './variables';
 
 class OperationExpression extends Expression {
     send(line = new LineInfo()) {
@@ -31,20 +31,6 @@ class OriginationExpression extends Expression {
 }
 
 /**
- * Get operations list from the stack or an empty list otherwise.
- *
- * ```typescript
- *  // Get operations list from the stack or an empty list otherwise.
- *  GetOperations();
- * ```
- *
- * @param {LineInfo} line Source code line information (Used in error messages)
- *
- * @returns {IExpression} An expression
- */
-export const GetOperations = (line = new LineInfo()) => new Expression(ExpressionAtom.operations, line);
-
-/**
  * Build a transaction operation.
  *
  * ```typescript
@@ -53,6 +39,9 @@ export const GetOperations = (line = new LineInfo()) => new Expression(Expressio
  *  // Call an originated contract
  *  Transfer(GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), '<entrypoint>', TNat()), Mutez(100), Nat(1)).send();
  * ```
+ *
+ * @category | Operations
+ * @see https://tezos.gitlab.io/michelson-reference/#instr-TRANSFER_TOKENS
  *
  * @param contract Recipient contract
  * @param amount Transaction amount
@@ -78,6 +67,9 @@ export const Transfer = (
  *  SetDelegate(None()).send();
  * ```
  *
+ * @category | Operations
+ * @see https://tezos.gitlab.io/michelson-reference/#instr-SET_DELEGATE
+ *
  * @param keyHash An optional implicit account to receive the delegation.
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -95,6 +87,9 @@ export const SetDelegate = (keyHash: IExpression, line = new LineInfo()) =>
  *  // Create a new contract (Full)
  *  CreateContract(new Contract(), Nat(1), Mutez(100), Some(Key_hash("tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN"))).send();
  * ```
+ *
+ * @category | Operations
+ * @see https://tezos.gitlab.io/michelson-reference/#instr-CREATE_CONTRACT
  *
  * @param contract Contract class
  * @param storage Initial storage for the contract
@@ -127,6 +122,4 @@ export const CreateContract = (
     return expr;
 };
 
-const Operation = { GetOperations, Transfer, SetDelegate, CreateContract };
-
-export default Operation;
+export const Operation = { Transfer, SetDelegate, CreateContract };

@@ -9,6 +9,8 @@ import { IExpression } from '../typings/expression';
  * @param expression Boolean expression to be negated.
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
+ * @category | Unary
+ *
  * @returns {IExpression} An expression
  */
 export const Not = (expression: IExpression, line = new LineInfo()) =>

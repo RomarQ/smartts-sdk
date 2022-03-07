@@ -3,7 +3,7 @@ const assert = require('assert');
 const { Contract, EntryPoint, GetSender } = require('@tezwell/smartts-sdk');
 const { NewVariable, Require, SetValue } = require('@tezwell/smartts-sdk/statement');
 const { TNat } = require('@tezwell/smartts-sdk/type');
-const { Comparison, ContractStorage, GetVariable, Address, Nat, String } = require('@tezwell/smartts-sdk/expression');
+const { Equal, ContractStorage, GetVariable, Address, Nat, String } = require('@tezwell/smartts-sdk/expression');
 const SmartML = require('@tezwell/smartts-sdk/compiler');
 
 const contract = new Contract()
@@ -13,7 +13,7 @@ const contract = new Contract()
             // Define a variable named "some_address"
             NewVariable('some_address', Address('tz1')),
             // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
-            Require(Comparison.Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
+            Require(Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
             // Replace the storage value with entry point argument
             SetValue(ContractStorage(), arg),
         ]),
