@@ -29,7 +29,7 @@ npm install @tezwell/smartts-sdk
 
 ```js
 const {
-    Comparison,
+    Equal,
     Contract,
     EntryPoint,
     GetSender,
@@ -52,7 +52,7 @@ const contract = new Contract()
             // Define a variable named "some_address"
             NewVariable('some_address', Address('tz1')),
             // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
-            Require(Comparison.Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
+            Require(Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
             // Replace the storage value with entry point argument
             SetValue(ContractStorage(), arg),
         ]),

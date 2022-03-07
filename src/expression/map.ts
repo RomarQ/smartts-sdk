@@ -18,6 +18,8 @@ import { Expression } from '../core/expression';
    );
  * ```
  *
+ * @category | Map expressions
+ *
  * @param source Map expression
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -36,6 +38,8 @@ export const GetMapEntries = (source: IExpression, line = new LineInfo()) =>
  * UpdateMap(ContractStorage().metadata, String("some_key"), None());
  * ```
  *
+ * @category | Map expressions
+ *
  * @param source A map expression.
  * @param key The map key.
  * @param value An optional value to be indexed by the given key. (The entry is removed if None() is provided as value)
@@ -52,6 +56,8 @@ export const UpdateMap = (source: IExpression, key: IExpression, value: IExpress
  * ```typescript
  * GetMapValue(ContractStorage().metadata, String("key"))
  * ```
+ *
+ * @category | Map expressions
  *
  * @param source Map expression
  * @param key Map key.
@@ -90,6 +96,8 @@ export const GetMapValue = (
  * ```typescript
  * MapContainsKey(ContractStorage().metadata, String("sone_key"))
  * ```
+ *
+ * @category | Map expressions
  *
  * @param expression Map expression
  * @param key Map key.

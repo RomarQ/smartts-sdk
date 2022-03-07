@@ -1,5 +1,5 @@
+import type { IExpression } from '../typings/expression';
 import { LineInfo } from '../misc/utils';
-import { IExpression } from '../typings/expression';
 import { Expression } from '../core/expression';
 import ExpressionAtom from '../core/enums/expression';
 
@@ -9,6 +9,8 @@ import ExpressionAtom from '../core/enums/expression';
  * ```typescript
  * Add(Nat(1), Nat(1)); // Nat(2)
  * ```
+ *
+ * @category | Math
  *
  * @param left Expression
  * @param right Expression
@@ -26,6 +28,8 @@ export const Add = (left: IExpression, right: IExpression, line = new LineInfo()
  * Multiply(Nat(1), Nat(1)); // Nat(1)
  * ```
  *
+ * @category | Math
+ *
  * @param left Expression
  * @param right Expression
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -42,6 +46,8 @@ export const Multiply = (left: IExpression, right: IExpression, line = new LineI
  * Subtract(Nat(1), Nat(1)); // Nat(0)
  * ```
  *
+ * @category | Math
+ *
  * @param left Expression
  * @param right Expression
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -57,6 +63,8 @@ export const Subtract = (left: IExpression, right: IExpression, line = new LineI
  * ```typescript
  * Divide(Nat(1), Nat(1)); // Nat(1)
  * ```
+ *
+ * @category | Math
  *
  * @param left Expression
  * @param right Expression

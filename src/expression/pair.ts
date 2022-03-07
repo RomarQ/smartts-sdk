@@ -11,6 +11,8 @@ import { IExpression } from '../typings/expression';
  * FirstElement(Pair(Nat(1), String("A String"))); // Nat(1)
  * ```
  *
+ * @category | Pair expressions
+ *
  * @param expression An expression that resolves to a value of type TPair(...);
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -25,6 +27,8 @@ export const FirstElement = (expression: IExpression, line = new LineInfo()) =>
  * ```typescript
  * SecondElement(Pair(Nat(1), String("A String"))); // String("A String")
  * ```
+ *
+ * @category | Pair expressions
  *
  * @param expression An expression that resolves to a value of type TPair(...);
  * @param {LineInfo} line Source code line information (Used in error messages)

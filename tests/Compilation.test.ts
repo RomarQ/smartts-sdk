@@ -9,13 +9,14 @@ import {
     Some,
     Unit,
     ContractStorage,
-    Comparison,
+    Equal,
+    GreaterThanOrEqual,
     GetVariable,
     GetSender,
     Lambda,
     Mutez,
 } from '../src/expression';
-import { Contract, EntryPoint, Flag, OffChainView, OnChainView } from '../src/core';
+import { Contract, EntryPoint, Flag, OnChainView } from '../src/core';
 import { FailWith, If, NewVariable, Require, Return, SetValue } from '../src/statement';
 import { verifyContractCompilationOutput, verifyLambdaCompilationOutput } from './util';
 
@@ -23,7 +24,7 @@ describe('Compile Lambdas', () => {
     it('A Lambda that returns the argument', () => {
         const lambda = Lambda()
             .code((arg) => [
-                If(Comparison.Equal(arg, String('TEST')))
+                If(Equal(arg, String('TEST')))
                     .Then([Return(arg)])
                     .Else([FailWith(arg)]),
             ])
@@ -35,7 +36,7 @@ describe('Compile Lambdas', () => {
     it(' A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise', () => {
         const lambda = Lambda()
             .code((arg) => [
-                If(Comparison.GreaterThanOrEqual(arg, Nat(1)))
+                If(GreaterThanOrEqual(arg, Nat(1)))
                     .Then([Return(String('YES'))])
                     .Else([Return(String('NO'))]),
             ])
@@ -63,7 +64,7 @@ describe('Compile Contract', () => {
                         // Define a variable named "some_address"
                         NewVariable('some_address', Address('tz1')),
                         // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
-                        Require(Comparison.Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
+                        Require(Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
                         // Replace the storage value with entry point argument
                         SetValue(ContractStorage(), arg),
                     ]),

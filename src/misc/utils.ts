@@ -26,9 +26,12 @@ export class LineInfo implements IToString {
 }
 
 /**
- * @description Build right aligned nested binary pairs
+ * Build right aligned nested binary pairs
+ *
  * @see https://tezos.gitlab.io/active/michelson.html#operations-on-pairs-and-right-combs
+ *
  * @param fields A sequence of strings
+ *
  * @returns {ILayout}
  */
 export const composeRightCombLayout = (fields: string[]): ILayout => {

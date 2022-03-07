@@ -11,12 +11,12 @@ import { LambdaLiteral, LiteralExpression, MapLiteral, RecordLiteral } from '../
 /**
  * Build a literal of type unit.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-unit
- *
  * ```typescript
  * Unit();
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-unit
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -27,12 +27,12 @@ export const Unit = (line = new LineInfo()) => new LiteralExpression<TypeAtom.un
 /**
  * Build a literal of type nat.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-nat
- *
  * ```typescript
  * Nat(1);
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-nat
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -44,12 +44,12 @@ export const Nat = (value: number, line = new LineInfo()) =>
 /**
  * Build a literal of type int.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-int
- *
  * ```typescript
  * Int(1);
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-int
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -61,12 +61,12 @@ export const Int = (value: number, line = new LineInfo()) =>
 /**
  * Build a literal of type mutez.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-mutez
- *
  * ```typescript
  * Mutez(1);
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-mutez
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -77,13 +77,12 @@ export const Mutez = (value: number, line = new LineInfo()) =>
 
 /**
  * Build a literal of type string.
- *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-string
- *
  * ```typescript
  * String("Some String");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-string
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -95,12 +94,12 @@ export const String = (value: string, line = new LineInfo()) =>
 /**
  * Build a literal of type bool.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-bool
- *
  * ```typescript
  * Bool(false);
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-bool
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -112,12 +111,12 @@ export const Bool = (value: boolean, line = new LineInfo()) =>
 /**
  * Build a literal of type address.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-address
- *
  * ```typescript
  * Address("KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-address
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -129,12 +128,12 @@ export const Address = (address: string, line = new LineInfo()) =>
 /**
  * Build a literal of type timestamp. (The input is the number of seconds since Epoch)
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-timestamp
- *
  * ```typescript
  * Timestamp(1000);
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-timestamp
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -146,12 +145,12 @@ export const Timestamp = (timestamp: number, line = new LineInfo()) =>
 /**
  * Build a literal of type chain_id. (Represents a chain identifier)
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-chain_id
- *
  * ```typescript
  * Chain_id("0x00");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-chain_id
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -163,12 +162,12 @@ export const Chain_id = (chainID: string, line = new LineInfo()) =>
 /**
  * Build a literal of type bytes.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-bytes
- *
  * ```typescript
  * Bytes("0x01");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-bytes
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -180,12 +179,12 @@ export const Bytes = (bytes: string, line = new LineInfo()) =>
 /**
  * Build a literal of type bls12_381_fr.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-bls12_381_fr
- *
  * ```typescript
  * Bls12_381_fr("0x0001");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-bls12_381_fr
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -197,12 +196,12 @@ export const Bls12_381_fr = (fr: string | number, line = new LineInfo()) =>
 /**
  * Build a literal of type bls12_381_g1.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-bls12_381_g1
- *
  * ```typescript
  * Bls12_381_g1("0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-bls12_381_g1
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -214,12 +213,12 @@ export const Bls12_381_g1 = (bytes: string, line = new LineInfo()) =>
 /**
  * Build a literal of type bls12_381_g2.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-bls12_381_g2
- *
  * ```typescript
  * Bls12_381_g2("0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-bls12_381_g2
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -231,12 +230,12 @@ export const Bls12_381_g2 = (bytes: string, line = new LineInfo()) =>
 /**
  * Build a literal of type key.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-key
- *
  * ```typescript
  * Key("edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-key
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -248,12 +247,12 @@ export const Key = (key: string, line = new LineInfo()) =>
 /**
  * Build a literal of type key_hash.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-key_hash
- *
  * ```typescript
  * Key_hash("tz28QJHLyqvaY2rXAoFZTbxrXeD88NA8wscC");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-key_hash
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -265,12 +264,12 @@ export const Key_hash = (key_hash: string, line = new LineInfo()) =>
 /**
  * Build a literal of type signature.
  *
- * @category of Singleton Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-signature
- *
  * ```typescript
  * Signature("sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe");
  * ```
+ *
+ * @category | Singleton Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-signature
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -282,12 +281,12 @@ export const Signature = (signature: string, line = new LineInfo()) =>
 /**
  * Build a literal of type list.
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-list
- *
  * ```typescript
  * List([Nat(1)]);
  * ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-list
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -299,12 +298,12 @@ export const List = (items: IExpression[], line = new LineInfo()) =>
 /**
  * Build a literal of type set.
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-set
- *
  * ```typescript
  * Set([Nat(1)]);
  * ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-set
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -316,12 +315,12 @@ export const Set = (items: IExpression[], line = new LineInfo()) =>
 /**
  * Build a literal of type option. (Wraps an existing optional value)
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#instr-SOME
- *
  * ```typescript
  * Some(Nat(1));
  * ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#instr-SOME
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -333,12 +332,12 @@ export const Some = (value: IExpressionKind, line = new LineInfo()) =>
 /**
  * Build a literal of type option. (Used to represent an absent optional value)
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#instr-NONE
- *
  * ```typescript
  * None();
  * ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#instr-NONE
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -349,15 +348,15 @@ export const None = (line = new LineInfo()) => new LiteralExpression(LiteralAtom
 /**
  * Build a literal of type map.
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-map
- *
     ```typescript
         Map([
             [Nat(1), String('WORD1')],
             [Nat(2), String('WORD2')],
         ]);
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-map
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -373,15 +372,15 @@ export const Map = (
 /**
  * Build a literal of type big_map.
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-big_map
- *
     ```typescript
         Big_map([
             [Nat(1), String('WORD1')],
             [Nat(2), String('WORD2')],
         ]);
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-big_map
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -397,12 +396,12 @@ export const Big_map = (
 /**
  * Build a literal of type pair. (A binary tuple of values)
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-pair
- *
     ```typescript
         Pair(Nat(1), Bool(false));
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-pair
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -414,14 +413,14 @@ export const Pair = (left: IExpression, right: IExpression, line = new LineInfo(
 /**
  * Build a literal of type lambda.
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-lambda
- *
     ```typescript
         Lambda()
             .inputType(TString())
             .code((arg) => [Return(arg)]);
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-lambda
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -437,12 +436,12 @@ export const Lambda = (
 /**
  * Build a literal of type ticket.
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-ticket
- *
     ```typescript
         Ticket(String('A Ticket'), Nat(1));
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-ticket
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -454,12 +453,12 @@ export const Ticket = (content: IExpression, amount: LiteralExpression<TypeAtom.
 /**
  * Build a literal of type sapling_state.
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-sapling_state
- *
     ```typescript
         Sapling_state(8);
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-sapling_state
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -471,12 +470,12 @@ export const Sapling_state = (memo: number, line = new LineInfo()) =>
 /**
  * Build a literal of type or. (Wrap a value in a union. It represents the left branch.)
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#instr-LEFT
- *
     ```typescript
         Left(Nat(1));
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#instr-LEFT
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -488,12 +487,12 @@ export const Left = (value: IExpressionKind, line = new LineInfo()) =>
 /**
  * Build a literal of type or. (Wrap a value in a union. It represents the right branch.)
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#instr-RIGHT
- *
     ```typescript
         Right(Bool(false));
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#instr-RIGHT
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -505,9 +504,6 @@ export const Right = (value: IExpressionKind, line = new LineInfo()) =>
 /**
  * An artificial literal of type pair. (Uses nested annotated pair's to simulate an object value)
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-pair
- *
     ```typescript
         Record({
             field1: Nat(1),
@@ -515,6 +511,9 @@ export const Right = (value: IExpressionKind, line = new LineInfo()) =>
             field3: Bytes('0x00'),
         });
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-pair
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -525,12 +524,12 @@ export const Record = (fields: Record<string, IExpression>, line = new LineInfo(
 /**
  * An artificial literal of type or. (Uses nested annotated or's)
  *
- * @category of Container Literals
- * @see https://tezos.gitlab.io/michelson-reference/#type-or
- *
     ```typescript
         Variant('branch1', Int(1));
     ```
+ *
+ * @category | Container Literals
+ * @see https://tezos.gitlab.io/michelson-reference/#type-or
  *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *

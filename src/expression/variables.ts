@@ -12,6 +12,8 @@ import { IExpression } from '../typings/expression';
  * GetProperty(ContractStorage(), "prop1")
  * ```
  *
+ * @category | Variable Accessors
+ *
  * @param recordExpression An expression that resolves to a record value
  * @param property Property name
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -28,6 +30,8 @@ export const GetProperty = (recordExpression: IExpression, property: string, lin
  * GetVariable("some_variable")
  * ```
  *
+ * @category | Variable Accessors
+ *
  * @param name Variable name
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -43,16 +47,20 @@ export const GetVariable = (name: string, line = new LineInfo()) =>
  * ContractStorage()
  * ```
  *
+ * @category | Variable Accessors
+ *
  * @returns {IExpression} An expression
  */
 export const ContractStorage = () => proxy(new Expression('data'), Expression.proxyHandler);
 
 /**
- * Get iterator value. (Used inside for loops)
+ * Get iterator value. (Only used inside for loops)
  *
  * ```typescript
  * Iterator("some_iterator")
  * ```
+ *
+ * @category | Variable Accessors
  *
  * @param name iterator name
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -69,6 +77,8 @@ export const Iterator = (name: string, line = new LineInfo()) =>
  * MethodArgument()
  * ```
  *
+ * @category | Variable Accessors
+ *
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
  * @returns {IExpression} An expression
@@ -83,6 +93,8 @@ export const MethodArgument = (line = new LineInfo()) =>
  * LambdaArgument()
  * ```
  *
+ * @category | Variable Accessors
+ *
  * @param name The name of the argument
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -95,13 +107,18 @@ export const LambdaArgument = (
     line = new LineInfo(),
 ) => new Expression('lambdaParams', `${id}`, `"${name}"`, line, argumentType);
 
-const Expressions = {
-    GetVariable,
-    ContractStorage,
-    GetProperty,
-    Iterator,
-    MethodArgument,
-    LambdaArgument,
-};
-
-export default Expressions;
+/**
+ * Get operations list from the stack or an empty list otherwise.
+ *
+ * ```typescript
+ *  // Get operations list from the stack or an empty list otherwise.
+ *  GetOperations();
+ * ```
+ *
+ * @category | Variable Accessors
+ *
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression
+ */
+export const GetOperations = (line = new LineInfo()) => new Expression(ExpressionAtom.operations, line);

@@ -10,6 +10,8 @@ import ExpressionAtom from '../core/enums/expression';
  * Or(Bool(true), Bool(false)); // Bool(true)
  * ```
  *
+ * @category | Logic
+ *
  * @param left Boolean expression
  * @param right Boolean expression
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -25,6 +27,8 @@ export const Or = (left: IExpression, right: IExpression, line = new LineInfo())
  * ```typescript
  * Or(Bool(true), Bool(false)); // Bool(false)
  * ```
+ *
+ * @category | Logic
  *
  * @param left Boolean expression
  * @param right Boolean expression

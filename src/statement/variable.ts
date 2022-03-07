@@ -18,6 +18,8 @@ import { Statement } from '../core/statement';
  * @param mutable Optional flag that can be used to set the variable as final (false: final, true: mutable)
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
+ * @category | Variable Methods
+ *
  * @returns {IStatement} A statement
  */
 export function NewVariable(name: string, value: IExpression, mutable = true, line = new LineInfo()) {
@@ -30,6 +32,8 @@ export function NewVariable(name: string, value: IExpression, mutable = true, li
  * ```typescript
  * SetValue(ContractStorage(), Nat(1));
  * ```
+ *
+ * @category | Variable Methods
  *
  * @param source The variable to be updated
  * @param value Value to be assigned
