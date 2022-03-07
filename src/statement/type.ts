@@ -11,6 +11,8 @@ import { IType } from '../typings/type';
  * @param type Expression type.
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
+ * @category | Type Handling
+ *
  * @returns {IStatement} A statement
  */
 export const SetType = (expression: IExpression, type: IType, line = new LineInfo()) =>

@@ -16,7 +16,6 @@ import {
     GetVariable,
     Math,
     Nat,
-    Comparison,
     Unit,
     Not,
     List,
@@ -25,7 +24,6 @@ import {
     MapContainsKey,
     PrependToList,
     Or,
-    GreaterThanOrEqual,
     CastToNat,
 } from '../../src/expression';
 import {
@@ -59,29 +57,30 @@ enum FA2_Error {
 /**
  * Types
  */
-const TLedgerKey = TPair(TAddress(), TNat());
-const TLedgerValue = TRecord(
-    {
-        balance: TNat(),
-    },
-    Layout.right_comb,
-);
-const TOperatorKey = TRecord(
-    {
-        owner: TAddress(),
-        operator: TAddress(),
-        token_id: TNat(),
-    },
-    ['owner', ['operator', 'token_id']],
-);
-const TTokenMetadata = TRecord(
-    {
-        token_id: TNat(),
-        token_info: TMap(TString(), TBytes()),
-    },
-    Layout.right_comb,
-);
-
+class CommonTypes {
+    static LedgerKey = TPair(TAddress(), TNat());
+    static LedgerValue = TRecord(
+        {
+            balance: TNat(),
+        },
+        Layout.right_comb,
+    );
+    static OperatorKey = TRecord(
+        {
+            owner: TAddress(),
+            operator: TAddress(),
+            token_id: TNat(),
+        },
+        ['owner', ['operator', 'token_id']],
+    );
+    static TokenMetadata = TRecord(
+        {
+            token_id: TNat(),
+            token_info: TMap(TString(), TBytes()),
+        },
+        Layout.right_comb,
+    );
+}
 class EntrypointTypes {
     // "transfer"
     static Transfer = TList(
@@ -106,8 +105,8 @@ class EntrypointTypes {
     static UpdateOperators = TList(
         TVariant(
             {
-                add_operator: TOperatorKey,
-                remove_operator: TOperatorKey,
+                add_operator: CommonTypes.OperatorKey,
+                remove_operator: CommonTypes.OperatorKey,
             },
             ['add_operator', 'remove_operator'],
         ),
@@ -175,9 +174,9 @@ const FA2Contract = new Contract()
                     paused: TBool(),
                 }),
                 assets: TRecord({
-                    ledger: TBig_map(TLedgerKey, TLedgerValue),
-                    operators: TBig_map(TOperatorKey, TUnit()),
-                    token_metadata: TBig_map(TNat(), TTokenMetadata),
+                    ledger: TBig_map(CommonTypes.LedgerKey, CommonTypes.LedgerValue),
+                    operators: TBig_map(CommonTypes.OperatorKey, TUnit()),
+                    token_metadata: TBig_map(TNat(), CommonTypes.TokenMetadata),
                     token_total_supply: TBig_map(TNat(), TNat()),
                 }),
                 metadata: TBig_map(TString(), TBytes()),
@@ -192,9 +191,9 @@ const FA2Contract = new Contract()
                 paused: Bool(false),
             }),
             assets: Record({
-                ledger: Big_map([], TLedgerKey, TLedgerValue),
-                operators: Big_map([], TOperatorKey, TUnit()),
-                token_metadata: Big_map([], TNat(), TTokenMetadata),
+                ledger: Big_map([], CommonTypes.LedgerKey, CommonTypes.LedgerValue),
+                operators: Big_map([], CommonTypes.OperatorKey, TUnit()),
+                token_metadata: Big_map([], TNat(), CommonTypes.TokenMetadata),
                 token_total_supply: Big_map([], TNat(), TNat()),
             }),
             metadata: Big_map(),
