@@ -74,6 +74,63 @@ const lambda = Lambda()
     ]);
 
 SmartML.compileValue(lambda);
+// Result:
+//    {
+//        micheline: '{ PUSH nat 1; SWAP; COMPARE; GE; IF { PUSH string "YES" } { PUSH string "NO" } }',
+//        json: [
+//            {
+//                "prim": "PUSH",
+//                "args": [
+//                    {
+//                        "prim": "nat"
+//                    },
+//                    {
+//                        "int": "1"
+//                    }
+//                ]
+//            },
+//            {
+//                "prim": "SWAP"
+//            },
+//            {
+//                "prim": "COMPARE"
+//            },
+//            {
+//                "prim": "GE"
+//            },
+//            {
+//                "prim": "IF",
+//                "args": [
+//                    [
+//                        {
+//                            "prim": "PUSH",
+//                            "args": [
+//                                {
+//                                    "prim": "string"
+//                                },
+//                                {
+//                                    "string": "YES"
+//                                }
+//                            ]
+//                        }
+//                    ],
+//                    [
+//                        {
+//                            "prim": "PUSH",
+//                            "args": [
+//                                {
+//                                    "prim": "string"
+//                                },
+//                                {
+//                                    "string": "NO"
+//                                }
+//                            ]
+//                        }
+//                    ]
+//                ]
+//            }
+//        ]
+//    }
 ```
 
 ## **About**
