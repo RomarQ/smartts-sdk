@@ -18,99 +18,102 @@ exports[`Variant expressions Check Variant 1`] = `
 `;
 
 exports[`Variant expressions Check Variant 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bool\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"or\\",
-                \\"args\\": [
+"{
+    \\"micheline\\": \\"parameter (or %ep1 (nat %prop1) (unit %prop2));\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.is_variant('prop2') # @parameter\\\\n    IF_LEFT\\\\n      {\\\\n        DROP;       # \\\\n        PUSH bool False; # bool\\\\n      }\\\\n      {\\\\n        DROP;       # \\\\n        PUSH bool True; # bool\\\\n      }; # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"or\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\",
+                            \\"annots\\": [
+                                \\"%prop1\\"
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"unit\\",
+                            \\"annots\\": [
+                                \\"%prop2\\"
+                            ]
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
                     {
-                        \\"prim\\": \\"nat\\",
-                        \\"annots\\": [
-                            \\"%prop1\\"
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_LEFT\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"DROP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"bool\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"False\\"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    \\"prim\\": \\"DROP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"bool\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"True\\"
+                                        }
+                                    ]
+                                }
+                            ]
                         ]
                     },
                     {
-                        \\"prim\\": \\"unit\\",
-                        \\"annots\\": [
-                            \\"%prop2\\"
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
                         ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"IF_LEFT\\",
-                    \\"args\\": [
-                        [
-                            {
-                                \\"prim\\": \\"DROP\\"
-                            },
-                            {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"bool\\"
-                                    },
-                                    {
-                                        \\"prim\\": \\"False\\"
-                                    }
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                \\"prim\\": \\"DROP\\"
-                            },
-                            {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"bool\\"
-                                    },
-                                    {
-                                        \\"prim\\": \\"True\\"
-                                    }
-                                ]
-                            }
-                        ]
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;
 
 exports[`Variant expressions Open Variant 1`] = `
@@ -131,82 +134,85 @@ exports[`Variant expressions Open Variant 1`] = `
 `;
 
 exports[`Variant expressions Open Variant 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"or\\",
-                \\"args\\": [
+"{
+    \\"micheline\\": \\"parameter (or %ep1 (nat %prop1) (unit %prop2));\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.open_variant('prop2') # @parameter\\\\n    IF_LEFT\\\\n      {\\\\n        PUSH int 14; # int : @parameter%prop1\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @parameter%prop2\\\\n    NIL operation; # list operation : @parameter%prop2\\\\n    PAIR;       # pair (list operation) @parameter%prop2\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"or\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\",
+                            \\"annots\\": [
+                                \\"%prop1\\"
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"unit\\",
+                            \\"annots\\": [
+                                \\"%prop2\\"
+                            ]
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
                     {
-                        \\"prim\\": \\"nat\\",
-                        \\"annots\\": [
-                            \\"%prop1\\"
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_LEFT\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"int\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"14\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ],
+                            []
                         ]
                     },
                     {
-                        \\"prim\\": \\"unit\\",
-                        \\"annots\\": [
-                            \\"%prop2\\"
-                        ]
-                    }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"IF_LEFT\\",
-                    \\"args\\": [
-                        [
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
                             {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"int\\"
-                                    },
-                                    {
-                                        \\"int\\": \\"14\\"
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"FAILWITH\\"
+                                \\"prim\\": \\"operation\\"
                             }
-                        ],
-                        []
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;

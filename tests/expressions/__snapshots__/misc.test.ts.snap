@@ -18,90 +18,93 @@ exports[`Misc expressions CallLambda 1`] = `
 `;
 
 exports[`Misc expressions CallLambda 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"lambda\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"bool\\"
-                    },
-                    {
-                        \\"prim\\": \\"bool\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bool\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (bool %ep1);\\\\nstorage   (lambda bool bool);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    SWAP;       # @storage : @parameter\\\\n    # == ep1 ==\\\\n    # sp.verify(self.data(params), sp.unit) # @storage : @parameter\\\\n    DUP;        # @storage : @storage : @parameter\\\\n    DUG 2;      # @storage : @parameter : @storage\\\\n    SWAP;       # @parameter : @storage : @storage\\\\n    EXEC;       # bool : @storage\\\\n    IF\\\\n      {}\\\\n      {\\\\n        UNIT;       # unit : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }; # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"UNPAIR\\"
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
-                    \\"prim\\": \\"DUP\\"
-                },
-                {
-                    \\"prim\\": \\"DUG\\",
+                    \\"prim\\": \\"lambda\\",
                     \\"args\\": [
                         {
-                            \\"int\\": \\"2\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
-                    \\"prim\\": \\"EXEC\\"
-                },
-                {
-                    \\"prim\\": \\"IF\\",
-                    \\"args\\": [
-                        [],
-                        [
-                            {
-                                \\"prim\\": \\"UNIT\\"
-                            },
-                            {
-                                \\"prim\\": \\"FAILWITH\\"
-                            }
-                        ]
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
+                            \\"prim\\": \\"bool\\"
+                        },
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"bool\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"EXEC\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF\\",
+                        \\"args\\": [
+                            [],
+                            [
+                                {
+                                    \\"prim\\": \\"UNIT\\"
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Misc expressions CallView 1`] = `
@@ -122,90 +125,93 @@ exports[`Misc expressions CallView 1`] = `
 `;
 
 exports[`Misc expressions CallView 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"option\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"bool\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bool\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (bool %ep1);\\\\nstorage   (option bool);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.view(\\\\\\"some_view\\\\\\", sp.self_address, params, sp.TBool) # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"some_view\\\\\\" bool; # option bool\\\\n    NIL operation; # list operation : option bool\\\\n    PAIR;       # pair (list operation) (option bool)\\\\n  };\\\\nview\\\\n  \\\\\\"some_view\\\\\\" bool bool\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # sp.result(~ params) # @parameter\\\\n    NOT;        # bool\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"SELF_ADDRESS\\"
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
-                    \\"prim\\": \\"VIEW\\",
+                    \\"prim\\": \\"option\\",
                     \\"args\\": [
-                        {
-                            \\"string\\": \\"some_view\\"
-                        },
                         {
                             \\"prim\\": \\"bool\\"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
+                    \\"prim\\": \\"bool\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    },
-    {
-        \\"prim\\": \\"view\\",
-        \\"args\\": [
-            {
-                \\"string\\": \\"some_view\\"
-            },
-            {
-                \\"prim\\": \\"bool\\"
-            },
-            {
-                \\"prim\\": \\"bool\\"
-            },
-            [
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SELF_ADDRESS\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"VIEW\\",
+                        \\"args\\": [
+                            {
+                                \\"string\\": \\"some_view\\"
+                            },
+                            {
+                                \\"prim\\": \\"bool\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        },
+        {
+            \\"prim\\": \\"view\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CAR\\"
+                    \\"string\\": \\"some_view\\"
                 },
                 {
-                    \\"prim\\": \\"NOT\\"
-                }
+                    \\"prim\\": \\"bool\\"
+                },
+                {
+                    \\"prim\\": \\"bool\\"
+                },
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NOT\\"
+                    }
+                ]
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;

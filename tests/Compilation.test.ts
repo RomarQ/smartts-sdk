@@ -62,7 +62,7 @@ describe('Compile Contract', () => {
                     .setInputType(TList(TNat()))
                     .code((arg) => [
                         // Define a variable named "some_address"
-                        NewVariable('some_address', Address('tz1')),
+                        NewVariable('some_address', Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT')),
                         // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
                         Require(Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
                         // Replace the storage value with entry point argument

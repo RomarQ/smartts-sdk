@@ -18,119 +18,122 @@ exports[`Compile Contract Contract 1 1`] = `
 `;
 
 exports[`Compile Contract Contract 1 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"list\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"list\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (list %ep1 nat);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    PUSH address \\\\\\"tz1\\\\\\"; # address : @parameter\\\\n    SENDER;     # @sender : address : @parameter\\\\n    COMPARE;    # int : @parameter\\\\n    EQ;         # bool : @parameter\\\\n    IF\\\\n      {}\\\\n      {\\\\n        PUSH string \\\\\\"Not Admin!\\\\\\"; # string : @parameter\\\\n        FAILWITH;   # FAILED\\\\n      }; # @parameter\\\\n    NIL operation; # list operation : @parameter\\\\n    PAIR;       # pair (list operation) @parameter\\\\n  };\\\\nview\\\\n  \\\\\\"view\\\\\\" bool bool\\\\n  CAR;       ;\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
+                    \\"prim\\": \\"list\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"address\\"
-                        },
-                        {
-                            \\"string\\": \\"tz1\\"
+                            \\"prim\\": \\"nat\\"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"SENDER\\"
-                },
-                {
-                    \\"prim\\": \\"COMPARE\\"
-                },
-                {
-                    \\"prim\\": \\"EQ\\"
-                },
-                {
-                    \\"prim\\": \\"IF\\",
+                    \\"prim\\": \\"list\\",
                     \\"args\\": [
-                        [],
-                        [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
                             {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"string\\"
-                                    },
-                                    {
-                                        \\"string\\": \\"Not Admin!\\"
-                                    }
-                                ]
+                                \\"prim\\": \\"address\\"
                             },
                             {
-                                \\"prim\\": \\"FAILWITH\\"
+                                \\"string\\": \\"tz1\\"
                             }
                         ]
-                    ]
+                    },
+                    {
+                        \\"prim\\": \\"SENDER\\"
+                    },
+                    {
+                        \\"prim\\": \\"COMPARE\\"
+                    },
+                    {
+                        \\"prim\\": \\"EQ\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF\\",
+                        \\"args\\": [
+                            [],
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"string\\"
+                                        },
+                                        {
+                                            \\"string\\": \\"Not Admin!\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        },
+        {
+            \\"prim\\": \\"view\\",
+            \\"args\\": [
+                {
+                    \\"string\\": \\"view\\"
                 },
                 {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
+                    \\"prim\\": \\"bool\\"
                 },
                 {
-                    \\"prim\\": \\"PAIR\\"
-                }
+                    \\"prim\\": \\"bool\\"
+                },
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    }
+                ]
             ]
-        ]
-    },
-    {
-        \\"prim\\": \\"view\\",
-        \\"args\\": [
-            {
-                \\"string\\": \\"view\\"
-            },
-            {
-                \\"prim\\": \\"bool\\"
-            },
-            {
-                \\"prim\\": \\"bool\\"
-            },
-            [
-                {
-                    \\"prim\\": \\"CAR\\"
-                }
-            ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;
 
 exports[`Compile Contract Contract 2 1`] = `
@@ -151,147 +154,150 @@ exports[`Compile Contract Contract 2 1`] = `
 `;
 
 exports[`Compile Contract Contract 2 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"nat\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bool\\",
-                \\"annots\\": [
-                    \\"%entry_point_1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (bool %entry_point_1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.view(\\\\\\"negate\\\\\\", sp.self_address, params, sp.TNat).open_some(message = sp.some('Could not call view')) # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"negate\\\\\\" nat; # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"Could not call view\\\\\\"); # option string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\\\nview\\\\n  \\\\\\"negate\\\\\\" bool nat\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # if params: # @parameter\\\\n    IF\\\\n      {\\\\n        # sp.result(1) # \\\\n        PUSH nat 1; # nat\\\\n      }\\\\n      {\\\\n        # sp.result(0) # \\\\n        PUSH nat 0; # nat\\\\n      }; # nat\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CAR\\"
-                },
+                    \\"prim\\": \\"nat\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"SELF_ADDRESS\\"
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
-                    \\"prim\\": \\"VIEW\\",
-                    \\"args\\": [
-                        {
-                            \\"string\\": \\"negate\\"
-                        },
-                        {
-                            \\"prim\\": \\"nat\\"
-                        }
+                    \\"prim\\": \\"bool\\",
+                    \\"annots\\": [
+                        \\"%entry_point_1\\"
                     ]
-                },
-                {
-                    \\"prim\\": \\"IF_NONE\\",
-                    \\"args\\": [
-                        [
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SELF_ADDRESS\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"VIEW\\",
+                        \\"args\\": [
                             {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"option\\",
-                                        \\"args\\": [
-                                            {
-                                                \\"prim\\": \\"string\\"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        \\"prim\\": \\"Some\\",
-                                        \\"args\\": [
-                                            {
-                                                \\"string\\": \\"Could not call view\\"
-                                            }
-                                        ]
-                                    }
-                                ]
+                                \\"string\\": \\"negate\\"
                             },
                             {
-                                \\"prim\\": \\"FAILWITH\\"
-                            }
-                        ],
-                        []
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
-            ]
-        ]
-    },
-    {
-        \\"prim\\": \\"view\\",
-        \\"args\\": [
-            {
-                \\"string\\": \\"negate\\"
-            },
-            {
-                \\"prim\\": \\"bool\\"
-            },
-            {
-                \\"prim\\": \\"nat\\"
-            },
-            [
-                {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"IF\\",
-                    \\"args\\": [
-                        [
-                            {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"nat\\"
-                                    },
-                                    {
-                                        \\"int\\": \\"1\\"
-                                    }
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"nat\\"
-                                    },
-                                    {
-                                        \\"int\\": \\"0\\"
-                                    }
-                                ]
+                                \\"prim\\": \\"nat\\"
                             }
                         ]
-                    ]
-                }
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"option\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"string\\"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"Some\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"string\\": \\"Could not call view\\"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ],
+                            []
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"view\\",
+            \\"args\\": [
+                {
+                    \\"string\\": \\"negate\\"
+                },
+                {
+                    \\"prim\\": \\"bool\\"
+                },
+                {
+                    \\"prim\\": \\"nat\\"
+                },
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"1\\"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"0\\"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Compile Contract Storage (None) 1`] = `
@@ -312,50 +318,53 @@ exports[`Compile Contract Storage (None) 1`] = `
 `;
 
 exports[`Compile Contract Storage (None) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"option\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"option\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"nat\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Compile Contract Storage (Record) 1`] = `
@@ -376,64 +385,67 @@ exports[`Compile Contract Storage (Record) 1`] = `
 `;
 
 exports[`Compile Contract Storage (Record) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"pair\\",
-                \\"args\\": [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (pair (nat %testField1) (list %testField2 string));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"pair\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\",
+                            \\"annots\\": [
+                                \\"%testField1\\"
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"list\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"string\\"
+                                }
+                            ],
+                            \\"annots\\": [
+                                \\"%testField2\\"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
                     {
-                        \\"prim\\": \\"nat\\",
-                        \\"annots\\": [
-                            \\"%testField1\\"
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
                         ]
                     },
                     {
-                        \\"prim\\": \\"list\\",
-                        \\"args\\": [
-                            {
-                                \\"prim\\": \\"string\\"
-                            }
-                        ],
-                        \\"annots\\": [
-                            \\"%testField2\\"
-                        ]
+                        \\"prim\\": \\"PAIR\\"
                     }
                 ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;
 
 exports[`Compile Contract Storage (Some) 1`] = `
@@ -454,50 +466,53 @@ exports[`Compile Contract Storage (Some) 1`] = `
 `;
 
 exports[`Compile Contract Storage (Some) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"option\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"option\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"nat\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Compile Contract Storage (Unit) 1`] = `
@@ -518,45 +533,48 @@ exports[`Compile Contract Storage (Unit) 1`] = `
 `;
 
 exports[`Compile Contract Storage (Unit) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"unit\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Compile Lambdas A 1`] = `"(literal (nat 1) (\\"Compilation.test.ts\\" 46))"`;

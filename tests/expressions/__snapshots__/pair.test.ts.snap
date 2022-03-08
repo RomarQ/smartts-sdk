@@ -18,93 +18,96 @@ exports[`Expressions specific to Pair values FirstElement 1`] = `
 `;
 
 exports[`Expressions specific to Pair values FirstElement 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"pair\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    },
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (pair nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.verify(sp.fst(self.data) == 1, sp.unit) # @storage\\\\n    DUP;        # @storage : @storage\\\\n    CAR;        # nat : @storage\\\\n    PUSH nat 1; # nat : nat : @storage\\\\n    COMPARE;    # int : @storage\\\\n    EQ;         # bool : @storage\\\\n    IF\\\\n      {}\\\\n      {\\\\n        UNIT;       # unit : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }; # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"DUP\\"
-                },
-                {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
+                    \\"prim\\": \\"pair\\",
                     \\"args\\": [
                         {
                             \\"prim\\": \\"nat\\"
                         },
                         {
-                            \\"int\\": \\"1\\"
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"COMPARE\\"
-                },
-                {
-                    \\"prim\\": \\"EQ\\"
-                },
-                {
-                    \\"prim\\": \\"IF\\",
-                    \\"args\\": [
-                        [],
-                        [
-                            {
-                                \\"prim\\": \\"UNIT\\"
-                            },
-                            {
-                                \\"prim\\": \\"FAILWITH\\"
-                            }
-                        ]
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"1\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"COMPARE\\"
+                    },
+                    {
+                        \\"prim\\": \\"EQ\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF\\",
+                        \\"args\\": [
+                            [],
+                            [
+                                {
+                                    \\"prim\\": \\"UNIT\\"
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Expressions specific to Pair values SecondElement 1`] = `
@@ -125,91 +128,94 @@ exports[`Expressions specific to Pair values SecondElement 1`] = `
 `;
 
 exports[`Expressions specific to Pair values SecondElement 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"pair\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    },
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (pair nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.verify(sp.snd(self.data) == 'A String', sp.unit) # @storage\\\\n    DUP;        # @storage : @storage\\\\n    CDR;        # string : @storage\\\\n    PUSH string \\\\\\"A String\\\\\\"; # string : string : @storage\\\\n    COMPARE;    # int : @storage\\\\n    EQ;         # bool : @storage\\\\n    IF\\\\n      {}\\\\n      {\\\\n        UNIT;       # unit : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }; # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"DUP\\"
-                },
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
+                    \\"prim\\": \\"pair\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"string\\"
+                            \\"prim\\": \\"nat\\"
                         },
                         {
-                            \\"string\\": \\"A String\\"
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"COMPARE\\"
-                },
-                {
-                    \\"prim\\": \\"EQ\\"
-                },
-                {
-                    \\"prim\\": \\"IF\\",
-                    \\"args\\": [
-                        [],
-                        [
-                            {
-                                \\"prim\\": \\"UNIT\\"
-                            },
-                            {
-                                \\"prim\\": \\"FAILWITH\\"
-                            }
-                        ]
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"string\\"
+                            },
+                            {
+                                \\"string\\": \\"A String\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"COMPARE\\"
+                    },
+                    {
+                        \\"prim\\": \\"EQ\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF\\",
+                        \\"args\\": [
+                            [],
+                            [
+                                {
+                                    \\"prim\\": \\"UNIT\\"
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
