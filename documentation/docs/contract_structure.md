@@ -1,6 +1,6 @@
 # Contract Structure
 
-## Set the contract initial storage
+## Define the initial storage
 
 ```js
 const { Contract } = require('@tezwell/smartts-sdk');
@@ -8,7 +8,7 @@ const { Contract } = require('@tezwell/smartts-sdk');
 const contract = new Contract().setStorage(Nat(0));
 ```
 
-## Set the contract storage type
+## Specify the storage type
 
 ```js
 const { Contract } = require('@tezwell/smartts-sdk');

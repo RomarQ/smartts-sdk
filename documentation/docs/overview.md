@@ -82,7 +82,7 @@ const SmartML = require('@tezwell/smartts-sdk/compiler');
 // A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise.
 const lambda = Lambda()
     .code((arg) => [
-        If(Comparison.GreaterThanOrEqual(arg, Nat(1)))
+        If(Comparison.GreaterThanOrEqual(arg, Nat(10)))
             .Then([Return(String('YES'))])
             .Else([Return(String('NO'))]),
     ]);
@@ -99,7 +99,7 @@ SmartML.compileValue(lambda);
 //                        prim: "nat"
 //                    },
 //                    {
-//                        int: "1"
+//                        int: "10"
 //                    }
 //                ]
 //            },
