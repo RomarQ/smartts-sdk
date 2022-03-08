@@ -29,10 +29,8 @@ const verify = (testName: string, type: IType, operation: IExpression) => {
             .setStorage(None())
             .addEntrypoint(
                 new EntryPoint('ep1').inputType(TUnit()).code(() => [SetValue(ContractStorage(), Some(operation))]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 };

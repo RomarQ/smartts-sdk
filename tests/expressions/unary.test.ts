@@ -10,10 +10,8 @@ describe('Unary expressions', () => {
             .setStorage(None())
             .addEntrypoint(
                 new EntryPoint('ep1').inputType(TBool()).code((arg) => [SetValue(ContractStorage(), Some(Not(arg)))]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

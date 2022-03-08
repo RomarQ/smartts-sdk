@@ -3,16 +3,16 @@
 exports[`Compile Contract Contract 1 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 52))
-            storage (list (\\"Compilation.test.ts\\" 54) )
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 46))
+            storage (list (\\"Compilation.test.ts\\" 48) )
             storage_type ((list \\"nat\\"))
-            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 60) ((set_type (params (\\"Compilation.test.ts\\" 60)) (list \\"nat\\") (\\"Compilation.test.ts\\" 73)) (defineLocal \\"some_address\\" (literal (address tz1) (\\"Compilation.test.ts\\" 63)) True (\\"Compilation.test.ts\\" 63)) (verify (eq (getLocal \\"some_address\\" (\\"Compilation.test.ts\\" 63)) (sender) (\\"Compilation.test.ts\\" 63)) (literal (string \\"Not Admin!\\") (\\"Compilation.test.ts\\" 63)) (\\"Compilation.test.ts\\" 63)) (set (data) (params (\\"Compilation.test.ts\\" 60)) (\\"Compilation.test.ts\\" 63)))))
+            messages ((ep1 True False False True (\\"Compilation.test.ts\\" 54) ((set_type (params (\\"Compilation.test.ts\\" 54)) (list \\"nat\\") (\\"Compilation.test.ts\\" 67)) (defineLocal \\"some_address\\" (literal (address tz1) (\\"Compilation.test.ts\\" 57)) True (\\"Compilation.test.ts\\" 57)) (verify (eq (getLocal \\"some_address\\" (\\"Compilation.test.ts\\" 57)) (sender) (\\"Compilation.test.ts\\" 57)) (literal (string \\"Not Admin!\\") (\\"Compilation.test.ts\\" 57)) (\\"Compilation.test.ts\\" 57)) (set (data) (params (\\"Compilation.test.ts\\" 54)) (\\"Compilation.test.ts\\" 57)))))
             flags ((erase-comments))
             privates ()
-            views ((onchain view True (\\"Compilation.test.ts\\" 72) False \\"\\" ((set_type (params (\\"Compilation.test.ts\\" 72)) \\"unit\\" (\\"Compilation.test.ts\\" 73)) (result (params (\\"Compilation.test.ts\\" 72)) (\\"Compilation.test.ts\\" 72)))))
+            views ((onchain view True (\\"Compilation.test.ts\\" 66) False \\"\\" ((set_type (params (\\"Compilation.test.ts\\" 66)) \\"unit\\" (\\"Compilation.test.ts\\" 67)) (result (params (\\"Compilation.test.ts\\" 66)) (\\"Compilation.test.ts\\" 66)))))
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 100) (\\"Compilation.test.ts\\" 56))
+            balance (literal (mutez 100) (\\"Compilation.test.ts\\" 50))
         )
         "
 `;
@@ -136,8 +136,8 @@ exports[`Compile Contract Contract 1 2`] = `
 exports[`Compile Contract Storage (None) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 93))
-            storage (variant \\"None\\" (unit) (\\"Compilation.test.ts\\" 93))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 82))
+            storage (variant \\"None\\" (unit) (\\"Compilation.test.ts\\" 82))
             storage_type ((option \\"nat\\"))
             messages ()
             flags ()
@@ -145,7 +145,7 @@ exports[`Compile Contract Storage (None) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 93))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 82))
         )
         "
 `;
@@ -200,8 +200,8 @@ exports[`Compile Contract Storage (None) 2`] = `
 exports[`Compile Contract Storage (Record) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 100))
-            storage (record (\\"Compilation.test.ts\\" 102) (testField1 (literal (nat 1) (\\"Compilation.test.ts\\" 103))) (testField2 (list (\\"Compilation.test.ts\\" 104) (literal (string \\"Hello World\\") (\\"Compilation.test.ts\\" 104)))))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 88))
+            storage (record (\\"Compilation.test.ts\\" 89) (testField1 (literal (nat 1) (\\"Compilation.test.ts\\" 90))) (testField2 (list (\\"Compilation.test.ts\\" 91) (literal (string \\"Hello World\\") (\\"Compilation.test.ts\\" 91)))))
             storage_type (())
             messages ()
             flags ()
@@ -209,7 +209,7 @@ exports[`Compile Contract Storage (Record) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 100))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 88))
         )
         "
 `;
@@ -278,8 +278,8 @@ exports[`Compile Contract Storage (Record) 2`] = `
 exports[`Compile Contract Storage (Some) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 87))
-            storage (variant \\"Some\\" (literal (nat 1) (\\"Compilation.test.ts\\" 87)) (\\"Compilation.test.ts\\" 87))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 77))
+            storage (variant \\"Some\\" (literal (nat 1) (\\"Compilation.test.ts\\" 77)) (\\"Compilation.test.ts\\" 77))
             storage_type (())
             messages ()
             flags ()
@@ -287,7 +287,7 @@ exports[`Compile Contract Storage (Some) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 87))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 77))
         )
         "
 `;
@@ -342,7 +342,7 @@ exports[`Compile Contract Storage (Some) 2`] = `
 exports[`Compile Contract Storage (Unit) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"Compilation.test.ts\\" 80))
+            template_id (static_id 0 (\\"Compilation.test.ts\\" 71))
             storage (unit)
             storage_type (())
             messages ()
@@ -351,7 +351,7 @@ exports[`Compile Contract Storage (Unit) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 80))
+            balance (literal (mutez 0) (\\"Compilation.test.ts\\" 71))
         )
         "
 `;
@@ -398,7 +398,7 @@ exports[`Compile Contract Storage (Unit) 2`] = `
 ]"
 `;
 
-exports[`Compile Lambdas  A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise 1`] = `"(lambda 2 None False \\"lambda_arg\\" (\\"Compilation.test.ts\\" 37) ((ifBlock (ge (lambdaParams 2 \\"lambda_arg\\" (\\"Compilation.test.ts\\" 37) (unknown 0)) (literal (nat 1) (\\"Compilation.test.ts\\" 38)) (\\"Compilation.test.ts\\" 38)) ((result (literal (string \\"YES\\") (\\"Compilation.test.ts\\" 38)) (\\"Compilation.test.ts\\" 38))) (\\"Compilation.test.ts\\" 38)) (elseBlock ((result (literal (string \\"NO\\") (\\"Compilation.test.ts\\" 38)) (\\"Compilation.test.ts\\" 38))))))"`;
+exports[`Compile Lambdas  A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise 1`] = `"(lambda 2 None False \\"lambda_arg\\" (\\"Compilation.test.ts\\" 34) ((ifBlock (ge (lambdaParams 2 \\"lambda_arg\\" (\\"Compilation.test.ts\\" 34) (unknown 0)) (literal (nat 1) (\\"Compilation.test.ts\\" 34)) (\\"Compilation.test.ts\\" 34)) ((result (literal (string \\"YES\\") (\\"Compilation.test.ts\\" 34)) (\\"Compilation.test.ts\\" 34))) (\\"Compilation.test.ts\\" 34)) (elseBlock ((result (literal (string \\"NO\\") (\\"Compilation.test.ts\\" 34)) (\\"Compilation.test.ts\\" 34))))))"`;
 
 exports[`Compile Lambdas  A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise 2`] = `
 "{
@@ -459,7 +459,7 @@ exports[`Compile Lambdas  A Lambda that returns "YES" if the argument is greater
 }"
 `;
 
-exports[`Compile Lambdas A Lambda that returns the argument 1`] = `"(lambda 1 None False \\"lambda_arg\\" (\\"Compilation.test.ts\\" 25) ((ifBlock (eq (lambdaParams 1 \\"lambda_arg\\" (\\"Compilation.test.ts\\" 25) (unknown 0)) (literal (string \\"TEST\\") (\\"Compilation.test.ts\\" 26)) (\\"Compilation.test.ts\\" 26)) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"Compilation.test.ts\\" 25) (unknown 0)) (\\"Compilation.test.ts\\" 26))) (\\"Compilation.test.ts\\" 26)) (elseBlock ((failwith (lambdaParams 1 \\"lambda_arg\\" (\\"Compilation.test.ts\\" 25) (unknown 0)) (\\"Compilation.test.ts\\" 26))))))"`;
+exports[`Compile Lambdas A Lambda that returns the argument 1`] = `"(lambda 1 None False \\"lambda_arg\\" (\\"Compilation.test.ts\\" 25) ((ifBlock (eq (lambdaParams 1 \\"lambda_arg\\" (\\"Compilation.test.ts\\" 25) (unknown 0)) (literal (string \\"TEST\\") (\\"Compilation.test.ts\\" 25)) (\\"Compilation.test.ts\\" 25)) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"Compilation.test.ts\\" 25) (unknown 0)) (\\"Compilation.test.ts\\" 25))) (\\"Compilation.test.ts\\" 25)) (elseBlock ((failwith (lambdaParams 1 \\"lambda_arg\\" (\\"Compilation.test.ts\\" 25) (unknown 0)) (\\"Compilation.test.ts\\" 25))))))"`;
 
 exports[`Compile Lambdas A Lambda that returns the argument 2`] = `
 "{

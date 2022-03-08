@@ -22,27 +22,21 @@ import { verifyContractCompilationOutput, verifyLambdaCompilationOutput } from '
 
 describe('Compile Lambdas', () => {
     it('A Lambda that returns the argument', () => {
-        const lambda = Lambda()
-            .code((arg) => [
-                If(Equal(arg, String('TEST')))
-                    .Then([Return(arg)])
-                    .Else([FailWith(arg)]),
-            ])
-            .toString();
+        const lambda = Lambda().code((arg) => [
+            If(Equal(arg, String('TEST')))
+                .Then([Return(arg)])
+                .Else([FailWith(arg)]),
+        ]);
 
-        expect(lambda).toMatchSnapshot();
         verifyLambdaCompilationOutput(lambda);
     });
     it(' A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise', () => {
-        const lambda = Lambda()
-            .code((arg) => [
-                If(GreaterThanOrEqual(arg, Nat(1)))
-                    .Then([Return(String('YES'))])
-                    .Else([Return(String('NO'))]),
-            ])
-            .toString();
+        const lambda = Lambda().code((arg) => [
+            If(GreaterThanOrEqual(arg, Nat(1)))
+                .Then([Return(String('YES'))])
+                .Else([Return(String('NO'))]),
+        ]);
 
-        expect(lambda).toMatchSnapshot();
         verifyLambdaCompilationOutput(lambda);
     });
 });
@@ -69,44 +63,35 @@ describe('Compile Contract', () => {
                         SetValue(ContractStorage(), arg),
                     ]),
             )
-            .addView(new OnChainView('view').code((argument) => [Return(argument)]))
-            .toString();
-
-        expect(contract).toMatchSnapshot();
+            .addView(new OnChainView('view').code((argument) => [Return(argument)]));
         verifyContractCompilationOutput(contract);
     });
 
     it('Storage (Unit)', () => {
-        const contract = new Contract().setStorage(Unit()).toString();
+        const contract = new Contract().setStorage(Unit());
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 
     it('Storage (Some)', () => {
-        const contract = new Contract().setStorage(Some(Nat(1))).toString();
+        const contract = new Contract().setStorage(Some(Nat(1)));
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('Storage (None)', () => {
-        const contract = new Contract().setStorageType(TOption(TNat())).setStorage(None()).toString();
+        const contract = new Contract().setStorageType(TOption(TNat())).setStorage(None());
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 
     it('Storage (Record)', () => {
-        const contract = new Contract()
-            .setStorage(
-                Record({
-                    testField1: Nat(1),
-                    testField2: List([String('Hello World')]),
-                }),
-            )
-            .toString();
+        const contract = new Contract().setStorage(
+            Record({
+                testField1: Nat(1),
+                testField2: List([String('Hello World')]),
+            }),
+        );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

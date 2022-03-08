@@ -4,7 +4,7 @@ exports[`Test Literals Left variant 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant Left (literal (nat 1) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (variant Left (literal (nat 1) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((variant ((Left \\"nat\\") (Right \\"int\\")) (Some ((\\"Left\\") (\\"Right\\"))) (\\"\\" -1)))
             messages ()
             flags ()
@@ -77,7 +77,7 @@ exports[`Test Literals Right variant 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant Right (literal (int 1) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (variant Right (literal (int 1) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((variant ((Left \\"nat\\") (Right \\"int\\")) (Some ((\\"Left\\") (\\"Right\\"))) (\\"\\" -1)))
             messages ()
             flags ()
@@ -150,7 +150,7 @@ exports[`Test Literals address 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"literals.test.ts\\" 79))
+            storage (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"literals.test.ts\\" 78))
             storage_type (\\"address\\")
             messages ()
             flags ()
@@ -209,7 +209,7 @@ exports[`Test Literals big_map 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (big_map (\\"literals.test.ts\\" 79) ((literal (nat 1) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD1\\") (\\"literals.test.ts\\" 79))) ((literal (nat 2) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD2\\") (\\"literals.test.ts\\" 79))))
+            storage (big_map (\\"literals.test.ts\\" 78) ((literal (nat 1) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD1\\") (\\"literals.test.ts\\" 78))) ((literal (nat 2) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD2\\") (\\"literals.test.ts\\" 78))))
             storage_type ((bigmap \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -276,7 +276,7 @@ exports[`Test Literals bls12_381_fr 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bls12_381_fr 0x01) (\\"literals.test.ts\\" 79))
+            storage (literal (bls12_381_fr 0x01) (\\"literals.test.ts\\" 78))
             storage_type (\\"bls12_381_fr\\")
             messages ()
             flags ()
@@ -335,7 +335,7 @@ exports[`Test Literals bls12_381_fr 3`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bls12_381_fr 1) (\\"literals.test.ts\\" 79))
+            storage (literal (bls12_381_fr 1) (\\"literals.test.ts\\" 78))
             storage_type (\\"bls12_381_fr\\")
             messages ()
             flags ()
@@ -394,7 +394,7 @@ exports[`Test Literals bls12_381_g1 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bls12_381_g1 0x00) (\\"literals.test.ts\\" 79))
+            storage (literal (bls12_381_g1 0x00) (\\"literals.test.ts\\" 78))
             storage_type (\\"bls12_381_g1\\")
             messages ()
             flags ()
@@ -453,7 +453,7 @@ exports[`Test Literals bls12_381_g2 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bls12_381_g2 0x00) (\\"literals.test.ts\\" 79))
+            storage (literal (bls12_381_g2 0x00) (\\"literals.test.ts\\" 78))
             storage_type (\\"bls12_381_g2\\")
             messages ()
             flags ()
@@ -512,7 +512,7 @@ exports[`Test Literals bool 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bool True) (\\"literals.test.ts\\" 79))
+            storage (literal (bool True) (\\"literals.test.ts\\" 78))
             storage_type (\\"bool\\")
             messages ()
             flags ()
@@ -571,7 +571,7 @@ exports[`Test Literals bytes 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bytes 0x00) (\\"literals.test.ts\\" 79))
+            storage (literal (bytes 0x00) (\\"literals.test.ts\\" 78))
             storage_type (\\"bytes\\")
             messages ()
             flags ()
@@ -630,7 +630,7 @@ exports[`Test Literals chain_id 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (chain_id_cst 0x00) (\\"literals.test.ts\\" 79))
+            storage (literal (chain_id_cst 0x00) (\\"literals.test.ts\\" 78))
             storage_type (\\"chain_id\\")
             messages ()
             flags ()
@@ -689,7 +689,7 @@ exports[`Test Literals int 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (int 2) (\\"literals.test.ts\\" 79))
+            storage (literal (int 2) (\\"literals.test.ts\\" 78))
             storage_type (\\"int\\")
             messages ()
             flags ()
@@ -748,7 +748,7 @@ exports[`Test Literals key 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"literals.test.ts\\" 79))
+            storage (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"literals.test.ts\\" 78))
             storage_type (\\"key\\")
             messages ()
             flags ()
@@ -807,7 +807,7 @@ exports[`Test Literals key_hash 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"literals.test.ts\\" 79))
+            storage (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"literals.test.ts\\" 78))
             storage_type (\\"key_hash\\")
             messages ()
             flags ()
@@ -866,7 +866,7 @@ exports[`Test Literals lambda 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (lambda 1 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 79) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"literals.test.ts\\" 79) \\"string\\") (\\"literals.test.ts\\" 79))))
+            storage (lambda 1 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 78) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"literals.test.ts\\" 78) \\"string\\") (\\"literals.test.ts\\" 78))))
             storage_type ((lambda \\"string\\" \\"string\\"))
             messages ()
             flags ()
@@ -933,7 +933,7 @@ exports[`Test Literals lambda 3`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (lambda 2 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 79) ((ifBlock (gt (lambdaParams 2 \\"lambda_arg\\" (\\"literals.test.ts\\" 79) (unknown 0)) (literal (nat 2) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79)) ((result (literal (string \\"YES\\") (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))) (\\"literals.test.ts\\" 79)) (elseBlock ((result (literal (string \\"NO\\") (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))))))
+            storage (lambda 2 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 78) ((ifBlock (gt (lambdaParams 2 \\"lambda_arg\\" (\\"literals.test.ts\\" 78) (unknown 0)) (literal (nat 2) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78)) ((result (literal (string \\"YES\\") (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))) (\\"literals.test.ts\\" 78)) (elseBlock ((result (literal (string \\"NO\\") (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))))))
             storage_type ((lambda \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -1000,7 +1000,7 @@ exports[`Test Literals list 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (list (\\"literals.test.ts\\" 79) (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 79)) (literal (string \\"WORLD\\") (\\"literals.test.ts\\" 79)))
+            storage (list (\\"literals.test.ts\\" 78) (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 78)) (literal (string \\"WORLD\\") (\\"literals.test.ts\\" 78)))
             storage_type ((list \\"string\\"))
             messages ()
             flags ()
@@ -1064,7 +1064,7 @@ exports[`Test Literals map 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (map (\\"literals.test.ts\\" 79) ((literal (nat 1) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD1\\") (\\"literals.test.ts\\" 79))) ((literal (nat 2) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD2\\") (\\"literals.test.ts\\" 79))))
+            storage (map (\\"literals.test.ts\\" 78) ((literal (nat 1) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD1\\") (\\"literals.test.ts\\" 78))) ((literal (nat 2) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD2\\") (\\"literals.test.ts\\" 78))))
             storage_type ((map \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -1131,7 +1131,7 @@ exports[`Test Literals mutez 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (mutez 2) (\\"literals.test.ts\\" 79))
+            storage (literal (mutez 2) (\\"literals.test.ts\\" 78))
             storage_type (\\"mutez\\")
             messages ()
             flags ()
@@ -1190,7 +1190,7 @@ exports[`Test Literals nat 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (nat 1) (\\"literals.test.ts\\" 79))
+            storage (literal (nat 1) (\\"literals.test.ts\\" 78))
             storage_type (\\"nat\\")
             messages ()
             flags ()
@@ -1249,7 +1249,7 @@ exports[`Test Literals none 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant \\"None\\" (unit) (\\"literals.test.ts\\" 79))
+            storage (variant \\"None\\" (unit) (\\"literals.test.ts\\" 78))
             storage_type ((option \\"string\\"))
             messages ()
             flags ()
@@ -1313,7 +1313,7 @@ exports[`Test Literals pair 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (tuple (\\"literals.test.ts\\" 79) (literal (nat 1) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD\\") (\\"literals.test.ts\\" 79)))
+            storage (tuple (\\"literals.test.ts\\" 78) (literal (nat 1) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD\\") (\\"literals.test.ts\\" 78)))
             storage_type ((tuple \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -1380,7 +1380,7 @@ exports[`Test Literals record 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (record (\\"literals.test.ts\\" 79) (field1 (literal (nat 1) (\\"literals.test.ts\\" 79))) (field2 (literal (int 2) (\\"literals.test.ts\\" 79))) (field3 (literal (bytes 0x00) (\\"literals.test.ts\\" 79))))
+            storage (record (\\"literals.test.ts\\" 78) (field1 (literal (nat 1) (\\"literals.test.ts\\" 78))) (field2 (literal (int 2) (\\"literals.test.ts\\" 78))) (field3 (literal (bytes 0x00) (\\"literals.test.ts\\" 78))))
             storage_type ((record ((field1 \\"nat\\") (field2 \\"int\\") (field3 \\"bytes\\")) (Some (((\\"field1\\") (\\"field2\\")) (\\"field3\\"))) (\\"\\" -1)))
             messages ()
             flags ()
@@ -1464,7 +1464,7 @@ exports[`Test Literals sapling_state 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (sapling_empty_state 8 (\\"literals.test.ts\\" 79))
+            storage (sapling_empty_state 8 (\\"literals.test.ts\\" 78))
             storage_type ((sapling_state 8))
             messages ()
             flags ()
@@ -1528,7 +1528,7 @@ exports[`Test Literals set 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (set (\\"literals.test.ts\\" 79) (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 79)) (literal (string \\"WORLD\\") (\\"literals.test.ts\\" 79)))
+            storage (set (\\"literals.test.ts\\" 78) (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 78)) (literal (string \\"WORLD\\") (\\"literals.test.ts\\" 78)))
             storage_type ((set \\"string\\"))
             messages ()
             flags ()
@@ -1592,7 +1592,7 @@ exports[`Test Literals signature 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (signature sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe) (\\"literals.test.ts\\" 79))
+            storage (literal (signature sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe) (\\"literals.test.ts\\" 78))
             storage_type (\\"signature\\")
             messages ()
             flags ()
@@ -1651,7 +1651,7 @@ exports[`Test Literals some 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant \\"Some\\" (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (variant \\"Some\\" (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((option \\"string\\"))
             messages ()
             flags ()
@@ -1715,7 +1715,7 @@ exports[`Test Literals string 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (string \\"TEST STRING\\") (\\"literals.test.ts\\" 79))
+            storage (literal (string \\"TEST STRING\\") (\\"literals.test.ts\\" 78))
             storage_type (\\"string\\")
             messages ()
             flags ()
@@ -1774,7 +1774,7 @@ exports[`Test Literals ticket 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (ticket (literal (string \\"A Ticket\\") (\\"literals.test.ts\\" 79)) (literal (nat 1) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (ticket (literal (string \\"A Ticket\\") (\\"literals.test.ts\\" 78)) (literal (nat 1) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((ticket \\"string\\"))
             messages ()
             flags ()
@@ -1793,7 +1793,7 @@ exports[`Test Literals timestamp 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (timestamp 100) (\\"literals.test.ts\\" 79))
+            storage (literal (timestamp 100) (\\"literals.test.ts\\" 78))
             storage_type (\\"timestamp\\")
             messages ()
             flags ()
@@ -1911,7 +1911,7 @@ exports[`Test Literals variant 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant match2 (literal (int 1) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (variant match2 (literal (int 1) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((variant ((match1 \\"nat\\") (match2 \\"int\\") (match3 \\"bytes\\")) (Some ((\\"match1\\") ((\\"match2\\") (\\"match3\\")))) (\\"\\" -1)))
             messages ()
             flags ()

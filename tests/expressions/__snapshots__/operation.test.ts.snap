@@ -3,16 +3,16 @@
 exports[`Delegation operation Build operation (Desugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 76))
+            template_id (static_id 0 (\\"operation.test.ts\\" 70))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 79) ((set_type (params (\\"operation.test.ts\\" 79)) \\"unit\\" (\\"operation.test.ts\\" 89)) (set (operations (\\"operation.test.ts\\" 79)) (cons (set_delegate (variant \\"Some\\" (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 79)) (\\"operation.test.ts\\" 79)) (\\"operation.test.ts\\" 79)) (operations (\\"operation.test.ts\\" 79)) (\\"operation.test.ts\\" 79)) (\\"operation.test.ts\\" 79)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 73) ((set_type (params (\\"operation.test.ts\\" 73)) \\"unit\\" (\\"operation.test.ts\\" 84)) (set (operations (\\"operation.test.ts\\" 73)) (cons (set_delegate (variant \\"Some\\" (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 73)) (\\"operation.test.ts\\" 73)) (\\"operation.test.ts\\" 73)) (operations (\\"operation.test.ts\\" 73)) (\\"operation.test.ts\\" 73)) (\\"operation.test.ts\\" 73)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 76))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 70))
         )
         "
 `;
@@ -92,16 +92,16 @@ exports[`Delegation operation Build operation (Desugared version) 2`] = `
 exports[`Delegation operation Build operation to clear the delegation (Sugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 104))
+            template_id (static_id 0 (\\"operation.test.ts\\" 94))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 106) ((set_type (params (\\"operation.test.ts\\" 106)) \\"unit\\" (\\"operation.test.ts\\" 107)) (set (operations (\\"operation.test.ts\\" 106)) (cons (set_delegate (variant \\"None\\" (unit) (\\"operation.test.ts\\" 106)) (\\"operation.test.ts\\" 106)) (operations (\\"operation.test.ts\\" 106)) (\\"operation.test.ts\\" 106)) (\\"operation.test.ts\\" 106)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 96) ((set_type (params (\\"operation.test.ts\\" 96)) \\"unit\\" (\\"operation.test.ts\\" 98)) (set (operations (\\"operation.test.ts\\" 96)) (cons (set_delegate (variant \\"None\\" (unit) (\\"operation.test.ts\\" 96)) (\\"operation.test.ts\\" 96)) (operations (\\"operation.test.ts\\" 96)) (\\"operation.test.ts\\" 96)) (\\"operation.test.ts\\" 96)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 104))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 94))
         )
         "
 `;
@@ -168,16 +168,16 @@ exports[`Delegation operation Build operation to clear the delegation (Sugared v
 exports[`Delegation operation Build operation to set delegator (Sugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 95))
+            template_id (static_id 0 (\\"operation.test.ts\\" 87))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 97) ((set_type (params (\\"operation.test.ts\\" 97)) \\"key_hash\\" (\\"operation.test.ts\\" 98)) (set (operations (\\"operation.test.ts\\" 97)) (cons (set_delegate (variant \\"Some\\" (params (\\"operation.test.ts\\" 97)) (\\"operation.test.ts\\" 97)) (\\"operation.test.ts\\" 97)) (operations (\\"operation.test.ts\\" 97)) (\\"operation.test.ts\\" 97)) (\\"operation.test.ts\\" 97)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 89) ((set_type (params (\\"operation.test.ts\\" 89)) \\"key_hash\\" (\\"operation.test.ts\\" 91)) (set (operations (\\"operation.test.ts\\" 89)) (cons (set_delegate (variant \\"Some\\" (params (\\"operation.test.ts\\" 89)) (\\"operation.test.ts\\" 89)) (\\"operation.test.ts\\" 89)) (operations (\\"operation.test.ts\\" 89)) (\\"operation.test.ts\\" 89)) (\\"operation.test.ts\\" 89)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 95))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 87))
         )
         "
 `;
@@ -242,12 +242,12 @@ exports[`Delegation operation Build operation to set delegator (Sugared version)
 exports[`Origination operation Build operation (Desugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 116))
+            template_id (static_id 0 (\\"operation.test.ts\\" 104))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 119) ((set_type (params (\\"operation.test.ts\\" 119)) \\"unit\\" (\\"operation.test.ts\\" 126)) (set (operations (\\"operation.test.ts\\" 119)) (cons (attr (create_contract (contract 
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 107) ((set_type (params (\\"operation.test.ts\\" 107)) \\"unit\\" (\\"operation.test.ts\\" 115)) (set (operations (\\"operation.test.ts\\" 107)) (cons (attr (create_contract (contract 
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 119))
+            template_id (static_id 0 (\\"operation.test.ts\\" 107))
             storage (unit)
             storage_type (())
             messages ()
@@ -256,15 +256,15 @@ exports[`Origination operation Build operation (Desugared version) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 119))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 107))
         )
-        ) (storage (unit)) (baker (variant \\"None\\" (unit) (\\"operation.test.ts\\" 119))) (amount (literal (mutez 0) (\\"operation.test.ts\\" 119))) (\\"operation.test.ts\\" 119)) \\"operation\\" (\\"operation.test.ts\\" 119)) (operations (\\"operation.test.ts\\" 119)) (\\"operation.test.ts\\" 119)) (\\"operation.test.ts\\" 119)))))
+        ) (storage (unit)) (baker (variant \\"None\\" (unit) (\\"operation.test.ts\\" 107))) (amount (literal (mutez 0) (\\"operation.test.ts\\" 107))) (\\"operation.test.ts\\" 107)) \\"operation\\" (\\"operation.test.ts\\" 107)) (operations (\\"operation.test.ts\\" 107)) (\\"operation.test.ts\\" 107)) (\\"operation.test.ts\\" 107)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 116))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 104))
         )
         "
 `;
@@ -417,12 +417,12 @@ exports[`Origination operation Build operation (Desugared version) 2`] = `
 exports[`Origination operation Build operation (Sugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 132))
+            template_id (static_id 0 (\\"operation.test.ts\\" 118))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 135) ((set_type (params (\\"operation.test.ts\\" 135)) \\"unit\\" (\\"operation.test.ts\\" 144)) (set (operations (\\"operation.test.ts\\" 135)) (cons (attr (create_contract (contract 
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 121) ((set_type (params (\\"operation.test.ts\\" 121)) \\"unit\\" (\\"operation.test.ts\\" 131)) (set (operations (\\"operation.test.ts\\" 121)) (cons (attr (create_contract (contract 
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 135))
+            template_id (static_id 0 (\\"operation.test.ts\\" 121))
             storage (unit)
             storage_type (())
             messages ()
@@ -431,15 +431,15 @@ exports[`Origination operation Build operation (Sugared version) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 135))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 121))
         )
-        ) (storage (params (\\"operation.test.ts\\" 135))) (baker (variant \\"Some\\" (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 135)) (\\"operation.test.ts\\" 135))) (amount (literal (mutez 100) (\\"operation.test.ts\\" 135))) (\\"operation.test.ts\\" 135)) \\"operation\\" (\\"operation.test.ts\\" 135)) (operations (\\"operation.test.ts\\" 135)) (\\"operation.test.ts\\" 135)) (\\"operation.test.ts\\" 135)))))
+        ) (storage (params (\\"operation.test.ts\\" 121))) (baker (variant \\"Some\\" (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 121)) (\\"operation.test.ts\\" 121))) (amount (literal (mutez 100) (\\"operation.test.ts\\" 121))) (\\"operation.test.ts\\" 121)) \\"operation\\" (\\"operation.test.ts\\" 121)) (operations (\\"operation.test.ts\\" 121)) (\\"operation.test.ts\\" 121)) (\\"operation.test.ts\\" 121)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 132))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 118))
         )
         "
 `;
@@ -613,7 +613,7 @@ exports[`Transaction operation Build operation (Desugared version) 1`] = `
             template_id (static_id 0 (\\"operation.test.ts\\" 22))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 25) ((set_type (params (\\"operation.test.ts\\" 25)) \\"unit\\" (\\"operation.test.ts\\" 35)) (set (operations (\\"operation.test.ts\\" 25)) (cons (transfer (params (\\"operation.test.ts\\" 25)) (literal (mutez 100) (\\"operation.test.ts\\" 25)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (operations (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 25) ((set_type (params (\\"operation.test.ts\\" 25)) \\"unit\\" (\\"operation.test.ts\\" 36)) (set (operations (\\"operation.test.ts\\" 25)) (cons (transfer (params (\\"operation.test.ts\\" 25)) (literal (mutez 100) (\\"operation.test.ts\\" 25)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (operations (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)))))
             flags ()
             privates ()
             views ()
@@ -751,16 +751,16 @@ exports[`Transaction operation Build operation (Desugared version) 2`] = `
 exports[`Transaction operation Build operation (Sugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 41))
+            template_id (static_id 0 (\\"operation.test.ts\\" 39))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 44) ((set_type (params (\\"operation.test.ts\\" 44)) \\"unit\\" (\\"operation.test.ts\\" 48)) (set (operations (\\"operation.test.ts\\" 44)) (cons (transfer (unit) (literal (mutez 100) (\\"operation.test.ts\\" 44)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) (operations (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 42) ((set_type (params (\\"operation.test.ts\\" 42)) \\"unit\\" (\\"operation.test.ts\\" 47)) (set (operations (\\"operation.test.ts\\" 42)) (cons (transfer (unit) (literal (mutez 100) (\\"operation.test.ts\\" 42)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (operations (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 39))
         )
         "
 `;
@@ -887,16 +887,16 @@ exports[`Transaction operation Build operation (Sugared version) 2`] = `
 exports[`Transaction operation Build operation to an originated contract 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 54))
+            template_id (static_id 0 (\\"operation.test.ts\\" 50))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 57) ((set_type (params (\\"operation.test.ts\\" 57)) \\"nat\\" (\\"operation.test.ts\\" 67)) (set (operations (\\"operation.test.ts\\" 59)) (cons (transfer (params (\\"operation.test.ts\\" 57)) (literal (mutez 100) (\\"operation.test.ts\\" 59)) (openVariant (contract ep1 \\"nat\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) (operations (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 53) ((set_type (params (\\"operation.test.ts\\" 53)) \\"nat\\" (\\"operation.test.ts\\" 64)) (set (operations (\\"operation.test.ts\\" 55)) (cons (transfer (params (\\"operation.test.ts\\" 53)) (literal (mutez 100) (\\"operation.test.ts\\" 55)) (openVariant (contract ep1 \\"nat\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (operations (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 54))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 50))
         )
         "
 `;

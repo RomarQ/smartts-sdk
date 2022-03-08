@@ -15,10 +15,8 @@ describe('Test (NewVariable) statement', () => {
                         NewVariable('A', Math.Add(arg, Nat(2))),
                         SetValue(ContractStorage(), GetVariable('A')),
                     ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

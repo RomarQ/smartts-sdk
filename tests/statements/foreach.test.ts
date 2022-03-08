@@ -14,10 +14,8 @@ describe('Test (ForEach) statement', () => {
                     .code((arg) => [
                         ForEachOf(arg).Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))]),
                     ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

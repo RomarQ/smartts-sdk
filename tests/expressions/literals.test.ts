@@ -69,9 +69,8 @@ import { Contract } from '../../src/core';
 
 const verifyLiteral = (testName: string, type: IType, literal: ILiteral<unknown>) => {
     it(testName, () => {
-        const contract = new Contract().setStorageType(type).setStorage(literal).toString();
+        const contract = new Contract().setStorageType(type).setStorage(literal);
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 };

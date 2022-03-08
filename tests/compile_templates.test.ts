@@ -8,8 +8,7 @@ async function runTests() {
     files.forEach(async (fileName) => {
         test(fileName, async () => {
             try {
-                const contract = (await import(`./templates/${fileName}`)).default.toString();
-                expect(contract).toMatchSnapshot();
+                const contract = (await import(`./templates/${fileName}`)).default;
                 verifyContractCompilationOutput(contract);
             } catch (e) {
                 console.debug(e);

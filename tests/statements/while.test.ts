@@ -16,10 +16,8 @@ describe('Test (While) statement', () => {
                             SetValue(ContractStorage(), Math.Add(ContractStorage(), Nat(1))),
                         ]),
                     ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

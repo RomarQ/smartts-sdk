@@ -3,16 +3,16 @@
 exports[`Test Map statements DeleteMapEntry on BigMap 1`] = `
 "
         (
-            template_id (static_id 0 (\\"map.test.ts\\" 20))
-            storage (big_map (\\"map.test.ts\\" 21) ((literal (string \\"some_key\\") (\\"map.test.ts\\" 21)) (literal (nat 1) (\\"map.test.ts\\" 21))))
+            template_id (static_id 0 (\\"map.test.ts\\" 18))
+            storage (big_map (\\"map.test.ts\\" 19) ((literal (string \\"some_key\\") (\\"map.test.ts\\" 19)) (literal (nat 1) (\\"map.test.ts\\" 19))))
             storage_type (())
-            messages ((ep1 True False False True (\\"map.test.ts\\" 23) ((set_type (params (\\"map.test.ts\\" 23)) \\"string\\" (\\"map.test.ts\\" 25)) (delItem (data) (params (\\"map.test.ts\\" 23)) (\\"map.test.ts\\" 23)))))
+            messages ((ep1 True False False True (\\"map.test.ts\\" 21) ((set_type (params (\\"map.test.ts\\" 21)) \\"string\\" (\\"map.test.ts\\" 24)) (delItem (data) (params (\\"map.test.ts\\" 21)) (\\"map.test.ts\\" 21)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"map.test.ts\\" 20))
+            balance (literal (mutez 0) (\\"map.test.ts\\" 18))
         )
         "
 `;
@@ -98,7 +98,7 @@ exports[`Test Map statements DeleteMapEntry on Map 1`] = `
             template_id (static_id 0 (\\"map.test.ts\\" 9))
             storage (map (\\"map.test.ts\\" 10) ((literal (string \\"some_key\\") (\\"map.test.ts\\" 10)) (literal (nat 1) (\\"map.test.ts\\" 10))))
             storage_type (())
-            messages ((ep1 True False False True (\\"map.test.ts\\" 12) ((set_type (params (\\"map.test.ts\\" 12)) \\"string\\" (\\"map.test.ts\\" 14)) (delItem (data) (params (\\"map.test.ts\\" 12)) (\\"map.test.ts\\" 12)))))
+            messages ((ep1 True False False True (\\"map.test.ts\\" 12) ((set_type (params (\\"map.test.ts\\" 12)) \\"string\\" (\\"map.test.ts\\" 15)) (delItem (data) (params (\\"map.test.ts\\" 12)) (\\"map.test.ts\\" 12)))))
             flags ()
             privates ()
             views ()

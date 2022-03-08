@@ -14,10 +14,8 @@ describe('Test (For) statement', () => {
                     .code((arg) => [
                         For(Nat(0), arg, Nat(1)).Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))]),
                     ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

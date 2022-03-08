@@ -43,8 +43,7 @@ const contract = new Contract()
             // Replace the storage value with entry point argument
             SetValue(ContractStorage(), arg),
         ]),
-    )
-    .toString();
+    );
 
 SmartML.compileContract(contract);
 ```
@@ -68,8 +67,7 @@ const lambda = Lambda()
         If(Comparison.GreaterThanOrEqual(arg, Nat(1)))
             .Then([Return(String('YES'))])
             .Else([Return(String('NO'))]),
-    ])
-    .toString();
+    ]);
 
 SmartML.compileLambda(lambda);
 ```

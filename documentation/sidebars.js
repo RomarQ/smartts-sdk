@@ -20,6 +20,16 @@ const sidebars = {
             label: 'Overview',
             id: 'overview',
         },
+        {
+            type: 'doc',
+            label: 'Literal Expressions',
+            id: 'literals',
+        },
+        {
+            type: 'doc',
+            label: 'Types',
+            id: 'types',
+        },
     ],
 };
 

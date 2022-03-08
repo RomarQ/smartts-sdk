@@ -10,10 +10,8 @@ describe('Test Map statements', () => {
             .setStorage(Map([[String('some_key'), Nat(1)]]))
             .addEntrypoint(
                 new EntryPoint('ep1').inputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('DeleteMapEntry on BigMap', () => {
@@ -21,10 +19,8 @@ describe('Test Map statements', () => {
             .setStorage(Big_map([[String('some_key'), Nat(1)]]))
             .addEntrypoint(
                 new EntryPoint('ep1').inputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

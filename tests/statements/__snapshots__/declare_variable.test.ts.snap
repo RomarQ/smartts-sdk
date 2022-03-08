@@ -6,7 +6,7 @@ exports[`Test (NewVariable) statement Declares a variable named (A) 1`] = `
             template_id (static_id 0 (\\"declare_variable.test.ts\\" 9))
             storage (literal (nat 1) (\\"declare_variable.test.ts\\" 10))
             storage_type (())
-            messages ((ep1 True False False True (\\"declare_variable.test.ts\\" 12) ((set_type (params (\\"declare_variable.test.ts\\" 12)) \\"nat\\" (\\"declare_variable.test.ts\\" 19)) (defineLocal \\"A\\" (add (params (\\"declare_variable.test.ts\\" 12)) (literal (nat 2) (\\"declare_variable.test.ts\\" 14)) (\\"math.ts\\" 21)) True (\\"declare_variable.test.ts\\" 14)) (set (data) (getLocal \\"A\\" (\\"declare_variable.test.ts\\" 14)) (\\"declare_variable.test.ts\\" 14)))))
+            messages ((ep1 True False False True (\\"declare_variable.test.ts\\" 12) ((set_type (params (\\"declare_variable.test.ts\\" 12)) \\"nat\\" (\\"declare_variable.test.ts\\" 20)) (defineLocal \\"A\\" (add (params (\\"declare_variable.test.ts\\" 12)) (literal (nat 2) (\\"declare_variable.test.ts\\" 14)) (\\"math.ts\\" 21)) True (\\"declare_variable.test.ts\\" 14)) (set (data) (getLocal \\"A\\" (\\"declare_variable.test.ts\\" 14)) (\\"declare_variable.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()

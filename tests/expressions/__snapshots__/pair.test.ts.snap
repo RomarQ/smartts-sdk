@@ -6,7 +6,7 @@ exports[`Expressions specific to Pair values FirstElement 1`] = `
             template_id (static_id 0 (\\"pair.test.ts\\" 8))
             storage (tuple (\\"pair.test.ts\\" 9) (literal (nat 1) (\\"pair.test.ts\\" 9)) (literal (string \\"A String\\") (\\"pair.test.ts\\" 9)))
             storage_type (())
-            messages ((ep1 True False False True (\\"pair.test.ts\\" 10) ((set_type (params (\\"pair.test.ts\\" 10)) \\"unit\\" (\\"pair.test.ts\\" 11)) (verify (eq (first (data) (\\"pair.test.ts\\" 10)) (literal (nat 1) (\\"pair.test.ts\\" 10)) (\\"pair.test.ts\\" 10)) (unit) (\\"pair.test.ts\\" 10)))))
+            messages ((ep1 True False False True (\\"pair.test.ts\\" 10) ((set_type (params (\\"pair.test.ts\\" 10)) \\"unit\\" (\\"pair.test.ts\\" 12)) (verify (eq (first (data) (\\"pair.test.ts\\" 10)) (literal (nat 1) (\\"pair.test.ts\\" 10)) (\\"pair.test.ts\\" 10)) (unit) (\\"pair.test.ts\\" 10)))))
             flags ()
             privates ()
             views ()
@@ -110,16 +110,16 @@ exports[`Expressions specific to Pair values FirstElement 2`] = `
 exports[`Expressions specific to Pair values SecondElement 1`] = `
 "
         (
-            template_id (static_id 0 (\\"pair.test.ts\\" 17))
-            storage (tuple (\\"pair.test.ts\\" 18) (literal (nat 1) (\\"pair.test.ts\\" 18)) (literal (string \\"A String\\") (\\"pair.test.ts\\" 18)))
+            template_id (static_id 0 (\\"pair.test.ts\\" 15))
+            storage (tuple (\\"pair.test.ts\\" 16) (literal (nat 1) (\\"pair.test.ts\\" 16)) (literal (string \\"A String\\") (\\"pair.test.ts\\" 16)))
             storage_type (())
-            messages ((ep1 True False False True (\\"pair.test.ts\\" 20) ((set_type (params (\\"pair.test.ts\\" 20)) \\"unit\\" (\\"pair.test.ts\\" 24)) (verify (eq (second (data) (\\"pair.test.ts\\" 20)) (literal (string \\"A String\\") (\\"pair.test.ts\\" 20)) (\\"pair.test.ts\\" 20)) (unit) (\\"pair.test.ts\\" 20)))))
+            messages ((ep1 True False False True (\\"pair.test.ts\\" 18) ((set_type (params (\\"pair.test.ts\\" 18)) \\"unit\\" (\\"pair.test.ts\\" 23)) (verify (eq (second (data) (\\"pair.test.ts\\" 18)) (literal (string \\"A String\\") (\\"pair.test.ts\\" 18)) (\\"pair.test.ts\\" 18)) (unit) (\\"pair.test.ts\\" 18)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"pair.test.ts\\" 17))
+            balance (literal (mutez 0) (\\"pair.test.ts\\" 15))
         )
         "
 `;

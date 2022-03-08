@@ -14,10 +14,8 @@ describe('Misc expressions', () => {
             )
             .addEntrypoint(
                 new EntryPoint('ep1').inputType(TBool()).code((arg) => [Require(CallLambda(ContractStorage(), arg))]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('CallView', () => {
@@ -30,10 +28,8 @@ describe('Misc expressions', () => {
                     .code((arg) => [
                         SetValue(ContractStorage(), CallView('some_view', GetSelfAddress(), arg, TBool())),
                     ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });
