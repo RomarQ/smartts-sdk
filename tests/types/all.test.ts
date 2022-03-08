@@ -41,7 +41,7 @@ const verifyType = (testName: string, type: IType) => {
         const contract = new Contract()
             .setStorageType(TUnit())
             .setStorage(Unit())
-            .addEntrypoint(new EntryPoint('ep1').inputType(type).code(() => []));
+            .addEntrypoint(new EntryPoint('ep1').setInputType(type).code(() => []));
 
         verifyContractCompilationOutput(contract);
     });

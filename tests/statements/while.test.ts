@@ -10,7 +10,7 @@ describe('Test (While) statement', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [
                         While(Comparison.LessThanOrEqual(ContractStorage(), arg)).Do([
                             SetValue(ContractStorage(), Math.Add(ContractStorage(), Nat(1))),

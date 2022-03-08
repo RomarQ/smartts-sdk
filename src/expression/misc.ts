@@ -4,8 +4,8 @@ import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { IType } from '../typings/type';
+import { TUnknown } from '../type';
 import { Unit } from './literal';
-import { TUnit } from '../type';
 import { OpenVariant } from './variant';
 
 /**
@@ -75,6 +75,10 @@ export const CallView = (
     name: string,
     address: IExpression,
     argument: IExpression = Unit(),
-    type: IType = TUnit(),
+    outputType: IType = TUnknown(),
     line = new LineInfo(),
-) => proxy(new Expression(ExpressionAtom.view, `"${name}"`, address, argument, type, line), Expression.proxyHandler);
+) =>
+    proxy(
+        new Expression(ExpressionAtom.view, `"${name}"`, address, argument, outputType, line),
+        Expression.proxyHandler,
+    );

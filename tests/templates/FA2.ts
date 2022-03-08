@@ -200,7 +200,7 @@ const FA2Contract = new Contract()
         }),
     )
     .addEntrypoint(
-        new EntryPoint('transfer').inputType(EntrypointTypes.Transfer).code((entrypoint_arg) => [
+        new EntryPoint('transfer').setInputType(EntrypointTypes.Transfer).code((entrypoint_arg) => [
             // The contract must not be paused
             CommonExpressions.FailIfContractIsPaused(),
             // Iterate over each transfer request
@@ -265,7 +265,7 @@ const FA2Contract = new Contract()
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('update_operators').inputType(EntrypointTypes.UpdateOperators).code((entrypoint_arg) => [
+        new EntryPoint('update_operators').setInputType(EntrypointTypes.UpdateOperators).code((entrypoint_arg) => [
             // The contract must not be paused
             CommonExpressions.FailIfContractIsPaused(),
             // Apply actions
@@ -283,7 +283,7 @@ const FA2Contract = new Contract()
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('balance_of').inputType(EntrypointTypes.BalanceOf).code((entrypoint_arg) => [
+        new EntryPoint('balance_of').setInputType(EntrypointTypes.BalanceOf).code((entrypoint_arg) => [
             // Fail if contract is paused
             CommonExpressions.FailIfContractIsPaused(),
             // Iterate over each request "list(requests)" and compute responses
@@ -314,7 +314,7 @@ const FA2Contract = new Contract()
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('mint').inputType(EntrypointTypes.Mint).code((entrypoint_arg) => [
+        new EntryPoint('mint').setInputType(EntrypointTypes.Mint).code((entrypoint_arg) => [
             // Sender must be the administrator
             CommonExpressions.FailIfSenderIsNotAdmin(),
             NewVariable('ledger_key', Pair(entrypoint_arg.address, entrypoint_arg.token_id)),
@@ -330,7 +330,7 @@ const FA2Contract = new Contract()
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('pause').inputType(TBool()).code((paused) => [
+        new EntryPoint('pause').setInputType(TBool()).code((paused) => [
             // Sender must be the administrator
             CommonExpressions.FailIfSenderIsNotAdmin(),
             // Update paused state
@@ -338,7 +338,7 @@ const FA2Contract = new Contract()
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('set_admin').inputType(TAddress()).code((address) => [
+        new EntryPoint('set_admin').setInputType(TAddress()).code((address) => [
             // Sender must be the administrator
             CommonExpressions.FailIfSenderIsNotAdmin(),
             // Update administrator address
@@ -346,7 +346,7 @@ const FA2Contract = new Contract()
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('update_metadata').inputType(TMap(TString(), TBytes())).code((metadata) => [
+        new EntryPoint('update_metadata').setInputType(TMap(TString(), TBytes())).code((metadata) => [
             // Sender must be the administrator
             CommonExpressions.FailIfSenderIsNotAdmin(),
             // Update metadata entries

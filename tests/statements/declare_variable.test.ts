@@ -10,7 +10,7 @@ describe('Test (NewVariable) statement', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [
                         NewVariable('A', Math.Add(arg, Nat(2))),
                         SetValue(ContractStorage(), GetVariable('A')),

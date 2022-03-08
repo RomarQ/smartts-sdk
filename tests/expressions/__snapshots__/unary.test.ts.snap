@@ -6,7 +6,7 @@ exports[`Unary expressions Not 1`] = `
             template_id (static_id 0 (\\"unary.test.ts\\" 9))
             storage (variant \\"None\\" (unit) (\\"unary.test.ts\\" 10))
             storage_type (())
-            messages ((ep1 True False False True (\\"unary.test.ts\\" 12) ((set_type (params (\\"unary.test.ts\\" 12)) \\"bool\\" (\\"unary.test.ts\\" 15)) (set (data) (variant \\"Some\\" (not (params (\\"unary.test.ts\\" 12)) (\\"unary.test.ts\\" 12)) (\\"unary.test.ts\\" 12)) (\\"unary.test.ts\\" 12)))))
+            messages ((ep1 True False False True (\\"unary.test.ts\\" 12) ((set_type (params (\\"unary.test.ts\\" 12)) \\"bool\\" (\\"unary.test.ts\\" 17)) (set (data) (variant \\"Some\\" (not (params (\\"unary.test.ts\\" 12)) (\\"unary.test.ts\\" 14)) (\\"unary.test.ts\\" 14)) (\\"unary.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()

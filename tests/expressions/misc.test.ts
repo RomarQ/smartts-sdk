@@ -9,11 +9,13 @@ describe('Misc expressions', () => {
         const contract = new Contract()
             .setStorage(
                 Lambda()
-                    .inputType(TBool())
+                    .setInputType(TBool())
                     .code((argument) => [Return(argument)]),
             )
             .addEntrypoint(
-                new EntryPoint('ep1').inputType(TBool()).code((arg) => [Require(CallLambda(ContractStorage(), arg))]),
+                new EntryPoint('ep1')
+                    .setInputType(TBool())
+                    .code((arg) => [Require(CallLambda(ContractStorage(), arg))]),
             );
 
         verifyContractCompilationOutput(contract);
@@ -21,10 +23,10 @@ describe('Misc expressions', () => {
     it('CallView', () => {
         const contract = new Contract()
             .setStorage(None())
-            .addView(new OnChainView('some_view').inputType(TBool()).code((argument) => [Return(Not(argument))]))
+            .addView(new OnChainView('some_view').setInputType(TBool()).code((argument) => [Return(Not(argument))]))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TBool())
+                    .setInputType(TBool())
                     .code((arg) => [
                         SetValue(ContractStorage(), CallView('some_view', GetSelfAddress(), arg, TBool())),
                     ]),

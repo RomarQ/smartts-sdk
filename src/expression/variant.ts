@@ -26,6 +26,22 @@ export const OpenVariant = (variant: IExpression, branch = 'Some', errorMsg?: IE
     );
 
 /**
+ * Unwrap a option value
+ *
+ * ```typescript
+ * GetSome(Some(Nat(1)), String("COULD NOT UNWRAP OPTION"))
+ * ```
+ *
+ * @param variant Variant expression
+ * @param errorMsg The value to be included in the error trace.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression
+ */
+export const GetSome = (variant: IExpression, errorMsg?: IExpression, line = new LineInfo()) =>
+    proxy(OpenVariant(variant, 'Some', errorMsg, line), Expression.proxyHandler);
+
+/**
  * Check if a variant literal matches a given branch.
  *
  * ```typescript

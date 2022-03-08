@@ -415,7 +415,7 @@ export const Pair = (left: IExpression, right: IExpression, line = new LineInfo(
  *
     ```typescript
         Lambda()
-            .inputType(TString())
+            .setInputType(TString())
             .code((arg) => [Return(arg)]);
     ```
  *

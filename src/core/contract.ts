@@ -20,7 +20,7 @@ abstract class View {
         this.line = line;
     }
 
-    public inputType(type: IType) {
+    public setInputType(type: IType) {
         this.inType = type;
         return this;
     }
@@ -44,7 +44,7 @@ export class OnChainView extends View {
     }
 }
 
-export class OffChainView extends View {
+class OffChainView extends View {
     [Symbol.toPrimitive]() {
         const hasParams = Utils.capitalizeBoolean(true);
         const isPure = Utils.capitalizeBoolean(false);
@@ -63,7 +63,7 @@ interface EntryPointOptions {
  *
  * ```typescript
    new EntryPoint('ep1')
-    .inputType(TNat())
+    .setInputType(TNat())
     .code((arg) => [
         SetValue(ContractStorage(), arg);
     ])
@@ -98,7 +98,7 @@ export class EntryPoint {
         return this;
     }
 
-    public inputType(type: IType) {
+    public setInputType(type: IType) {
         this.#inType = type;
         return this;
     }
@@ -151,7 +151,7 @@ export class Flag {
     .setStorage(Nat(1))
     .addEntrypoint(
         new EntryPoint('ep1')
-            .inputType(TNat())
+            .setInputType(TNat())
             .code((arg) => [
                 SetValue(ContractStorage(), arg);
             ]),

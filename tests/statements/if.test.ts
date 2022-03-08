@@ -10,7 +10,7 @@ describe('Test (If) statement', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [If(GreaterThanOrEqual(arg, Nat(5)), [SetValue(ContractStorage(), arg)])]),
             );
 
@@ -21,7 +21,7 @@ describe('Test (If) statement', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [If(GreaterThanOrEqual(arg, Nat(5))).Then([SetValue(ContractStorage(), arg)])]),
             );
 
@@ -32,7 +32,7 @@ describe('Test (If) statement', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [
                         If(
                             GreaterThanOrEqual(arg, Nat(5)),
@@ -46,7 +46,7 @@ describe('Test (If) statement', () => {
     });
     it('With (Then) and (Else) - [chaining version]', () => {
         const contract = new Contract().setStorage(Nat(1)).addEntrypoint(
-            new EntryPoint('ep1').inputType(TNat()).code((arg) => [
+            new EntryPoint('ep1').setInputType(TNat()).code((arg) => [
                 If(GreaterThanOrEqual(arg, Nat(5)))
                     .Then([SetValue(ContractStorage(), arg)])
                     .Else([SetValue(ContractStorage(), Nat(5))]),

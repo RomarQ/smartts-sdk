@@ -153,7 +153,7 @@ export class LambdaLiteral implements ILiteral<TypeAtom.lambda> {
         return this.identifier;
     }
 
-    public inputType(type: IType) {
+    public setInputType(type: IType) {
         this.inType = type;
         return this;
     }

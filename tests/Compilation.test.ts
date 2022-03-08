@@ -1,4 +1,4 @@
-import { TList, TNat, TOption } from '../src/type';
+import { TBool, TList, TNat, TOption } from '../src/type';
 import {
     Address,
     List,
@@ -15,6 +15,9 @@ import {
     GetSender,
     Lambda,
     Mutez,
+    CallView,
+    GetSelfAddress,
+    GetSome,
 } from '../src/expression';
 import { Contract, EntryPoint, Flag, OnChainView } from '../src/core';
 import { FailWith, If, NewVariable, Require, Return, SetValue } from '../src/statement';
@@ -30,7 +33,7 @@ describe('Compile Lambdas', () => {
 
         verifyLambdaCompilationOutput(lambda);
     });
-    it(' A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise', () => {
+    it('A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise', () => {
         const lambda = Lambda().code((arg) => [
             If(GreaterThanOrEqual(arg, Nat(1)))
                 .Then([Return(String('YES'))])
@@ -38,6 +41,9 @@ describe('Compile Lambdas', () => {
         ]);
 
         verifyLambdaCompilationOutput(lambda);
+    });
+    it('A', () => {
+        verifyLambdaCompilationOutput(Nat(1) as any);
     });
 });
 
@@ -53,7 +59,7 @@ describe('Compile Contract', () => {
             .addEntrypoint(
                 new EntryPoint('ep1')
                     .config({ lazy: false })
-                    .inputType(TList(TNat()))
+                    .setInputType(TList(TNat()))
                     .code((arg) => [
                         // Define a variable named "some_address"
                         NewVariable('some_address', Address('tz1')),
@@ -63,7 +69,38 @@ describe('Compile Contract', () => {
                         SetValue(ContractStorage(), arg),
                     ]),
             )
-            .addView(new OnChainView('view').code((argument) => [Return(argument)]));
+            .addView(new OnChainView('view').setInputType(TBool()).code((argument) => [Return(argument)]));
+
+        verifyContractCompilationOutput(contract);
+    });
+
+    it('Contract 2', () => {
+        const contract = new Contract()
+            // Set initial storage
+            .setStorage(Nat(0))
+            // Add an entrypoint named "entry_point_1"
+            .addEntrypoint(
+                new EntryPoint('entry_point_1')
+                    // Set the type of the entrypoint argument
+                    .setInputType(TBool())
+                    // Specify the entrypoint logic
+                    .code((argument) => [
+                        // Update contract storage
+                        SetValue(
+                            ContractStorage(),
+                            GetSome(CallView('negate', GetSelfAddress(), argument), String('Could not call view')),
+                        ),
+                    ]),
+            )
+            .addView(
+                new OnChainView('negate').setInputType(TBool()).code((argument) => [
+                    // Convert a boolean value to a nat value
+                    If(argument)
+                        .Then([Return(Nat(1))])
+                        .Else([Return(Nat(0))]),
+                ]),
+            );
+
         verifyContractCompilationOutput(contract);
     });
 

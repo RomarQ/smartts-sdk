@@ -6,7 +6,7 @@ exports[`Misc expressions CallLambda 1`] = `
             template_id (static_id 0 (\\"misc.test.ts\\" 9))
             storage (lambda 1 None False \\"lambda_arg\\" (\\"misc.test.ts\\" 11) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"misc.test.ts\\" 11) \\"bool\\") (\\"misc.test.ts\\" 13))))
             storage_type (())
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 16) ((set_type (params (\\"misc.test.ts\\" 16)) \\"bool\\" (\\"misc.test.ts\\" 19)) (verify (call_lambda (data) (params (\\"misc.test.ts\\" 16)) (\\"misc.test.ts\\" 16)) (unit) (\\"misc.test.ts\\" 16)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 16) ((set_type (params (\\"misc.test.ts\\" 16)) \\"bool\\" (\\"misc.test.ts\\" 21)) (verify (call_lambda (data) (params (\\"misc.test.ts\\" 16)) (\\"misc.test.ts\\" 18)) (unit) (\\"misc.test.ts\\" 18)))))
             flags ()
             privates ()
             views ()
@@ -107,16 +107,16 @@ exports[`Misc expressions CallLambda 2`] = `
 exports[`Misc expressions CallView 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 22))
-            storage (variant \\"None\\" (unit) (\\"misc.test.ts\\" 23))
+            template_id (static_id 0 (\\"misc.test.ts\\" 24))
+            storage (variant \\"None\\" (unit) (\\"misc.test.ts\\" 25))
             storage_type (())
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 26) ((set_type (params (\\"misc.test.ts\\" 26)) \\"bool\\" (\\"misc.test.ts\\" 33)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 26)) \\"bool\\" (\\"misc.test.ts\\" 28)) (\\"misc.test.ts\\" 28)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 28) ((set_type (params (\\"misc.test.ts\\" 28)) \\"bool\\" (\\"misc.test.ts\\" 35)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 28)) \\"bool\\" (\\"misc.test.ts\\" 30)) (\\"misc.test.ts\\" 30)))))
             flags ()
             privates ()
-            views ((onchain some_view True (\\"misc.test.ts\\" 24) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 24)) \\"bool\\" (\\"misc.test.ts\\" 33)) (result (not (params (\\"misc.test.ts\\" 24)) (\\"misc.test.ts\\" 24)) (\\"misc.test.ts\\" 24)))))
+            views ((onchain some_view True (\\"misc.test.ts\\" 26) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 26)) \\"bool\\" (\\"misc.test.ts\\" 35)) (result (not (params (\\"misc.test.ts\\" 26)) (\\"misc.test.ts\\" 26)) (\\"misc.test.ts\\" 26)))))
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 22))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 24))
         )
         "
 `;

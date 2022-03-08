@@ -34,7 +34,7 @@ interface LambdaCompilationResult {
 }
 export const compileLambda = (expression: ILiteral<TypeAtom.lambda>): LambdaCompilationResult | string => {
     try {
-        return JSON.parse(SmartML.compile_lambda(expression.toString()));
+        return JSON.parse(SmartML.compile_value(expression.toString()));
     } catch (error: any) {
         return SmartML.stringOfException(false, error);
     }

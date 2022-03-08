@@ -51,7 +51,7 @@ describe('Transaction operation', () => {
             .setStorage(Unit())
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [
                         Transfer(
                             GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'ep1', TNat()),
@@ -86,7 +86,9 @@ describe('Delegation operation', () => {
     it('Build operation to set delegator (Sugared version)', () => {
         const contract = new Contract()
             .setStorage(Unit())
-            .addEntrypoint(new EntryPoint('ep1').inputType(TKey_hash()).code((arg) => [SetDelegate(Some(arg)).send()]));
+            .addEntrypoint(
+                new EntryPoint('ep1').setInputType(TKey_hash()).code((arg) => [SetDelegate(Some(arg)).send()]),
+            );
 
         verifyContractCompilationOutput(contract);
     });

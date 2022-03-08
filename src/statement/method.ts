@@ -8,7 +8,7 @@ import { Unit } from '../expression/literal';
  * Return statement used inside lambdas and views.
  *
  * ```typescript
- * Lambda().inputType(TString()).code((arg) => [Return(arg)])
+ * Lambda().setInputType(TString()).code((arg) => [Return(arg)])
  * ```
  *
  * @param expression Method returned expression

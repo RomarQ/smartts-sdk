@@ -9,7 +9,7 @@ describe('Test Map statements', () => {
         const contract = new Contract()
             .setStorage(Map([[String('some_key'), Nat(1)]]))
             .addEntrypoint(
-                new EntryPoint('ep1').inputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
+                new EntryPoint('ep1').setInputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
             );
 
         verifyContractCompilationOutput(contract);
@@ -18,7 +18,7 @@ describe('Test Map statements', () => {
         const contract = new Contract()
             .setStorage(Big_map([[String('some_key'), Nat(1)]]))
             .addEntrypoint(
-                new EntryPoint('ep1').inputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
+                new EntryPoint('ep1').setInputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
             );
 
         verifyContractCompilationOutput(contract);

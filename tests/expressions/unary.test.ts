@@ -9,7 +9,9 @@ describe('Unary expressions', () => {
         const contract = new Contract()
             .setStorage(None())
             .addEntrypoint(
-                new EntryPoint('ep1').inputType(TBool()).code((arg) => [SetValue(ContractStorage(), Some(Not(arg)))]),
+                new EntryPoint('ep1')
+                    .setInputType(TBool())
+                    .code((arg) => [SetValue(ContractStorage(), Some(Not(arg)))]),
             );
 
         verifyContractCompilationOutput(contract);

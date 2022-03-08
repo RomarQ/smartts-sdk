@@ -10,7 +10,7 @@ describe('Test (For) statement', () => {
             .setStorage(Nat(0))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [
                         For(Nat(0), arg, Nat(1)).Do((i) => [SetValue(ContractStorage(), Add(ContractStorage(), i))]),
                     ]),

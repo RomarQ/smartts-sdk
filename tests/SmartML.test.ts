@@ -13,7 +13,7 @@ describe('Namespace (Internal)', () => {
             'compileContractStorage',
             'compileContract',
             'compile_contract',
-            'compile_lambda',
+            'compile_value',
             'update_michelson_view',
             'buildTransfer',
             'stringOfException',
