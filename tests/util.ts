@@ -1,10 +1,9 @@
 import SmartML from '../src/compiler';
 import { Contract } from '../src/core';
-import TypeAtom from '../src/core/enums/type';
 import { ILiteral } from '../src/typings/literal';
 
-export const verifyLambdaCompilationOutput = (lambda: ILiteral<TypeAtom.lambda>) => {
-    const result = SmartML.compileLambda(lambda);
+export const verifyValueCompilationOutput = (lambda: ILiteral<unknown>) => {
+    const result = SmartML.compileValue(lambda);
 
     expect(lambda.toString()).toMatchSnapshot();
     // Check snapshot

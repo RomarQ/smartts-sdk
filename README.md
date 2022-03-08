@@ -5,12 +5,16 @@
 `SmartTS SDK` is a metaprogramming framework for building Tezos smart contracts from Javascript. It uses the SmartPy compiler.
 
 <hr/>
-
-# [TypeDoc](https://romarq.github.io/smartts-sdk/api)
-
 <hr/>
 
-### Use the package
+## [General Documentation](https://romarq.github.io/smartts-sdk)
+
+## [API Documentation (TypeDoc)](https://romarq.github.io/smartts-sdk/api)
+
+<hr/>
+<hr/>
+
+### Using the package
 
 #### Build and compile a contract
 
@@ -69,7 +73,7 @@ const lambda = Lambda()
             .Else([Return(String('NO'))]),
     ]);
 
-SmartML.compileLambda(lambda);
+SmartML.compileValue(lambda);
 ```
 
 ## **About**

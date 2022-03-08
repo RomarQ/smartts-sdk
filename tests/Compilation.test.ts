@@ -21,7 +21,7 @@ import {
 } from '../src/expression';
 import { Contract, EntryPoint, Flag, OnChainView } from '../src/core';
 import { FailWith, If, NewVariable, Require, Return, SetValue } from '../src/statement';
-import { verifyContractCompilationOutput, verifyLambdaCompilationOutput } from './util';
+import { verifyContractCompilationOutput, verifyValueCompilationOutput } from './util';
 
 describe('Compile Lambdas', () => {
     it('A Lambda that returns the argument', () => {
@@ -31,7 +31,7 @@ describe('Compile Lambdas', () => {
                 .Else([FailWith(arg)]),
         ]);
 
-        verifyLambdaCompilationOutput(lambda);
+        verifyValueCompilationOutput(lambda);
     });
     it('A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise', () => {
         const lambda = Lambda().code((arg) => [
@@ -40,10 +40,10 @@ describe('Compile Lambdas', () => {
                 .Else([Return(String('NO'))]),
         ]);
 
-        verifyLambdaCompilationOutput(lambda);
+        verifyValueCompilationOutput(lambda);
     });
     it('A', () => {
-        verifyLambdaCompilationOutput(Nat(1) as any);
+        verifyValueCompilationOutput(Nat(1) as any);
     });
 });
 

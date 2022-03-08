@@ -22,17 +22,17 @@ export const compileContract = (contract: Contract): Record<string, unknown> | s
 };
 
 /**
- * Compile SmartML expression to a michelson lambda.
+ * Compile SmartML expression to michelson.
  *
- * @param expression A lambda expression
+ * @param expression A value expression
  *
  * @returns {Record<string, unknown> | string} JSON michelson or a error string
  */
-interface LambdaCompilationResult {
+interface ValueCompilationResult {
     micheline: string;
     json: Record<string, unknown>[];
 }
-export const compileLambda = (expression: ILiteral<TypeAtom.lambda>): LambdaCompilationResult | string => {
+export const compileValue = (expression: ILiteral<unknown>): ValueCompilationResult | string => {
     try {
         return JSON.parse(SmartML.compile_value(expression.toString()));
     } catch (error: any) {
@@ -42,7 +42,7 @@ export const compileLambda = (expression: ILiteral<TypeAtom.lambda>): LambdaComp
 
 const CompilerAPI = {
     compileContract,
-    compileLambda,
+    compileValue,
 };
 
 export default CompilerAPI;

@@ -19,5 +19,5 @@ const lambda = Lambda()
             .Else([Return(String('NO'))]),
     ]);
 
-SmartML.compileLambda(lambda);
+SmartML.compileValue(lambda);
 ```
