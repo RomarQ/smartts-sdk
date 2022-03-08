@@ -17,87 +17,112 @@ const contract = new Contract().setStorage(Nat(0)).addEntrypoint(
     ]),
 );
 
-assert.deepEqual(SmartML.compileContract(contract), [
-    {
-        prim: 'storage',
-        args: [
-            {
-                prim: 'nat',
-            },
-        ],
-    },
-    {
-        prim: 'parameter',
-        args: [
-            {
-                prim: 'nat',
-                annots: ['%ep1'],
-            },
-        ],
-    },
-    {
-        prim: 'code',
-        args: [
-            [
+assert.deepEqual(SmartML.compileContract(contract), {
+    micheline:
+        'parameter (nat %ep1);\n' +
+        'storage   nat;\n' +
+        'code\n' +
+        '  {\n' +
+        '    CAR;        # @parameter\n' +
+        '    # == ep1 ==\n' +
+        `    # some_address = sp.local("some_address", sp.address('tz1')) # @parameter\n` +
+        '    PUSH address "tz1"; # address : @parameter\n' +
+        "    # sp.verify(some_address.value == sp.sender, 'Not Admin!') # address : @parameter\n" +
+        '    SENDER;     # @sender : address : @parameter\n' +
+        '    COMPARE;    # int : @parameter\n' +
+        '    EQ;         # bool : @parameter\n' +
+        '    IF\n' +
+        '      {}\n' +
+        '      {\n' +
+        '        PUSH string "Not Admin!"; # string : @parameter\n' +
+        '        FAILWITH;   # FAILED\n' +
+        '      }; # @parameter\n' +
+        '    # self.data = params # @parameter\n' +
+        '    NIL operation; # list operation : @parameter\n' +
+        '    PAIR;       # pair (list operation) @parameter\n' +
+        '  };',
+    json: [
+        {
+            prim: 'storage',
+            args: [
                 {
-                    prim: 'CAR',
-                },
-                {
-                    prim: 'PUSH',
-                    args: [
-                        {
-                            prim: 'address',
-                        },
-                        {
-                            string: 'tz1',
-                        },
-                    ],
-                },
-                {
-                    prim: 'SENDER',
-                },
-                {
-                    prim: 'COMPARE',
-                },
-                {
-                    prim: 'EQ',
-                },
-                {
-                    prim: 'IF',
-                    args: [
-                        [],
-                        [
-                            {
-                                prim: 'PUSH',
-                                args: [
-                                    {
-                                        prim: 'string',
-                                    },
-                                    {
-                                        string: 'Not Admin!',
-                                    },
-                                ],
-                            },
-                            {
-                                prim: 'FAILWITH',
-                            },
-                        ],
-                    ],
-                },
-                {
-                    prim: 'NIL',
-                    args: [
-                        {
-                            prim: 'operation',
-                        },
-                    ],
-                },
-                {
-                    prim: 'PAIR',
+                    prim: 'nat',
                 },
             ],
-        ],
-    },
-]);
+        },
+        {
+            prim: 'parameter',
+            args: [
+                {
+                    prim: 'nat',
+                    annots: ['%ep1'],
+                },
+            ],
+        },
+        {
+            prim: 'code',
+            args: [
+                [
+                    {
+                        prim: 'CAR',
+                    },
+                    {
+                        prim: 'PUSH',
+                        args: [
+                            {
+                                prim: 'address',
+                            },
+                            {
+                                string: 'tz1',
+                            },
+                        ],
+                    },
+                    {
+                        prim: 'SENDER',
+                    },
+                    {
+                        prim: 'COMPARE',
+                    },
+                    {
+                        prim: 'EQ',
+                    },
+                    {
+                        prim: 'IF',
+                        args: [
+                            [],
+                            [
+                                {
+                                    prim: 'PUSH',
+                                    args: [
+                                        {
+                                            prim: 'string',
+                                        },
+                                        {
+                                            string: 'Not Admin!',
+                                        },
+                                    ],
+                                },
+                                {
+                                    prim: 'FAILWITH',
+                                },
+                            ],
+                        ],
+                    },
+                    {
+                        prim: 'NIL',
+                        args: [
+                            {
+                                prim: 'operation',
+                            },
+                        ],
+                    },
+                    {
+                        prim: 'PAIR',
+                    },
+                ],
+            ],
+        },
+    ],
+});
 
 console.info('[Passes] - CommonJS');

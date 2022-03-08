@@ -1,0 +1,381 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Crypto expressions Hashing BLACK2B 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"crypto.test.ts\\" 10))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 11))
+            storage_type (())
+            messages ((hash_bytes_BLACK2B True False False True (\\"crypto.test.ts\\" 13) ((set_type (params (\\"crypto.test.ts\\" 13)) \\"bytes\\" (\\"crypto.test.ts\\" 18)) (set (data) (variant \\"Some\\" (blake2b (params (\\"crypto.test.ts\\" 13)) (\\"crypto.test.ts\\" 15)) (\\"crypto.test.ts\\" 15)) (\\"crypto.test.ts\\" 15)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 10))
+        )
+        "
+`;
+
+exports[`Crypto expressions Hashing BLACK2B 2`] = `
+"{
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_BLACK2B);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_BLACK2B ==\\\\n    # self.data = sp.some(sp.blake2b(params)) # @parameter\\\\n    BLAKE2B;    # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"bytes\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bytes\\",
+                    \\"annots\\": [
+                        \\"%hash_bytes_BLACK2B\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"BLAKE2B\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Crypto expressions Hashing KECCAK 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"crypto.test.ts\\" 21))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 22))
+            storage_type (())
+            messages ((hash_bytes_KECCAK True False False True (\\"crypto.test.ts\\" 24) ((set_type (params (\\"crypto.test.ts\\" 24)) \\"bytes\\" (\\"crypto.test.ts\\" 29)) (set (data) (variant \\"Some\\" (keccak (params (\\"crypto.test.ts\\" 24)) (\\"crypto.test.ts\\" 26)) (\\"crypto.test.ts\\" 26)) (\\"crypto.test.ts\\" 26)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 21))
+        )
+        "
+`;
+
+exports[`Crypto expressions Hashing KECCAK 2`] = `
+"{
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_KECCAK);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_KECCAK ==\\\\n    # self.data = sp.some(sp.keccak(params)) # @parameter\\\\n    KECCAK;     # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"bytes\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bytes\\",
+                    \\"annots\\": [
+                        \\"%hash_bytes_KECCAK\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"KECCAK\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Crypto expressions Hashing SHA3 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"crypto.test.ts\\" 54))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 55))
+            storage_type (())
+            messages ((hash_bytes_SHA3 True False False True (\\"crypto.test.ts\\" 57) ((set_type (params (\\"crypto.test.ts\\" 57)) \\"bytes\\" (\\"crypto.test.ts\\" 62)) (set (data) (variant \\"Some\\" (sha3 (params (\\"crypto.test.ts\\" 57)) (\\"crypto.test.ts\\" 59)) (\\"crypto.test.ts\\" 59)) (\\"crypto.test.ts\\" 59)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 54))
+        )
+        "
+`;
+
+exports[`Crypto expressions Hashing SHA3 2`] = `
+"{
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_SHA3);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_SHA3 ==\\\\n    # self.data = sp.some(sp.sha3(params)) # @parameter\\\\n    SHA3;       # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"bytes\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bytes\\",
+                    \\"annots\\": [
+                        \\"%hash_bytes_SHA3\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SHA3\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Crypto expressions Hashing SHA256 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"crypto.test.ts\\" 32))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 33))
+            storage_type (())
+            messages ((hash_bytes_SHA256 True False False True (\\"crypto.test.ts\\" 35) ((set_type (params (\\"crypto.test.ts\\" 35)) \\"bytes\\" (\\"crypto.test.ts\\" 40)) (set (data) (variant \\"Some\\" (sha256 (params (\\"crypto.test.ts\\" 35)) (\\"crypto.test.ts\\" 37)) (\\"crypto.test.ts\\" 37)) (\\"crypto.test.ts\\" 37)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 32))
+        )
+        "
+`;
+
+exports[`Crypto expressions Hashing SHA256 2`] = `
+"{
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_SHA256);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_SHA256 ==\\\\n    # self.data = sp.some(sp.sha256(params)) # @parameter\\\\n    SHA256;     # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"bytes\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bytes\\",
+                    \\"annots\\": [
+                        \\"%hash_bytes_SHA256\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SHA256\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Crypto expressions Hashing SHA512 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"crypto.test.ts\\" 43))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 44))
+            storage_type (())
+            messages ((hash_bytes_SHA512 True False False True (\\"crypto.test.ts\\" 46) ((set_type (params (\\"crypto.test.ts\\" 46)) \\"bytes\\" (\\"crypto.test.ts\\" 51)) (set (data) (variant \\"Some\\" (sha512 (params (\\"crypto.test.ts\\" 46)) (\\"crypto.test.ts\\" 48)) (\\"crypto.test.ts\\" 48)) (\\"crypto.test.ts\\" 48)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 43))
+        )
+        "
+`;
+
+exports[`Crypto expressions Hashing SHA512 2`] = `
+"{
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_SHA512);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_SHA512 ==\\\\n    # self.data = sp.some(sp.sha512(params)) # @parameter\\\\n    SHA512;     # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"bytes\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bytes\\",
+                    \\"annots\\": [
+                        \\"%hash_bytes_SHA512\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SHA512\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;

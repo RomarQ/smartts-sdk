@@ -1,6 +1,7 @@
 export * from './blockchain_properties';
 export * from './comparison';
 export * from './contract';
+export * from './crypto';
 export * from './equality';
 export * from './list';
 export * from './literal';

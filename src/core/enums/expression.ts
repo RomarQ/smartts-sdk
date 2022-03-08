@@ -40,6 +40,12 @@ export enum ExpressionAtom {
     isVariant = 'isVariant',
     cases_arg = 'cases_arg',
     variant_arg = 'variant_arg',
+    // Crypto
+    blake2b = 'blake2b',
+    sha256 = 'sha256',
+    sha512 = 'sha512',
+    sha3 = 'sha3',
+    keccak = 'keccak',
     // Generic
     isNat = 'isNat',
     contains = 'contains',
