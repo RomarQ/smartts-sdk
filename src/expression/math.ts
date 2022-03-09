@@ -37,7 +37,7 @@ export const Add = (left: IExpression, right: IExpression, line = new LineInfo()
  * @returns {IExpression} An expression
  */
 export const Multiply = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new Expression(ExpressionAtom.mul, left, right, line);
+    new Expression(ExpressionAtom.mul_overloaded, left, right, line);
 
 /**
  * Subtract two numerical values

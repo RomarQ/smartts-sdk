@@ -1,7 +1,7 @@
 export enum ExpressionAtom {
     // Math
     add = 'add',
-    mul = 'mul',
+    mul_overloaded = 'mul_overloaded',
     sub = 'sub',
     truediv = 'truediv',
     // Comparison
