@@ -27,7 +27,7 @@ export const Pack = (expression: IExpression, line = new LineInfo()) =>
  * Deserialize a value of type `TBytes()` into the corresponding Michelson value of type `TOption(...)`.
  *
  * ```typescript
- * Unpack(Bytes("0x05000000"));
+ * Unpack(Bytes("0x05070707070100000004746f746f020000000800030007000900010200000006000100020003"));
  * ```
  *
  * @category | Serialization
