@@ -63,6 +63,8 @@ export enum ExpressionAtom {
     view = 'view',
     first = 'first',
     second = 'second',
+    pack = 'pack',
+    unpack = 'unpack',
 }
 
 export default ExpressionAtom;
