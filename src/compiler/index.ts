@@ -19,7 +19,7 @@ interface CompilationResult {
  */
 export const compileContract = (contract: Contract): CompilationResult | string => {
     try {
-        return JSON.parse(SmartML.compile_contract(contract.toString()));
+        return JSON.parse(SmartML.compile_contract(contract[Symbol.toPrimitive]()));
     } catch (error: any) {
         return SmartML.stringOfException(false, error);
     }

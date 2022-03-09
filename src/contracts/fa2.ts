@@ -206,9 +206,8 @@ export const FA2_Contract = (storage: {
         token_total_supply?: ILiteral<LiteralAtom.big_map>;
     };
     metadata?: ILiteral<LiteralAtom.big_map>;
-}) => {
-    const contract = new Contract();
-    contract
+}) =>
+    new Contract()
         // Set storage type
         .setStorageType(FA2_Types.Storage)
         // Define the initial storage
@@ -216,15 +215,15 @@ export const FA2_Contract = (storage: {
             Record({
                 config: Record({
                     administrator: storage.config.administrator,
-                    paused: storage.config.paused || Bool(false),
+                    paused: storage?.config?.paused || Bool(false),
                 }),
                 assets: Record({
-                    ledger: storage.assets.ledger || Big_map(),
-                    operators: storage.assets.operators || Big_map(),
-                    token_metadata: storage.assets.token_metadata || Big_map(),
-                    token_total_supply: storage.assets.token_total_supply || Big_map(),
+                    ledger: storage?.assets?.ledger || Big_map(),
+                    operators: storage?.assets?.operators || Big_map(),
+                    token_metadata: storage?.assets?.token_metadata || Big_map(),
+                    token_total_supply: storage?.assets?.token_total_supply || Big_map(),
                 }),
-                metadata: storage.metadata || Big_map(),
+                metadata: storage?.metadata || Big_map(),
             }),
         )
         //
@@ -388,6 +387,5 @@ export const FA2_Contract = (storage: {
                 ]),
             ]),
         );
-};
 
 export default FA2_Contract;

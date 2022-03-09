@@ -140,8 +140,8 @@ export class Flag {
         this.args = args;
     }
 
-    toString() {
-        return `(${this.flag}${(' ' + this.args.join(' ')).trim()})`;
+    [Symbol.toPrimitive]() {
+        return `(${[this.flag, ...this.args].join(' ')})`;
     }
 }
 
@@ -170,12 +170,15 @@ export class Contract {
         flags: [],
     };
 
+    #line: LineInfo;
     #storage_type?: IType;
     #storage: IExpression = Unit();
     #entries: Record<string, EntryPoint> = {};
     #onChainViews: Record<string, View> = {};
 
-    constructor(public line = new LineInfo()) {}
+    constructor(line = new LineInfo()) {
+        this.#line = line;
+    }
 
     public setStorageType(type: IType) {
         this.#storage_type = type;
@@ -228,10 +231,10 @@ export class Contract {
         return this.#options;
     }
 
-    public toString() {
+    [Symbol.toPrimitive]() {
         return `
         (
-            template_id (static_id 0 ${this.line})
+            template_id (static_id 0 ${this.#line})
             storage ${this.#storage}
             storage_type (${this.#storage_type || '()'})
             messages (${this.entrypoints.join(' ')})

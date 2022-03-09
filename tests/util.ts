@@ -15,7 +15,7 @@ export const verifyValueCompilationOutput = (lambda: ILiteral) => {
 export const verifyContractCompilationOutput = (contract: Contract) => {
     const michelson = SmartML.compileContract(contract);
 
-    expect(contract.toString()).toMatchSnapshot();
+    expect(contract[Symbol.toPrimitive]()).toMatchSnapshot();
     // Check snapshot
     expect(JSON.stringify(michelson, null, 4)).toMatchSnapshot();
     // No errors expected
