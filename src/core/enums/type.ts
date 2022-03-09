@@ -1,4 +1,6 @@
 export enum TypeAtom {
+    unknown = 'unknown',
+    //
     record = 'record',
     variant = 'variant',
     chain_id = 'chain_id',

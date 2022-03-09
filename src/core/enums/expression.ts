@@ -16,6 +16,7 @@ export enum ExpressionAtom {
     or = 'or',
     // Unary
     not = 'not',
+    neg = 'neg',
     // Blockchain property
     amount = 'amount',
     balance = 'balance',

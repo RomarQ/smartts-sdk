@@ -32,7 +32,7 @@ export const compileContract = (contract: Contract): CompilationResult | string 
  *
  * @returns {Record<string, unknown> | string} JSON michelson or a error string
  */
-export const compileValue = (expression: ILiteral<unknown>): CompilationResult | string => {
+export const compileValue = (expression: ILiteral): CompilationResult | string => {
     try {
         return JSON.parse(SmartML.compile_value(expression.toString()));
     } catch (error: any) {

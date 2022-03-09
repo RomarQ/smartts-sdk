@@ -73,7 +73,7 @@ class Type_VariantOrRecord implements IType<TypeAtom> {
  */
 export const TUnknown = (): IType => ({
     // Used for type checking
-    _type: {} as unknown,
+    _type: TypeAtom.unknown,
     toString: () => '(unknown 0)',
 });
 

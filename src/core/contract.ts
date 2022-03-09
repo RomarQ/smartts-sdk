@@ -8,6 +8,8 @@ import { Expression } from './expression';
 import { Proxied, proxy } from '../misc/proxy';
 import { SetType } from '../statement';
 import { TUnit } from '../type';
+import LiteralAtom from './enums/literal';
+import TypeAtom from './enums/type';
 
 abstract class View {
     public name: string;
@@ -76,7 +78,7 @@ export class EntryPoint {
         lazy: false,
         lazyAndCodeless: false,
     };
-    #inType: IType = TUnit();
+    #inType: IType<TypeAtom> = TUnit();
     #statements: IStatement[] = [];
     #line: LineInfo;
 
@@ -180,7 +182,7 @@ export class Contract {
         return this;
     }
 
-    public setStorage(storage: ILiteral<unknown>) {
+    public setStorage(storage: ILiteral<any>) {
         this.#storage = storage;
         return this;
     }
@@ -197,7 +199,7 @@ export class Contract {
         return this;
     }
 
-    public setConfig(options?: { initialBalance?: ILiteral<unknown>; flags?: Flag[] }) {
+    public setConfig(options?: { initialBalance?: ILiteral<LiteralAtom.mutez>; flags?: Flag[] }) {
         if (options?.flags) {
             this.#options.flags = options.flags;
         }

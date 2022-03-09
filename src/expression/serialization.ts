@@ -38,7 +38,7 @@ export const Pack = (expression: IExpression, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression of type `TOption(<type>)`
  */
-export const Unpack = (expression: IExpression, type: IType = TUnknown(), line = new LineInfo()) =>
+export const Unpack = (expression: IExpression, type: IType<any> = TUnknown(), line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.unpack, expression, type, line), Expression.proxyHandler);
 
 export const Serialization = {

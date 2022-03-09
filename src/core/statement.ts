@@ -13,7 +13,7 @@ import { NewVariable, SetValue } from '../statement';
 export class Statement implements IStatement {
     args;
 
-    constructor(public name: string, ...args: (IExpression | IType | LineInfo | string | ILiteral<unknown>)[]) {
+    constructor(public name: string, ...args: (IExpression | IType | LineInfo | string | ILiteral)[]) {
         this.args = args || [];
     }
 

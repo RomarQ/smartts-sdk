@@ -11,7 +11,7 @@ export class Expression implements IExpression {
     _isExpression = true as const;
     args;
 
-    constructor(public name: string, ...args: (IExpression | LineInfo | IType | string | ILiteral<unknown>)[]) {
+    constructor(public name: string, ...args: (IExpression | LineInfo | IType | string | ILiteral<any>)[]) {
         this.args = args || [];
     }
 
@@ -33,17 +33,13 @@ export class Expression implements IExpression {
     }
 }
 
-export class LiteralExpression<T extends TypeAtom> implements ILiteral<T> {
+export class LiteralExpression<T extends LiteralAtom> implements ILiteral<T> {
     _isExpression = true as const;
     // Used for type checking
     _type = null as unknown as T;
     type = {} as unknown as IType;
 
-    constructor(
-        private name: LiteralAtom,
-        private values: (number | string | boolean | IExpression)[],
-        private line: LineInfo,
-    ) {}
+    constructor(private name: T, private values: (number | string | boolean | IExpression)[], private line: LineInfo) {}
 
     toString() {
         switch (this.name) {
@@ -80,10 +76,10 @@ export class LiteralExpression<T extends TypeAtom> implements ILiteral<T> {
     }
 }
 
-export class RecordLiteral implements ILiteral<TypeAtom.record> {
+export class RecordLiteral implements ILiteral<LiteralAtom.record> {
     _isExpression = true as const;
     // Used for type checking
-    _type = null as unknown as TypeAtom.record;
+    _type = null as unknown as LiteralAtom.record;
     type = {} as unknown as IType;
 
     constructor(private fields: Record<string, IExpression>, private line: LineInfo) {}
@@ -101,7 +97,7 @@ export class RecordLiteral implements ILiteral<TypeAtom.record> {
     }
 }
 
-export class MapLiteral<T extends TypeAtom.map | TypeAtom.big_map> implements ILiteral<T> {
+export class MapLiteral<T extends LiteralAtom.map | LiteralAtom.big_map> implements ILiteral<T> {
     _isExpression = true as const;
     _type: T;
     type = {} as unknown as IType;
@@ -130,10 +126,10 @@ export class MapLiteral<T extends TypeAtom.map | TypeAtom.big_map> implements IL
     }
 }
 
-export class LambdaLiteral implements ILiteral<TypeAtom.lambda> {
+export class LambdaLiteral implements ILiteral<LiteralAtom.lambda> {
     _isExpression = true as const;
     // Used for type checking
-    _type = TypeAtom.lambda as const;
+    _type = LiteralAtom.lambda as const;
     type = {} as unknown as IType;
     static idCounter = 0;
     private identifier: number;

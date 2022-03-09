@@ -2,7 +2,7 @@ import SmartML from '../src/compiler';
 import { Contract } from '../src/core';
 import { ILiteral } from '../src/typings/literal';
 
-export const verifyValueCompilationOutput = (lambda: ILiteral<unknown>) => {
+export const verifyValueCompilationOutput = (lambda: ILiteral) => {
     const result = SmartML.compileValue(lambda);
 
     expect(lambda.toString()).toMatchSnapshot();

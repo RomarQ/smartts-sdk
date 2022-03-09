@@ -5,7 +5,6 @@ import type { IExpression, IExpressionKind } from '../typings/expression';
 import { capitalizeBoolean, LineInfo, quote } from '../misc/utils';
 import { TUnknown } from '../type';
 import LiteralAtom from '../core/enums/literal';
-import TypeAtom from '../core/enums/type';
 import { LambdaLiteral, LiteralExpression, MapLiteral, RecordLiteral } from '../core/expression';
 
 /**
@@ -22,7 +21,7 @@ import { LambdaLiteral, LiteralExpression, MapLiteral, RecordLiteral } from '../
  *
  * @returns {IExpression} An expression
  */
-export const Unit = (line = new LineInfo()) => new LiteralExpression<TypeAtom.unit>(LiteralAtom.unit, [], line);
+export const Unit = (line = new LineInfo()) => new LiteralExpression(LiteralAtom.unit, [], line);
 
 /**
  * Build a literal of type nat.
@@ -38,8 +37,7 @@ export const Unit = (line = new LineInfo()) => new LiteralExpression<TypeAtom.un
  *
  * @returns {IExpression} An expression
  */
-export const Nat = (value: number, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.nat>(LiteralAtom.nat, [value], line);
+export const Nat = (value: number, line = new LineInfo()) => new LiteralExpression(LiteralAtom.nat, [value], line);
 
 /**
  * Build a literal of type int.
@@ -55,8 +53,7 @@ export const Nat = (value: number, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const Int = (value: number, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.int>(LiteralAtom.int, [value], line);
+export const Int = (value: number, line = new LineInfo()) => new LiteralExpression(LiteralAtom.int, [value], line);
 
 /**
  * Build a literal of type mutez.
@@ -72,8 +69,7 @@ export const Int = (value: number, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const Mutez = (value: number, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.mutez>(LiteralAtom.mutez, [value], line);
+export const Mutez = (value: number, line = new LineInfo()) => new LiteralExpression(LiteralAtom.mutez, [value], line);
 
 /**
  * Build a literal of type string.
@@ -89,7 +85,7 @@ export const Mutez = (value: number, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const String = (value: string, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.string>(LiteralAtom.string, [quote(value)], line);
+    new LiteralExpression(LiteralAtom.string, [quote(value)], line);
 
 /**
  * Build a literal of type bool.
@@ -106,7 +102,7 @@ export const String = (value: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Bool = (value: boolean, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.bool>(LiteralAtom.bool, [capitalizeBoolean(value)], line);
+    new LiteralExpression(LiteralAtom.bool, [capitalizeBoolean(value)], line);
 
 /**
  * Build a literal of type address.
@@ -123,7 +119,7 @@ export const Bool = (value: boolean, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Address = (address: string, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.address>(LiteralAtom.address, [address], line);
+    new LiteralExpression(LiteralAtom.address, [address], line);
 
 /**
  * Build a literal of type timestamp. (The input is the number of seconds since Epoch)
@@ -140,7 +136,7 @@ export const Address = (address: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Timestamp = (timestamp: number, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.timestamp>(LiteralAtom.timestamp, [timestamp], line);
+    new LiteralExpression(LiteralAtom.timestamp, [timestamp], line);
 
 /**
  * Build a literal of type chain_id. (Represents a chain identifier)
@@ -157,7 +153,7 @@ export const Timestamp = (timestamp: number, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Chain_id = (chainID: string, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.chain_id>(LiteralAtom.chain_id_cst, [chainID], line);
+    new LiteralExpression(LiteralAtom.chain_id_cst, [chainID], line);
 
 /**
  * Build a literal of type bytes.
@@ -173,8 +169,7 @@ export const Chain_id = (chainID: string, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const Bytes = (bytes: string, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.bytes>(LiteralAtom.bytes, [bytes], line);
+export const Bytes = (bytes: string, line = new LineInfo()) => new LiteralExpression(LiteralAtom.bytes, [bytes], line);
 
 /**
  * Build a literal of type bls12_381_fr.
@@ -191,7 +186,7 @@ export const Bytes = (bytes: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Bls12_381_fr = (fr: string | number, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.bls12_381_fr>(LiteralAtom.bls12_381_fr, [fr], line);
+    new LiteralExpression(LiteralAtom.bls12_381_fr, [fr], line);
 
 /**
  * Build a literal of type bls12_381_g1.
@@ -208,7 +203,7 @@ export const Bls12_381_fr = (fr: string | number, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Bls12_381_g1 = (bytes: string, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.bls12_381_g1>(LiteralAtom.bls12_381_g1, [bytes], line);
+    new LiteralExpression(LiteralAtom.bls12_381_g1, [bytes], line);
 
 /**
  * Build a literal of type bls12_381_g2.
@@ -225,7 +220,7 @@ export const Bls12_381_g1 = (bytes: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Bls12_381_g2 = (bytes: string, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.bls12_381_g2>(LiteralAtom.bls12_381_g2, [bytes], line);
+    new LiteralExpression(LiteralAtom.bls12_381_g2, [bytes], line);
 
 /**
  * Build a literal of type key.
@@ -241,8 +236,7 @@ export const Bls12_381_g2 = (bytes: string, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const Key = (key: string, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.key>(LiteralAtom.key, [key], line);
+export const Key = (key: string, line = new LineInfo()) => new LiteralExpression(LiteralAtom.key, [key], line);
 
 /**
  * Build a literal of type key_hash.
@@ -259,7 +253,7 @@ export const Key = (key: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Key_hash = (key_hash: string, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.key_hash>(LiteralAtom.key_hash, [key_hash], line);
+    new LiteralExpression(LiteralAtom.key_hash, [key_hash], line);
 
 /**
  * Build a literal of type signature.
@@ -276,7 +270,7 @@ export const Key_hash = (key_hash: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Signature = (signature: string, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.signature>(LiteralAtom.signature, [signature], line);
+    new LiteralExpression(LiteralAtom.signature, [signature], line);
 
 /**
  * Build a literal of type list.
@@ -293,7 +287,7 @@ export const Signature = (signature: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const List = (items: IExpression[], line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.list>(LiteralAtom.list, items, line);
+    new LiteralExpression(LiteralAtom.list, items, line);
 
 /**
  * Build a literal of type set.
@@ -309,8 +303,7 @@ export const List = (items: IExpression[], line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const Set = (items: IExpression[], line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.set>(LiteralAtom.set, items, line);
+export const Set = (items: IExpression[], line = new LineInfo()) => new LiteralExpression(LiteralAtom.set, items, line);
 
 /**
  * Build a literal of type option. (Wraps an existing optional value)
@@ -367,7 +360,7 @@ export const Map = (
     keyType: IType = TUnknown(),
     valueType: IType = TUnknown(),
     line = new LineInfo(),
-) => new MapLiteral<TypeAtom.map>(LiteralAtom.map, rows, keyType, valueType, line);
+) => new MapLiteral(LiteralAtom.map, rows, keyType, valueType, line);
 
 /**
  * Build a literal of type big_map.
@@ -391,7 +384,7 @@ export const Big_map = (
     keyType: IType = TUnknown(),
     valueType: IType = TUnknown(),
     line = new LineInfo(),
-) => new MapLiteral<TypeAtom.big_map>(LiteralAtom.big_map, rows, keyType, valueType, line);
+) => new MapLiteral(LiteralAtom.big_map, rows, keyType, valueType, line);
 
 /**
  * Build a literal of type pair. (A binary tuple of values)
@@ -408,7 +401,7 @@ export const Big_map = (
  * @returns {IExpression} An expression
  */
 export const Pair = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.tuple>(LiteralAtom.tuple, [left, right], line);
+    new LiteralExpression(LiteralAtom.tuple, [left, right], line);
 
 /**
  * Build a literal of type lambda.
@@ -447,8 +440,8 @@ export const Lambda = (
  *
  * @returns {IExpression} An expression
  */
-export const Ticket = (content: IExpression, amount: LiteralExpression<TypeAtom.nat>, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.ticket>(LiteralAtom.ticket, [content, amount], line);
+export const Ticket = (content: IExpression, amount: LiteralExpression<LiteralAtom.nat>, line = new LineInfo()) =>
+    new LiteralExpression(LiteralAtom.ticket, [content, amount], line);
 
 /**
  * Build a literal of type sapling_state.
@@ -465,7 +458,7 @@ export const Ticket = (content: IExpression, amount: LiteralExpression<TypeAtom.
  * @returns {IExpression} An expression
  */
 export const Sapling_state = (memo: number, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.sapling_state>(LiteralAtom.sapling_state, [memo], line);
+    new LiteralExpression(LiteralAtom.sapling_state, [memo], line);
 
 /**
  * Build a literal of type or. (Wrap a value in a union. It represents the left branch.)
@@ -482,7 +475,7 @@ export const Sapling_state = (memo: number, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Left = (value: IExpressionKind, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.variant>(LiteralAtom.variant, [LiteralAtom.Left, value], line);
+    new LiteralExpression(LiteralAtom.variant, [LiteralAtom.Left, value], line);
 
 /**
  * Build a literal of type or. (Wrap a value in a union. It represents the right branch.)
@@ -499,7 +492,7 @@ export const Left = (value: IExpressionKind, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Right = (value: IExpressionKind, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.variant>(LiteralAtom.variant, [LiteralAtom.Right, value], line);
+    new LiteralExpression(LiteralAtom.variant, [LiteralAtom.Right, value], line);
 
 /**
  * An artificial literal of type pair. (Uses nested annotated pair's to simulate an object value)
@@ -536,7 +529,7 @@ export const Record = (fields: Record<string, IExpression>, line = new LineInfo(
  * @returns {IExpression} An expression
  */
 export const Variant = (field: string, value: IExpression, line = new LineInfo()) =>
-    new LiteralExpression<TypeAtom.variant>(LiteralAtom.variant, [field, value], line);
+    new LiteralExpression(LiteralAtom.variant, [field, value], line);
 
 export const Literal = {
     // Singletons

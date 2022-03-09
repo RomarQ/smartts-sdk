@@ -67,7 +67,7 @@ import { IType } from '../../src/typings/type';
 import { verifyContractCompilationOutput } from '../util';
 import { Contract } from '../../src/core';
 
-const verifyLiteral = (testName: string, type: IType, literal: ILiteral<unknown>) => {
+const verifyLiteral = (testName: string, type: IType, literal: ILiteral) => {
     it(testName, () => {
         const contract = new Contract().setStorageType(type).setStorage(literal);
 

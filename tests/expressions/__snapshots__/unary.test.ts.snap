@@ -1,5 +1,292 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Unary expressions Negate 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"unary.test.ts\\" 20))
+            storage (record (\\"unary.test.ts\\" 31) (nat (variant \\"None\\" (unit) (\\"unary.test.ts\\" 32))) (int (variant \\"None\\" (unit) (\\"unary.test.ts\\" 33))) (bls12_381_fr (variant \\"None\\" (unit) (\\"unary.test.ts\\" 34))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"unary.test.ts\\" 35))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"unary.test.ts\\" 36))))
+            storage_type ((record ((nat (option \\"int\\")) (int (option \\"int\\")) (bls12_381_fr (option \\"bls12_381_fr\\")) (bls12_381_g1 (option \\"bls12_381_g1\\")) (bls12_381_g2 (option \\"bls12_381_g2\\"))) (Some ((\\"nat\\") ((\\"int\\") ((\\"bls12_381_fr\\") ((\\"bls12_381_g1\\") (\\"bls12_381_g2\\")))))) (\\"\\" -1)))
+            messages ((ep1 True False False True (\\"unary.test.ts\\" 40) ((set_type (params (\\"unary.test.ts\\" 40)) \\"nat\\" (\\"unary.test.ts\\" 65)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 23)) (variant \\"Some\\" (neg (params (\\"unary.test.ts\\" 40)) (\\"unary.test.ts\\" 42)) (\\"unary.test.ts\\" 42)) (\\"unary.test.ts\\" 42)))) (ep2 True False False True (\\"unary.test.ts\\" 45) ((set_type (params (\\"unary.test.ts\\" 45)) \\"int\\" (\\"unary.test.ts\\" 65)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 23)) (variant \\"Some\\" (neg (params (\\"unary.test.ts\\" 45)) (\\"unary.test.ts\\" 47)) (\\"unary.test.ts\\" 47)) (\\"unary.test.ts\\" 47)))) (ep3 True False False True (\\"unary.test.ts\\" 50) ((set_type (params (\\"unary.test.ts\\" 50)) \\"bls12_381_fr\\" (\\"unary.test.ts\\" 65)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 23)) (variant \\"Some\\" (neg (params (\\"unary.test.ts\\" 50)) (\\"unary.test.ts\\" 52)) (\\"unary.test.ts\\" 52)) (\\"unary.test.ts\\" 52)))) (ep4 True False False True (\\"unary.test.ts\\" 55) ((set_type (params (\\"unary.test.ts\\" 55)) \\"bls12_381_g1\\" (\\"unary.test.ts\\" 65)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 23)) (variant \\"Some\\" (neg (params (\\"unary.test.ts\\" 55)) (\\"unary.test.ts\\" 57)) (\\"unary.test.ts\\" 57)) (\\"unary.test.ts\\" 57)))) (ep5 True False False True (\\"unary.test.ts\\" 60) ((set_type (params (\\"unary.test.ts\\" 60)) \\"bls12_381_g2\\" (\\"unary.test.ts\\" 65)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 23)) (variant \\"Some\\" (neg (params (\\"unary.test.ts\\" 60)) (\\"unary.test.ts\\" 62)) (\\"unary.test.ts\\" 62)) (\\"unary.test.ts\\" 62)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"unary.test.ts\\" 20))
+        )
+        "
+`;
+
+exports[`Unary expressions Negate 2`] = `
+"{
+    \\"micheline\\": \\"parameter (or (or (nat %ep1) (int %ep2)) (or (bls12_381_fr %ep3) (or (bls12_381_g1 %ep4) (bls12_381_g2 %ep5))));\\\\nstorage   (pair (option %nat int) (pair (option %int int) (pair (option %bls12_381_fr bls12_381_fr) (pair (option %bls12_381_g1 bls12_381_g1) (option %bls12_381_g2 bls12_381_g2)))));\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    IF_LEFT\\\\n      {\\\\n        IF_LEFT\\\\n          {\\\\n            # == ep1 ==\\\\n            # self.data.nat = sp.some(- params) # @parameter%ep1 : @storage\\\\n            NEG;        # int : @storage\\\\n            SOME;       # option int : @storage\\\\n            UPDATE 1;   # @storage\\\\n          }\\\\n          {\\\\n            # == ep2 ==\\\\n            # self.data.int = sp.some(- params) # @parameter%ep2 : @storage\\\\n            NEG;        # int : @storage\\\\n            SOME;       # option int : @storage\\\\n            UPDATE 3;   # @storage\\\\n          }; # @storage\\\\n      }\\\\n      {\\\\n        IF_LEFT\\\\n          {\\\\n            # == ep3 ==\\\\n            # self.data.bls12_381_fr = sp.some(- params) # @parameter%ep3 : @storage\\\\n            NEG;        # bls12_381_fr : @storage\\\\n            SOME;       # option bls12_381_fr : @storage\\\\n            UPDATE 5;   # @storage\\\\n          }\\\\n          {\\\\n            IF_LEFT\\\\n              {\\\\n                # == ep4 ==\\\\n                # self.data.bls12_381_g1 = sp.some(- params) # @parameter%ep4 : @storage\\\\n                NEG;        # bls12_381_g1 : @storage\\\\n                SOME;       # option bls12_381_g1 : @storage\\\\n                UPDATE 7;   # @storage\\\\n              }\\\\n              {\\\\n                # == ep5 ==\\\\n                # self.data.bls12_381_g2 = sp.some(- params) # @parameter%ep5 : @storage\\\\n                NEG;        # bls12_381_g2 : @storage\\\\n                SOME;       # option bls12_381_g2 : @storage\\\\n                UPDATE 8;   # @storage\\\\n              }; # @storage\\\\n          }; # @storage\\\\n      }; # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"pair\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"option\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"int\\"
+                                }
+                            ],
+                            \\"annots\\": [
+                                \\"%nat\\"
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"pair\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"option\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"int\\"
+                                        }
+                                    ],
+                                    \\"annots\\": [
+                                        \\"%int\\"
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"pair\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"option\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"bls12_381_fr\\"
+                                                }
+                                            ],
+                                            \\"annots\\": [
+                                                \\"%bls12_381_fr\\"
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"pair\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"option\\",
+                                                    \\"args\\": [
+                                                        {
+                                                            \\"prim\\": \\"bls12_381_g1\\"
+                                                        }
+                                                    ],
+                                                    \\"annots\\": [
+                                                        \\"%bls12_381_g1\\"
+                                                    ]
+                                                },
+                                                {
+                                                    \\"prim\\": \\"option\\",
+                                                    \\"args\\": [
+                                                        {
+                                                            \\"prim\\": \\"bls12_381_g2\\"
+                                                        }
+                                                    ],
+                                                    \\"annots\\": [
+                                                        \\"%bls12_381_g2\\"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"or\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"or\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"nat\\",
+                                    \\"annots\\": [
+                                        \\"%ep1\\"
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"int\\",
+                                    \\"annots\\": [
+                                        \\"%ep2\\"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"or\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"bls12_381_fr\\",
+                                    \\"annots\\": [
+                                        \\"%ep3\\"
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"or\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"bls12_381_g1\\",
+                                            \\"annots\\": [
+                                                \\"%ep4\\"
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"bls12_381_g2\\",
+                                            \\"annots\\": [
+                                                \\"%ep5\\"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_LEFT\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"IF_LEFT\\",
+                                    \\"args\\": [
+                                        [
+                                            {
+                                                \\"prim\\": \\"NEG\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"SOME\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"UPDATE\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"1\\"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                \\"prim\\": \\"NEG\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"SOME\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"UPDATE\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"3\\"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    \\"prim\\": \\"IF_LEFT\\",
+                                    \\"args\\": [
+                                        [
+                                            {
+                                                \\"prim\\": \\"NEG\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"SOME\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"UPDATE\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"5\\"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                \\"prim\\": \\"IF_LEFT\\",
+                                                \\"args\\": [
+                                                    [
+                                                        {
+                                                            \\"prim\\": \\"NEG\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"SOME\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"UPDATE\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"int\\": \\"7\\"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            \\"prim\\": \\"NEG\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"SOME\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"UPDATE\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"int\\": \\"8\\"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        ]
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
 exports[`Unary expressions Not 1`] = `
 "
         (
