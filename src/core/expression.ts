@@ -79,8 +79,8 @@ export class LiteralExpression<T extends LiteralAtom> implements ILiteral<T> {
 export class RecordLiteral implements ILiteral<LiteralAtom.record> {
     _isExpression = true as const;
     // Used for type checking
-    _type = null as unknown as LiteralAtom.record;
-    type = {} as unknown as IType;
+    _type = {} as LiteralAtom.record;
+    type = {} as IType;
 
     constructor(private fields: Record<string, IExpression>, private line: LineInfo) {}
 
@@ -99,19 +99,16 @@ export class RecordLiteral implements ILiteral<LiteralAtom.record> {
 
 export class MapLiteral<T extends LiteralAtom.map | LiteralAtom.big_map> implements ILiteral<T> {
     _isExpression = true as const;
-    _type: T;
-    type = {} as unknown as IType;
+    _type = {} as T;
+    type = {} as IType;
 
     constructor(
-        private prim: LiteralAtom.map | LiteralAtom.big_map,
+        private prim: T,
         private rows: IExpression[][],
         keyType: IType,
         valueType: IType,
         private line: LineInfo,
-    ) {
-        // Just for typing purposes
-        this._type = null as unknown as T;
-    }
+    ) {}
 
     private buildEntry = ([key, value]: IExpression[]) => {
         return `(${key.toString()} ${value.toString()})`;

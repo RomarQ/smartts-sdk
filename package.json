@@ -23,7 +23,8 @@
         "./type": "./type/index.js",
         "./expression": "./expression/index.js",
         "./statement": "./statement/index.js",
-        "./misc/utils": "./misc/utils.js"
+        "./misc/utils": "./misc/utils.js",
+        "./contracts/fa2": "./contracts/fa2.js"
     },
     "scripts": {
         "build": "node --max_old_space_size=8192 scripts/build.js && tsc --build",

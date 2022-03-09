@@ -13,6 +13,7 @@ generateBundle([
     './src/expression/index.ts',
     './src/statement/index.ts',
     './src/misc/utils.ts',
+    './src/contracts/fa2.ts',
 ]);
 fs.copyFileSync('package.json', `${DIST_FOLDER}/package.json`);
 fs.copyFileSync('src/compiler/smartML.js', `${DIST_FOLDER}/compiler/smartML.js`);

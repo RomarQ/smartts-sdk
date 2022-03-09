@@ -1,4 +1,4 @@
-import { TUnknown } from '..';
+import { TUnknown } from '../type';
 import ExpressionAtom from '../core/enums/expression';
 import { Expression } from '../core/expression';
 import { proxy } from '../misc/proxy';
