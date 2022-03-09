@@ -9,11 +9,7 @@ slug: /
 
 **`SmartTS SDK`** is a metaprogramming framework for building Tezos smart contracts from Javascript.
 
-<hr/>
-
-# [TypeDoc](https://romarq.github.io/smartts-sdk/api)
-
-<hr/>
+## [API Documentation (TypeDoc)](https://romarq.github.io/smartts-sdk/api)
 
 ## Getting Started
 
@@ -48,18 +44,26 @@ const SmartML = require('@tezwell/smartts-sdk/compiler');
 const contract = new Contract()
     .setStorage(Nat(0))
     .addEntrypoint(
-        new EntryPoint('ep1').inputType(TNat()).code((arg) => [
+        new EntryPoint('ep1').setInputType(TNat()).code((arg) => [
             // Define a variable named "some_address"
-            NewVariable('some_address', Address('tz1')),
+            NewVariable('some_address', Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT')),
             // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
             Require(Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
             // Replace the storage value with entry point argument
             SetValue(ContractStorage(), arg),
         ]),
-    )
-    .toString();
+    );
 
 SmartML.compileContract(contract);
+// Result:
+//    {
+//        micheline: 'parameter ...; storage ...; code { ... };',
+//        json: [
+//          { prim: 'storage', args: [...] },
+//          { prim: 'parameter', args: [...] },
+//          { prim: 'code', args: [...] },
+//        ]
+//    }
 ```
 
 #### Build and compile a lambda
@@ -78,11 +82,67 @@ const SmartML = require('@tezwell/smartts-sdk/compiler');
 // A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise.
 const lambda = Lambda()
     .code((arg) => [
-        If(Comparison.GreaterThanOrEqual(arg, Nat(1)))
+        If(Comparison.GreaterThanOrEqual(arg, Nat(10)))
             .Then([Return(String('YES'))])
             .Else([Return(String('NO'))]),
-    ])
-    .toString();
+    ]);
 
-SmartML.compileLambda(lambda);
+SmartML.compileValue(lambda);
+// Result:
+//    {
+//        micheline: '{ PUSH nat 1; SWAP; COMPARE; GE; IF { PUSH string "YES" } { PUSH string "NO" } }',
+//        json: [
+//            {
+//                prim: "PUSH",
+//                args: [
+//                    {
+//                        prim: "nat"
+//                    },
+//                    {
+//                        int: "10"
+//                    }
+//                ]
+//            },
+//            {
+//                prim: "SWAP"
+//            },
+//            {
+//                prim: "COMPARE"
+//            },
+//            {
+//                prim: "GE"
+//            },
+//            {
+//                prim: "IF",
+//                args: [
+//                    [
+//                        {
+//                            prim: "PUSH",
+//                            args: [
+//                                {
+//                                    prim: "string"
+//                                },
+//                                {
+//                                    string: "YES"
+//                                }
+//                            ]
+//                        }
+//                    ],
+//                    [
+//                        {
+//                            prim: "PUSH",
+//                            args: [
+//                                {
+//                                    prim: "string"
+//                                },
+//                                {
+//                                    string: "NO"
+//                                }
+//                            ]
+//                        }
+//                    ]
+//                ]
+//            }
+//        ]
+//    }
 ```

@@ -8,7 +8,7 @@ import { IType } from '../typings/type';
  * Set expression type.
  *
  * ```typescript
- * Lambda().inputType(TString()).code((arg) => [SetType(arg, TBool())])
+ * Lambda().setInputType(TString()).code((arg) => [SetType(arg, TBool())])
  * ```
  *
  * @param expression

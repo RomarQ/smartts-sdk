@@ -1,0 +1,809 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test blockchain operations AMOUNT 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"mutez\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (amount) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations AMOUNT 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option mutez);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.amount) # \\\\n    AMOUNT;     # @amount\\\\n    SOME;       # option mutez\\\\n    NIL operation; # list operation : option mutez\\\\n    PAIR;       # pair (list operation) (option mutez)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"mutez\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"AMOUNT\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Test blockchain operations BALANCE 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"mutez\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (balance) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations BALANCE 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option mutez);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.balance) # \\\\n    BALANCE;    # @balance\\\\n    SOME;       # option mutez\\\\n    NIL operation; # list operation : option mutez\\\\n    PAIR;       # pair (list operation) (option mutez)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"mutez\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"BALANCE\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Test blockchain operations CHAIN_ID 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"chain_id\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (chain_id) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations CHAIN_ID 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option chain_id);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.chain_id) # @parameter\\\\n    CHAIN_ID;   # chain_id : @parameter\\\\n    SWAP;       # @parameter : chain_id\\\\n    DROP;       # chain_id\\\\n    SOME;       # option chain_id\\\\n    NIL operation; # list operation : option chain_id\\\\n    PAIR;       # pair (list operation) (option chain_id)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"chain_id\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"CHAIN_ID\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Test blockchain operations LEVEL 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"nat\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (level) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations LEVEL 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.level) # @parameter\\\\n    LEVEL;      # @level : @parameter\\\\n    SWAP;       # @parameter : @level\\\\n    DROP;       # @level\\\\n    SOME;       # option nat\\\\n    NIL operation; # list operation : option nat\\\\n    PAIR;       # pair (list operation) (option nat)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"LEVEL\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Test blockchain operations NOW 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"timestamp\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (now) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations NOW 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option timestamp);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.now) # \\\\n    NOW;        # @now\\\\n    SOME;       # option timestamp\\\\n    NIL operation; # list operation : option timestamp\\\\n    PAIR;       # pair (list operation) (option timestamp)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"timestamp\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"NOW\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Test blockchain operations SELF 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option (contract \\"unit\\")))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (self \\"\\" (\\"blockchain_properties.test.ts\\" 38)) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations SELF 2`] = `"\\"import: params type yet unknown\\""`;
+
+exports[`Test blockchain operations SELF_ADDRESS 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"address\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (self_address) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations SELF_ADDRESS 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option address);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.self_address) # \\\\n    SELF_ADDRESS; # @self\\\\n    SOME;       # option address\\\\n    NIL operation; # list operation : option address\\\\n    PAIR;       # pair (list operation) (option address)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"address\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"SELF_ADDRESS\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Test blockchain operations SENDER 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"address\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (sender) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations SENDER 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option address);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.sender) # \\\\n    SENDER;     # @sender\\\\n    SOME;       # option address\\\\n    NIL operation; # list operation : option address\\\\n    PAIR;       # pair (list operation) (option address)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"address\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"SENDER\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Test blockchain operations SOURCE 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"address\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (source) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations SOURCE 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option address);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.source) # \\\\n    SOURCE;     # @source\\\\n    SOME;       # option address\\\\n    NIL operation; # list operation : option address\\\\n    PAIR;       # pair (list operation) (option address)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"address\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOURCE\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Test blockchain operations TOTAL_VOTING_POWER 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"nat\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (total_voting_power) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations TOTAL_VOTING_POWER 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.total_voting_power) # @parameter\\\\n    TOTAL_VOTING_POWER; # nat : @parameter\\\\n    SWAP;       # @parameter : nat\\\\n    DROP;       # nat\\\\n    SOME;       # option nat\\\\n    NIL operation; # list operation : option nat\\\\n    PAIR;       # pair (list operation) (option nat)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"TOTAL_VOTING_POWER\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Test blockchain operations VOTING_POWER 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"blockchain_properties.test.ts\\" 27))
+            storage (variant \\"None\\" (unit) (\\"blockchain_properties.test.ts\\" 29))
+            storage_type ((option \\"nat\\"))
+            messages ((ep1 True False False True (\\"blockchain_properties.test.ts\\" 31) ((set_type (params (\\"blockchain_properties.test.ts\\" 31)) \\"unit\\" (\\"blockchain_properties.test.ts\\" 34)) (set (data) (variant \\"Some\\" (voting_power (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"blockchain_properties.test.ts\\" 38)) (\\"blockchain_properties.test.ts\\" 38)) (\\"blockchain_properties.test.ts\\" 31)) (\\"blockchain_properties.test.ts\\" 31)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"blockchain_properties.test.ts\\" 27))
+        )
+        "
+`;
+
+exports[`Test blockchain operations VOTING_POWER 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.voting_power(sp.key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))) # \\\\n    PUSH key_hash \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # key_hash\\\\n    VOTING_POWER; # nat\\\\n    SOME;       # option nat\\\\n    NIL operation; # list operation : option nat\\\\n    PAIR;       # pair (list operation) (option nat)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"key_hash\\"
+                            },
+                            {
+                                \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"VOTING_POWER\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;

@@ -6,7 +6,7 @@ exports[`Unary expressions Not 1`] = `
             template_id (static_id 0 (\\"unary.test.ts\\" 9))
             storage (variant \\"None\\" (unit) (\\"unary.test.ts\\" 10))
             storage_type (())
-            messages ((ep1 True False False True (\\"unary.test.ts\\" 12) ((set_type (params (\\"unary.test.ts\\" 12)) \\"bool\\" (\\"unary.test.ts\\" 14)) (set (data) (variant \\"Some\\" (not (params (\\"unary.test.ts\\" 12)) (\\"unary.test.ts\\" 12)) (\\"unary.test.ts\\" 12)) (\\"unary.test.ts\\" 12)))))
+            messages ((ep1 True False False True (\\"unary.test.ts\\" 12) ((set_type (params (\\"unary.test.ts\\" 12)) \\"bool\\" (\\"unary.test.ts\\" 17)) (set (data) (variant \\"Some\\" (not (params (\\"unary.test.ts\\" 12)) (\\"unary.test.ts\\" 14)) (\\"unary.test.ts\\" 14)) (\\"unary.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()
@@ -18,57 +18,60 @@ exports[`Unary expressions Not 1`] = `
 `;
 
 exports[`Unary expressions Not 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"option\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"bool\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bool\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (bool %ep1);\\\\nstorage   (option bool);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.some(~ params) # @parameter\\\\n    NOT;        # bool\\\\n    SOME;       # option bool\\\\n    NIL operation; # list operation : option bool\\\\n    PAIR;       # pair (list operation) (option bool)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"NOT\\"
-                },
-                {
-                    \\"prim\\": \\"SOME\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"option\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"bool\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NOT\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;

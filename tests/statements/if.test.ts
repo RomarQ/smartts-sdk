@@ -10,12 +10,10 @@ describe('Test (If) statement', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [If(GreaterThanOrEqual(arg, Nat(5)), [SetValue(ContractStorage(), arg)])]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('Without (Else) - [chaining version]', () => {
@@ -23,12 +21,10 @@ describe('Test (If) statement', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [If(GreaterThanOrEqual(arg, Nat(5))).Then([SetValue(ContractStorage(), arg)])]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('With (Then) and (Else)', () => {
@@ -36,7 +32,7 @@ describe('Test (If) statement', () => {
             .setStorage(Nat(1))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [
                         If(
                             GreaterThanOrEqual(arg, Nat(5)),
@@ -44,25 +40,19 @@ describe('Test (If) statement', () => {
                             [SetValue(ContractStorage(), Nat(5))],
                         ),
                     ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('With (Then) and (Else) - [chaining version]', () => {
-        const contract = new Contract()
-            .setStorage(Nat(1))
-            .addEntrypoint(
-                new EntryPoint('ep1').inputType(TNat()).code((arg) => [
-                    If(GreaterThanOrEqual(arg, Nat(5)))
-                        .Then([SetValue(ContractStorage(), arg)])
-                        .Else([SetValue(ContractStorage(), Nat(5))]),
-                ]),
-            )
-            .toString();
+        const contract = new Contract().setStorage(Nat(1)).addEntrypoint(
+            new EntryPoint('ep1').setInputType(TNat()).code((arg) => [
+                If(GreaterThanOrEqual(arg, Nat(5)))
+                    .Then([SetValue(ContractStorage(), arg)])
+                    .Else([SetValue(ContractStorage(), Nat(5))]),
+            ]),
+        );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

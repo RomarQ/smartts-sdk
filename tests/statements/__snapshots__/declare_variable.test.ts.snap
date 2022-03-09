@@ -6,7 +6,7 @@ exports[`Test (NewVariable) statement Declares a variable named (A) 1`] = `
             template_id (static_id 0 (\\"declare_variable.test.ts\\" 9))
             storage (literal (nat 1) (\\"declare_variable.test.ts\\" 10))
             storage_type (())
-            messages ((ep1 True False False True (\\"declare_variable.test.ts\\" 12) ((set_type (params (\\"declare_variable.test.ts\\" 12)) \\"nat\\" (\\"declare_variable.test.ts\\" 19)) (defineLocal \\"A\\" (add (params (\\"declare_variable.test.ts\\" 12)) (literal (nat 2) (\\"declare_variable.test.ts\\" 14)) (\\"math.ts\\" 21)) True (\\"declare_variable.test.ts\\" 14)) (set (data) (getLocal \\"A\\" (\\"declare_variable.test.ts\\" 14)) (\\"declare_variable.test.ts\\" 14)))))
+            messages ((ep1 True False False True (\\"declare_variable.test.ts\\" 12) ((set_type (params (\\"declare_variable.test.ts\\" 12)) \\"nat\\" (\\"declare_variable.test.ts\\" 20)) (defineLocal \\"A\\" (add (params (\\"declare_variable.test.ts\\" 12)) (literal (nat 2) (\\"declare_variable.test.ts\\" 14)) (\\"math.ts\\" 21)) True (\\"declare_variable.test.ts\\" 14)) (set (data) (getLocal \\"A\\" (\\"declare_variable.test.ts\\" 14)) (\\"declare_variable.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()
@@ -18,60 +18,63 @@ exports[`Test (NewVariable) statement Declares a variable named (A) 1`] = `
 `;
 
 exports[`Test (NewVariable) statement Declares a variable named (A) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"nat\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"nat\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # A = sp.local(\\\\\\"A\\\\\\", params + 2) # @parameter\\\\n    PUSH nat 2; # nat : @parameter\\\\n    ADD;        # nat\\\\n    # self.data = A.value # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"nat\\"
-                        },
-                        {
-                            \\"int\\": \\"2\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"ADD\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"nat\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"ADD\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;

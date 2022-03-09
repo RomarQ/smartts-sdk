@@ -9,22 +9,18 @@ describe('Test Map statements', () => {
         const contract = new Contract()
             .setStorage(Map([[String('some_key'), Nat(1)]]))
             .addEntrypoint(
-                new EntryPoint('ep1').inputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
-            )
-            .toString();
+                new EntryPoint('ep1').setInputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('DeleteMapEntry on BigMap', () => {
         const contract = new Contract()
             .setStorage(Big_map([[String('some_key'), Nat(1)]]))
             .addEntrypoint(
-                new EntryPoint('ep1').inputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
-            )
-            .toString();
+                new EntryPoint('ep1').setInputType(TString()).code((arg) => [DeleteMapEntry(ContractStorage(), arg)]),
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

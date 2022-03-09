@@ -4,9 +4,9 @@ exports[`Test Variant statements MatchVariant 1 1`] = `
 "
         (
             template_id (static_id 0 (\\"variant.test.ts\\" 9))
-            storage (literal (string \\"\\") (\\"variant.test.ts\\" 10))
+            storage (literal (string \\"\\") (\\"variant.test.ts\\" 9))
             storage_type (())
-            messages ((ep1 True False False True (\\"variant.test.ts\\" 12) ((set_type (params (\\"variant.test.ts\\" 12)) (variant ((action1 \\"string\\") (action2 \\"string\\")) (Some ((\\"action1\\") (\\"action2\\"))) (\\"\\" -1)) (\\"variant.test.ts\\" 18)) (match_cases (params (\\"variant.test.ts\\" 12)) \\"__MATCH_1__\\" ((match (cases_arg \\"__MATCH_1__\\" (\\"variant.test.ts\\" 12)) action1 \\"__MATCH_1___action1\\" ((set (data) (variant_arg \\"__MATCH_1___action1\\" (\\"variant.test.ts\\" 12)) (\\"variant.test.ts\\" 12))) (\\"variant.test.ts\\" 12)) (match (cases_arg \\"__MATCH_1__\\" (\\"variant.test.ts\\" 12)) action2 \\"__MATCH_1___action2\\" ((set (data) (variant_arg \\"__MATCH_1___action2\\" (\\"variant.test.ts\\" 12)) (\\"variant.test.ts\\" 12))) (\\"variant.test.ts\\" 12))) (\\"variant.test.ts\\" 12)))))
+            messages ((ep1 True False False True (\\"variant.test.ts\\" 10) ((set_type (params (\\"variant.test.ts\\" 10)) (variant ((action1 \\"string\\") (action2 \\"string\\")) (Some ((\\"action1\\") (\\"action2\\"))) (\\"\\" -1)) (\\"variant.test.ts\\" 17)) (match_cases (params (\\"variant.test.ts\\" 10)) \\"__MATCH_1__\\" ((match (cases_arg \\"__MATCH_1__\\" (\\"variant.test.ts\\" 10)) action1 \\"__MATCH_1___action1\\" ((set (data) (variant_arg \\"__MATCH_1___action1\\" (\\"variant.test.ts\\" 10)) (\\"variant.test.ts\\" 10))) (\\"variant.test.ts\\" 10)) (match (cases_arg \\"__MATCH_1__\\" (\\"variant.test.ts\\" 10)) action2 \\"__MATCH_1___action2\\" ((set (data) (variant_arg \\"__MATCH_1___action2\\" (\\"variant.test.ts\\" 10)) (\\"variant.test.ts\\" 10))) (\\"variant.test.ts\\" 10))) (\\"variant.test.ts\\" 10)))))
             flags ()
             privates ()
             views ()
@@ -18,198 +18,204 @@ exports[`Test Variant statements MatchVariant 1 1`] = `
 `;
 
 exports[`Test Variant statements MatchVariant 1 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"string\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"or\\",
-                \\"args\\": [
+"{
+    \\"micheline\\": \\"parameter (or %ep1 (string %action1) (string %action2));\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # with params.match_cases(...): # @parameter\\\\n    IF_LEFT\\\\n      {\\\\n        # self.data = __MATCH_1___action1 # @parameter%action1\\\\n      }\\\\n      {\\\\n        # self.data = __MATCH_1___action2 # @parameter%action2\\\\n      }; # string\\\\n    NIL operation; # list operation : string\\\\n    PAIR;       # pair (list operation) string\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"string\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"or\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"string\\",
+                            \\"annots\\": [
+                                \\"%action1\\"
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"string\\",
+                            \\"annots\\": [
+                                \\"%action2\\"
+                            ]
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
                     {
-                        \\"prim\\": \\"string\\",
-                        \\"annots\\": [
-                            \\"%action1\\"
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_LEFT\\",
+                        \\"args\\": [
+                            [],
+                            []
                         ]
                     },
                     {
-                        \\"prim\\": \\"string\\",
-                        \\"annots\\": [
-                            \\"%action2\\"
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
                         ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
                     }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
                 ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CAR\\"
-                },
-                {
-                    \\"prim\\": \\"IF_LEFT\\",
-                    \\"args\\": [
-                        [],
-                        []
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;
 
 exports[`Test Variant statements MatchVariant 2 1`] = `
 "
         (
-            template_id (static_id 0 (\\"variant.test.ts\\" 24))
-            storage (literal (string \\"\\") (\\"variant.test.ts\\" 25))
+            template_id (static_id 0 (\\"variant.test.ts\\" 20))
+            storage (literal (string \\"\\") (\\"variant.test.ts\\" 20))
             storage_type (())
-            messages ((ep1 True False False True (\\"variant.test.ts\\" 27) ((set_type (params (\\"variant.test.ts\\" 27)) (list (variant ((action1 \\"string\\") (action2 \\"string\\")) (Some ((\\"action1\\") (\\"action2\\"))) (\\"\\" -1))) (\\"variant.test.ts\\" 37)) (forGroup \\"__ITERATOR_FOREACH_2__\\" (params (\\"variant.test.ts\\" 27)) ((match_cases (iter \\"__ITERATOR_FOREACH_2__\\" (\\"variant.test.ts\\" 29)) \\"__MATCH_3__\\" ((match (cases_arg \\"__MATCH_3__\\" (\\"variant.test.ts\\" 29)) action1 \\"__MATCH_3___action1\\" ((set (data) (variant_arg \\"__MATCH_3___action1\\" (\\"variant.test.ts\\" 29)) (\\"variant.test.ts\\" 29))) (\\"variant.test.ts\\" 29)) (match (cases_arg \\"__MATCH_3__\\" (\\"variant.test.ts\\" 29)) action2 \\"__MATCH_3___action2\\" ((set (data) (variant_arg \\"__MATCH_3___action2\\" (\\"variant.test.ts\\" 29)) (\\"variant.test.ts\\" 29))) (\\"variant.test.ts\\" 29))) (\\"variant.test.ts\\" 29))) (\\"variant.test.ts\\" 29)))))
+            messages ((ep1 True False False True (\\"variant.test.ts\\" 21) ((set_type (params (\\"variant.test.ts\\" 21)) (list (variant ((action1 \\"string\\") (action2 \\"string\\")) (Some ((\\"action1\\") (\\"action2\\"))) (\\"\\" -1))) (\\"variant.test.ts\\" 32)) (forGroup \\"__ITERATOR_FOREACH_2__\\" (params (\\"variant.test.ts\\" 21)) ((match_cases (iter \\"__ITERATOR_FOREACH_2__\\" (\\"variant.test.ts\\" 23)) \\"__MATCH_3__\\" ((match (cases_arg \\"__MATCH_3__\\" (\\"variant.test.ts\\" 23)) action1 \\"__MATCH_3___action1\\" ((set (data) (variant_arg \\"__MATCH_3___action1\\" (\\"variant.test.ts\\" 23)) (\\"variant.test.ts\\" 23))) (\\"variant.test.ts\\" 23)) (match (cases_arg \\"__MATCH_3__\\" (\\"variant.test.ts\\" 23)) action2 \\"__MATCH_3___action2\\" ((set (data) (variant_arg \\"__MATCH_3___action2\\" (\\"variant.test.ts\\" 23)) (\\"variant.test.ts\\" 23))) (\\"variant.test.ts\\" 23))) (\\"variant.test.ts\\" 23))) (\\"variant.test.ts\\" 23)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"variant.test.ts\\" 24))
+            balance (literal (mutez 0) (\\"variant.test.ts\\" 20))
         )
         "
 `;
 
 exports[`Test Variant statements MatchVariant 2 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"string\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"list\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"or\\",
-                        \\"args\\": [
-                            {
-                                \\"prim\\": \\"string\\",
-                                \\"annots\\": [
-                                    \\"%action1\\"
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"string\\",
-                                \\"annots\\": [
-                                    \\"%action2\\"
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (list %ep1 (or (string %action1) (string %action2)));\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # for __ITERATOR_FOREACH_2__ in params: ... # @parameter : @storage\\\\n    DUP;        # @parameter : @parameter : @storage\\\\n    ITER\\\\n      {\\\\n        # with __ITERATOR_FOREACH_2__.match_cases(...): # or (string %action1) (string %action2) : @parameter : @storage\\\\n        IF_LEFT\\\\n          {\\\\n            DIG 2;      # @storage : string : @parameter\\\\n            DROP;       # string : @parameter\\\\n            SWAP;       # @parameter : string\\\\n            # self.data = __MATCH_3___action1 # @parameter : string\\\\n          }\\\\n          {\\\\n            DIG 2;      # @storage : string : @parameter\\\\n            DROP;       # string : @parameter\\\\n            SWAP;       # @parameter : string\\\\n            # self.data = __MATCH_3___action2 # @parameter : string\\\\n          }; # list (or (string %action1) (string %action2)) : string\\\\n      }; # @parameter : @storage\\\\n    DROP;       # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"UNPAIR\\"
-                },
-                {
-                    \\"prim\\": \\"DUP\\"
-                },
-                {
-                    \\"prim\\": \\"ITER\\",
-                    \\"args\\": [
-                        [
-                            {
-                                \\"prim\\": \\"IF_LEFT\\",
-                                \\"args\\": [
-                                    [
-                                        {
-                                            \\"prim\\": \\"DIG\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"int\\": \\"2\\"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            \\"prim\\": \\"DROP\\"
-                                        },
-                                        {
-                                            \\"prim\\": \\"SWAP\\"
-                                        }
-                                    ],
-                                    [
-                                        {
-                                            \\"prim\\": \\"DIG\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"int\\": \\"2\\"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            \\"prim\\": \\"DROP\\"
-                                        },
-                                        {
-                                            \\"prim\\": \\"SWAP\\"
-                                        }
-                                    ]
-                                ]
-                            }
-                        ]
-                    ]
-                },
-                {
-                    \\"prim\\": \\"DROP\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"string\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"list\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"or\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"string\\",
+                                    \\"annots\\": [
+                                        \\"%action1\\"
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"string\\",
+                                    \\"annots\\": [
+                                        \\"%action2\\"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"ITER\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"IF_LEFT\\",
+                                    \\"args\\": [
+                                        [
+                                            {
+                                                \\"prim\\": \\"DIG\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"2\\"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"DROP\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"SWAP\\"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                \\"prim\\": \\"DIG\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"2\\"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"DROP\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"SWAP\\"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;

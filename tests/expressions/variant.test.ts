@@ -10,12 +10,10 @@ describe('Variant expressions', () => {
             .setStorage(Unit())
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TVariant({ prop1: TNat(), prop2: TUnit() }))
+                    .setInputType(TVariant({ prop1: TNat(), prop2: TUnit() }))
                     .code((arg) => [SetValue(ContractStorage(), OpenVariant(arg, 'prop2'))]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('Check Variant', () => {
@@ -23,12 +21,10 @@ describe('Variant expressions', () => {
             .setStorage(Bool(true))
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TVariant({ prop1: TNat(), prop2: TUnit() }))
+                    .setInputType(TVariant({ prop1: TNat(), prop2: TUnit() }))
                     .code((arg) => [SetValue(ContractStorage(), IsVariant(arg, 'prop2'))]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

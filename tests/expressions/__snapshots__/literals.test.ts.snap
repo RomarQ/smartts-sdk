@@ -4,7 +4,7 @@ exports[`Test Literals Left variant 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant Left (literal (nat 1) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (variant Left (literal (nat 1) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((variant ((Left \\"nat\\") (Right \\"int\\")) (Some ((\\"Left\\") (\\"Right\\"))) (\\"\\" -1)))
             messages ()
             flags ()
@@ -18,66 +18,69 @@ exports[`Test Literals Left variant 1`] = `
 `;
 
 exports[`Test Literals Left variant 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"or\\",
-                \\"args\\": [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (or (nat %Left) (int %Right));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"or\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\",
+                            \\"annots\\": [
+                                \\"%Left\\"
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"int\\",
+                            \\"annots\\": [
+                                \\"%Right\\"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
                     {
-                        \\"prim\\": \\"nat\\",
-                        \\"annots\\": [
-                            \\"%Left\\"
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
                         ]
                     },
                     {
-                        \\"prim\\": \\"int\\",
-                        \\"annots\\": [
-                            \\"%Right\\"
-                        ]
+                        \\"prim\\": \\"PAIR\\"
                     }
                 ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals Right variant 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant Right (literal (int 1) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (variant Right (literal (int 1) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((variant ((Left \\"nat\\") (Right \\"int\\")) (Some ((\\"Left\\") (\\"Right\\"))) (\\"\\" -1)))
             messages ()
             flags ()
@@ -91,66 +94,69 @@ exports[`Test Literals Right variant 1`] = `
 `;
 
 exports[`Test Literals Right variant 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"or\\",
-                \\"args\\": [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (or (nat %Left) (int %Right));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"or\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\",
+                            \\"annots\\": [
+                                \\"%Left\\"
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"int\\",
+                            \\"annots\\": [
+                                \\"%Right\\"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
                     {
-                        \\"prim\\": \\"nat\\",
-                        \\"annots\\": [
-                            \\"%Left\\"
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
                         ]
                     },
                     {
-                        \\"prim\\": \\"int\\",
-                        \\"annots\\": [
-                            \\"%Right\\"
-                        ]
+                        \\"prim\\": \\"PAIR\\"
                     }
                 ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals address 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"literals.test.ts\\" 79))
+            storage (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"literals.test.ts\\" 78))
             storage_type (\\"address\\")
             messages ()
             flags ()
@@ -164,52 +170,55 @@ exports[`Test Literals address 1`] = `
 `;
 
 exports[`Test Literals address 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"address\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   address;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"address\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals big_map 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (big_map (\\"literals.test.ts\\" 79) ((literal (nat 1) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD1\\") (\\"literals.test.ts\\" 79))) ((literal (nat 2) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD2\\") (\\"literals.test.ts\\" 79))))
+            storage (big_map (\\"literals.test.ts\\" 78) ((literal (nat 1) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD1\\") (\\"literals.test.ts\\" 78))) ((literal (nat 2) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD2\\") (\\"literals.test.ts\\" 78))))
             storage_type ((bigmap \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -223,60 +232,63 @@ exports[`Test Literals big_map 1`] = `
 `;
 
 exports[`Test Literals big_map 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"big_map\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    },
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (big_map nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"big_map\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals bls12_381_fr 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bls12_381_fr 0x01) (\\"literals.test.ts\\" 79))
+            storage (literal (bls12_381_fr 0x01) (\\"literals.test.ts\\" 78))
             storage_type (\\"bls12_381_fr\\")
             messages ()
             flags ()
@@ -290,52 +302,55 @@ exports[`Test Literals bls12_381_fr 1`] = `
 `;
 
 exports[`Test Literals bls12_381_fr 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bls12_381_fr\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_fr;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"bls12_381_fr\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals bls12_381_fr 3`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bls12_381_fr 1) (\\"literals.test.ts\\" 79))
+            storage (literal (bls12_381_fr 1) (\\"literals.test.ts\\" 78))
             storage_type (\\"bls12_381_fr\\")
             messages ()
             flags ()
@@ -349,52 +364,55 @@ exports[`Test Literals bls12_381_fr 3`] = `
 `;
 
 exports[`Test Literals bls12_381_fr 4`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bls12_381_fr\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_fr;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"bls12_381_fr\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals bls12_381_g1 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bls12_381_g1 0x00) (\\"literals.test.ts\\" 79))
+            storage (literal (bls12_381_g1 0x00) (\\"literals.test.ts\\" 78))
             storage_type (\\"bls12_381_g1\\")
             messages ()
             flags ()
@@ -408,52 +426,55 @@ exports[`Test Literals bls12_381_g1 1`] = `
 `;
 
 exports[`Test Literals bls12_381_g1 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bls12_381_g1\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_g1;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"bls12_381_g1\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals bls12_381_g2 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bls12_381_g2 0x00) (\\"literals.test.ts\\" 79))
+            storage (literal (bls12_381_g2 0x00) (\\"literals.test.ts\\" 78))
             storage_type (\\"bls12_381_g2\\")
             messages ()
             flags ()
@@ -467,52 +488,55 @@ exports[`Test Literals bls12_381_g2 1`] = `
 `;
 
 exports[`Test Literals bls12_381_g2 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bls12_381_g2\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_g2;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"bls12_381_g2\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals bool 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bool True) (\\"literals.test.ts\\" 79))
+            storage (literal (bool True) (\\"literals.test.ts\\" 78))
             storage_type (\\"bool\\")
             messages ()
             flags ()
@@ -526,52 +550,55 @@ exports[`Test Literals bool 1`] = `
 `;
 
 exports[`Test Literals bool 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bool\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"bool\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals bytes 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (bytes 0x00) (\\"literals.test.ts\\" 79))
+            storage (literal (bytes 0x00) (\\"literals.test.ts\\" 78))
             storage_type (\\"bytes\\")
             messages ()
             flags ()
@@ -585,52 +612,55 @@ exports[`Test Literals bytes 1`] = `
 `;
 
 exports[`Test Literals bytes 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"bytes\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bytes;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"bytes\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals chain_id 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (chain_id_cst 0x00) (\\"literals.test.ts\\" 79))
+            storage (literal (chain_id_cst 0x00) (\\"literals.test.ts\\" 78))
             storage_type (\\"chain_id\\")
             messages ()
             flags ()
@@ -644,52 +674,55 @@ exports[`Test Literals chain_id 1`] = `
 `;
 
 exports[`Test Literals chain_id 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"chain_id\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   chain_id;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"chain_id\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals int 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (int 2) (\\"literals.test.ts\\" 79))
+            storage (literal (int 2) (\\"literals.test.ts\\" 78))
             storage_type (\\"int\\")
             messages ()
             flags ()
@@ -703,52 +736,55 @@ exports[`Test Literals int 1`] = `
 `;
 
 exports[`Test Literals int 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"int\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   int;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"int\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals key 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"literals.test.ts\\" 79))
+            storage (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"literals.test.ts\\" 78))
             storage_type (\\"key\\")
             messages ()
             flags ()
@@ -762,52 +798,55 @@ exports[`Test Literals key 1`] = `
 `;
 
 exports[`Test Literals key 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"key\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   key;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"key\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals key_hash 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"literals.test.ts\\" 79))
+            storage (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"literals.test.ts\\" 78))
             storage_type (\\"key_hash\\")
             messages ()
             flags ()
@@ -821,52 +860,55 @@ exports[`Test Literals key_hash 1`] = `
 `;
 
 exports[`Test Literals key_hash 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"key_hash\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   key_hash;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"key_hash\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals lambda 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (lambda 1 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 79) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"literals.test.ts\\" 79) \\"string\\") (\\"literals.test.ts\\" 79))))
+            storage (lambda 1 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 78) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"literals.test.ts\\" 78) \\"string\\") (\\"literals.test.ts\\" 78))))
             storage_type ((lambda \\"string\\" \\"string\\"))
             messages ()
             flags ()
@@ -880,60 +922,63 @@ exports[`Test Literals lambda 1`] = `
 `;
 
 exports[`Test Literals lambda 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"lambda\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"string\\"
-                    },
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (lambda string string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"lambda\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"string\\"
+                        },
+                        {
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals lambda 3`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (lambda 2 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 79) ((ifBlock (gt (lambdaParams 2 \\"lambda_arg\\" (\\"literals.test.ts\\" 79) (unknown 0)) (literal (nat 2) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79)) ((result (literal (string \\"YES\\") (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))) (\\"literals.test.ts\\" 79)) (elseBlock ((result (literal (string \\"NO\\") (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))))))
+            storage (lambda 2 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 78) ((ifBlock (gt (lambdaParams 2 \\"lambda_arg\\" (\\"literals.test.ts\\" 78) (unknown 0)) (literal (nat 2) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78)) ((result (literal (string \\"YES\\") (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))) (\\"literals.test.ts\\" 78)) (elseBlock ((result (literal (string \\"NO\\") (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))))))
             storage_type ((lambda \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -947,60 +992,63 @@ exports[`Test Literals lambda 3`] = `
 `;
 
 exports[`Test Literals lambda 4`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"lambda\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    },
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (lambda nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"lambda\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals list 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (list (\\"literals.test.ts\\" 79) (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 79)) (literal (string \\"WORLD\\") (\\"literals.test.ts\\" 79)))
+            storage (list (\\"literals.test.ts\\" 78) (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 78)) (literal (string \\"WORLD\\") (\\"literals.test.ts\\" 78)))
             storage_type ((list \\"string\\"))
             messages ()
             flags ()
@@ -1014,57 +1062,60 @@ exports[`Test Literals list 1`] = `
 `;
 
 exports[`Test Literals list 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"list\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (list string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"list\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals map 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (map (\\"literals.test.ts\\" 79) ((literal (nat 1) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD1\\") (\\"literals.test.ts\\" 79))) ((literal (nat 2) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD2\\") (\\"literals.test.ts\\" 79))))
+            storage (map (\\"literals.test.ts\\" 78) ((literal (nat 1) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD1\\") (\\"literals.test.ts\\" 78))) ((literal (nat 2) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD2\\") (\\"literals.test.ts\\" 78))))
             storage_type ((map \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -1078,60 +1129,63 @@ exports[`Test Literals map 1`] = `
 `;
 
 exports[`Test Literals map 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"map\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    },
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (map nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"map\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals mutez 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (mutez 2) (\\"literals.test.ts\\" 79))
+            storage (literal (mutez 2) (\\"literals.test.ts\\" 78))
             storage_type (\\"mutez\\")
             messages ()
             flags ()
@@ -1145,52 +1199,55 @@ exports[`Test Literals mutez 1`] = `
 `;
 
 exports[`Test Literals mutez 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"mutez\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   mutez;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"mutez\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals nat 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (nat 1) (\\"literals.test.ts\\" 79))
+            storage (literal (nat 1) (\\"literals.test.ts\\" 78))
             storage_type (\\"nat\\")
             messages ()
             flags ()
@@ -1204,52 +1261,55 @@ exports[`Test Literals nat 1`] = `
 `;
 
 exports[`Test Literals nat 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"nat\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"nat\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals none 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant \\"None\\" (unit) (\\"literals.test.ts\\" 79))
+            storage (variant \\"None\\" (unit) (\\"literals.test.ts\\" 78))
             storage_type ((option \\"string\\"))
             messages ()
             flags ()
@@ -1263,57 +1323,60 @@ exports[`Test Literals none 1`] = `
 `;
 
 exports[`Test Literals none 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"option\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"option\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals pair 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (tuple (\\"literals.test.ts\\" 79) (literal (nat 1) (\\"literals.test.ts\\" 79)) (literal (string \\"WORD\\") (\\"literals.test.ts\\" 79)))
+            storage (tuple (\\"literals.test.ts\\" 78) (literal (nat 1) (\\"literals.test.ts\\" 78)) (literal (string \\"WORD\\") (\\"literals.test.ts\\" 78)))
             storage_type ((tuple \\"nat\\" \\"string\\"))
             messages ()
             flags ()
@@ -1327,60 +1390,63 @@ exports[`Test Literals pair 1`] = `
 `;
 
 exports[`Test Literals pair 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"pair\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"nat\\"
-                    },
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (pair nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"pair\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals record 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (record (\\"literals.test.ts\\" 79) (field1 (literal (nat 1) (\\"literals.test.ts\\" 79))) (field2 (literal (int 2) (\\"literals.test.ts\\" 79))) (field3 (literal (bytes 0x00) (\\"literals.test.ts\\" 79))))
+            storage (record (\\"literals.test.ts\\" 78) (field1 (literal (nat 1) (\\"literals.test.ts\\" 78))) (field2 (literal (int 2) (\\"literals.test.ts\\" 78))) (field3 (literal (bytes 0x00) (\\"literals.test.ts\\" 78))))
             storage_type ((record ((field1 \\"nat\\") (field2 \\"int\\") (field3 \\"bytes\\")) (Some (((\\"field1\\") (\\"field2\\")) (\\"field3\\"))) (\\"\\" -1)))
             messages ()
             flags ()
@@ -1394,77 +1460,80 @@ exports[`Test Literals record 1`] = `
 `;
 
 exports[`Test Literals record 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"pair\\",
-                \\"args\\": [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (pair (pair (nat %field1) (int %field2)) (bytes %field3));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"pair\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"pair\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"nat\\",
+                                    \\"annots\\": [
+                                        \\"%field1\\"
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"int\\",
+                                    \\"annots\\": [
+                                        \\"%field2\\"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"bytes\\",
+                            \\"annots\\": [
+                                \\"%field3\\"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
                     {
-                        \\"prim\\": \\"pair\\",
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
                         \\"args\\": [
                             {
-                                \\"prim\\": \\"nat\\",
-                                \\"annots\\": [
-                                    \\"%field1\\"
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"int\\",
-                                \\"annots\\": [
-                                    \\"%field2\\"
-                                ]
+                                \\"prim\\": \\"operation\\"
                             }
                         ]
                     },
                     {
-                        \\"prim\\": \\"bytes\\",
-                        \\"annots\\": [
-                            \\"%field3\\"
-                        ]
+                        \\"prim\\": \\"PAIR\\"
                     }
                 ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals sapling_state 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (sapling_empty_state 8 (\\"literals.test.ts\\" 79))
+            storage (sapling_empty_state 8 (\\"literals.test.ts\\" 78))
             storage_type ((sapling_state 8))
             messages ()
             flags ()
@@ -1478,57 +1547,60 @@ exports[`Test Literals sapling_state 1`] = `
 `;
 
 exports[`Test Literals sapling_state 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"sapling_state\\",
-                \\"args\\": [
-                    {
-                        \\"int\\": \\"8\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (sapling_state 8);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"sapling_state\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"int\\": \\"8\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals set 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (set (\\"literals.test.ts\\" 79) (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 79)) (literal (string \\"WORLD\\") (\\"literals.test.ts\\" 79)))
+            storage (set (\\"literals.test.ts\\" 78) (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 78)) (literal (string \\"WORLD\\") (\\"literals.test.ts\\" 78)))
             storage_type ((set \\"string\\"))
             messages ()
             flags ()
@@ -1542,57 +1614,60 @@ exports[`Test Literals set 1`] = `
 `;
 
 exports[`Test Literals set 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"set\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (set string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"set\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals signature 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (signature sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe) (\\"literals.test.ts\\" 79))
+            storage (literal (signature sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe) (\\"literals.test.ts\\" 78))
             storage_type (\\"signature\\")
             messages ()
             flags ()
@@ -1606,52 +1681,55 @@ exports[`Test Literals signature 1`] = `
 `;
 
 exports[`Test Literals signature 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"signature\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   signature;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"signature\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals some 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant \\"Some\\" (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (variant \\"Some\\" (literal (string \\"HELLO\\") (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((option \\"string\\"))
             messages ()
             flags ()
@@ -1665,57 +1743,60 @@ exports[`Test Literals some 1`] = `
 `;
 
 exports[`Test Literals some 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"option\\",
-                \\"args\\": [
-                    {
-                        \\"prim\\": \\"string\\"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
+                    \\"prim\\": \\"option\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"operation\\"
+                            \\"prim\\": \\"string\\"
                         }
                     ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals string 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (string \\"TEST STRING\\") (\\"literals.test.ts\\" 79))
+            storage (literal (string \\"TEST STRING\\") (\\"literals.test.ts\\" 78))
             storage_type (\\"string\\")
             messages ()
             flags ()
@@ -1729,52 +1810,55 @@ exports[`Test Literals string 1`] = `
 `;
 
 exports[`Test Literals string 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"string\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"string\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals ticket 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (ticket (literal (string \\"A Ticket\\") (\\"literals.test.ts\\" 79)) (literal (nat 1) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (ticket (literal (string \\"A Ticket\\") (\\"literals.test.ts\\" 78)) (literal (nat 1) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((ticket \\"string\\"))
             messages ()
             flags ()
@@ -1793,7 +1877,7 @@ exports[`Test Literals timestamp 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (literal (timestamp 100) (\\"literals.test.ts\\" 79))
+            storage (literal (timestamp 100) (\\"literals.test.ts\\" 78))
             storage_type (\\"timestamp\\")
             messages ()
             flags ()
@@ -1807,45 +1891,48 @@ exports[`Test Literals timestamp 1`] = `
 `;
 
 exports[`Test Literals timestamp 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"timestamp\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   timestamp;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"timestamp\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals unit 1`] = `
@@ -1866,52 +1953,55 @@ exports[`Test Literals unit 1`] = `
 `;
 
 exports[`Test Literals unit 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"unit\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Test Literals variant 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (variant match2 (literal (int 1) (\\"literals.test.ts\\" 79)) (\\"literals.test.ts\\" 79))
+            storage (variant match2 (literal (int 1) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
             storage_type ((variant ((match1 \\"nat\\") (match2 \\"int\\") (match3 \\"bytes\\")) (Some ((\\"match1\\") ((\\"match2\\") (\\"match3\\")))) (\\"\\" -1)))
             messages ()
             flags ()
@@ -1925,68 +2015,71 @@ exports[`Test Literals variant 1`] = `
 `;
 
 exports[`Test Literals variant 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"or\\",
-                \\"args\\": [
+"{
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (or (nat %match1) (or (int %match2) (bytes %match3)));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"or\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\",
+                            \\"annots\\": [
+                                \\"%match1\\"
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"or\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"int\\",
+                                    \\"annots\\": [
+                                        \\"%match2\\"
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"bytes\\",
+                                    \\"annots\\": [
+                                        \\"%match3\\"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
                     {
-                        \\"prim\\": \\"nat\\",
-                        \\"annots\\": [
-                            \\"%match1\\"
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
                         ]
                     },
                     {
-                        \\"prim\\": \\"or\\",
-                        \\"args\\": [
-                            {
-                                \\"prim\\": \\"int\\",
-                                \\"annots\\": [
-                                    \\"%match2\\"
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"bytes\\",
-                                \\"annots\\": [
-                                    \\"%match3\\"
-                                ]
-                            }
-                        ]
+                        \\"prim\\": \\"PAIR\\"
                     }
                 ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
-                {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;

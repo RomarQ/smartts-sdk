@@ -31,10 +31,8 @@ describe('Transaction operation', () => {
                         ),
                     ),
                 ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('Build operation (Sugared version)', () => {
@@ -44,10 +42,8 @@ describe('Transaction operation', () => {
                 new EntryPoint('ep1').code(() => [
                     Transfer(GetContract(Address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')), Mutez(100)).send(),
                 ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('Build operation to an originated contract', () => {
@@ -55,7 +51,7 @@ describe('Transaction operation', () => {
             .setStorage(Unit())
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .inputType(TNat())
+                    .setInputType(TNat())
                     .code((arg) => [
                         Transfer(
                             GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'ep1', TNat()),
@@ -63,10 +59,8 @@ describe('Transaction operation', () => {
                             arg,
                         ).send(),
                     ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });
@@ -85,28 +79,24 @@ describe('Delegation operation', () => {
                         ),
                     ),
                 ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('Build operation to set delegator (Sugared version)', () => {
         const contract = new Contract()
             .setStorage(Unit())
-            .addEntrypoint(new EntryPoint('ep1').inputType(TKey_hash()).code((arg) => [SetDelegate(Some(arg)).send()]))
-            .toString();
+            .addEntrypoint(
+                new EntryPoint('ep1').setInputType(TKey_hash()).code((arg) => [SetDelegate(Some(arg)).send()]),
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('Build operation to clear the delegation (Sugared version)', () => {
         const contract = new Contract()
             .setStorage(Unit())
-            .addEntrypoint(new EntryPoint('ep1').code(() => [SetDelegate(None()).send()]))
-            .toString();
+            .addEntrypoint(new EntryPoint('ep1').code(() => [SetDelegate(None()).send()]));
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });
@@ -122,10 +112,8 @@ describe('Origination operation', () => {
                         PrependToList(GetOperations(), CreateContract(new Contract(), Unit()).getOperation()),
                     ),
                 ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
     it('Build operation (Sugared version)', () => {
@@ -140,10 +128,8 @@ describe('Origination operation', () => {
                         Some(Key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')),
                     ).send(),
                 ]),
-            )
-            .toString();
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

@@ -3,251 +3,260 @@
 exports[`Delegation operation Build operation (Desugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 76))
+            template_id (static_id 0 (\\"operation.test.ts\\" 70))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 79) ((set_type (params (\\"operation.test.ts\\" 79)) \\"unit\\" (\\"operation.test.ts\\" 89)) (set (operations (\\"operation.test.ts\\" 79)) (cons (set_delegate (variant \\"Some\\" (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 79)) (\\"operation.test.ts\\" 79)) (\\"operation.test.ts\\" 79)) (operations (\\"operation.test.ts\\" 79)) (\\"operation.test.ts\\" 79)) (\\"operation.test.ts\\" 79)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 73) ((set_type (params (\\"operation.test.ts\\" 73)) \\"unit\\" (\\"operation.test.ts\\" 84)) (set (operations (\\"operation.test.ts\\" 73)) (cons (set_delegate (variant \\"Some\\" (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 73)) (\\"operation.test.ts\\" 73)) (\\"operation.test.ts\\" 73)) (operations (\\"operation.test.ts\\" 73)) (\\"operation.test.ts\\" 73)) (\\"operation.test.ts\\" 73)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 76))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 70))
         )
         "
 `;
 
 exports[`Delegation operation Build operation (Desugared version) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.set_delegate(sp.some(sp.key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PUSH (option key_hash) (Some \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"); # option key_hash : list operation : @storage\\\\n    SET_DELEGATE; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"option\\",
-                            \\"args\\": [
-                                {
-                                    \\"prim\\": \\"key_hash\\"
-                                }
-                            ]
-                        },
-                        {
-                            \\"prim\\": \\"Some\\",
-                            \\"args\\": [
-                                {
-                                    \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"SET_DELEGATE\\"
-                },
-                {
-                    \\"prim\\": \\"CONS\\"
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"unit\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"option\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"key_hash\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"Some\\",
+                                \\"args\\": [
+                                    {
+                                        \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SET_DELEGATE\\"
+                    },
+                    {
+                        \\"prim\\": \\"CONS\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Delegation operation Build operation to clear the delegation (Sugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 104))
+            template_id (static_id 0 (\\"operation.test.ts\\" 96))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 106) ((set_type (params (\\"operation.test.ts\\" 106)) \\"unit\\" (\\"operation.test.ts\\" 107)) (set (operations (\\"operation.test.ts\\" 106)) (cons (set_delegate (variant \\"None\\" (unit) (\\"operation.test.ts\\" 106)) (\\"operation.test.ts\\" 106)) (operations (\\"operation.test.ts\\" 106)) (\\"operation.test.ts\\" 106)) (\\"operation.test.ts\\" 106)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 98) ((set_type (params (\\"operation.test.ts\\" 98)) \\"unit\\" (\\"operation.test.ts\\" 100)) (set (operations (\\"operation.test.ts\\" 98)) (cons (set_delegate (variant \\"None\\" (unit) (\\"operation.test.ts\\" 98)) (\\"operation.test.ts\\" 98)) (operations (\\"operation.test.ts\\" 98)) (\\"operation.test.ts\\" 98)) (\\"operation.test.ts\\" 98)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 104))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 96))
         )
         "
 `;
 
 exports[`Delegation operation Build operation to clear the delegation (Sugared version) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.set_delegate(sp.none) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    NONE key_hash; # option key_hash : list operation : @storage\\\\n    SET_DELEGATE; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NONE\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"key_hash\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"SET_DELEGATE\\"
-                },
-                {
-                    \\"prim\\": \\"CONS\\"
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"unit\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NONE\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"key_hash\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SET_DELEGATE\\"
+                    },
+                    {
+                        \\"prim\\": \\"CONS\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Delegation operation Build operation to set delegator (Sugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 95))
+            template_id (static_id 0 (\\"operation.test.ts\\" 87))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 97) ((set_type (params (\\"operation.test.ts\\" 97)) \\"key_hash\\" (\\"operation.test.ts\\" 98)) (set (operations (\\"operation.test.ts\\" 97)) (cons (set_delegate (variant \\"Some\\" (params (\\"operation.test.ts\\" 97)) (\\"operation.test.ts\\" 97)) (\\"operation.test.ts\\" 97)) (operations (\\"operation.test.ts\\" 97)) (\\"operation.test.ts\\" 97)) (\\"operation.test.ts\\" 97)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 90) ((set_type (params (\\"operation.test.ts\\" 90)) \\"key_hash\\" (\\"operation.test.ts\\" 93)) (set (operations (\\"operation.test.ts\\" 90)) (cons (set_delegate (variant \\"Some\\" (params (\\"operation.test.ts\\" 90)) (\\"operation.test.ts\\" 90)) (\\"operation.test.ts\\" 90)) (operations (\\"operation.test.ts\\" 90)) (\\"operation.test.ts\\" 90)) (\\"operation.test.ts\\" 90)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 95))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 87))
         )
         "
 `;
 
 exports[`Delegation operation Build operation to set delegator (Sugared version) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"key_hash\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (key_hash %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.set_delegate(sp.some(params)) # @parameter : @storage\\\\n    SOME;       # option key_hash : @storage\\\\n    SET_DELEGATE; # operation : @storage\\\\n    NIL operation; # list operation : operation : @storage\\\\n    SWAP;       # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"UNPAIR\\"
-                },
-                {
-                    \\"prim\\": \\"SOME\\"
-                },
-                {
-                    \\"prim\\": \\"SET_DELEGATE\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
-                    \\"prim\\": \\"CONS\\"
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"unit\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"key_hash\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"SET_DELEGATE\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"CONS\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Origination operation Build operation (Desugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 116))
+            template_id (static_id 0 (\\"operation.test.ts\\" 106))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 119) ((set_type (params (\\"operation.test.ts\\" 119)) \\"unit\\" (\\"operation.test.ts\\" 126)) (set (operations (\\"operation.test.ts\\" 119)) (cons (attr (create_contract (contract 
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 109) ((set_type (params (\\"operation.test.ts\\" 109)) \\"unit\\" (\\"operation.test.ts\\" 117)) (set (operations (\\"operation.test.ts\\" 109)) (cons (attr (create_contract (contract 
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 119))
+            template_id (static_id 0 (\\"operation.test.ts\\" 109))
             storage (unit)
             storage_type (())
             messages ()
@@ -256,173 +265,176 @@ exports[`Origination operation Build operation (Desugared version) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 119))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 109))
         )
-        ) (storage (unit)) (baker (variant \\"None\\" (unit) (\\"operation.test.ts\\" 119))) (amount (literal (mutez 0) (\\"operation.test.ts\\" 119))) (\\"operation.test.ts\\" 119)) \\"operation\\" (\\"operation.test.ts\\" 119)) (operations (\\"operation.test.ts\\" 119)) (\\"operation.test.ts\\" 119)) (\\"operation.test.ts\\" 119)))))
+        ) (storage (unit)) (baker (variant \\"None\\" (unit) (\\"operation.test.ts\\" 109))) (amount (literal (mutez 0) (\\"operation.test.ts\\" 109))) (\\"operation.test.ts\\" 109)) \\"operation\\" (\\"operation.test.ts\\" 109)) (operations (\\"operation.test.ts\\" 109)) (\\"operation.test.ts\\" 109)) (\\"operation.test.ts\\" 109)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 116))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 106))
         )
         "
 `;
 
 exports[`Origination operation Build operation (Desugared version) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.operations().push(create contract ....operation) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    DUP;        # list operation : list operation : @parameter : @storage\\\\n    UNIT;       # unit : list operation : list operation : @parameter : @storage\\\\n    PUSH mutez 0; # mutez : unit : list operation : list operation : @parameter : @storage\\\\n    NONE key_hash; # option key_hash : mutez : unit : list operation : list operation : @parameter : @storage\\\\n    CREATE_CONTRACT\\\\n     { parameter unit;\\\\n       storage   unit;\\\\n       code\\\\n         {\\\\n           CDR;        # @storage\\\\n           NIL operation; # list operation : @storage\\\\n           PAIR;       # pair (list operation) @storage\\\\n         }}; # operation : address : list operation : list operation : @parameter : @storage\\\\n    SWAP;       # address : operation : list operation : list operation : @parameter : @storage\\\\n    DROP;       # operation : list operation : list operation : @parameter : @storage\\\\n    DIG 2;      # list operation : operation : list operation : @parameter : @storage\\\\n    DROP;       # operation : list operation : @parameter : @storage\\\\n    DIG 2;      # @parameter : operation : list operation : @storage\\\\n    DROP;       # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"UNPAIR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"DUP\\"
-                },
-                {
-                    \\"prim\\": \\"UNIT\\"
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"mutez\\"
-                        },
-                        {
-                            \\"int\\": \\"0\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NONE\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"key_hash\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"CREATE_CONTRACT\\",
-                    \\"args\\": [
-                        [
-                            {
-                                \\"prim\\": \\"parameter\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"unit\\"
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"storage\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"unit\\"
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"code\\",
-                                \\"args\\": [
-                                    [
-                                        {
-                                            \\"prim\\": \\"CDR\\"
-                                        },
-                                        {
-                                            \\"prim\\": \\"NIL\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"prim\\": \\"operation\\"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            \\"prim\\": \\"PAIR\\"
-                                        }
-                                    ]
-                                ]
-                            }
-                        ]
-                    ]
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
-                    \\"prim\\": \\"DROP\\"
-                },
-                {
-                    \\"prim\\": \\"DIG\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"2\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"DROP\\"
-                },
-                {
-                    \\"prim\\": \\"DIG\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"2\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"DROP\\"
-                },
-                {
-                    \\"prim\\": \\"CONS\\"
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"unit\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"UNIT\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"mutez\\"
+                            },
+                            {
+                                \\"int\\": \\"0\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NONE\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"key_hash\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"CREATE_CONTRACT\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"parameter\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"unit\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"storage\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"unit\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"code\\",
+                                    \\"args\\": [
+                                        [
+                                            {
+                                                \\"prim\\": \\"CDR\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"NIL\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"prim\\": \\"operation\\"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"PAIR\\"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"CONS\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Origination operation Build operation (Sugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 132))
+            template_id (static_id 0 (\\"operation.test.ts\\" 120))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 135) ((set_type (params (\\"operation.test.ts\\" 135)) \\"unit\\" (\\"operation.test.ts\\" 144)) (set (operations (\\"operation.test.ts\\" 135)) (cons (attr (create_contract (contract 
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 123) ((set_type (params (\\"operation.test.ts\\" 123)) \\"unit\\" (\\"operation.test.ts\\" 133)) (set (operations (\\"operation.test.ts\\" 123)) (cons (attr (create_contract (contract 
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 135))
+            template_id (static_id 0 (\\"operation.test.ts\\" 123))
             storage (unit)
             storage_type (())
             messages ()
@@ -431,180 +443,183 @@ exports[`Origination operation Build operation (Sugared version) 1`] = `
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 135))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 123))
         )
-        ) (storage (params (\\"operation.test.ts\\" 135))) (baker (variant \\"Some\\" (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 135)) (\\"operation.test.ts\\" 135))) (amount (literal (mutez 100) (\\"operation.test.ts\\" 135))) (\\"operation.test.ts\\" 135)) \\"operation\\" (\\"operation.test.ts\\" 135)) (operations (\\"operation.test.ts\\" 135)) (\\"operation.test.ts\\" 135)) (\\"operation.test.ts\\" 135)))))
+        ) (storage (params (\\"operation.test.ts\\" 123))) (baker (variant \\"Some\\" (literal (key_hash tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 123)) (\\"operation.test.ts\\" 123))) (amount (literal (mutez 100) (\\"operation.test.ts\\" 123))) (\\"operation.test.ts\\" 123)) \\"operation\\" (\\"operation.test.ts\\" 123)) (operations (\\"operation.test.ts\\" 123)) (\\"operation.test.ts\\" 123)) (\\"operation.test.ts\\" 123)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 132))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 120))
         )
         "
 `;
 
 exports[`Origination operation Build operation (Sugared version) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.operations().push(create contract ....operation) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    DUP;        # list operation : list operation : @parameter : @storage\\\\n    DUP 3;      # @parameter : list operation : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @parameter : list operation : list operation : @parameter : @storage\\\\n    PUSH (option key_hash) (Some \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"); # option key_hash : mutez : @parameter : list operation : list operation : @parameter : @storage\\\\n    CREATE_CONTRACT\\\\n     { parameter unit;\\\\n       storage   unit;\\\\n       code\\\\n         {\\\\n           CDR;        # @storage\\\\n           NIL operation; # list operation : @storage\\\\n           PAIR;       # pair (list operation) @storage\\\\n         }}; # operation : address : list operation : list operation : @parameter : @storage\\\\n    SWAP;       # address : operation : list operation : list operation : @parameter : @storage\\\\n    DROP;       # operation : list operation : list operation : @parameter : @storage\\\\n    DIG 2;      # list operation : operation : list operation : @parameter : @storage\\\\n    DROP;       # operation : list operation : @parameter : @storage\\\\n    DIG 2;      # @parameter : operation : list operation : @storage\\\\n    DROP;       # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"UNPAIR\\"
-                },
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
                     ]
-                },
-                {
-                    \\"prim\\": \\"DUP\\"
-                },
-                {
-                    \\"prim\\": \\"DUP\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"3\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"mutez\\"
-                        },
-                        {
-                            \\"int\\": \\"100\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"option\\",
-                            \\"args\\": [
-                                {
-                                    \\"prim\\": \\"key_hash\\"
-                                }
-                            ]
-                        },
-                        {
-                            \\"prim\\": \\"Some\\",
-                            \\"args\\": [
-                                {
-                                    \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"CREATE_CONTRACT\\",
-                    \\"args\\": [
-                        [
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
                             {
-                                \\"prim\\": \\"parameter\\",
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"3\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"mutez\\"
+                            },
+                            {
+                                \\"int\\": \\"100\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"option\\",
                                 \\"args\\": [
                                     {
-                                        \\"prim\\": \\"unit\\"
+                                        \\"prim\\": \\"key_hash\\"
                                     }
                                 ]
                             },
                             {
-                                \\"prim\\": \\"storage\\",
+                                \\"prim\\": \\"Some\\",
                                 \\"args\\": [
                                     {
-                                        \\"prim\\": \\"unit\\"
+                                        \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
                                     }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"code\\",
-                                \\"args\\": [
-                                    [
-                                        {
-                                            \\"prim\\": \\"CDR\\"
-                                        },
-                                        {
-                                            \\"prim\\": \\"NIL\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"prim\\": \\"operation\\"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            \\"prim\\": \\"PAIR\\"
-                                        }
-                                    ]
                                 ]
                             }
                         ]
-                    ]
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
-                    \\"prim\\": \\"DROP\\"
-                },
-                {
-                    \\"prim\\": \\"DIG\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"2\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"DROP\\"
-                },
-                {
-                    \\"prim\\": \\"DIG\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"2\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"DROP\\"
-                },
-                {
-                    \\"prim\\": \\"CONS\\"
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
-                }
+                    },
+                    {
+                        \\"prim\\": \\"CREATE_CONTRACT\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"parameter\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"unit\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"storage\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"unit\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"code\\",
+                                    \\"args\\": [
+                                        [
+                                            {
+                                                \\"prim\\": \\"CDR\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"NIL\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"prim\\": \\"operation\\"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"PAIR\\"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"CONS\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
             ]
-        ]
-    }
-]"
+        }
+    ]
+}"
 `;
 
 exports[`Transaction operation Build operation (Desugared version) 1`] = `
@@ -613,7 +628,7 @@ exports[`Transaction operation Build operation (Desugared version) 1`] = `
             template_id (static_id 0 (\\"operation.test.ts\\" 22))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 25) ((set_type (params (\\"operation.test.ts\\" 25)) \\"unit\\" (\\"operation.test.ts\\" 35)) (set (operations (\\"operation.test.ts\\" 25)) (cons (transfer (params (\\"operation.test.ts\\" 25)) (literal (mutez 100) (\\"operation.test.ts\\" 25)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (operations (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 25) ((set_type (params (\\"operation.test.ts\\" 25)) \\"unit\\" (\\"operation.test.ts\\" 36)) (set (operations (\\"operation.test.ts\\" 25)) (cons (transfer (params (\\"operation.test.ts\\" 25)) (literal (mutez 100) (\\"operation.test.ts\\" 25)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (operations (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)))))
             flags ()
             privates ()
             views ()
@@ -625,402 +640,411 @@ exports[`Transaction operation Build operation (Desugared version) 1`] = `
 `;
 
 exports[`Transaction operation Build operation (Desugared version) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(params, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = sp.some('CONTRACT_NOT_FOUND'))) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # address : list operation : @parameter : @storage\\\\n    CONTRACT %default unit; # option (contract unit) : list operation : @parameter : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"CONTRACT_NOT_FOUND\\\\\\"); # option string : list operation : @parameter : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @parameter : @storage\\\\n    DIG 3;      # @parameter : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"UNPAIR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"address\\"
-                        },
-                        {
-                            \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"CONTRACT\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"unit\\"
-                        }
-                    ],
-                    \\"annots\\": [
-                        \\"%default\\"
-                    ]
-                },
-                {
-                    \\"prim\\": \\"IF_NONE\\",
-                    \\"args\\": [
-                        [
-                            {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"option\\",
-                                        \\"args\\": [
-                                            {
-                                                \\"prim\\": \\"string\\"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        \\"prim\\": \\"Some\\",
-                                        \\"args\\": [
-                                            {
-                                                \\"string\\": \\"CONTRACT_NOT_FOUND\\"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"FAILWITH\\"
-                            }
-                        ],
-                        []
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"mutez\\"
-                        },
-                        {
-                            \\"int\\": \\"100\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"DIG\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"3\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"TRANSFER_TOKENS\\"
-                },
-                {
-                    \\"prim\\": \\"CONS\\"
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"unit\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"address\\"
+                            },
+                            {
+                                \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"CONTRACT\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"unit\\"
+                            }
+                        ],
+                        \\"annots\\": [
+                            \\"%default\\"
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"option\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"string\\"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"Some\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"string\\": \\"CONTRACT_NOT_FOUND\\"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ],
+                            []
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"mutez\\"
+                            },
+                            {
+                                \\"int\\": \\"100\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"3\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"TRANSFER_TOKENS\\"
+                    },
+                    {
+                        \\"prim\\": \\"CONS\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Transaction operation Build operation (Sugared version) 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 41))
+            template_id (static_id 0 (\\"operation.test.ts\\" 39))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 44) ((set_type (params (\\"operation.test.ts\\" 44)) \\"unit\\" (\\"operation.test.ts\\" 48)) (set (operations (\\"operation.test.ts\\" 44)) (cons (transfer (unit) (literal (mutez 100) (\\"operation.test.ts\\" 44)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) (operations (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)) (\\"operation.test.ts\\" 44)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 42) ((set_type (params (\\"operation.test.ts\\" 42)) \\"unit\\" (\\"operation.test.ts\\" 47)) (set (operations (\\"operation.test.ts\\" 42)) (cons (transfer (unit) (literal (mutez 100) (\\"operation.test.ts\\" 42)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (operations (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 41))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 39))
         )
         "
 `;
 
 exports[`Transaction operation Build operation (Sugared version) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = sp.some('CONTRACT_NOT_FOUND'))) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # address : list operation : @storage\\\\n    CONTRACT %default unit; # option (contract unit) : list operation : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"CONTRACT_NOT_FOUND\\\\\\"); # option string : list operation : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"CDR\\"
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"address\\"
-                        },
-                        {
-                            \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"CONTRACT\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"unit\\"
-                        }
-                    ],
-                    \\"annots\\": [
-                        \\"%default\\"
-                    ]
-                },
-                {
-                    \\"prim\\": \\"IF_NONE\\",
-                    \\"args\\": [
-                        [
-                            {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"option\\",
-                                        \\"args\\": [
-                                            {
-                                                \\"prim\\": \\"string\\"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        \\"prim\\": \\"Some\\",
-                                        \\"args\\": [
-                                            {
-                                                \\"string\\": \\"CONTRACT_NOT_FOUND\\"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"FAILWITH\\"
-                            }
-                        ],
-                        []
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"mutez\\"
-                        },
-                        {
-                            \\"int\\": \\"100\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"UNIT\\"
-                },
-                {
-                    \\"prim\\": \\"TRANSFER_TOKENS\\"
-                },
-                {
-                    \\"prim\\": \\"CONS\\"
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"unit\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"address\\"
+                            },
+                            {
+                                \\"string\\": \\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"CONTRACT\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"unit\\"
+                            }
+                        ],
+                        \\"annots\\": [
+                            \\"%default\\"
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"option\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"string\\"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"Some\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"string\\": \\"CONTRACT_NOT_FOUND\\"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ],
+                            []
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"mutez\\"
+                            },
+                            {
+                                \\"int\\": \\"100\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"UNIT\\"
+                    },
+                    {
+                        \\"prim\\": \\"TRANSFER_TOKENS\\"
+                    },
+                    {
+                        \\"prim\\": \\"CONS\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
 
 exports[`Transaction operation Build operation to an originated contract 1`] = `
 "
         (
-            template_id (static_id 0 (\\"operation.test.ts\\" 54))
+            template_id (static_id 0 (\\"operation.test.ts\\" 50))
             storage (unit)
             storage_type (())
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 57) ((set_type (params (\\"operation.test.ts\\" 57)) \\"nat\\" (\\"operation.test.ts\\" 67)) (set (operations (\\"operation.test.ts\\" 59)) (cons (transfer (params (\\"operation.test.ts\\" 57)) (literal (mutez 100) (\\"operation.test.ts\\" 59)) (openVariant (contract ep1 \\"nat\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) (operations (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)) (\\"operation.test.ts\\" 59)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 53) ((set_type (params (\\"operation.test.ts\\" 53)) \\"nat\\" (\\"operation.test.ts\\" 64)) (set (operations (\\"operation.test.ts\\" 55)) (cons (transfer (params (\\"operation.test.ts\\" 53)) (literal (mutez 100) (\\"operation.test.ts\\" 55)) (openVariant (contract ep1 \\"nat\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (operations (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"operation.test.ts\\" 54))
+            balance (literal (mutez 0) (\\"operation.test.ts\\" 50))
         )
         "
 `;
 
 exports[`Transaction operation Build operation to an originated contract 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"unit\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"nat\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(params, sp.mutez(100), sp.contract(sp.TNat, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='ep1').open_some(message = sp.some('CONTRACT_NOT_FOUND'))) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : list operation : @parameter : @storage\\\\n    CONTRACT %ep1 nat; # option (contract nat) : list operation : @parameter : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"CONTRACT_NOT_FOUND\\\\\\"); # option string : list operation : @parameter : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @parameter : @storage\\\\n    DIG 3;      # @parameter : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"UNPAIR\\"
-                },
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"address\\"
-                        },
-                        {
-                            \\"string\\": \\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"CONTRACT\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"nat\\"
-                        }
-                    ],
+                    \\"prim\\": \\"nat\\",
                     \\"annots\\": [
                         \\"%ep1\\"
                     ]
-                },
-                {
-                    \\"prim\\": \\"IF_NONE\\",
-                    \\"args\\": [
-                        [
-                            {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"option\\",
-                                        \\"args\\": [
-                                            {
-                                                \\"prim\\": \\"string\\"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        \\"prim\\": \\"Some\\",
-                                        \\"args\\": [
-                                            {
-                                                \\"string\\": \\"CONTRACT_NOT_FOUND\\"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"FAILWITH\\"
-                            }
-                        ],
-                        []
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"mutez\\"
-                        },
-                        {
-                            \\"int\\": \\"100\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"DIG\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"3\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"TRANSFER_TOKENS\\"
-                },
-                {
-                    \\"prim\\": \\"CONS\\"
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"address\\"
+                            },
+                            {
+                                \\"string\\": \\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"CONTRACT\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            }
+                        ],
+                        \\"annots\\": [
+                            \\"%ep1\\"
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"option\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"string\\"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"Some\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"string\\": \\"CONTRACT_NOT_FOUND\\"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ],
+                            []
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"mutez\\"
+                            },
+                            {
+                                \\"int\\": \\"100\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"3\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"TRANSFER_TOKENS\\"
+                    },
+                    {
+                        \\"prim\\": \\"CONS\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;

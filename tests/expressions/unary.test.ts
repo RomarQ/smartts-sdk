@@ -9,11 +9,11 @@ describe('Unary expressions', () => {
         const contract = new Contract()
             .setStorage(None())
             .addEntrypoint(
-                new EntryPoint('ep1').inputType(TBool()).code((arg) => [SetValue(ContractStorage(), Some(Not(arg)))]),
-            )
-            .toString();
+                new EntryPoint('ep1')
+                    .setInputType(TBool())
+                    .code((arg) => [SetValue(ContractStorage(), Some(Not(arg)))]),
+            );
 
-        expect(contract).toMatchSnapshot();
         verifyContractCompilationOutput(contract);
     });
 });

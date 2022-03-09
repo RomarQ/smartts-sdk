@@ -2,36 +2,39 @@
 import './polyfills';
 
 import * as SmartML from './smartML.js';
+import { Contract } from '../core';
+import { ILiteral } from '../typings/literal';
+
+interface CompilationResult {
+    micheline: string;
+    json: Record<string, unknown>[];
+}
 
 /**
  * Compile SmartML expression to a michelson smart-contract.
  *
- * @param expression SmartML S-Expression.
+ * @param contract a Contract instance
  *
- * @returns {Record<string, unknown> | string} JSON michelson or a error string
+ * @returns {CompilationResult | string} JSON michelson or a error string
  */
-export const compileContract = (expression: string): Record<string, unknown> | string => {
+export const compileContract = (contract: Contract): CompilationResult | string => {
     try {
-        return JSON.parse(SmartML.compile_contract(expression));
+        return JSON.parse(SmartML.compile_contract(contract.toString()));
     } catch (error: any) {
         return SmartML.stringOfException(false, error);
     }
 };
 
 /**
- * Compile SmartML expression to a michelson lambda.
+ * Compile SmartML expression to michelson.
  *
- * @param expression SmartML S-Expression.
+ * @param expression A value expression
  *
  * @returns {Record<string, unknown> | string} JSON michelson or a error string
  */
-interface LambdaCompilationResult {
-    micheline: string;
-    json: Record<string, unknown>[];
-}
-export const compileLambda = (expression: string): LambdaCompilationResult | string => {
+export const compileValue = (expression: ILiteral<unknown>): CompilationResult | string => {
     try {
-        return JSON.parse(SmartML.compile_lambda(expression));
+        return JSON.parse(SmartML.compile_value(expression.toString()));
     } catch (error: any) {
         return SmartML.stringOfException(false, error);
     }
@@ -39,7 +42,7 @@ export const compileLambda = (expression: string): LambdaCompilationResult | str
 
 const CompilerAPI = {
     compileContract,
-    compileLambda,
+    compileValue,
 };
 
 export default CompilerAPI;

@@ -1,12 +1,194 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Test (For) statement Append iterator to a list 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"for.test.ts\\" 22))
+            storage (list (\\"for.test.ts\\" 22) )
+            storage_type (())
+            messages ((entry_point_1 True False False True (\\"for.test.ts\\" 23) ((set_type (params (\\"for.test.ts\\" 23)) \\"unit\\" (\\"for.test.ts\\" 33)) (defineLocal \\"some_list\\" (list (\\"for.test.ts\\" 23) ) True (\\"for.test.ts\\" 23)) (defineLocal \\"__ITERATOR_FOR_2__\\" (literal (nat 0) (\\"for.test.ts\\" 23)) True (\\"for.test.ts\\" 33)) (whileBlock (le (getLocal \\"__ITERATOR_FOR_2__\\" (\\"for.test.ts\\" 33)) (literal (nat 3) (\\"for.test.ts\\" 23)) (\\"for.test.ts\\" 33)) ((set (getLocal \\"some_list\\" (\\"for.test.ts\\" 23)) (cons (getLocal \\"__ITERATOR_FOR_2__\\" (\\"for.test.ts\\" 23)) (getLocal \\"some_list\\" (\\"for.test.ts\\" 23)) (\\"for.test.ts\\" 23)) (\\"for.test.ts\\" 23)) (set (getLocal \\"__ITERATOR_FOR_2__\\" (\\"for.test.ts\\" 33)) (add (getLocal \\"__ITERATOR_FOR_2__\\" (\\"for.test.ts\\" 33)) (literal (nat 1) (\\"for.test.ts\\" 23)) (\\"for.test.ts\\" 33)) (\\"for.test.ts\\" 33))) (\\"for.test.ts\\" 23)) (set (data) (getLocal \\"some_list\\" (\\"for.test.ts\\" 23)) (\\"for.test.ts\\" 23)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"for.test.ts\\" 22))
+        )
+        "
+`;
+
+exports[`Test (For) statement Append iterator to a list 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # some_list = sp.local(\\\\\\"some_list\\\\\\", sp.list([])) # @parameter\\\\n    NIL nat;    # list nat : @parameter\\\\n    # __ITERATOR_FOR_2__ = sp.local(\\\\\\"__ITERATOR_FOR_2__\\\\\\", 0) # list nat : @parameter\\\\n    PUSH nat 0; # nat : list nat : @parameter\\\\n    # while __ITERATOR_FOR_2__.value <= 3 : ... # nat : list nat : @parameter\\\\n    DUP;        # nat : nat : list nat : @parameter\\\\n    PUSH nat 3; # nat : nat : nat : list nat : @parameter\\\\n    SWAP;       # nat : nat : nat : list nat : @parameter\\\\n    COMPARE;    # int : nat : list nat : @parameter\\\\n    LE;         # bool : nat : list nat : @parameter\\\\n    LOOP\\\\n      {\\\\n        # some_list.value.push(__ITERATOR_FOR_2__.value) # nat : list nat : @parameter\\\\n        DUP;        # nat : nat : list nat : @parameter\\\\n        DUG 2;      # nat : list nat : nat : @parameter\\\\n        CONS;       # list nat : nat : @parameter\\\\n        SWAP;       # nat : list nat : @parameter\\\\n        # __ITERATOR_FOR_2__.value += 1 # nat : list nat : @parameter\\\\n        PUSH nat 1; # nat : nat : list nat : @parameter\\\\n        ADD;        # nat : list nat : @parameter\\\\n        # check for next loop: __ITERATOR_FOR_2__.value <= 3 # nat : list nat : @parameter\\\\n        DUP;        # nat : nat : list nat : @parameter\\\\n        PUSH nat 3; # nat : nat : nat : list nat : @parameter\\\\n        SWAP;       # nat : nat : nat : list nat : @parameter\\\\n        COMPARE;    # int : nat : list nat : @parameter\\\\n        LE;         # bool : nat : list nat : @parameter\\\\n      }; # nat : list nat : @parameter\\\\n    DROP;       # list nat : @parameter\\\\n    SWAP;       # @parameter : list nat\\\\n    DROP;       # list nat\\\\n    # self.data = some_list.value # list nat\\\\n    NIL operation; # list operation : list nat\\\\n    PAIR;       # pair (list operation) (list nat)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"list\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%entry_point_1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"0\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"3\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"COMPARE\\"
+                    },
+                    {
+                        \\"prim\\": \\"LE\\"
+                    },
+                    {
+                        \\"prim\\": \\"LOOP\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"DUP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUG\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"CONS\\"
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"1\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"ADD\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"3\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"COMPARE\\"
+                                },
+                                {
+                                    \\"prim\\": \\"LE\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
 exports[`Test (For) statement Sum values from 0 to 10 (Inclusive) 1`] = `
 "
         (
             template_id (static_id 0 (\\"for.test.ts\\" 9))
             storage (literal (nat 0) (\\"for.test.ts\\" 10))
             storage_type (())
-            messages ((ep1 True False False True (\\"for.test.ts\\" 12) ((set_type (params (\\"for.test.ts\\" 12)) \\"nat\\" (\\"for.test.ts\\" 18)) (defineLocal \\"__ITERATOR_FOR_1__\\" (literal (nat 0) (\\"for.test.ts\\" 14)) True (\\"for.test.ts\\" 18)) (whileBlock (le (getLocal \\"__ITERATOR_FOR_1__\\" (\\"for.test.ts\\" 18)) (params (\\"for.test.ts\\" 12)) (\\"for.test.ts\\" 18)) ((set (data) (add (data) (getLocal \\"__ITERATOR_FOR_1__\\" (\\"for.test.ts\\" 14)) (\\"for.test.ts\\" 14)) (\\"for.test.ts\\" 14)) (set (getLocal \\"__ITERATOR_FOR_1__\\" (\\"for.test.ts\\" 18)) (add (getLocal \\"__ITERATOR_FOR_1__\\" (\\"for.test.ts\\" 18)) (literal (nat 1) (\\"for.test.ts\\" 14)) (\\"for.test.ts\\" 18)) (\\"for.test.ts\\" 18))) (\\"for.test.ts\\" 14)))))
+            messages ((ep1 True False False True (\\"for.test.ts\\" 12) ((set_type (params (\\"for.test.ts\\" 12)) \\"nat\\" (\\"for.test.ts\\" 19)) (defineLocal \\"__ITERATOR_FOR_1__\\" (literal (nat 0) (\\"for.test.ts\\" 14)) True (\\"for.test.ts\\" 19)) (whileBlock (le (getLocal \\"__ITERATOR_FOR_1__\\" (\\"for.test.ts\\" 19)) (params (\\"for.test.ts\\" 12)) (\\"for.test.ts\\" 19)) ((set (data) (add (data) (getLocal \\"__ITERATOR_FOR_1__\\" (\\"for.test.ts\\" 14)) (\\"for.test.ts\\" 14)) (\\"for.test.ts\\" 14)) (set (getLocal \\"__ITERATOR_FOR_1__\\" (\\"for.test.ts\\" 19)) (add (getLocal \\"__ITERATOR_FOR_1__\\" (\\"for.test.ts\\" 19)) (literal (nat 1) (\\"for.test.ts\\" 14)) (\\"for.test.ts\\" 19)) (\\"for.test.ts\\" 19))) (\\"for.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()
@@ -18,187 +200,190 @@ exports[`Test (For) statement Sum values from 0 to 10 (Inclusive) 1`] = `
 `;
 
 exports[`Test (For) statement Sum values from 0 to 10 (Inclusive) 2`] = `
-"[
-    {
-        \\"prim\\": \\"storage\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"nat\\"
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"parameter\\",
-        \\"args\\": [
-            {
-                \\"prim\\": \\"nat\\",
-                \\"annots\\": [
-                    \\"%ep1\\"
-                ]
-            }
-        ]
-    },
-    {
-        \\"prim\\": \\"code\\",
-        \\"args\\": [
-            [
+"{
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # __ITERATOR_FOR_1__ = sp.local(\\\\\\"__ITERATOR_FOR_1__\\\\\\", 0) # @parameter : @storage\\\\n    PUSH nat 0; # nat : @parameter : @storage\\\\n    SWAP;       # @parameter : nat : @storage\\\\n    # while __ITERATOR_FOR_1__.value <= params : ... # @parameter : nat : @storage\\\\n    DUP;        # @parameter : @parameter : nat : @storage\\\\n    DUG 2;      # @parameter : nat : @parameter : @storage\\\\n    SWAP;       # nat : @parameter : @parameter : @storage\\\\n    DUP;        # nat : nat : @parameter : @parameter : @storage\\\\n    DUG 2;      # nat : @parameter : nat : @parameter : @storage\\\\n    COMPARE;    # int : nat : @parameter : @storage\\\\n    LE;         # bool : nat : @parameter : @storage\\\\n    LOOP\\\\n      {\\\\n        # self.data += __ITERATOR_FOR_1__.value # nat : @parameter : @storage\\\\n        DIG 2;      # @storage : nat : @parameter\\\\n        SWAP;       # nat : @storage : @parameter\\\\n        DUP;        # nat : nat : @storage : @parameter\\\\n        DUG 2;      # nat : @storage : nat : @parameter\\\\n        ADD;        # nat : nat : @parameter\\\\n        DUG 2;      # nat : @parameter : nat\\\\n        # __ITERATOR_FOR_1__.value += 1 # nat : @parameter : nat\\\\n        PUSH nat 1; # nat : nat : @parameter : nat\\\\n        ADD;        # nat : @parameter : nat\\\\n        SWAP;       # @parameter : nat : nat\\\\n        # check for next loop: __ITERATOR_FOR_1__.value <= params # @parameter : nat : nat\\\\n        DUP;        # @parameter : @parameter : nat : nat\\\\n        DUG 2;      # @parameter : nat : @parameter : nat\\\\n        SWAP;       # nat : @parameter : @parameter : nat\\\\n        DUP;        # nat : nat : @parameter : @parameter : nat\\\\n        DUG 2;      # nat : @parameter : nat : @parameter : nat\\\\n        COMPARE;    # int : nat : @parameter : nat\\\\n        LE;         # bool : nat : @parameter : nat\\\\n      }; # nat : @parameter : @storage\\\\n    DROP 2;     # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
                 {
-                    \\"prim\\": \\"UNPAIR\\"
-                },
-                {
-                    \\"prim\\": \\"PUSH\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"nat\\"
-                        },
-                        {
-                            \\"int\\": \\"0\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
-                    \\"prim\\": \\"DUP\\"
-                },
-                {
-                    \\"prim\\": \\"DUG\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"2\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"SWAP\\"
-                },
-                {
-                    \\"prim\\": \\"DUP\\"
-                },
-                {
-                    \\"prim\\": \\"DUG\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"2\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"COMPARE\\"
-                },
-                {
-                    \\"prim\\": \\"LE\\"
-                },
-                {
-                    \\"prim\\": \\"LOOP\\",
-                    \\"args\\": [
-                        [
-                            {
-                                \\"prim\\": \\"DIG\\",
-                                \\"args\\": [
-                                    {
-                                        \\"int\\": \\"2\\"
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"SWAP\\"
-                            },
-                            {
-                                \\"prim\\": \\"DUP\\"
-                            },
-                            {
-                                \\"prim\\": \\"DUG\\",
-                                \\"args\\": [
-                                    {
-                                        \\"int\\": \\"2\\"
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"ADD\\"
-                            },
-                            {
-                                \\"prim\\": \\"DUG\\",
-                                \\"args\\": [
-                                    {
-                                        \\"int\\": \\"2\\"
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"PUSH\\",
-                                \\"args\\": [
-                                    {
-                                        \\"prim\\": \\"nat\\"
-                                    },
-                                    {
-                                        \\"int\\": \\"1\\"
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"ADD\\"
-                            },
-                            {
-                                \\"prim\\": \\"SWAP\\"
-                            },
-                            {
-                                \\"prim\\": \\"DUP\\"
-                            },
-                            {
-                                \\"prim\\": \\"DUG\\",
-                                \\"args\\": [
-                                    {
-                                        \\"int\\": \\"2\\"
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"SWAP\\"
-                            },
-                            {
-                                \\"prim\\": \\"DUP\\"
-                            },
-                            {
-                                \\"prim\\": \\"DUG\\",
-                                \\"args\\": [
-                                    {
-                                        \\"int\\": \\"2\\"
-                                    }
-                                ]
-                            },
-                            {
-                                \\"prim\\": \\"COMPARE\\"
-                            },
-                            {
-                                \\"prim\\": \\"LE\\"
-                            }
-                        ]
-                    ]
-                },
-                {
-                    \\"prim\\": \\"DROP\\",
-                    \\"args\\": [
-                        {
-                            \\"int\\": \\"2\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"NIL\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"operation\\"
-                        }
-                    ]
-                },
-                {
-                    \\"prim\\": \\"PAIR\\"
+                    \\"prim\\": \\"nat\\"
                 }
             ]
-        ]
-    }
-]"
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"0\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"COMPARE\\"
+                    },
+                    {
+                        \\"prim\\": \\"LE\\"
+                    },
+                    {
+                        \\"prim\\": \\"LOOP\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"DIG\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUG\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"ADD\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUG\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"1\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"ADD\\"
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUG\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUG\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"COMPARE\\"
+                                },
+                                {
+                                    \\"prim\\": \\"LE\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
 `;
