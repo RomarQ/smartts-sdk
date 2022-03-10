@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integer expressions CastToInt 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"integer.test.ts\\" 35))
+            storage ()
+            storage_type (\\"int\\")
+            messages ((ep1 True False False True (\\"integer.test.ts\\" 38) ((set_type (params (\\"integer.test.ts\\" 38)) \\"nat\\" (\\"integer.test.ts\\" 41)) (set (data) (toInt (params (\\"integer.test.ts\\" 38)) (\\"integer.test.ts\\" 38)) (\\"integer.test.ts\\" 38)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"integer.test.ts\\" 35))
+        )
+        "
+`;
+
+exports[`Integer expressions CastToInt 2`] = `
+"{
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   int;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.to_int(params) # @parameter\\\\n    INT;        # int\\\\n    NIL operation; # list operation : int\\\\n    PAIR;       # pair (list operation) int\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"INT\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Integer expressions CastToNat 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"integer.test.ts\\" 22))
+            storage ()
+            storage_type (\\"nat\\")
+            messages ((ep1 True False False True (\\"integer.test.ts\\" 25) ((set_type (params (\\"integer.test.ts\\" 25)) \\"int\\" (\\"integer.test.ts\\" 32)) (set (data) (openVariant (isNat (params (\\"integer.test.ts\\" 25)) (\\"integer.test.ts\\" 27)) \\"Some\\" (variant \\"Some\\" (literal (string \\"Could not convert int to nat\\") (\\"integer.test.ts\\" 27)) (\\"integer.test.ts\\" 27)) (\\"integer.test.ts\\" 27)) (\\"integer.test.ts\\" 27)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"integer.test.ts\\" 22))
+        )
+        "
+`;
+
+exports[`Integer expressions CastToNat 2`] = `
+"{
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.as_nat(params, message = sp.some('Could not convert int to nat')) # @parameter\\\\n    ISNAT;      # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"Could not convert int to nat\\\\\\"); # option string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"ISNAT\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"option\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"string\\"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"Some\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"string\\": \\"Could not convert int to nat\\"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ],
+                            []
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Integer expressions IsNat 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"integer.test.ts\\" 9))
+            storage ()
+            storage_type (\\"nat\\")
+            messages ((ep1 True False False True (\\"integer.test.ts\\" 12) ((set_type (params (\\"integer.test.ts\\" 12)) \\"int\\" (\\"integer.test.ts\\" 19)) (set (data) (openVariant (isNat (params (\\"integer.test.ts\\" 12)) (\\"integer.test.ts\\" 14)) \\"Some\\" (variant \\"Some\\" (literal (string \\"Could not convert int to nat\\") (\\"integer.test.ts\\" 14)) (\\"integer.test.ts\\" 14)) (\\"integer.test.ts\\" 14)) (\\"integer.test.ts\\" 14)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"integer.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`Integer expressions IsNat 2`] = `
+"{
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.as_nat(params, message = sp.some('Could not convert int to nat')) # @parameter\\\\n    ISNAT;      # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"Could not convert int to nat\\\\\\"); # option string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"ISNAT\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"option\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"string\\"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"Some\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"string\\": \\"Could not convert int to nat\\"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ],
+                            []
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;

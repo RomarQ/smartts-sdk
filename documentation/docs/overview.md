@@ -7,7 +7,7 @@ slug: /
 ![CI](https://github.com/RomarQ/smartts-sdk/workflows/CI/badge.svg)
 ![Coverage Status](https://coveralls.io/repos/github/RomarQ/smartts-sdk/badge.svg?branch=main)
 
-**`SmartTS SDK`** is a metaprogramming framework for building Tezos smart contracts from Javascript.
+**`SmartTS SDK`** is a metaprogramming framework for building Tezos smart contracts from Javascript. It uses the SmartPy compiler.
 
 ## [API Documentation (TypeDoc)](https://romarq.github.io/smartts-sdk/api)
 

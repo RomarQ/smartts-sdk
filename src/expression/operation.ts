@@ -7,15 +7,16 @@ import { PrependToList } from './list';
 import { Mutez, None, Unit } from './literal';
 import { Contract } from '../core';
 import { GetOperations, GetProperty } from './variables';
+import ValueAtom from '../core/enums/literal';
 
-class OperationExpression extends Expression {
+class OperationExpression extends Expression<ValueAtom.operation> {
     send(line = new LineInfo()) {
         const operations = GetOperations();
         return SetValue(operations, PrependToList(operations, this, line), line);
     }
 }
 
-class OriginationExpression extends Expression {
+class OriginationExpression extends Expression<ValueAtom.operation> {
     getAddress() {
         return GetProperty(this, 'address');
     }

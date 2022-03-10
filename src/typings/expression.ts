@@ -1,8 +1,7 @@
-import { ILiteral } from './literal';
+import ValueAtom from '../core/enums/literal';
 import { IToString } from './shared';
 
-export interface IExpression extends IToString {
+export interface IExpression<T extends ValueAtom = ValueAtom> extends IToString {
     _isExpression: true;
+    _type: T;
 }
-
-export type IExpressionKind = string | IExpression | ILiteral;

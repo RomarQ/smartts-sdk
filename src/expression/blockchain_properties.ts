@@ -1,10 +1,8 @@
 import type { ILiteral } from '../typings/literal';
 import ExpressionAtom from '../core/enums/expression';
-import TypeAtom from '../core/enums/type';
 import { Expression } from '../core/expression';
 import { LineInfo } from '../misc/utils';
-import { IExpression } from '../typings/expression';
-import LiteralAtom from '../core/enums/literal';
+import ValueAtom from '../core/enums/literal';
 
 /**
  * Get the amount sent in the transaction.
@@ -162,5 +160,5 @@ export const GetTotalVotingPower = () => new Expression(ExpressionAtom.total_vot
  *
  * @returns {IExpression} An expression
  */
-export const GetVotingPower = (key_hash: ILiteral<LiteralAtom.key_hash>, line = new LineInfo()) =>
+export const GetVotingPower = (key_hash: ILiteral<ValueAtom.key_hash>, line = new LineInfo()) =>
     new Expression(ExpressionAtom.voting_power, `${key_hash}`, line);

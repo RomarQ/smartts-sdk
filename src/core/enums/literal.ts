@@ -1,4 +1,4 @@
-export enum LiteralAtom {
+export enum ValueAtom {
     record = 'record',
     variant = 'variant',
     chain_id_cst = 'chain_id_cst',
@@ -29,6 +29,8 @@ export enum LiteralAtom {
     ticket = 'ticket',
     sapling_state = 'sapling_empty_state',
     lambda = 'lambda',
+    //
+    operation = 'operation',
 }
 
-export default LiteralAtom;
+export default ValueAtom;

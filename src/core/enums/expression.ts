@@ -47,8 +47,10 @@ export enum ExpressionAtom {
     sha512 = 'sha512',
     sha3 = 'sha3',
     keccak = 'keccak',
-    // Generic
+    // Integer
+    toInt = 'toInt',
     isNat = 'isNat',
+    // Generic
     contains = 'contains',
     items = 'items',
     update_map = 'update_map',

@@ -3,6 +3,7 @@ export * from './comparison';
 export * from './contract';
 export * from './crypto';
 export * from './equality';
+export * from './integer';
 export * from './list';
 export * from './literal';
 export * from './logic';

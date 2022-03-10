@@ -8,7 +8,7 @@ import { Expression } from './expression';
 import { Proxied, proxy } from '../misc/proxy';
 import { SetType } from '../statement';
 import { TUnit, TUnknown } from '../type';
-import LiteralAtom from './enums/literal';
+import ValueAtom from './enums/literal';
 
 abstract class View {
     public name: string;
@@ -104,7 +104,7 @@ export class EntryPoint {
         return this;
     }
 
-    public code(callback: (arg: Proxied<IExpression>) => IStatement[]) {
+    public code(callback: (arg: Proxied<IExpression<any>>) => IStatement[]) {
         this.#statements = [...this.#statements, ...callback(this.entrypointArgument)];
         return this;
     }
@@ -209,7 +209,7 @@ export class Contract {
         return this;
     }
 
-    public setConfig(options?: { initialBalance?: ILiteral<LiteralAtom.mutez>; flags?: Flag[] }) {
+    public setConfig(options?: { initialBalance?: ILiteral<ValueAtom.mutez>; flags?: Flag[] }) {
         if (options?.flags) {
             this.#options.flags = options.flags;
         }
