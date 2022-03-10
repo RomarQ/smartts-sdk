@@ -17,17 +17,7 @@ import {
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { SetValue } from '../../src/statement';
-import {
-    TBls12_381_fr,
-    TBls12_381_g1,
-    TBls12_381_g2,
-    TInt,
-    TMutez,
-    TNat,
-    TOption,
-    TRecord,
-    TTimestamp,
-} from '../../src/type';
+import { TBls12_381_fr, TBls12_381_g1, TBls12_381_g2, TInt, TMutez, TNat, TOption, TRecord } from '../../src/type';
 
 describe('Arithmetic expressions', () => {
     it('Addition', () => {

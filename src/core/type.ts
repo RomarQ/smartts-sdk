@@ -41,6 +41,9 @@ export class Type_VariantOrRecord implements IType<TypeAtom> {
             if (typeof layout === 'string') {
                 return `("${layout}")`;
             }
+            if (layout.length === 1) {
+                return `("${layout[0]}")`;
+            }
             const [left, right] = layout;
             return parenthesis([normalizeTuple(left), normalizeTuple(right)].join(' '));
         };

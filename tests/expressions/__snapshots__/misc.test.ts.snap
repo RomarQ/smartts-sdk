@@ -5,7 +5,7 @@ exports[`Misc expressions CallLambda 1`] = `
         (
             template_id (static_id 0 (\\"misc.test.ts\\" 9))
             storage (lambda 1 None False \\"lambda_arg\\" (\\"misc.test.ts\\" 11) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"misc.test.ts\\" 11) \\"bool\\") (\\"misc.test.ts\\" 13))))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((ep1 True False False True (\\"misc.test.ts\\" 16) ((set_type (params (\\"misc.test.ts\\" 16)) \\"bool\\" (\\"misc.test.ts\\" 21)) (verify (call_lambda (data) (params (\\"misc.test.ts\\" 16)) (\\"misc.test.ts\\" 18)) (unit) (\\"misc.test.ts\\" 18)))))
             flags ()
             privates ()
@@ -112,7 +112,7 @@ exports[`Misc expressions CallView 1`] = `
         (
             template_id (static_id 0 (\\"misc.test.ts\\" 24))
             storage (variant \\"None\\" (unit) (\\"misc.test.ts\\" 25))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((ep1 True False False True (\\"misc.test.ts\\" 28) ((set_type (params (\\"misc.test.ts\\" 28)) \\"bool\\" (\\"misc.test.ts\\" 35)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 28)) \\"bool\\" (\\"misc.test.ts\\" 30)) (\\"misc.test.ts\\" 30)))))
             flags ()
             privates ()

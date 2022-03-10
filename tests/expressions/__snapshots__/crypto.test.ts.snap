@@ -5,7 +5,7 @@ exports[`Crypto expressions Hashing BLACK2B 1`] = `
         (
             template_id (static_id 0 (\\"crypto.test.ts\\" 10))
             storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 11))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((hash_bytes_BLACK2B True False False True (\\"crypto.test.ts\\" 13) ((set_type (params (\\"crypto.test.ts\\" 13)) \\"bytes\\" (\\"crypto.test.ts\\" 18)) (set (data) (variant \\"Some\\" (blake2b (params (\\"crypto.test.ts\\" 13)) (\\"crypto.test.ts\\" 15)) (\\"crypto.test.ts\\" 15)) (\\"crypto.test.ts\\" 15)))))
             flags ()
             privates ()
@@ -81,7 +81,7 @@ exports[`Crypto expressions Hashing KECCAK 1`] = `
         (
             template_id (static_id 0 (\\"crypto.test.ts\\" 21))
             storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 22))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((hash_bytes_KECCAK True False False True (\\"crypto.test.ts\\" 24) ((set_type (params (\\"crypto.test.ts\\" 24)) \\"bytes\\" (\\"crypto.test.ts\\" 29)) (set (data) (variant \\"Some\\" (keccak (params (\\"crypto.test.ts\\" 24)) (\\"crypto.test.ts\\" 26)) (\\"crypto.test.ts\\" 26)) (\\"crypto.test.ts\\" 26)))))
             flags ()
             privates ()
@@ -157,7 +157,7 @@ exports[`Crypto expressions Hashing SHA3 1`] = `
         (
             template_id (static_id 0 (\\"crypto.test.ts\\" 54))
             storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 55))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((hash_bytes_SHA3 True False False True (\\"crypto.test.ts\\" 57) ((set_type (params (\\"crypto.test.ts\\" 57)) \\"bytes\\" (\\"crypto.test.ts\\" 62)) (set (data) (variant \\"Some\\" (sha3 (params (\\"crypto.test.ts\\" 57)) (\\"crypto.test.ts\\" 59)) (\\"crypto.test.ts\\" 59)) (\\"crypto.test.ts\\" 59)))))
             flags ()
             privates ()
@@ -233,7 +233,7 @@ exports[`Crypto expressions Hashing SHA256 1`] = `
         (
             template_id (static_id 0 (\\"crypto.test.ts\\" 32))
             storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 33))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((hash_bytes_SHA256 True False False True (\\"crypto.test.ts\\" 35) ((set_type (params (\\"crypto.test.ts\\" 35)) \\"bytes\\" (\\"crypto.test.ts\\" 40)) (set (data) (variant \\"Some\\" (sha256 (params (\\"crypto.test.ts\\" 35)) (\\"crypto.test.ts\\" 37)) (\\"crypto.test.ts\\" 37)) (\\"crypto.test.ts\\" 37)))))
             flags ()
             privates ()
@@ -309,7 +309,7 @@ exports[`Crypto expressions Hashing SHA512 1`] = `
         (
             template_id (static_id 0 (\\"crypto.test.ts\\" 43))
             storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 44))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((hash_bytes_SHA512 True False False True (\\"crypto.test.ts\\" 46) ((set_type (params (\\"crypto.test.ts\\" 46)) \\"bytes\\" (\\"crypto.test.ts\\" 51)) (set (data) (variant \\"Some\\" (sha512 (params (\\"crypto.test.ts\\" 46)) (\\"crypto.test.ts\\" 48)) (\\"crypto.test.ts\\" 48)) (\\"crypto.test.ts\\" 48)))))
             flags ()
             privates ()

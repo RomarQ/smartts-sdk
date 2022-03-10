@@ -5,7 +5,7 @@ exports[`Test (If) statement With (Then) and (Else) - [chaining version] 1`] = `
         (
             template_id (static_id 0 (\\"if.test.ts\\" 48))
             storage (literal (nat 1) (\\"if.test.ts\\" 48))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((ep1 True False False True (\\"if.test.ts\\" 49) ((set_type (params (\\"if.test.ts\\" 49)) \\"nat\\" (\\"if.test.ts\\" 56)) (ifBlock (ge (params (\\"if.test.ts\\" 49)) (literal (nat 5) (\\"if.test.ts\\" 49)) (\\"if.test.ts\\" 49)) ((set (data) (params (\\"if.test.ts\\" 49)) (\\"if.test.ts\\" 49))) (\\"if.test.ts\\" 49)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 49)) (\\"if.test.ts\\" 49)))))))
             flags ()
             privates ()
@@ -115,7 +115,7 @@ exports[`Test (If) statement With (Then) and (Else) 1`] = `
         (
             template_id (static_id 0 (\\"if.test.ts\\" 31))
             storage (literal (nat 1) (\\"if.test.ts\\" 32))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((ep1 True False False True (\\"if.test.ts\\" 34) ((set_type (params (\\"if.test.ts\\" 34)) \\"nat\\" (\\"if.test.ts\\" 45)) (ifBlock (ge (params (\\"if.test.ts\\" 34)) (literal (nat 5) (\\"if.test.ts\\" 36)) (\\"if.test.ts\\" 36)) ((set (data) (params (\\"if.test.ts\\" 34)) (\\"if.test.ts\\" 36))) (\\"if.test.ts\\" 36)) (elseBlock ((set (data) (literal (nat 5) (\\"if.test.ts\\" 36)) (\\"if.test.ts\\" 36)))))))
             flags ()
             privates ()
@@ -225,7 +225,7 @@ exports[`Test (If) statement Without (Else) - [chaining version] 1`] = `
         (
             template_id (static_id 0 (\\"if.test.ts\\" 20))
             storage (literal (nat 1) (\\"if.test.ts\\" 21))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((ep1 True False False True (\\"if.test.ts\\" 23) ((set_type (params (\\"if.test.ts\\" 23)) \\"nat\\" (\\"if.test.ts\\" 28)) (ifBlock (ge (params (\\"if.test.ts\\" 23)) (literal (nat 5) (\\"if.test.ts\\" 25)) (\\"if.test.ts\\" 25)) ((set (data) (params (\\"if.test.ts\\" 23)) (\\"if.test.ts\\" 25))) (\\"if.test.ts\\" 25)))))
             flags ()
             privates ()
@@ -331,7 +331,7 @@ exports[`Test (If) statement Without (Else) 1`] = `
         (
             template_id (static_id 0 (\\"if.test.ts\\" 9))
             storage (literal (nat 1) (\\"if.test.ts\\" 10))
-            storage_type (())
+            storage_type ((unknown 0))
             messages ((ep1 True False False True (\\"if.test.ts\\" 12) ((set_type (params (\\"if.test.ts\\" 12)) \\"nat\\" (\\"if.test.ts\\" 17)) (ifBlock (ge (params (\\"if.test.ts\\" 12)) (literal (nat 5) (\\"if.test.ts\\" 14)) (\\"if.test.ts\\" 14)) ((set (data) (params (\\"if.test.ts\\" 12)) (\\"if.test.ts\\" 14))) (\\"if.test.ts\\" 14)))))
             flags ()
             privates ()

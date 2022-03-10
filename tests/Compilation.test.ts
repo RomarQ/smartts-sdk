@@ -23,7 +23,7 @@ import { Contract, EntryPoint, Flag, OnChainView } from '../src/core';
 import { FailWith, If, NewVariable, Require, Return, SetValue } from '../src/statement';
 import { verifyContractCompilationOutput, verifyValueCompilationOutput } from './util';
 
-describe('Compile Lambdas', () => {
+describe('Compile Values', () => {
     it('A Lambda that returns the argument', () => {
         const lambda = Lambda().code((arg) => [
             If(Equal(arg, String('TEST')))
@@ -42,8 +42,8 @@ describe('Compile Lambdas', () => {
 
         verifyValueCompilationOutput(lambda);
     });
-    it('A', () => {
-        verifyValueCompilationOutput(Nat(1) as any);
+    it('Nat', () => {
+        verifyValueCompilationOutput(Nat(1));
     });
 });
 

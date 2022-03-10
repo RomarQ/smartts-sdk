@@ -12,6 +12,7 @@ export * from './misc';
 export * from './operation';
 export * from './pair';
 export * from './serialization';
+export * from './type';
 export * from './unary';
 export * from './variables';
 export * from './variant';

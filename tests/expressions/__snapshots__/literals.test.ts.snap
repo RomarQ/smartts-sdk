@@ -1854,25 +1854,6 @@ exports[`Test Literals string 2`] = `
 }"
 `;
 
-exports[`Test Literals ticket 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (ticket (literal (string \\"A Ticket\\") (\\"literals.test.ts\\" 78)) (literal (nat 1) (\\"literals.test.ts\\" 78)) (\\"literals.test.ts\\" 78))
-            storage_type ((ticket \\"string\\"))
-            messages ()
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"literals.test.ts\\" 72))
-        )
-        "
-`;
-
-exports[`Test Literals ticket 2`] = `"\\"Missing environment to compute ETicket\\\\nCompute storage\\""`;
-
 exports[`Test Literals timestamp 1`] = `
 "
         (

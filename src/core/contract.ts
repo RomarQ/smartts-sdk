@@ -1,4 +1,4 @@
-import { MethodArgument, Mutez, Unit } from '../expression';
+import { MethodArgument, Mutez } from '../expression';
 import Utils, { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { ILiteral } from '../typings/literal';
@@ -7,13 +7,12 @@ import { IStatement } from '../typings/statement';
 import { Expression } from './expression';
 import { Proxied, proxy } from '../misc/proxy';
 import { SetType } from '../statement';
-import { TUnit } from '../type';
+import { TUnit, TUnknown } from '../type';
 import LiteralAtom from './enums/literal';
-import TypeAtom from './enums/type';
 
 abstract class View {
     public name: string;
-    protected inType: IType = TUnit();
+    protected inType: IType = TUnknown();
     protected statements: IStatement[] = [];
     protected line: LineInfo;
 
@@ -78,7 +77,7 @@ export class EntryPoint {
         lazy: false,
         lazyAndCodeless: false,
     };
-    #inType: IType<TypeAtom> = TUnit();
+    #inType: IType = TUnit();
     #statements: IStatement[] = [];
     #line: LineInfo;
 
@@ -171,8 +170,8 @@ export class Contract {
     };
 
     #line: LineInfo;
-    #storage_type?: IType;
-    #storage: IExpression = Unit();
+    #storage_type: IType = TUnknown();
+    #storage?: IExpression;
     #entries: Record<string, EntryPoint> = {};
     #onChainViews: Record<string, View> = {};
 
@@ -185,7 +184,7 @@ export class Contract {
         return this;
     }
 
-    public setStorage(storage: ILiteral<any>) {
+    public setStorage(storage: ILiteral) {
         this.#storage = storage;
         return this;
     }
@@ -194,11 +193,19 @@ export class Contract {
         this.#entries[entrypoint.name] = entrypoint;
         return this;
     }
+    public removeEntrypoint(entrypointName: string) {
+        delete this.#entries[entrypointName];
+        return this;
+    }
 
     public addView(view: View) {
         if (view instanceof OnChainView) {
             this.#onChainViews[view.name] = view;
         }
+        return this;
+    }
+    public removeView(viewName: string) {
+        delete this.#onChainViews[viewName];
         return this;
     }
 
@@ -212,8 +219,8 @@ export class Contract {
         return this;
     }
 
-    public get storage(): Readonly<IExpression> {
-        return this.#storage;
+    public get storage(): Readonly<IExpression> | null {
+        return this.#storage || null;
     }
 
     public get entrypoints(): Readonly<EntryPoint[]> {
@@ -235,7 +242,7 @@ export class Contract {
         return `
         (
             template_id (static_id 0 ${this.#line})
-            storage ${this.#storage}
+            storage ${this.#storage || '()'}
             storage_type (${this.#storage_type || '()'})
             messages (${this.entrypoints.join(' ')})
             flags (${this.#options.flags.join(' ')})

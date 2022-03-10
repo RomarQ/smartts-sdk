@@ -66,6 +66,7 @@ export enum ExpressionAtom {
     second = 'second',
     pack = 'pack',
     unpack = 'unpack',
+    type_annotation = 'type_annotation',
 }
 
 export default ExpressionAtom;

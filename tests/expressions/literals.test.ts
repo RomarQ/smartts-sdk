@@ -132,7 +132,8 @@ describe('Test Literals', () => {
         TLambda(TNat(), TString()),
         Lambda().code((arg) => [If(GreaterThan(arg, Nat(2)), [Return(String('YES'))], [Return(String('NO'))])]),
     );
-    verifyLiteral('ticket', TTicket(TString()), Ticket(String('A Ticket'), Nat(1)));
+    // @TODO (test ticket)
+    //verifyLiteral('ticket', TTicket(TString()), Ticket(String('A Ticket'), Nat(1)));
     verifyLiteral('sapling_state', TSapling_state(8), Sapling_state(8));
     verifyLiteral(
         'record',

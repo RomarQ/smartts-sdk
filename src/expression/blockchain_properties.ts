@@ -46,7 +46,7 @@ export const GetBalance = () => new Expression(ExpressionAtom.balance);
  *
  * @returns {IExpression} An expression
  */
-export const GetSelf = (entry_point = '', line = new LineInfo()) =>
+export const GetSelf = (entry_point: string, line = new LineInfo()) =>
     new Expression(ExpressionAtom.self, `"${entry_point}"`, line);
 
 /**

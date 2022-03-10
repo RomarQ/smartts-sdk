@@ -1,5 +1,5 @@
 import ExpressionAtom from '../core/enums/expression';
-import { Expression } from '../core/expression';
+import { Expression, LiteralExpression } from '../core/expression';
 import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';

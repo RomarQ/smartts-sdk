@@ -43,7 +43,7 @@ describe('Test blockchain operations', () => {
     verify('CHAIN_ID', TChain_id(), GetChain_id());
     verify('AMOUNT', TMutez(), GetAmount());
     verify('BALANCE', TMutez(), GetBalance());
-    verify('SELF', TContract(TUnit()), GetSelf());
+    verify('SELF', TContract(TUnit()), GetSelf('ep1'));
     verify('SELF_ADDRESS', TAddress(), GetSelfAddress());
     verify('TOTAL_VOTING_POWER', TNat(), GetTotalVotingPower());
     verify('VOTING_POWER', TNat(), GetVotingPower(Key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')));
