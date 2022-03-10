@@ -14,6 +14,8 @@ import ValueAtom from '../core/enums/literal';
  * IsNat(Subtract(Nat(2), Nat(1))); // Some(Nat(1))
  * ```
  *
+ * @category | Integer expressions
+ *
  * @param expression A non-negative integer expression.
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -28,6 +30,8 @@ export const IsNat = (expression: IExpression, line = new LineInfo()) =>
  * ```typescript
  * CastToNat(Subtract(Nat(2), Nat(1))); // Nat(1)
  * ```
+ *
+ * @category | Integer expressions
  *
  * @param expression A non-negative integer expression.
  * @param errorMsg An optional value to be included in the error trace if the integer is negative.
@@ -44,6 +48,8 @@ export const CastToNat = (expression: IExpression, errorMsg: IExpression = Unit(
  * ```typescript
  * CastToInt(Nat(1)); // Int(1)
  * ```
+ *
+ * @category | Integer expressions
  *
  * @param expression An expression that evaluates to a value of type `TNat()`.
  * @param {LineInfo} line Source code line information (Used in error messages)
