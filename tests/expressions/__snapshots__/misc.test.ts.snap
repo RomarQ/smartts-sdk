@@ -1,127 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Misc expressions CallView 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"misc.test.ts\\" 23))
-            storage ()
-            storage_type ((option \\"bool\\"))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 27) ((set_type (params (\\"misc.test.ts\\" 27)) \\"bool\\" (\\"misc.test.ts\\" 34)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 27)) \\"bool\\" (\\"misc.test.ts\\" 29)) (\\"misc.test.ts\\" 29)))))
-            flags ()
-            privates ()
-            views ((onchain some_view True (\\"misc.test.ts\\" 25) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 25)) \\"bool\\" (\\"misc.test.ts\\" 34)) (result (not (params (\\"misc.test.ts\\" 25)) (\\"misc.test.ts\\" 25)) (\\"misc.test.ts\\" 25)))))
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 23))
-        )
-        "
-`;
-
-exports[`Misc expressions CallView 2`] = `
-"{
-    \\"micheline\\": \\"parameter (bool %ep1);\\\\nstorage   (option bool);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.view(\\\\\\"some_view\\\\\\", sp.self_address, params, sp.TBool) # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"some_view\\\\\\" bool; # option bool\\\\n    NIL operation; # list operation : option bool\\\\n    PAIR;       # pair (list operation) (option bool)\\\\n  };\\\\nview\\\\n  \\\\\\"some_view\\\\\\" bool bool\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # sp.result(~ params) # @parameter\\\\n    NOT;        # bool\\\\n  };\\",
-    \\"json\\": [
-        {
-            \\"prim\\": \\"storage\\",
-            \\"args\\": [
-                {
-                    \\"prim\\": \\"option\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"bool\\"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            \\"prim\\": \\"parameter\\",
-            \\"args\\": [
-                {
-                    \\"prim\\": \\"bool\\",
-                    \\"annots\\": [
-                        \\"%ep1\\"
-                    ]
-                }
-            ]
-        },
-        {
-            \\"prim\\": \\"code\\",
-            \\"args\\": [
-                [
-                    {
-                        \\"prim\\": \\"CAR\\"
-                    },
-                    {
-                        \\"prim\\": \\"SELF_ADDRESS\\"
-                    },
-                    {
-                        \\"prim\\": \\"SWAP\\"
-                    },
-                    {
-                        \\"prim\\": \\"VIEW\\",
-                        \\"args\\": [
-                            {
-                                \\"string\\": \\"some_view\\"
-                            },
-                            {
-                                \\"prim\\": \\"bool\\"
-                            }
-                        ]
-                    },
-                    {
-                        \\"prim\\": \\"NIL\\",
-                        \\"args\\": [
-                            {
-                                \\"prim\\": \\"operation\\"
-                            }
-                        ]
-                    },
-                    {
-                        \\"prim\\": \\"PAIR\\"
-                    }
-                ]
-            ]
-        },
-        {
-            \\"prim\\": \\"view\\",
-            \\"args\\": [
-                {
-                    \\"string\\": \\"some_view\\"
-                },
-                {
-                    \\"prim\\": \\"bool\\"
-                },
-                {
-                    \\"prim\\": \\"bool\\"
-                },
-                [
-                    {
-                        \\"prim\\": \\"CAR\\"
-                    },
-                    {
-                        \\"prim\\": \\"NOT\\"
-                    }
-                ]
-            ]
-        }
-    ]
-}"
-`;
-
 exports[`Misc expressions Concat 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 37))
+            template_id (static_id 0 (\\"misc.test.ts\\" 9))
             storage ()
             storage_type ((tuple \\"string\\" \\"bytes\\"))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 40) ((set_type (params (\\"misc.test.ts\\" 40)) \\"unit\\" (\\"misc.test.ts\\" 53)) (set (data) (tuple (\\"misc.test.ts\\" 42) (concat (list (\\"misc.test.ts\\" 42) (literal (string \\"Hello\\") (\\"misc.test.ts\\" 42)) (literal (string \\" \\") (\\"misc.test.ts\\" 42)) (literal (string \\"World\\") (\\"misc.test.ts\\" 42))) (\\"misc.test.ts\\" 42)) (concat (list (\\"misc.test.ts\\" 42) (literal (bytes 0x01) (\\"misc.test.ts\\" 42)) (literal (bytes 0x02) (\\"misc.test.ts\\" 42))) (\\"misc.test.ts\\" 42))) (\\"misc.test.ts\\" 42)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 12) ((set_type (params (\\"misc.test.ts\\" 12)) \\"unit\\" (\\"misc.test.ts\\" 25)) (set (data) (tuple (\\"misc.test.ts\\" 14) (concat (list (\\"misc.test.ts\\" 14) (literal (string \\"Hello\\") (\\"misc.test.ts\\" 14)) (literal (string \\" \\") (\\"misc.test.ts\\" 14)) (literal (string \\"World\\") (\\"misc.test.ts\\" 14))) (\\"misc.test.ts\\" 14)) (concat (list (\\"misc.test.ts\\" 14) (literal (bytes 0x01) (\\"misc.test.ts\\" 14)) (literal (bytes 0x02) (\\"misc.test.ts\\" 14))) (\\"misc.test.ts\\" 14))) (\\"misc.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 37))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 9))
         )
         "
 `;
@@ -240,16 +131,16 @@ exports[`Misc expressions Concat 2`] = `
 exports[`Misc expressions SizeOf 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 56))
+            template_id (static_id 0 (\\"misc.test.ts\\" 28))
             storage ()
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 59) ((set_type (params (\\"misc.test.ts\\" 59)) \\"unit\\" (\\"misc.test.ts\\" 68)) (set (data) (size (literal (string \\"Hello\\") (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (set (data) (size (literal (bytes 0x01) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (set (data) (size (list (\\"misc.test.ts\\" 59) (literal (nat 1) (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (set (data) (size (set (\\"misc.test.ts\\" 59) (literal (nat 1) (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (set (data) (size (map (\\"misc.test.ts\\" 59) ((literal (nat 1) (\\"misc.test.ts\\" 59)) (literal (nat 2) (\\"misc.test.ts\\" 59)))) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 31) ((set_type (params (\\"misc.test.ts\\" 31)) \\"unit\\" (\\"misc.test.ts\\" 40)) (set (data) (size (literal (string \\"Hello\\") (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (set (data) (size (literal (bytes 0x01) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (set (data) (size (list (\\"misc.test.ts\\" 31) (literal (nat 1) (\\"misc.test.ts\\" 31))) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (set (data) (size (set (\\"misc.test.ts\\" 31) (literal (nat 1) (\\"misc.test.ts\\" 31))) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (set (data) (size (map (\\"misc.test.ts\\" 31) ((literal (nat 1) (\\"misc.test.ts\\" 31)) (literal (nat 2) (\\"misc.test.ts\\" 31)))) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 56))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 28))
         )
         "
 `;

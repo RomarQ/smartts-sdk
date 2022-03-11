@@ -2,6 +2,7 @@ import type { IExpression } from '../typings/expression';
 import { LineInfo } from '../misc/utils';
 import { Expression } from '../core/expression';
 import ExpressionAtom from '../core/enums/expression';
+import ValueAtom from '../core/enums/literal';
 
 /**
  * Add two numerical values
@@ -74,6 +75,27 @@ export const Subtract = (left: IExpression, right: IExpression, line = new LineI
  */
 export const Divide = (left: IExpression, right: IExpression, line = new LineInfo()) =>
     new Expression(ExpressionAtom.truediv, left, right, line);
+
+/**
+ * Euclidean Division
+ *
+ * ```typescript
+ * EuclideanDivision(Nat(13), Nat(3)); // Some(Pair(Nat(4), Nat(1)))
+ * ```
+ *
+ * @category | Math
+ *
+ * @param left Expression
+ * @param right Expression
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression of type `TOption(TPair(@quotient_type, @remainder_type)))
+ */
+export const EuclideanDivision = (
+    left: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
+    right: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
+    line = new LineInfo(),
+): IExpression<ValueAtom.option> => new Expression(ExpressionAtom.truediv, left, right, line);
 
 export const Math = {
     Add,

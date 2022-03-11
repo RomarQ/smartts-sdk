@@ -57,23 +57,6 @@ Subtract(Timestamp(1), Timestamp(1));   // Int(0)
 Subtract(Mutez(1), Mutez(1));           // Mutez(0)
 ```
 
-## Division
-
-Performs the euclidean division and extracts the quotient from the result.
-
-- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#Divide-1)
-
-### Usage
-
-```ts
-const {
-    Divide,
-    Nat
-} = require('@tezwell/smartts-sdk');
-
-Divide(Nat(10), Nat(2));               // Nat(5)
-```
-
 ## Multiplication
 
 Multiply two values.
@@ -107,3 +90,22 @@ Multiply(Bls12_381_fr(1), Bls12_381_fr(1));         // Bls12_381_fr(2)
 Multiply(Bls12_381_g1("0x00"), Bls12_381_fr(0));    // Bls12_381_g1("0x00")
 Multiply(Bls12_381_g2("0x00"), Bls12_381_fr(0));    // Bls12_381_g2("0x00")
 ```
+
+## Division
+
+Performs the euclidean division and extracts the quotient from the result.
+
+- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#Divide-1)
+
+### Usage
+
+```ts
+const {
+    Divide,
+    Nat
+} = require('@tezwell/smartts-sdk');
+
+Divide(Nat(10), Nat(2));               // Nat(5)
+```
+
+## Euclidean Division

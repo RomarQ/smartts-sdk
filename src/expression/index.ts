@@ -19,3 +19,4 @@ export * from './type';
 export * from './unary';
 export * from './variables';
 export * from './variant';
+export * from './view';

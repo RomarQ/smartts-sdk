@@ -13,7 +13,7 @@ const contract = new Contract().setStorage(Nat(0));
 ```js
 const { Contract } = require('@tezwell/smartts-sdk');
 
-const contract = new Contract().setStorageType(TNat()).setStorage(Nat(0));
+const contract = new Contract().setStorageType(TNat());
 ```
 
 ## Define an entrypoint
@@ -22,10 +22,11 @@ const contract = new Contract().setStorageType(TNat()).setStorage(Nat(0));
 const { Contract, EntryPoint, SetValue, ContractStorage, TNat } = require('@tezwell/smartts-sdk');
 
 const contract = new Contract()
-    .setStorage(Nat(0)) // Set initial storage
+    .setStorageType(TNat()) // Specify the storage type
+    .setStorage(Nat(0))     // Define the initial storage
     .addEntrypoint(
         new EntryPoint('entry_point_1')
-            .setInputType(TNat()) // Set the type of the entrypoint argument
+            .setInputType(TNat()) // Specify the type of the entrypoint argument
             .code((arg) => [
                 SetValue(ContractStorage(), arg) // Update contract storage
             ]);
@@ -52,8 +53,7 @@ const {
 } = require('@tezwell/smartts-sdk');
 
 const contract = new Contract()
-    // Set initial storage
-    .setStorage(Nat(0))
+    .setStorageType(TNat())
     // Add an entrypoint named "entry_point_1"
     .addEntrypoint(
         new EntryPoint('entry_point_1')

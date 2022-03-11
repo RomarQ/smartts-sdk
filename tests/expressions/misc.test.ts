@@ -1,38 +1,10 @@
-import {
-    Bytes,
-    CallView,
-    Concat,
-    ContractStorage,
-    GetSelfAddress,
-    List,
-    Nat,
-    Not,
-    Pair,
-    SizeOf,
-    Set,
-    String,
-    Map,
-} from '../../src/expression';
-import { Contract, EntryPoint, OnChainView } from '../../src/core';
+import { Bytes, Concat, ContractStorage, List, Nat, Pair, SizeOf, Set, String, Map } from '../../src/expression';
+import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
-import { Return, SetValue } from '../../src/statement';
-import { TBool, TBytes, TNat, TOption, TPair, TString, TUnit } from '../../src/type';
+import { SetValue } from '../../src/statement';
+import { TBytes, TNat, TPair, TString, TUnit } from '../../src/type';
 
 describe('Misc expressions', () => {
-    it('CallView', () => {
-        const contract = new Contract()
-            .setStorageType(TOption(TBool()))
-            .addView(new OnChainView('some_view').setInputType(TBool()).code((argument) => [Return(Not(argument))]))
-            .addEntrypoint(
-                new EntryPoint('ep1')
-                    .setInputType(TBool())
-                    .code((arg) => [
-                        SetValue(ContractStorage(), CallView('some_view', GetSelfAddress(), arg, TBool())),
-                    ]),
-            );
-
-        verifyContractCompilationOutput(contract);
-    });
     it('Concat', () => {
         const contract = new Contract()
             .setStorageType(TPair(TString(), TBytes()))

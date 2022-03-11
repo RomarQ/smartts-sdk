@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View expressions CallView 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"view.test.ts\\" 9))
+            storage ()
+            storage_type ((option \\"bool\\"))
+            messages ((ep1 True False False True (\\"view.test.ts\\" 13) ((set_type (params (\\"view.test.ts\\" 13)) \\"bool\\" (\\"view.test.ts\\" 20)) (set (data) (view \\"some_view\\" (self_address) (params (\\"view.test.ts\\" 13)) \\"bool\\" (\\"view.test.ts\\" 15)) (\\"view.test.ts\\" 15)))))
+            flags ()
+            privates ()
+            views ((onchain some_view True (\\"view.test.ts\\" 11) False \\"\\" ((set_type (params (\\"view.test.ts\\" 11)) \\"bool\\" (\\"view.test.ts\\" 20)) (result (not (params (\\"view.test.ts\\" 11)) (\\"view.test.ts\\" 11)) (\\"view.test.ts\\" 11)))))
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"view.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`View expressions CallView 2`] = `
+"{
+    \\"micheline\\": \\"parameter (bool %ep1);\\\\nstorage   (option bool);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.view(\\\\\\"some_view\\\\\\", sp.self_address, params, sp.TBool) # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"some_view\\\\\\" bool; # option bool\\\\n    NIL operation; # list operation : option bool\\\\n    PAIR;       # pair (list operation) (option bool)\\\\n  };\\\\nview\\\\n  \\\\\\"some_view\\\\\\" bool bool\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # sp.result(~ params) # @parameter\\\\n    NOT;        # bool\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"bool\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SELF_ADDRESS\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"VIEW\\",
+                        \\"args\\": [
+                            {
+                                \\"string\\": \\"some_view\\"
+                            },
+                            {
+                                \\"prim\\": \\"bool\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        },
+        {
+            \\"prim\\": \\"view\\",
+            \\"args\\": [
+                {
+                    \\"string\\": \\"some_view\\"
+                },
+                {
+                    \\"prim\\": \\"bool\\"
+                },
+                {
+                    \\"prim\\": \\"bool\\"
+                },
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NOT\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
