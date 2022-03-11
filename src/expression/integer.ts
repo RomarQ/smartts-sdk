@@ -1,11 +1,10 @@
 import type { IExpression } from '../typings/expression';
 import ExpressionAtom from '../core/enums/expression';
 import { Expression } from '../core/expression';
-import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
-import { OpenVariant } from './variant';
 import { Unit } from './literal';
 import ValueAtom from '../core/enums/literal';
+import { GetSome } from '.';
 
 /**
  * Convert a value of type `TInt()` to `TOption(TNat())`.
@@ -22,7 +21,7 @@ import ValueAtom from '../core/enums/literal';
  * @returns {IExpression} An expression that evaluates to TOption(TNat()).
  */
 export const IsNat = (expression: IExpression, line = new LineInfo()) =>
-    proxy(new Expression<ValueAtom.option>(ExpressionAtom.isNat, expression, line), Expression.proxyHandler);
+    new Expression<ValueAtom.option>(ExpressionAtom.isNat, expression, line);
 
 /**
  * Convert a value of type `TInt()` to `TNat()`.
@@ -39,11 +38,11 @@ export const IsNat = (expression: IExpression, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression that evaluates to TNat().
  */
-export const CastToNat = (expression: IExpression, errorMsg: IExpression = Unit(), line = new LineInfo()) =>
-    proxy(
-        OpenVariant(IsNat(expression, line), 'Some', errorMsg, line) as IExpression<ValueAtom.nat>,
-        Expression.proxyHandler,
-    );
+export const CastToNat = (
+    expression: IExpression,
+    errorMsg: IExpression = Unit(),
+    line = new LineInfo(),
+): IExpression<ValueAtom.nat> => GetSome(IsNat(expression, line), errorMsg, line);
 
 /**
  * Convert a value of type `TNat()` to `TInt()`
@@ -60,4 +59,4 @@ export const CastToNat = (expression: IExpression, errorMsg: IExpression = Unit(
  * @returns {IExpression} An expression that evaluates to TInt().
  */
 export const CastToInt = (expression: IExpression<ValueAtom.nat>, line = new LineInfo()) =>
-    proxy(new Expression<ValueAtom.int>(ExpressionAtom.toInt, expression, line), Expression.proxyHandler);
+    new Expression<ValueAtom.int>(ExpressionAtom.toInt, expression, line);

@@ -18,6 +18,7 @@ export enum ExpressionAtom {
     // Logic
     and = 'and',
     or = 'or',
+    xor = 'xor',
     // Unary
     not = 'not',
     neg = 'neg',

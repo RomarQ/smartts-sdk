@@ -3,6 +3,7 @@ import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import ExpressionAtom from '../core/enums/expression';
 import { Expression } from '../core/expression';
+import ValueAtom from '../core/enums/literal';
 
 /**
  * Get map entries.
@@ -106,7 +107,7 @@ export const GetMapValue = (
  * @returns {IExpression} An expression that resolves to a boolean value.
  */
 export const MapContainsKey = (expression: IExpression, key: IExpression, line = new LineInfo()) => {
-    return new Expression(ExpressionAtom.contains, expression, key, line);
+    return new Expression<ValueAtom.bool>(ExpressionAtom.contains, expression, key, line);
 };
 
 const MapExpressions = {

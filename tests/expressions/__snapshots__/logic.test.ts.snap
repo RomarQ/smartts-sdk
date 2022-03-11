@@ -1,0 +1,305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integer expressions And 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"logic.test.ts\\" 20))
+            storage ()
+            storage_type (\\"bool\\")
+            messages ((ep1 True False False True (\\"logic.test.ts\\" 23) ((set_type (params (\\"logic.test.ts\\" 23)) \\"int\\" (\\"logic.test.ts\\" 28)) (set (data) (and (eq (and (literal (nat 1) (\\"logic.test.ts\\" 25)) (literal (nat 0) (\\"logic.test.ts\\" 25)) (\\"logic.test.ts\\" 25)) (literal (nat 1) (\\"logic.test.ts\\" 25)) (\\"logic.test.ts\\" 25)) (literal (bool False) (\\"logic.test.ts\\" 25)) (\\"logic.test.ts\\" 25)) (\\"logic.test.ts\\" 25)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"logic.test.ts\\" 20))
+        )
+        "
+`;
+
+exports[`Integer expressions And 2`] = `
+"{
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = ((1 & 0) == 1) & False # \\\\n    PUSH bool False; # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"bool\\"
+                            },
+                            {
+                                \\"prim\\": \\"False\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Integer expressions Or 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"logic.test.ts\\" 9))
+            storage ()
+            storage_type (\\"bool\\")
+            messages ((ep1 True False False True (\\"logic.test.ts\\" 12) ((set_type (params (\\"logic.test.ts\\" 12)) \\"int\\" (\\"logic.test.ts\\" 17)) (set (data) (or (eq (or (literal (nat 1) (\\"logic.test.ts\\" 14)) (literal (nat 0) (\\"logic.test.ts\\" 14)) (\\"logic.test.ts\\" 14)) (literal (nat 1) (\\"logic.test.ts\\" 14)) (\\"logic.test.ts\\" 14)) (literal (bool False) (\\"logic.test.ts\\" 14)) (\\"logic.test.ts\\" 14)) (\\"logic.test.ts\\" 14)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"logic.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`Integer expressions Or 2`] = `
+"{
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = ((1 | 0) == 1) | False # \\\\n    PUSH nat 1; # nat\\\\n    PUSH nat 0; # nat : nat\\\\n    PUSH nat 1; # nat : nat : nat\\\\n    OR;         # nat : nat\\\\n    COMPARE;    # int\\\\n    EQ;         # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"1\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"0\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"1\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"OR\\"
+                    },
+                    {
+                        \\"prim\\": \\"COMPARE\\"
+                    },
+                    {
+                        \\"prim\\": \\"EQ\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Integer expressions Xor 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"logic.test.ts\\" 31))
+            storage ()
+            storage_type (\\"bool\\")
+            messages ((ep1 True False False True (\\"logic.test.ts\\" 34) ((set_type (params (\\"logic.test.ts\\" 34)) \\"int\\" (\\"logic.test.ts\\" 39)) (set (data) (xor (eq (xor (literal (nat 1) (\\"logic.test.ts\\" 36)) (literal (nat 0) (\\"logic.test.ts\\" 36)) (\\"logic.test.ts\\" 36)) (literal (nat 1) (\\"logic.test.ts\\" 36)) (\\"logic.test.ts\\" 36)) (literal (bool False) (\\"logic.test.ts\\" 36)) (\\"logic.test.ts\\" 36)) (\\"logic.test.ts\\" 36)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"logic.test.ts\\" 31))
+        )
+        "
+`;
+
+exports[`Integer expressions Xor 2`] = `
+"{
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = ((1 ^ 0) == 1) ^ False # \\\\n    PUSH bool False; # bool\\\\n    PUSH nat 1; # nat : bool\\\\n    PUSH nat 0; # nat : nat : bool\\\\n    PUSH nat 1; # nat : nat : nat : bool\\\\n    XOR;        # nat : nat : bool\\\\n    COMPARE;    # int : bool\\\\n    EQ;         # bool : bool\\\\n    XOR;        # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"bool\\"
+                            },
+                            {
+                                \\"prim\\": \\"False\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"1\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"0\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"1\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"XOR\\"
+                    },
+                    {
+                        \\"prim\\": \\"COMPARE\\"
+                    },
+                    {
+                        \\"prim\\": \\"EQ\\"
+                    },
+                    {
+                        \\"prim\\": \\"XOR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
