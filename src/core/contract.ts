@@ -26,7 +26,7 @@ abstract class View {
         return this;
     }
 
-    public code(callback: (arg: Proxied<IExpression>) => IStatement[]) {
+    public code(callback: (arg: Proxied<IExpression<any>>) => IStatement[]) {
         this.statements = [...this.statements, ...callback(this.viewArgument)];
         return this;
     }

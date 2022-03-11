@@ -1,19 +1,24 @@
 import {
+    Bytes,
     CallLambda,
     CallView,
     Concat,
     ContractStorage,
     GetSelfAddress,
     Lambda,
-    None,
+    List,
+    Nat,
     Not,
-    Some,
+    Pair,
+    SizeOf,
+    Set,
     String,
+    Map,
 } from '../../src/expression';
 import { Contract, EntryPoint, OnChainView } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { Require, Return, SetValue } from '../../src/statement';
-import { TBool, TUnit } from '../../src/type';
+import { TBool, TBytes, TNat, TOption, TPair, TString, TUnit } from '../../src/type';
 
 describe('Misc expressions', () => {
     it('CallLambda', () => {
@@ -33,7 +38,7 @@ describe('Misc expressions', () => {
     });
     it('CallView', () => {
         const contract = new Contract()
-            .setStorage(None())
+            .setStorageType(TOption(TBool()))
             .addView(new OnChainView('some_view').setInputType(TBool()).code((argument) => [Return(Not(argument))]))
             .addEntrypoint(
                 new EntryPoint('ep1')
@@ -47,13 +52,34 @@ describe('Misc expressions', () => {
     });
     it('Concat', () => {
         const contract = new Contract()
-            .setStorage(None())
+            .setStorageType(TPair(TString(), TBytes()))
             .addEntrypoint(
                 new EntryPoint('ep1')
                     .setInputType(TUnit())
                     .code(() => [
-                        SetValue(ContractStorage(), Some(Concat([String('Hello'), String(' '), String('World')]))),
+                        SetValue(
+                            ContractStorage(),
+                            Pair(
+                                Concat([String('Hello'), String(' '), String('World')]),
+                                Concat([Bytes('0x01'), Bytes('0x02')]),
+                            ),
+                        ),
                     ]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('SizeOf', () => {
+        const contract = new Contract()
+            .setStorageType(TNat())
+            .addEntrypoint(
+                new EntryPoint('ep1').code(() => [
+                    SetValue(ContractStorage(), SizeOf(String('Hello'))),
+                    SetValue(ContractStorage(), SizeOf(Bytes('0x01'))),
+                    SetValue(ContractStorage(), SizeOf(List([Nat(1)]))),
+                    SetValue(ContractStorage(), SizeOf(Set([Nat(1)]))),
+                    SetValue(ContractStorage(), SizeOf(Map([[Nat(1), Nat(2)]]))),
+                ]),
             );
 
         verifyContractCompilationOutput(contract);

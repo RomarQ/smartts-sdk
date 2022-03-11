@@ -1,5 +1,4 @@
 import type { IExpression } from '../typings/expression';
-import type { ILiteral } from '../typings/literal';
 import type { IStatement } from '../typings/statement';
 import type { IType } from '../typings/type';
 import { LineInfo } from '../misc/utils';
@@ -13,7 +12,7 @@ import { NewVariable, SetValue } from '../statement';
 export class Statement implements IStatement {
     args;
 
-    constructor(public name: string, ...args: (IExpression | IType | LineInfo | string | ILiteral)[]) {
+    constructor(public name: string, ...args: (IExpression | IType | LineInfo | string)[]) {
         this.args = args || [];
     }
 
@@ -82,7 +81,7 @@ export class VariantMatchStatement implements IStatement {
         return this;
     }
 
-    public Case(branch: string, buildStatements: (arg: Proxied<IExpression>) => IStatement[]): this {
+    public Case(branch: string, buildStatements: (arg: Proxied<IExpression<any>>) => IStatement[]): this {
         const variantArgument = this.variantArgument(`${this.argumentName}_${branch}`, this.line);
         this.cases[branch] = buildStatements(variantArgument);
         return this;
@@ -148,7 +147,7 @@ export class ForStatement implements IStatement {
         return this;
     }
 
-    public Do(callback: (iterator: Proxied<IExpression>) => IStatement[], line = new LineInfo()) {
+    public Do(callback: (iterator: Proxied<IExpression<any>>) => IStatement[], line = new LineInfo()) {
         const iterator = GetVariable(this.iteratorName, line);
         this.statements = callback(iterator);
         return this;
@@ -184,7 +183,7 @@ export class ForEachStatement implements IStatement {
         return this;
     }
 
-    public Do(callback: (iterator: Proxied<IExpression>) => IStatement[], line = new LineInfo()) {
+    public Do(callback: (iterator: Proxied<IExpression<any>>) => IStatement[], line = new LineInfo()) {
         const iterator = Iterator(this.iteratorName, line);
         this.statements = callback(iterator);
         return this;

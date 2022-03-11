@@ -31,6 +31,7 @@ export enum ValueAtom {
     lambda = 'lambda',
     //
     operation = 'operation',
+    option = 'option',
 }
 
 export default ValueAtom;

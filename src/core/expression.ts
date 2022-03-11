@@ -6,6 +6,7 @@ import { GetProperty, LambdaArgument } from '../expression/variables';
 import { capitalizeBoolean, LineInfo, parenthesis } from '../misc/utils';
 import ValueAtom from './enums/literal';
 import TypeAtom from './enums/type';
+import { Proxied } from '../misc/proxy';
 
 export class Expression<T extends ValueAtom> implements IExpression<T> {
     _isExpression = true as const;
@@ -143,7 +144,7 @@ export class LambdaLiteral implements ILiteral<ValueAtom.lambda> {
         return this;
     }
 
-    public code(buildStatements: (arg: IExpression) => IStatement[]) {
+    public code(buildStatements: (arg: Proxied<IExpression<any>>) => IStatement[]) {
         const param = LambdaArgument(this.argumentName, this.inType, this.id, this.line);
         this.statements = buildStatements(param);
         return this;

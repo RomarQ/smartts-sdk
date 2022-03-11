@@ -51,6 +51,7 @@ export enum ExpressionAtom {
     toInt = 'toInt',
     isNat = 'isNat',
     // Generic
+    size = 'size',
     concat = 'concat',
     contains = 'contains',
     items = 'items',

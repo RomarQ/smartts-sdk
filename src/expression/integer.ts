@@ -22,7 +22,7 @@ import ValueAtom from '../core/enums/literal';
  * @returns {IExpression} An expression that evaluates to TOption(TNat()).
  */
 export const IsNat = (expression: IExpression, line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.isNat, expression, line), Expression.proxyHandler);
+    proxy(new Expression<ValueAtom.option>(ExpressionAtom.isNat, expression, line), Expression.proxyHandler);
 
 /**
  * Convert a value of type `TInt()` to `TNat()`.
@@ -40,7 +40,10 @@ export const IsNat = (expression: IExpression, line = new LineInfo()) =>
  * @returns {IExpression} An expression that evaluates to TNat().
  */
 export const CastToNat = (expression: IExpression, errorMsg: IExpression = Unit(), line = new LineInfo()) =>
-    proxy(OpenVariant(IsNat(expression, line), 'Some', errorMsg, line), Expression.proxyHandler);
+    proxy(
+        OpenVariant(IsNat(expression, line), 'Some', errorMsg, line) as IExpression<ValueAtom.nat>,
+        Expression.proxyHandler,
+    );
 
 /**
  * Convert a value of type `TNat()` to `TInt()`
@@ -57,4 +60,4 @@ export const CastToNat = (expression: IExpression, errorMsg: IExpression = Unit(
  * @returns {IExpression} An expression that evaluates to TInt().
  */
 export const CastToInt = (expression: IExpression<ValueAtom.nat>, line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.toInt, expression, line), Expression.proxyHandler);
+    proxy(new Expression<ValueAtom.int>(ExpressionAtom.toInt, expression, line), Expression.proxyHandler);

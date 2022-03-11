@@ -4,9 +4,9 @@ exports[`Serialization Expressions Packing & Unpacking 1`] = `
 "
         (
             template_id (static_id 0 (\\"serialization.test.ts\\" 9))
-            storage (variant \\"None\\" (unit) (\\"serialization.test.ts\\" 10))
-            storage_type ((unknown 0))
-            messages ((entry_point_1 True False False True (\\"serialization.test.ts\\" 12) ((set_type (params (\\"serialization.test.ts\\" 12)) \\"string\\" (\\"serialization.test.ts\\" 17)) (set (data) (unpack (pack (params (\\"serialization.test.ts\\" 12)) (\\"serialization.test.ts\\" 14)) \\"string\\" (\\"serialization.test.ts\\" 14)) (\\"serialization.test.ts\\" 14)))))
+            storage ()
+            storage_type ((option \\"string\\"))
+            messages ((entry_point_1 True False False True (\\"serialization.test.ts\\" 12) ((set_type (params (\\"serialization.test.ts\\" 12)) \\"unit\\" (\\"serialization.test.ts\\" 17)) (set (data) (unpack (pack (params (\\"serialization.test.ts\\" 12)) (\\"serialization.test.ts\\" 12)) \\"string\\" (\\"serialization.test.ts\\" 12)) (\\"serialization.test.ts\\" 12)))))
             flags ()
             privates ()
             views ()
@@ -19,7 +19,7 @@ exports[`Serialization Expressions Packing & Unpacking 1`] = `
 
 exports[`Serialization Expressions Packing & Unpacking 2`] = `
 "{
-    \\"micheline\\": \\"parameter (string %entry_point_1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.unpack(sp.pack(params), sp.TString) # @parameter\\\\n    PACK;       # bytes\\\\n    UNPACK string; # option string\\\\n    NIL operation; # list operation : option string\\\\n    PAIR;       # pair (list operation) (option string)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.unpack(sp.pack(params), sp.TString) # @parameter\\\\n    PACK;       # bytes\\\\n    UNPACK string; # option string\\\\n    NIL operation; # list operation : option string\\\\n    PAIR;       # pair (list operation) (option string)\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -38,7 +38,7 @@ exports[`Serialization Expressions Packing & Unpacking 2`] = `
             \\"prim\\": \\"parameter\\",
             \\"args\\": [
                 {
-                    \\"prim\\": \\"string\\",
+                    \\"prim\\": \\"unit\\",
                     \\"annots\\": [
                         \\"%entry_point_1\\"
                     ]

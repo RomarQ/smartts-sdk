@@ -16,6 +16,8 @@ import ValueAtom from '../core/enums/literal';
  * CallLambda(GetVariable("some_lambda"), Bool(true));
  * ```
  *
+ * @category | Lambda
+ *
  * @param expression Lambda expression
  * @param argument Lambda argument
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -31,6 +33,8 @@ export const CallLambda = (expression: IExpression, argument: IExpression = Unit
  * ```typescript
  * CallView("some_view", Address("KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT"), Nat(10), TNat());
  * ```
+ *
+ * @category | View
  *
  * @param name View name
  * @param address Contract address that contains the view being called
@@ -53,11 +57,13 @@ export const CallView = (
     );
 
 /**
- * String / Bytes Concatenation
+ * Concatenate a list with values of type `TString()` or `TBytes()`.
  *
  * ```typescript
  * Concat([ String("Hello"), String(" "), String("World") ]);
  * ```
+ *
+ * @category | Concatenation
  *
  * @param values
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -66,3 +72,22 @@ export const CallView = (
  */
 export const Concat = <T extends ValueAtom.bytes | ValueAtom.string>(values: IExpression<T>[], line = new LineInfo()) =>
     proxy(new Expression<T>(ExpressionAtom.concat, List(values), line), Expression.proxyHandler);
+
+/**
+ * Obtain size of values with type `TString()`, `TBytes()`, `TList(...)`, `TSet(...)` and `TMap()`.
+ *
+ * ```typescript
+ * SizeOf(String("Hello")); // Nat(5)
+ * ```
+ *
+ * @category | Size
+ *
+ * @param value
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression.
+ */
+export const SizeOf = (
+    value: IExpression<ValueAtom.bytes | ValueAtom.string | ValueAtom.list | ValueAtom.set | ValueAtom.map>,
+    line = new LineInfo(),
+) => proxy(new Expression<ValueAtom.nat>(ExpressionAtom.size, value, line), Expression.proxyHandler);

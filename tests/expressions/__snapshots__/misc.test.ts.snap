@@ -3,16 +3,16 @@
 exports[`Misc expressions CallLambda 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 20))
-            storage (lambda 1 None False \\"lambda_arg\\" (\\"misc.test.ts\\" 22) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"misc.test.ts\\" 22) \\"bool\\") (\\"misc.test.ts\\" 24))))
+            template_id (static_id 0 (\\"misc.test.ts\\" 25))
+            storage (lambda 1 None False \\"lambda_arg\\" (\\"misc.test.ts\\" 27) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"misc.test.ts\\" 27) \\"bool\\") (\\"misc.test.ts\\" 29))))
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 27) ((set_type (params (\\"misc.test.ts\\" 27)) \\"bool\\" (\\"misc.test.ts\\" 32)) (verify (call_lambda (data) (params (\\"misc.test.ts\\" 27)) (\\"misc.test.ts\\" 29)) (unit) (\\"misc.test.ts\\" 29)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 32) ((set_type (params (\\"misc.test.ts\\" 32)) \\"bool\\" (\\"misc.test.ts\\" 37)) (verify (call_lambda (data) (params (\\"misc.test.ts\\" 32)) (\\"misc.test.ts\\" 34)) (unit) (\\"misc.test.ts\\" 34)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 20))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 25))
         )
         "
 `;
@@ -110,16 +110,16 @@ exports[`Misc expressions CallLambda 2`] = `
 exports[`Misc expressions CallView 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 35))
-            storage (variant \\"None\\" (unit) (\\"misc.test.ts\\" 36))
-            storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 39) ((set_type (params (\\"misc.test.ts\\" 39)) \\"bool\\" (\\"misc.test.ts\\" 46)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 39)) \\"bool\\" (\\"misc.test.ts\\" 41)) (\\"misc.test.ts\\" 41)))))
+            template_id (static_id 0 (\\"misc.test.ts\\" 40))
+            storage ()
+            storage_type ((option \\"bool\\"))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 44) ((set_type (params (\\"misc.test.ts\\" 44)) \\"bool\\" (\\"misc.test.ts\\" 51)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 44)) \\"bool\\" (\\"misc.test.ts\\" 46)) (\\"misc.test.ts\\" 46)))))
             flags ()
             privates ()
-            views ((onchain some_view True (\\"misc.test.ts\\" 37) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 37)) \\"bool\\" (\\"misc.test.ts\\" 46)) (result (not (params (\\"misc.test.ts\\" 37)) (\\"misc.test.ts\\" 37)) (\\"misc.test.ts\\" 37)))))
+            views ((onchain some_view True (\\"misc.test.ts\\" 42) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 42)) \\"bool\\" (\\"misc.test.ts\\" 51)) (result (not (params (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)))))
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 35))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 40))
         )
         "
 `;
@@ -219,32 +219,35 @@ exports[`Misc expressions CallView 2`] = `
 exports[`Misc expressions Concat 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 49))
-            storage (variant \\"None\\" (unit) (\\"misc.test.ts\\" 50))
-            storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 52) ((set_type (params (\\"misc.test.ts\\" 52)) \\"unit\\" (\\"misc.test.ts\\" 59)) (set (data) (variant \\"Some\\" (concat (list (\\"misc.test.ts\\" 54) (literal (string \\"Hello\\") (\\"misc.test.ts\\" 54)) (literal (string \\" \\") (\\"misc.test.ts\\" 54)) (literal (string \\"World\\") (\\"misc.test.ts\\" 54))) (\\"misc.test.ts\\" 54)) (\\"misc.test.ts\\" 54)) (\\"misc.test.ts\\" 54)))))
+            template_id (static_id 0 (\\"misc.test.ts\\" 54))
+            storage ()
+            storage_type ((tuple \\"string\\" \\"bytes\\"))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 57) ((set_type (params (\\"misc.test.ts\\" 57)) \\"unit\\" (\\"misc.test.ts\\" 70)) (set (data) (tuple (\\"misc.test.ts\\" 59) (concat (list (\\"misc.test.ts\\" 59) (literal (string \\"Hello\\") (\\"misc.test.ts\\" 59)) (literal (string \\" \\") (\\"misc.test.ts\\" 59)) (literal (string \\"World\\") (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59)) (concat (list (\\"misc.test.ts\\" 59) (literal (bytes 0x01) (\\"misc.test.ts\\" 59)) (literal (bytes 0x02) (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 49))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 54))
         )
         "
 `;
 
 exports[`Misc expressions Concat 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.concat(sp.list(['Hello', ' ', 'World']))) # \\\\n    PUSH (list string) {\\\\\\"Hello\\\\\\"; \\\\\\" \\\\\\"; \\\\\\"World\\\\\\"}; # list string\\\\n    CONCAT;     # string\\\\n    SOME;       # option string\\\\n    NIL operation; # list operation : option string\\\\n    PAIR;       # pair (list operation) (option string)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (pair string bytes);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = (sp.concat(sp.list(['Hello', ' ', 'World'])), sp.concat(sp.list([sp.bytes('0x01'), sp.bytes('0x02')]))) # \\\\n    PUSH bytes 0x02; # bytes\\\\n    PUSH bytes 0x01; # bytes : bytes\\\\n    CONCAT;     # bytes\\\\n    PUSH (list string) {\\\\\\"Hello\\\\\\"; \\\\\\" \\\\\\"; \\\\\\"World\\\\\\"}; # list string : bytes\\\\n    CONCAT;     # string : bytes\\\\n    PAIR;       # pair string bytes\\\\n    NIL operation; # list operation : pair string bytes\\\\n    PAIR;       # pair (list operation) (pair string bytes)\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
             \\"args\\": [
                 {
-                    \\"prim\\": \\"option\\",
+                    \\"prim\\": \\"pair\\",
                     \\"args\\": [
                         {
                             \\"prim\\": \\"string\\"
+                        },
+                        {
+                            \\"prim\\": \\"bytes\\"
                         }
                     ]
                 }
@@ -267,6 +270,31 @@ exports[`Misc expressions Concat 2`] = `
                 [
                     {
                         \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"bytes\\"
+                            },
+                            {
+                                \\"bytes\\": \\"02\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"bytes\\"
+                            },
+                            {
+                                \\"bytes\\": \\"01\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"CONCAT\\"
                     },
                     {
                         \\"prim\\": \\"PUSH\\",
@@ -296,7 +324,104 @@ exports[`Misc expressions Concat 2`] = `
                         \\"prim\\": \\"CONCAT\\"
                     },
                     {
-                        \\"prim\\": \\"SOME\\"
+                        \\"prim\\": \\"PAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Misc expressions SizeOf 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"misc.test.ts\\" 73))
+            storage ()
+            storage_type (\\"nat\\")
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 76) ((set_type (params (\\"misc.test.ts\\" 76)) \\"unit\\" (\\"misc.test.ts\\" 85)) (set (data) (size (literal (string \\"Hello\\") (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (set (data) (size (literal (bytes 0x01) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (set (data) (size (list (\\"misc.test.ts\\" 76) (literal (nat 1) (\\"misc.test.ts\\" 76))) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (set (data) (size (set (\\"misc.test.ts\\" 76) (literal (nat 1) (\\"misc.test.ts\\" 76))) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (set (data) (size (map (\\"misc.test.ts\\" 76) ((literal (nat 1) (\\"misc.test.ts\\" 76)) (literal (nat 2) (\\"misc.test.ts\\" 76)))) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 73))
+        )
+        "
+`;
+
+exports[`Misc expressions SizeOf 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.len('Hello')\\\\n    # self.data = sp.len(sp.bytes('0x01'))\\\\n    # self.data = sp.len(sp.list([1]))\\\\n    # self.data = sp.len(sp.set([1]))\\\\n    # self.data = sp.len({1 : 2}) # \\\\n    PUSH (map nat nat) {Elt 1 2}; # map nat nat\\\\n    SIZE;       # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"map\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"nat\\"
+                                    },
+                                    {
+                                        \\"prim\\": \\"nat\\"
+                                    }
+                                ]
+                            },
+                            [
+                                {
+                                    \\"prim\\": \\"Elt\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"1\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SIZE\\"
                     },
                     {
                         \\"prim\\": \\"NIL\\",
