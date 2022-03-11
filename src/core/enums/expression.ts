@@ -4,6 +4,8 @@ export enum ExpressionAtom {
     mul_overloaded = 'mul_overloaded',
     sub = 'sub',
     truediv = 'truediv',
+    ediv = 'ediv',
+    mod = 'mod',
     // Comparison
     eq = 'eq',
     neq = 'neq',

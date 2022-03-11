@@ -4,7 +4,9 @@ import {
     Bls12_381_g1,
     Bls12_381_g2,
     ContractStorage,
+    EuclideanDivision,
     Int,
+    Mod,
     Multiply,
     Mutez,
     Nat,
@@ -17,9 +19,35 @@ import {
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { SetValue } from '../../src/statement';
-import { TBls12_381_fr, TBls12_381_g1, TBls12_381_g2, TInt, TMutez, TNat, TOption, TRecord } from '../../src/type';
+import {
+    TBls12_381_fr,
+    TBls12_381_g1,
+    TBls12_381_g2,
+    TInt,
+    TMutez,
+    TNat,
+    TOption,
+    TPair,
+    TRecord,
+} from '../../src/type';
 
 describe('Arithmetic expressions', () => {
+    it('EuclideanDivision', () => {
+        const contract = new Contract()
+            .setStorageType(TOption(TPair(TNat(), TNat())))
+            .addEntrypoint(
+                new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), EuclideanDivision(Nat(13), Nat(3)))]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('Mod', () => {
+        const contract = new Contract()
+            .setStorageType(TNat())
+            .addEntrypoint(new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), Mod(Nat(13), Nat(3)))]));
+
+        verifyContractCompilationOutput(contract);
+    });
     it('Addition', () => {
         const contract = new Contract()
             .setStorage(

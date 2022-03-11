@@ -95,13 +95,36 @@ export const EuclideanDivision = (
     left: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
     right: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
     line = new LineInfo(),
-): IExpression<ValueAtom.option> => new Expression(ExpressionAtom.truediv, left, right, line);
+): IExpression<ValueAtom.option> => new Expression(ExpressionAtom.ediv, left, right, line);
+
+/**
+ * Modulus
+ *
+ * ```typescript
+ * Mod(Nat(13), Nat(3)); // Nat(1)
+ * ```
+ *
+ * @category | Math
+ *
+ * @param left Expression
+ * @param right Expression
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression.
+ */
+export const Mod = (
+    left: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
+    right: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
+    line = new LineInfo(),
+) => new Expression(ExpressionAtom.mod, left, right, line);
 
 export const Math = {
     Add,
     Multiply,
     Subtract,
     Divide,
+    EuclideanDivision,
+    Mod,
 };
 
 export default Math;

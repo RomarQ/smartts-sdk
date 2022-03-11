@@ -91,21 +91,86 @@ Multiply(Bls12_381_g1("0x00"), Bls12_381_fr(0));    // Bls12_381_g1("0x00")
 Multiply(Bls12_381_g2("0x00"), Bls12_381_fr(0));    // Bls12_381_g2("0x00")
 ```
 
-## Division
+## Euclidean Division
 
-Performs the euclidean division and extracts the quotient from the result.
+### Division
+
+Performs the euclidean division and extracts the `quotient` from the result.
 
 - [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#Divide-1)
 
-### Usage
+```ts
+const {
+    Contract,
+    EntryPoint,
+    SetValue,
+    ContractStorage,
+    Divide,
+    Nat,
+    TNat,
+} = require('@tezwell/smartts-sdk');
+
+
+const contract = new Contract()
+    .setStorageType(TNat())
+    .addEntrypoint(
+        new EntryPoint('ep1').code(() => [
+            SetValue(ContractStorage(), Divide(Nat(10), Nat(2)))
+        ]),
+    );
+```
+
+### Modulus
+
+Performs the euclidean division and extracts the `remainder` from the result.
+
+- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#Divide-1)
 
 ```ts
 const {
-    Divide,
-    Nat
+    Contract,
+    EntryPoint,
+    SetValue,
+    ContractStorage,
+    Mod,
+    Nat,
+    TNat,
 } = require('@tezwell/smartts-sdk');
 
-Divide(Nat(10), Nat(2));               // Nat(5)
+
+const contract = new Contract()
+    .setStorageType(TNat())
+    .addEntrypoint(
+        new EntryPoint('ep1').code(() => [
+            SetValue(ContractStorage(), Mod(Nat(10), Nat(2)))
+        ]),
+    );
 ```
 
-## Euclidean Division
+### EuclideanDivision
+
+Performs the euclidean division returns the whole result of type `TOption(TPair(TNat(), TNat()))`.
+
+- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#EuclideanDivision)
+
+```ts
+const {
+    Contract,
+    EntryPoint,
+    SetValue,
+    ContractStorage,
+    EuclideanDivision,
+    Nat,
+    TOption,
+    TPair,
+    TNat,
+} = require('@tezwell/smartts-sdk');
+
+const contract = new Contract()
+    .setStorageType(TOption(TPair(TNat(), TNat())))
+    .addEntrypoint(
+        new EntryPoint('ep1').code(() => [
+            SetValue(ContractStorage(), EuclideanDivision(Nat(13), Nat(3)))
+        ]),
+    );
+```
