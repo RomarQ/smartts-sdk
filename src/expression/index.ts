@@ -13,6 +13,7 @@ export * from './math';
 export * from './misc';
 export * from './operation';
 export * from './pair';
+export * from './sapling';
 export * from './serialization';
 export * from './type';
 export * from './unary';

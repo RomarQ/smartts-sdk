@@ -454,9 +454,10 @@ export const Ticket = (content: IExpression, amount: LiteralExpression<ValueAtom
  * @category | Container Literals
  * @see https://tezos.gitlab.io/michelson-reference/#type-sapling_state
  *
+ * @param memo size
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
- * @returns {IExpression} An expression
+ * @returns {IExpression} An expression of type `TSapling_state()`.
  */
 export const Sapling_state = (memo: number, line = new LineInfo()) =>
     new LiteralExpression(ValueAtom.sapling_state, [memo], line);

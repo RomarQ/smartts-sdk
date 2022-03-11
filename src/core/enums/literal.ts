@@ -34,6 +34,7 @@ export enum ValueAtom {
     option = 'option',
     contract = 'contract',
     chain_id = 'chain_id',
+    sapling_transaction = 'sapling_transaction',
 }
 
 export default ValueAtom;

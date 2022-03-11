@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sapling expressions ApplySaplingUpdate 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"sapling.test.ts\\" 28))
+            storage ()
+            storage_type ((sapling_state 8))
+            messages ((ep1 True False False True (\\"sapling.test.ts\\" 31) ((set_type (params (\\"sapling.test.ts\\" 31)) (sapling_transaction 8) (\\"sapling.test.ts\\" 41)) (set (data) (second (openVariant (sapling_verify_update (data) (params (\\"sapling.test.ts\\" 31)) (\\"sapling.test.ts\\" 33)) \\"Some\\" None (\\"sapling.test.ts\\" 33)) (\\"sapling.test.ts\\" 33)) (\\"sapling.test.ts\\" 33)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"sapling.test.ts\\" 28))
+        )
+        "
+`;
+
+exports[`Sapling expressions ApplySaplingUpdate 2`] = `
+"{
+    \\"micheline\\": \\"parameter (sapling_transaction %ep1 8);\\\\nstorage   (sapling_state 8);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # self.data = sp.snd(sp.sapling_verify_update(self.data, params).open_some()) # @parameter : @storage\\\\n    SAPLING_VERIFY_UPDATE; # option (pair int (sapling_state 8))\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 33; # int\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    CDR;        # sapling_state 8\\\\n    NIL operation; # list operation : sapling_state 8\\\\n    PAIR;       # pair (list operation) (sapling_state 8)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"sapling_state\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"8\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"sapling_transaction\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"8\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SAPLING_VERIFY_UPDATE\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"int\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"33\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ],
+                            []
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"CDR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Sapling expressions EmptySaplingState 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"sapling.test.ts\\" 16))
+            storage ()
+            storage_type ((sapling_state 8))
+            messages ((ep1 True False False True (\\"sapling.test.ts\\" 19) ((set_type (params (\\"sapling.test.ts\\" 19)) \\"unit\\" (\\"sapling.test.ts\\" 25)) (set (data) (sapling_empty_state 8 (\\"sapling.test.ts\\" 19)) (\\"sapling.test.ts\\" 19)) (set (data) (sapling_empty_state 8 (\\"sapling.test.ts\\" 19)) (\\"sapling.test.ts\\" 19)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"sapling.test.ts\\" 16))
+        )
+        "
+`;
+
+exports[`Sapling expressions EmptySaplingState 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (sapling_state 8);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.sapling_empty_state(8) # @parameter\\\\n    SAPLING_EMPTY_STATE 8; # sapling_state 8 : @parameter\\\\n    DROP;       # @parameter\\\\n    # self.data = sp.sapling_empty_state(8) # @parameter\\\\n    SAPLING_EMPTY_STATE 8; # sapling_state 8 : @parameter\\\\n    SWAP;       # @parameter : sapling_state 8\\\\n    DROP;       # sapling_state 8\\\\n    NIL operation; # list operation : sapling_state 8\\\\n    PAIR;       # pair (list operation) (sapling_state 8)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"sapling_state\\",
+                    \\"args\\": [
+                        {
+                            \\"int\\": \\"8\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SAPLING_EMPTY_STATE\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"8\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"SAPLING_EMPTY_STATE\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"8\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;

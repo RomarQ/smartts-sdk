@@ -72,6 +72,8 @@ export enum ExpressionAtom {
     unpack = 'unpack',
     type_annotation = 'type_annotation',
     to_address = 'to_address',
+    sapling_empty_state = 'sapling_empty_state',
+    sapling_verify_update = 'sapling_verify_update',
 }
 
 export default ExpressionAtom;

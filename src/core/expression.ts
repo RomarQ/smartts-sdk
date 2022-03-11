@@ -14,7 +14,7 @@ export class Expression<T extends ValueAtom> implements IExpression<T> {
     _type = {} as T;
     private args;
 
-    constructor(public name: string, ...args: (IExpression | LineInfo | IType | string)[]) {
+    constructor(public name: string, ...args: (IExpression | LineInfo | IType | string | number)[]) {
         this.args = args || [];
     }
 
