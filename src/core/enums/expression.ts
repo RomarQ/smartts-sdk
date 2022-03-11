@@ -51,6 +51,7 @@ export enum ExpressionAtom {
     toInt = 'toInt',
     isNat = 'isNat',
     // Generic
+    concat = 'concat',
     contains = 'contains',
     items = 'items',
     update_map = 'update_map',

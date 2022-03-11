@@ -5,7 +5,8 @@ import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { IType } from '../typings/type';
 import { TUnknown } from '../type';
-import { Unit } from './literal';
+import { List, Unit } from './literal';
+import ValueAtom from '../core/enums/literal';
 
 /**
  * Call lambda.
@@ -50,3 +51,18 @@ export const CallView = (
         new Expression(ExpressionAtom.view, `"${name}"`, address, argument, outputType, line),
         Expression.proxyHandler,
     );
+
+/**
+ * String / Bytes Concatenation
+ *
+ * ```typescript
+ * Concat([ String("Hello"), String(" "), String("World") ]);
+ * ```
+ *
+ * @param values
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression.
+ */
+export const Concat = <T extends ValueAtom.bytes | ValueAtom.string>(values: IExpression<T>[], line = new LineInfo()) =>
+    proxy(new Expression<T>(ExpressionAtom.concat, List(values), line), Expression.proxyHandler);

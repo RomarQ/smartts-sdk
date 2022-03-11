@@ -3,16 +3,16 @@
 exports[`Misc expressions CallLambda 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 9))
-            storage (lambda 1 None False \\"lambda_arg\\" (\\"misc.test.ts\\" 11) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"misc.test.ts\\" 11) \\"bool\\") (\\"misc.test.ts\\" 13))))
+            template_id (static_id 0 (\\"misc.test.ts\\" 20))
+            storage (lambda 1 None False \\"lambda_arg\\" (\\"misc.test.ts\\" 22) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"misc.test.ts\\" 22) \\"bool\\") (\\"misc.test.ts\\" 24))))
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 16) ((set_type (params (\\"misc.test.ts\\" 16)) \\"bool\\" (\\"misc.test.ts\\" 21)) (verify (call_lambda (data) (params (\\"misc.test.ts\\" 16)) (\\"misc.test.ts\\" 18)) (unit) (\\"misc.test.ts\\" 18)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 27) ((set_type (params (\\"misc.test.ts\\" 27)) \\"bool\\" (\\"misc.test.ts\\" 32)) (verify (call_lambda (data) (params (\\"misc.test.ts\\" 27)) (\\"misc.test.ts\\" 29)) (unit) (\\"misc.test.ts\\" 29)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 9))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 20))
         )
         "
 `;
@@ -110,16 +110,16 @@ exports[`Misc expressions CallLambda 2`] = `
 exports[`Misc expressions CallView 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 24))
-            storage (variant \\"None\\" (unit) (\\"misc.test.ts\\" 25))
+            template_id (static_id 0 (\\"misc.test.ts\\" 35))
+            storage (variant \\"None\\" (unit) (\\"misc.test.ts\\" 36))
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 28) ((set_type (params (\\"misc.test.ts\\" 28)) \\"bool\\" (\\"misc.test.ts\\" 35)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 28)) \\"bool\\" (\\"misc.test.ts\\" 30)) (\\"misc.test.ts\\" 30)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 39) ((set_type (params (\\"misc.test.ts\\" 39)) \\"bool\\" (\\"misc.test.ts\\" 46)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 39)) \\"bool\\" (\\"misc.test.ts\\" 41)) (\\"misc.test.ts\\" 41)))))
             flags ()
             privates ()
-            views ((onchain some_view True (\\"misc.test.ts\\" 26) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 26)) \\"bool\\" (\\"misc.test.ts\\" 35)) (result (not (params (\\"misc.test.ts\\" 26)) (\\"misc.test.ts\\" 26)) (\\"misc.test.ts\\" 26)))))
+            views ((onchain some_view True (\\"misc.test.ts\\" 37) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 37)) \\"bool\\" (\\"misc.test.ts\\" 46)) (result (not (params (\\"misc.test.ts\\" 37)) (\\"misc.test.ts\\" 37)) (\\"misc.test.ts\\" 37)))))
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 24))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 35))
         )
         "
 `;
@@ -208,6 +208,106 @@ exports[`Misc expressions CallView 2`] = `
                     },
                     {
                         \\"prim\\": \\"NOT\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Misc expressions Concat 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"misc.test.ts\\" 49))
+            storage (variant \\"None\\" (unit) (\\"misc.test.ts\\" 50))
+            storage_type ((unknown 0))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 52) ((set_type (params (\\"misc.test.ts\\" 52)) \\"unit\\" (\\"misc.test.ts\\" 59)) (set (data) (variant \\"Some\\" (concat (list (\\"misc.test.ts\\" 54) (literal (string \\"Hello\\") (\\"misc.test.ts\\" 54)) (literal (string \\" \\") (\\"misc.test.ts\\" 54)) (literal (string \\"World\\") (\\"misc.test.ts\\" 54))) (\\"misc.test.ts\\" 54)) (\\"misc.test.ts\\" 54)) (\\"misc.test.ts\\" 54)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 49))
+        )
+        "
+`;
+
+exports[`Misc expressions Concat 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.concat(sp.list(['Hello', ' ', 'World']))) # \\\\n    PUSH (list string) {\\\\\\"Hello\\\\\\"; \\\\\\" \\\\\\"; \\\\\\"World\\\\\\"}; # list string\\\\n    CONCAT;     # string\\\\n    SOME;       # option string\\\\n    NIL operation; # list operation : option string\\\\n    PAIR;       # pair (list operation) (option string)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"string\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"list\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"string\\"
+                                    }
+                                ]
+                            },
+                            [
+                                {
+                                    \\"string\\": \\"Hello\\"
+                                },
+                                {
+                                    \\"string\\": \\" \\"
+                                },
+                                {
+                                    \\"string\\": \\"World\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"CONCAT\\"
+                    },
+                    {
+                        \\"prim\\": \\"SOME\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
                     }
                 ]
             ]

@@ -1,8 +1,19 @@
-import { CallLambda, CallView, ContractStorage, GetSelfAddress, Lambda, None, Not } from '../../src/expression';
+import {
+    CallLambda,
+    CallView,
+    Concat,
+    ContractStorage,
+    GetSelfAddress,
+    Lambda,
+    None,
+    Not,
+    Some,
+    String,
+} from '../../src/expression';
 import { Contract, EntryPoint, OnChainView } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { Require, Return, SetValue } from '../../src/statement';
-import { TBool } from '../../src/type';
+import { TBool, TUnit } from '../../src/type';
 
 describe('Misc expressions', () => {
     it('CallLambda', () => {
@@ -29,6 +40,19 @@ describe('Misc expressions', () => {
                     .setInputType(TBool())
                     .code((arg) => [
                         SetValue(ContractStorage(), CallView('some_view', GetSelfAddress(), arg, TBool())),
+                    ]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('Concat', () => {
+        const contract = new Contract()
+            .setStorage(None())
+            .addEntrypoint(
+                new EntryPoint('ep1')
+                    .setInputType(TUnit())
+                    .code(() => [
+                        SetValue(ContractStorage(), Some(Concat([String('Hello'), String(' '), String('World')]))),
                     ]),
             );
 
