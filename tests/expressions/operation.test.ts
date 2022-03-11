@@ -1,6 +1,5 @@
 import {
     Address,
-    GetContract,
     GetOperations,
     Mutez,
     Transfer,

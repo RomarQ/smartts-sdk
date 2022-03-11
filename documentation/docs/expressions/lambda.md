@@ -2,6 +2,8 @@
 
 ## Create a lambda
 
+Create a value of `TLambda(<input_type>, <output_type>)`.
+
 - [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#Lambda-1)
 
 ```ts
