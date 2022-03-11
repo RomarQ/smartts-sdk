@@ -1,8 +1,9 @@
+import type { IExpression } from '../typings/expression';
 import ExpressionAtom from '../core/enums/expression';
-import { Expression, LiteralExpression } from '../core/expression';
+import ValueAtom from '../core/enums/literal';
+import { Expression } from '../core/expression';
 import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
-import { IExpression } from '../typings/expression';
 import { Some } from './literal';
 
 /**
@@ -19,7 +20,12 @@ import { Some } from './literal';
  *
  * @returns {IExpression} An expression
  */
-export const OpenVariant = (variant: IExpression, branch = 'Some', errorMsg?: IExpression, line = new LineInfo()) =>
+export const OpenVariant = (
+    variant: IExpression<ValueAtom.option | ValueAtom.variant>,
+    branch = 'Some',
+    errorMsg?: IExpression,
+    line = new LineInfo(),
+): IExpression<any> =>
     proxy(
         new Expression(ExpressionAtom.openVariant, variant, `"${branch}"`, errorMsg ? Some(errorMsg) : 'None', line),
         Expression.proxyHandler,
@@ -38,8 +44,11 @@ export const OpenVariant = (variant: IExpression, branch = 'Some', errorMsg?: IE
  *
  * @returns {IExpression} An expression
  */
-export const GetSome = (variant: IExpression, errorMsg?: IExpression, line = new LineInfo()): IExpression<any> =>
-    proxy(OpenVariant(variant, 'Some', errorMsg, line), Expression.proxyHandler);
+export const GetSome = (
+    variant: IExpression<ValueAtom.option>,
+    errorMsg?: IExpression,
+    line = new LineInfo(),
+): IExpression<any> => proxy(OpenVariant(variant, 'Some', errorMsg, line), Expression.proxyHandler);
 
 /**
  * Check if a variant literal matches a given branch.
@@ -55,9 +64,12 @@ export const GetSome = (variant: IExpression, errorMsg?: IExpression, line = new
  *
  * @returns {IExpression} An expression
  */
-export const IsVariant = (variant: IExpression, branch: string, line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.isVariant, variant, `"${branch}"`, line), Expression.proxyHandler);
+export const IsVariant = (
+    variant: IExpression<ValueAtom.option | ValueAtom.variant>,
+    branch: string,
+    line = new LineInfo(),
+): IExpression<ValueAtom.bool> => new Expression(ExpressionAtom.isVariant, variant, `"${branch}"`, line);
 
-const Variant = { OpenVariant, IsVariant };
+const Variant = { OpenVariant, IsVariant, GetSome };
 
 export default Variant;

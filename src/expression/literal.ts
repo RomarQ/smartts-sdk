@@ -6,6 +6,7 @@ import { capitalizeBoolean, LineInfo, quote } from '../misc/utils';
 import { TUnknown } from '../type';
 import ValueAtom from '../core/enums/literal';
 import { LambdaLiteral, LiteralExpression, MapLiteral, RecordLiteral } from '../core/expression';
+import { ILiteral } from '../typings/literal';
 
 /**
  * Build a literal of type unit.
@@ -318,7 +319,8 @@ export const Set = (items: IExpression[], line = new LineInfo()) => new LiteralE
  *
  * @returns {IExpression} An expression
  */
-export const Some = (value: IExpression, line = new LineInfo()) => new LiteralExpression(ValueAtom.Some, [value], line);
+export const Some = (value: IExpression, line = new LineInfo()): ILiteral<ValueAtom.option> =>
+    new LiteralExpression(ValueAtom.Some, [value], line) as any;
 
 /**
  * Build a literal of type option. (Used to represent an absent optional value)
@@ -334,7 +336,8 @@ export const Some = (value: IExpression, line = new LineInfo()) => new LiteralEx
  *
  * @returns {IExpression} An expression
  */
-export const None = (line = new LineInfo()) => new LiteralExpression(ValueAtom.None, [], line);
+export const None = (line = new LineInfo()): ILiteral<ValueAtom.option> =>
+    new LiteralExpression(ValueAtom.None, [], line) as any;
 
 /**
  * Build a literal of type map.

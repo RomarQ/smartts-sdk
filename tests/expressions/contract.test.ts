@@ -17,11 +17,11 @@ import { NewVariable, SetValue } from '../../src/statement';
 import { TAddress, TUnit } from '../../src/type';
 
 describe('Contract expressions', () => {
-    it('GetContract', () => {
+    it('ToContract', () => {
         const contract = new Contract().addEntrypoint(
             new EntryPoint('entry_point_1').code(() => [
                 Transfer(
-                    GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'entry_point_1', TUnit()),
+                    ToContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'entry_point_1', TUnit()),
                     Mutez(100),
                     Unit(),
                 ).send(),
@@ -30,12 +30,12 @@ describe('Contract expressions', () => {
 
         verifyContractCompilationOutput(contract);
     });
-    it('ToContract', () => {
+    it('GetContract', () => {
         const contract = new Contract().addEntrypoint(
             new EntryPoint('entry_point_1').code(() => [
                 NewVariable(
                     'contract',
-                    GetSome(ToContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'entry_point_1', TUnit())),
+                    GetSome(GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'entry_point_1', TUnit())),
                 ),
                 Transfer(GetVariable('contract'), Mutez(100), Unit()).send(),
             ]),

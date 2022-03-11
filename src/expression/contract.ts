@@ -9,10 +9,10 @@ import { String } from './literal';
 import { GetSome } from './variant';
 
 /**
- * Build a contract entrypoint accessor.
+ * Cast an address to a typed contract.
  *
  * ```typescript
- * GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'some_entrypoint', TNat());
+ * ToContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'some_entrypoint', TNat());
  * ```
  *
  * @category | Contract
@@ -25,19 +25,19 @@ import { GetSome } from './variant';
  *
  * @returns {IExpression} An expression of type `TContract()`.
  */
-export const GetContract = (
+export const ToContract = (
     address: IExpression<ValueAtom.address>,
     entrypoint = 'default',
     argumentType: IType = TUnit(),
     errorMsg: IExpression = String('CONTRACT_NOT_FOUND'),
     line = new LineInfo(),
-): IExpression<ValueAtom.contract> => GetSome(ToContract(address, entrypoint, argumentType, line), errorMsg, line);
+): IExpression<ValueAtom.contract> => GetSome(GetContract(address, entrypoint, argumentType, line), errorMsg, line);
 
 /**
- * Cast an address to a typed contract
+ * Cast an address to a typed contract.
  *
  * ```typescript
- * ToContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'some_entrypoint', TNat());
+ * GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'some_entrypoint', TNat());
  * ```
  *
  * @category | Contract
@@ -49,7 +49,7 @@ export const GetContract = (
  *
  * @returns {IExpression} An expression of type `TOption(TContract(@argumentType))`.
  */
-export const ToContract = (
+export const GetContract = (
     address: IExpression<ValueAtom.address>,
     entrypoint = 'default',
     argumentType: IType = TUnit(),

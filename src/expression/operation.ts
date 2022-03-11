@@ -52,8 +52,8 @@ class OriginationExpression extends Expression<ValueAtom.operation> {
  * @returns {IExpression} An expression
  */
 export const Transfer = (
-    contract: IExpression,
-    amount: IExpression,
+    contract: IExpression<ValueAtom.contract>,
+    amount: IExpression<ValueAtom.mutez>,
     argument: IExpression = Unit(),
     line = new LineInfo(),
 ) => new OperationExpression(ExpressionAtom.transfer, argument, amount, contract, line);
@@ -76,7 +76,7 @@ export const Transfer = (
  *
  * @returns {IExpression} An expression
  */
-export const SetDelegate = (keyHash: IExpression, line = new LineInfo()) =>
+export const SetDelegate = (keyHash: IExpression<ValueAtom.option>, line = new LineInfo()) =>
     new OperationExpression(ExpressionAtom.set_delegate, keyHash, line);
 
 /**
@@ -103,8 +103,8 @@ export const SetDelegate = (keyHash: IExpression, line = new LineInfo()) =>
 export const CreateContract = (
     contract: Contract,
     storage: IExpression,
-    initial_balance: IExpression = Mutez(0),
-    delegate: IExpression = None(),
+    initial_balance: IExpression<ValueAtom.mutez> = Mutez(0),
+    delegate: IExpression<ValueAtom.option> = None(),
     line = new LineInfo(),
 ) => {
     const contract_param = new Expression(ExpressionAtom.contract, contract[Symbol.toPrimitive]());

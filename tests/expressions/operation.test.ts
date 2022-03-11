@@ -11,6 +11,7 @@ import {
     Some,
     None,
     CreateContract,
+    ToContract,
 } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
@@ -27,7 +28,7 @@ describe('Transaction operation', () => {
                         GetOperations(),
                         PrependToList(
                             GetOperations(),
-                            Transfer(GetContract(Address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')), Mutez(100), arg),
+                            Transfer(ToContract(Address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')), Mutez(100), arg),
                         ),
                     ),
                 ]),
@@ -40,7 +41,7 @@ describe('Transaction operation', () => {
             .setStorage(Unit())
             .addEntrypoint(
                 new EntryPoint('ep1').code(() => [
-                    Transfer(GetContract(Address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')), Mutez(100)).send(),
+                    Transfer(ToContract(Address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')), Mutez(100)).send(),
                 ]),
             );
 
@@ -54,7 +55,7 @@ describe('Transaction operation', () => {
                     .setInputType(TNat())
                     .code((arg) => [
                         Transfer(
-                            GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'ep1', TNat()),
+                            ToContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'ep1', TNat()),
                             Mutez(100),
                             arg,
                         ).send(),

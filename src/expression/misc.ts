@@ -31,9 +31,9 @@ export const CallView = (
     argument: IExpression = Unit(),
     outputType: IType = TUnknown(),
     line = new LineInfo(),
-) =>
+): IExpression<ValueAtom.option> =>
     proxy(
-        new Expression(ExpressionAtom.view, `"${name}"`, address, argument, outputType, line),
+        new Expression<ValueAtom.option>(ExpressionAtom.view, `"${name}"`, address, argument, outputType, line),
         Expression.proxyHandler,
     );
 
