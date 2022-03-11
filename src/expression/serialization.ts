@@ -5,6 +5,7 @@ import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { IType } from '../typings/type';
+import ValueAtom from '../core/enums/literal';
 
 /**
  * Serializes any value of packable type to its optimized binary representation, of type `TBytes()`.
@@ -21,7 +22,7 @@ import { IType } from '../typings/type';
  * @returns {IExpression} An expression of type `TBytes()`.
  */
 export const Pack = (expression: IExpression, line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.pack, expression, line), Expression.proxyHandler);
+    proxy(new Expression<ValueAtom.bytes>(ExpressionAtom.pack, expression, line), Expression.proxyHandler);
 
 /**
  * Deserialize a value of type `TBytes()` into the corresponding Michelson value of type `TOption(...)`.
@@ -38,7 +39,7 @@ export const Pack = (expression: IExpression, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression of type `TOption(<type>)`
  */
-export const Unpack = (expression: IExpression, type: IType<any> = TUnknown(), line = new LineInfo()) =>
+export const Unpack = (expression: IExpression<ValueAtom.bytes>, type: IType = TUnknown(), line = new LineInfo()) =>
     proxy(new Expression(ExpressionAtom.unpack, expression, type, line), Expression.proxyHandler);
 
 export const Serialization = {
