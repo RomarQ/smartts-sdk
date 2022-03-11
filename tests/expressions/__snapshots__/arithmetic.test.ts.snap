@@ -3,16 +3,16 @@
 exports[`Arithmetic expressions Addition 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 52))
-            storage (record (\\"arithmetic.test.ts\\" 54) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 55))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 56))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 57))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 58))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 59))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 60))))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 70))
+            storage (record (\\"arithmetic.test.ts\\" 72) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 73))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 74))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 75))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 76))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 77))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 78))))
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 64) ((set_type (params (\\"arithmetic.test.ts\\" 64)) \\"unit\\" (\\"arithmetic.test.ts\\" 112)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (nat 1) (\\"arithmetic.test.ts\\" 64)) (literal (nat 1) (\\"arithmetic.test.ts\\" 64)) (\\"arithmetic.test.ts\\" 64)) (\\"arithmetic.test.ts\\" 64)) (\\"arithmetic.test.ts\\" 64)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 67) ((set_type (params (\\"arithmetic.test.ts\\" 67)) \\"unit\\" (\\"arithmetic.test.ts\\" 112)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (int 1) (\\"arithmetic.test.ts\\" 67)) (literal (int 1) (\\"arithmetic.test.ts\\" 67)) (\\"arithmetic.test.ts\\" 67)) (\\"arithmetic.test.ts\\" 67)) (\\"arithmetic.test.ts\\" 67)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 70) ((set_type (params (\\"arithmetic.test.ts\\" 70)) \\"unit\\" (\\"arithmetic.test.ts\\" 112)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (mutez 1) (\\"arithmetic.test.ts\\" 70)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 70)) (\\"arithmetic.test.ts\\" 70)) (\\"arithmetic.test.ts\\" 70)) (\\"arithmetic.test.ts\\" 70)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 73) ((set_type (params (\\"arithmetic.test.ts\\" 73)) \\"unit\\" (\\"arithmetic.test.ts\\" 112)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 73)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 73)) (\\"arithmetic.test.ts\\" 73)) (\\"arithmetic.test.ts\\" 73)) (\\"arithmetic.test.ts\\" 73)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 78) ((set_type (params (\\"arithmetic.test.ts\\" 78)) \\"unit\\" (\\"arithmetic.test.ts\\" 112)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 78)) (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 78)) (\\"arithmetic.test.ts\\" 78)) (\\"arithmetic.test.ts\\" 78)) (\\"arithmetic.test.ts\\" 78)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 95) ((set_type (params (\\"arithmetic.test.ts\\" 95)) \\"unit\\" (\\"arithmetic.test.ts\\" 112)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 95)) (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 95)) (\\"arithmetic.test.ts\\" 95)) (\\"arithmetic.test.ts\\" 95)) (\\"arithmetic.test.ts\\" 95)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 82) ((set_type (params (\\"arithmetic.test.ts\\" 82)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (nat 1) (\\"arithmetic.test.ts\\" 82)) (literal (nat 1) (\\"arithmetic.test.ts\\" 82)) (\\"arithmetic.test.ts\\" 82)) (\\"arithmetic.test.ts\\" 82)) (\\"arithmetic.test.ts\\" 82)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 85) ((set_type (params (\\"arithmetic.test.ts\\" 85)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (int 1) (\\"arithmetic.test.ts\\" 85)) (literal (int 1) (\\"arithmetic.test.ts\\" 85)) (\\"arithmetic.test.ts\\" 85)) (\\"arithmetic.test.ts\\" 85)) (\\"arithmetic.test.ts\\" 85)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 88) ((set_type (params (\\"arithmetic.test.ts\\" 88)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (mutez 1) (\\"arithmetic.test.ts\\" 88)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 88)) (\\"arithmetic.test.ts\\" 88)) (\\"arithmetic.test.ts\\" 88)) (\\"arithmetic.test.ts\\" 88)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 91) ((set_type (params (\\"arithmetic.test.ts\\" 91)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 91)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 91)) (\\"arithmetic.test.ts\\" 91)) (\\"arithmetic.test.ts\\" 91)) (\\"arithmetic.test.ts\\" 91)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 96) ((set_type (params (\\"arithmetic.test.ts\\" 96)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 96)) (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 96)) (\\"arithmetic.test.ts\\" 96)) (\\"arithmetic.test.ts\\" 96)) (\\"arithmetic.test.ts\\" 96)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 113) ((set_type (params (\\"arithmetic.test.ts\\" 113)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (add (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 113)) (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 113)) (\\"arithmetic.test.ts\\" 113)) (\\"arithmetic.test.ts\\" 113)) (\\"arithmetic.test.ts\\" 113)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 52))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 70))
         )
         "
 `;
@@ -481,16 +481,16 @@ exports[`Arithmetic expressions Addition 2`] = `
 exports[`Arithmetic expressions EuclideanDivision 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 36))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 38))
             storage ()
             storage_type ((option (tuple \\"nat\\" \\"nat\\")))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 39) ((set_type (params (\\"arithmetic.test.ts\\" 39)) \\"unit\\" (\\"arithmetic.test.ts\\" 42)) (set (data) (ediv (literal (nat 13) (\\"arithmetic.test.ts\\" 39)) (literal (nat 3) (\\"arithmetic.test.ts\\" 39)) (\\"arithmetic.test.ts\\" 39)) (\\"arithmetic.test.ts\\" 39)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 41) ((set_type (params (\\"arithmetic.test.ts\\" 41)) \\"unit\\" (\\"arithmetic.test.ts\\" 44)) (set (data) (ediv (literal (nat 13) (\\"arithmetic.test.ts\\" 41)) (literal (nat 3) (\\"arithmetic.test.ts\\" 41)) (\\"arithmetic.test.ts\\" 41)) (\\"arithmetic.test.ts\\" 41)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 36))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 38))
         )
         "
 `;
@@ -584,23 +584,23 @@ exports[`Arithmetic expressions EuclideanDivision 2`] = `
 exports[`Arithmetic expressions Mod 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 45))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 47))
             storage ()
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 47) ((set_type (params (\\"arithmetic.test.ts\\" 47)) \\"unit\\" (\\"arithmetic.test.ts\\" 49)) (set (data) (mod (literal (nat 13) (\\"arithmetic.test.ts\\" 47)) (literal (nat 3) (\\"arithmetic.test.ts\\" 47)) (\\"arithmetic.test.ts\\" 47)) (\\"arithmetic.test.ts\\" 47)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 49) ((set_type (params (\\"arithmetic.test.ts\\" 49)) \\"unit\\" (\\"arithmetic.test.ts\\" 51)) (set (data) (mod (literal (nat 13) (\\"arithmetic.test.ts\\" 49)) (literal (nat 3) (\\"arithmetic.test.ts\\" 49)) (\\"arithmetic.test.ts\\" 49)) (\\"arithmetic.test.ts\\" 49)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 45))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 47))
         )
         "
 `;
 
 exports[`Arithmetic expressions Mod 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = 13 % 3 # \\\\n    PUSH nat 3; # nat\\\\n    PUSH nat 13; # nat : nat\\\\n    EDIV;       # option (pair nat nat)\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 47; # int\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {\\\\n        CDR;        # nat\\\\n      }; # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = 13 % 3 # \\\\n    PUSH nat 3; # nat\\\\n    PUSH nat 13; # nat : nat\\\\n    EDIV;       # option (pair nat nat)\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 49; # int\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {\\\\n        CDR;        # nat\\\\n      }; # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -664,7 +664,7 @@ exports[`Arithmetic expressions Mod 2`] = `
                                             \\"prim\\": \\"int\\"
                                         },
                                         {
-                                            \\"int\\": \\"47\\"
+                                            \\"int\\": \\"49\\"
                                         }
                                     ]
                                 },
@@ -700,16 +700,16 @@ exports[`Arithmetic expressions Mod 2`] = `
 exports[`Arithmetic expressions Multiplication 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 146))
-            storage (record (\\"arithmetic.test.ts\\" 158) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 159))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 160))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 161))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 162))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 163))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 164))))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 164))
+            storage (record (\\"arithmetic.test.ts\\" 176) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 177))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 178))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 179))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 180))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 181))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 182))))
             storage_type ((record ((nat (option \\"nat\\")) (int (option \\"int\\")) (mutez (option \\"mutez\\")) (bls12_381_fr (option \\"bls12_381_fr\\")) (bls12_381_g1 (option \\"bls12_381_g1\\")) (bls12_381_g2 (option \\"bls12_381_g2\\"))) (Some ((\\"nat\\") ((\\"int\\") ((\\"mutez\\") ((\\"bls12_381_fr\\") ((\\"bls12_381_g1\\") (\\"bls12_381_g2\\"))))))) (\\"\\" -1)))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 168) ((set_type (params (\\"arithmetic.test.ts\\" 168)) \\"unit\\" (\\"arithmetic.test.ts\\" 217)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 168)) (literal (nat 1) (\\"arithmetic.test.ts\\" 168)) (\\"arithmetic.test.ts\\" 168)) (\\"arithmetic.test.ts\\" 168)) (\\"arithmetic.test.ts\\" 168)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 171) ((set_type (params (\\"arithmetic.test.ts\\" 171)) \\"unit\\" (\\"arithmetic.test.ts\\" 217)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 171)) (literal (int 1) (\\"arithmetic.test.ts\\" 171)) (\\"arithmetic.test.ts\\" 171)) (\\"arithmetic.test.ts\\" 171)) (\\"arithmetic.test.ts\\" 171)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 171)) (literal (int 1) (\\"arithmetic.test.ts\\" 171)) (\\"arithmetic.test.ts\\" 171)) (\\"arithmetic.test.ts\\" 171)) (\\"arithmetic.test.ts\\" 171)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 177) ((set_type (params (\\"arithmetic.test.ts\\" 177)) \\"unit\\" (\\"arithmetic.test.ts\\" 217)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (mutez 1) (\\"arithmetic.test.ts\\" 177)) (literal (nat 1) (\\"arithmetic.test.ts\\" 177)) (\\"arithmetic.test.ts\\" 177)) (\\"arithmetic.test.ts\\" 177)) (\\"arithmetic.test.ts\\" 177)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 180) ((set_type (params (\\"arithmetic.test.ts\\" 180)) \\"unit\\" (\\"arithmetic.test.ts\\" 217)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 180)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 180)) (\\"arithmetic.test.ts\\" 180)) (\\"arithmetic.test.ts\\" 180)) (\\"arithmetic.test.ts\\" 180)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 180)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 180)) (\\"arithmetic.test.ts\\" 180)) (\\"arithmetic.test.ts\\" 180)) (\\"arithmetic.test.ts\\" 180)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 180)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 180)) (\\"arithmetic.test.ts\\" 180)) (\\"arithmetic.test.ts\\" 180)) (\\"arithmetic.test.ts\\" 180)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 187) ((set_type (params (\\"arithmetic.test.ts\\" 187)) \\"unit\\" (\\"arithmetic.test.ts\\" 217)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 187)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 202) ((set_type (params (\\"arithmetic.test.ts\\" 202)) \\"unit\\" (\\"arithmetic.test.ts\\" 217)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 202)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 202)) (\\"arithmetic.test.ts\\" 202)) (\\"arithmetic.test.ts\\" 202)) (\\"arithmetic.test.ts\\" 202)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 186) ((set_type (params (\\"arithmetic.test.ts\\" 186)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 186)) (literal (nat 1) (\\"arithmetic.test.ts\\" 186)) (\\"arithmetic.test.ts\\" 186)) (\\"arithmetic.test.ts\\" 186)) (\\"arithmetic.test.ts\\" 186)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 189) ((set_type (params (\\"arithmetic.test.ts\\" 189)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 189)) (literal (int 1) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 189)) (literal (int 1) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 195) ((set_type (params (\\"arithmetic.test.ts\\" 195)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (mutez 1) (\\"arithmetic.test.ts\\" 195)) (literal (nat 1) (\\"arithmetic.test.ts\\" 195)) (\\"arithmetic.test.ts\\" 195)) (\\"arithmetic.test.ts\\" 195)) (\\"arithmetic.test.ts\\" 195)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 198) ((set_type (params (\\"arithmetic.test.ts\\" 198)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 198)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 198)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 198)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 205) ((set_type (params (\\"arithmetic.test.ts\\" 205)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 205)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 205)) (\\"arithmetic.test.ts\\" 205)) (\\"arithmetic.test.ts\\" 205)) (\\"arithmetic.test.ts\\" 205)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 220) ((set_type (params (\\"arithmetic.test.ts\\" 220)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 220)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 220)) (\\"arithmetic.test.ts\\" 220)) (\\"arithmetic.test.ts\\" 220)) (\\"arithmetic.test.ts\\" 220)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 146))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 164))
         )
         "
 `;
@@ -1268,19 +1268,199 @@ exports[`Arithmetic expressions Multiplication 2`] = `
 }"
 `;
 
-exports[`Arithmetic expressions Subtraction 1`] = `
+exports[`Arithmetic expressions ShiftLeft 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 116))
-            storage (record (\\"arithmetic.test.ts\\" 118) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 119))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 120))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 121))) (timestamp (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 122))))
-            storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 126) ((set_type (params (\\"arithmetic.test.ts\\" 126)) \\"unit\\" (\\"arithmetic.test.ts\\" 142)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (sub (literal (nat 1) (\\"arithmetic.test.ts\\" 126)) (literal (nat 1) (\\"arithmetic.test.ts\\" 126)) (\\"arithmetic.test.ts\\" 126)) (\\"arithmetic.test.ts\\" 126)) (\\"arithmetic.test.ts\\" 126)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 129) ((set_type (params (\\"arithmetic.test.ts\\" 129)) \\"unit\\" (\\"arithmetic.test.ts\\" 142)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (sub (literal (int 1) (\\"arithmetic.test.ts\\" 129)) (literal (int 1) (\\"arithmetic.test.ts\\" 129)) (\\"arithmetic.test.ts\\" 129)) (\\"arithmetic.test.ts\\" 129)) (\\"arithmetic.test.ts\\" 129)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 132) ((set_type (params (\\"arithmetic.test.ts\\" 132)) \\"unit\\" (\\"arithmetic.test.ts\\" 142)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (sub (literal (mutez 1) (\\"arithmetic.test.ts\\" 132)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 132)) (\\"arithmetic.test.ts\\" 132)) (\\"arithmetic.test.ts\\" 132)) (\\"arithmetic.test.ts\\" 132)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 137) ((set_type (params (\\"arithmetic.test.ts\\" 137)) \\"unit\\" (\\"arithmetic.test.ts\\" 142)) (set (attr (data) \\"timestamp\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (sub (literal (timestamp 1) (\\"arithmetic.test.ts\\" 137)) (literal (timestamp 1) (\\"arithmetic.test.ts\\" 137)) (\\"arithmetic.test.ts\\" 137)) (\\"arithmetic.test.ts\\" 137)) (\\"arithmetic.test.ts\\" 137)))))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 54))
+            storage ()
+            storage_type (\\"nat\\")
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 56) ((set_type (params (\\"arithmetic.test.ts\\" 56)) \\"unit\\" (\\"arithmetic.test.ts\\" 58)) (set (data) (lsl (literal (nat 13) (\\"arithmetic.test.ts\\" 56)) (literal (nat 3) (\\"arithmetic.test.ts\\" 56)) (\\"arithmetic.test.ts\\" 56)) (\\"arithmetic.test.ts\\" 56)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 116))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 54))
+        )
+        "
+`;
+
+exports[`Arithmetic expressions ShiftLeft 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = 13 << 3 # \\\\n    PUSH nat 3; # nat\\\\n    PUSH nat 13; # nat : nat\\\\n    LSL;        # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"3\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"13\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"LSL\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Arithmetic expressions ShiftRight 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 61))
+            storage ()
+            storage_type (\\"nat\\")
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 64) ((set_type (params (\\"arithmetic.test.ts\\" 64)) \\"unit\\" (\\"arithmetic.test.ts\\" 67)) (set (data) (lsr (literal (nat 13) (\\"arithmetic.test.ts\\" 64)) (literal (nat 3) (\\"arithmetic.test.ts\\" 64)) (\\"arithmetic.test.ts\\" 64)) (\\"arithmetic.test.ts\\" 64)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 61))
+        )
+        "
+`;
+
+exports[`Arithmetic expressions ShiftRight 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = 13 >> 3 # \\\\n    PUSH nat 3; # nat\\\\n    PUSH nat 13; # nat : nat\\\\n    LSR;        # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"3\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"13\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"LSR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Arithmetic expressions Subtraction 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 134))
+            storage (record (\\"arithmetic.test.ts\\" 136) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 137))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 138))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 139))) (timestamp (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 140))))
+            storage_type ((unknown 0))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 144) ((set_type (params (\\"arithmetic.test.ts\\" 144)) \\"unit\\" (\\"arithmetic.test.ts\\" 160)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (sub (literal (nat 1) (\\"arithmetic.test.ts\\" 144)) (literal (nat 1) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 147) ((set_type (params (\\"arithmetic.test.ts\\" 147)) \\"unit\\" (\\"arithmetic.test.ts\\" 160)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (sub (literal (int 1) (\\"arithmetic.test.ts\\" 147)) (literal (int 1) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 150) ((set_type (params (\\"arithmetic.test.ts\\" 150)) \\"unit\\" (\\"arithmetic.test.ts\\" 160)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (sub (literal (mutez 1) (\\"arithmetic.test.ts\\" 150)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 155) ((set_type (params (\\"arithmetic.test.ts\\" 155)) \\"unit\\" (\\"arithmetic.test.ts\\" 160)) (set (attr (data) \\"timestamp\\" (\\"expression.ts\\" 26)) (variant \\"Some\\" (sub (literal (timestamp 1) (\\"arithmetic.test.ts\\" 155)) (literal (timestamp 1) (\\"arithmetic.test.ts\\" 155)) (\\"arithmetic.test.ts\\" 155)) (\\"arithmetic.test.ts\\" 155)) (\\"arithmetic.test.ts\\" 155)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 134))
         )
         "
 `;

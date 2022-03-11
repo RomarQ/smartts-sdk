@@ -6,6 +6,8 @@ export enum ExpressionAtom {
     truediv = 'truediv',
     ediv = 'ediv',
     mod = 'mod',
+    lsl = 'lsl',
+    lsr = 'lsr',
     // Comparison
     eq = 'eq',
     neq = 'neq',

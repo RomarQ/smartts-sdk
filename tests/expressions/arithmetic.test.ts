@@ -12,6 +12,8 @@ import {
     Nat,
     None,
     Record,
+    ShiftLeft,
+    ShiftRight,
     Some,
     Subtract,
     Timestamp,
@@ -45,6 +47,22 @@ describe('Arithmetic expressions', () => {
         const contract = new Contract()
             .setStorageType(TNat())
             .addEntrypoint(new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), Mod(Nat(13), Nat(3)))]));
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('ShiftLeft', () => {
+        const contract = new Contract()
+            .setStorageType(TNat())
+            .addEntrypoint(new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), ShiftLeft(Nat(13), Nat(3)))]));
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('ShiftRight', () => {
+        const contract = new Contract()
+            .setStorageType(TNat())
+            .addEntrypoint(
+                new EntryPoint('ep1').code(() => [SetValue(ContractStorage(), ShiftRight(Nat(13), Nat(3)))]),
+            );
 
         verifyContractCompilationOutput(contract);
     });

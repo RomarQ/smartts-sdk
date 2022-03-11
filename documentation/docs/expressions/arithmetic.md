@@ -124,7 +124,7 @@ const contract = new Contract()
 
 Performs the euclidean division and extracts the `remainder` from the result.
 
-- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#Divide-1)
+- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#Mod)
 
 ```ts
 const {
@@ -171,6 +171,58 @@ const contract = new Contract()
     .addEntrypoint(
         new EntryPoint('ep1').code(() => [
             SetValue(ContractStorage(), EuclideanDivision(Nat(13), Nat(3)))
+        ]),
+    );
+```
+
+## Logical left shift
+
+The logically left shift produces the first number logically left-shifted by second number.
+
+- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#ShiftLeft)
+
+```ts
+const {
+    Contract,
+    EntryPoint,
+    SetValue,
+    ContractStorage,
+    ShiftLeft,
+    Nat,
+    TNat,
+} = require('@tezwell/smartts-sdk');
+
+const contract = new Contract()
+    .setStorageType(TNat())
+    .addEntrypoint(
+        new EntryPoint('ep1').code(() => [
+            SetValue(ContractStorage(), ShiftLeft(Nat(2), Nat(1)))
+        ]),
+    );
+```
+
+## Logical right shift
+
+The logically right shift produces the first number logically right-shifted by second number.
+
+- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#ShiftRight)
+
+```ts
+const {
+    Contract,
+    EntryPoint,
+    SetValue,
+    ContractStorage,
+    ShiftRight,
+    Nat,
+    TNat,
+} = require('@tezwell/smartts-sdk');
+
+const contract = new Contract()
+    .setStorageType(TNat())
+    .addEntrypoint(
+        new EntryPoint('ep1').code(() => [
+            SetValue(ContractStorage(), ShiftRight(Nat(2), Nat(1)))
         ]),
     );
 ```

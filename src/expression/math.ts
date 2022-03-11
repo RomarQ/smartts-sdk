@@ -118,6 +118,45 @@ export const Mod = (
     line = new LineInfo(),
 ) => new Expression(ExpressionAtom.mod, left, right, line);
 
+/**
+ * Logical left shift
+ *
+ * ```typescript
+ * ShiftLeft(Nat(2), Nat(1)); // Nat(1)
+ * ```
+ *
+ * @category | Math
+ *
+ * @param left Expression
+ * @param right Expression
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression.
+ */
+export const ShiftLeft = (left: IExpression<ValueAtom.nat>, right: IExpression<ValueAtom.nat>, line = new LineInfo()) =>
+    new Expression<ValueAtom.nat>(ExpressionAtom.lsl, left, right, line);
+
+/**
+ * Logical right shift
+ *
+ * ```typescript
+ * ShiftRight(Nat(2), Nat(1)); // Nat(1)
+ * ```
+ *
+ * @category | Math
+ *
+ * @param left Expression
+ * @param right Expression
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression.
+ */
+export const ShiftRight = (
+    left: IExpression<ValueAtom.nat>,
+    right: IExpression<ValueAtom.nat>,
+    line = new LineInfo(),
+) => new Expression<ValueAtom.nat>(ExpressionAtom.lsr, left, right, line);
+
 export const Math = {
     Add,
     Multiply,
@@ -125,6 +164,8 @@ export const Math = {
     Divide,
     EuclideanDivision,
     Mod,
+    ShiftLeft,
+    ShiftRight,
 };
 
 export default Math;
