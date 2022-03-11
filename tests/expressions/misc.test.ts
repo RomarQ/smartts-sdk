@@ -1,11 +1,9 @@
 import {
     Bytes,
-    CallLambda,
     CallView,
     Concat,
     ContractStorage,
     GetSelfAddress,
-    Lambda,
     List,
     Nat,
     Not,
@@ -17,25 +15,10 @@ import {
 } from '../../src/expression';
 import { Contract, EntryPoint, OnChainView } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
-import { Require, Return, SetValue } from '../../src/statement';
+import { Return, SetValue } from '../../src/statement';
 import { TBool, TBytes, TNat, TOption, TPair, TString, TUnit } from '../../src/type';
 
 describe('Misc expressions', () => {
-    it('CallLambda', () => {
-        const contract = new Contract()
-            .setStorage(
-                Lambda()
-                    .setInputType(TBool())
-                    .code((argument) => [Return(argument)]),
-            )
-            .addEntrypoint(
-                new EntryPoint('ep1')
-                    .setInputType(TBool())
-                    .code((arg) => [Require(CallLambda(ContractStorage(), arg))]),
-            );
-
-        verifyContractCompilationOutput(contract);
-    });
     it('CallView', () => {
         const contract = new Contract()
             .setStorageType(TOption(TBool()))

@@ -4,6 +4,7 @@ import { LineInfo } from '../misc/utils';
 import { Expression, LambdaLiteral } from '../core/expression';
 import { TUnknown } from '../type';
 import { IExpression } from '../typings/expression';
+import ValueAtom from '../core/enums/literal';
 
 /**
  * Access a property of a record value.
@@ -21,7 +22,7 @@ import { IExpression } from '../typings/expression';
  * @returns {IExpression} An expression
  */
 export const GetProperty = (recordExpression: IExpression, property: string, line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.attr, recordExpression, `"${property}"`, line), Expression.proxyHandler);
+    proxy(new Expression<any>(ExpressionAtom.attr, recordExpression, `"${property}"`, line), Expression.proxyHandler);
 
 /**
  * Get variable value.
@@ -38,7 +39,7 @@ export const GetProperty = (recordExpression: IExpression, property: string, lin
  * @returns {IExpression} An expression
  */
 export const GetVariable = (name: string, line = new LineInfo()) =>
-    new Expression(ExpressionAtom.getLocal, `"${name}"`, line);
+    proxy(new Expression<any>(ExpressionAtom.getLocal, `"${name}"`, line), Expression.proxyHandler);
 
 /**
  * Get contract storage.
@@ -51,7 +52,7 @@ export const GetVariable = (name: string, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const ContractStorage = () => proxy(new Expression('data'), Expression.proxyHandler);
+export const ContractStorage = () => proxy(new Expression<any>('data'), Expression.proxyHandler);
 
 /**
  * Get iterator value. (Only used inside for loops)
@@ -68,7 +69,7 @@ export const ContractStorage = () => proxy(new Expression('data'), Expression.pr
  * @returns {IExpression} An expression
  */
 export const Iterator = (name: string, line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.iter, `"${name}"`, line), Expression.proxyHandler);
+    proxy(new Expression<any>(ExpressionAtom.iter, `"${name}"`, line), Expression.proxyHandler);
 
 /**
  * Get entrypoint/view argument.
@@ -84,7 +85,7 @@ export const Iterator = (name: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const MethodArgument = (line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.params, line), Expression.proxyHandler);
+    proxy(new Expression<any>(ExpressionAtom.params, line), Expression.proxyHandler);
 
 /**
  * Get lambda argument.
@@ -105,7 +106,7 @@ export const LambdaArgument = (
     argumentType = TUnknown(),
     id = LambdaLiteral.idCounter,
     line = new LineInfo(),
-) => new Expression('lambdaParams', `${id}`, `"${name}"`, line, argumentType);
+) => proxy(new Expression<any>('lambdaParams', `${id}`, `"${name}"`, line, argumentType), Expression.proxyHandler);
 
 /**
  * Get operations list from the stack or an empty list otherwise.
@@ -121,4 +122,4 @@ export const LambdaArgument = (
  *
  * @returns {IExpression} An expression
  */
-export const GetOperations = (line = new LineInfo()) => new Expression(ExpressionAtom.operations, line);
+export const GetOperations = (line = new LineInfo()) => new Expression<ValueAtom.list>(ExpressionAtom.operations, line);

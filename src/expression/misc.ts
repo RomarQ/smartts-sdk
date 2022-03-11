@@ -9,25 +9,6 @@ import { List, Unit } from './literal';
 import ValueAtom from '../core/enums/literal';
 
 /**
- * Call lambda.
- *
- * ```typescript
- * // Calling a lambda variable with a boolean as argument
- * CallLambda(GetVariable("some_lambda"), Bool(true));
- * ```
- *
- * @category | Lambda
- *
- * @param expression Lambda expression
- * @param argument Lambda argument
- * @param {LineInfo} line Source code line information (Used in error messages)
- *
- * @returns {IExpression} An expression.
- */
-export const CallLambda = (expression: IExpression, argument: IExpression = Unit(), line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.call_lambda, expression, argument, line), Expression.proxyHandler);
-
-/**
  * Call a onchain view.
  *
  * ```typescript

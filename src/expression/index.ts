@@ -4,6 +4,7 @@ export * from './contract';
 export * from './crypto';
 export * from './equality';
 export * from './integer';
+export * from './lambda';
 export * from './list';
 export * from './literal';
 export * from './logic';

@@ -1,125 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Misc expressions CallLambda 1`] = `
-"
-        (
-            template_id (static_id 0 (\\"misc.test.ts\\" 25))
-            storage (lambda 1 None False \\"lambda_arg\\" (\\"misc.test.ts\\" 27) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"misc.test.ts\\" 27) \\"bool\\") (\\"misc.test.ts\\" 29))))
-            storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 32) ((set_type (params (\\"misc.test.ts\\" 32)) \\"bool\\" (\\"misc.test.ts\\" 37)) (verify (call_lambda (data) (params (\\"misc.test.ts\\" 32)) (\\"misc.test.ts\\" 34)) (unit) (\\"misc.test.ts\\" 34)))))
-            flags ()
-            privates ()
-            views ()
-            entry_points_layout ()
-            initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 25))
-        )
-        "
-`;
-
-exports[`Misc expressions CallLambda 2`] = `
-"{
-    \\"micheline\\": \\"parameter (bool %ep1);\\\\nstorage   (lambda bool bool);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    SWAP;       # @storage : @parameter\\\\n    # == ep1 ==\\\\n    # sp.verify(self.data(params), sp.unit) # @storage : @parameter\\\\n    DUP;        # @storage : @storage : @parameter\\\\n    DUG 2;      # @storage : @parameter : @storage\\\\n    SWAP;       # @parameter : @storage : @storage\\\\n    EXEC;       # bool : @storage\\\\n    IF\\\\n      {}\\\\n      {\\\\n        UNIT;       # unit : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }; # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
-    \\"json\\": [
-        {
-            \\"prim\\": \\"storage\\",
-            \\"args\\": [
-                {
-                    \\"prim\\": \\"lambda\\",
-                    \\"args\\": [
-                        {
-                            \\"prim\\": \\"bool\\"
-                        },
-                        {
-                            \\"prim\\": \\"bool\\"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            \\"prim\\": \\"parameter\\",
-            \\"args\\": [
-                {
-                    \\"prim\\": \\"bool\\",
-                    \\"annots\\": [
-                        \\"%ep1\\"
-                    ]
-                }
-            ]
-        },
-        {
-            \\"prim\\": \\"code\\",
-            \\"args\\": [
-                [
-                    {
-                        \\"prim\\": \\"UNPAIR\\"
-                    },
-                    {
-                        \\"prim\\": \\"SWAP\\"
-                    },
-                    {
-                        \\"prim\\": \\"DUP\\"
-                    },
-                    {
-                        \\"prim\\": \\"DUG\\",
-                        \\"args\\": [
-                            {
-                                \\"int\\": \\"2\\"
-                            }
-                        ]
-                    },
-                    {
-                        \\"prim\\": \\"SWAP\\"
-                    },
-                    {
-                        \\"prim\\": \\"EXEC\\"
-                    },
-                    {
-                        \\"prim\\": \\"IF\\",
-                        \\"args\\": [
-                            [],
-                            [
-                                {
-                                    \\"prim\\": \\"UNIT\\"
-                                },
-                                {
-                                    \\"prim\\": \\"FAILWITH\\"
-                                }
-                            ]
-                        ]
-                    },
-                    {
-                        \\"prim\\": \\"NIL\\",
-                        \\"args\\": [
-                            {
-                                \\"prim\\": \\"operation\\"
-                            }
-                        ]
-                    },
-                    {
-                        \\"prim\\": \\"PAIR\\"
-                    }
-                ]
-            ]
-        }
-    ]
-}"
-`;
-
 exports[`Misc expressions CallView 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 40))
+            template_id (static_id 0 (\\"misc.test.ts\\" 23))
             storage ()
             storage_type ((option \\"bool\\"))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 44) ((set_type (params (\\"misc.test.ts\\" 44)) \\"bool\\" (\\"misc.test.ts\\" 51)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 44)) \\"bool\\" (\\"misc.test.ts\\" 46)) (\\"misc.test.ts\\" 46)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 27) ((set_type (params (\\"misc.test.ts\\" 27)) \\"bool\\" (\\"misc.test.ts\\" 34)) (set (data) (view \\"some_view\\" (self_address) (params (\\"misc.test.ts\\" 27)) \\"bool\\" (\\"misc.test.ts\\" 29)) (\\"misc.test.ts\\" 29)))))
             flags ()
             privates ()
-            views ((onchain some_view True (\\"misc.test.ts\\" 42) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 42)) \\"bool\\" (\\"misc.test.ts\\" 51)) (result (not (params (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)))))
+            views ((onchain some_view True (\\"misc.test.ts\\" 25) False \\"\\" ((set_type (params (\\"misc.test.ts\\" 25)) \\"bool\\" (\\"misc.test.ts\\" 34)) (result (not (params (\\"misc.test.ts\\" 25)) (\\"misc.test.ts\\" 25)) (\\"misc.test.ts\\" 25)))))
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 40))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 23))
         )
         "
 `;
@@ -219,16 +112,16 @@ exports[`Misc expressions CallView 2`] = `
 exports[`Misc expressions Concat 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 54))
+            template_id (static_id 0 (\\"misc.test.ts\\" 37))
             storage ()
             storage_type ((tuple \\"string\\" \\"bytes\\"))
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 57) ((set_type (params (\\"misc.test.ts\\" 57)) \\"unit\\" (\\"misc.test.ts\\" 70)) (set (data) (tuple (\\"misc.test.ts\\" 59) (concat (list (\\"misc.test.ts\\" 59) (literal (string \\"Hello\\") (\\"misc.test.ts\\" 59)) (literal (string \\" \\") (\\"misc.test.ts\\" 59)) (literal (string \\"World\\") (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59)) (concat (list (\\"misc.test.ts\\" 59) (literal (bytes 0x01) (\\"misc.test.ts\\" 59)) (literal (bytes 0x02) (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 40) ((set_type (params (\\"misc.test.ts\\" 40)) \\"unit\\" (\\"misc.test.ts\\" 53)) (set (data) (tuple (\\"misc.test.ts\\" 42) (concat (list (\\"misc.test.ts\\" 42) (literal (string \\"Hello\\") (\\"misc.test.ts\\" 42)) (literal (string \\" \\") (\\"misc.test.ts\\" 42)) (literal (string \\"World\\") (\\"misc.test.ts\\" 42))) (\\"misc.test.ts\\" 42)) (concat (list (\\"misc.test.ts\\" 42) (literal (bytes 0x01) (\\"misc.test.ts\\" 42)) (literal (bytes 0x02) (\\"misc.test.ts\\" 42))) (\\"misc.test.ts\\" 42))) (\\"misc.test.ts\\" 42)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 54))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 37))
         )
         "
 `;
@@ -347,16 +240,16 @@ exports[`Misc expressions Concat 2`] = `
 exports[`Misc expressions SizeOf 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 73))
+            template_id (static_id 0 (\\"misc.test.ts\\" 56))
             storage ()
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 76) ((set_type (params (\\"misc.test.ts\\" 76)) \\"unit\\" (\\"misc.test.ts\\" 85)) (set (data) (size (literal (string \\"Hello\\") (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (set (data) (size (literal (bytes 0x01) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (set (data) (size (list (\\"misc.test.ts\\" 76) (literal (nat 1) (\\"misc.test.ts\\" 76))) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (set (data) (size (set (\\"misc.test.ts\\" 76) (literal (nat 1) (\\"misc.test.ts\\" 76))) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)) (set (data) (size (map (\\"misc.test.ts\\" 76) ((literal (nat 1) (\\"misc.test.ts\\" 76)) (literal (nat 2) (\\"misc.test.ts\\" 76)))) (\\"misc.test.ts\\" 76)) (\\"misc.test.ts\\" 76)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 59) ((set_type (params (\\"misc.test.ts\\" 59)) \\"unit\\" (\\"misc.test.ts\\" 68)) (set (data) (size (literal (string \\"Hello\\") (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (set (data) (size (literal (bytes 0x01) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (set (data) (size (list (\\"misc.test.ts\\" 59) (literal (nat 1) (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (set (data) (size (set (\\"misc.test.ts\\" 59) (literal (nat 1) (\\"misc.test.ts\\" 59))) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)) (set (data) (size (map (\\"misc.test.ts\\" 59) ((literal (nat 1) (\\"misc.test.ts\\" 59)) (literal (nat 2) (\\"misc.test.ts\\" 59)))) (\\"misc.test.ts\\" 59)) (\\"misc.test.ts\\" 59)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 73))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 56))
         )
         "
 `;
