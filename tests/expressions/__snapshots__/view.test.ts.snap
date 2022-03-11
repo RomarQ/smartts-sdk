@@ -3,23 +3,23 @@
 exports[`View expressions CallView 1`] = `
 "
         (
-            template_id (static_id 0 (\\"view.test.ts\\" 9))
+            template_id (static_id 0 (\\"view.test.ts\\" 26))
             storage ()
-            storage_type ((option \\"bool\\"))
-            messages ((ep1 True False False True (\\"view.test.ts\\" 13) ((set_type (params (\\"view.test.ts\\" 13)) \\"bool\\" (\\"view.test.ts\\" 20)) (set (data) (view \\"some_view\\" (self_address) (params (\\"view.test.ts\\" 13)) \\"bool\\" (\\"view.test.ts\\" 15)) (\\"view.test.ts\\" 15)))))
+            storage_type ((option \\"string\\"))
+            messages ((entry_point_1 True False False True (\\"view.test.ts\\" 34) ((set_type (params (\\"view.test.ts\\" 34)) \\"unit\\" (\\"view.test.ts\\" 39)) (set (data) (view \\"some_view\\" (self_address) (params (\\"view.test.ts\\" 34)) \\"string\\" (\\"view.test.ts\\" 34)) (\\"view.test.ts\\" 34)))))
             flags ()
             privates ()
-            views ((onchain some_view True (\\"view.test.ts\\" 11) False \\"\\" ((set_type (params (\\"view.test.ts\\" 11)) \\"bool\\" (\\"view.test.ts\\" 20)) (result (not (params (\\"view.test.ts\\" 11)) (\\"view.test.ts\\" 11)) (\\"view.test.ts\\" 11)))))
+            views ((onchain some_view True (\\"view.test.ts\\" 29) False \\"\\" ((set_type (params (\\"view.test.ts\\" 29)) \\"nat\\" (\\"view.test.ts\\" 39)) (result (call_lambda (lambda 1 None False \\"lambda_arg\\" (\\"view.test.ts\\" 18) ((ifBlock (gt (lambdaParams 1 \\"lambda_arg\\" (\\"view.test.ts\\" 18) \\"nat\\") (literal (nat 2) (\\"view.test.ts\\" 20)) (\\"view.test.ts\\" 20)) ((result (literal (string \\"YES\\") (\\"view.test.ts\\" 20)) (\\"view.test.ts\\" 20))) (\\"view.test.ts\\" 20)) (elseBlock ((result (literal (string \\"NO\\") (\\"view.test.ts\\" 20)) (\\"view.test.ts\\" 20)))))) (params (\\"view.test.ts\\" 29)) (\\"view.test.ts\\" 31)) (\\"view.test.ts\\" 31)))))
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"view.test.ts\\" 9))
+            balance (literal (mutez 0) (\\"view.test.ts\\" 26))
         )
         "
 `;
 
 exports[`View expressions CallView 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bool %ep1);\\\\nstorage   (option bool);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.view(\\\\\\"some_view\\\\\\", sp.self_address, params, sp.TBool) # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"some_view\\\\\\" bool; # option bool\\\\n    NIL operation; # list operation : option bool\\\\n    PAIR;       # pair (list operation) (option bool)\\\\n  };\\\\nview\\\\n  \\\\\\"some_view\\\\\\" bool bool\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # sp.result(~ params) # @parameter\\\\n    NOT;        # bool\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.view(\\\\\\"some_view\\\\\\", sp.self_address, params, sp.TString) # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"some_view\\\\\\" string; # option string\\\\n    NIL operation; # list operation : option string\\\\n    PAIR;       # pair (list operation) (option string)\\\\n  };\\\\nview\\\\n  \\\\\\"some_view\\\\\\" nat string\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # sp.result(sp.build_lambda(flambda_arg)(params))\\\\n    # if lambda_arg > 2: # @parameter\\\\n    PUSH nat 2; # nat : @parameter\\\\n    COMPARE;    # int\\\\n    LT;         # bool\\\\n    IF\\\\n      {\\\\n        # sp.result('YES') # \\\\n        PUSH string \\\\\\"YES\\\\\\"; # string\\\\n      }\\\\n      {\\\\n        # sp.result('NO') # \\\\n        PUSH string \\\\\\"NO\\\\\\"; # string\\\\n      }; # string\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -28,7 +28,7 @@ exports[`View expressions CallView 2`] = `
                     \\"prim\\": \\"option\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"bool\\"
+                            \\"prim\\": \\"string\\"
                         }
                     ]
                 }
@@ -38,9 +38,9 @@ exports[`View expressions CallView 2`] = `
             \\"prim\\": \\"parameter\\",
             \\"args\\": [
                 {
-                    \\"prim\\": \\"bool\\",
+                    \\"prim\\": \\"unit\\",
                     \\"annots\\": [
-                        \\"%ep1\\"
+                        \\"%entry_point_1\\"
                     ]
                 }
             ]
@@ -65,7 +65,7 @@ exports[`View expressions CallView 2`] = `
                                 \\"string\\": \\"some_view\\"
                             },
                             {
-                                \\"prim\\": \\"bool\\"
+                                \\"prim\\": \\"string\\"
                             }
                         ]
                     },
@@ -90,17 +90,62 @@ exports[`View expressions CallView 2`] = `
                     \\"string\\": \\"some_view\\"
                 },
                 {
-                    \\"prim\\": \\"bool\\"
+                    \\"prim\\": \\"nat\\"
                 },
                 {
-                    \\"prim\\": \\"bool\\"
+                    \\"prim\\": \\"string\\"
                 },
                 [
                     {
                         \\"prim\\": \\"CAR\\"
                     },
                     {
-                        \\"prim\\": \\"NOT\\"
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"COMPARE\\"
+                    },
+                    {
+                        \\"prim\\": \\"LT\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"string\\"
+                                        },
+                                        {
+                                            \\"string\\": \\"YES\\"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"string\\"
+                                        },
+                                        {
+                                            \\"string\\": \\"NO\\"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
                     }
                 ]
             ]
