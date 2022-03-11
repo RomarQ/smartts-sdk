@@ -32,6 +32,8 @@ export enum ValueAtom {
     //
     operation = 'operation',
     option = 'option',
+    contract = 'contract',
+    chain_id = 'chain_id',
 }
 
 export default ValueAtom;

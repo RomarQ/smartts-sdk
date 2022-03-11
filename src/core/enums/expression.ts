@@ -71,6 +71,7 @@ export enum ExpressionAtom {
     pack = 'pack',
     unpack = 'unpack',
     type_annotation = 'type_annotation',
+    to_address = 'to_address',
 }
 
 export default ExpressionAtom;

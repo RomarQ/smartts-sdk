@@ -38,7 +38,7 @@ export const OpenVariant = (variant: IExpression, branch = 'Some', errorMsg?: IE
  *
  * @returns {IExpression} An expression
  */
-export const GetSome = (variant: IExpression, errorMsg?: IExpression, line = new LineInfo()) =>
+export const GetSome = (variant: IExpression, errorMsg?: IExpression, line = new LineInfo()): IExpression<any> =>
     proxy(OpenVariant(variant, 'Some', errorMsg, line), Expression.proxyHandler);
 
 /**
