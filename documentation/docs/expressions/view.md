@@ -2,7 +2,7 @@
 
 ## Call an on-chain view
 
-Calls an on-chain view and returns an expression of type `TOption(<any>)`.
+The expression `CallView` calls an on-chain view and returns a result of type `TOption(<any>)`.
 
 - [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#CallView)
 

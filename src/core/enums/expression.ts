@@ -66,6 +66,7 @@ export enum ExpressionAtom {
     getItemMessage = 'getItemMessage',
     attr = 'attr',
     params = 'params',
+    lambdaParams = 'lambdaParams',
     getLocal = 'getLocal',
     iter = 'iter',
     contract = 'contract',

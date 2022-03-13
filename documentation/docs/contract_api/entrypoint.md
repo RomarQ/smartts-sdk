@@ -17,7 +17,7 @@ const contract = new Contract()
             ]);
     )
     .addEntrypoint(
-        new EntryPoint('entry_point_2').code((arg) => [
+        new EntryPoint('entry_point_2').code(() => [
             SetValue(ContractStorage(), GetLevel())
         ]);
     );

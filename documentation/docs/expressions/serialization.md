@@ -2,7 +2,7 @@
 
 ## Serialize data
 
-Serializes any value of packable type to its optimized binary representation, of type `TBytes()`.
+The expression `Pack` serializes any value of packable type to its optimized binary representation, of type `TBytes()`.
 
 - [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#Pack)
 
@@ -31,7 +31,7 @@ const contract = new Contract()
 
 ## Deserialize data
 
-Deserialize a value of type `TBytes()` into the corresponding Michelson value of type `TOption(...)`.
+The expression `Unpack` deserialize a value of type `TBytes()` into the corresponding Michelson value of type `TOption(...)`.
 
 - [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#Unpack)
 

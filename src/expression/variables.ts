@@ -106,7 +106,11 @@ export const LambdaArgument = (
     argumentType = TUnknown(),
     id = LambdaLiteral.idCounter,
     line = new LineInfo(),
-) => proxy(new Expression<any>('lambdaParams', `${id}`, `"${name}"`, line, argumentType), Expression.proxyHandler);
+) =>
+    proxy(
+        new Expression<any>(ExpressionAtom.lambdaParams, `${id}`, `"${name}"`, line, argumentType),
+        Expression.proxyHandler,
+    );
 
 /**
  * Get operations list from the stack or an empty list otherwise.
