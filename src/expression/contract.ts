@@ -15,7 +15,7 @@ import { GetSome } from './variant';
  * ToContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'some_entrypoint', TNat());
  * ```
  *
- * @category | Contract
+ * @category Contract
  *
  * @param address An expression that resolves to an address value
  * @param entrypoint Contract entrypoint
@@ -40,7 +40,7 @@ export const ToContract = (
  * GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'some_entrypoint', TNat());
  * ```
  *
- * @category | Contract
+ * @category Contract
  *
  * @param address An expression that resolves to an address value
  * @param entrypoint Contract entrypoint
@@ -63,7 +63,7 @@ export const GetContract = (
  * ToAddress(GetSelf());
  * ```
  *
- * @category | Contract
+ * @category Contract
  *
  * @param contract An expression that evaluates to a contract value.
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -82,7 +82,7 @@ export const ToAddress = (
  * ImplicitAccount(Key_hash("tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN"));
  * ```
  *
- * @category | Contract
+ * @category Contract
  *
  * @param contract An expression that evaluates to a contract value.
  * @param {LineInfo} line Source code line information (Used in error messages)

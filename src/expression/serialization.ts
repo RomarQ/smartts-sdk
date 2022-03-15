@@ -14,7 +14,7 @@ import ValueAtom from '../core/enums/literal';
  * Pack(Nat(1));
  * ```
  *
- * @category | Serialization
+ * @category Serialization
  *
  * @param expression An expression
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -31,7 +31,7 @@ export const Pack = (expression: IExpression, line = new LineInfo()) =>
  * Unpack(Bytes("0x05070707070100000004746f746f020000000800030007000900010200000006000100020003"));
  * ```
  *
- * @category | Serialization
+ * @category Serialization
  *
  * @param expression An expression that evaluates to type `TBytes()`
  * @param type The type of the deserialized value.

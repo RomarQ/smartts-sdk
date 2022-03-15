@@ -11,7 +11,7 @@ import ValueAtom from '../core/enums/literal';
  * Equal(Nat(1), Nat(1)); // Bool(true)
  * ```
  *
- * @category | Equality
+ * @category Equality
  *
  * @param left An expression
  * @param right An expression
@@ -29,7 +29,7 @@ export const Equal = (left: IExpression, right: IExpression, line = new LineInfo
  * NotEqual(Nat(1), Nat(1)); // Bool(false)
  * ```
  *
- * @category | Equality
+ * @category Equality
  *
  * @param left An expression
  * @param right An expression

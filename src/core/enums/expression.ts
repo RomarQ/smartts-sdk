@@ -52,6 +52,7 @@ export enum ExpressionAtom {
     sha512 = 'sha512',
     sha3 = 'sha3',
     keccak = 'keccak',
+    check_signature = 'check_signature',
     // Integer
     toInt = 'toInt',
     isNat = 'isNat',
