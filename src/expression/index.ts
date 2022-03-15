@@ -1,4 +1,5 @@
 export * from './blockchain_properties';
+export * from './bls12_381';
 export * from './comparison';
 export * from './contract';
 export * from './crypto';

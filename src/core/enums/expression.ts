@@ -83,6 +83,7 @@ export enum ExpressionAtom {
     implicit_account = 'implicit_account',
     sapling_empty_state = 'sapling_empty_state',
     sapling_verify_update = 'sapling_verify_update',
+    pairing_check = 'pairing_check',
 }
 
 export default ExpressionAtom;

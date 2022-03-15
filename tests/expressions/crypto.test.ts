@@ -9,7 +9,6 @@ import {
     SHA256,
     SHA3,
     SHA512,
-    Signature,
     Some,
 } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';

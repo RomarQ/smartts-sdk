@@ -3,16 +3,16 @@
 exports[`Crypto expressions Hashing BLACK2B 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 23))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 24))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 22))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 23))
             storage_type ((unknown 0))
-            messages ((hash_bytes_BLACK2B True False False True (\\"crypto.test.ts\\" 26) ((set_type (params (\\"crypto.test.ts\\" 26)) \\"bytes\\" (\\"crypto.test.ts\\" 31)) (set (data) (variant \\"Some\\" (blake2b (params (\\"crypto.test.ts\\" 26)) (\\"crypto.test.ts\\" 28)) (\\"crypto.test.ts\\" 28)) (\\"crypto.test.ts\\" 28)))))
+            messages ((hash_bytes_BLACK2B True False False True (\\"crypto.test.ts\\" 25) ((set_type (params (\\"crypto.test.ts\\" 25)) \\"bytes\\" (\\"crypto.test.ts\\" 30)) (set (data) (variant \\"Some\\" (blake2b (params (\\"crypto.test.ts\\" 25)) (\\"crypto.test.ts\\" 27)) (\\"crypto.test.ts\\" 27)) (\\"crypto.test.ts\\" 27)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 23))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 22))
         )
         "
 `;
@@ -79,16 +79,16 @@ exports[`Crypto expressions Hashing BLACK2B 2`] = `
 exports[`Crypto expressions Hashing KECCAK 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 34))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 35))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 33))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 34))
             storage_type ((unknown 0))
-            messages ((hash_bytes_KECCAK True False False True (\\"crypto.test.ts\\" 37) ((set_type (params (\\"crypto.test.ts\\" 37)) \\"bytes\\" (\\"crypto.test.ts\\" 42)) (set (data) (variant \\"Some\\" (keccak (params (\\"crypto.test.ts\\" 37)) (\\"crypto.test.ts\\" 39)) (\\"crypto.test.ts\\" 39)) (\\"crypto.test.ts\\" 39)))))
+            messages ((hash_bytes_KECCAK True False False True (\\"crypto.test.ts\\" 36) ((set_type (params (\\"crypto.test.ts\\" 36)) \\"bytes\\" (\\"crypto.test.ts\\" 41)) (set (data) (variant \\"Some\\" (keccak (params (\\"crypto.test.ts\\" 36)) (\\"crypto.test.ts\\" 38)) (\\"crypto.test.ts\\" 38)) (\\"crypto.test.ts\\" 38)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 33))
         )
         "
 `;
@@ -155,16 +155,16 @@ exports[`Crypto expressions Hashing KECCAK 2`] = `
 exports[`Crypto expressions Hashing SHA3 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 67))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 68))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 66))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 67))
             storage_type ((unknown 0))
-            messages ((hash_bytes_SHA3 True False False True (\\"crypto.test.ts\\" 70) ((set_type (params (\\"crypto.test.ts\\" 70)) \\"bytes\\" (\\"crypto.test.ts\\" 75)) (set (data) (variant \\"Some\\" (sha3 (params (\\"crypto.test.ts\\" 70)) (\\"crypto.test.ts\\" 72)) (\\"crypto.test.ts\\" 72)) (\\"crypto.test.ts\\" 72)))))
+            messages ((hash_bytes_SHA3 True False False True (\\"crypto.test.ts\\" 69) ((set_type (params (\\"crypto.test.ts\\" 69)) \\"bytes\\" (\\"crypto.test.ts\\" 74)) (set (data) (variant \\"Some\\" (sha3 (params (\\"crypto.test.ts\\" 69)) (\\"crypto.test.ts\\" 71)) (\\"crypto.test.ts\\" 71)) (\\"crypto.test.ts\\" 71)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 67))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 66))
         )
         "
 `;
@@ -231,16 +231,16 @@ exports[`Crypto expressions Hashing SHA3 2`] = `
 exports[`Crypto expressions Hashing SHA256 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 45))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 46))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 44))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 45))
             storage_type ((unknown 0))
-            messages ((hash_bytes_SHA256 True False False True (\\"crypto.test.ts\\" 48) ((set_type (params (\\"crypto.test.ts\\" 48)) \\"bytes\\" (\\"crypto.test.ts\\" 53)) (set (data) (variant \\"Some\\" (sha256 (params (\\"crypto.test.ts\\" 48)) (\\"crypto.test.ts\\" 50)) (\\"crypto.test.ts\\" 50)) (\\"crypto.test.ts\\" 50)))))
+            messages ((hash_bytes_SHA256 True False False True (\\"crypto.test.ts\\" 47) ((set_type (params (\\"crypto.test.ts\\" 47)) \\"bytes\\" (\\"crypto.test.ts\\" 52)) (set (data) (variant \\"Some\\" (sha256 (params (\\"crypto.test.ts\\" 47)) (\\"crypto.test.ts\\" 49)) (\\"crypto.test.ts\\" 49)) (\\"crypto.test.ts\\" 49)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 45))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 44))
         )
         "
 `;
@@ -307,16 +307,16 @@ exports[`Crypto expressions Hashing SHA256 2`] = `
 exports[`Crypto expressions Hashing SHA512 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 56))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 57))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 55))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 56))
             storage_type ((unknown 0))
-            messages ((hash_bytes_SHA512 True False False True (\\"crypto.test.ts\\" 59) ((set_type (params (\\"crypto.test.ts\\" 59)) \\"bytes\\" (\\"crypto.test.ts\\" 64)) (set (data) (variant \\"Some\\" (sha512 (params (\\"crypto.test.ts\\" 59)) (\\"crypto.test.ts\\" 61)) (\\"crypto.test.ts\\" 61)) (\\"crypto.test.ts\\" 61)))))
+            messages ((hash_bytes_SHA512 True False False True (\\"crypto.test.ts\\" 58) ((set_type (params (\\"crypto.test.ts\\" 58)) \\"bytes\\" (\\"crypto.test.ts\\" 63)) (set (data) (variant \\"Some\\" (sha512 (params (\\"crypto.test.ts\\" 58)) (\\"crypto.test.ts\\" 60)) (\\"crypto.test.ts\\" 60)) (\\"crypto.test.ts\\" 60)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 56))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 55))
         )
         "
 `;
@@ -383,16 +383,16 @@ exports[`Crypto expressions Hashing SHA512 2`] = `
 exports[`Crypto expressions Signatures CheckSignature 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 80))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 79))
             storage ()
             storage_type (\\"bool\\")
-            messages ((checkSignature True False False True (\\"crypto.test.ts\\" 83) ((set_type (params (\\"crypto.test.ts\\" 83)) \\"signature\\" (\\"crypto.test.ts\\" 97)) (set (data) (check_signature (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"crypto.test.ts\\" 85)) (params (\\"crypto.test.ts\\" 83)) (literal (bytes 0x01) (\\"crypto.test.ts\\" 85)) (\\"crypto.test.ts\\" 85)) (\\"crypto.test.ts\\" 85)))))
+            messages ((checkSignature True False False True (\\"crypto.test.ts\\" 82) ((set_type (params (\\"crypto.test.ts\\" 82)) \\"signature\\" (\\"crypto.test.ts\\" 96)) (set (data) (check_signature (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"crypto.test.ts\\" 84)) (params (\\"crypto.test.ts\\" 82)) (literal (bytes 0x01) (\\"crypto.test.ts\\" 84)) (\\"crypto.test.ts\\" 84)) (\\"crypto.test.ts\\" 84)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 80))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 79))
         )
         "
 `;
