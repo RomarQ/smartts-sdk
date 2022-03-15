@@ -53,10 +53,27 @@ export const CastToNat = (
  *
  * @category | Integer expressions
  *
- * @param expression An expression that evaluates to a value of type `TNat()`.
+ * @param expression An expression that evaluates to a value of type `TInt()`.
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
- * @returns {IExpression} An expression that evaluates to TInt().
+ * @returns {IExpression} An expression that evaluates to `TNat()`.
  */
 export const CastToInt = (expression: IExpression<ValueAtom.nat>, line = new LineInfo()) =>
     new Expression<ValueAtom.int>(ExpressionAtom.toInt, expression, line);
+
+/**
+ * Obtain the absolute value of an `TInt()` value.
+ *
+ * ```typescript
+ * ABS(Int(-1)); // Nat(1)
+ * ```
+ *
+ * @category | Integer expressions
+ *
+ * @param expression An expression that evaluates to a value of type `TInt()`.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression that evaluates to `TNat()`.
+ */
+export const ABS = (expression: IExpression<ValueAtom.int>, line = new LineInfo()) =>
+    new Expression<ValueAtom.nat>(ExpressionAtom.abs, expression, line);

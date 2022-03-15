@@ -75,8 +75,7 @@ const {
     ContractStorage,
     CastToInt,
     TInt,
-    TNat,
-    String,
+    TNat
 } = require('@tezwell/smartts-sdk');
 
 const contract = new Contract()
@@ -86,6 +85,34 @@ const contract = new Contract()
             .setInputType(TNat())
             .code((arg) => [
                 SetValue(ContractStorage(), CastToInt(arg)),
+            ]),
+    );
+```
+
+### ABS
+
+Obtain the absolute value of an `TInt()` value.
+
+- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#ABS)
+
+```ts
+const {
+    Contract,
+    EntryPoint,
+    SetValue,
+    ContractStorage,
+    ABS,
+    TInt,
+    TNat
+} = require('@tezwell/smartts-sdk');
+
+const contract = new Contract()
+    .setStorageType(TNat())
+    .addEntrypoint(
+        new EntryPoint('entry_point_1')
+            .setInputType(TInt())
+            .code((arg) => [
+                SetValue(ContractStorage(), ABS(arg)),
             ]),
     );
 ```

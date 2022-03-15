@@ -55,6 +55,7 @@ export enum ExpressionAtom {
     // Integer
     toInt = 'toInt',
     isNat = 'isNat',
+    abs = 'abs',
     // Generic
     size = 'size',
     concat = 'concat',
@@ -78,6 +79,7 @@ export enum ExpressionAtom {
     unpack = 'unpack',
     type_annotation = 'type_annotation',
     to_address = 'to_address',
+    implicit_account = 'implicit_account',
     sapling_empty_state = 'sapling_empty_state',
     sapling_verify_update = 'sapling_verify_update',
 }

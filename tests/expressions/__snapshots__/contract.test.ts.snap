@@ -3,23 +3,23 @@
 exports[`Contract expressions GetContract 1`] = `
 "
         (
-            template_id (static_id 0 (\\"contract.test.ts\\" 34))
+            template_id (static_id 0 (\\"contract.test.ts\\" 35))
             storage ()
             storage_type ((unknown 0))
-            messages ((entry_point_1 True False False True (\\"contract.test.ts\\" 35) ((set_type (params (\\"contract.test.ts\\" 35)) \\"unit\\" (\\"contract.test.ts\\" 44)) (defineLocal \\"contract\\" (openVariant (contract entry_point_1 \\"unit\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"contract.test.ts\\" 35)) (\\"contract.test.ts\\" 35)) \\"Some\\" None (\\"contract.test.ts\\" 35)) True (\\"contract.test.ts\\" 35)) (set (operations (\\"contract.test.ts\\" 35)) (cons (transfer (unit) (literal (mutez 100) (\\"contract.test.ts\\" 35)) (getLocal \\"contract\\" (\\"contract.test.ts\\" 35)) (\\"contract.test.ts\\" 35)) (operations (\\"contract.test.ts\\" 35)) (\\"contract.test.ts\\" 35)) (\\"contract.test.ts\\" 35)))))
+            messages ((entry_point_1 True False False True (\\"contract.test.ts\\" 36) ((set_type (params (\\"contract.test.ts\\" 36)) \\"unit\\" (\\"contract.test.ts\\" 45)) (defineLocal \\"contract\\" (openVariant (contract entry_point_1 \\"unit\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"contract.test.ts\\" 36)) (\\"contract.test.ts\\" 36)) \\"Some\\" None (\\"contract.test.ts\\" 36)) True (\\"contract.test.ts\\" 36)) (set (operations (\\"contract.test.ts\\" 36)) (cons (transfer (unit) (literal (mutez 100) (\\"contract.test.ts\\" 36)) (getLocal \\"contract\\" (\\"contract.test.ts\\" 36)) (\\"contract.test.ts\\" 36)) (operations (\\"contract.test.ts\\" 36)) (\\"contract.test.ts\\" 36)) (\\"contract.test.ts\\" 36)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"contract.test.ts\\" 34))
+            balance (literal (mutez 0) (\\"contract.test.ts\\" 35))
         )
         "
 `;
 
 exports[`Contract expressions GetContract 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == entry_point_1 ==\\\\n    # contract = sp.local(\\\\\\"contract\\\\\\", sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some()) # @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : @storage\\\\n    CONTRACT %entry_point_1 unit; # option (contract unit) : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 35; # int : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : @storage\\\\n    # sp.transfer(sp.unit, sp.mutez(100), contract.value) # @some : @storage\\\\n    NIL operation; # list operation : @some : @storage\\\\n    SWAP;       # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == entry_point_1 ==\\\\n    # contract = sp.local(\\\\\\"contract\\\\\\", sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some()) # @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : @storage\\\\n    CONTRACT %entry_point_1 unit; # option (contract unit) : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 36; # int : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : @storage\\\\n    # sp.transfer(sp.unit, sp.mutez(100), contract.value) # @some : @storage\\\\n    NIL operation; # list operation : @some : @storage\\\\n    SWAP;       # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -80,7 +80,7 @@ exports[`Contract expressions GetContract 2`] = `
                                             \\"prim\\": \\"int\\"
                                         },
                                         {
-                                            \\"int\\": \\"35\\"
+                                            \\"int\\": \\"36\\"
                                         }
                                     ]
                                 },
@@ -132,19 +132,110 @@ exports[`Contract expressions GetContract 2`] = `
 }"
 `;
 
-exports[`Contract expressions ToAddress 1`] = `
+exports[`Contract expressions ImplicitAccount 1`] = `
 "
         (
-            template_id (static_id 0 (\\"contract.test.ts\\" 47))
+            template_id (static_id 0 (\\"contract.test.ts\\" 59))
             storage ()
-            storage_type (\\"address\\")
-            messages ((entry_point_1 True False False True (\\"contract.test.ts\\" 50) ((set_type (params (\\"contract.test.ts\\" 50)) \\"unit\\" (\\"contract.test.ts\\" 55)) (set (data) (to_address (self \\"entry_point_1\\" (\\"contract.test.ts\\" 50)) (\\"contract.test.ts\\" 50)) (\\"contract.test.ts\\" 50)))))
+            storage_type (\\"unit\\")
+            messages ((entry_point_1 True False False True (\\"contract.test.ts\\" 62) ((set_type (params (\\"contract.test.ts\\" 62)) \\"key_hash\\" (\\"contract.test.ts\\" 67)) (set (operations (\\"contract.test.ts\\" 64)) (cons (transfer (unit) (literal (mutez 0) (\\"contract.test.ts\\" 64)) (implicit_account (params (\\"contract.test.ts\\" 62)) (\\"contract.test.ts\\" 64)) (\\"contract.test.ts\\" 64)) (operations (\\"contract.test.ts\\" 64)) (\\"contract.test.ts\\" 64)) (\\"contract.test.ts\\" 64)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"contract.test.ts\\" 47))
+            balance (literal (mutez 0) (\\"contract.test.ts\\" 59))
+        )
+        "
+`;
+
+exports[`Contract expressions ImplicitAccount 2`] = `
+"{
+    \\"micheline\\": \\"parameter (key_hash %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == entry_point_1 ==\\\\n    # sp.transfer(sp.unit, sp.tez(0), sp.implicit_account(params)) # @parameter : @storage\\\\n    IMPLICIT_ACCOUNT; # contract unit : @storage\\\\n    NIL operation; # list operation : contract unit : @storage\\\\n    SWAP;       # contract unit : list operation : @storage\\\\n    PUSH mutez 0; # mutez : contract unit : list operation : @storage\\\\n    UNIT;       # unit : mutez : contract unit : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"key_hash\\",
+                    \\"annots\\": [
+                        \\"%entry_point_1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"IMPLICIT_ACCOUNT\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"mutez\\"
+                            },
+                            {
+                                \\"int\\": \\"0\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"UNIT\\"
+                    },
+                    {
+                        \\"prim\\": \\"TRANSFER_TOKENS\\"
+                    },
+                    {
+                        \\"prim\\": \\"CONS\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
+exports[`Contract expressions ToAddress 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"contract.test.ts\\" 48))
+            storage ()
+            storage_type (\\"address\\")
+            messages ((entry_point_1 True False False True (\\"contract.test.ts\\" 51) ((set_type (params (\\"contract.test.ts\\" 51)) \\"unit\\" (\\"contract.test.ts\\" 56)) (set (data) (to_address (self \\"entry_point_1\\" (\\"contract.test.ts\\" 51)) (\\"contract.test.ts\\" 51)) (\\"contract.test.ts\\" 51)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"contract.test.ts\\" 48))
         )
         "
 `;
@@ -209,16 +300,16 @@ exports[`Contract expressions ToAddress 2`] = `
 exports[`Contract expressions ToContract 1`] = `
 "
         (
-            template_id (static_id 0 (\\"contract.test.ts\\" 21))
+            template_id (static_id 0 (\\"contract.test.ts\\" 22))
             storage ()
             storage_type ((unknown 0))
-            messages ((entry_point_1 True False False True (\\"contract.test.ts\\" 22) ((set_type (params (\\"contract.test.ts\\" 22)) \\"unit\\" (\\"contract.test.ts\\" 31)) (set (operations (\\"contract.test.ts\\" 22)) (cons (transfer (unit) (literal (mutez 100) (\\"contract.test.ts\\" 22)) (openVariant (contract entry_point_1 \\"unit\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"contract.test.ts\\" 22)) (\\"contract.test.ts\\" 22)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"contract.test.ts\\" 22)) (\\"contract.test.ts\\" 22)) (\\"contract.test.ts\\" 22)) (\\"contract.test.ts\\" 22)) (operations (\\"contract.test.ts\\" 22)) (\\"contract.test.ts\\" 22)) (\\"contract.test.ts\\" 22)))))
+            messages ((entry_point_1 True False False True (\\"contract.test.ts\\" 23) ((set_type (params (\\"contract.test.ts\\" 23)) \\"unit\\" (\\"contract.test.ts\\" 32)) (set (operations (\\"contract.test.ts\\" 23)) (cons (transfer (unit) (literal (mutez 100) (\\"contract.test.ts\\" 23)) (openVariant (contract entry_point_1 \\"unit\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (operations (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"contract.test.ts\\" 21))
+            balance (literal (mutez 0) (\\"contract.test.ts\\" 22))
         )
         "
 `;

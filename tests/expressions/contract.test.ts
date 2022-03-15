@@ -10,11 +10,12 @@ import {
     GetVariable,
     ToAddress,
     GetSelf,
+    ImplicitAccount,
 } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { NewVariable, SetValue } from '../../src/statement';
-import { TAddress, TUnit } from '../../src/type';
+import { TAddress, TKey_hash, TUnit } from '../../src/type';
 
 describe('Contract expressions', () => {
     it('ToContract', () => {
@@ -50,6 +51,17 @@ describe('Contract expressions', () => {
                 new EntryPoint('entry_point_1').code(() => [
                     SetValue(ContractStorage(), ToAddress(GetSelf('entry_point_1'))),
                 ]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('ImplicitAccount', () => {
+        const contract = new Contract()
+            .setStorageType(TUnit())
+            .addEntrypoint(
+                new EntryPoint('entry_point_1')
+                    .setInputType(TKey_hash())
+                    .code((argument) => [Transfer(ImplicitAccount(argument), Mutez(0)).send()]),
             );
 
         verifyContractCompilationOutput(contract);

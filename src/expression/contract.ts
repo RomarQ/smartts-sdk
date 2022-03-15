@@ -74,3 +74,22 @@ export const ToAddress = (
     contract: IExpression<ValueAtom.contract>,
     line = new LineInfo(),
 ): IExpression<ValueAtom.address> => new Expression<ValueAtom.address>(ExpressionAtom.to_address, contract, line);
+
+/**
+ * Create an implicit account.
+ *
+ * ```typescript
+ * ImplicitAccount(Key_hash("tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN"));
+ * ```
+ *
+ * @category | Contract
+ *
+ * @param contract An expression that evaluates to a contract value.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression of type `TContract(TUnit())`.
+ */
+export const ImplicitAccount = (
+    key_hash: IExpression<ValueAtom.key_hash>,
+    line = new LineInfo(),
+): IExpression<ValueAtom.contract> => new Expression(ExpressionAtom.implicit_account, key_hash, line);
