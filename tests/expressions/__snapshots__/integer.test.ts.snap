@@ -1,5 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Integer expressions ABS 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"integer.test.ts\\" 44))
+            storage ()
+            storage_type (\\"nat\\")
+            messages ((ep1 True False False True (\\"integer.test.ts\\" 47) ((set_type (params (\\"integer.test.ts\\" 47)) \\"int\\" (\\"integer.test.ts\\" 50)) (set (data) (abs (params (\\"integer.test.ts\\" 47)) (\\"integer.test.ts\\" 47)) (\\"integer.test.ts\\" 47)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"integer.test.ts\\" 44))
+        )
+        "
+`;
+
+exports[`Integer expressions ABS 2`] = `
+"{
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = abs(params) # @parameter\\\\n    ABS;        # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"ABS\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ]
+}"
+`;
+
 exports[`Integer expressions CastToInt 1`] = `
 "
         (

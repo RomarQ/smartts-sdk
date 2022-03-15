@@ -52,9 +52,11 @@ export enum ExpressionAtom {
     sha512 = 'sha512',
     sha3 = 'sha3',
     keccak = 'keccak',
+    check_signature = 'check_signature',
     // Integer
     toInt = 'toInt',
     isNat = 'isNat',
+    abs = 'abs',
     // Generic
     size = 'size',
     concat = 'concat',
@@ -78,8 +80,10 @@ export enum ExpressionAtom {
     unpack = 'unpack',
     type_annotation = 'type_annotation',
     to_address = 'to_address',
+    implicit_account = 'implicit_account',
     sapling_empty_state = 'sapling_empty_state',
     sapling_verify_update = 'sapling_verify_update',
+    pairing_check = 'pairing_check',
 }
 
 export default ExpressionAtom;

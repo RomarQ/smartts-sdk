@@ -10,7 +10,7 @@ import ExpressionAtom from '../core/enums/expression';
  * LessThan(Nat(1), Nat(1)); // Bool(false)
  * ```
  *
- * @category | Comparison
+ * @category Comparison
  *
  * @param left An expression
  * @param right An expression
@@ -28,7 +28,7 @@ export const LessThan = (left: IExpression, right: IExpression, line = new LineI
  * GreaterThan(Nat(1), Nat(1)); // Bool(false)
  * ```
  *
- * @category | Comparison
+ * @category Comparison
  *
  * @param left An expression
  * @param right An expression
@@ -46,7 +46,7 @@ export const GreaterThan = (left: IExpression, right: IExpression, line = new Li
  * LessThanOrEqual(Nat(1), Nat(1)); // Bool(true)
  * ```
  *
- * @category | Comparison
+ * @category Comparison
  *
  * @param left An expression
  * @param right An expression
@@ -64,7 +64,7 @@ export const LessThanOrEqual = (left: IExpression, right: IExpression, line = ne
  * GreaterThanOrEqual(Nat(1), Nat(1)); // Bool(true)
  * ```
  *
- * @category | Comparison
+ * @category Comparison
  *
  * @param left An expression
  * @param right An expression

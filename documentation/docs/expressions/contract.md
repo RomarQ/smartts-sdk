@@ -99,3 +99,31 @@ const contract = new Contract()
             ]),
     );
 ```
+
+### ImplicitAccount
+
+Create an implicit account of type `TContract(TUnit())`.
+
+- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#ImplicitAccount)
+
+```ts
+const {
+    Contract,
+    EntryPoint,
+    Transfer,
+    ImplicitAccount,
+    Mutez,
+    TUnit,
+    TKey_hash
+} = require('@tezwell/smartts-sdk');
+
+const contract = new Contract()
+    .setStorageType(TUnit())
+    .addEntrypoint(
+        new EntryPoint('entry_point_1')
+            .setInputType(TKey_hash())
+            .code((argument) => [
+                Transfer(ImplicitAccount(argument), Mutez(0)).send()
+            ]),
+    );
+```

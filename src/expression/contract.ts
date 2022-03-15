@@ -15,7 +15,7 @@ import { GetSome } from './variant';
  * ToContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'some_entrypoint', TNat());
  * ```
  *
- * @category | Contract
+ * @category Contract
  *
  * @param address An expression that resolves to an address value
  * @param entrypoint Contract entrypoint
@@ -40,7 +40,7 @@ export const ToContract = (
  * GetContract(Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), 'some_entrypoint', TNat());
  * ```
  *
- * @category | Contract
+ * @category Contract
  *
  * @param address An expression that resolves to an address value
  * @param entrypoint Contract entrypoint
@@ -63,7 +63,7 @@ export const GetContract = (
  * ToAddress(GetSelf());
  * ```
  *
- * @category | Contract
+ * @category Contract
  *
  * @param contract An expression that evaluates to a contract value.
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -74,3 +74,22 @@ export const ToAddress = (
     contract: IExpression<ValueAtom.contract>,
     line = new LineInfo(),
 ): IExpression<ValueAtom.address> => new Expression<ValueAtom.address>(ExpressionAtom.to_address, contract, line);
+
+/**
+ * Create an implicit account.
+ *
+ * ```typescript
+ * ImplicitAccount(Key_hash("tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN"));
+ * ```
+ *
+ * @category Contract
+ *
+ * @param contract An expression that evaluates to a contract value.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression of type `TContract(TUnit())`.
+ */
+export const ImplicitAccount = (
+    key_hash: IExpression<ValueAtom.key_hash>,
+    line = new LineInfo(),
+): IExpression<ValueAtom.contract> => new Expression(ExpressionAtom.implicit_account, key_hash, line);

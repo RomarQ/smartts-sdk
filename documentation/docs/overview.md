@@ -24,31 +24,17 @@ npm install @tezwell/smartts-sdk
 #### Build and compile a contract
 
 ```js
-const {
-    Equal,
-    Contract,
-    EntryPoint,
-    GetSender,
-    NewVariable,
-    Require,
-    SetValue,
-    TNat,
-    ContractStorage,
-    GetVariable,
-    Address,
-    Nat,
-    String
-} = require('@tezwell/smartts-sdk');
+const { Equal, Contract, EntryPoint,GetSender, NewVariable, Require, SetValue, TNat, ContractStorage, GetVariable, Address, Nat, String } = require('@tezwell/smartts-sdk');
 const SmartML = require('@tezwell/smartts-sdk/compiler');
 
 const contract = new Contract()
     .setStorage(Nat(0))
     .addEntrypoint(
         new EntryPoint('ep1').setInputType(TNat()).code((arg) => [
-            // Define a variable named "some_address"
-            NewVariable('some_address', Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT')),
-            // Require sender to be equal to variable "some_address", otherwise fail with "Not Admin!"
-            Require(Equal(GetVariable('some_address'), GetSender()), String('Not Admin!')),
+            // Define a variable named "an_address"
+            NewVariable('an_address', Address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT')),
+            // Require sender to be equal to variable "an_address", otherwise fail with "Not Admin!"
+            Require(Equal(GetVariable('an_address'), GetSender()), String('Not Admin!')),
             // Replace the storage value with entry point argument
             SetValue(ContractStorage(), arg),
         ]),
@@ -69,14 +55,7 @@ SmartML.compileContract(contract);
 #### Build and compile a lambda
 
 ```js
-const {
-    Comparison,
-    Lambda,
-    If,
-    Return,
-    String,
-    Nat
-} = require('@tezwell/smartts-sdk');
+const { Comparison, Lambda, If, Return, String, Nat } = require('@tezwell/smartts-sdk');
 const SmartML = require('@tezwell/smartts-sdk/compiler');
 
 // A Lambda that returns "YES" if the argument is greater than or equal to Nat(10), returns "NO" otherwise.

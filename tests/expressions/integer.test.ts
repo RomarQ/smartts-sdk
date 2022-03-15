@@ -1,7 +1,7 @@
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { SetValue } from '../../src/statement';
-import { CastToNat, ContractStorage, String, IsNat, GetSome, CastToInt } from '../../src/expression';
+import { CastToNat, ContractStorage, String, IsNat, GetSome, CastToInt, ABS } from '../../src/expression';
 import { TInt, TNat } from '../../src/type';
 
 describe('Integer expressions', () => {
@@ -36,6 +36,15 @@ describe('Integer expressions', () => {
             .setStorageType(TInt())
             .addEntrypoint(
                 new EntryPoint('ep1').setInputType(TNat()).code((arg) => [SetValue(ContractStorage(), CastToInt(arg))]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('ABS', () => {
+        const contract = new Contract()
+            .setStorageType(TNat())
+            .addEntrypoint(
+                new EntryPoint('ep1').setInputType(TInt()).code((arg) => [SetValue(ContractStorage(), ABS(arg))]),
             );
 
         verifyContractCompilationOutput(contract);

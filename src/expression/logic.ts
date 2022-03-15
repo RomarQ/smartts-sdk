@@ -11,7 +11,7 @@ import ValueAtom from '../core/enums/literal';
  * Or(Bool(true), Bool(false)); // Bool(true)
  * ```
  *
- * @category | Logic
+ * @category Logic
  *
  * @param left Boolean expression
  * @param right Boolean expression
@@ -32,7 +32,7 @@ export const Or = <T extends ValueAtom.nat | ValueAtom.bool>(
  * And(Bool(true), Bool(false)); // Bool(false)
  * ```
  *
- * @category | Logic
+ * @category Logic
  *
  * @param left Boolean expression
  * @param right Boolean expression
@@ -53,7 +53,7 @@ export const And = <T extends ValueAtom.nat | ValueAtom.int | ValueAtom.bool>(
  * Xor(Bool(true), Bool(false)); // Bool(true)
  * ```
  *
- * @category | Logic
+ * @category Logic
  *
  * @param left Boolean expression
  * @param right Boolean expression

@@ -1,5 +1,45 @@
 # Crypto
 
+## Signatures
+
+### Check Signature
+
+Verifies that a given sequence of bytes has been signed with a given key.
+
+- [TypeDoc](https://romarq.github.io/smartts-sdk/api/modules/expression.html#CheckSignature-1)
+
+```ts
+const {
+    Contract,
+    EntryPoint,
+    SetValue,
+    ContractStorage,
+    CheckSignature,
+    Some,
+    Key,
+    Bytes,
+    TBool,
+    TSignature
+} = require('@tezwell/smartts-sdk');
+
+const contract = new Contract()
+    .setStorageType(TBool())
+    .addEntrypoint(
+        new EntryPoint('check_signature')
+            .setInputType(TSignature())
+            .code((signature) => [
+                SetValue(
+                    ContractStorage(),
+                    CheckSignature(
+                        Key('edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT'),
+                        signature,
+                        Bytes('0x01'),
+                    ),
+                ),
+            ]),
+    );
+```
+
 ## Hashing
 
 ### SHA256
