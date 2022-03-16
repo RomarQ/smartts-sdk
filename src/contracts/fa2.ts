@@ -44,7 +44,7 @@ import { DeleteMapEntry, ForEachOf, MatchVariant, NewVariable, Require, Return, 
  * @enum
  */
 export enum FA2_Error {
-    NOT_ADMIN = 'FA2__Not_Admin',
+    NOT_ADMIN = 'FA2__NOT_ADMIN',
     NOT_OWNER = 'FA2__NOT_OWNER',
     PAUSED = 'FA2__PAUSED',
     TOKEN_UNDEFINED = 'FA2__TOKEN_UNDEFINED',

@@ -20,5 +20,5 @@ import { proxy } from '../misc/proxy';
  *
  * @returns {IExpression} An expression
  */
-export const AsType = (expression: IExpression, type: IType, line = new LineInfo()) =>
+export const AsType = (expression: IExpression, type: IType, line = new LineInfo()): IExpression<any> =>
     proxy(new Expression(ExpressionAtom.type_annotation, expression, type, line), Expression.proxyHandler);
