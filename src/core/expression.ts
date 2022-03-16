@@ -153,13 +153,19 @@ export class LambdaLiteral implements ILiteral<ValueAtom.lambda> {
     }
 
     toString() {
-        const expr = `(${ValueAtom.lambda} ${this.id} ${this.withStorage || 'None'} ${capitalizeBoolean(
-            this.withOperations,
-        )} "${this.argumentName}" ${this.line} (${this.statements.join(' ')}))`;
+        const expr = new Expression(
+            ValueAtom.lambda,
+            this.id,
+            this.withStorage || 'None',
+            capitalizeBoolean(this.withOperations),
+            `"${this.argumentName}"`,
+            this.line,
+            `(${this.statements.join(' ')})`,
+        );
 
         if (this.inType._type === TypeAtom.unknown) {
-            return expr;
+            return expr.toString();
         }
-        return AsType(expr as any, TLambda(this.inType, TUnknown())).toString();
+        return AsType(expr, TLambda(this.inType, TUnknown()), this.line).toString();
     }
 }

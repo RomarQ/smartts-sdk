@@ -17,6 +17,7 @@ import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput, verifyValueCompilationOutput } from '../util';
 import { If, MatchVariant, NewVariable, Return, SetValue } from '../../src/statement';
 import { TInt, TLambda, TNat, TPair, TString, TUnknown, TVariant } from '../../src/type';
+import { LineInfo } from '../../src/misc/utils';
 
 describe('Lambda expressions', () => {
     it('CallLambda', () => {

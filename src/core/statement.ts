@@ -68,7 +68,7 @@ export class IfStatment implements IStatement {
 
 export class VariantMatchStatement implements IStatement {
     static idCounter = 0;
-    private cases: Record<string, IStatement[]> = {};
+    private cases: Record<string, { argumentName: string; statements: IStatement[] }> = {};
 
     static get nextID() {
         return ++VariantMatchStatement.idCounter;
@@ -81,9 +81,14 @@ export class VariantMatchStatement implements IStatement {
         return this;
     }
 
-    public Case(branch: string, buildStatements: (arg: Proxied<IExpression<any>>) => IStatement[]): this {
-        const variantArgument = this.variantArgument(`${this.argumentName}_${branch}`, this.line);
-        this.cases[branch] = buildStatements(variantArgument);
+    public Case(
+        branch: string,
+        buildStatements: (arg: Proxied<IExpression<any>>) => IStatement[],
+        variantArgumentName?: string,
+    ): this {
+        variantArgumentName ||= `${this.argumentName}_${branch}`;
+        const variantArgument = this.variantArgument(variantArgumentName, this.line);
+        this.cases[branch] = { argumentName: variantArgumentName, statements: buildStatements(variantArgument) };
         return this;
     }
 
@@ -102,8 +107,8 @@ export class VariantMatchStatement implements IStatement {
                 StatementAtom.match,
                 caseArgument,
                 branch,
-                `"${this.argumentName}_${branch}"`,
-                `(${this.cases[branch].join(' ')})`,
+                `"${this.cases[branch].argumentName}"`,
+                `(${this.cases[branch].statements.join(' ')})`,
                 this.line,
             );
         });

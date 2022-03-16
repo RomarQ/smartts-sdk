@@ -3,16 +3,16 @@
 exports[`Lambda expressions CallLambda 1`] = `
 "
         (
-            template_id (static_id 0 (\\"lambda.test.ts\\" 31))
+            template_id (static_id 0 (\\"lambda.test.ts\\" 32))
             storage ()
             storage_type (\\"string\\")
-            messages ((entry_point_1 True False False True (\\"lambda.test.ts\\" 34) ((set_type (params (\\"lambda.test.ts\\" 34)) \\"nat\\" (\\"lambda.test.ts\\" 39)) (set (data) (call_lambda (type_annotation (lambda 1 None False \\"lambda_arg\\" (\\"lambda.test.ts\\" 23) ((ifBlock (gt (lambdaParams 1 \\"lambda_arg\\" (\\"lambda.test.ts\\" 23) \\"nat\\") (literal (nat 2) (\\"lambda.test.ts\\" 25)) (\\"lambda.test.ts\\" 25)) ((result (literal (string \\"YES\\") (\\"lambda.test.ts\\" 25)) (\\"lambda.test.ts\\" 25))) (\\"lambda.test.ts\\" 25)) (elseBlock ((result (literal (string \\"NO\\") (\\"lambda.test.ts\\" 25)) (\\"lambda.test.ts\\" 25)))))) (lambda \\"nat\\" (unknown 0)) (\\"\\" -1)) (params (\\"lambda.test.ts\\" 34)) (\\"lambda.test.ts\\" 36)) (\\"lambda.test.ts\\" 36)))))
+            messages ((entry_point_1 True False False True (\\"lambda.test.ts\\" 35) ((set_type (params (\\"lambda.test.ts\\" 35)) \\"nat\\" (\\"lambda.test.ts\\" 40)) (set (data) (call_lambda (type_annotation (lambda 1 None False \\"lambda_arg\\" (\\"lambda.test.ts\\" 24) ((ifBlock (gt (lambdaParams 1 \\"lambda_arg\\" (\\"lambda.test.ts\\" 24) \\"nat\\") (literal (nat 2) (\\"lambda.test.ts\\" 26)) (\\"lambda.test.ts\\" 26)) ((result (literal (string \\"YES\\") (\\"lambda.test.ts\\" 26)) (\\"lambda.test.ts\\" 26))) (\\"lambda.test.ts\\" 26)) (elseBlock ((result (literal (string \\"NO\\") (\\"lambda.test.ts\\" 26)) (\\"lambda.test.ts\\" 26)))))) (lambda \\"nat\\" (unknown 0)) (\\"lambda.test.ts\\" 24)) (params (\\"lambda.test.ts\\" 35)) (\\"lambda.test.ts\\" 37)) (\\"lambda.test.ts\\" 37)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"lambda.test.ts\\" 31))
+            balance (literal (mutez 0) (\\"lambda.test.ts\\" 32))
         )
         "
 `;
@@ -113,7 +113,7 @@ exports[`Lambda expressions CallLambda 2`] = `
 }"
 `;
 
-exports[`Lambda expressions Lambda with variant 1`] = `"(type_annotation (lambda 2 None False \\"lambda_arg\\" (\\"lambda.test.ts\\" 42) ((defineLocal \\"result\\" (literal (int 0) (\\"lambda.test.ts\\" 49)) True (\\"lambda.test.ts\\" 49)) (match_cases (lambdaParams 2 \\"lambda_arg\\" (\\"lambda.test.ts\\" 42) (variant ((add (tuple \\"int\\" \\"int\\")) (subtract (tuple \\"int\\" \\"int\\"))) (Some ((\\"add\\") (\\"subtract\\"))) (\\"\\" -1))) \\"__MATCH_1__\\" ((match (cases_arg \\"__MATCH_1__\\" (\\"lambda.test.ts\\" 49)) add \\"__MATCH_1___add\\" ((set (getLocal \\"result\\" (\\"lambda.test.ts\\" 49)) (add (first (variant_arg \\"__MATCH_1___add\\" (\\"lambda.test.ts\\" 49)) (\\"lambda.test.ts\\" 49)) (second (variant_arg \\"__MATCH_1___add\\" (\\"lambda.test.ts\\" 49)) (\\"lambda.test.ts\\" 49)) (\\"lambda.test.ts\\" 49)) (\\"lambda.test.ts\\" 49))) (\\"lambda.test.ts\\" 49)) (match (cases_arg \\"__MATCH_1__\\" (\\"lambda.test.ts\\" 49)) subtract \\"__MATCH_1___subtract\\" ((set (getLocal \\"result\\" (\\"lambda.test.ts\\" 49)) (sub (first (variant_arg \\"__MATCH_1___subtract\\" (\\"lambda.test.ts\\" 49)) (\\"lambda.test.ts\\" 49)) (second (variant_arg \\"__MATCH_1___subtract\\" (\\"lambda.test.ts\\" 49)) (\\"lambda.test.ts\\" 49)) (\\"lambda.test.ts\\" 49)) (\\"lambda.test.ts\\" 49))) (\\"lambda.test.ts\\" 49))) (\\"lambda.test.ts\\" 49)) (result (getLocal \\"result\\" (\\"lambda.test.ts\\" 49)) (\\"lambda.test.ts\\" 49)))) (lambda (variant ((add (tuple \\"int\\" \\"int\\")) (subtract (tuple \\"int\\" \\"int\\"))) (Some ((\\"add\\") (\\"subtract\\"))) (\\"\\" -1)) (unknown 0)) (\\"lambda.test.ts\\" 64))"`;
+exports[`Lambda expressions Lambda with variant 1`] = `"(type_annotation (lambda 2 None False \\"lambda_arg\\" (\\"lambda.test.ts\\" 43) ((defineLocal \\"result\\" (literal (int 0) (\\"lambda.test.ts\\" 50)) True (\\"lambda.test.ts\\" 50)) (match_cases (lambdaParams 2 \\"lambda_arg\\" (\\"lambda.test.ts\\" 43) (variant ((add (tuple \\"int\\" \\"int\\")) (subtract (tuple \\"int\\" \\"int\\"))) (Some ((\\"add\\") (\\"subtract\\"))) (\\"\\" -1))) \\"__MATCH_1__\\" ((match (cases_arg \\"__MATCH_1__\\" (\\"lambda.test.ts\\" 50)) add \\"__MATCH_1___add\\" ((set (getLocal \\"result\\" (\\"lambda.test.ts\\" 50)) (add (first (variant_arg \\"__MATCH_1___add\\" (\\"lambda.test.ts\\" 50)) (\\"lambda.test.ts\\" 50)) (second (variant_arg \\"__MATCH_1___add\\" (\\"lambda.test.ts\\" 50)) (\\"lambda.test.ts\\" 50)) (\\"lambda.test.ts\\" 50)) (\\"lambda.test.ts\\" 50))) (\\"lambda.test.ts\\" 50)) (match (cases_arg \\"__MATCH_1__\\" (\\"lambda.test.ts\\" 50)) subtract \\"__MATCH_1___subtract\\" ((set (getLocal \\"result\\" (\\"lambda.test.ts\\" 50)) (sub (first (variant_arg \\"__MATCH_1___subtract\\" (\\"lambda.test.ts\\" 50)) (\\"lambda.test.ts\\" 50)) (second (variant_arg \\"__MATCH_1___subtract\\" (\\"lambda.test.ts\\" 50)) (\\"lambda.test.ts\\" 50)) (\\"lambda.test.ts\\" 50)) (\\"lambda.test.ts\\" 50))) (\\"lambda.test.ts\\" 50))) (\\"lambda.test.ts\\" 50)) (result (getLocal \\"result\\" (\\"lambda.test.ts\\" 50)) (\\"lambda.test.ts\\" 50)))) (lambda (variant ((add (tuple \\"int\\" \\"int\\")) (subtract (tuple \\"int\\" \\"int\\"))) (Some ((\\"add\\") (\\"subtract\\"))) (\\"\\" -1)) (unknown 0)) (\\"lambda.test.ts\\" 43))"`;
 
 exports[`Lambda expressions Lambda with variant 2`] = `
 "{

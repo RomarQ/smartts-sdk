@@ -908,7 +908,7 @@ exports[`Test Literals lambda 1`] = `
 "
         (
             template_id (static_id 0 (\\"literals.test.ts\\" 72))
-            storage (type_annotation (lambda 1 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 78) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"literals.test.ts\\" 78) \\"string\\") (\\"literals.test.ts\\" 78)))) (lambda \\"string\\" (unknown 0)) (\\"literals.test.ts\\" 74))
+            storage (type_annotation (lambda 1 None False \\"lambda_arg\\" (\\"literals.test.ts\\" 78) ((result (lambdaParams 1 \\"lambda_arg\\" (\\"literals.test.ts\\" 78) \\"string\\") (\\"literals.test.ts\\" 78)))) (lambda \\"string\\" (unknown 0)) (\\"literals.test.ts\\" 78))
             storage_type ((lambda \\"string\\" \\"string\\"))
             messages ()
             flags ()
