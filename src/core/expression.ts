@@ -7,6 +7,8 @@ import { capitalizeBoolean, LineInfo, parenthesis } from '../misc/utils';
 import ValueAtom from './enums/literal';
 import TypeAtom from './enums/type';
 import { Proxied } from '../misc/proxy';
+import { AsType } from '../expression/type';
+import { TLambda, TUnknown } from '../type';
 
 export class Expression<T extends ValueAtom> implements IExpression<T> {
     _isExpression = true as const;
@@ -120,7 +122,7 @@ export class LambdaLiteral implements ILiteral<ValueAtom.lambda> {
     _isExpression = true as const;
     // Used for type checking
     _type = ValueAtom.lambda as const;
-    type = {} as unknown as IType;
+    type = {} as IType;
     static idCounter = 0;
     private identifier: number;
     private withStorage?: 'read-write' | 'read-only';
@@ -151,8 +153,13 @@ export class LambdaLiteral implements ILiteral<ValueAtom.lambda> {
     }
 
     toString() {
-        return `(${ValueAtom.lambda} ${this.id} ${this.withStorage || 'None'} ${capitalizeBoolean(
+        const expr = `(${ValueAtom.lambda} ${this.id} ${this.withStorage || 'None'} ${capitalizeBoolean(
             this.withOperations,
         )} "${this.argumentName}" ${this.line} (${this.statements.join(' ')}))`;
+
+        if (this.inType._type === TypeAtom.unknown) {
+            return expr;
+        }
+        return AsType(expr as any, TLambda(this.inType, TUnknown())).toString();
     }
 }
