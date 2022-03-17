@@ -37,7 +37,7 @@ import {
     TContract,
     TVariant,
 } from '../type';
-import { DeleteMapEntry, ForEachOf, MatchVariant, NewVariable, Require, Return, SetValue } from '../statement';
+import { If, DeleteMapEntry, ForEachOf, MatchVariant, NewVariable, Require, Return, SetValue } from '../statement';
 
 /**
  * FA2 Error Codes
@@ -171,6 +171,7 @@ export class FA2_Type {
                 address: TAddress(),
                 amount: TNat(),
                 token_id: TNat(),
+                metadata: TMap(TString(), TBytes()),
             },
             // Uses right combs by default
         ),
@@ -355,6 +356,22 @@ export const FA2_Contract = new Contract()
             SetValue(
                 GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key')),
                 Record({ balance: Math.Add(GetVariable('balance'), entrypoint_arg.amount) }),
+            ),
+            // Set metadata if it does not exist
+            If(MapContainsKey(ContractStorage().assets.token_metadata, entrypoint_arg.token_id)).Else([
+                SetValue(
+                    GetMapValue(ContractStorage().assets.token_metadata, entrypoint_arg.token_id),
+                    Record({ token_id: entrypoint_arg.token_id, token_info: entrypoint_arg.metadata }),
+                ),
+            ]),
+            // Update token total supply
+            NewVariable(
+                'token_total_supply',
+                GetMapValue(ContractStorage().assets.token_total_supply, entrypoint_arg.token_id, Nat(0)),
+            ),
+            SetValue(
+                GetMapValue(ContractStorage().assets.token_total_supply, entrypoint_arg.token_id),
+                Math.Add(GetVariable('token_total_supply'), entrypoint_arg.amount),
             ),
         ]),
     )
