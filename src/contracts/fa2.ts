@@ -313,12 +313,12 @@ export const FA2_Contract = new Contract()
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('balance_of').setInputType(FA2_Type.Entrypoint.BalanceOf).code((entrypoint_arg) => [
+        new EntryPoint('balance_of').setInputType(FA2_Type.Entrypoint.BalanceOf).code(({ requests, callback }) => [
             // Fail if contract is paused
             FA2_Utils.FailIfContractIsPaused(),
             // Iterate over each request "list(requests)" and compute responses
             NewVariable('responses', List([])),
-            ForEachOf(entrypoint_arg.requests).Do((request) => [
+            ForEachOf(requests).Do((request) => [
                 // Fail if the token does not exist
                 Require(
                     MapContainsKey(ContractStorage().assets.token_total_supply, request.token_id),
@@ -340,40 +340,54 @@ export const FA2_Contract = new Contract()
                 ),
             ]),
             // Callback the requester with a response
-            Transfer(entrypoint_arg.callback, Mutez(0), GetVariable('responses')).send(),
+            Transfer(callback, Mutez(0), GetVariable('responses')).send(),
         ]),
     )
     .addEntrypoint(
-        new EntryPoint('mint').setInputType(FA2_Type.Entrypoint.Mint).code((entrypoint_arg) => [
-            // Sender must be the administrator
-            FA2_Utils.FailIfSenderIsNotAdmin(),
-            NewVariable('ledger_key', Pair(entrypoint_arg.address, entrypoint_arg.token_id)),
-            NewVariable(
-                'balance',
-                GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key'), Record({ balance: Nat(0) }))
-                    .balance,
-            ),
-            SetValue(
-                GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key')),
-                Record({ balance: Math.Add(GetVariable('balance'), entrypoint_arg.amount) }),
-            ),
-            // Set metadata if it does not exist
-            If(MapContainsKey(ContractStorage().assets.token_metadata, entrypoint_arg.token_id)).Else([
+        new EntryPoint('mint')
+            .setInputType(FA2_Type.Entrypoint.Mint)
+            .code(({ address, amount, token_id, metadata }) => [
+                // Sender must be the administrator
+                FA2_Utils.FailIfSenderIsNotAdmin(),
+                NewVariable('ledger_key', Pair(address, token_id)),
+                NewVariable(
+                    'balance',
+                    GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key'), Record({ balance: Nat(0) }))
+                        .balance,
+                ),
                 SetValue(
-                    GetMapValue(ContractStorage().assets.token_metadata, entrypoint_arg.token_id),
-                    Record({ token_id: entrypoint_arg.token_id, token_info: entrypoint_arg.metadata }),
+                    GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key')),
+                    Record({ balance: Math.Add(GetVariable('balance'), amount) }),
+                ),
+                // Set metadata if it does not exist
+                If(MapContainsKey(ContractStorage().assets.token_metadata, token_id))
+                    .Then([
+                        ForEachOf(GetMapEntries(metadata)).Do(({ key, value }) => [
+                            SetValue(
+                                GetMapValue(
+                                    GetMapValue(ContractStorage().assets.token_metadata, token_id).token_info,
+                                    key,
+                                ),
+                                value,
+                            ),
+                        ]),
+                    ])
+                    .Else([
+                        SetValue(
+                            GetMapValue(ContractStorage().assets.token_metadata, token_id),
+                            Record({ token_id: token_id, token_info: metadata }),
+                        ),
+                    ]),
+                // Update token total supply
+                NewVariable(
+                    'token_total_supply',
+                    GetMapValue(ContractStorage().assets.token_total_supply, token_id, Nat(0)),
+                ),
+                SetValue(
+                    GetMapValue(ContractStorage().assets.token_total_supply, token_id),
+                    Math.Add(GetVariable('token_total_supply'), amount),
                 ),
             ]),
-            // Update token total supply
-            NewVariable(
-                'token_total_supply',
-                GetMapValue(ContractStorage().assets.token_total_supply, entrypoint_arg.token_id, Nat(0)),
-            ),
-            SetValue(
-                GetMapValue(ContractStorage().assets.token_total_supply, entrypoint_arg.token_id),
-                Math.Add(GetVariable('token_total_supply'), entrypoint_arg.amount),
-            ),
-        ]),
     )
     .addEntrypoint(
         new EntryPoint('pause').setInputType(TBool()).code((paused) => [
