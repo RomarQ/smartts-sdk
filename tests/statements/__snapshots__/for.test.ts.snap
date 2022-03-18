@@ -178,7 +178,8 @@ exports[`Test (For) statement Append iterator to a list 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TList(sp.TNat))\\\\n    self.init([])\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    some_list = sp.local(\\\\\\"some_list\\\\\\", sp.list([]))\\\\n    __ITERATOR_FOR_2__ = sp.local(\\\\\\"__ITERATOR_FOR_2__\\\\\\", 0)\\\\n    sp.while __ITERATOR_FOR_2__.value <= 3:\\\\n      some_list.value.push(__ITERATOR_FOR_2__.value)\\\\n      __ITERATOR_FOR_2__.value += 1\\\\n    self.data = some_list.value\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -384,6 +385,7 @@ exports[`Test (For) statement Sum values from 0 to 10 (Inclusive) 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n    self.init(0)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TNat)\\\\n    __ITERATOR_FOR_1__ = sp.local(\\\\\\"__ITERATOR_FOR_1__\\\\\\", 0)\\\\n    sp.while __ITERATOR_FOR_1__.value <= params:\\\\n      self.data += __ITERATOR_FOR_1__.value\\\\n      __ITERATOR_FOR_1__.value += 1\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;

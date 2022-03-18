@@ -283,7 +283,8 @@ exports[`Unary expressions Negate 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TRecord(bls12_381_fr = sp.TOption(sp.TBls12_381_fr), bls12_381_g1 = sp.TOption(sp.TBls12_381_g1), bls12_381_g2 = sp.TOption(sp.TBls12_381_g2), int = sp.TOption(sp.TInt), nat = sp.TOption(sp.TInt)).layout((\\\\\\"nat\\\\\\", (\\\\\\"int\\\\\\", (\\\\\\"bls12_381_fr\\\\\\", (\\\\\\"bls12_381_g1\\\\\\", \\\\\\"bls12_381_g2\\\\\\"))))))\\\\n    self.init(bls12_381_fr = sp.none,\\\\n              bls12_381_g1 = sp.none,\\\\n              bls12_381_g2 = sp.none,\\\\n              int = sp.none,\\\\n              nat = sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TNat)\\\\n    self.data.nat = sp.some(- params)\\\\n\\\\n  @sp.entry_point\\\\n  def ep2(self, params):\\\\n    sp.set_type(params, sp.TInt)\\\\n    self.data.int = sp.some(- params)\\\\n\\\\n  @sp.entry_point\\\\n  def ep3(self, params):\\\\n    sp.set_type(params, sp.TBls12_381_fr)\\\\n    self.data.bls12_381_fr = sp.some(- params)\\\\n\\\\n  @sp.entry_point\\\\n  def ep4(self, params):\\\\n    sp.set_type(params, sp.TBls12_381_g1)\\\\n    self.data.bls12_381_g1 = sp.some(- params)\\\\n\\\\n  @sp.entry_point\\\\n  def ep5(self, params):\\\\n    sp.set_type(params, sp.TBls12_381_g2)\\\\n    self.data.bls12_381_g2 = sp.some(- params)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -359,6 +360,7 @@ exports[`Unary expressions Not 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBool))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TBool)\\\\n    self.data = sp.some(~ params)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;

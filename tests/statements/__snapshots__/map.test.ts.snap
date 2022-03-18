@@ -91,7 +91,8 @@ exports[`Test Map statements DeleteMapEntry on BigMap 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBigMap(sp.TString, sp.TNat))\\\\n    self.init({'some_key' : 1})\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TString)\\\\n    del self.data[params]\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -186,6 +187,7 @@ exports[`Test Map statements DeleteMapEntry on Map 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TMap(sp.TString, sp.TNat))\\\\n    self.init({'some_key' : 1})\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TString)\\\\n    del self.data[params]\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;

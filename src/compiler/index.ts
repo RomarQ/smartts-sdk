@@ -17,7 +17,7 @@ interface CompilationResult {
  *
  * @returns {CompilationResult} Compilation result
  */
-export const compileContract = (contract: Contract): CompilationResult => {
+export const compileContract = (contract: Contract): CompilationResult & { smartpy: string } => {
     try {
         return JSON.parse(SmartML.compile_contract(contract[Symbol.toPrimitive]()));
     } catch (error: any) {

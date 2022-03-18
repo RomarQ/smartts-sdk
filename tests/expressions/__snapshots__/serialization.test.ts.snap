@@ -77,6 +77,7 @@ exports[`Serialization Expressions Packing & Unpacking 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TString))\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.unpack(sp.pack(params), sp.TString)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;

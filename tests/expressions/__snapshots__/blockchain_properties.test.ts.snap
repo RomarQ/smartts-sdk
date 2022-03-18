@@ -72,7 +72,8 @@ exports[`Test blockchain operations AMOUNT 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TMutez))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.amount)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -148,7 +149,8 @@ exports[`Test blockchain operations BALANCE 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TMutez))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.balance)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -230,7 +232,8 @@ exports[`Test blockchain operations CHAIN_ID 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TChainId))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.chain_id)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -312,7 +315,8 @@ exports[`Test blockchain operations LEVEL 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TNat))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.level)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -388,7 +392,8 @@ exports[`Test blockchain operations NOW 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TTimestamp))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.now)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -472,7 +477,8 @@ exports[`Test blockchain operations SELF 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TContract(sp.TUnit)))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.self_entry_point('ep1'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -548,7 +554,8 @@ exports[`Test blockchain operations SELF_ADDRESS 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TAddress))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.self_address)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -624,7 +631,8 @@ exports[`Test blockchain operations SENDER 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TAddress))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.sender)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -700,7 +708,8 @@ exports[`Test blockchain operations SOURCE 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TAddress))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.source)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -782,7 +791,8 @@ exports[`Test blockchain operations TOTAL_VOTING_POWER 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TNat))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.total_voting_power)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -869,6 +879,7 @@ exports[`Test blockchain operations VOTING_POWER 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TNat))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.some(sp.voting_power(sp.key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;

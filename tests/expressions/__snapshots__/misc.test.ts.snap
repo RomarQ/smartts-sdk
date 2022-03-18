@@ -124,7 +124,8 @@ exports[`Misc expressions Concat 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TPair(sp.TString, sp.TBytes))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = (sp.concat(sp.list(['Hello', ' ', 'World'])), sp.concat(sp.list([sp.bytes('0x01'), sp.bytes('0x02')])))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
 
@@ -221,6 +222,7 @@ exports[`Misc expressions SizeOf 2`] = `
                 ]
             ]
         }
-    ]
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.len('Hello')\\\\n    self.data = sp.len(sp.bytes('0x01'))\\\\n    self.data = sp.len(sp.list([1]))\\\\n    self.data = sp.len(sp.set([1]))\\\\n    self.data = sp.len({1 : 2})\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
 }"
 `;
