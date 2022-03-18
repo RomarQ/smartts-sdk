@@ -123,6 +123,22 @@ assert.deepEqual(SmartML.compileContract(contract), {
             ],
         },
     ],
+    smartpy:
+        'import smartpy as sp\n' +
+        '\n' +
+        'class Contract(sp.Contract):\n' +
+        '  def __init__(self):\n' +
+        '    self.init_type(sp.TNat)\n' +
+        '    self.init(0)\n' +
+        '\n' +
+        '  @sp.entry_point\n' +
+        '  def ep1(self, params):\n' +
+        '    sp.set_type(params, sp.TNat)\n' +
+        `    some_address = sp.local("some_address", sp.address('tz1'))\n` +
+        "    sp.verify(some_address.value == sp.sender, 'Not Admin!')\n" +
+        '    self.data = params\n' +
+        '\n' +
+        'sp.add_compilation_target("test", Contract())',
 });
 
 console.info('[Passes] - CommonJS');
