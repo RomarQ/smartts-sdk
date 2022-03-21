@@ -1,10 +1,10 @@
 import type { IExpression } from '../typings/expression';
 import ExpressionAtom from '../core/enums/expression';
-import ValueAtom from '../core/enums/literal';
 import { Expression } from '../core/expression';
 import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
 import { Some } from './literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Open a variant
@@ -21,7 +21,7 @@ import { Some } from './literal';
  * @returns {IExpression} An expression
  */
 export const OpenVariant = (
-    variant: IExpression<ValueAtom.option | ValueAtom.variant>,
+    variant: IExpression<MichelsonType.option | MichelsonType.or>,
     branch = 'Some',
     errorMsg?: IExpression,
     line = new LineInfo(),
@@ -45,7 +45,7 @@ export const OpenVariant = (
  * @returns {IExpression} An expression
  */
 export const GetSome = (
-    variant: IExpression<ValueAtom.option>,
+    variant: IExpression<MichelsonType.option>,
     errorMsg?: IExpression,
     line = new LineInfo(),
 ): IExpression<any> => proxy(OpenVariant(variant, 'Some', errorMsg, line), Expression.proxyHandler);
@@ -65,10 +65,10 @@ export const GetSome = (
  * @returns {IExpression} An expression
  */
 export const IsVariant = (
-    variant: IExpression<ValueAtom.option | ValueAtom.variant>,
+    variant: IExpression<MichelsonType.option | MichelsonType.or>,
     branch: string,
     line = new LineInfo(),
-): IExpression<ValueAtom.bool> => new Expression(ExpressionAtom.isVariant, variant, `"${branch}"`, line);
+): IExpression<MichelsonType.bool> => new Expression(ExpressionAtom.isVariant, variant, `"${branch}"`, line);
 
 const Variant = { OpenVariant, IsVariant, GetSome };
 

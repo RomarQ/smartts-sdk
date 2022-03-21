@@ -29,12 +29,6 @@ export enum ValueAtom {
     ticket = 'ticket',
     sapling_state = 'sapling_empty_state',
     lambda = 'lambda',
-    //
-    operation = 'operation',
-    option = 'option',
-    contract = 'contract',
-    chain_id = 'chain_id',
-    sapling_transaction = 'sapling_transaction',
 }
 
 export default ValueAtom;

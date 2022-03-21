@@ -1,5 +1,5 @@
 import ExpressionAtom from '../core/enums/expression';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 import { Expression } from '../core/expression';
 import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
@@ -23,7 +23,7 @@ import { Unit } from './literal';
  * @returns {IExpression} An expression.
  */
 export const CallLambda = (
-    expression: IExpression<ValueAtom.lambda>,
+    expression: IExpression<MichelsonType.lambda>,
     argument: IExpression = Unit(),
     line = new LineInfo(),
 ) => proxy(new Expression(ExpressionAtom.call_lambda, expression, argument, line), Expression.proxyHandler);

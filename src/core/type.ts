@@ -2,7 +2,7 @@ import { composeRightCombLayout, parenthesis } from '../misc/utils';
 import { ILayout } from '../typings/literal';
 import { IType } from '../typings/type';
 import { Layout } from './enums/layout';
-import TypeAtom from './enums/type';
+import { TypeAtom } from './enums/type';
 
 export class SimpleType<T extends TypeAtom> implements IType<T> {
     // Used for type checking

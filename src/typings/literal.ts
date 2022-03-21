@@ -1,6 +1,6 @@
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 import { IExpression } from './expression';
 
 export type ILayout = (string | ILayout)[];
 
-export type ILiteral<T extends ValueAtom = ValueAtom> = IExpression<T>;
+export type ILiteral<T extends MichelsonType = MichelsonType> = IExpression<T>;

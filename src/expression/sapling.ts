@@ -1,5 +1,5 @@
 import ExpressionAtom from '../core/enums/expression';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 import { Expression } from '../core/expression';
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
@@ -37,7 +37,7 @@ export const EmptySaplingState = (memo: number, line = new LineInfo()) =>
  * @returns {IExpression} An expression of type `TOption(TPair(TInt(), TSaplingState(@memo_size)))`
  */
 export const ApplySaplingUpdate = (
-    state: IExpression<ValueAtom.sapling_state>,
-    transition: IExpression<ValueAtom.sapling_transaction>,
+    state: IExpression<MichelsonType.sapling_state>,
+    transition: IExpression<MichelsonType.sapling_transaction>,
     line = new LineInfo(),
-): IExpression<ValueAtom.option> => new Expression(ExpressionAtom.sapling_verify_update, state, transition, line);
+): IExpression<MichelsonType.option> => new Expression(ExpressionAtom.sapling_verify_update, state, transition, line);

@@ -7,16 +7,16 @@ import { PrependToList } from './list';
 import { Mutez, None, Unit } from './literal';
 import { Contract } from '../core';
 import { GetOperations, GetProperty } from './variables';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
-class OperationExpression extends Expression<ValueAtom.operation> {
+class OperationExpression extends Expression<MichelsonType.operation> {
     send(line = new LineInfo()) {
         const operations = GetOperations();
         return SetValue(operations, PrependToList(operations, this, line), line);
     }
 }
 
-class OriginationExpression extends Expression<ValueAtom.operation> {
+class OriginationExpression extends Expression<MichelsonType.operation> {
     getAddress() {
         return GetProperty(this, 'address');
     }
@@ -52,8 +52,8 @@ class OriginationExpression extends Expression<ValueAtom.operation> {
  * @returns {IExpression} An expression
  */
 export const Transfer = (
-    contract: IExpression<ValueAtom.contract>,
-    amount: IExpression<ValueAtom.mutez>,
+    contract: IExpression<MichelsonType.contract>,
+    amount: IExpression<MichelsonType.mutez>,
     argument: IExpression = Unit(),
     line = new LineInfo(),
 ) => new OperationExpression(ExpressionAtom.transfer, argument, amount, contract, line);
@@ -76,7 +76,7 @@ export const Transfer = (
  *
  * @returns {IExpression} An expression
  */
-export const SetDelegate = (keyHash: IExpression<ValueAtom.option>, line = new LineInfo()) =>
+export const SetDelegate = (keyHash: IExpression<MichelsonType.option>, line = new LineInfo()) =>
     new OperationExpression(ExpressionAtom.set_delegate, keyHash, line);
 
 /**
@@ -103,8 +103,8 @@ export const SetDelegate = (keyHash: IExpression<ValueAtom.option>, line = new L
 export const CreateContract = (
     contract: Contract,
     storage: IExpression,
-    initial_balance: IExpression<ValueAtom.mutez> = Mutez(0),
-    delegate: IExpression<ValueAtom.option> = None(),
+    initial_balance: IExpression<MichelsonType.mutez> = Mutez(0),
+    delegate: IExpression<MichelsonType.option> = None(),
     line = new LineInfo(),
 ) => {
     const contract_param = new Expression(ExpressionAtom.contract, contract[Symbol.toPrimitive]());

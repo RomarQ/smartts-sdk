@@ -4,7 +4,7 @@ import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { List } from './literal';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Concatenate a list with values of type `TString()` or `TBytes()`.
@@ -20,8 +20,10 @@ import ValueAtom from '../core/enums/literal';
  *
  * @returns {IExpression} An expression.
  */
-export const Concat = <T extends ValueAtom.bytes | ValueAtom.string>(values: IExpression<T>[], line = new LineInfo()) =>
-    proxy(new Expression<T>(ExpressionAtom.concat, List(values), line), Expression.proxyHandler);
+export const Concat = <T extends MichelsonType.bytes | MichelsonType.string>(
+    values: IExpression<T>[],
+    line = new LineInfo(),
+) => proxy(new Expression<T>(ExpressionAtom.concat, List(values), line), Expression.proxyHandler);
 
 /**
  * Obtain size of values with type `TString()`, `TBytes()`, `TList(...)`, `TSet(...)` and `TMap()`.
@@ -38,6 +40,8 @@ export const Concat = <T extends ValueAtom.bytes | ValueAtom.string>(values: IEx
  * @returns {IExpression} An expression.
  */
 export const SizeOf = (
-    value: IExpression<ValueAtom.bytes | ValueAtom.string | ValueAtom.list | ValueAtom.set | ValueAtom.map>,
+    value: IExpression<
+        MichelsonType.bytes | MichelsonType.string | MichelsonType.list | MichelsonType.set | MichelsonType.map
+    >,
     line = new LineInfo(),
-) => proxy(new Expression<ValueAtom.nat>(ExpressionAtom.size, value, line), Expression.proxyHandler);
+) => proxy(new Expression<MichelsonType.nat>(ExpressionAtom.size, value, line), Expression.proxyHandler);

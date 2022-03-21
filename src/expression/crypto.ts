@@ -2,7 +2,7 @@ import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { Expression } from '../core/expression';
 import ExpressionAtom from '../core/enums/expression';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Compute a Blake2B cryptographic hash
@@ -18,8 +18,8 @@ import ValueAtom from '../core/enums/literal';
  *
  * @returns {IExpression} An expression
  */
-export const BLAKE2B = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo()) =>
-    new Expression<ValueAtom.bytes>(ExpressionAtom.blake2b, bytes, line);
+export const BLAKE2B = (bytes: IExpression<MichelsonType.bytes>, line = new LineInfo()) =>
+    new Expression<MichelsonType.bytes>(ExpressionAtom.blake2b, bytes, line);
 
 /**
  * Compute a SHA-256 cryptographic hash
@@ -35,8 +35,8 @@ export const BLAKE2B = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo
  *
  * @returns {IExpression} An expression
  */
-export const SHA256 = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo()) =>
-    new Expression<ValueAtom.bytes>(ExpressionAtom.sha256, bytes, line);
+export const SHA256 = (bytes: IExpression<MichelsonType.bytes>, line = new LineInfo()) =>
+    new Expression<MichelsonType.bytes>(ExpressionAtom.sha256, bytes, line);
 
 /**
  * Compute a SHA-512 cryptographic hash
@@ -52,8 +52,8 @@ export const SHA256 = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo(
  *
  * @returns {IExpression} An expression
  */
-export const SHA512 = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo()) =>
-    new Expression<ValueAtom.bytes>(ExpressionAtom.sha512, bytes, line);
+export const SHA512 = (bytes: IExpression<MichelsonType.bytes>, line = new LineInfo()) =>
+    new Expression<MichelsonType.bytes>(ExpressionAtom.sha512, bytes, line);
 
 /**
  * Compute a SHA3-256 cryptographic hash
@@ -69,8 +69,8 @@ export const SHA512 = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo(
  *
  * @returns {IExpression} An expression
  */
-export const SHA3 = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo()) =>
-    new Expression<ValueAtom.bytes>(ExpressionAtom.sha3, bytes, line);
+export const SHA3 = (bytes: IExpression<MichelsonType.bytes>, line = new LineInfo()) =>
+    new Expression<MichelsonType.bytes>(ExpressionAtom.sha3, bytes, line);
 
 /**
  * Compute a Keccak-256 cryptographic hash
@@ -86,8 +86,8 @@ export const SHA3 = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo())
  *
  * @returns {IExpression} An expression
  */
-export const KECCAK = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo()) =>
-    new Expression<ValueAtom.bytes>(ExpressionAtom.keccak, bytes, line);
+export const KECCAK = (bytes: IExpression<MichelsonType.bytes>, line = new LineInfo()) =>
+    new Expression<MichelsonType.bytes>(ExpressionAtom.keccak, bytes, line);
 
 /**
  * Verifies that a given sequence of bytes has been signed with a given key.
@@ -106,11 +106,11 @@ export const KECCAK = (bytes: IExpression<ValueAtom.bytes>, line = new LineInfo(
  * @returns {IExpression} An expression of type `TBool()`.
  */
 export const CheckSignature = (
-    key: IExpression<ValueAtom.key>,
-    signature: IExpression<ValueAtom.signature>,
-    bytes: IExpression<ValueAtom.bytes>,
+    key: IExpression<MichelsonType.key>,
+    signature: IExpression<MichelsonType.signature>,
+    bytes: IExpression<MichelsonType.bytes>,
     line = new LineInfo(),
-) => new Expression<ValueAtom.bool>(ExpressionAtom.check_signature, key, signature, bytes, line);
+) => new Expression<MichelsonType.bool>(ExpressionAtom.check_signature, key, signature, bytes, line);
 
 export const Crypto = {
     BLAKE2B,

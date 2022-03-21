@@ -2,6 +2,7 @@ import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { Expression } from '../core/expression';
 import ExpressionAtom from '../core/enums/expression';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Check if a value is less than another value.
@@ -19,7 +20,7 @@ import ExpressionAtom from '../core/enums/expression';
  * @returns {IExpression} An expression
  */
 export const LessThan = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new Expression(ExpressionAtom.lt, left, right, line);
+    new Expression<MichelsonType.bool>(ExpressionAtom.lt, left, right, line);
 
 /**
  * Check if a value is greater than another value.
@@ -37,7 +38,7 @@ export const LessThan = (left: IExpression, right: IExpression, line = new LineI
  * @returns {IExpression} An expression
  */
 export const GreaterThan = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new Expression(ExpressionAtom.gt, left, right, line);
+    new Expression<MichelsonType.bool>(ExpressionAtom.gt, left, right, line);
 
 /**
  * Check if a value is less than or equal another value.
@@ -55,7 +56,7 @@ export const GreaterThan = (left: IExpression, right: IExpression, line = new Li
  * @returns {IExpression} An expression
  */
 export const LessThanOrEqual = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new Expression(ExpressionAtom.le, left, right, line);
+    new Expression<MichelsonType.bool>(ExpressionAtom.le, left, right, line);
 
 /**
  * Check if a value is greater than or equal another value.
@@ -73,7 +74,7 @@ export const LessThanOrEqual = (left: IExpression, right: IExpression, line = ne
  * @returns {IExpression} An expression
  */
 export const GreaterThanOrEqual = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new Expression(ExpressionAtom.ge, left, right, line);
+    new Expression<MichelsonType.bool>(ExpressionAtom.ge, left, right, line);
 
 export const Comparison = {
     LessThan,

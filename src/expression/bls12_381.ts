@@ -2,7 +2,7 @@ import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { Expression } from '../core/expression';
 import ExpressionAtom from '../core/enums/expression';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Check a BLS12-381 pairing.
@@ -27,5 +27,5 @@ import ValueAtom from '../core/enums/literal';
  *
  * @returns {IExpression} An expression of types `TBool()`.
  */
-export const PairingCheck = (pairs: IExpression<ValueAtom.list>, line = new LineInfo()) =>
-    new Expression<ValueAtom.bool>(ExpressionAtom.pairing_check, pairs, line);
+export const PairingCheck = (pairs: IExpression<MichelsonType.list>, line = new LineInfo()) =>
+    new Expression<MichelsonType.bool>(ExpressionAtom.pairing_check, pairs, line);

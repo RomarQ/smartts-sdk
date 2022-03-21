@@ -5,12 +5,12 @@ import type { IType } from '../typings/type';
 import { GetProperty, LambdaArgument } from '../expression/variables';
 import { capitalizeBoolean, LineInfo, parenthesis } from '../misc/utils';
 import ValueAtom from './enums/literal';
-import TypeAtom from './enums/type';
+import { MichelsonType, TypeAtom } from './enums/type';
 import { Proxied } from '../misc/proxy';
 import { AsType } from '../expression/type';
 import { TLambda, TUnknown } from '../type';
 
-export class Expression<T extends ValueAtom> implements IExpression<T> {
+export class Expression<T extends MichelsonType> implements IExpression<T> {
     _isExpression = true as const;
     // Used for type checking
     _type = {} as T;
@@ -38,12 +38,16 @@ export class Expression<T extends ValueAtom> implements IExpression<T> {
     }
 }
 
-export class LiteralExpression<T extends ValueAtom> implements ILiteral<T> {
+export class LiteralExpression<T extends MichelsonType> implements ILiteral<T> {
     _isExpression = true as const;
     // Used for type checking
     _type = {} as T;
 
-    constructor(private name: T, private values: (number | string | boolean | IExpression)[], private line: LineInfo) {}
+    constructor(
+        private name: ValueAtom,
+        private values: (number | string | boolean | IExpression)[],
+        private line: LineInfo,
+    ) {}
 
     toString() {
         switch (this.name) {
@@ -80,10 +84,10 @@ export class LiteralExpression<T extends ValueAtom> implements ILiteral<T> {
     }
 }
 
-export class RecordLiteral implements ILiteral<ValueAtom.record> {
+export class RecordLiteral implements ILiteral<MichelsonType.pair> {
     _isExpression = true as const;
     // Used for type checking
-    _type = {} as ValueAtom.record;
+    _type = MichelsonType.pair as const;
 
     constructor(private fields: Record<string, IExpression>, private line: LineInfo) {}
 
@@ -96,13 +100,12 @@ export class RecordLiteral implements ILiteral<ValueAtom.record> {
     }
 }
 
-export class MapLiteral<T extends ValueAtom.map | ValueAtom.big_map> implements ILiteral<T> {
+export class MapLiteral<T extends MichelsonType.map | MichelsonType.big_map> implements ILiteral<T> {
     _isExpression = true as const;
     _type = {} as T;
-    type = {} as IType;
 
     constructor(
-        private prim: T,
+        private prim: ValueAtom.map | ValueAtom.big_map,
         private rows: IExpression[][],
         keyType: IType,
         valueType: IType,
@@ -118,11 +121,10 @@ export class MapLiteral<T extends ValueAtom.map | ValueAtom.big_map> implements 
     }
 }
 
-export class LambdaLiteral implements ILiteral<ValueAtom.lambda> {
+export class LambdaLiteral implements ILiteral<MichelsonType.lambda> {
     _isExpression = true as const;
     // Used for type checking
-    _type = ValueAtom.lambda as const;
-    type = {} as IType;
+    _type = MichelsonType.lambda as const;
     static idCounter = 0;
     private identifier: number;
     private withStorage?: 'read-write' | 'read-only';

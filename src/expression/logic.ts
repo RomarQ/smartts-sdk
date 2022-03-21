@@ -2,7 +2,7 @@ import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import { Expression } from '../core/expression';
 import ExpressionAtom from '../core/enums/expression';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Boolean OR. (The result is true if at least one of the expressions is true)
@@ -19,7 +19,7 @@ import ValueAtom from '../core/enums/literal';
  *
  * @returns {IExpression} An expression
  */
-export const Or = <T extends ValueAtom.nat | ValueAtom.bool>(
+export const Or = <T extends MichelsonType.nat | MichelsonType.bool>(
     left: IExpression<T>,
     right: IExpression<T>,
     line = new LineInfo(),
@@ -40,11 +40,11 @@ export const Or = <T extends ValueAtom.nat | ValueAtom.bool>(
  *
  * @returns {IExpression} An expression
  */
-export const And = <T extends ValueAtom.nat | ValueAtom.int | ValueAtom.bool>(
+export const And = <T extends MichelsonType.nat | MichelsonType.int | MichelsonType.bool>(
     left: IExpression<T>,
     right: IExpression<T>,
     line = new LineInfo(),
-) => new Expression<ValueAtom.nat | ValueAtom.bool>(ExpressionAtom.and, left, right, line);
+) => new Expression<MichelsonType.nat | MichelsonType.bool>(ExpressionAtom.and, left, right, line);
 
 /**
  * Boolean XOR.
@@ -61,7 +61,7 @@ export const And = <T extends ValueAtom.nat | ValueAtom.int | ValueAtom.bool>(
  *
  * @returns {IExpression} An expression
  */
-export const Xor = <T extends ValueAtom.nat | ValueAtom.bool>(
+export const Xor = <T extends MichelsonType.nat | MichelsonType.bool>(
     left: IExpression<T>,
     right: IExpression<T>,
     line = new LineInfo(),

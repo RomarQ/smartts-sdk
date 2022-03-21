@@ -12,7 +12,7 @@ import {
 } from '../core/statement';
 import { LineInfo } from '../misc/utils';
 import { Unit } from '../expression';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Test a condition and interrupt the smart-contract execution if the condition is false. (The whole operation is rollbacked)
@@ -74,7 +74,7 @@ export const If = (
  * @returns {IStatement} A statement
  */
 export const MatchVariant = (
-    variant: IExpression<ValueAtom.variant>,
+    variant: IExpression<MichelsonType.or>,
     argumentName = `__MATCH_${VariantMatchStatement.nextID}__`,
     line = new LineInfo(),
 ) => new VariantMatchStatement(variant, argumentName, line);

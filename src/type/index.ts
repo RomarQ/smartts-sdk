@@ -2,7 +2,7 @@ import { ILayout } from '../typings/literal';
 import { IType } from '../typings/type';
 import { Layout } from '../core/enums/layout';
 import { ContainerType, SimpleType, Type_VariantOrRecord } from '../core/type';
-import TypeAtom from '../core/enums/type';
+import { TypeAtom } from '../core/enums/type';
 
 /**
  * An unknown type (It is used when leveraging type inference)

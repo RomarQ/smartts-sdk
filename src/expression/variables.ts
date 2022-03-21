@@ -4,7 +4,7 @@ import { LineInfo } from '../misc/utils';
 import { Expression, LambdaLiteral } from '../core/expression';
 import { TUnknown } from '../type';
 import { IExpression } from '../typings/expression';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Access a property of a record value.
@@ -126,4 +126,5 @@ export const LambdaArgument = (
  *
  * @returns {IExpression} An expression
  */
-export const GetOperations = (line = new LineInfo()) => new Expression<ValueAtom.list>(ExpressionAtom.operations, line);
+export const GetOperations = (line = new LineInfo()) =>
+    new Expression<MichelsonType.list>(ExpressionAtom.operations, line);

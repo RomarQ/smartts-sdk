@@ -3,8 +3,8 @@ import ExpressionAtom from '../core/enums/expression';
 import { Expression } from '../core/expression';
 import { LineInfo } from '../misc/utils';
 import { Unit } from './literal';
-import ValueAtom from '../core/enums/literal';
 import { GetSome } from '.';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Convert a value of type `TInt()` to `TOption(TNat())`.
@@ -21,7 +21,7 @@ import { GetSome } from '.';
  * @returns {IExpression} An expression that evaluates to TOption(TNat()).
  */
 export const IsNat = (expression: IExpression, line = new LineInfo()) =>
-    new Expression<ValueAtom.option>(ExpressionAtom.isNat, expression, line);
+    new Expression<MichelsonType.option>(ExpressionAtom.isNat, expression, line);
 
 /**
  * Convert a value of type `TInt()` to `TNat()`.
@@ -42,7 +42,7 @@ export const CastToNat = (
     expression: IExpression,
     errorMsg: IExpression = Unit(),
     line = new LineInfo(),
-): IExpression<ValueAtom.nat> => GetSome(IsNat(expression, line), errorMsg, line);
+): IExpression<MichelsonType.nat> => GetSome(IsNat(expression, line), errorMsg, line);
 
 /**
  * Convert a value of type `TNat()` to `TInt()`
@@ -58,8 +58,8 @@ export const CastToNat = (
  *
  * @returns {IExpression} An expression that evaluates to `TNat()`.
  */
-export const CastToInt = (expression: IExpression<ValueAtom.nat>, line = new LineInfo()) =>
-    new Expression<ValueAtom.int>(ExpressionAtom.toInt, expression, line);
+export const CastToInt = (expression: IExpression<MichelsonType.nat>, line = new LineInfo()) =>
+    new Expression<MichelsonType.int>(ExpressionAtom.toInt, expression, line);
 
 /**
  * Obtain the absolute value of an `TInt()` value.
@@ -75,5 +75,5 @@ export const CastToInt = (expression: IExpression<ValueAtom.nat>, line = new Lin
  *
  * @returns {IExpression} An expression that evaluates to `TNat()`.
  */
-export const ABS = (expression: IExpression<ValueAtom.int>, line = new LineInfo()) =>
-    new Expression<ValueAtom.nat>(ExpressionAtom.abs, expression, line);
+export const ABS = (expression: IExpression<MichelsonType.int>, line = new LineInfo()) =>
+    new Expression<MichelsonType.nat>(ExpressionAtom.abs, expression, line);

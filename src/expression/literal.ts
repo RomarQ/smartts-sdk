@@ -7,6 +7,7 @@ import { TUnknown } from '../type';
 import ValueAtom from '../core/enums/literal';
 import { LambdaLiteral, LiteralExpression, MapLiteral, RecordLiteral } from '../core/expression';
 import { ILiteral } from '../typings/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Build a literal of type unit.
@@ -22,7 +23,7 @@ import { ILiteral } from '../typings/literal';
  *
  * @returns {IExpression} An expression
  */
-export const Unit = (line = new LineInfo()) => new LiteralExpression(ValueAtom.unit, [], line);
+export const Unit = (line = new LineInfo()) => new LiteralExpression<MichelsonType.unit>(ValueAtom.unit, [], line);
 
 /**
  * Build a literal of type nat.
@@ -38,7 +39,8 @@ export const Unit = (line = new LineInfo()) => new LiteralExpression(ValueAtom.u
  *
  * @returns {IExpression} An expression
  */
-export const Nat = (value: number, line = new LineInfo()) => new LiteralExpression(ValueAtom.nat, [value], line);
+export const Nat = (value: number, line = new LineInfo()) =>
+    new LiteralExpression<MichelsonType.nat>(ValueAtom.nat, [value], line);
 
 /**
  * Build a literal of type int.
@@ -54,7 +56,8 @@ export const Nat = (value: number, line = new LineInfo()) => new LiteralExpressi
  *
  * @returns {IExpression} An expression
  */
-export const Int = (value: number, line = new LineInfo()) => new LiteralExpression(ValueAtom.int, [value], line);
+export const Int = (value: number, line = new LineInfo()) =>
+    new LiteralExpression<MichelsonType.int>(ValueAtom.int, [value], line);
 
 /**
  * Build a literal of type mutez.
@@ -70,7 +73,8 @@ export const Int = (value: number, line = new LineInfo()) => new LiteralExpressi
  *
  * @returns {IExpression} An expression
  */
-export const Mutez = (value: number, line = new LineInfo()) => new LiteralExpression(ValueAtom.mutez, [value], line);
+export const Mutez = (value: number, line = new LineInfo()) =>
+    new LiteralExpression<MichelsonType.mutez>(ValueAtom.mutez, [value], line);
 
 /**
  * Build a literal of type string.
@@ -86,7 +90,7 @@ export const Mutez = (value: number, line = new LineInfo()) => new LiteralExpres
  * @returns {IExpression} An expression
  */
 export const String = (value: string, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.string, [quote(value)], line);
+    new LiteralExpression<MichelsonType.string>(ValueAtom.string, [quote(value)], line);
 
 /**
  * Build a literal of type bool.
@@ -103,7 +107,7 @@ export const String = (value: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Bool = (value: boolean, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.bool, [capitalizeBoolean(value)], line);
+    new LiteralExpression<MichelsonType.bool>(ValueAtom.bool, [capitalizeBoolean(value)], line);
 
 /**
  * Build a literal of type address.
@@ -120,7 +124,7 @@ export const Bool = (value: boolean, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Address = (address: string, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.address, [address], line);
+    new LiteralExpression<MichelsonType.address>(ValueAtom.address, [address], line);
 
 /**
  * Build a literal of type timestamp. (The input is the number of seconds since Epoch)
@@ -137,7 +141,7 @@ export const Address = (address: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Timestamp = (timestamp: number, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.timestamp, [timestamp], line);
+    new LiteralExpression<MichelsonType.timestamp>(ValueAtom.timestamp, [timestamp], line);
 
 /**
  * Build a literal of type chain_id. (Represents a chain identifier)
@@ -154,7 +158,7 @@ export const Timestamp = (timestamp: number, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Chain_id = (chainID: string, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.chain_id_cst, [chainID], line);
+    new LiteralExpression<MichelsonType.chain_id>(ValueAtom.chain_id_cst, [chainID], line);
 
 /**
  * Build a literal of type bytes.
@@ -170,7 +174,8 @@ export const Chain_id = (chainID: string, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const Bytes = (bytes: string, line = new LineInfo()) => new LiteralExpression(ValueAtom.bytes, [bytes], line);
+export const Bytes = (bytes: string, line = new LineInfo()) =>
+    new LiteralExpression<MichelsonType.bytes>(ValueAtom.bytes, [bytes], line);
 
 /**
  * Build a literal of type bls12_381_fr.
@@ -187,7 +192,7 @@ export const Bytes = (bytes: string, line = new LineInfo()) => new LiteralExpres
  * @returns {IExpression} An expression
  */
 export const Bls12_381_fr = (fr: string | number, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.bls12_381_fr, [fr], line);
+    new LiteralExpression<MichelsonType.bls12_381_fr>(ValueAtom.bls12_381_fr, [fr], line);
 
 /**
  * Build a literal of type bls12_381_g1.
@@ -204,7 +209,7 @@ export const Bls12_381_fr = (fr: string | number, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Bls12_381_g1 = (bytes: string, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.bls12_381_g1, [bytes], line);
+    new LiteralExpression<MichelsonType.bls12_381_g1>(ValueAtom.bls12_381_g1, [bytes], line);
 
 /**
  * Build a literal of type bls12_381_g2.
@@ -221,7 +226,7 @@ export const Bls12_381_g1 = (bytes: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Bls12_381_g2 = (bytes: string, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.bls12_381_g2, [bytes], line);
+    new LiteralExpression<MichelsonType.bls12_381_g2>(ValueAtom.bls12_381_g2, [bytes], line);
 
 /**
  * Build a literal of type key.
@@ -237,7 +242,8 @@ export const Bls12_381_g2 = (bytes: string, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const Key = (key: string, line = new LineInfo()) => new LiteralExpression(ValueAtom.key, [key], line);
+export const Key = (key: string, line = new LineInfo()) =>
+    new LiteralExpression<MichelsonType.key>(ValueAtom.key, [key], line);
 
 /**
  * Build a literal of type key_hash.
@@ -254,7 +260,7 @@ export const Key = (key: string, line = new LineInfo()) => new LiteralExpression
  * @returns {IExpression} An expression
  */
 export const Key_hash = (key_hash: string, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.key_hash, [key_hash], line);
+    new LiteralExpression<MichelsonType.key_hash>(ValueAtom.key_hash, [key_hash], line);
 
 /**
  * Build a literal of type signature.
@@ -271,7 +277,7 @@ export const Key_hash = (key_hash: string, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Signature = (signature: string, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.signature, [signature], line);
+    new LiteralExpression<MichelsonType.signature>(ValueAtom.signature, [signature], line);
 
 /**
  * Build a literal of type list.
@@ -287,7 +293,8 @@ export const Signature = (signature: string, line = new LineInfo()) =>
  *
  * @returns {IExpression} An expression
  */
-export const List = (items: IExpression[], line = new LineInfo()) => new LiteralExpression(ValueAtom.list, items, line);
+export const List = (items: IExpression[], line = new LineInfo()) =>
+    new LiteralExpression<MichelsonType.list>(ValueAtom.list, items, line);
 
 /**
  * Build a literal of type set.
@@ -303,7 +310,8 @@ export const List = (items: IExpression[], line = new LineInfo()) => new Literal
  *
  * @returns {IExpression} An expression
  */
-export const Set = (items: IExpression[], line = new LineInfo()) => new LiteralExpression(ValueAtom.set, items, line);
+export const Set = (items: IExpression[], line = new LineInfo()) =>
+    new LiteralExpression<MichelsonType.set>(ValueAtom.set, items, line);
 
 /**
  * Build a literal of type option. (Wraps an existing optional value)
@@ -319,8 +327,8 @@ export const Set = (items: IExpression[], line = new LineInfo()) => new LiteralE
  *
  * @returns {IExpression} An expression
  */
-export const Some = (value: IExpression, line = new LineInfo()): ILiteral<ValueAtom.option> =>
-    new LiteralExpression(ValueAtom.Some, [value], line) as any;
+export const Some = (value: IExpression, line = new LineInfo()): ILiteral<MichelsonType.option> =>
+    new LiteralExpression<MichelsonType.option>(ValueAtom.Some, [value], line);
 
 /**
  * Build a literal of type option. (Used to represent an absent optional value)
@@ -336,8 +344,8 @@ export const Some = (value: IExpression, line = new LineInfo()): ILiteral<ValueA
  *
  * @returns {IExpression} An expression
  */
-export const None = (line = new LineInfo()): ILiteral<ValueAtom.option> =>
-    new LiteralExpression(ValueAtom.None, [], line) as any;
+export const None = (line = new LineInfo()): ILiteral<MichelsonType.option> =>
+    new LiteralExpression<MichelsonType.option>(ValueAtom.None, [], line);
 
 /**
  * Build a literal of type map.
@@ -361,7 +369,7 @@ export const Map = (
     keyType: IType = TUnknown(),
     valueType: IType = TUnknown(),
     line = new LineInfo(),
-) => new MapLiteral(ValueAtom.map, rows, keyType, valueType, line);
+) => new MapLiteral<MichelsonType.map>(ValueAtom.map, rows, keyType, valueType, line);
 
 /**
  * Build a literal of type big_map.
@@ -385,7 +393,7 @@ export const Big_map = (
     keyType: IType = TUnknown(),
     valueType: IType = TUnknown(),
     line = new LineInfo(),
-) => new MapLiteral(ValueAtom.big_map, rows, keyType, valueType, line);
+) => new MapLiteral<MichelsonType.big_map>(ValueAtom.big_map, rows, keyType, valueType, line);
 
 /**
  * Build a literal of type pair. (A binary tuple of values)
@@ -402,7 +410,7 @@ export const Big_map = (
  * @returns {IExpression} An expression
  */
 export const Pair = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.tuple, [left, right], line);
+    new LiteralExpression<MichelsonType.pair>(ValueAtom.tuple, [left, right], line);
 
 /**
  * Build a literal of type lambda.
@@ -441,8 +449,8 @@ export const Lambda = (
  *
  * @returns {IExpression} An expression
  */
-export const Ticket = (content: IExpression, amount: LiteralExpression<ValueAtom.nat>, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.ticket, [content, amount], line);
+export const Ticket = (content: IExpression, amount: LiteralExpression<MichelsonType.nat>, line = new LineInfo()) =>
+    new LiteralExpression<MichelsonType.ticket>(ValueAtom.ticket, [content, amount], line);
 
 /**
  * Build a literal of type sapling_state.
@@ -460,7 +468,7 @@ export const Ticket = (content: IExpression, amount: LiteralExpression<ValueAtom
  * @returns {IExpression} An expression of type `TSapling_state()`.
  */
 export const Sapling_state = (memo: number, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.sapling_state, [memo], line);
+    new LiteralExpression<MichelsonType.sapling_state>(ValueAtom.sapling_state, [memo], line);
 
 /**
  * Build a literal of type or. (Wrap a value in a union. It represents the left branch.)
@@ -477,7 +485,7 @@ export const Sapling_state = (memo: number, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Left = (value: IExpression, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.variant, [ValueAtom.Left, value], line);
+    new LiteralExpression<MichelsonType.or>(ValueAtom.variant, [ValueAtom.Left, value], line);
 
 /**
  * Build a literal of type or. (Wrap a value in a union. It represents the right branch.)
@@ -494,7 +502,7 @@ export const Left = (value: IExpression, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const Right = (value: IExpression, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.variant, [ValueAtom.Right, value], line);
+    new LiteralExpression<MichelsonType.or>(ValueAtom.variant, [ValueAtom.Right, value], line);
 
 /**
  * An artificial literal of type pair. (Uses nested annotated pair's to simulate an object value)
@@ -531,7 +539,7 @@ export const Record = (fields: Record<string, IExpression>, line = new LineInfo(
  * @returns {IExpression} An expression
  */
 export const Variant = (field: string, value: IExpression, line = new LineInfo()) =>
-    new LiteralExpression(ValueAtom.variant, [field, value], line);
+    new LiteralExpression<MichelsonType.or>(ValueAtom.variant, [field, value], line);
 
 export const Literal = {
     // Singletons

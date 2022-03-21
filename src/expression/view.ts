@@ -6,7 +6,7 @@ import { IExpression } from '../typings/expression';
 import { IType } from '../typings/type';
 import { TUnknown } from '../type';
 import { Unit } from './literal';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Call a onchain view.
@@ -31,8 +31,8 @@ export const CallView = (
     argument: IExpression = Unit(),
     outputType: IType = TUnknown(),
     line = new LineInfo(),
-): Proxied<IExpression<ValueAtom.option>> =>
+): Proxied<IExpression<MichelsonType.option>> =>
     proxy(
-        new Expression<ValueAtom.option>(ExpressionAtom.view, `"${name}"`, address, argument, outputType, line),
+        new Expression<MichelsonType.option>(ExpressionAtom.view, `"${name}"`, address, argument, outputType, line),
         Expression.proxyHandler,
     );

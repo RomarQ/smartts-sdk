@@ -8,7 +8,7 @@ import { Expression } from './expression';
 import { Proxied, proxy } from '../misc/proxy';
 import { SetType } from '../statement';
 import { TUnit, TUnknown } from '../type';
-import ValueAtom from './enums/literal';
+import { MichelsonType } from './enums/type';
 
 abstract class View {
     public name: string;
@@ -209,7 +209,7 @@ export class Contract {
         return this;
     }
 
-    public setConfig(options?: { initialBalance?: ILiteral<ValueAtom.mutez>; flags?: Flag[] }) {
+    public setConfig(options?: { initialBalance?: ILiteral<MichelsonType.mutez>; flags?: Flag[] }) {
         if (options?.flags) {
             this.#options.flags = options.flags;
         }

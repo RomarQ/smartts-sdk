@@ -1,12 +1,12 @@
 import type { IExpression } from '../typings/expression';
 import type { IType } from '../typings/type';
 import ExpressionAtom from '../core/enums/expression';
-import ValueAtom from '../core/enums/literal';
 import { Expression } from '../core/expression';
 import { LineInfo } from '../misc/utils';
 import { TUnit } from '../type';
 import { String } from './literal';
 import { GetSome } from './variant';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Cast an address to a typed contract.
@@ -26,12 +26,12 @@ import { GetSome } from './variant';
  * @returns {IExpression} An expression of type `TContract()`.
  */
 export const ToContract = (
-    address: IExpression<ValueAtom.address>,
+    address: IExpression<MichelsonType.address>,
     entrypoint = 'default',
     argumentType: IType = TUnit(),
     errorMsg: IExpression = String('CONTRACT_NOT_FOUND'),
     line = new LineInfo(),
-): IExpression<ValueAtom.contract> => GetSome(GetContract(address, entrypoint, argumentType, line), errorMsg, line);
+): IExpression<MichelsonType.contract> => GetSome(GetContract(address, entrypoint, argumentType, line), errorMsg, line);
 
 /**
  * Cast an address to a typed contract.
@@ -50,11 +50,12 @@ export const ToContract = (
  * @returns {IExpression} An expression of type `TOption(TContract(@argumentType))`.
  */
 export const GetContract = (
-    address: IExpression<ValueAtom.address>,
+    address: IExpression<MichelsonType.address>,
     entrypoint = 'default',
     argumentType: IType = TUnit(),
     line = new LineInfo(),
-): IExpression<ValueAtom.option> => new Expression(ExpressionAtom.contract, entrypoint, argumentType, address, line);
+): IExpression<MichelsonType.option> =>
+    new Expression(ExpressionAtom.contract, entrypoint, argumentType, address, line);
 
 /**
  * Get the address of a contract value.
@@ -71,9 +72,10 @@ export const GetContract = (
  * @returns {IExpression} An expression of type `TAddress()`.
  */
 export const ToAddress = (
-    contract: IExpression<ValueAtom.contract>,
+    contract: IExpression<MichelsonType.contract>,
     line = new LineInfo(),
-): IExpression<ValueAtom.address> => new Expression<ValueAtom.address>(ExpressionAtom.to_address, contract, line);
+): IExpression<MichelsonType.address> =>
+    new Expression<MichelsonType.address>(ExpressionAtom.to_address, contract, line);
 
 /**
  * Create an implicit account.
@@ -90,6 +92,6 @@ export const ToAddress = (
  * @returns {IExpression} An expression of type `TContract(TUnit())`.
  */
 export const ImplicitAccount = (
-    key_hash: IExpression<ValueAtom.key_hash>,
+    key_hash: IExpression<MichelsonType.key_hash>,
     line = new LineInfo(),
-): IExpression<ValueAtom.contract> => new Expression(ExpressionAtom.implicit_account, key_hash, line);
+): IExpression<MichelsonType.contract> => new Expression(ExpressionAtom.implicit_account, key_hash, line);

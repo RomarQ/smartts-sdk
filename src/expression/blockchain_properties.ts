@@ -2,8 +2,8 @@ import type { ILiteral } from '../typings/literal';
 import ExpressionAtom from '../core/enums/expression';
 import { Expression } from '../core/expression';
 import { LineInfo } from '../misc/utils';
-import ValueAtom from '../core/enums/literal';
 import { IExpression } from '../typings/expression';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Get the amount sent in the transaction.
@@ -17,7 +17,7 @@ import { IExpression } from '../typings/expression';
  *
  * @returns {IExpression} An expression
  */
-export const GetAmount = (): IExpression<ValueAtom.mutez> => new Expression(ExpressionAtom.amount);
+export const GetAmount = () => new Expression<MichelsonType.mutez>(ExpressionAtom.amount);
 
 /**
  * Get the contract balance.
@@ -31,7 +31,7 @@ export const GetAmount = (): IExpression<ValueAtom.mutez> => new Expression(Expr
  *
  * @returns {IExpression} An expression
  */
-export const GetBalance = (): IExpression<ValueAtom.mutez> => new Expression(ExpressionAtom.balance);
+export const GetBalance = () => new Expression<MichelsonType.mutez>(ExpressionAtom.balance);
 
 /**
  * Get an entrypoint of the current contract.
@@ -45,8 +45,8 @@ export const GetBalance = (): IExpression<ValueAtom.mutez> => new Expression(Exp
  *
  * @returns {IExpression} An expression
  */
-export const GetSelf = (entry_point: string, line = new LineInfo()): IExpression<ValueAtom.contract> =>
-    new Expression(ExpressionAtom.self, `"${entry_point}"`, line);
+export const GetSelf = (entry_point: string, line = new LineInfo()) =>
+    new Expression<MichelsonType.contract>(ExpressionAtom.self, `"${entry_point}"`, line);
 
 /**
  * Get current contract address.
@@ -60,7 +60,7 @@ export const GetSelf = (entry_point: string, line = new LineInfo()): IExpression
  *
  * @returns {IExpression} An expression
  */
-export const GetSelfAddress = (): IExpression<ValueAtom.address> => new Expression(ExpressionAtom.self_address);
+export const GetSelfAddress = () => new Expression<MichelsonType.address>(ExpressionAtom.self_address);
 
 /**
  * Get transaction sender.
@@ -74,7 +74,7 @@ export const GetSelfAddress = (): IExpression<ValueAtom.address> => new Expressi
  *
  * @returns {IExpression} An expression
  */
-export const GetSender = (): IExpression<ValueAtom.address> => new Expression(ExpressionAtom.sender);
+export const GetSender = () => new Expression<MichelsonType.address>(ExpressionAtom.sender);
 
 /**
  * Get transaction source.
@@ -88,7 +88,7 @@ export const GetSender = (): IExpression<ValueAtom.address> => new Expression(Ex
  *
  * @returns {IExpression} An expression
  */
-export const GetSource = (): IExpression<ValueAtom.address> => new Expression(ExpressionAtom.source);
+export const GetSource = () => new Expression<MichelsonType.address>(ExpressionAtom.source);
 
 /**
  * Get the chain identifier.
@@ -102,7 +102,7 @@ export const GetSource = (): IExpression<ValueAtom.address> => new Expression(Ex
  *
  * @returns {IExpression} An expression
  */
-export const GetChain_id = (): IExpression<ValueAtom.chain_id> => new Expression(ExpressionAtom.chain_id);
+export const GetChain_id = () => new Expression<MichelsonType.chain_id>(ExpressionAtom.chain_id);
 
 /**
  * Get the head block level.
@@ -116,7 +116,7 @@ export const GetChain_id = (): IExpression<ValueAtom.chain_id> => new Expression
  *
  * @returns {IExpression} An expression
  */
-export const GetLevel = (): IExpression<ValueAtom.nat> => new Expression(ExpressionAtom.level);
+export const GetLevel = () => new Expression<MichelsonType.nat>(ExpressionAtom.level);
 
 /**
  * Get the head block timestamp.
@@ -130,7 +130,7 @@ export const GetLevel = (): IExpression<ValueAtom.nat> => new Expression(Express
  *
  * @returns {IExpression} An expression
  */
-export const GetTimestamp = (): IExpression<ValueAtom.timestamp> => new Expression(ExpressionAtom.now);
+export const GetTimestamp = (): IExpression => new Expression<MichelsonType.timestamp>(ExpressionAtom.now);
 
 /**
  * Get total voting power.
@@ -144,7 +144,7 @@ export const GetTimestamp = (): IExpression<ValueAtom.timestamp> => new Expressi
  *
  * @returns {IExpression} An expression
  */
-export const GetTotalVotingPower = (): IExpression<ValueAtom.nat> => new Expression(ExpressionAtom.total_voting_power);
+export const GetTotalVotingPower = () => new Expression<MichelsonType.nat>(ExpressionAtom.total_voting_power);
 
 /**
  * Get the voting power of a given implicit account.
@@ -161,7 +161,5 @@ export const GetTotalVotingPower = (): IExpression<ValueAtom.nat> => new Express
  *
  * @returns {IExpression} An expression
  */
-export const GetVotingPower = (
-    key_hash: ILiteral<ValueAtom.key_hash>,
-    line = new LineInfo(),
-): IExpression<ValueAtom.nat> => new Expression(ExpressionAtom.voting_power, `${key_hash}`, line);
+export const GetVotingPower = (key_hash: ILiteral<MichelsonType.key_hash>, line = new LineInfo()) =>
+    new Expression<MichelsonType.nat>(ExpressionAtom.voting_power, `${key_hash}`, line);

@@ -3,7 +3,7 @@ import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
 import ExpressionAtom from '../core/enums/expression';
 import { Expression } from '../core/expression';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Get map entries.
@@ -27,7 +27,7 @@ import ValueAtom from '../core/enums/literal';
  * @returns {IExpression} An expression of type TList(TRecord({ key: ..., value: ... })).
  */
 export const GetMapEntries = (source: IExpression, line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.items, source, line), Expression.proxyHandler);
+    new Expression<MichelsonType.list>(ExpressionAtom.items, source, line);
 
 /**
  * Update an entry on map or big map.
@@ -49,7 +49,7 @@ export const GetMapEntries = (source: IExpression, line = new LineInfo()) =>
  * @returns {IExpression} An expression
  */
 export const UpdateMap = (source: IExpression, key: IExpression, value: IExpression, line = new LineInfo()) =>
-    proxy(new Expression(ExpressionAtom.update_map, source, key, value, line), Expression.proxyHandler);
+    new Expression(ExpressionAtom.update_map, source, key, value, line);
 
 /**
  * Accesss by key the value stored in a map or big map.
@@ -107,7 +107,7 @@ export const AccessMapByKey = (
  * @returns {IExpression} An expression that resolves to a boolean value.
  */
 export const MapContainsKey = (expression: IExpression, key: IExpression, line = new LineInfo()) => {
-    return new Expression<ValueAtom.bool>(ExpressionAtom.contains, expression, key, line);
+    return new Expression<MichelsonType.bool>(ExpressionAtom.contains, expression, key, line);
 };
 
 const MapExpressions = {

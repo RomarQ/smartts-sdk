@@ -1,4 +1,5 @@
 import ExpressionAtom from '../core/enums/expression';
+import { MichelsonType } from '../core/enums/type';
 import { Expression } from '../core/expression';
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
@@ -18,5 +19,5 @@ import { IExpression } from '../typings/expression';
  *
  * @returns {IExpression} An expression
  */
-export const PrependToList = (list: IExpression, value: IExpression, line = new LineInfo()) =>
+export const PrependToList = (list: IExpression<MichelsonType.list>, value: IExpression, line = new LineInfo()) =>
     new Expression(ExpressionAtom.cons, value, list, line);

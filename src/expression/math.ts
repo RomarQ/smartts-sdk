@@ -2,7 +2,7 @@ import type { IExpression } from '../typings/expression';
 import { LineInfo } from '../misc/utils';
 import { Expression } from '../core/expression';
 import ExpressionAtom from '../core/enums/expression';
-import ValueAtom from '../core/enums/literal';
+import { MichelsonType } from '../core/enums/type';
 
 /**
  * Add two numerical values
@@ -92,10 +92,10 @@ export const Divide = (left: IExpression, right: IExpression, line = new LineInf
  * @returns {IExpression} An expression of type `TOption(TPair(@quotient_type, @remainder_type)))
  */
 export const EuclideanDivision = (
-    left: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
-    right: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
+    left: IExpression<MichelsonType.nat | MichelsonType.int | MichelsonType.mutez>,
+    right: IExpression<MichelsonType.nat | MichelsonType.int | MichelsonType.mutez>,
     line = new LineInfo(),
-): IExpression<ValueAtom.option> => new Expression(ExpressionAtom.ediv, left, right, line);
+): IExpression<MichelsonType.option> => new Expression(ExpressionAtom.ediv, left, right, line);
 
 /**
  * Modulus
@@ -113,8 +113,8 @@ export const EuclideanDivision = (
  * @returns {IExpression} An expression.
  */
 export const Mod = (
-    left: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
-    right: IExpression<ValueAtom.nat | ValueAtom.int | ValueAtom.mutez>,
+    left: IExpression<MichelsonType.nat | MichelsonType.int | MichelsonType.mutez>,
+    right: IExpression<MichelsonType.nat | MichelsonType.int | MichelsonType.mutez>,
     line = new LineInfo(),
 ) => new Expression(ExpressionAtom.mod, left, right, line);
 
@@ -133,8 +133,11 @@ export const Mod = (
  *
  * @returns {IExpression} An expression.
  */
-export const ShiftLeft = (left: IExpression<ValueAtom.nat>, right: IExpression<ValueAtom.nat>, line = new LineInfo()) =>
-    new Expression<ValueAtom.nat>(ExpressionAtom.lsl, left, right, line);
+export const ShiftLeft = (
+    left: IExpression<MichelsonType.nat>,
+    right: IExpression<MichelsonType.nat>,
+    line = new LineInfo(),
+) => new Expression<MichelsonType.nat>(ExpressionAtom.lsl, left, right, line);
 
 /**
  * Logical right shift
@@ -152,10 +155,10 @@ export const ShiftLeft = (left: IExpression<ValueAtom.nat>, right: IExpression<V
  * @returns {IExpression} An expression.
  */
 export const ShiftRight = (
-    left: IExpression<ValueAtom.nat>,
-    right: IExpression<ValueAtom.nat>,
+    left: IExpression<MichelsonType.nat>,
+    right: IExpression<MichelsonType.nat>,
     line = new LineInfo(),
-) => new Expression<ValueAtom.nat>(ExpressionAtom.lsr, left, right, line);
+) => new Expression<MichelsonType.nat>(ExpressionAtom.lsr, left, right, line);
 
 export const Math = {
     Add,
