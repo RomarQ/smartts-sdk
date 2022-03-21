@@ -7,7 +7,7 @@ import {
     GetMapEntries,
     GetSender,
     Pair,
-    GetMapValue,
+    AccessMapByKey,
     GetVariable,
     Math,
     Nat,
@@ -261,14 +261,14 @@ export const FA2_Contract = new Contract()
                     NewVariable('sender_ledger_key', Pair(transfer.from_, transaction.token_id)),
                     NewVariable(
                         'sender_balance',
-                        GetMapValue(
+                        AccessMapByKey(
                             ContractStorage().assets.ledger,
                             GetVariable('sender_ledger_key'),
                             Record({ balance: Nat(0) }),
                         ).balance,
                     ),
                     SetValue(
-                        GetMapValue(ContractStorage().assets.ledger, GetVariable('sender_ledger_key')),
+                        AccessMapByKey(ContractStorage().assets.ledger, GetVariable('sender_ledger_key')),
                         Record({
                             balance: CastToNat(
                                 Math.Subtract(GetVariable('sender_balance'), transaction.amount),
@@ -280,14 +280,14 @@ export const FA2_Contract = new Contract()
                     NewVariable('recipient_ledger_key', Pair(transaction.to_, transaction.token_id)),
                     NewVariable(
                         'recipient_balance',
-                        GetMapValue(
+                        AccessMapByKey(
                             ContractStorage().assets.ledger,
                             GetVariable('recipient_ledger_key'),
                             Record({ balance: Nat(0) }),
                         ).balance,
                     ),
                     SetValue(
-                        GetMapValue(ContractStorage().assets.ledger, GetVariable('recipient_ledger_key')),
+                        AccessMapByKey(ContractStorage().assets.ledger, GetVariable('recipient_ledger_key')),
                         Record({ balance: Math.Add(GetVariable('recipient_balance'), transaction.amount) }),
                     ),
                 ]),
@@ -303,7 +303,7 @@ export const FA2_Contract = new Contract()
                 MatchVariant(item)
                     .Case('add_operator', (payload) => [
                         Require(Equal(payload.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
-                        SetValue(GetMapValue(ContractStorage().assets.operators, payload), Unit()),
+                        SetValue(AccessMapByKey(ContractStorage().assets.operators, payload), Unit()),
                     ])
                     .Case('remove_operator', (payload) => [
                         Require(Equal(payload.owner, GetSender()), String(FA2_Error.NOT_OWNER)),
@@ -330,7 +330,7 @@ export const FA2_Contract = new Contract()
                         GetVariable('responses'),
                         Record({
                             request,
-                            balance: GetMapValue(
+                            balance: AccessMapByKey(
                                 ContractStorage().assets.ledger,
                                 Pair(request.owner, request.token_id),
                                 Record({ balance: Nat(0) }),
@@ -352,11 +352,14 @@ export const FA2_Contract = new Contract()
                 NewVariable('ledger_key', Pair(address, token_id)),
                 NewVariable(
                     'balance',
-                    GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key'), Record({ balance: Nat(0) }))
-                        .balance,
+                    AccessMapByKey(
+                        ContractStorage().assets.ledger,
+                        GetVariable('ledger_key'),
+                        Record({ balance: Nat(0) }),
+                    ).balance,
                 ),
                 SetValue(
-                    GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key')),
+                    AccessMapByKey(ContractStorage().assets.ledger, GetVariable('ledger_key')),
                     Record({ balance: Math.Add(GetVariable('balance'), amount) }),
                 ),
                 // Set metadata if it does not exist
@@ -364,8 +367,8 @@ export const FA2_Contract = new Contract()
                     .Then([
                         ForEachOf(GetMapEntries(metadata)).Do(({ key, value }) => [
                             SetValue(
-                                GetMapValue(
-                                    GetMapValue(ContractStorage().assets.token_metadata, token_id).token_info,
+                                AccessMapByKey(
+                                    AccessMapByKey(ContractStorage().assets.token_metadata, token_id).token_info,
                                     key,
                                 ),
                                 value,
@@ -374,17 +377,17 @@ export const FA2_Contract = new Contract()
                     ])
                     .Else([
                         SetValue(
-                            GetMapValue(ContractStorage().assets.token_metadata, token_id),
+                            AccessMapByKey(ContractStorage().assets.token_metadata, token_id),
                             Record({ token_id: token_id, token_info: metadata }),
                         ),
                     ]),
                 // Update token total supply
                 NewVariable(
                     'token_total_supply',
-                    GetMapValue(ContractStorage().assets.token_total_supply, token_id, Nat(0)),
+                    AccessMapByKey(ContractStorage().assets.token_total_supply, token_id, Nat(0)),
                 ),
                 SetValue(
-                    GetMapValue(ContractStorage().assets.token_total_supply, token_id),
+                    AccessMapByKey(ContractStorage().assets.token_total_supply, token_id),
                     Math.Add(GetVariable('token_total_supply'), amount),
                 ),
             ]),
@@ -411,7 +414,7 @@ export const FA2_Contract = new Contract()
             FA2_Utils.FailIfSenderIsNotAdmin(),
             // Update metadata entries
             ForEachOf(GetMapEntries(metadata)).Do((item) => [
-                SetValue(GetMapValue(ContractStorage().metadata, item.key), item.value),
+                SetValue(AccessMapByKey(ContractStorage().metadata, item.key), item.value),
             ]),
         ]),
     )
@@ -433,7 +436,7 @@ export const FA2_Contract = new Contract()
                         GetVariable('responses'),
                         Record({
                             request,
-                            balance: GetMapValue(
+                            balance: AccessMapByKey(
                                 ContractStorage().assets.ledger,
                                 Pair(request.owner, request.token_id),
                                 Record({ balance: Nat(0) }),

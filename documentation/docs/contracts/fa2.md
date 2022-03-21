@@ -358,7 +358,7 @@ const {
     EntryPoint,
     NewVariable,
     SetValue,
-    GetMapValue,
+    AccessMapByKey,
     GetVariable,
     ContractStorage,
     Pair,
@@ -381,12 +381,12 @@ const contract = FA2_Contract.addEntrypoint(
             // Get the current ledger balance
             NewVariable(
                 'balance',
-                GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key'), Record({ balance: Nat(0) }))
+                AccessMapByKey(ContractStorage().assets.ledger, GetVariable('ledger_key'), Record({ balance: Nat(0) }))
                     .balance,
             ),
             // Update ledger balance
             SetValue(
-                GetMapValue(ContractStorage().assets.ledger, GetVariable('ledger_key')),
+                AccessMapByKey(ContractStorage().assets.ledger, GetVariable('ledger_key')),
                 Record({ balance: Add(GetVariable('balance'), entrypoint_arg.amount) }),
             ),
         ])
@@ -417,7 +417,7 @@ const {
     Return,
     Require,
     MapContainsKey,
-    GetMapValue,
+    AccessMapByKey,
     GetVariable,
     AsType,
     PrependToList,
@@ -451,7 +451,7 @@ const contract = FA2_Contract.addView(
                             GetVariable('responses'),
                             Record({
                                 request,
-                                balance: GetMapValue(
+                                balance: AccessMapByKey(
                                     ContractStorage().assets.ledger,
                                     Pair(request.owner, request.token_id),
                                     Record({ balance: Nat(0) }),

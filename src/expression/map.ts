@@ -55,7 +55,7 @@ export const UpdateMap = (source: IExpression, key: IExpression, value: IExpress
  * Accesss by key the value stored in a map or big map.
  *
  * ```typescript
- * GetMapValue(ContractStorage().metadata, String("key"))
+ * AccessMapByKey(ContractStorage().metadata, String("key"))
  * ```
  *
  * @category | Map expressions
@@ -68,7 +68,7 @@ export const UpdateMap = (source: IExpression, key: IExpression, value: IExpress
  *
  * @returns {IExpression} An expression
  */
-export const GetMapValue = (
+export const AccessMapByKey = (
     source: IExpression,
     key: IExpression,
     default_value?: IExpression,
@@ -113,7 +113,7 @@ export const MapContainsKey = (expression: IExpression, key: IExpression, line =
 const MapExpressions = {
     GetMapEntries,
     UpdateMap,
-    GetMapValue,
+    AccessMapByKey,
     MapContainsKey,
 };
 
