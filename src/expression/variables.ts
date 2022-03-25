@@ -113,6 +113,23 @@ export const LambdaArgument = (
     );
 
 /**
+ * Get the argument of a variant match case.
+ *
+ * ```typescript
+ * VariantCaseArgument("action_1")
+ * ```
+ *
+ * @category | Variable Accessors
+ *
+ * @param name The name of the argument
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression
+ */
+export const VariantCaseArgument = (name: string, line = new LineInfo()) =>
+    proxy(new Expression<any>(ExpressionAtom.variant_arg, `"${name}"`, line), Expression.proxyHandler);
+
+/**
  * Get operations list from the stack or an empty list otherwise.
  *
  * ```typescript

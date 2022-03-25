@@ -5,8 +5,8 @@ import { LineInfo } from '../misc/utils';
 import StatementAtom from './enums/statement';
 import { Expression } from './expression';
 import ExpressionAtom from './enums/expression';
-import { Proxied, proxy } from '../misc/proxy';
-import { Add, GetVariable, Iterator, LessThanOrEqual } from '../expression';
+import { Proxied } from '../misc/proxy';
+import { Add, GetVariable, Iterator, LessThanOrEqual, VariantCaseArgument } from '../expression';
 import { NewVariable, SetValue } from '../statement';
 
 export class Statement implements IStatement {
@@ -87,17 +87,13 @@ export class VariantMatchStatement implements IStatement {
         variantArgumentName?: string,
     ): this {
         variantArgumentName ||= `${this.argumentName}_${branch}`;
-        const variantArgument = this.variantArgument(variantArgumentName, this.line);
+        const variantArgument = VariantCaseArgument(variantArgumentName, this.line);
         this.cases[branch] = { argumentName: variantArgumentName, statements: buildStatements(variantArgument) };
         return this;
     }
 
     private caseArgument(argumentName: string, line: LineInfo) {
         return new Expression(ExpressionAtom.cases_arg, `"${argumentName}"`, line);
-    }
-
-    private variantArgument(argumentName: string, line: LineInfo) {
-        return proxy(new Expression(ExpressionAtom.variant_arg, `"${argumentName}"`, line), Expression.proxyHandler);
     }
 
     [Symbol.toPrimitive]() {
