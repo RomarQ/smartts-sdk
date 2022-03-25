@@ -113,7 +113,7 @@ exports[`Variant expressions Check Variant 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n    self.init(True)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TVariant(prop1 = sp.TNat, prop2 = sp.TUnit).layout((\\\\\\"prop1\\\\\\", \\\\\\"prop2\\\\\\")))\\\\n    self.data = params.is_variant('prop2')\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n    self.init(True)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TVariant(prop1 = sp.TNat, prop2 = sp.TUnit).layout((\\\\\\"prop1\\\\\\", \\\\\\"prop2\\\\\\")))\\\\n    self.data = params.is_variant('prop2')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -215,6 +215,6 @@ exports[`Variant expressions Open Variant 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TVariant(prop1 = sp.TNat, prop2 = sp.TUnit).layout((\\\\\\"prop1\\\\\\", \\\\\\"prop2\\\\\\")))\\\\n    self.data = params.open_variant('prop2')\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TVariant(prop1 = sp.TNat, prop2 = sp.TUnit).layout((\\\\\\"prop1\\\\\\", \\\\\\"prop2\\\\\\")))\\\\n    self.data = params.open_variant('prop2')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;

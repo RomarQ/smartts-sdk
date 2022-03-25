@@ -94,6 +94,6 @@ exports[`Test (ForEach) statement Sum values of a list 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n    self.init(1)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TList(sp.TNat))\\\\n    sp.for __ITERATOR_FOREACH_1__ in params:\\\\n      self.data += __ITERATOR_FOREACH_1__\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n    self.init(1)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TList(sp.TNat))\\\\n    sp.for __ITERATOR_FOREACH_1__ in params:\\\\n      self.data += __ITERATOR_FOREACH_1__\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;

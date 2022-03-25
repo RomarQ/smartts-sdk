@@ -73,7 +73,7 @@ exports[`Test Literals Left variant 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TVariant(Left = sp.TNat, Right = sp.TInt).layout((\\\\\\"Left\\\\\\", \\\\\\"Right\\\\\\")))\\\\n    self.init(Left(1))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TVariant(Left = sp.TNat, Right = sp.TInt).layout((\\\\\\"Left\\\\\\", \\\\\\"Right\\\\\\")))\\\\n    self.init(Left(1))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -150,7 +150,7 @@ exports[`Test Literals Right variant 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TVariant(Left = sp.TNat, Right = sp.TInt).layout((\\\\\\"Left\\\\\\", \\\\\\"Right\\\\\\")))\\\\n    self.init(Right(1))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TVariant(Left = sp.TNat, Right = sp.TInt).layout((\\\\\\"Left\\\\\\", \\\\\\"Right\\\\\\")))\\\\n    self.init(Right(1))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -213,7 +213,7 @@ exports[`Test Literals address 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TAddress)\\\\n    self.init(sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TAddress)\\\\n    self.init(sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -284,7 +284,7 @@ exports[`Test Literals big_map 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBigMap(sp.TNat, sp.TString))\\\\n    self.init({1 : 'WORD1', 2 : 'WORD2'})\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBigMap(sp.TNat, sp.TString))\\\\n    self.init({1 : 'WORD1', 2 : 'WORD2'})\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -347,7 +347,7 @@ exports[`Test Literals bls12_381_fr 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBls12_381_fr)\\\\n    self.init(sp.bls12_381_fr('0x01'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBls12_381_fr)\\\\n    self.init(sp.bls12_381_fr('0x01'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -410,7 +410,7 @@ exports[`Test Literals bls12_381_fr 4`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBls12_381_fr)\\\\n    self.init(sp.bls12_381_fr('0x01'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBls12_381_fr)\\\\n    self.init(sp.bls12_381_fr('0x01'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -473,7 +473,7 @@ exports[`Test Literals bls12_381_g1 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBls12_381_g1)\\\\n    self.init(sp.bls12_381_g1('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBls12_381_g1)\\\\n    self.init(sp.bls12_381_g1('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -536,7 +536,7 @@ exports[`Test Literals bls12_381_g2 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBls12_381_g2)\\\\n    self.init(sp.bls12_381_g2('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBls12_381_g2)\\\\n    self.init(sp.bls12_381_g2('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -599,7 +599,7 @@ exports[`Test Literals bool 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n    self.init(True)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n    self.init(True)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -662,7 +662,7 @@ exports[`Test Literals bytes 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBytes)\\\\n    self.init(sp.bytes('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBytes)\\\\n    self.init(sp.bytes('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -725,7 +725,7 @@ exports[`Test Literals chain_id 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TChainId)\\\\n    self.init(sp.chain_id('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TChainId)\\\\n    self.init(sp.chain_id('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -788,7 +788,7 @@ exports[`Test Literals int 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TInt)\\\\n    self.init(2)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TInt)\\\\n    self.init(2)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -851,7 +851,7 @@ exports[`Test Literals key 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TKey)\\\\n    self.init(sp.key('edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TKey)\\\\n    self.init(sp.key('edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -914,7 +914,7 @@ exports[`Test Literals key_hash 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TKeyHash)\\\\n    self.init(sp.key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TKeyHash)\\\\n    self.init(sp.key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -985,7 +985,7 @@ exports[`Test Literals lambda 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TLambda(sp.TString, sp.TString))\\\\n    self.init(sp.build_lambda(lambda lambda_arg: lambda_arg))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TLambda(sp.TString, sp.TString))\\\\n    self.init(sp.build_lambda(lambda lambda_arg: lambda_arg))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1056,7 +1056,7 @@ exports[`Test Literals lambda 4`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TLambda(sp.TNat, sp.TString))\\\\n    self.init(lambda(sp.TLambda(sp.TNat, sp.TString)))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TLambda(sp.TNat, sp.TString))\\\\n    self.init(lambda(sp.TLambda(sp.TNat, sp.TString)))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1124,7 +1124,7 @@ exports[`Test Literals list 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TList(sp.TString))\\\\n    self.init(['HELLO', 'WORLD'])\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TList(sp.TString))\\\\n    self.init(['HELLO', 'WORLD'])\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1195,7 +1195,7 @@ exports[`Test Literals map 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TMap(sp.TNat, sp.TString))\\\\n    self.init({1 : 'WORD1', 2 : 'WORD2'})\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TMap(sp.TNat, sp.TString))\\\\n    self.init({1 : 'WORD1', 2 : 'WORD2'})\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1258,7 +1258,7 @@ exports[`Test Literals mutez 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TMutez)\\\\n    self.init(sp.mutez(2))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TMutez)\\\\n    self.init(sp.mutez(2))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1321,7 +1321,7 @@ exports[`Test Literals nat 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n    self.init(1)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n    self.init(1)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1389,7 +1389,7 @@ exports[`Test Literals none 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TString))\\\\n    self.init(sp.none)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TString))\\\\n    self.init(sp.none)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1460,7 +1460,7 @@ exports[`Test Literals pair 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TPair(sp.TNat, sp.TString))\\\\n    self.init((1, 'WORD'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TPair(sp.TNat, sp.TString))\\\\n    self.init((1, 'WORD'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1548,7 +1548,7 @@ exports[`Test Literals record 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TRecord(field1 = sp.TNat, field2 = sp.TInt, field3 = sp.TBytes).layout(((\\\\\\"field1\\\\\\", \\\\\\"field2\\\\\\"), \\\\\\"field3\\\\\\")))\\\\n    self.init(field1 = 1,\\\\n              field2 = 2,\\\\n              field3 = sp.bytes('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TRecord(field1 = sp.TNat, field2 = sp.TInt, field3 = sp.TBytes).layout(((\\\\\\"field1\\\\\\", \\\\\\"field2\\\\\\"), \\\\\\"field3\\\\\\")))\\\\n    self.init(field1 = 1,\\\\n              field2 = 2,\\\\n              field3 = sp.bytes('0x00'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1616,7 +1616,7 @@ exports[`Test Literals sapling_state 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TSaplingState(8))\\\\n    self.init([])\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TSaplingState(8))\\\\n    self.init([])\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1684,7 +1684,7 @@ exports[`Test Literals set 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TSet(sp.TString))\\\\n    self.init(sp.set(['HELLO', 'WORLD']))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TSet(sp.TString))\\\\n    self.init(sp.set(['HELLO', 'WORLD']))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1747,7 +1747,7 @@ exports[`Test Literals signature 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TSignature)\\\\n    self.init(sp.signature('sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TSignature)\\\\n    self.init(sp.signature('sigsAujsNePapNNGsVotTvcKWMNNJja9B4a2FfAe8vExzFhEgEo1GTQStiif22uSA6iNxPGCGsXsRyeLHzeLbJL2y8CnYuNe'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1815,7 +1815,7 @@ exports[`Test Literals some 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TString))\\\\n    self.init(sp.some('HELLO'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TString))\\\\n    self.init(sp.some('HELLO'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1878,7 +1878,7 @@ exports[`Test Literals string 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TString)\\\\n    self.init('TEST STRING')\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TString)\\\\n    self.init('TEST STRING')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -1941,7 +1941,7 @@ exports[`Test Literals timestamp 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TTimestamp)\\\\n    self.init(sp.timestamp(100))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TTimestamp)\\\\n    self.init(sp.timestamp(100))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -2004,7 +2004,7 @@ exports[`Test Literals unit 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -2092,6 +2092,6 @@ exports[`Test Literals variant 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TVariant(match1 = sp.TNat, match2 = sp.TInt, match3 = sp.TBytes).layout((\\\\\\"match1\\\\\\", (\\\\\\"match2\\\\\\", \\\\\\"match3\\\\\\"))))\\\\n    self.init(match2(1))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TVariant(match1 = sp.TNat, match2 = sp.TInt, match3 = sp.TBytes).layout((\\\\\\"match1\\\\\\", (\\\\\\"match2\\\\\\", \\\\\\"match3\\\\\\"))))\\\\n    self.init(match2(1))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;

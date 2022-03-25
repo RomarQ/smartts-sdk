@@ -129,7 +129,7 @@ exports[`Contract expressions GetContract 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    contract = sp.local(\\\\\\"contract\\\\\\", sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some())\\\\n    sp.transfer(sp.unit, sp.mutez(100), contract.value)\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    contract = sp.local(\\\\\\"contract\\\\\\", sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some())\\\\n    sp.transfer(sp.unit, sp.mutez(100), contract.value)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -221,7 +221,7 @@ exports[`Contract expressions ImplicitAccount 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TKeyHash)\\\\n    sp.transfer(sp.unit, sp.tez(0), sp.implicit_account(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TKeyHash)\\\\n    sp.transfer(sp.unit, sp.tez(0), sp.implicit_account(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -296,7 +296,7 @@ exports[`Contract expressions ToAddress 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TAddress)\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.self_entry_point_address('entry_point_1')\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TAddress)\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.self_entry_point_address('entry_point_1')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -436,6 +436,6 @@ exports[`Contract expressions ToContract 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some(message = sp.some('CONTRACT_NOT_FOUND')))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some(message = sp.some('CONTRACT_NOT_FOUND')))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;

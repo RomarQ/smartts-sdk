@@ -138,7 +138,7 @@ assert.deepEqual(SmartML.compileContract(contract), {
         "    sp.verify(some_address.value == sp.sender, 'Not Admin!')\n" +
         '    self.data = params\n' +
         '\n' +
-        'sp.add_compilation_target("test", Contract())',
+        'sp.add_compilation_target("visualtez_compilation", Contract())',
 });
 
 console.info('[Passes] - CommonJS');

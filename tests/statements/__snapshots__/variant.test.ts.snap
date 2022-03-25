@@ -83,7 +83,7 @@ exports[`Test Variant statements MatchVariant 1 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TString)\\\\n    self.init('')\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TVariant(action1 = sp.TString, action2 = sp.TString).layout((\\\\\\"action1\\\\\\", \\\\\\"action2\\\\\\")))\\\\n    with params.match_cases() as arg:\\\\n      with arg.match('action1') as __MATCH_1___action1:\\\\n        self.data = __MATCH_1___action1\\\\n      with arg.match('action2') as __MATCH_1___action2:\\\\n        self.data = __MATCH_1___action2\\\\n\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TString)\\\\n    self.init('')\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TVariant(action1 = sp.TString, action2 = sp.TString).layout((\\\\\\"action1\\\\\\", \\\\\\"action2\\\\\\")))\\\\n    with params.match_cases() as arg:\\\\n      with arg.match('action1') as __MATCH_1___action1:\\\\n        self.data = __MATCH_1___action1\\\\n      with arg.match('action2') as __MATCH_1___action2:\\\\n        self.data = __MATCH_1___action2\\\\n\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -218,6 +218,6 @@ exports[`Test Variant statements MatchVariant 2 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TString)\\\\n    self.init('')\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TList(sp.TVariant(action1 = sp.TString, action2 = sp.TString).layout((\\\\\\"action1\\\\\\", \\\\\\"action2\\\\\\"))))\\\\n    sp.for __ITERATOR_FOREACH_2__ in params:\\\\n      with __ITERATOR_FOREACH_2__.match_cases() as arg:\\\\n        with arg.match('action1') as __MATCH_3___action1:\\\\n          self.data = __MATCH_3___action1\\\\n        with arg.match('action2') as __MATCH_3___action2:\\\\n          self.data = __MATCH_3___action2\\\\n\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TString)\\\\n    self.init('')\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TList(sp.TVariant(action1 = sp.TString, action2 = sp.TString).layout((\\\\\\"action1\\\\\\", \\\\\\"action2\\\\\\"))))\\\\n    sp.for __ITERATOR_FOREACH_2__ in params:\\\\n      with __ITERATOR_FOREACH_2__.match_cases() as arg:\\\\n        with arg.match('action1') as __MATCH_3___action1:\\\\n          self.data = __MATCH_3___action1\\\\n        with arg.match('action2') as __MATCH_3___action2:\\\\n          self.data = __MATCH_3___action2\\\\n\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;

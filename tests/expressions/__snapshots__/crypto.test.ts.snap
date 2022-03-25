@@ -73,7 +73,7 @@ exports[`Crypto expressions Hashing BLACK2B 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_BLACK2B(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.blake2b(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_BLACK2B(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.blake2b(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -150,7 +150,7 @@ exports[`Crypto expressions Hashing KECCAK 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_KECCAK(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.keccak(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_KECCAK(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.keccak(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -227,7 +227,7 @@ exports[`Crypto expressions Hashing SHA3 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_SHA3(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.sha3(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_SHA3(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.sha3(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -304,7 +304,7 @@ exports[`Crypto expressions Hashing SHA256 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_SHA256(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.sha256(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_SHA256(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.sha256(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -381,7 +381,7 @@ exports[`Crypto expressions Hashing SHA512 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_SHA512(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.sha512(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n    self.init(sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_bytes_SHA512(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.some(sp.sha512(params))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -475,6 +475,6 @@ exports[`Crypto expressions Signatures CheckSignature 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n\\\\n  @sp.entry_point\\\\n  def checkSignature(self, params):\\\\n    sp.set_type(params, sp.TSignature)\\\\n    self.data = sp.check_signature(sp.key('edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT'), params, sp.bytes('0x01'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"test\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n\\\\n  @sp.entry_point\\\\n  def checkSignature(self, params):\\\\n    sp.set_type(params, sp.TSignature)\\\\n    self.data = sp.check_signature(sp.key('edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT'), params, sp.bytes('0x01'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
