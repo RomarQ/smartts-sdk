@@ -112,6 +112,25 @@ export const CheckSignature = (
     line = new LineInfo(),
 ) => new Expression<MichelsonType.bool>(ExpressionAtom.check_signature, key, signature, bytes, line);
 
+/**
+ * Hash public key.
+ *
+ * ```typescript
+ * HashKey(Key("edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT"));
+ * ```
+ *
+ * @category Contract
+ *
+ * @param key An expression that evaluates to a public key value.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression of type `TContract(TUnit())`.
+ */
+export const HashKey = (
+    key: IExpression<MichelsonType.key>,
+    line = new LineInfo(),
+): IExpression<MichelsonType.key_hash> => new Expression(ExpressionAtom.hash_key, key, line);
+
 export const Crypto = {
     BLAKE2B,
     SHA256,
@@ -119,4 +138,5 @@ export const Crypto = {
     SHA3,
     KECCAK,
     CheckSignature,
+    HashKey,
 };

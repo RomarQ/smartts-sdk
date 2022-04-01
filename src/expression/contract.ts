@@ -86,7 +86,7 @@ export const ToAddress = (
  *
  * @category Contract
  *
- * @param contract An expression that evaluates to a contract value.
+ * @param key_hash An expression that evaluates to a public key hash value.
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
  * @returns {IExpression} An expression of type `TContract(TUnit())`.

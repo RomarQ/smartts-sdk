@@ -82,6 +82,7 @@ export enum ExpressionAtom {
     type_annotation = 'type_annotation',
     to_address = 'to_address',
     implicit_account = 'implicit_account',
+    hash_key = 'hash_key',
     sapling_empty_state = 'sapling_empty_state',
     sapling_verify_update = 'sapling_verify_update',
     pairing_check = 'pairing_check',

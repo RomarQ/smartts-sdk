@@ -3,6 +3,7 @@ import {
     Bytes,
     CheckSignature,
     ContractStorage,
+    HashKey,
     KECCAK,
     Key,
     None,
@@ -14,7 +15,7 @@ import {
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { SetValue } from '../../src/statement';
-import { TBool, TBytes, TSignature } from '../../src/type';
+import { TBool, TBytes, TKey, TKey_hash, TSignature } from '../../src/type';
 
 describe('Crypto expressions', () => {
     describe('Hashing', () => {
@@ -69,6 +70,17 @@ describe('Crypto expressions', () => {
                     new EntryPoint('hash_bytes_SHA3')
                         .setInputType(TBytes())
                         .code((arg) => [SetValue(ContractStorage(), Some(SHA3(arg)))]),
+                );
+
+            verifyContractCompilationOutput(contract);
+        });
+        it('HashKey', () => {
+            const contract = new Contract()
+                .setStorageType(TKey_hash())
+                .addEntrypoint(
+                    new EntryPoint('hash_key')
+                        .setInputType(TKey())
+                        .code((arg) => [SetValue(ContractStorage(), HashKey(arg))]),
                 );
 
             verifyContractCompilationOutput(contract);

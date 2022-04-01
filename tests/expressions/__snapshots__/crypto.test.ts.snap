@@ -3,16 +3,16 @@
 exports[`Crypto expressions Hashing BLACK2B 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 22))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 23))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 23))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 24))
             storage_type ((unknown 0))
-            messages ((hash_bytes_BLACK2B True False False True (\\"crypto.test.ts\\" 25) ((set_type (params (\\"crypto.test.ts\\" 25)) \\"bytes\\" (\\"crypto.test.ts\\" 30)) (set (data) (variant \\"Some\\" (blake2b (params (\\"crypto.test.ts\\" 25)) (\\"crypto.test.ts\\" 27)) (\\"crypto.test.ts\\" 27)) (\\"crypto.test.ts\\" 27)))))
+            messages ((hash_bytes_BLACK2B True False False True (\\"crypto.test.ts\\" 26) ((set_type (params (\\"crypto.test.ts\\" 26)) \\"bytes\\" (\\"crypto.test.ts\\" 31)) (set (data) (variant \\"Some\\" (blake2b (params (\\"crypto.test.ts\\" 26)) (\\"crypto.test.ts\\" 28)) (\\"crypto.test.ts\\" 28)) (\\"crypto.test.ts\\" 28)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 22))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 23))
         )
         "
 `;
@@ -77,19 +77,88 @@ exports[`Crypto expressions Hashing BLACK2B 2`] = `
 }"
 `;
 
-exports[`Crypto expressions Hashing KECCAK 1`] = `
+exports[`Crypto expressions Hashing HashKey 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 33))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 34))
-            storage_type ((unknown 0))
-            messages ((hash_bytes_KECCAK True False False True (\\"crypto.test.ts\\" 36) ((set_type (params (\\"crypto.test.ts\\" 36)) \\"bytes\\" (\\"crypto.test.ts\\" 41)) (set (data) (variant \\"Some\\" (keccak (params (\\"crypto.test.ts\\" 36)) (\\"crypto.test.ts\\" 38)) (\\"crypto.test.ts\\" 38)) (\\"crypto.test.ts\\" 38)))))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 78))
+            storage ()
+            storage_type (\\"key_hash\\")
+            messages ((hash_key True False False True (\\"crypto.test.ts\\" 81) ((set_type (params (\\"crypto.test.ts\\" 81)) \\"key\\" (\\"crypto.test.ts\\" 86)) (set (data) (hash_key (params (\\"crypto.test.ts\\" 81)) (\\"crypto.test.ts\\" 83)) (\\"crypto.test.ts\\" 83)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 33))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 78))
+        )
+        "
+`;
+
+exports[`Crypto expressions Hashing HashKey 2`] = `
+"{
+    \\"micheline\\": \\"parameter (key %hash_key);\\\\nstorage   key_hash;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_key ==\\\\n    # self.data = sp.hash_key(params) # @parameter\\\\n    HASH_KEY;   # key_hash\\\\n    NIL operation; # list operation : key_hash\\\\n    PAIR;       # pair (list operation) key_hash\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"key_hash\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"key\\",
+                    \\"annots\\": [
+                        \\"%hash_key\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"HASH_KEY\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TKeyHash)\\\\n\\\\n  @sp.entry_point\\\\n  def hash_key(self, params):\\\\n    sp.set_type(params, sp.TKey)\\\\n    self.data = sp.hash_key(params)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Crypto expressions Hashing KECCAK 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"crypto.test.ts\\" 34))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 35))
+            storage_type ((unknown 0))
+            messages ((hash_bytes_KECCAK True False False True (\\"crypto.test.ts\\" 37) ((set_type (params (\\"crypto.test.ts\\" 37)) \\"bytes\\" (\\"crypto.test.ts\\" 42)) (set (data) (variant \\"Some\\" (keccak (params (\\"crypto.test.ts\\" 37)) (\\"crypto.test.ts\\" 39)) (\\"crypto.test.ts\\" 39)) (\\"crypto.test.ts\\" 39)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 34))
         )
         "
 `;
@@ -157,16 +226,16 @@ exports[`Crypto expressions Hashing KECCAK 2`] = `
 exports[`Crypto expressions Hashing SHA3 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 66))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 67))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 67))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 68))
             storage_type ((unknown 0))
-            messages ((hash_bytes_SHA3 True False False True (\\"crypto.test.ts\\" 69) ((set_type (params (\\"crypto.test.ts\\" 69)) \\"bytes\\" (\\"crypto.test.ts\\" 74)) (set (data) (variant \\"Some\\" (sha3 (params (\\"crypto.test.ts\\" 69)) (\\"crypto.test.ts\\" 71)) (\\"crypto.test.ts\\" 71)) (\\"crypto.test.ts\\" 71)))))
+            messages ((hash_bytes_SHA3 True False False True (\\"crypto.test.ts\\" 70) ((set_type (params (\\"crypto.test.ts\\" 70)) \\"bytes\\" (\\"crypto.test.ts\\" 75)) (set (data) (variant \\"Some\\" (sha3 (params (\\"crypto.test.ts\\" 70)) (\\"crypto.test.ts\\" 72)) (\\"crypto.test.ts\\" 72)) (\\"crypto.test.ts\\" 72)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 66))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 67))
         )
         "
 `;
@@ -234,16 +303,16 @@ exports[`Crypto expressions Hashing SHA3 2`] = `
 exports[`Crypto expressions Hashing SHA256 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 44))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 45))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 45))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 46))
             storage_type ((unknown 0))
-            messages ((hash_bytes_SHA256 True False False True (\\"crypto.test.ts\\" 47) ((set_type (params (\\"crypto.test.ts\\" 47)) \\"bytes\\" (\\"crypto.test.ts\\" 52)) (set (data) (variant \\"Some\\" (sha256 (params (\\"crypto.test.ts\\" 47)) (\\"crypto.test.ts\\" 49)) (\\"crypto.test.ts\\" 49)) (\\"crypto.test.ts\\" 49)))))
+            messages ((hash_bytes_SHA256 True False False True (\\"crypto.test.ts\\" 48) ((set_type (params (\\"crypto.test.ts\\" 48)) \\"bytes\\" (\\"crypto.test.ts\\" 53)) (set (data) (variant \\"Some\\" (sha256 (params (\\"crypto.test.ts\\" 48)) (\\"crypto.test.ts\\" 50)) (\\"crypto.test.ts\\" 50)) (\\"crypto.test.ts\\" 50)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 44))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 45))
         )
         "
 `;
@@ -311,16 +380,16 @@ exports[`Crypto expressions Hashing SHA256 2`] = `
 exports[`Crypto expressions Hashing SHA512 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 55))
-            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 56))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 56))
+            storage (variant \\"None\\" (unit) (\\"crypto.test.ts\\" 57))
             storage_type ((unknown 0))
-            messages ((hash_bytes_SHA512 True False False True (\\"crypto.test.ts\\" 58) ((set_type (params (\\"crypto.test.ts\\" 58)) \\"bytes\\" (\\"crypto.test.ts\\" 63)) (set (data) (variant \\"Some\\" (sha512 (params (\\"crypto.test.ts\\" 58)) (\\"crypto.test.ts\\" 60)) (\\"crypto.test.ts\\" 60)) (\\"crypto.test.ts\\" 60)))))
+            messages ((hash_bytes_SHA512 True False False True (\\"crypto.test.ts\\" 59) ((set_type (params (\\"crypto.test.ts\\" 59)) \\"bytes\\" (\\"crypto.test.ts\\" 64)) (set (data) (variant \\"Some\\" (sha512 (params (\\"crypto.test.ts\\" 59)) (\\"crypto.test.ts\\" 61)) (\\"crypto.test.ts\\" 61)) (\\"crypto.test.ts\\" 61)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 55))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 56))
         )
         "
 `;
@@ -388,16 +457,16 @@ exports[`Crypto expressions Hashing SHA512 2`] = `
 exports[`Crypto expressions Signatures CheckSignature 1`] = `
 "
         (
-            template_id (static_id 0 (\\"crypto.test.ts\\" 79))
+            template_id (static_id 0 (\\"crypto.test.ts\\" 91))
             storage ()
             storage_type (\\"bool\\")
-            messages ((checkSignature True False False True (\\"crypto.test.ts\\" 82) ((set_type (params (\\"crypto.test.ts\\" 82)) \\"signature\\" (\\"crypto.test.ts\\" 96)) (set (data) (check_signature (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"crypto.test.ts\\" 84)) (params (\\"crypto.test.ts\\" 82)) (literal (bytes 0x01) (\\"crypto.test.ts\\" 84)) (\\"crypto.test.ts\\" 84)) (\\"crypto.test.ts\\" 84)))))
+            messages ((checkSignature True False False True (\\"crypto.test.ts\\" 94) ((set_type (params (\\"crypto.test.ts\\" 94)) \\"signature\\" (\\"crypto.test.ts\\" 108)) (set (data) (check_signature (literal (key edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT) (\\"crypto.test.ts\\" 96)) (params (\\"crypto.test.ts\\" 94)) (literal (bytes 0x01) (\\"crypto.test.ts\\" 96)) (\\"crypto.test.ts\\" 96)) (\\"crypto.test.ts\\" 96)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"crypto.test.ts\\" 79))
+            balance (literal (mutez 0) (\\"crypto.test.ts\\" 91))
         )
         "
 `;
