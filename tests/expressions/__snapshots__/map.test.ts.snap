@@ -1,0 +1,400 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Map expressions GetMapEntries 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"map.test.ts\\" 9))
+            storage ()
+            storage_type ((list (record ((key \\"nat\\") (value \\"string\\")) (Some ((\\"key\\") (\\"value\\"))) (\\"\\" -1))))
+            messages ((ep1 True False False True (\\"map.test.ts\\" 12) ((set_type (params (\\"map.test.ts\\" 12)) (map \\"nat\\" \\"string\\") (\\"map.test.ts\\" 17)) (set (data) (items (params (\\"map.test.ts\\" 12)) (\\"map.test.ts\\" 14)) (\\"map.test.ts\\" 14)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"map.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`Map expressions GetMapEntries 2`] = `
+"{
+    \\"micheline\\": \\"parameter (map %ep1 nat string);\\\\nstorage   (list (pair (nat %key) (string %value)));\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.items() # @parameter\\\\n    NIL (pair nat string); # list (pair nat string) : @parameter\\\\n    SWAP;       # @parameter : list (pair nat string)\\\\n    ITER\\\\n      {\\\\n        CONS;       # list (pair nat string)\\\\n      }; # list (pair nat string)\\\\n    NIL (pair nat string); # list (pair nat string) : list (pair nat string)\\\\n    SWAP;       # list (pair nat string) : list (pair nat string)\\\\n    ITER\\\\n      {\\\\n        CONS;       # list (pair nat string)\\\\n      }; # list (pair nat string)\\\\n    NIL operation; # list operation : list (pair nat string)\\\\n    PAIR;       # pair (list operation) (list (pair nat string))\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"list\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"pair\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"nat\\",
+                                    \\"annots\\": [
+                                        \\"%key\\"
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"string\\",
+                                    \\"annots\\": [
+                                        \\"%value\\"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"map\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"prim\\": \\"string\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"pair\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"nat\\"
+                                    },
+                                    {
+                                        \\"prim\\": \\"string\\"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"ITER\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"CONS\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"pair\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"nat\\"
+                                    },
+                                    {
+                                        \\"prim\\": \\"string\\"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"ITER\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"CONS\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TList(sp.TRecord(key = sp.TNat, value = sp.TString).layout((\\\\\\"key\\\\\\", \\\\\\"value\\\\\\"))))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TMap(sp.TNat, sp.TString))\\\\n    self.data = params.items()\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Map expressions GetMapKeys 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"map.test.ts\\" 20))
+            storage ()
+            storage_type ((list \\"nat\\"))
+            messages ((ep1 True False False True (\\"map.test.ts\\" 23) ((set_type (params (\\"map.test.ts\\" 23)) (map \\"nat\\" \\"string\\") (\\"map.test.ts\\" 28)) (set (data) (keys (params (\\"map.test.ts\\" 23)) (\\"map.test.ts\\" 25)) (\\"map.test.ts\\" 25)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"map.test.ts\\" 20))
+        )
+        "
+`;
+
+exports[`Map expressions GetMapKeys 2`] = `
+"{
+    \\"micheline\\": \\"parameter (map %ep1 nat string);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.keys() # @parameter\\\\n    NIL nat;    # list nat : @parameter\\\\n    SWAP;       # @parameter : list nat\\\\n    ITER\\\\n      {\\\\n        CAR;        # nat : list nat\\\\n        CONS;       # list nat\\\\n      }; # list nat\\\\n    NIL nat;    # list nat : list nat\\\\n    SWAP;       # list nat : list nat\\\\n    ITER\\\\n      {\\\\n        CONS;       # list nat\\\\n      }; # list nat\\\\n    NIL operation; # list operation : list nat\\\\n    PAIR;       # pair (list operation) (list nat)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"list\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"map\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"prim\\": \\"string\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"ITER\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"CAR\\"
+                                },
+                                {
+                                    \\"prim\\": \\"CONS\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"ITER\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"CONS\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TList(sp.TNat))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TMap(sp.TNat, sp.TString))\\\\n    self.data = params.keys()\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Map expressions GetMapValues 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"map.test.ts\\" 31))
+            storage ()
+            storage_type ((list \\"string\\"))
+            messages ((ep1 True False False True (\\"map.test.ts\\" 34) ((set_type (params (\\"map.test.ts\\" 34)) (map \\"nat\\" \\"string\\") (\\"map.test.ts\\" 39)) (set (data) (values (params (\\"map.test.ts\\" 34)) (\\"map.test.ts\\" 36)) (\\"map.test.ts\\" 36)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"map.test.ts\\" 31))
+        )
+        "
+`;
+
+exports[`Map expressions GetMapValues 2`] = `
+"{
+    \\"micheline\\": \\"parameter (map %ep1 nat string);\\\\nstorage   (list string);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.values() # @parameter\\\\n    NIL string; # list string : @parameter\\\\n    SWAP;       # @parameter : list string\\\\n    ITER\\\\n      {\\\\n        CDR;        # string : list string\\\\n        CONS;       # list string\\\\n      }; # list string\\\\n    NIL string; # list string : list string\\\\n    SWAP;       # list string : list string\\\\n    ITER\\\\n      {\\\\n        CONS;       # list string\\\\n      }; # list string\\\\n    NIL operation; # list operation : list string\\\\n    PAIR;       # pair (list operation) (list string)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"list\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"string\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"map\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        },
+                        {
+                            \\"prim\\": \\"string\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"string\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"ITER\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"CDR\\"
+                                },
+                                {
+                                    \\"prim\\": \\"CONS\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"string\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"ITER\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"CONS\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TList(sp.TString))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TMap(sp.TNat, sp.TString))\\\\n    self.data = params.values()\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;

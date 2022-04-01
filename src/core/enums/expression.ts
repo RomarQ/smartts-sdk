@@ -63,6 +63,8 @@ export enum ExpressionAtom {
     concat = 'concat',
     contains = 'contains',
     items = 'items',
+    keys = 'keys',
+    values = 'values',
     update_map = 'update_map',
     getItem = 'getItem',
     getItemDefault = 'getItemDefault',

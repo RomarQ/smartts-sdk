@@ -26,8 +26,56 @@ import { MichelsonType } from '../core/enums/type';
  *
  * @returns {IExpression} An expression of type TList(TRecord({ key: ..., value: ... })).
  */
-export const GetMapEntries = (source: IExpression, line = new LineInfo()) =>
+export const GetMapEntries = (source: IExpression<MichelsonType.map>, line = new LineInfo()) =>
     new Expression<MichelsonType.list>(ExpressionAtom.items, source, line);
+
+/**
+ * Get map keys.
+ *
+ * ```typescript
+ * GetMapKeys(
+ *  Map(
+        [
+            [String("some_key_a"), Nat(1)],
+            [String("some_key_b"), Nat(2)]
+        ]
+    )
+   );
+ * ```
+ *
+ * @category | Map expressions
+ *
+ * @param source Map expression
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression of type TList(<key_type>).
+ */
+export const GetMapKeys = (source: IExpression<MichelsonType.map>, line = new LineInfo()) =>
+    new Expression<MichelsonType.list>(ExpressionAtom.keys, source, line);
+
+/**
+ * Get map values.
+ *
+ * ```typescript
+ * GetMapValues(
+ *  Map(
+        [
+            [String("some_key_a"), Nat(1)],
+            [String("some_key_b"), Nat(2)]
+        ]
+    )
+   );
+ * ```
+ *
+ * @category | Map expressions
+ *
+ * @param source Map expression
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression of type TList(<value_type>).
+ */
+export const GetMapValues = (source: IExpression<MichelsonType.map>, line = new LineInfo()) =>
+    new Expression<MichelsonType.list>(ExpressionAtom.values, source, line);
 
 /**
  * Update an entry on map or big map.
