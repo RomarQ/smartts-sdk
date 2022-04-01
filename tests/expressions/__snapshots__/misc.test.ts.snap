@@ -132,16 +132,16 @@ exports[`Misc expressions Concat 2`] = `
 exports[`Misc expressions SizeOf 1`] = `
 "
         (
-            template_id (static_id 0 (\\"misc.test.ts\\" 28))
+            template_id (static_id 0 (\\"misc.test.ts\\" 39))
             storage ()
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"misc.test.ts\\" 31) ((set_type (params (\\"misc.test.ts\\" 31)) \\"unit\\" (\\"misc.test.ts\\" 40)) (set (data) (size (literal (string \\"Hello\\") (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (set (data) (size (literal (bytes 0x01) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (set (data) (size (list (\\"misc.test.ts\\" 31) (literal (nat 1) (\\"misc.test.ts\\" 31))) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (set (data) (size (set (\\"misc.test.ts\\" 31) (literal (nat 1) (\\"misc.test.ts\\" 31))) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)) (set (data) (size (map (\\"misc.test.ts\\" 31) ((literal (nat 1) (\\"misc.test.ts\\" 31)) (literal (nat 2) (\\"misc.test.ts\\" 31)))) (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 31)))))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 42) ((set_type (params (\\"misc.test.ts\\" 42)) \\"unit\\" (\\"misc.test.ts\\" 51)) (set (data) (size (literal (string \\"Hello\\") (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)) (set (data) (size (literal (bytes 0x01) (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)) (set (data) (size (list (\\"misc.test.ts\\" 42) (literal (nat 1) (\\"misc.test.ts\\" 42))) (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)) (set (data) (size (set (\\"misc.test.ts\\" 42) (literal (nat 1) (\\"misc.test.ts\\" 42))) (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)) (set (data) (size (map (\\"misc.test.ts\\" 42) ((literal (nat 1) (\\"misc.test.ts\\" 42)) (literal (nat 2) (\\"misc.test.ts\\" 42)))) (\\"misc.test.ts\\" 42)) (\\"misc.test.ts\\" 42)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"misc.test.ts\\" 28))
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 39))
         )
         "
 `;
@@ -224,5 +224,101 @@ exports[`Misc expressions SizeOf 2`] = `
         }
     ],
     \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.len('Hello')\\\\n    self.data = sp.len(sp.bytes('0x01'))\\\\n    self.data = sp.len(sp.list([1]))\\\\n    self.data = sp.len(sp.set([1]))\\\\n    self.data = sp.len({1 : 2})\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Misc expressions Slice 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"misc.test.ts\\" 28))
+            storage ()
+            storage_type ((option \\"bytes\\"))
+            messages ((ep1 True False False True (\\"misc.test.ts\\" 31) ((set_type (params (\\"misc.test.ts\\" 31)) \\"bytes\\" (\\"misc.test.ts\\" 36)) (set (data) (slice (literal (nat 1) (\\"misc.test.ts\\" 33)) (literal (nat 2) (\\"misc.test.ts\\" 33)) (params (\\"misc.test.ts\\" 31)) (\\"misc.test.ts\\" 33)) (\\"misc.test.ts\\" 33)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"misc.test.ts\\" 28))
+        )
+        "
+`;
+
+exports[`Misc expressions Slice 2`] = `
+"{
+    \\"micheline\\": \\"parameter (bytes %ep1);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.slice(params, 1, 2) # @parameter\\\\n    PUSH nat 2; # nat : @parameter\\\\n    PUSH nat 1; # nat : nat : @parameter\\\\n    SLICE;      # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"bytes\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bytes\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"1\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SLICE\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TBytes))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TBytes)\\\\n    self.data = sp.slice(params, 1, 2)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;

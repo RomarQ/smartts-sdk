@@ -1,8 +1,8 @@
-import { Bytes, Concat, ContractStorage, List, Nat, Pair, SizeOf, Set, String, Map } from '../../src/expression';
+import { Bytes, Concat, ContractStorage, List, Nat, Pair, SizeOf, Set, String, Map, Slice } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { SetValue } from '../../src/statement';
-import { TBytes, TNat, TPair, TString, TUnit } from '../../src/type';
+import { TBytes, TNat, TOption, TPair, TString, TUnit } from '../../src/type';
 
 describe('Misc expressions', () => {
     it('Concat', () => {
@@ -20,6 +20,17 @@ describe('Misc expressions', () => {
                             ),
                         ),
                     ]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('Slice', () => {
+        const contract = new Contract()
+            .setStorageType(TOption(TBytes()))
+            .addEntrypoint(
+                new EntryPoint('ep1')
+                    .setInputType(TBytes())
+                    .code((arg) => [SetValue(ContractStorage(), Slice(arg, Nat(1), Nat(2)))]),
             );
 
         verifyContractCompilationOutput(contract);

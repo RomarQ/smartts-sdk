@@ -58,6 +58,7 @@ export enum ExpressionAtom {
     isNat = 'isNat',
     abs = 'abs',
     // Generic
+    slice = 'slice',
     size = 'size',
     concat = 'concat',
     contains = 'contains',
