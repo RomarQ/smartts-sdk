@@ -3,7 +3,6 @@ import { Expression } from '../core/expression';
 import { proxy } from '../misc/proxy';
 import { LineInfo } from '../misc/utils';
 import { IExpression } from '../typings/expression';
-import { List } from './literal';
 import { MichelsonType } from '../core/enums/type';
 
 /**
@@ -20,10 +19,8 @@ import { MichelsonType } from '../core/enums/type';
  *
  * @returns {IExpression} An expression.
  */
-export const Concat = <T extends MichelsonType.bytes | MichelsonType.string>(
-    values: IExpression<T>[],
-    line = new LineInfo(),
-) => proxy(new Expression<T>(ExpressionAtom.concat, List(values), line), Expression.proxyHandler);
+export const Concat = (list: IExpression<MichelsonType.list>, line = new LineInfo()) =>
+    proxy(new Expression(ExpressionAtom.concat, list, line), Expression.proxyHandler);
 
 /**
  * Obtain size of values with type `TString()`, `TBytes()`, `TList(...)`, `TSet(...)` and `TMap()`.

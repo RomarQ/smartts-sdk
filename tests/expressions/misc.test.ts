@@ -15,8 +15,8 @@ describe('Misc expressions', () => {
                         SetValue(
                             ContractStorage(),
                             Pair(
-                                Concat([String('Hello'), String(' '), String('World')]),
-                                Concat([Bytes('0x01'), Bytes('0x02')]),
+                                Concat(List([String('Hello'), String(' '), String('World')])),
+                                Concat(List([Bytes('0x01'), Bytes('0x02')])),
                             ),
                         ),
                     ]),
