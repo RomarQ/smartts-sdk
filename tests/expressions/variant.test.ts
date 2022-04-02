@@ -1,8 +1,8 @@
-import { Unit, ContractStorage, OpenVariant, Nat, Bool, IsVariant } from '../../src/expression';
+import { Unit, ContractStorage, OpenVariant, Bool, IsVariant, isSome, isNone } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { SetValue } from '../../src/statement';
-import { TNat, TUnit, TVariant } from '../../src/type';
+import { TBool, TNat, TOption, TUnit, TVariant } from '../../src/type';
 
 describe('Variant expressions', () => {
     it('Open Variant', () => {
@@ -12,6 +12,28 @@ describe('Variant expressions', () => {
                 new EntryPoint('ep1')
                     .setInputType(TVariant({ prop1: TNat(), prop2: TUnit() }))
                     .code((arg) => [SetValue(ContractStorage(), OpenVariant(arg, 'prop2'))]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('Is Some', () => {
+        const contract = new Contract()
+            .setStorageType(TBool())
+            .addEntrypoint(
+                new EntryPoint('ep1')
+                    .setInputType(TOption(TUnit()))
+                    .code((arg) => [SetValue(ContractStorage(), isSome(arg))]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('Is None', () => {
+        const contract = new Contract()
+            .setStorageType(TBool())
+            .addEntrypoint(
+                new EntryPoint('ep1')
+                    .setInputType(TOption(TUnit()))
+                    .code((arg) => [SetValue(ContractStorage(), isNone(arg))]),
             );
 
         verifyContractCompilationOutput(contract);

@@ -51,6 +51,40 @@ export const GetSome = (
 ): IExpression<any> => proxy(OpenVariant(variant, 'Some', errorMsg, line), Expression.proxyHandler);
 
 /**
+ * Checks if option variant is Some.
+ *
+ * ```typescript
+ * isSome(Some(Nat(1)))
+ * ```
+ *
+ * @param variant Option expression
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression of type bool.
+ */
+export const isSome = (
+    variant: IExpression<MichelsonType.option>,
+    line = new LineInfo(),
+): IExpression<MichelsonType.bool> => IsVariant(variant, 'Some', line);
+
+/**
+ * Checks if option variant is None.
+ *
+ * ```typescript
+ * isNone(None())
+ * ```
+ *
+ * @param variant Option expression
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression of type bool.
+ */
+export const isNone = (
+    variant: IExpression<MichelsonType.option>,
+    line = new LineInfo(),
+): IExpression<MichelsonType.bool> => IsVariant(variant, 'None', line);
+
+/**
  * Check if a variant literal matches a given branch.
  *
  * ```typescript

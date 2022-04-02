@@ -3,16 +3,16 @@
 exports[`Variant expressions Check Variant 1`] = `
 "
         (
-            template_id (static_id 0 (\\"variant.test.ts\\" 20))
-            storage (literal (bool True) (\\"variant.test.ts\\" 21))
+            template_id (static_id 0 (\\"variant.test.ts\\" 42))
+            storage (literal (bool True) (\\"variant.test.ts\\" 43))
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"variant.test.ts\\" 23) ((set_type (params (\\"variant.test.ts\\" 23)) (variant ((prop1 \\"nat\\") (prop2 \\"unit\\")) (Some ((\\"prop1\\") (\\"prop2\\"))) (\\"\\" -1)) (\\"variant.test.ts\\" 28)) (set (data) (isVariant (params (\\"variant.test.ts\\" 23)) \\"prop2\\" (\\"variant.test.ts\\" 25)) (\\"variant.test.ts\\" 25)))))
+            messages ((ep1 True False False True (\\"variant.test.ts\\" 45) ((set_type (params (\\"variant.test.ts\\" 45)) (variant ((prop1 \\"nat\\") (prop2 \\"unit\\")) (Some ((\\"prop1\\") (\\"prop2\\"))) (\\"\\" -1)) (\\"variant.test.ts\\" 50)) (set (data) (isVariant (params (\\"variant.test.ts\\" 45)) \\"prop2\\" (\\"variant.test.ts\\" 47)) (\\"variant.test.ts\\" 47)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"variant.test.ts\\" 20))
+            balance (literal (mutez 0) (\\"variant.test.ts\\" 42))
         )
         "
 `;
@@ -114,6 +114,216 @@ exports[`Variant expressions Check Variant 2`] = `
         }
     ],
     \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n    self.init(True)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TVariant(prop1 = sp.TNat, prop2 = sp.TUnit).layout((\\\\\\"prop1\\\\\\", \\\\\\"prop2\\\\\\")))\\\\n    self.data = params.is_variant('prop2')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Variant expressions Is None 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"variant.test.ts\\" 31))
+            storage ()
+            storage_type (\\"bool\\")
+            messages ((ep1 True False False True (\\"variant.test.ts\\" 34) ((set_type (params (\\"variant.test.ts\\" 34)) (option \\"unit\\") (\\"variant.test.ts\\" 39)) (set (data) (isVariant (params (\\"variant.test.ts\\" 34)) \\"None\\" (\\"variant.test.ts\\" 36)) (\\"variant.test.ts\\" 36)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"variant.test.ts\\" 31))
+        )
+        "
+`;
+
+exports[`Variant expressions Is None 2`] = `
+"{
+    \\"micheline\\": \\"parameter (option %ep1 unit);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.is_variant('None') # @parameter\\\\n    IF_NONE\\\\n      {\\\\n        PUSH bool True; # bool\\\\n      }\\\\n      {\\\\n        DROP;       # \\\\n        PUSH bool False; # bool\\\\n      }; # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"unit\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"bool\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"True\\"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    \\"prim\\": \\"DROP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"bool\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"False\\"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TOption(sp.TUnit))\\\\n    self.data = params.is_variant('None')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Variant expressions Is Some 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"variant.test.ts\\" 20))
+            storage ()
+            storage_type (\\"bool\\")
+            messages ((ep1 True False False True (\\"variant.test.ts\\" 23) ((set_type (params (\\"variant.test.ts\\" 23)) (option \\"unit\\") (\\"variant.test.ts\\" 28)) (set (data) (isVariant (params (\\"variant.test.ts\\" 23)) \\"Some\\" (\\"variant.test.ts\\" 25)) (\\"variant.test.ts\\" 25)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"variant.test.ts\\" 20))
+        )
+        "
+`;
+
+exports[`Variant expressions Is Some 2`] = `
+"{
+    \\"micheline\\": \\"parameter (option %ep1 unit);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.is_some() # @parameter\\\\n    IF_NONE\\\\n      {\\\\n        PUSH bool False; # bool\\\\n      }\\\\n      {\\\\n        DROP;       # \\\\n        PUSH bool True; # bool\\\\n      }; # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"unit\\"
+                        }
+                    ],
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"bool\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"False\\"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    \\"prim\\": \\"DROP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"bool\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"True\\"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TOption(sp.TUnit))\\\\n    self.data = params.is_some()\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
