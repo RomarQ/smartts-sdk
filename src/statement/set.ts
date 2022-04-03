@@ -26,7 +26,7 @@ export const AddElementToSet = (set: IExpression<MichelsonType.set>, element: IE
  * Remove element to set.
  *
  * ```typescript
- * AddElementToSet(Set([Nat(1)]), Nat(1));
+ * RemoveElementFromSet(Set([Nat(1)]), Nat(1));
  * ```
  *
  * @category | Set expressions
@@ -37,5 +37,8 @@ export const AddElementToSet = (set: IExpression<MichelsonType.set>, element: IE
  *
  * @returns {IExpression} An expression of type list.
  */
-export const RemoveElementToSet = (set: IExpression<MichelsonType.set>, element: IExpression, line = new LineInfo()) =>
-    new Statement(StatementAtom.updateSet, set, element, 'False', line);
+export const RemoveElementFromSet = (
+    set: IExpression<MichelsonType.set>,
+    element: IExpression,
+    line = new LineInfo(),
+) => new Statement(StatementAtom.updateSet, set, element, 'False', line);

@@ -220,7 +220,7 @@ exports[`Set expressions Remove element 1`] = `
             template_id (static_id 0 (\\"set.test.ts\\" 29))
             storage ()
             storage_type ((set \\"nat\\"))
-            messages ((ep1 True False False True (\\"set.test.ts\\" 32) ((set_type (params (\\"set.test.ts\\" 32)) \\"nat\\" (\\"set.test.ts\\" 35)) (updateSet (data) (params (\\"set.test.ts\\" 32)) False (\\"set.test.ts\\" 32)))))
+            messages ((ep1 True False False True (\\"set.test.ts\\" 32) ((set_type (params (\\"set.test.ts\\" 32)) \\"nat\\" (\\"set.test.ts\\" 37)) (updateSet (data) (params (\\"set.test.ts\\" 32)) False (\\"set.test.ts\\" 34)))))
             flags ()
             privates ()
             views ()

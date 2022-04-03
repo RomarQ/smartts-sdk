@@ -1,7 +1,7 @@
-import { ContractStorage, GetElementsFromSet, Nat } from '../../src/expression';
+import { ContractStorage, GetElementsFromSet } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
-import { AddElementToSet, RemoveElementToSet, SetValue } from '../../src/statement';
+import { RemoveElementFromSet, AddElementToSet, SetValue } from '../../src/statement';
 import { TList, TNat, TSet } from '../../src/type';
 
 describe('Set expressions', () => {
@@ -29,7 +29,9 @@ describe('Set expressions', () => {
         const contract = new Contract()
             .setStorageType(TSet(TNat()))
             .addEntrypoint(
-                new EntryPoint('ep1').setInputType(TNat()).code((arg) => [RemoveElementToSet(ContractStorage(), arg)]),
+                new EntryPoint('ep1')
+                    .setInputType(TNat())
+                    .code((arg) => [RemoveElementFromSet(ContractStorage(), arg)]),
             );
 
         verifyContractCompilationOutput(contract);
