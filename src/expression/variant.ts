@@ -13,6 +13,8 @@ import { MichelsonType } from '../core/enums/type';
  * OpenVariant(Left(Nat(1)), "Left", String("COULD NOT OPEN VARIANT"))
  * ```
  *
+ * @category | Variant
+ *
  * @param variant Variant expression
  * @param branch The branch name of the variant
  * @param errorMsg The value to be included in the error trace.
@@ -38,6 +40,8 @@ export const OpenVariant = (
  * GetSome(Some(Nat(1)), String("COULD NOT UNWRAP OPTION"))
  * ```
  *
+ * @category | Variant
+ *
  * @param variant Variant expression
  * @param errorMsg The value to be included in the error trace.
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -57,6 +61,8 @@ export const GetSome = (
  * isSome(Some(Nat(1)))
  * ```
  *
+ * @category | Variant
+ *
  * @param variant Option expression
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
@@ -73,6 +79,8 @@ export const isSome = (
  * ```typescript
  * isNone(None())
  * ```
+ *
+ * @category | Variant
  *
  * @param variant Option expression
  * @param {LineInfo} line Source code line information (Used in error messages)
@@ -91,6 +99,8 @@ export const isNone = (
  * IsVariant(Left(Nat(1)), "Left") // true
  * IsVariant(Right(Nat(1)), "Left") // false
  * ```
+ *
+ * @category | Variant
  *
  * @param variant Variant expression
  * @param branch The branch name of the variant

@@ -39,8 +39,6 @@ export enum ExpressionAtom {
     transfer = 'transfer',
     set_delegate = 'set_delegate',
     create_contract = 'create_contract',
-    // List instructions
-    cons = 'cons',
     // Variant
     openVariant = 'openVariant',
     isVariant = 'isVariant',
@@ -88,6 +86,8 @@ export enum ExpressionAtom {
     sapling_empty_state = 'sapling_empty_state',
     sapling_verify_update = 'sapling_verify_update',
     pairing_check = 'pairing_check',
+    cons = 'cons',
+    elements = 'elements',
 }
 
 export default ExpressionAtom;
