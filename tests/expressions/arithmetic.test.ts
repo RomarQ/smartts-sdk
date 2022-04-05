@@ -132,28 +132,26 @@ describe('Arithmetic expressions', () => {
 
     it('Subtraction', () => {
         const contract = new Contract()
-            .setStorage(
-                Record({
-                    nat: None(),
-                    int: None(),
-                    mutez: None(),
-                    timestamp: None(),
+            .setStorageType(
+                TRecord({
+                    nat: TInt(),
+                    int: TInt(),
+                    mutez: TOption(TMutez()),
+                    timestamp: TInt(),
                 }),
             )
             .addEntrypoint(
-                new EntryPoint('ep1').code(() => [SetValue(ContractStorage().nat, Some(Subtract(Nat(1), Nat(1))))]),
+                new EntryPoint('ep1').code(() => [SetValue(ContractStorage().nat, Subtract(Nat(1), Nat(1)))]),
             )
             .addEntrypoint(
-                new EntryPoint('ep2').code(() => [SetValue(ContractStorage().int, Some(Subtract(Int(1), Int(1))))]),
+                new EntryPoint('ep2').code(() => [SetValue(ContractStorage().int, Subtract(Int(1), Int(1)))]),
             )
             .addEntrypoint(
-                new EntryPoint('ep3').code(() => [
-                    SetValue(ContractStorage().mutez, Some(Subtract(Mutez(1), Mutez(1)))),
-                ]),
+                new EntryPoint('ep3').code(() => [SetValue(ContractStorage().mutez, Subtract(Mutez(1), Mutez(1)))]),
             )
             .addEntrypoint(
                 new EntryPoint('ep4').code(() => [
-                    SetValue(ContractStorage().timestamp, Some(Subtract(Timestamp(1), Timestamp(1)))),
+                    SetValue(ContractStorage().timestamp, Subtract(Timestamp(1), Timestamp(1))),
                 ]),
             );
 

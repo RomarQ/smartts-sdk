@@ -703,16 +703,16 @@ exports[`Arithmetic expressions Mod 2`] = `
 exports[`Arithmetic expressions Multiplication 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 164))
-            storage (record (\\"arithmetic.test.ts\\" 176) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 177))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 178))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 179))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 180))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 181))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 182))))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 162))
+            storage (record (\\"arithmetic.test.ts\\" 174) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 175))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 176))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 177))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 178))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 179))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 180))))
             storage_type ((record ((nat (option \\"nat\\")) (int (option \\"int\\")) (mutez (option \\"mutez\\")) (bls12_381_fr (option \\"bls12_381_fr\\")) (bls12_381_g1 (option \\"bls12_381_g1\\")) (bls12_381_g2 (option \\"bls12_381_g2\\"))) (Some ((\\"nat\\") ((\\"int\\") ((\\"mutez\\") ((\\"bls12_381_fr\\") ((\\"bls12_381_g1\\") (\\"bls12_381_g2\\"))))))) (\\"\\" -1)))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 186) ((set_type (params (\\"arithmetic.test.ts\\" 186)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 186)) (literal (nat 1) (\\"arithmetic.test.ts\\" 186)) (\\"arithmetic.test.ts\\" 186)) (\\"arithmetic.test.ts\\" 186)) (\\"arithmetic.test.ts\\" 186)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 189) ((set_type (params (\\"arithmetic.test.ts\\" 189)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 189)) (literal (int 1) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 189)) (literal (int 1) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)) (\\"arithmetic.test.ts\\" 189)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 195) ((set_type (params (\\"arithmetic.test.ts\\" 195)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (mutez 1) (\\"arithmetic.test.ts\\" 195)) (literal (nat 1) (\\"arithmetic.test.ts\\" 195)) (\\"arithmetic.test.ts\\" 195)) (\\"arithmetic.test.ts\\" 195)) (\\"arithmetic.test.ts\\" 195)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 198) ((set_type (params (\\"arithmetic.test.ts\\" 198)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 198)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 198)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 198)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)) (\\"arithmetic.test.ts\\" 198)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 205) ((set_type (params (\\"arithmetic.test.ts\\" 205)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 205)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 205)) (\\"arithmetic.test.ts\\" 205)) (\\"arithmetic.test.ts\\" 205)) (\\"arithmetic.test.ts\\" 205)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 220) ((set_type (params (\\"arithmetic.test.ts\\" 220)) \\"unit\\" (\\"arithmetic.test.ts\\" 235)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 220)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 220)) (\\"arithmetic.test.ts\\" 220)) (\\"arithmetic.test.ts\\" 220)) (\\"arithmetic.test.ts\\" 220)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 184) ((set_type (params (\\"arithmetic.test.ts\\" 184)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 184)) (literal (nat 1) (\\"arithmetic.test.ts\\" 184)) (\\"arithmetic.test.ts\\" 184)) (\\"arithmetic.test.ts\\" 184)) (\\"arithmetic.test.ts\\" 184)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 187) ((set_type (params (\\"arithmetic.test.ts\\" 187)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 187)) (literal (int 1) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 187)) (literal (int 1) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 193) ((set_type (params (\\"arithmetic.test.ts\\" 193)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (mutez 1) (\\"arithmetic.test.ts\\" 193)) (literal (nat 1) (\\"arithmetic.test.ts\\" 193)) (\\"arithmetic.test.ts\\" 193)) (\\"arithmetic.test.ts\\" 193)) (\\"arithmetic.test.ts\\" 193)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 196) ((set_type (params (\\"arithmetic.test.ts\\" 196)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 196)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 196)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 196)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 203) ((set_type (params (\\"arithmetic.test.ts\\" 203)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 203)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 203)) (\\"arithmetic.test.ts\\" 203)) (\\"arithmetic.test.ts\\" 203)) (\\"arithmetic.test.ts\\" 203)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 218) ((set_type (params (\\"arithmetic.test.ts\\" 218)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 218)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 218)) (\\"arithmetic.test.ts\\" 218)) (\\"arithmetic.test.ts\\" 218)) (\\"arithmetic.test.ts\\" 218)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 164))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 162))
         )
         "
 `;
@@ -1458,9 +1458,9 @@ exports[`Arithmetic expressions Subtraction 1`] = `
 "
         (
             template_id (static_id 0 (\\"arithmetic.test.ts\\" 134))
-            storage (record (\\"arithmetic.test.ts\\" 136) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 137))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 138))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 139))) (timestamp (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 140))))
-            storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 144) ((set_type (params (\\"arithmetic.test.ts\\" 144)) \\"unit\\" (\\"arithmetic.test.ts\\" 160)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (sub (literal (nat 1) (\\"arithmetic.test.ts\\" 144)) (literal (nat 1) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 147) ((set_type (params (\\"arithmetic.test.ts\\" 147)) \\"unit\\" (\\"arithmetic.test.ts\\" 160)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (sub (literal (int 1) (\\"arithmetic.test.ts\\" 147)) (literal (int 1) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 150) ((set_type (params (\\"arithmetic.test.ts\\" 150)) \\"unit\\" (\\"arithmetic.test.ts\\" 160)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (sub (literal (mutez 1) (\\"arithmetic.test.ts\\" 150)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 155) ((set_type (params (\\"arithmetic.test.ts\\" 155)) \\"unit\\" (\\"arithmetic.test.ts\\" 160)) (set (attr (data) \\"timestamp\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (sub (literal (timestamp 1) (\\"arithmetic.test.ts\\" 155)) (literal (timestamp 1) (\\"arithmetic.test.ts\\" 155)) (\\"arithmetic.test.ts\\" 155)) (\\"arithmetic.test.ts\\" 155)) (\\"arithmetic.test.ts\\" 155)))))
+            storage ()
+            storage_type ((record ((nat \\"int\\") (int \\"int\\") (mutez (option \\"mutez\\")) (timestamp \\"int\\")) (Some ((\\"nat\\") ((\\"int\\") ((\\"mutez\\") (\\"timestamp\\"))))) (\\"\\" -1)))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 144) ((set_type (params (\\"arithmetic.test.ts\\" 144)) \\"unit\\" (\\"arithmetic.test.ts\\" 158)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (sub (literal (nat 1) (\\"arithmetic.test.ts\\" 144)) (literal (nat 1) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 147) ((set_type (params (\\"arithmetic.test.ts\\" 147)) \\"unit\\" (\\"arithmetic.test.ts\\" 158)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (sub (literal (int 1) (\\"arithmetic.test.ts\\" 147)) (literal (int 1) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 150) ((set_type (params (\\"arithmetic.test.ts\\" 150)) \\"unit\\" (\\"arithmetic.test.ts\\" 158)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (sub (literal (mutez 1) (\\"arithmetic.test.ts\\" 150)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 153) ((set_type (params (\\"arithmetic.test.ts\\" 153)) \\"unit\\" (\\"arithmetic.test.ts\\" 158)) (set (attr (data) \\"timestamp\\" (\\"expression.ts\\" 28)) (sub (literal (timestamp 1) (\\"arithmetic.test.ts\\" 153)) (literal (timestamp 1) (\\"arithmetic.test.ts\\" 153)) (\\"arithmetic.test.ts\\" 153)) (\\"arithmetic.test.ts\\" 153)))))
             flags ()
             privates ()
             views ()
@@ -1473,7 +1473,7 @@ exports[`Arithmetic expressions Subtraction 1`] = `
 
 exports[`Arithmetic expressions Subtraction 2`] = `
 "{
-    \\"micheline\\": \\"parameter (or (or (unit %ep1) (unit %ep2)) (or (unit %ep3) (unit %ep4)));\\\\nstorage   (pair (pair (option %int int) (option %mutez mutez)) (pair (option %nat int) (option %timestamp int)));\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    IF_LEFT\\\\n      {\\\\n        IF_LEFT\\\\n          {\\\\n            DROP;       # @storage\\\\n            # == ep1 ==\\\\n            # self.data.nat = sp.some(1 - 1) # @storage\\\\n            PUSH nat 1; # nat : @storage\\\\n            DUP;        # nat : nat : @storage\\\\n            SUB;        # int : @storage\\\\n            SOME;       # option int : @storage\\\\n            UPDATE 3;   # @storage\\\\n          }\\\\n          {\\\\n            DROP;       # @storage\\\\n            # == ep2 ==\\\\n            # self.data.int = sp.some(1 - 1) # @storage\\\\n            UNPAIR;     # pair (option %int int) (option %mutez mutez) : pair (option %nat int) (option %timestamp int)\\\\n            CDR;        # option mutez : pair (option %nat int) (option %timestamp int)\\\\n            PUSH int 1; # int : option mutez : pair (option %nat int) (option %timestamp int)\\\\n            DUP;        # int : int : option mutez : pair (option %nat int) (option %timestamp int)\\\\n            SUB;        # int : option mutez : pair (option %nat int) (option %timestamp int)\\\\n            SOME;       # option int : option mutez : pair (option %nat int) (option %timestamp int)\\\\n            PAIR;       # pair (option int) (option mutez) : pair (option %nat int) (option %timestamp int)\\\\n            PAIR;       # pair (pair (option int) (option mutez)) (pair (option %nat int) (option %timestamp int))\\\\n          }; # pair (pair (option int) (option mutez)) (pair (option %nat int) (option %timestamp int))\\\\n      }\\\\n      {\\\\n        IF_LEFT\\\\n          {\\\\n            DROP;       # @storage\\\\n            # == ep3 ==\\\\n            # self.data.mutez = sp.some(sp.mutez(1) - sp.mutez(1)) # @storage\\\\n            UNPAIR;     # pair (option %int int) (option %mutez mutez) : pair (option %nat int) (option %timestamp int)\\\\n            CAR;        # option int : pair (option %nat int) (option %timestamp int)\\\\n            PUSH mutez 1; # mutez : option int : pair (option %nat int) (option %timestamp int)\\\\n            DUP;        # mutez : mutez : option int : pair (option %nat int) (option %timestamp int)\\\\n            SUB;        # mutez : option int : pair (option %nat int) (option %timestamp int)\\\\n            SOME;       # option mutez : option int : pair (option %nat int) (option %timestamp int)\\\\n            SWAP;       # option int : option mutez : pair (option %nat int) (option %timestamp int)\\\\n            PAIR;       # pair (option int) (option mutez) : pair (option %nat int) (option %timestamp int)\\\\n            PAIR;       # pair (pair (option int) (option mutez)) (pair (option %nat int) (option %timestamp int))\\\\n          }\\\\n          {\\\\n            DROP;       # @storage\\\\n            # == ep4 ==\\\\n            # self.data.timestamp = sp.some(sp.timestamp(1) - sp.timestamp(1)) # @storage\\\\n            PUSH timestamp \\\\\\"1970-01-01T00:00:01Z\\\\\\"; # timestamp : @storage\\\\n            DUP;        # timestamp : timestamp : @storage\\\\n            SUB;        # int : @storage\\\\n            SOME;       # option int : @storage\\\\n            UPDATE 4;   # @storage\\\\n          }; # pair (pair (option int) (option mutez)) (pair (option %nat int) (option %timestamp int))\\\\n      }; # pair (pair (option int) (option mutez)) (pair (option %nat int) (option %timestamp int))\\\\n    NIL operation; # list operation : pair (pair (option int) (option mutez)) (pair (option %nat int) (option %timestamp int))\\\\n    PAIR;       # pair (list operation) (pair (pair (option int) (option mutez)) (pair (option %nat int) (option %timestamp int)))\\\\n  };\\",
+    \\"micheline\\": \\"parameter (or (or (unit %ep1) (unit %ep2)) (or (unit %ep3) (unit %ep4)));\\\\nstorage   (pair (int %nat) (pair (int %int) (pair (option %mutez mutez) (int %timestamp))));\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    IF_LEFT\\\\n      {\\\\n        IF_LEFT\\\\n          {\\\\n            DROP;       # @storage\\\\n            # == ep1 ==\\\\n            # self.data.nat = 1 - 1 # @storage\\\\n            PUSH nat 1; # nat : @storage\\\\n            DUP;        # nat : nat : @storage\\\\n            SUB;        # int : @storage\\\\n            UPDATE 1;   # @storage\\\\n          }\\\\n          {\\\\n            DROP;       # @storage\\\\n            # == ep2 ==\\\\n            # self.data.int = 1 - 1 # @storage\\\\n            PUSH int 1; # int : @storage\\\\n            DUP;        # int : int : @storage\\\\n            SUB;        # int : @storage\\\\n            UPDATE 3;   # @storage\\\\n          }; # @storage\\\\n      }\\\\n      {\\\\n        IF_LEFT\\\\n          {\\\\n            DROP;       # @storage\\\\n            # == ep3 ==\\\\n            # self.data.mutez = sp.mutez(1) - sp.mutez(1) # @storage\\\\n            PUSH mutez 1; # mutez : @storage\\\\n            DUP;        # mutez : mutez : @storage\\\\n            SUB_MUTEZ;  # option mutez : @storage\\\\n            UPDATE 5;   # @storage\\\\n          }\\\\n          {\\\\n            DROP;       # @storage\\\\n            # == ep4 ==\\\\n            # self.data.timestamp = sp.timestamp(1) - sp.timestamp(1) # @storage\\\\n            PUSH timestamp \\\\\\"1970-01-01T00:00:01Z\\\\\\"; # timestamp : @storage\\\\n            DUP;        # timestamp : timestamp : @storage\\\\n            SUB;        # int : @storage\\\\n            UPDATE 6;   # @storage\\\\n          }; # @storage\\\\n      }; # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1482,55 +1482,40 @@ exports[`Arithmetic expressions Subtraction 2`] = `
                     \\"prim\\": \\"pair\\",
                     \\"args\\": [
                         {
-                            \\"prim\\": \\"pair\\",
-                            \\"args\\": [
-                                {
-                                    \\"prim\\": \\"option\\",
-                                    \\"args\\": [
-                                        {
-                                            \\"prim\\": \\"int\\"
-                                        }
-                                    ],
-                                    \\"annots\\": [
-                                        \\"%int\\"
-                                    ]
-                                },
-                                {
-                                    \\"prim\\": \\"option\\",
-                                    \\"args\\": [
-                                        {
-                                            \\"prim\\": \\"mutez\\"
-                                        }
-                                    ],
-                                    \\"annots\\": [
-                                        \\"%mutez\\"
-                                    ]
-                                }
+                            \\"prim\\": \\"int\\",
+                            \\"annots\\": [
+                                \\"%nat\\"
                             ]
                         },
                         {
                             \\"prim\\": \\"pair\\",
                             \\"args\\": [
                                 {
-                                    \\"prim\\": \\"option\\",
-                                    \\"args\\": [
-                                        {
-                                            \\"prim\\": \\"int\\"
-                                        }
-                                    ],
+                                    \\"prim\\": \\"int\\",
                                     \\"annots\\": [
-                                        \\"%nat\\"
+                                        \\"%int\\"
                                     ]
                                 },
                                 {
-                                    \\"prim\\": \\"option\\",
+                                    \\"prim\\": \\"pair\\",
                                     \\"args\\": [
                                         {
-                                            \\"prim\\": \\"int\\"
+                                            \\"prim\\": \\"option\\",
+                                            \\"args\\": [
+                                                {
+                                                    \\"prim\\": \\"mutez\\"
+                                                }
+                                            ],
+                                            \\"annots\\": [
+                                                \\"%mutez\\"
+                                            ]
+                                        },
+                                        {
+                                            \\"prim\\": \\"int\\",
+                                            \\"annots\\": [
+                                                \\"%timestamp\\"
+                                            ]
                                         }
-                                    ],
-                                    \\"annots\\": [
-                                        \\"%timestamp\\"
                                     ]
                                 }
                             ]
@@ -1619,13 +1604,10 @@ exports[`Arithmetic expressions Subtraction 2`] = `
                                                 \\"prim\\": \\"SUB\\"
                                             },
                                             {
-                                                \\"prim\\": \\"SOME\\"
-                                            },
-                                            {
                                                 \\"prim\\": \\"UPDATE\\",
                                                 \\"args\\": [
                                                     {
-                                                        \\"int\\": \\"3\\"
+                                                        \\"int\\": \\"1\\"
                                                     }
                                                 ]
                                             }
@@ -1633,12 +1615,6 @@ exports[`Arithmetic expressions Subtraction 2`] = `
                                         [
                                             {
                                                 \\"prim\\": \\"DROP\\"
-                                            },
-                                            {
-                                                \\"prim\\": \\"UNPAIR\\"
-                                            },
-                                            {
-                                                \\"prim\\": \\"CDR\\"
                                             },
                                             {
                                                 \\"prim\\": \\"PUSH\\",
@@ -1658,13 +1634,12 @@ exports[`Arithmetic expressions Subtraction 2`] = `
                                                 \\"prim\\": \\"SUB\\"
                                             },
                                             {
-                                                \\"prim\\": \\"SOME\\"
-                                            },
-                                            {
-                                                \\"prim\\": \\"PAIR\\"
-                                            },
-                                            {
-                                                \\"prim\\": \\"PAIR\\"
+                                                \\"prim\\": \\"UPDATE\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"3\\"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     ]
@@ -1677,12 +1652,6 @@ exports[`Arithmetic expressions Subtraction 2`] = `
                                         [
                                             {
                                                 \\"prim\\": \\"DROP\\"
-                                            },
-                                            {
-                                                \\"prim\\": \\"UNPAIR\\"
-                                            },
-                                            {
-                                                \\"prim\\": \\"CAR\\"
                                             },
                                             {
                                                 \\"prim\\": \\"PUSH\\",
@@ -1699,19 +1668,15 @@ exports[`Arithmetic expressions Subtraction 2`] = `
                                                 \\"prim\\": \\"DUP\\"
                                             },
                                             {
-                                                \\"prim\\": \\"SUB\\"
+                                                \\"prim\\": \\"SUB_MUTEZ\\"
                                             },
                                             {
-                                                \\"prim\\": \\"SOME\\"
-                                            },
-                                            {
-                                                \\"prim\\": \\"SWAP\\"
-                                            },
-                                            {
-                                                \\"prim\\": \\"PAIR\\"
-                                            },
-                                            {
-                                                \\"prim\\": \\"PAIR\\"
+                                                \\"prim\\": \\"UPDATE\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"5\\"
+                                                    }
+                                                ]
                                             }
                                         ],
                                         [
@@ -1736,13 +1701,10 @@ exports[`Arithmetic expressions Subtraction 2`] = `
                                                 \\"prim\\": \\"SUB\\"
                                             },
                                             {
-                                                \\"prim\\": \\"SOME\\"
-                                            },
-                                            {
                                                 \\"prim\\": \\"UPDATE\\",
                                                 \\"args\\": [
                                                     {
-                                                        \\"int\\": \\"4\\"
+                                                        \\"int\\": \\"6\\"
                                                     }
                                                 ]
                                             }
@@ -1767,6 +1729,6 @@ exports[`Arithmetic expressions Subtraction 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TRecord(int = sp.TOption(sp.TInt), mutez = sp.TOption(sp.TMutez), nat = sp.TOption(sp.TInt), timestamp = sp.TOption(sp.TInt)).layout(((\\\\\\"int\\\\\\", \\\\\\"mutez\\\\\\"), (\\\\\\"nat\\\\\\", \\\\\\"timestamp\\\\\\"))))\\\\n    self.init(int = sp.none,\\\\n              mutez = sp.none,\\\\n              nat = sp.none,\\\\n              timestamp = sp.none)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data.nat = sp.some(1 - 1)\\\\n\\\\n  @sp.entry_point\\\\n  def ep2(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data.int = sp.some(1 - 1)\\\\n\\\\n  @sp.entry_point\\\\n  def ep3(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data.mutez = sp.some(sp.mutez(1) - sp.mutez(1))\\\\n\\\\n  @sp.entry_point\\\\n  def ep4(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data.timestamp = sp.some(sp.timestamp(1) - sp.timestamp(1))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TRecord(int = sp.TInt, mutez = sp.TOption(sp.TMutez), nat = sp.TInt, timestamp = sp.TInt).layout((\\\\\\"nat\\\\\\", (\\\\\\"int\\\\\\", (\\\\\\"mutez\\\\\\", \\\\\\"timestamp\\\\\\")))))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data.nat = 1 - 1\\\\n\\\\n  @sp.entry_point\\\\n  def ep2(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data.int = 1 - 1\\\\n\\\\n  @sp.entry_point\\\\n  def ep3(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data.mutez = sp.mutez(1) - sp.mutez(1)\\\\n\\\\n  @sp.entry_point\\\\n  def ep4(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data.timestamp = sp.timestamp(1) - sp.timestamp(1)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
