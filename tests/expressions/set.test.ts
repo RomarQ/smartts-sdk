@@ -1,8 +1,8 @@
-import { ContractStorage, GetElementsFromSet } from '../../src/expression';
+import { ContractStorage, GetElementsFromSet, Nat, SetContainsElement } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
 import { RemoveElementFromSet, AddElementToSet, SetValue } from '../../src/statement';
-import { TList, TNat, TSet } from '../../src/type';
+import { TBool, TList, TNat, TSet } from '../../src/type';
 
 describe('Set expressions', () => {
     it('Get elements', () => {
@@ -16,22 +16,13 @@ describe('Set expressions', () => {
 
         verifyContractCompilationOutput(contract);
     });
-    it('Add element', () => {
+    it('Contains element', () => {
         const contract = new Contract()
-            .setStorageType(TSet(TNat()))
-            .addEntrypoint(
-                new EntryPoint('ep1').setInputType(TNat()).code((arg) => [AddElementToSet(ContractStorage(), arg)]),
-            );
-
-        verifyContractCompilationOutput(contract);
-    });
-    it('Remove element', () => {
-        const contract = new Contract()
-            .setStorageType(TSet(TNat()))
+            .setStorageType(TBool())
             .addEntrypoint(
                 new EntryPoint('ep1')
-                    .setInputType(TNat())
-                    .code((arg) => [RemoveElementFromSet(ContractStorage(), arg)]),
+                    .setInputType(TSet(TNat()))
+                    .code((arg) => [SetValue(ContractStorage(), SetContainsElement(arg, Nat(1)))]),
             );
 
         verifyContractCompilationOutput(contract);

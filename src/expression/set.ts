@@ -20,3 +20,22 @@ import { IExpression } from '../typings/expression';
  */
 export const GetElementsFromSet = (set: IExpression<MichelsonType.list>, line = new LineInfo()) =>
     new Expression(ExpressionAtom.elements, set, line);
+
+/**
+ * Checks if a given element exists in a Set.
+ *
+ * ```typescript
+ * SetContainsElement(Set([Nat(2)]), Nat(2))
+ * ```
+ *
+ * @category | Set expressions
+ *
+ * @param set
+ * @param element
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} An expression that resolves to a boolean value.
+ */
+export const SetContainsElement = (set: IExpression, element: IExpression, line = new LineInfo()) => {
+    return new Expression<MichelsonType.bool>(ExpressionAtom.contains, set, element, line);
+};

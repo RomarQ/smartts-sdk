@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Set statements Add element 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"set.test.ts\\" 9))
+            storage ()
+            storage_type ((set \\"nat\\"))
+            messages ((ep1 True False False True (\\"set.test.ts\\" 12) ((set_type (params (\\"set.test.ts\\" 12)) \\"nat\\" (\\"set.test.ts\\" 15)) (updateSet (data) (params (\\"set.test.ts\\" 12)) True (\\"set.test.ts\\" 12)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"set.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`Set statements Add element 2`] = `
+"{
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   (set nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    SWAP;       # @storage : @parameter\\\\n    # == ep1 ==\\\\n    # self.data.add(params) # @storage : @parameter\\\\n    PUSH bool True; # bool : @storage : @parameter\\\\n    DIG 2;      # @parameter : bool : @storage\\\\n    UPDATE;     # set nat\\\\n    NIL operation; # list operation : set nat\\\\n    PAIR;       # pair (list operation) (set nat)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"set\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"bool\\"
+                            },
+                            {
+                                \\"prim\\": \\"True\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"UPDATE\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TSet(sp.TNat))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TNat)\\\\n    self.data.add(params)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Set statements Remove element 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"set.test.ts\\" 18))
+            storage ()
+            storage_type ((set \\"nat\\"))
+            messages ((ep1 True False False True (\\"set.test.ts\\" 21) ((set_type (params (\\"set.test.ts\\" 21)) \\"nat\\" (\\"set.test.ts\\" 26)) (updateSet (data) (params (\\"set.test.ts\\" 21)) False (\\"set.test.ts\\" 23)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"set.test.ts\\" 18))
+        )
+        "
+`;
+
+exports[`Set statements Remove element 2`] = `
+"{
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   (set nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    SWAP;       # @storage : @parameter\\\\n    # == ep1 ==\\\\n    # self.data.remove(params) # @storage : @parameter\\\\n    PUSH bool False; # bool : @storage : @parameter\\\\n    DIG 2;      # @parameter : bool : @storage\\\\n    UPDATE;     # set nat\\\\n    NIL operation; # list operation : set nat\\\\n    PAIR;       # pair (list operation) (set nat)\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"set\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"nat\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"bool\\"
+                            },
+                            {
+                                \\"prim\\": \\"False\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"UPDATE\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TSet(sp.TNat))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TNat)\\\\n    self.data.remove(params)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
