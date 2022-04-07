@@ -633,7 +633,7 @@ exports[`Transaction operation Build operation (Desugared version) 1`] = `
             template_id (static_id 0 (\\"operation.test.ts\\" 22))
             storage (unit)
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 25) ((set_type (params (\\"operation.test.ts\\" 25)) \\"unit\\" (\\"operation.test.ts\\" 36)) (set (operations (\\"operation.test.ts\\" 25)) (cons (transfer (params (\\"operation.test.ts\\" 25)) (literal (mutez 100) (\\"operation.test.ts\\" 25)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (operations (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 25) ((set_type (params (\\"operation.test.ts\\" 25)) \\"unit\\" (\\"operation.test.ts\\" 36)) (set (operations (\\"operation.test.ts\\" 25)) (cons (transfer (params (\\"operation.test.ts\\" 25)) (literal (mutez 100) (\\"operation.test.ts\\" 25)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (operations (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)))))
             flags ()
             privates ()
             views ()
@@ -646,7 +646,7 @@ exports[`Transaction operation Build operation (Desugared version) 1`] = `
 
 exports[`Transaction operation Build operation (Desugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(params, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = sp.some('CONTRACT_NOT_FOUND'))) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # address : list operation : @parameter : @storage\\\\n    CONTRACT %default unit; # option (contract unit) : list operation : @parameter : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"CONTRACT_NOT_FOUND\\\\\\"); # option string : list operation : @parameter : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @parameter : @storage\\\\n    DIG 3;      # @parameter : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(params, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = 'CONTRACT_NOT_FOUND')) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # address : list operation : @parameter : @storage\\\\n    CONTRACT %default unit; # option (contract unit) : list operation : @parameter : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\"; # string : list operation : @parameter : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @parameter : @storage\\\\n    DIG 3;      # @parameter : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -712,20 +712,10 @@ exports[`Transaction operation Build operation (Desugared version) 2`] = `
                                     \\"prim\\": \\"PUSH\\",
                                     \\"args\\": [
                                         {
-                                            \\"prim\\": \\"option\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"prim\\": \\"string\\"
-                                                }
-                                            ]
+                                            \\"prim\\": \\"string\\"
                                         },
                                         {
-                                            \\"prim\\": \\"Some\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"string\\": \\"CONTRACT_NOT_FOUND\\"
-                                                }
-                                            ]
+                                            \\"string\\": \\"CONTRACT_NOT_FOUND\\"
                                         }
                                     ]
                                 },
@@ -768,7 +758,7 @@ exports[`Transaction operation Build operation (Desugared version) 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(params, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = sp.some('CONTRACT_NOT_FOUND')))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(params, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = 'CONTRACT_NOT_FOUND'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -778,7 +768,7 @@ exports[`Transaction operation Build operation (Sugared version) 1`] = `
             template_id (static_id 0 (\\"operation.test.ts\\" 39))
             storage (unit)
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 42) ((set_type (params (\\"operation.test.ts\\" 42)) \\"unit\\" (\\"operation.test.ts\\" 47)) (set (operations (\\"operation.test.ts\\" 42)) (cons (transfer (unit) (literal (mutez 100) (\\"operation.test.ts\\" 42)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (operations (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 42) ((set_type (params (\\"operation.test.ts\\" 42)) \\"unit\\" (\\"operation.test.ts\\" 47)) (set (operations (\\"operation.test.ts\\" 42)) (cons (transfer (unit) (literal (mutez 100) (\\"operation.test.ts\\" 42)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (operations (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)))))
             flags ()
             privates ()
             views ()
@@ -791,7 +781,7 @@ exports[`Transaction operation Build operation (Sugared version) 1`] = `
 
 exports[`Transaction operation Build operation (Sugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = sp.some('CONTRACT_NOT_FOUND'))) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # address : list operation : @storage\\\\n    CONTRACT %default unit; # option (contract unit) : list operation : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"CONTRACT_NOT_FOUND\\\\\\"); # option string : list operation : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = 'CONTRACT_NOT_FOUND')) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # address : list operation : @storage\\\\n    CONTRACT %default unit; # option (contract unit) : list operation : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\"; # string : list operation : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -857,20 +847,10 @@ exports[`Transaction operation Build operation (Sugared version) 2`] = `
                                     \\"prim\\": \\"PUSH\\",
                                     \\"args\\": [
                                         {
-                                            \\"prim\\": \\"option\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"prim\\": \\"string\\"
-                                                }
-                                            ]
+                                            \\"prim\\": \\"string\\"
                                         },
                                         {
-                                            \\"prim\\": \\"Some\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"string\\": \\"CONTRACT_NOT_FOUND\\"
-                                                }
-                                            ]
+                                            \\"string\\": \\"CONTRACT_NOT_FOUND\\"
                                         }
                                     ]
                                 },
@@ -908,7 +888,7 @@ exports[`Transaction operation Build operation (Sugared version) 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = sp.some('CONTRACT_NOT_FOUND')))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = 'CONTRACT_NOT_FOUND'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -918,7 +898,7 @@ exports[`Transaction operation Build operation to an originated contract 1`] = `
             template_id (static_id 0 (\\"operation.test.ts\\" 50))
             storage (unit)
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 53) ((set_type (params (\\"operation.test.ts\\" 53)) \\"nat\\" (\\"operation.test.ts\\" 64)) (set (operations (\\"operation.test.ts\\" 55)) (cons (transfer (params (\\"operation.test.ts\\" 53)) (literal (mutez 100) (\\"operation.test.ts\\" 55)) (openVariant (contract ep1 \\"nat\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (operations (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 53) ((set_type (params (\\"operation.test.ts\\" 53)) \\"nat\\" (\\"operation.test.ts\\" 64)) (set (operations (\\"operation.test.ts\\" 55)) (cons (transfer (params (\\"operation.test.ts\\" 53)) (literal (mutez 100) (\\"operation.test.ts\\" 55)) (openVariant (contract ep1 \\"nat\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (operations (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)))))
             flags ()
             privates ()
             views ()
@@ -931,7 +911,7 @@ exports[`Transaction operation Build operation to an originated contract 1`] = `
 
 exports[`Transaction operation Build operation to an originated contract 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(params, sp.mutez(100), sp.contract(sp.TNat, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='ep1').open_some(message = sp.some('CONTRACT_NOT_FOUND'))) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : list operation : @parameter : @storage\\\\n    CONTRACT %ep1 nat; # option (contract nat) : list operation : @parameter : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"CONTRACT_NOT_FOUND\\\\\\"); # option string : list operation : @parameter : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @parameter : @storage\\\\n    DIG 3;      # @parameter : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(params, sp.mutez(100), sp.contract(sp.TNat, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='ep1').open_some(message = 'CONTRACT_NOT_FOUND')) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : list operation : @parameter : @storage\\\\n    CONTRACT %ep1 nat; # option (contract nat) : list operation : @parameter : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\"; # string : list operation : @parameter : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @parameter : @storage\\\\n    DIG 3;      # @parameter : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -997,20 +977,10 @@ exports[`Transaction operation Build operation to an originated contract 2`] = `
                                     \\"prim\\": \\"PUSH\\",
                                     \\"args\\": [
                                         {
-                                            \\"prim\\": \\"option\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"prim\\": \\"string\\"
-                                                }
-                                            ]
+                                            \\"prim\\": \\"string\\"
                                         },
                                         {
-                                            \\"prim\\": \\"Some\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"string\\": \\"CONTRACT_NOT_FOUND\\"
-                                                }
-                                            ]
+                                            \\"string\\": \\"CONTRACT_NOT_FOUND\\"
                                         }
                                     ]
                                 },
@@ -1053,6 +1023,6 @@ exports[`Transaction operation Build operation to an originated contract 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TNat)\\\\n    sp.transfer(params, sp.mutez(100), sp.contract(sp.TNat, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='ep1').open_some(message = sp.some('CONTRACT_NOT_FOUND')))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TNat)\\\\n    sp.transfer(params, sp.mutez(100), sp.contract(sp.TNat, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='ep1').open_some(message = 'CONTRACT_NOT_FOUND'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;

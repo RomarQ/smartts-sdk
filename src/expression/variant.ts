@@ -29,7 +29,7 @@ export const OpenVariant = (
     line = new LineInfo(),
 ): IExpression<any> =>
     proxy(
-        new Expression(ExpressionAtom.openVariant, variant, `"${branch}"`, errorMsg ? Some(errorMsg) : 'None', line),
+        new Expression(ExpressionAtom.openVariant, variant, `"${branch}"`, errorMsg ? errorMsg : 'None', line),
         Expression.proxyHandler,
     );
 

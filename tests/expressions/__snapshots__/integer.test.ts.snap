@@ -144,7 +144,7 @@ exports[`Integer expressions CastToNat 1`] = `
             template_id (static_id 0 (\\"integer.test.ts\\" 22))
             storage ()
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"integer.test.ts\\" 25) ((set_type (params (\\"integer.test.ts\\" 25)) \\"int\\" (\\"integer.test.ts\\" 32)) (set (data) (openVariant (isNat (params (\\"integer.test.ts\\" 25)) (\\"integer.test.ts\\" 27)) \\"Some\\" (variant \\"Some\\" (literal (string \\"Could not convert int to nat\\") (\\"integer.test.ts\\" 27)) (\\"integer.test.ts\\" 27)) (\\"integer.test.ts\\" 27)) (\\"integer.test.ts\\" 27)))))
+            messages ((ep1 True False False True (\\"integer.test.ts\\" 25) ((set_type (params (\\"integer.test.ts\\" 25)) \\"int\\" (\\"integer.test.ts\\" 32)) (set (data) (openVariant (isNat (params (\\"integer.test.ts\\" 25)) (\\"integer.test.ts\\" 27)) \\"Some\\" (literal (string \\"Could not convert int to nat\\") (\\"integer.test.ts\\" 27)) (\\"integer.test.ts\\" 27)) (\\"integer.test.ts\\" 27)))))
             flags ()
             privates ()
             views ()
@@ -157,7 +157,7 @@ exports[`Integer expressions CastToNat 1`] = `
 
 exports[`Integer expressions CastToNat 2`] = `
 "{
-    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.as_nat(params, message = sp.some('Could not convert int to nat')) # @parameter\\\\n    ISNAT;      # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"Could not convert int to nat\\\\\\"); # option string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\",
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.as_nat(params, message = 'Could not convert int to nat') # @parameter\\\\n    ISNAT;      # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not convert int to nat\\\\\\"; # string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -196,20 +196,10 @@ exports[`Integer expressions CastToNat 2`] = `
                                     \\"prim\\": \\"PUSH\\",
                                     \\"args\\": [
                                         {
-                                            \\"prim\\": \\"option\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"prim\\": \\"string\\"
-                                                }
-                                            ]
+                                            \\"prim\\": \\"string\\"
                                         },
                                         {
-                                            \\"prim\\": \\"Some\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"string\\": \\"Could not convert int to nat\\"
-                                                }
-                                            ]
+                                            \\"string\\": \\"Could not convert int to nat\\"
                                         }
                                     ]
                                 },
@@ -235,7 +225,7 @@ exports[`Integer expressions CastToNat 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TInt)\\\\n    self.data = sp.as_nat(params, message = sp.some('Could not convert int to nat'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TInt)\\\\n    self.data = sp.as_nat(params, message = 'Could not convert int to nat')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -245,7 +235,7 @@ exports[`Integer expressions IsNat 1`] = `
             template_id (static_id 0 (\\"integer.test.ts\\" 9))
             storage ()
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"integer.test.ts\\" 12) ((set_type (params (\\"integer.test.ts\\" 12)) \\"int\\" (\\"integer.test.ts\\" 19)) (set (data) (openVariant (isNat (params (\\"integer.test.ts\\" 12)) (\\"integer.test.ts\\" 14)) \\"Some\\" (variant \\"Some\\" (literal (string \\"Could not convert int to nat\\") (\\"integer.test.ts\\" 14)) (\\"integer.test.ts\\" 14)) (\\"integer.test.ts\\" 14)) (\\"integer.test.ts\\" 14)))))
+            messages ((ep1 True False False True (\\"integer.test.ts\\" 12) ((set_type (params (\\"integer.test.ts\\" 12)) \\"int\\" (\\"integer.test.ts\\" 19)) (set (data) (openVariant (isNat (params (\\"integer.test.ts\\" 12)) (\\"integer.test.ts\\" 14)) \\"Some\\" (literal (string \\"Could not convert int to nat\\") (\\"integer.test.ts\\" 14)) (\\"integer.test.ts\\" 14)) (\\"integer.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()
@@ -258,7 +248,7 @@ exports[`Integer expressions IsNat 1`] = `
 
 exports[`Integer expressions IsNat 2`] = `
 "{
-    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.as_nat(params, message = sp.some('Could not convert int to nat')) # @parameter\\\\n    ISNAT;      # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"Could not convert int to nat\\\\\\"); # option string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\",
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.as_nat(params, message = 'Could not convert int to nat') # @parameter\\\\n    ISNAT;      # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not convert int to nat\\\\\\"; # string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -297,20 +287,10 @@ exports[`Integer expressions IsNat 2`] = `
                                     \\"prim\\": \\"PUSH\\",
                                     \\"args\\": [
                                         {
-                                            \\"prim\\": \\"option\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"prim\\": \\"string\\"
-                                                }
-                                            ]
+                                            \\"prim\\": \\"string\\"
                                         },
                                         {
-                                            \\"prim\\": \\"Some\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"string\\": \\"Could not convert int to nat\\"
-                                                }
-                                            ]
+                                            \\"string\\": \\"Could not convert int to nat\\"
                                         }
                                     ]
                                 },
@@ -336,6 +316,6 @@ exports[`Integer expressions IsNat 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TInt)\\\\n    self.data = sp.as_nat(params, message = sp.some('Could not convert int to nat'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TInt)\\\\n    self.data = sp.as_nat(params, message = 'Could not convert int to nat')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;

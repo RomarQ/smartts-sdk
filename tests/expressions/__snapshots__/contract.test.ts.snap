@@ -306,7 +306,7 @@ exports[`Contract expressions ToContract 1`] = `
             template_id (static_id 0 (\\"contract.test.ts\\" 22))
             storage ()
             storage_type ((unknown 0))
-            messages ((entry_point_1 True False False True (\\"contract.test.ts\\" 23) ((set_type (params (\\"contract.test.ts\\" 23)) \\"unit\\" (\\"contract.test.ts\\" 32)) (set (operations (\\"contract.test.ts\\" 23)) (cons (transfer (unit) (literal (mutez 100) (\\"contract.test.ts\\" 23)) (openVariant (contract entry_point_1 \\"unit\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) \\"Some\\" (variant \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (operations (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)))))
+            messages ((entry_point_1 True False False True (\\"contract.test.ts\\" 23) ((set_type (params (\\"contract.test.ts\\" 23)) \\"unit\\" (\\"contract.test.ts\\" 32)) (set (operations (\\"contract.test.ts\\" 23)) (cons (transfer (unit) (literal (mutez 100) (\\"contract.test.ts\\" 23)) (openVariant (contract entry_point_1 \\"unit\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (operations (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)) (\\"contract.test.ts\\" 23)))))
             flags ()
             privates ()
             views ()
@@ -319,7 +319,7 @@ exports[`Contract expressions ToContract 1`] = `
 
 exports[`Contract expressions ToContract 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == entry_point_1 ==\\\\n    # sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some(message = sp.some('CONTRACT_NOT_FOUND'))) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : list operation : @storage\\\\n    CONTRACT %entry_point_1 unit; # option (contract unit) : list operation : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"CONTRACT_NOT_FOUND\\\\\\"); # option string : list operation : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == entry_point_1 ==\\\\n    # sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some(message = 'CONTRACT_NOT_FOUND')) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : list operation : @storage\\\\n    CONTRACT %entry_point_1 unit; # option (contract unit) : list operation : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\"; # string : list operation : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -385,20 +385,10 @@ exports[`Contract expressions ToContract 2`] = `
                                     \\"prim\\": \\"PUSH\\",
                                     \\"args\\": [
                                         {
-                                            \\"prim\\": \\"option\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"prim\\": \\"string\\"
-                                                }
-                                            ]
+                                            \\"prim\\": \\"string\\"
                                         },
                                         {
-                                            \\"prim\\": \\"Some\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"string\\": \\"CONTRACT_NOT_FOUND\\"
-                                                }
-                                            ]
+                                            \\"string\\": \\"CONTRACT_NOT_FOUND\\"
                                         }
                                     ]
                                 },
@@ -436,6 +426,6 @@ exports[`Contract expressions ToContract 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some(message = sp.some('CONTRACT_NOT_FOUND')))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some(message = 'CONTRACT_NOT_FOUND'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;

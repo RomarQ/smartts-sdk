@@ -143,7 +143,7 @@ exports[`Compile Contract Contract 2 1`] = `
             template_id (static_id 0 (\\"Compilation.test.ts\\" 78))
             storage (literal (nat 0) (\\"Compilation.test.ts\\" 80))
             storage_type ((unknown 0))
-            messages ((entry_point_1 True False False True (\\"Compilation.test.ts\\" 83) ((set_type (params (\\"Compilation.test.ts\\" 83)) \\"bool\\" (\\"Compilation.test.ts\\" 104)) (set (data) (openVariant (view \\"negate\\" (self_address) (params (\\"Compilation.test.ts\\" 83)) (unknown 0) (\\"Compilation.test.ts\\" 87)) \\"Some\\" (variant \\"Some\\" (literal (string \\"Could not call view\\") (\\"Compilation.test.ts\\" 87)) (\\"Compilation.test.ts\\" 87)) (\\"Compilation.test.ts\\" 87)) (\\"Compilation.test.ts\\" 87)))))
+            messages ((entry_point_1 True False False True (\\"Compilation.test.ts\\" 83) ((set_type (params (\\"Compilation.test.ts\\" 83)) \\"bool\\" (\\"Compilation.test.ts\\" 104)) (set (data) (openVariant (view \\"negate\\" (self_address) (params (\\"Compilation.test.ts\\" 83)) (unknown 0) (\\"Compilation.test.ts\\" 87)) \\"Some\\" (literal (string \\"Could not call view\\") (\\"Compilation.test.ts\\" 87)) (\\"Compilation.test.ts\\" 87)) (\\"Compilation.test.ts\\" 87)))))
             flags ()
             privates ()
             views ((onchain negate True (\\"Compilation.test.ts\\" 96) False \\"\\" ((set_type (params (\\"Compilation.test.ts\\" 96)) \\"bool\\" (\\"Compilation.test.ts\\" 104)) (ifBlock (params (\\"Compilation.test.ts\\" 96)) ((result (literal (nat 1) (\\"Compilation.test.ts\\" 96)) (\\"Compilation.test.ts\\" 96))) (\\"Compilation.test.ts\\" 96)) (elseBlock ((result (literal (nat 0) (\\"Compilation.test.ts\\" 96)) (\\"Compilation.test.ts\\" 96)))))))
@@ -156,7 +156,7 @@ exports[`Compile Contract Contract 2 1`] = `
 
 exports[`Compile Contract Contract 2 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bool %entry_point_1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.view(\\\\\\"negate\\\\\\", sp.self_address, params, sp.TNat).open_some(message = sp.some('Could not call view')) # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"negate\\\\\\" nat; # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH (option string) (Some \\\\\\"Could not call view\\\\\\"); # option string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\\\nview\\\\n  \\\\\\"negate\\\\\\" bool nat\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # if params: # @parameter\\\\n    IF\\\\n      {\\\\n        # sp.result(1) # \\\\n        PUSH nat 1; # nat\\\\n      }\\\\n      {\\\\n        # sp.result(0) # \\\\n        PUSH nat 0; # nat\\\\n      }; # nat\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bool %entry_point_1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.view(\\\\\\"negate\\\\\\", sp.self_address, params, sp.TNat).open_some(message = 'Could not call view') # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"negate\\\\\\" nat; # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not call view\\\\\\"; # string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\\\nview\\\\n  \\\\\\"negate\\\\\\" bool nat\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # if params: # @parameter\\\\n    IF\\\\n      {\\\\n        # sp.result(1) # \\\\n        PUSH nat 1; # nat\\\\n      }\\\\n      {\\\\n        # sp.result(0) # \\\\n        PUSH nat 0; # nat\\\\n      }; # nat\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -209,20 +209,10 @@ exports[`Compile Contract Contract 2 2`] = `
                                     \\"prim\\": \\"PUSH\\",
                                     \\"args\\": [
                                         {
-                                            \\"prim\\": \\"option\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"prim\\": \\"string\\"
-                                                }
-                                            ]
+                                            \\"prim\\": \\"string\\"
                                         },
                                         {
-                                            \\"prim\\": \\"Some\\",
-                                            \\"args\\": [
-                                                {
-                                                    \\"string\\": \\"Could not call view\\"
-                                                }
-                                            ]
+                                            \\"string\\": \\"Could not call view\\"
                                         }
                                     ]
                                 },
@@ -298,7 +288,7 @@ exports[`Compile Contract Contract 2 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n    self.init(0)\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TBool)\\\\n    self.data = sp.view(\\\\\\"negate\\\\\\", sp.self_address, params, sp.TNat).open_some(message = sp.some('Could not call view'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n    self.init(0)\\\\n\\\\n  @sp.entry_point\\\\n  def entry_point_1(self, params):\\\\n    sp.set_type(params, sp.TBool)\\\\n    self.data = sp.view(\\\\\\"negate\\\\\\", sp.self_address, params, sp.TNat).open_some(message = 'Could not call view')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
