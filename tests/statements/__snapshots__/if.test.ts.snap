@@ -19,7 +19,7 @@ exports[`Test (If) statement With (Then) and (Else) - [chaining version] 1`] = `
 
 exports[`Test (If) statement With (Then) and (Else) - [chaining version] 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # if params >= 5: # @parameter\\\\n    DUP;        # @parameter : @parameter\\\\n    PUSH nat 5; # nat : @parameter : @parameter\\\\n    SWAP;       # @parameter : nat : @parameter\\\\n    COMPARE;    # int : @parameter\\\\n    GE;         # bool : @parameter\\\\n    IF\\\\n      {\\\\n        # self.data = params # @parameter\\\\n      }\\\\n      {\\\\n        DROP;       # \\\\n        # self.data = 5 # \\\\n        PUSH nat 5; # nat\\\\n      }; # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    DUP;\\\\n    PUSH nat 5;\\\\n    SWAP;\\\\n    COMPARE;\\\\n    GE;\\\\n    IF\\\\n      {}\\\\n      {\\\\n        DROP;\\\\n        PUSH nat 5;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -130,7 +130,7 @@ exports[`Test (If) statement With (Then) and (Else) 1`] = `
 
 exports[`Test (If) statement With (Then) and (Else) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # if params >= 5: # @parameter\\\\n    DUP;        # @parameter : @parameter\\\\n    PUSH nat 5; # nat : @parameter : @parameter\\\\n    SWAP;       # @parameter : nat : @parameter\\\\n    COMPARE;    # int : @parameter\\\\n    GE;         # bool : @parameter\\\\n    IF\\\\n      {\\\\n        # self.data = params # @parameter\\\\n      }\\\\n      {\\\\n        DROP;       # \\\\n        # self.data = 5 # \\\\n        PUSH nat 5; # nat\\\\n      }; # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    DUP;\\\\n    PUSH nat 5;\\\\n    SWAP;\\\\n    COMPARE;\\\\n    GE;\\\\n    IF\\\\n      {}\\\\n      {\\\\n        DROP;\\\\n        PUSH nat 5;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -241,7 +241,7 @@ exports[`Test (If) statement Without (Else) - [chaining version] 1`] = `
 
 exports[`Test (If) statement Without (Else) - [chaining version] 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # if params >= 5: # @parameter : @storage\\\\n    DUP;        # @parameter : @parameter : @storage\\\\n    PUSH nat 5; # nat : @parameter : @parameter : @storage\\\\n    SWAP;       # @parameter : nat : @parameter : @storage\\\\n    COMPARE;    # int : @parameter : @storage\\\\n    GE;         # bool : @parameter : @storage\\\\n    IF\\\\n      {\\\\n        SWAP;       # @storage : @parameter\\\\n        DROP;       # @parameter\\\\n        # self.data = params # @parameter\\\\n      }\\\\n      {\\\\n        DROP;       # @storage\\\\n      }; # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    DUP;\\\\n    PUSH nat 5;\\\\n    SWAP;\\\\n    COMPARE;\\\\n    GE;\\\\n    IF\\\\n      {\\\\n        SWAP;\\\\n        DROP;\\\\n      }\\\\n      {\\\\n        DROP;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -348,7 +348,7 @@ exports[`Test (If) statement Without (Else) 1`] = `
 
 exports[`Test (If) statement Without (Else) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # if params >= 5: # @parameter : @storage\\\\n    DUP;        # @parameter : @parameter : @storage\\\\n    PUSH nat 5; # nat : @parameter : @parameter : @storage\\\\n    SWAP;       # @parameter : nat : @parameter : @storage\\\\n    COMPARE;    # int : @parameter : @storage\\\\n    GE;         # bool : @parameter : @storage\\\\n    IF\\\\n      {\\\\n        SWAP;       # @storage : @parameter\\\\n        DROP;       # @parameter\\\\n        # self.data = params # @parameter\\\\n      }\\\\n      {\\\\n        DROP;       # @storage\\\\n      }; # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    DUP;\\\\n    PUSH nat 5;\\\\n    SWAP;\\\\n    COMPARE;\\\\n    GE;\\\\n    IF\\\\n      {\\\\n        SWAP;\\\\n        DROP;\\\\n      }\\\\n      {\\\\n        DROP;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

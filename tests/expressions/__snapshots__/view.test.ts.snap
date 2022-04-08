@@ -19,7 +19,7 @@ exports[`View expressions CallView 1`] = `
 
 exports[`View expressions CallView 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.view(\\\\\\"some_view\\\\\\", sp.self_address, params, sp.TString) # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"some_view\\\\\\" string; # option string\\\\n    NIL operation; # list operation : option string\\\\n    PAIR;       # pair (list operation) (option string)\\\\n  };\\\\nview\\\\n  \\\\\\"some_view\\\\\\" nat string\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # sp.result(sp.set_type_expr(sp.build_lambda(flambda_arg), sp.TLambda(sp.TNat, sp.TString))(params))\\\\n    # if lambda_arg > 2: # @parameter\\\\n    PUSH nat 2; # nat : @parameter\\\\n    COMPARE;    # int\\\\n    LT;         # bool\\\\n    IF\\\\n      {\\\\n        # sp.result('YES') # \\\\n        PUSH string \\\\\\"YES\\\\\\"; # string\\\\n      }\\\\n      {\\\\n        # sp.result('NO') # \\\\n        PUSH string \\\\\\"NO\\\\\\"; # string\\\\n      }; # string\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SELF_ADDRESS;\\\\n    SWAP;\\\\n    VIEW \\\\\\"some_view\\\\\\" string;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

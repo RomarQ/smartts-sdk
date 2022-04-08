@@ -19,7 +19,7 @@ exports[`Delegation operation Build operation (Desugared version) 1`] = `
 
 exports[`Delegation operation Build operation (Desugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.set_delegate(sp.some(sp.key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PUSH (option key_hash) (Some \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"); # option key_hash : list operation : @storage\\\\n    SET_DELEGATE; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PUSH (option key_hash) (Some \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\");\\\\n    SET_DELEGATE;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -112,7 +112,7 @@ exports[`Delegation operation Build operation to clear the delegation (Sugared v
 
 exports[`Delegation operation Build operation to clear the delegation (Sugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.set_delegate(sp.none) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    NONE key_hash; # option key_hash : list operation : @storage\\\\n    SET_DELEGATE; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    NONE key_hash;\\\\n    SET_DELEGATE;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -192,7 +192,7 @@ exports[`Delegation operation Build operation to set delegator (Sugared version)
 
 exports[`Delegation operation Build operation to set delegator (Sugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (key_hash %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.set_delegate(sp.some(params)) # @parameter : @storage\\\\n    SOME;       # option key_hash : @storage\\\\n    SET_DELEGATE; # operation : @storage\\\\n    NIL operation; # list operation : operation : @storage\\\\n    SWAP;       # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (key_hash %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    SOME;\\\\n    SET_DELEGATE;\\\\n    NIL operation;\\\\n    SWAP;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -283,7 +283,7 @@ exports[`Origination operation Build operation (Desugared version) 1`] = `
 
 exports[`Origination operation Build operation (Desugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.operations().push(create contract ....operation) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    DUP;        # list operation : list operation : @parameter : @storage\\\\n    UNIT;       # unit : list operation : list operation : @parameter : @storage\\\\n    PUSH mutez 0; # mutez : unit : list operation : list operation : @parameter : @storage\\\\n    NONE key_hash; # option key_hash : mutez : unit : list operation : list operation : @parameter : @storage\\\\n    CREATE_CONTRACT\\\\n     { parameter unit;\\\\n       storage   unit;\\\\n       code\\\\n         {\\\\n           CDR;        # @storage\\\\n           NIL operation; # list operation : @storage\\\\n           PAIR;       # pair (list operation) @storage\\\\n         }}; # operation : address : list operation : list operation : @parameter : @storage\\\\n    SWAP;       # address : operation : list operation : list operation : @parameter : @storage\\\\n    DROP;       # operation : list operation : list operation : @parameter : @storage\\\\n    DIG 2;      # list operation : operation : list operation : @parameter : @storage\\\\n    DROP;       # operation : list operation : @parameter : @storage\\\\n    DIG 2;      # @parameter : operation : list operation : @storage\\\\n    DROP;       # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    NIL operation;\\\\n    DUP;\\\\n    UNIT;\\\\n    PUSH mutez 0;\\\\n    NONE key_hash;\\\\n    CREATE_CONTRACT\\\\n     { parameter unit;\\\\n       storage   unit;\\\\n       code\\\\n         {\\\\n           CDR;\\\\n           NIL operation;\\\\n           PAIR;\\\\n         }};\\\\n    SWAP;\\\\n    DROP;\\\\n    DIG 2;\\\\n    DROP;\\\\n    DIG 2;\\\\n    DROP;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -462,7 +462,7 @@ exports[`Origination operation Build operation (Sugared version) 1`] = `
 
 exports[`Origination operation Build operation (Sugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.operations().push(create contract ....operation) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    DUP;        # list operation : list operation : @parameter : @storage\\\\n    DUP 3;      # @parameter : list operation : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @parameter : list operation : list operation : @parameter : @storage\\\\n    PUSH (option key_hash) (Some \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"); # option key_hash : mutez : @parameter : list operation : list operation : @parameter : @storage\\\\n    CREATE_CONTRACT\\\\n     { parameter unit;\\\\n       storage   unit;\\\\n       code\\\\n         {\\\\n           CDR;        # @storage\\\\n           NIL operation; # list operation : @storage\\\\n           PAIR;       # pair (list operation) @storage\\\\n         }}; # operation : address : list operation : list operation : @parameter : @storage\\\\n    SWAP;       # address : operation : list operation : list operation : @parameter : @storage\\\\n    DROP;       # operation : list operation : list operation : @parameter : @storage\\\\n    DIG 2;      # list operation : operation : list operation : @parameter : @storage\\\\n    DROP;       # operation : list operation : @parameter : @storage\\\\n    DIG 2;      # @parameter : operation : list operation : @storage\\\\n    DROP;       # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    NIL operation;\\\\n    DUP;\\\\n    DUP 3;\\\\n    PUSH mutez 100;\\\\n    PUSH (option key_hash) (Some \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\");\\\\n    CREATE_CONTRACT\\\\n     { parameter unit;\\\\n       storage   unit;\\\\n       code\\\\n         {\\\\n           CDR;\\\\n           NIL operation;\\\\n           PAIR;\\\\n         }};\\\\n    SWAP;\\\\n    DROP;\\\\n    DIG 2;\\\\n    DROP;\\\\n    DIG 2;\\\\n    DROP;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -646,7 +646,7 @@ exports[`Transaction operation Build operation (Desugared version) 1`] = `
 
 exports[`Transaction operation Build operation (Desugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(params, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = 'CONTRACT_NOT_FOUND')) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # address : list operation : @parameter : @storage\\\\n    CONTRACT %default unit; # option (contract unit) : list operation : @parameter : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\"; # string : list operation : @parameter : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @parameter : @storage\\\\n    DIG 3;      # @parameter : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    NIL operation;\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\";\\\\n    CONTRACT %default unit;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    PUSH mutez 100;\\\\n    DIG 3;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -781,7 +781,7 @@ exports[`Transaction operation Build operation (Sugared version) 1`] = `
 
 exports[`Transaction operation Build operation (Sugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = 'CONTRACT_NOT_FOUND')) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # address : list operation : @storage\\\\n    CONTRACT %default unit; # option (contract unit) : list operation : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\"; # string : list operation : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\";\\\\n    CONTRACT %default unit;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    PUSH mutez 100;\\\\n    UNIT;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -911,7 +911,7 @@ exports[`Transaction operation Build operation to an originated contract 1`] = `
 
 exports[`Transaction operation Build operation to an originated contract 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # sp.transfer(params, sp.mutez(100), sp.contract(sp.TNat, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='ep1').open_some(message = 'CONTRACT_NOT_FOUND')) # @parameter : @storage\\\\n    NIL operation; # list operation : @parameter : @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : list operation : @parameter : @storage\\\\n    CONTRACT %ep1 nat; # option (contract nat) : list operation : @parameter : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\"; # string : list operation : @parameter : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @parameter : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @parameter : @storage\\\\n    DIG 3;      # @parameter : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    NIL operation;\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\";\\\\n    CONTRACT %ep1 nat;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    PUSH mutez 100;\\\\n    DIG 3;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

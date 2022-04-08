@@ -19,7 +19,7 @@ exports[`Map expressions GetMapEntries 1`] = `
 
 exports[`Map expressions GetMapEntries 2`] = `
 "{
-    \\"micheline\\": \\"parameter (map %ep1 nat string);\\\\nstorage   (list (pair (nat %key) (string %value)));\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.items() # @parameter\\\\n    NIL (pair nat string); # list (pair nat string) : @parameter\\\\n    SWAP;       # @parameter : list (pair nat string)\\\\n    ITER\\\\n      {\\\\n        CONS;       # list (pair nat string)\\\\n      }; # list (pair nat string)\\\\n    NIL (pair nat string); # list (pair nat string) : list (pair nat string)\\\\n    SWAP;       # list (pair nat string) : list (pair nat string)\\\\n    ITER\\\\n      {\\\\n        CONS;       # list (pair nat string)\\\\n      }; # list (pair nat string)\\\\n    NIL operation; # list operation : list (pair nat string)\\\\n    PAIR;       # pair (list operation) (list (pair nat string))\\\\n  };\\",
+    \\"micheline\\": \\"parameter (map %ep1 nat string);\\\\nstorage   (list (pair (nat %key) (string %value)));\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    NIL (pair nat string);\\\\n    SWAP;\\\\n    ITER\\\\n      {\\\\n        CONS;\\\\n      };\\\\n    NIL (pair nat string);\\\\n    SWAP;\\\\n    ITER\\\\n      {\\\\n        CONS;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -170,7 +170,7 @@ exports[`Map expressions GetMapKeys 1`] = `
 
 exports[`Map expressions GetMapKeys 2`] = `
 "{
-    \\"micheline\\": \\"parameter (map %ep1 nat string);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.keys() # @parameter\\\\n    NIL nat;    # list nat : @parameter\\\\n    SWAP;       # @parameter : list nat\\\\n    ITER\\\\n      {\\\\n        CAR;        # nat : list nat\\\\n        CONS;       # list nat\\\\n      }; # list nat\\\\n    NIL nat;    # list nat : list nat\\\\n    SWAP;       # list nat : list nat\\\\n    ITER\\\\n      {\\\\n        CONS;       # list nat\\\\n      }; # list nat\\\\n    NIL operation; # list operation : list nat\\\\n    PAIR;       # pair (list operation) (list nat)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (map %ep1 nat string);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    NIL nat;\\\\n    SWAP;\\\\n    ITER\\\\n      {\\\\n        CAR;\\\\n        CONS;\\\\n      };\\\\n    NIL nat;\\\\n    SWAP;\\\\n    ITER\\\\n      {\\\\n        CONS;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -294,7 +294,7 @@ exports[`Map expressions GetMapValues 1`] = `
 
 exports[`Map expressions GetMapValues 2`] = `
 "{
-    \\"micheline\\": \\"parameter (map %ep1 nat string);\\\\nstorage   (list string);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.values() # @parameter\\\\n    NIL string; # list string : @parameter\\\\n    SWAP;       # @parameter : list string\\\\n    ITER\\\\n      {\\\\n        CDR;        # string : list string\\\\n        CONS;       # list string\\\\n      }; # list string\\\\n    NIL string; # list string : list string\\\\n    SWAP;       # list string : list string\\\\n    ITER\\\\n      {\\\\n        CONS;       # list string\\\\n      }; # list string\\\\n    NIL operation; # list operation : list string\\\\n    PAIR;       # pair (list operation) (list string)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (map %ep1 nat string);\\\\nstorage   (list string);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    NIL string;\\\\n    SWAP;\\\\n    ITER\\\\n      {\\\\n        CDR;\\\\n        CONS;\\\\n      };\\\\n    NIL string;\\\\n    SWAP;\\\\n    ITER\\\\n      {\\\\n        CONS;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

@@ -19,7 +19,7 @@ exports[`Sapling expressions ApplySaplingUpdate 1`] = `
 
 exports[`Sapling expressions ApplySaplingUpdate 2`] = `
 "{
-    \\"micheline\\": \\"parameter (sapling_transaction %ep1 8);\\\\nstorage   (sapling_state 8);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # self.data = sp.snd(sp.sapling_verify_update(self.data, params).open_some()) # @parameter : @storage\\\\n    SAPLING_VERIFY_UPDATE; # option (pair int (sapling_state 8))\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 33; # int\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    CDR;        # sapling_state 8\\\\n    NIL operation; # list operation : sapling_state 8\\\\n    PAIR;       # pair (list operation) (sapling_state 8)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (sapling_transaction %ep1 8);\\\\nstorage   (sapling_state 8);\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    SAPLING_VERIFY_UPDATE;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 33;\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -123,7 +123,7 @@ exports[`Sapling expressions EmptySaplingState 1`] = `
 
 exports[`Sapling expressions EmptySaplingState 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (sapling_state 8);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.sapling_empty_state(8) # @parameter\\\\n    SAPLING_EMPTY_STATE 8; # sapling_state 8 : @parameter\\\\n    DROP;       # @parameter\\\\n    # self.data = sp.sapling_empty_state(8) # @parameter\\\\n    SAPLING_EMPTY_STATE 8; # sapling_state 8 : @parameter\\\\n    SWAP;       # @parameter : sapling_state 8\\\\n    DROP;       # sapling_state 8\\\\n    NIL operation; # list operation : sapling_state 8\\\\n    PAIR;       # pair (list operation) (sapling_state 8)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (sapling_state 8);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SAPLING_EMPTY_STATE 8;\\\\n    DROP;\\\\n    SAPLING_EMPTY_STATE 8;\\\\n    SWAP;\\\\n    DROP;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

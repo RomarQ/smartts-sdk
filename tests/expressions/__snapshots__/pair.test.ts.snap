@@ -19,7 +19,7 @@ exports[`Expressions specific to Pair values FirstElement 1`] = `
 
 exports[`Expressions specific to Pair values FirstElement 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (pair nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.verify(sp.fst(self.data) == 1, sp.unit) # @storage\\\\n    DUP;        # @storage : @storage\\\\n    CAR;        # nat : @storage\\\\n    PUSH nat 1; # nat : nat : @storage\\\\n    COMPARE;    # int : @storage\\\\n    EQ;         # bool : @storage\\\\n    IF\\\\n      {}\\\\n      {\\\\n        UNIT;       # unit : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }; # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (pair nat string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    DUP;\\\\n    CAR;\\\\n    PUSH nat 1;\\\\n    COMPARE;\\\\n    EQ;\\\\n    IF\\\\n      {}\\\\n      {\\\\n        UNIT;\\\\n        FAILWITH;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -130,7 +130,7 @@ exports[`Expressions specific to Pair values SecondElement 1`] = `
 
 exports[`Expressions specific to Pair values SecondElement 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (pair nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 ==\\\\n    # sp.verify(sp.snd(self.data) == 'A String', sp.unit) # @storage\\\\n    DUP;        # @storage : @storage\\\\n    CDR;        # string : @storage\\\\n    PUSH string \\\\\\"A String\\\\\\"; # string : string : @storage\\\\n    COMPARE;    # int : @storage\\\\n    EQ;         # bool : @storage\\\\n    IF\\\\n      {}\\\\n      {\\\\n        UNIT;       # unit : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }; # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (pair nat string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    DUP;\\\\n    CDR;\\\\n    PUSH string \\\\\\"A String\\\\\\";\\\\n    COMPARE;\\\\n    EQ;\\\\n    IF\\\\n      {}\\\\n      {\\\\n        UNIT;\\\\n        FAILWITH;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

@@ -19,7 +19,7 @@ exports[`Test Map statements DeleteMapEntry on BigMap 1`] = `
 
 exports[`Test Map statements DeleteMapEntry on BigMap 2`] = `
 "{
-    \\"micheline\\": \\"parameter (string %ep1);\\\\nstorage   (big_map string nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    SWAP;       # @storage : @parameter\\\\n    # == ep1 ==\\\\n    # del self.data[params] # @storage : @parameter\\\\n    NONE nat;   # option nat : @storage : @parameter\\\\n    DIG 2;      # @parameter : option nat : @storage\\\\n    UPDATE;     # big_map string nat\\\\n    NIL operation; # list operation : big_map string nat\\\\n    PAIR;       # pair (list operation) (big_map string nat)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (string %ep1);\\\\nstorage   (big_map string nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    SWAP;\\\\n    NONE nat;\\\\n    DIG 2;\\\\n    UPDATE;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -115,7 +115,7 @@ exports[`Test Map statements DeleteMapEntry on Map 1`] = `
 
 exports[`Test Map statements DeleteMapEntry on Map 2`] = `
 "{
-    \\"micheline\\": \\"parameter (string %ep1);\\\\nstorage   (map string nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    SWAP;       # @storage : @parameter\\\\n    # == ep1 ==\\\\n    # del self.data[params] # @storage : @parameter\\\\n    NONE nat;   # option nat : @storage : @parameter\\\\n    DIG 2;      # @parameter : option nat : @storage\\\\n    UPDATE;     # map string nat\\\\n    NIL operation; # list operation : map string nat\\\\n    PAIR;       # pair (list operation) (map string nat)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (string %ep1);\\\\nstorage   (map string nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    SWAP;\\\\n    NONE nat;\\\\n    DIG 2;\\\\n    UPDATE;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

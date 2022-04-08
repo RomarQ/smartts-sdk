@@ -19,7 +19,7 @@ exports[`Variant expressions Check Variant 1`] = `
 
 exports[`Variant expressions Check Variant 2`] = `
 "{
-    \\"micheline\\": \\"parameter (or %ep1 (nat %prop1) (unit %prop2));\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.is_variant('prop2') # @parameter\\\\n    IF_LEFT\\\\n      {\\\\n        DROP;       # \\\\n        PUSH bool False; # bool\\\\n      }\\\\n      {\\\\n        DROP;       # \\\\n        PUSH bool True; # bool\\\\n      }; # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"micheline\\": \\"parameter (or %ep1 (nat %prop1) (unit %prop2));\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    IF_LEFT\\\\n      {\\\\n        DROP;\\\\n        PUSH bool False;\\\\n      }\\\\n      {\\\\n        DROP;\\\\n        PUSH bool True;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -136,7 +136,7 @@ exports[`Variant expressions Is None 1`] = `
 
 exports[`Variant expressions Is None 2`] = `
 "{
-    \\"micheline\\": \\"parameter (option %ep1 unit);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.is_variant('None') # @parameter\\\\n    IF_NONE\\\\n      {\\\\n        PUSH bool True; # bool\\\\n      }\\\\n      {\\\\n        DROP;       # \\\\n        PUSH bool False; # bool\\\\n      }; # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"micheline\\": \\"parameter (option %ep1 unit);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH bool True;\\\\n      }\\\\n      {\\\\n        DROP;\\\\n        PUSH bool False;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -241,7 +241,7 @@ exports[`Variant expressions Is Some 1`] = `
 
 exports[`Variant expressions Is Some 2`] = `
 "{
-    \\"micheline\\": \\"parameter (option %ep1 unit);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.is_some() # @parameter\\\\n    IF_NONE\\\\n      {\\\\n        PUSH bool False; # bool\\\\n      }\\\\n      {\\\\n        DROP;       # \\\\n        PUSH bool True; # bool\\\\n      }; # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"micheline\\": \\"parameter (option %ep1 unit);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH bool False;\\\\n      }\\\\n      {\\\\n        DROP;\\\\n        PUSH bool True;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -346,7 +346,7 @@ exports[`Variant expressions Open Variant 1`] = `
 
 exports[`Variant expressions Open Variant 2`] = `
 "{
-    \\"micheline\\": \\"parameter (or %ep1 (nat %prop1) (unit %prop2));\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = params.open_variant('prop2') # @parameter\\\\n    IF_LEFT\\\\n      {\\\\n        PUSH int 14; # int : @parameter%prop1\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @parameter%prop2\\\\n    NIL operation; # list operation : @parameter%prop2\\\\n    PAIR;       # pair (list operation) @parameter%prop2\\\\n  };\\",
+    \\"micheline\\": \\"parameter (or %ep1 (nat %prop1) (unit %prop2));\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    IF_LEFT\\\\n      {\\\\n        PUSH int 14;\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

@@ -19,7 +19,7 @@ exports[`Lambda expressions CallLambda 1`] = `
 
 exports[`Lambda expressions CallLambda 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %entry_point_1);\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # def flambda_arg(lambda_arg):\\\\n    #   sp.if lambda_arg > 2:\\\\n    #     sp.result('YES')\\\\n    #   sp.else:\\\\n    #     sp.result('NO')\\\\n    # self.data = sp.set_type_expr(sp.build_lambda(flambda_arg), sp.TLambda(sp.TNat, sp.TString))(params)\\\\n    # if lambda_arg > 2: # @parameter\\\\n    PUSH nat 2; # nat : @parameter\\\\n    COMPARE;    # int\\\\n    LT;         # bool\\\\n    IF\\\\n      {\\\\n        # sp.result('YES') # \\\\n        PUSH string \\\\\\"YES\\\\\\"; # string\\\\n      }\\\\n      {\\\\n        # sp.result('NO') # \\\\n        PUSH string \\\\\\"NO\\\\\\"; # string\\\\n      }; # string\\\\n    NIL operation; # list operation : string\\\\n    PAIR;       # pair (list operation) string\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %entry_point_1);\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    PUSH nat 2;\\\\n    COMPARE;\\\\n    LT;\\\\n    IF\\\\n      {\\\\n        PUSH string \\\\\\"YES\\\\\\";\\\\n      }\\\\n      {\\\\n        PUSH string \\\\\\"NO\\\\\\";\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

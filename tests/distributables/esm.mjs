@@ -35,23 +35,19 @@ assert.deepEqual(SmartML.default.compileContract(contract), {
         'storage   nat;\n' +
         'code\n' +
         '  {\n' +
-        '    CAR;        # @parameter\n' +
-        '    # == ep1 ==\n' +
-        `    # some_address = sp.local("some_address", sp.address('tz1')) # @parameter\n` +
-        '    PUSH address "tz1"; # address : @parameter\n' +
-        "    # sp.verify(some_address.value == sp.sender, 'Not Admin!') # address : @parameter\n" +
-        '    SENDER;     # @sender : address : @parameter\n' +
-        '    COMPARE;    # int : @parameter\n' +
-        '    EQ;         # bool : @parameter\n' +
+        '    CAR;\n' +
+        '    PUSH address "tz1";\n' +
+        '    SENDER;\n' +
+        '    COMPARE;\n' +
+        '    EQ;\n' +
         '    IF\n' +
         '      {}\n' +
         '      {\n' +
-        '        PUSH string "Not Admin!"; # string : @parameter\n' +
-        '        FAILWITH;   # FAILED\n' +
-        '      }; # @parameter\n' +
-        '    # self.data = params # @parameter\n' +
-        '    NIL operation; # list operation : @parameter\n' +
-        '    PAIR;       # pair (list operation) @parameter\n' +
+        '        PUSH string "Not Admin!";\n' +
+        '        FAILWITH;\n' +
+        '      };\n' +
+        '    NIL operation;\n' +
+        '    PAIR;\n' +
         '  };',
     json: [
         {

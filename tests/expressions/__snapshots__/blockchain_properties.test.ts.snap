@@ -19,7 +19,7 @@ exports[`Test blockchain operations AMOUNT 1`] = `
 
 exports[`Test blockchain operations AMOUNT 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option mutez);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.amount) # \\\\n    AMOUNT;     # @amount\\\\n    SOME;       # option mutez\\\\n    NIL operation; # list operation : option mutez\\\\n    PAIR;       # pair (list operation) (option mutez)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option mutez);\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    AMOUNT;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -96,7 +96,7 @@ exports[`Test blockchain operations BALANCE 1`] = `
 
 exports[`Test blockchain operations BALANCE 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option mutez);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.balance) # \\\\n    BALANCE;    # @balance\\\\n    SOME;       # option mutez\\\\n    NIL operation; # list operation : option mutez\\\\n    PAIR;       # pair (list operation) (option mutez)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option mutez);\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    BALANCE;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -173,7 +173,7 @@ exports[`Test blockchain operations CHAIN_ID 1`] = `
 
 exports[`Test blockchain operations CHAIN_ID 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option chain_id);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.chain_id) # @parameter\\\\n    CHAIN_ID;   # chain_id : @parameter\\\\n    SWAP;       # @parameter : chain_id\\\\n    DROP;       # chain_id\\\\n    SOME;       # option chain_id\\\\n    NIL operation; # list operation : option chain_id\\\\n    PAIR;       # pair (list operation) (option chain_id)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option chain_id);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    CHAIN_ID;\\\\n    SWAP;\\\\n    DROP;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -256,7 +256,7 @@ exports[`Test blockchain operations LEVEL 1`] = `
 
 exports[`Test blockchain operations LEVEL 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.level) # @parameter\\\\n    LEVEL;      # @level : @parameter\\\\n    SWAP;       # @parameter : @level\\\\n    DROP;       # @level\\\\n    SOME;       # option nat\\\\n    NIL operation; # list operation : option nat\\\\n    PAIR;       # pair (list operation) (option nat)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    LEVEL;\\\\n    SWAP;\\\\n    DROP;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -339,7 +339,7 @@ exports[`Test blockchain operations NOW 1`] = `
 
 exports[`Test blockchain operations NOW 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option timestamp);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.now) # \\\\n    NOW;        # @now\\\\n    SOME;       # option timestamp\\\\n    NIL operation; # list operation : option timestamp\\\\n    PAIR;       # pair (list operation) (option timestamp)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option timestamp);\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    NOW;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -416,7 +416,7 @@ exports[`Test blockchain operations SELF 1`] = `
 
 exports[`Test blockchain operations SELF 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option (contract unit));\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.self_entry_point('ep1')) # \\\\n    SELF %ep1;  # @self\\\\n    SOME;       # option (contract unit)\\\\n    NIL operation; # list operation : option (contract unit)\\\\n    PAIR;       # pair (list operation) (option (contract unit))\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option (contract unit));\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    SELF %ep1;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -501,7 +501,7 @@ exports[`Test blockchain operations SELF_ADDRESS 1`] = `
 
 exports[`Test blockchain operations SELF_ADDRESS 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option address);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.self_address) # \\\\n    SELF_ADDRESS; # @self\\\\n    SOME;       # option address\\\\n    NIL operation; # list operation : option address\\\\n    PAIR;       # pair (list operation) (option address)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option address);\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    SELF_ADDRESS;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -578,7 +578,7 @@ exports[`Test blockchain operations SENDER 1`] = `
 
 exports[`Test blockchain operations SENDER 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option address);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.sender) # \\\\n    SENDER;     # @sender\\\\n    SOME;       # option address\\\\n    NIL operation; # list operation : option address\\\\n    PAIR;       # pair (list operation) (option address)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option address);\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    SENDER;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -655,7 +655,7 @@ exports[`Test blockchain operations SOURCE 1`] = `
 
 exports[`Test blockchain operations SOURCE 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option address);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.source) # \\\\n    SOURCE;     # @source\\\\n    SOME;       # option address\\\\n    NIL operation; # list operation : option address\\\\n    PAIR;       # pair (list operation) (option address)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option address);\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    SOURCE;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -732,7 +732,7 @@ exports[`Test blockchain operations TOTAL_VOTING_POWER 1`] = `
 
 exports[`Test blockchain operations TOTAL_VOTING_POWER 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.total_voting_power) # @parameter\\\\n    TOTAL_VOTING_POWER; # nat : @parameter\\\\n    SWAP;       # @parameter : nat\\\\n    DROP;       # nat\\\\n    SOME;       # option nat\\\\n    NIL operation; # list operation : option nat\\\\n    PAIR;       # pair (list operation) (option nat)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    TOTAL_VOTING_POWER;\\\\n    SWAP;\\\\n    DROP;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -815,7 +815,7 @@ exports[`Test blockchain operations VOTING_POWER 1`] = `
 
 exports[`Test blockchain operations VOTING_POWER 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = sp.some(sp.voting_power(sp.key_hash('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'))) # \\\\n    PUSH key_hash \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\"; # key_hash\\\\n    VOTING_POWER; # nat\\\\n    SOME;       # option nat\\\\n    NIL operation; # list operation : option nat\\\\n    PAIR;       # pair (list operation) (option nat)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    PUSH key_hash \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\";\\\\n    VOTING_POWER;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

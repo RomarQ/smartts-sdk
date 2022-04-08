@@ -19,7 +19,7 @@ exports[`Test (NewVariable) statement Declares a variable named (A) 1`] = `
 
 exports[`Test (NewVariable) statement Declares a variable named (A) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # A = sp.local(\\\\\\"A\\\\\\", params + 2) # @parameter\\\\n    PUSH nat 2; # nat : @parameter\\\\n    ADD;        # nat\\\\n    # self.data = A.value # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    PUSH nat 2;\\\\n    ADD;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

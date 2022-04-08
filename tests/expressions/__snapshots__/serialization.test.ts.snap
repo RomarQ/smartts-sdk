@@ -19,7 +19,7 @@ exports[`Serialization Expressions Packing & Unpacking 1`] = `
 
 exports[`Serialization Expressions Packing & Unpacking 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.unpack(sp.pack(params), sp.TString) # @parameter\\\\n    PACK;       # bytes\\\\n    UNPACK string; # option string\\\\n    NIL operation; # list operation : option string\\\\n    PAIR;       # pair (list operation) (option string)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    PACK;\\\\n    UNPACK string;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

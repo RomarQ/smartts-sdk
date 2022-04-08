@@ -19,7 +19,7 @@ exports[`Compile Contract Contract 1 1`] = `
 
 exports[`Compile Contract Contract 1 2`] = `
 "{
-    \\"micheline\\": \\"parameter (list %ep1 nat);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : @parameter\\\\n    SENDER;     # @sender : address : @parameter\\\\n    COMPARE;    # int : @parameter\\\\n    EQ;         # bool : @parameter\\\\n    IF\\\\n      {}\\\\n      {\\\\n        PUSH string \\\\\\"Not Admin!\\\\\\"; # string : @parameter\\\\n        FAILWITH;   # FAILED\\\\n      }; # @parameter\\\\n    NIL operation; # list operation : @parameter\\\\n    PAIR;       # pair (list operation) @parameter\\\\n  };\\\\nview\\\\n  \\\\\\"view\\\\\\" bool bool\\\\n  CAR;       ;\\",
+    \\"micheline\\": \\"parameter (list %ep1 nat);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\";\\\\n    SENDER;\\\\n    COMPARE;\\\\n    EQ;\\\\n    IF\\\\n      {}\\\\n      {\\\\n        PUSH string \\\\\\"Not Admin!\\\\\\";\\\\n        FAILWITH;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -156,7 +156,7 @@ exports[`Compile Contract Contract 2 1`] = `
 
 exports[`Compile Contract Contract 2 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bool %entry_point_1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.view(\\\\\\"negate\\\\\\", sp.self_address, params, sp.TNat).open_some(message = 'Could not call view') # @parameter\\\\n    SELF_ADDRESS; # @self : @parameter\\\\n    SWAP;       # @parameter : @self\\\\n    VIEW \\\\\\"negate\\\\\\" nat; # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not call view\\\\\\"; # string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\\\nview\\\\n  \\\\\\"negate\\\\\\" bool nat\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # if params: # @parameter\\\\n    IF\\\\n      {\\\\n        # sp.result(1) # \\\\n        PUSH nat 1; # nat\\\\n      }\\\\n      {\\\\n        # sp.result(0) # \\\\n        PUSH nat 0; # nat\\\\n      }; # nat\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bool %entry_point_1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SELF_ADDRESS;\\\\n    SWAP;\\\\n    VIEW \\\\\\"negate\\\\\\" nat;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not call view\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -311,7 +311,7 @@ exports[`Compile Contract Storage (None) 1`] = `
 
 exports[`Compile Contract Storage (None) 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -379,7 +379,7 @@ exports[`Compile Contract Storage (Record) 1`] = `
 
 exports[`Compile Contract Storage (Record) 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (pair (nat %testField1) (list %testField2 string));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (pair (nat %testField1) (list %testField2 string));\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -461,7 +461,7 @@ exports[`Compile Contract Storage (Some) 1`] = `
 
 exports[`Compile Contract Storage (Some) 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option nat);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -529,7 +529,7 @@ exports[`Compile Contract Storage (Unit) 1`] = `
 
 exports[`Compile Contract Storage (Unit) 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

@@ -19,7 +19,7 @@ exports[`Set statements Add element 1`] = `
 
 exports[`Set statements Add element 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   (set nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    SWAP;       # @storage : @parameter\\\\n    # == ep1 ==\\\\n    # self.data.add(params) # @storage : @parameter\\\\n    PUSH bool True; # bool : @storage : @parameter\\\\n    DIG 2;      # @parameter : bool : @storage\\\\n    UPDATE;     # set nat\\\\n    NIL operation; # list operation : set nat\\\\n    PAIR;       # pair (list operation) (set nat)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   (set nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    SWAP;\\\\n    PUSH bool True;\\\\n    DIG 2;\\\\n    UPDATE;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -115,7 +115,7 @@ exports[`Set statements Remove element 1`] = `
 
 exports[`Set statements Remove element 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   (set nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    SWAP;       # @storage : @parameter\\\\n    # == ep1 ==\\\\n    # self.data.remove(params) # @storage : @parameter\\\\n    PUSH bool False; # bool : @storage : @parameter\\\\n    DIG 2;      # @parameter : bool : @storage\\\\n    UPDATE;     # set nat\\\\n    NIL operation; # list operation : set nat\\\\n    PAIR;       # pair (list operation) (set nat)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   (set nat);\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    SWAP;\\\\n    PUSH bool False;\\\\n    DIG 2;\\\\n    UPDATE;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

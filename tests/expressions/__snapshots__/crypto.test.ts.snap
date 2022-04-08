@@ -19,7 +19,7 @@ exports[`Crypto expressions Hashing BLACK2B 1`] = `
 
 exports[`Crypto expressions Hashing BLACK2B 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bytes %hash_bytes_BLACK2B);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_BLACK2B ==\\\\n    # self.data = sp.some(sp.blake2b(params)) # @parameter\\\\n    BLAKE2B;    # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_BLACK2B);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    BLAKE2B;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -96,7 +96,7 @@ exports[`Crypto expressions Hashing HashKey 1`] = `
 
 exports[`Crypto expressions Hashing HashKey 2`] = `
 "{
-    \\"micheline\\": \\"parameter (key %hash_key);\\\\nstorage   key_hash;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_key ==\\\\n    # self.data = sp.hash_key(params) # @parameter\\\\n    HASH_KEY;   # key_hash\\\\n    NIL operation; # list operation : key_hash\\\\n    PAIR;       # pair (list operation) key_hash\\\\n  };\\",
+    \\"micheline\\": \\"parameter (key %hash_key);\\\\nstorage   key_hash;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    HASH_KEY;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -165,7 +165,7 @@ exports[`Crypto expressions Hashing KECCAK 1`] = `
 
 exports[`Crypto expressions Hashing KECCAK 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bytes %hash_bytes_KECCAK);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_KECCAK ==\\\\n    # self.data = sp.some(sp.keccak(params)) # @parameter\\\\n    KECCAK;     # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_KECCAK);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    KECCAK;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -242,7 +242,7 @@ exports[`Crypto expressions Hashing SHA3 1`] = `
 
 exports[`Crypto expressions Hashing SHA3 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bytes %hash_bytes_SHA3);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_SHA3 ==\\\\n    # self.data = sp.some(sp.sha3(params)) # @parameter\\\\n    SHA3;       # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_SHA3);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SHA3;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -319,7 +319,7 @@ exports[`Crypto expressions Hashing SHA256 1`] = `
 
 exports[`Crypto expressions Hashing SHA256 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bytes %hash_bytes_SHA256);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_SHA256 ==\\\\n    # self.data = sp.some(sp.sha256(params)) # @parameter\\\\n    SHA256;     # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_SHA256);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SHA256;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -396,7 +396,7 @@ exports[`Crypto expressions Hashing SHA512 1`] = `
 
 exports[`Crypto expressions Hashing SHA512 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bytes %hash_bytes_SHA512);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == hash_bytes_SHA512 ==\\\\n    # self.data = sp.some(sp.sha512(params)) # @parameter\\\\n    SHA512;     # bytes\\\\n    SOME;       # option bytes\\\\n    NIL operation; # list operation : option bytes\\\\n    PAIR;       # pair (list operation) (option bytes)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bytes %hash_bytes_SHA512);\\\\nstorage   (option bytes);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SHA512;\\\\n    SOME;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -473,7 +473,7 @@ exports[`Crypto expressions Signatures CheckSignature 1`] = `
 
 exports[`Crypto expressions Signatures CheckSignature 2`] = `
 "{
-    \\"micheline\\": \\"parameter (signature %checkSignature);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == checkSignature ==\\\\n    # self.data = sp.check_signature(sp.key('edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT'), params, sp.bytes('0x01')) # @parameter\\\\n    PUSH bytes 0x01; # bytes : @parameter\\\\n    SWAP;       # @parameter : bytes\\\\n    PUSH key \\\\\\"edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT\\\\\\"; # key : @parameter : bytes\\\\n    CHECK_SIGNATURE; # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"micheline\\": \\"parameter (signature %checkSignature);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    PUSH bytes 0x01;\\\\n    SWAP;\\\\n    PUSH key \\\\\\"edpku3g7CeTEvSKhxipD4Q2B6EiEP8cR323u8PFmGFgKRVRvCneEmT\\\\\\";\\\\n    CHECK_SIGNATURE;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

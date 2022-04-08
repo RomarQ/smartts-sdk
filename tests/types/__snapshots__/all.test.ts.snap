@@ -19,7 +19,7 @@ exports[`Test Types address 1`] = `
 
 exports[`Test Types address 2`] = `
 "{
-    \\"micheline\\": \\"parameter (address %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (address %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -85,7 +85,7 @@ exports[`Test Types big_map 1`] = `
 
 exports[`Test Types big_map 2`] = `
 "{
-    \\"micheline\\": \\"parameter (big_map %ep1 nat nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (big_map %ep1 nat nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -159,7 +159,7 @@ exports[`Test Types bls12_381_fr 1`] = `
 
 exports[`Test Types bls12_381_fr 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bls12_381_fr %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bls12_381_fr %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -225,7 +225,7 @@ exports[`Test Types bls12_381_g1 1`] = `
 
 exports[`Test Types bls12_381_g1 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bls12_381_g1 %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bls12_381_g1 %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -291,7 +291,7 @@ exports[`Test Types bls12_381_g2 1`] = `
 
 exports[`Test Types bls12_381_g2 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bls12_381_g2 %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bls12_381_g2 %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -357,7 +357,7 @@ exports[`Test Types bool 1`] = `
 
 exports[`Test Types bool 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bool %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bool %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -423,7 +423,7 @@ exports[`Test Types bytes 1`] = `
 
 exports[`Test Types bytes 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bytes %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bytes %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -489,7 +489,7 @@ exports[`Test Types chain_id 1`] = `
 
 exports[`Test Types chain_id 2`] = `
 "{
-    \\"micheline\\": \\"parameter (chain_id %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (chain_id %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -555,7 +555,7 @@ exports[`Test Types contract 1`] = `
 
 exports[`Test Types contract 2`] = `
 "{
-    \\"micheline\\": \\"parameter (contract %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (contract %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -626,7 +626,7 @@ exports[`Test Types int 1`] = `
 
 exports[`Test Types int 2`] = `
 "{
-    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -692,7 +692,7 @@ exports[`Test Types key 1`] = `
 
 exports[`Test Types key 2`] = `
 "{
-    \\"micheline\\": \\"parameter (key %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (key %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -758,7 +758,7 @@ exports[`Test Types key_hash 1`] = `
 
 exports[`Test Types key_hash 2`] = `
 "{
-    \\"micheline\\": \\"parameter (key_hash %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (key_hash %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -824,7 +824,7 @@ exports[`Test Types lambda 1`] = `
 
 exports[`Test Types lambda 2`] = `
 "{
-    \\"micheline\\": \\"parameter (lambda %ep1 nat unit);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (lambda %ep1 nat unit);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -898,7 +898,7 @@ exports[`Test Types list 1`] = `
 
 exports[`Test Types list 2`] = `
 "{
-    \\"micheline\\": \\"parameter (list %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (list %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -969,7 +969,7 @@ exports[`Test Types map 1`] = `
 
 exports[`Test Types map 2`] = `
 "{
-    \\"micheline\\": \\"parameter (map %ep1 nat nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (map %ep1 nat nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1043,7 +1043,7 @@ exports[`Test Types mutez 1`] = `
 
 exports[`Test Types mutez 2`] = `
 "{
-    \\"micheline\\": \\"parameter (mutez %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (mutez %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1109,7 +1109,7 @@ exports[`Test Types nat 1`] = `
 
 exports[`Test Types nat 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1175,7 +1175,7 @@ exports[`Test Types never 1`] = `
 
 exports[`Test Types never 2`] = `
 "{
-    \\"micheline\\": \\"parameter (never %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (never %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1241,7 +1241,7 @@ exports[`Test Types operation 1`] = `
 
 exports[`Test Types operation 2`] = `
 "{
-    \\"micheline\\": \\"parameter (operation %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (operation %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1307,7 +1307,7 @@ exports[`Test Types option 1`] = `
 
 exports[`Test Types option 2`] = `
 "{
-    \\"micheline\\": \\"parameter (option %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (option %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1378,7 +1378,7 @@ exports[`Test Types option 3`] = `
 
 exports[`Test Types option 4`] = `
 "{
-    \\"micheline\\": \\"parameter (pair %ep1 nat nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (pair %ep1 nat nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1452,7 +1452,7 @@ exports[`Test Types record (left comb) 1`] = `
 
 exports[`Test Types record (left comb) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (pair %ep1 (pair (nat %field1) (unit %field2)) (string %field3));\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (pair %ep1 (pair (nat %field1) (unit %field2)) (string %field3));\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1543,7 +1543,7 @@ exports[`Test Types record (right comb) 1`] = `
 
 exports[`Test Types record (right comb) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (pair %ep1 (nat %field1) (pair (unit %field2) (string %field3)));\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (pair %ep1 (nat %field1) (pair (unit %field2) (string %field3)));\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1634,7 +1634,7 @@ exports[`Test Types sapling_state 1`] = `
 
 exports[`Test Types sapling_state 2`] = `
 "{
-    \\"micheline\\": \\"parameter (sapling_state %ep1 8);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (sapling_state %ep1 8);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1705,7 +1705,7 @@ exports[`Test Types sapling_transaction 1`] = `
 
 exports[`Test Types sapling_transaction 2`] = `
 "{
-    \\"micheline\\": \\"parameter (sapling_transaction %ep1 16);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (sapling_transaction %ep1 16);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1776,7 +1776,7 @@ exports[`Test Types set 1`] = `
 
 exports[`Test Types set 2`] = `
 "{
-    \\"micheline\\": \\"parameter (set %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (set %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1847,7 +1847,7 @@ exports[`Test Types signature 1`] = `
 
 exports[`Test Types signature 2`] = `
 "{
-    \\"micheline\\": \\"parameter (signature %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (signature %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1913,7 +1913,7 @@ exports[`Test Types string 1`] = `
 
 exports[`Test Types string 2`] = `
 "{
-    \\"micheline\\": \\"parameter (string %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (string %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1979,7 +1979,7 @@ exports[`Test Types ticket 1`] = `
 
 exports[`Test Types ticket 2`] = `
 "{
-    \\"micheline\\": \\"parameter (ticket %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (ticket %ep1 nat);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -2050,7 +2050,7 @@ exports[`Test Types timestamp 1`] = `
 
 exports[`Test Types timestamp 2`] = `
 "{
-    \\"micheline\\": \\"parameter (timestamp %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (timestamp %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -2116,7 +2116,7 @@ exports[`Test Types unit 1`] = `
 
 exports[`Test Types unit 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -2182,7 +2182,7 @@ exports[`Test Types variant 1`] = `
 
 exports[`Test Types variant 2`] = `
 "{
-    \\"micheline\\": \\"parameter (or %ep1 (nat %match1) (or (unit %match2) (string %match3)));\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == ep1 == # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (or %ep1 (nat %match1) (or (unit %match2) (string %match3)));\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

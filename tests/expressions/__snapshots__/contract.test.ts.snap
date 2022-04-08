@@ -19,7 +19,7 @@ exports[`Contract expressions GetContract 1`] = `
 
 exports[`Contract expressions GetContract 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == entry_point_1 ==\\\\n    # contract = sp.local(\\\\\\"contract\\\\\\", sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some()) # @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : @storage\\\\n    CONTRACT %entry_point_1 unit; # option (contract unit) : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 36; # int : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : @storage\\\\n    # sp.transfer(sp.unit, sp.mutez(100), contract.value) # @some : @storage\\\\n    NIL operation; # list operation : @some : @storage\\\\n    SWAP;       # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\";\\\\n    CONTRACT %entry_point_1 unit;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 36;\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    NIL operation;\\\\n    SWAP;\\\\n    PUSH mutez 100;\\\\n    UNIT;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -152,7 +152,7 @@ exports[`Contract expressions ImplicitAccount 1`] = `
 
 exports[`Contract expressions ImplicitAccount 2`] = `
 "{
-    \\"micheline\\": \\"parameter (key_hash %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == entry_point_1 ==\\\\n    # sp.transfer(sp.unit, sp.tez(0), sp.implicit_account(params)) # @parameter : @storage\\\\n    IMPLICIT_ACCOUNT; # contract unit : @storage\\\\n    NIL operation; # list operation : contract unit : @storage\\\\n    SWAP;       # contract unit : list operation : @storage\\\\n    PUSH mutez 0; # mutez : contract unit : list operation : @storage\\\\n    UNIT;       # unit : mutez : contract unit : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (key_hash %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    IMPLICIT_ACCOUNT;\\\\n    NIL operation;\\\\n    SWAP;\\\\n    PUSH mutez 0;\\\\n    UNIT;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -244,7 +244,7 @@ exports[`Contract expressions ToAddress 1`] = `
 
 exports[`Contract expressions ToAddress 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   address;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == entry_point_1 ==\\\\n    # self.data = sp.self_entry_point_address('entry_point_1') # \\\\n    SELF %entry_point_1; # @self\\\\n    ADDRESS;    # address\\\\n    NIL operation; # list operation : address\\\\n    PAIR;       # pair (list operation) address\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   address;\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    SELF %entry_point_1;\\\\n    ADDRESS;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -319,7 +319,7 @@ exports[`Contract expressions ToContract 1`] = `
 
 exports[`Contract expressions ToContract 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    # == entry_point_1 ==\\\\n    # sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT'), entry_point='entry_point_1').open_some(message = 'CONTRACT_NOT_FOUND')) # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\"; # address : list operation : @storage\\\\n    CONTRACT %entry_point_1 unit; # option (contract unit) : list operation : @storage\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\"; # string : list operation : @storage\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some : list operation : @storage\\\\n    PUSH mutez 100; # mutez : @some : list operation : @storage\\\\n    UNIT;       # unit : mutez : @some : list operation : @storage\\\\n    TRANSFER_TOKENS; # operation : list operation : @storage\\\\n    CONS;       # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\";\\\\n    CONTRACT %entry_point_1 unit;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    PUSH mutez 100;\\\\n    UNIT;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

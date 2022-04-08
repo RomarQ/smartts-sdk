@@ -19,7 +19,7 @@ exports[`Test Literals Left variant 1`] = `
 
 exports[`Test Literals Left variant 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (or (nat %Left) (int %Right));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (or (nat %Left) (int %Right));\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -96,7 +96,7 @@ exports[`Test Literals Right variant 1`] = `
 
 exports[`Test Literals Right variant 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (or (nat %Left) (int %Right));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (or (nat %Left) (int %Right));\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -173,7 +173,7 @@ exports[`Test Literals address 1`] = `
 
 exports[`Test Literals address 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   address;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   address;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -236,7 +236,7 @@ exports[`Test Literals big_map 1`] = `
 
 exports[`Test Literals big_map 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (big_map nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (big_map nat string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -307,7 +307,7 @@ exports[`Test Literals bls12_381_fr 1`] = `
 
 exports[`Test Literals bls12_381_fr 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_fr;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_fr;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -370,7 +370,7 @@ exports[`Test Literals bls12_381_fr 3`] = `
 
 exports[`Test Literals bls12_381_fr 4`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_fr;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_fr;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -433,7 +433,7 @@ exports[`Test Literals bls12_381_g1 1`] = `
 
 exports[`Test Literals bls12_381_g1 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_g1;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_g1;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -496,7 +496,7 @@ exports[`Test Literals bls12_381_g2 1`] = `
 
 exports[`Test Literals bls12_381_g2 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_g2;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bls12_381_g2;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -559,7 +559,7 @@ exports[`Test Literals bool 1`] = `
 
 exports[`Test Literals bool 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -622,7 +622,7 @@ exports[`Test Literals bytes 1`] = `
 
 exports[`Test Literals bytes 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   bytes;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   bytes;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -685,7 +685,7 @@ exports[`Test Literals chain_id 1`] = `
 
 exports[`Test Literals chain_id 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   chain_id;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   chain_id;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -748,7 +748,7 @@ exports[`Test Literals int 1`] = `
 
 exports[`Test Literals int 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   int;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   int;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -811,7 +811,7 @@ exports[`Test Literals key 1`] = `
 
 exports[`Test Literals key 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   key;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   key;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -874,7 +874,7 @@ exports[`Test Literals key_hash 1`] = `
 
 exports[`Test Literals key_hash 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   key_hash;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   key_hash;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -937,7 +937,7 @@ exports[`Test Literals lambda 1`] = `
 
 exports[`Test Literals lambda 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (lambda string string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (lambda string string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1008,7 +1008,7 @@ exports[`Test Literals lambda 3`] = `
 
 exports[`Test Literals lambda 4`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (lambda nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (lambda nat string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1079,7 +1079,7 @@ exports[`Test Literals list 1`] = `
 
 exports[`Test Literals list 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (list string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (list string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1147,7 +1147,7 @@ exports[`Test Literals map 1`] = `
 
 exports[`Test Literals map 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (map nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (map nat string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1218,7 +1218,7 @@ exports[`Test Literals mutez 1`] = `
 
 exports[`Test Literals mutez 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   mutez;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   mutez;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1281,7 +1281,7 @@ exports[`Test Literals nat 1`] = `
 
 exports[`Test Literals nat 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1344,7 +1344,7 @@ exports[`Test Literals none 1`] = `
 
 exports[`Test Literals none 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1412,7 +1412,7 @@ exports[`Test Literals pair 1`] = `
 
 exports[`Test Literals pair 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (pair nat string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (pair nat string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1483,7 +1483,7 @@ exports[`Test Literals record 1`] = `
 
 exports[`Test Literals record 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (pair (pair (nat %field1) (int %field2)) (bytes %field3));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (pair (pair (nat %field1) (int %field2)) (bytes %field3));\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1571,7 +1571,7 @@ exports[`Test Literals sapling_state 1`] = `
 
 exports[`Test Literals sapling_state 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (sapling_state 8);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (sapling_state 8);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1639,7 +1639,7 @@ exports[`Test Literals set 1`] = `
 
 exports[`Test Literals set 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (set string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (set string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1707,7 +1707,7 @@ exports[`Test Literals signature 1`] = `
 
 exports[`Test Literals signature 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   signature;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   signature;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1770,7 +1770,7 @@ exports[`Test Literals some 1`] = `
 
 exports[`Test Literals some 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1838,7 +1838,7 @@ exports[`Test Literals string 1`] = `
 
 exports[`Test Literals string 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1901,7 +1901,7 @@ exports[`Test Literals timestamp 1`] = `
 
 exports[`Test Literals timestamp 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   timestamp;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   timestamp;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -1964,7 +1964,7 @@ exports[`Test Literals unit 1`] = `
 
 exports[`Test Literals unit 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -2027,7 +2027,7 @@ exports[`Test Literals variant 1`] = `
 
 exports[`Test Literals variant 2`] = `
 "{
-    \\"micheline\\": \\"parameter unit;\\\\nstorage   (or (nat %match1) (or (int %match2) (bytes %match3)));\\\\ncode\\\\n  {\\\\n    CDR;        # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter unit;\\\\nstorage   (or (nat %match1) (or (int %match2) (bytes %match3)));\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

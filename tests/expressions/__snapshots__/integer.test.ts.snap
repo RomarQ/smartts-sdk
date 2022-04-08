@@ -19,7 +19,7 @@ exports[`Integer expressions ABS 1`] = `
 
 exports[`Integer expressions ABS 2`] = `
 "{
-    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = abs(params) # @parameter\\\\n    ABS;        # nat\\\\n    NIL operation; # list operation : nat\\\\n    PAIR;       # pair (list operation) nat\\\\n  };\\",
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    ABS;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -88,7 +88,7 @@ exports[`Integer expressions CastToInt 1`] = `
 
 exports[`Integer expressions CastToInt 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   int;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.to_int(params) # @parameter\\\\n    INT;        # int\\\\n    NIL operation; # list operation : int\\\\n    PAIR;       # pair (list operation) int\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   int;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    INT;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -157,7 +157,7 @@ exports[`Integer expressions CastToNat 1`] = `
 
 exports[`Integer expressions CastToNat 2`] = `
 "{
-    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.as_nat(params, message = 'Could not convert int to nat') # @parameter\\\\n    ISNAT;      # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not convert int to nat\\\\\\"; # string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\",
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    ISNAT;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not convert int to nat\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -248,7 +248,7 @@ exports[`Integer expressions IsNat 1`] = `
 
 exports[`Integer expressions IsNat 2`] = `
 "{
-    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # self.data = sp.as_nat(params, message = 'Could not convert int to nat') # @parameter\\\\n    ISNAT;      # option nat\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not convert int to nat\\\\\\"; # string\\\\n        FAILWITH;   # FAILED\\\\n      }\\\\n      {}; # @some\\\\n    NIL operation; # list operation : @some\\\\n    PAIR;       # pair (list operation) @some\\\\n  };\\",
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    ISNAT;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not convert int to nat\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

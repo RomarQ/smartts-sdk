@@ -19,7 +19,7 @@ exports[`Test Variant statements MatchVariant 1 1`] = `
 
 exports[`Test Variant statements MatchVariant 1 2`] = `
 "{
-    \\"micheline\\": \\"parameter (or %ep1 (string %action1) (string %action2));\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == ep1 ==\\\\n    # with params.match_cases(...): # @parameter\\\\n    IF_LEFT\\\\n      {\\\\n        # self.data = __MATCH_1___action1 # @parameter%action1\\\\n      }\\\\n      {\\\\n        # self.data = __MATCH_1___action2 # @parameter%action2\\\\n      }; # string\\\\n    NIL operation; # list operation : string\\\\n    PAIR;       # pair (list operation) string\\\\n  };\\",
+    \\"micheline\\": \\"parameter (or %ep1 (string %action1) (string %action2));\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    IF_LEFT\\\\n      {}\\\\n      {};\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -106,7 +106,7 @@ exports[`Test Variant statements MatchVariant 2 1`] = `
 
 exports[`Test Variant statements MatchVariant 2 2`] = `
 "{
-    \\"micheline\\": \\"parameter (list %ep1 (or (string %action1) (string %action2)));\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # for __ITERATOR_FOREACH_2__ in params: ... # @parameter : @storage\\\\n    DUP;        # @parameter : @parameter : @storage\\\\n    ITER\\\\n      {\\\\n        # with __ITERATOR_FOREACH_2__.match_cases(...): # or (string %action1) (string %action2) : @parameter : @storage\\\\n        IF_LEFT\\\\n          {\\\\n            DIG 2;      # @storage : string : @parameter\\\\n            DROP;       # string : @parameter\\\\n            SWAP;       # @parameter : string\\\\n            # self.data = __MATCH_3___action1 # @parameter : string\\\\n          }\\\\n          {\\\\n            DIG 2;      # @storage : string : @parameter\\\\n            DROP;       # string : @parameter\\\\n            SWAP;       # @parameter : string\\\\n            # self.data = __MATCH_3___action2 # @parameter : string\\\\n          }; # list (or (string %action1) (string %action2)) : string\\\\n      }; # @parameter : @storage\\\\n    DROP;       # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (list %ep1 (or (string %action1) (string %action2)));\\\\nstorage   string;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    DUP;\\\\n    ITER\\\\n      {\\\\n        IF_LEFT\\\\n          {\\\\n            DIG 2;\\\\n            DROP;\\\\n            SWAP;\\\\n          }\\\\n          {\\\\n            DIG 2;\\\\n            DROP;\\\\n            SWAP;\\\\n          };\\\\n      };\\\\n    DROP;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

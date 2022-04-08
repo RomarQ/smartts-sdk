@@ -19,7 +19,7 @@ exports[`Test (ForEach) statement Sum values of a list 1`] = `
 
 exports[`Test (ForEach) statement Sum values of a list 2`] = `
 "{
-    \\"micheline\\": \\"parameter (list %ep1 nat);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # for __ITERATOR_FOREACH_1__ in params: ... # @parameter : @storage\\\\n    DUP;        # @parameter : @parameter : @storage\\\\n    ITER\\\\n      {\\\\n        # self.data += __ITERATOR_FOREACH_1__ # nat : @parameter : @storage\\\\n        DIG 2;      # @storage : nat : @parameter\\\\n        ADD;        # nat : @parameter\\\\n        SWAP;       # @parameter : nat\\\\n      }; # @parameter : @storage\\\\n    DROP;       # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (list %ep1 nat);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    DUP;\\\\n    ITER\\\\n      {\\\\n        DIG 2;\\\\n        ADD;\\\\n        SWAP;\\\\n      };\\\\n    DROP;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

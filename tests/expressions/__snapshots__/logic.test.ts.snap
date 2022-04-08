@@ -19,7 +19,7 @@ exports[`Integer expressions And 1`] = `
 
 exports[`Integer expressions And 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = ((1 & 0) == 1) & False # \\\\n    PUSH bool False; # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    PUSH bool False;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -96,7 +96,7 @@ exports[`Integer expressions Or 1`] = `
 
 exports[`Integer expressions Or 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = ((1 | 0) == 1) | False # \\\\n    PUSH nat 1; # nat\\\\n    PUSH nat 0; # nat : nat\\\\n    PUSH nat 1; # nat : nat : nat\\\\n    OR;         # nat : nat\\\\n    COMPARE;    # int\\\\n    EQ;         # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    PUSH nat 1;\\\\n    PUSH nat 0;\\\\n    PUSH nat 1;\\\\n    OR;\\\\n    COMPARE;\\\\n    EQ;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -204,7 +204,7 @@ exports[`Integer expressions Xor 1`] = `
 
 exports[`Integer expressions Xor 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;       # \\\\n    # == ep1 ==\\\\n    # self.data = ((1 ^ 0) == 1) ^ False # \\\\n    PUSH bool False; # bool\\\\n    PUSH nat 1; # nat : bool\\\\n    PUSH nat 0; # nat : nat : bool\\\\n    PUSH nat 1; # nat : nat : nat : bool\\\\n    XOR;        # nat : nat : bool\\\\n    COMPARE;    # int : bool\\\\n    EQ;         # bool : bool\\\\n    XOR;        # bool\\\\n    NIL operation; # list operation : bool\\\\n    PAIR;       # pair (list operation) bool\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    PUSH bool False;\\\\n    PUSH nat 1;\\\\n    PUSH nat 0;\\\\n    PUSH nat 1;\\\\n    XOR;\\\\n    COMPARE;\\\\n    EQ;\\\\n    XOR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

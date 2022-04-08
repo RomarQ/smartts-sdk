@@ -19,7 +19,7 @@ exports[`Test (For) statement Append iterator to a list 1`] = `
 
 exports[`Test (For) statement Append iterator to a list 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;        # @parameter\\\\n    # == entry_point_1 ==\\\\n    # some_list = sp.local(\\\\\\"some_list\\\\\\", sp.list([])) # @parameter\\\\n    NIL nat;    # list nat : @parameter\\\\n    # __ITERATOR_FOR_2__ = sp.local(\\\\\\"__ITERATOR_FOR_2__\\\\\\", 0) # list nat : @parameter\\\\n    PUSH nat 0; # nat : list nat : @parameter\\\\n    # while __ITERATOR_FOR_2__.value <= 3 : ... # nat : list nat : @parameter\\\\n    DUP;        # nat : nat : list nat : @parameter\\\\n    PUSH nat 3; # nat : nat : nat : list nat : @parameter\\\\n    SWAP;       # nat : nat : nat : list nat : @parameter\\\\n    COMPARE;    # int : nat : list nat : @parameter\\\\n    LE;         # bool : nat : list nat : @parameter\\\\n    LOOP\\\\n      {\\\\n        # some_list.value.push(__ITERATOR_FOR_2__.value) # nat : list nat : @parameter\\\\n        DUP;        # nat : nat : list nat : @parameter\\\\n        DUG 2;      # nat : list nat : nat : @parameter\\\\n        CONS;       # list nat : nat : @parameter\\\\n        SWAP;       # nat : list nat : @parameter\\\\n        # __ITERATOR_FOR_2__.value += 1 # nat : list nat : @parameter\\\\n        PUSH nat 1; # nat : nat : list nat : @parameter\\\\n        ADD;        # nat : list nat : @parameter\\\\n        # check for next loop: __ITERATOR_FOR_2__.value <= 3 # nat : list nat : @parameter\\\\n        DUP;        # nat : nat : list nat : @parameter\\\\n        PUSH nat 3; # nat : nat : nat : list nat : @parameter\\\\n        SWAP;       # nat : nat : nat : list nat : @parameter\\\\n        COMPARE;    # int : nat : list nat : @parameter\\\\n        LE;         # bool : nat : list nat : @parameter\\\\n      }; # nat : list nat : @parameter\\\\n    DROP;       # list nat : @parameter\\\\n    SWAP;       # @parameter : list nat\\\\n    DROP;       # list nat\\\\n    # self.data = some_list.value # list nat\\\\n    NIL operation; # list operation : list nat\\\\n    PAIR;       # pair (list operation) (list nat)\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    NIL nat;\\\\n    PUSH nat 0;\\\\n    PUSH int -1;\\\\n    LE;\\\\n    LOOP\\\\n      {\\\\n        DUP;\\\\n        DUG 2;\\\\n        CONS;\\\\n        SWAP;\\\\n        PUSH nat 1;\\\\n        ADD;\\\\n        DUP;\\\\n        PUSH nat 3;\\\\n        SWAP;\\\\n        COMPARE;\\\\n        LE;\\\\n      };\\\\n    DROP;\\\\n    SWAP;\\\\n    DROP;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -72,24 +72,15 @@ exports[`Test (For) statement Append iterator to a list 2`] = `
                         ]
                     },
                     {
-                        \\"prim\\": \\"DUP\\"
-                    },
-                    {
                         \\"prim\\": \\"PUSH\\",
                         \\"args\\": [
                             {
-                                \\"prim\\": \\"nat\\"
+                                \\"prim\\": \\"int\\"
                             },
                             {
-                                \\"int\\": \\"3\\"
+                                \\"int\\": \\"-1\\"
                             }
                         ]
-                    },
-                    {
-                        \\"prim\\": \\"SWAP\\"
-                    },
-                    {
-                        \\"prim\\": \\"COMPARE\\"
                     },
                     {
                         \\"prim\\": \\"LE\\"
@@ -202,7 +193,7 @@ exports[`Test (For) statement Sum values from 0 to 10 (Inclusive) 1`] = `
 
 exports[`Test (For) statement Sum values from 0 to 10 (Inclusive) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    UNPAIR;     # @parameter : @storage\\\\n    # == ep1 ==\\\\n    # __ITERATOR_FOR_1__ = sp.local(\\\\\\"__ITERATOR_FOR_1__\\\\\\", 0) # @parameter : @storage\\\\n    PUSH nat 0; # nat : @parameter : @storage\\\\n    SWAP;       # @parameter : nat : @storage\\\\n    # while __ITERATOR_FOR_1__.value <= params : ... # @parameter : nat : @storage\\\\n    DUP;        # @parameter : @parameter : nat : @storage\\\\n    DUG 2;      # @parameter : nat : @parameter : @storage\\\\n    SWAP;       # nat : @parameter : @parameter : @storage\\\\n    DUP;        # nat : nat : @parameter : @parameter : @storage\\\\n    DUG 2;      # nat : @parameter : nat : @parameter : @storage\\\\n    COMPARE;    # int : nat : @parameter : @storage\\\\n    LE;         # bool : nat : @parameter : @storage\\\\n    LOOP\\\\n      {\\\\n        # self.data += __ITERATOR_FOR_1__.value # nat : @parameter : @storage\\\\n        DIG 2;      # @storage : nat : @parameter\\\\n        SWAP;       # nat : @storage : @parameter\\\\n        DUP;        # nat : nat : @storage : @parameter\\\\n        DUG 2;      # nat : @storage : nat : @parameter\\\\n        ADD;        # nat : nat : @parameter\\\\n        DUG 2;      # nat : @parameter : nat\\\\n        # __ITERATOR_FOR_1__.value += 1 # nat : @parameter : nat\\\\n        PUSH nat 1; # nat : nat : @parameter : nat\\\\n        ADD;        # nat : @parameter : nat\\\\n        SWAP;       # @parameter : nat : nat\\\\n        # check for next loop: __ITERATOR_FOR_1__.value <= params # @parameter : nat : nat\\\\n        DUP;        # @parameter : @parameter : nat : nat\\\\n        DUG 2;      # @parameter : nat : @parameter : nat\\\\n        SWAP;       # nat : @parameter : @parameter : nat\\\\n        DUP;        # nat : nat : @parameter : @parameter : nat\\\\n        DUG 2;      # nat : @parameter : nat : @parameter : nat\\\\n        COMPARE;    # int : nat : @parameter : nat\\\\n        LE;         # bool : nat : @parameter : nat\\\\n      }; # nat : @parameter : @storage\\\\n    DROP 2;     # @storage\\\\n    NIL operation; # list operation : @storage\\\\n    PAIR;       # pair (list operation) @storage\\\\n  };\\",
+    \\"micheline\\": \\"parameter (nat %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    DUP;\\\\n    PUSH nat 0;\\\\n    DUP;\\\\n    DUG 2;\\\\n    COMPARE;\\\\n    LE;\\\\n    LOOP\\\\n      {\\\\n        DIG 2;\\\\n        SWAP;\\\\n        DUP;\\\\n        DUG 2;\\\\n        ADD;\\\\n        DUG 2;\\\\n        PUSH nat 1;\\\\n        ADD;\\\\n        SWAP;\\\\n        DUP;\\\\n        DUG 2;\\\\n        SWAP;\\\\n        DUP;\\\\n        DUG 2;\\\\n        COMPARE;\\\\n        LE;\\\\n      };\\\\n    DROP 2;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -231,6 +222,9 @@ exports[`Test (For) statement Sum values from 0 to 10 (Inclusive) 2`] = `
                         \\"prim\\": \\"UNPAIR\\"
                     },
                     {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
                         \\"prim\\": \\"PUSH\\",
                         \\"args\\": [
                             {
@@ -240,23 +234,6 @@ exports[`Test (For) statement Sum values from 0 to 10 (Inclusive) 2`] = `
                                 \\"int\\": \\"0\\"
                             }
                         ]
-                    },
-                    {
-                        \\"prim\\": \\"SWAP\\"
-                    },
-                    {
-                        \\"prim\\": \\"DUP\\"
-                    },
-                    {
-                        \\"prim\\": \\"DUG\\",
-                        \\"args\\": [
-                            {
-                                \\"int\\": \\"2\\"
-                            }
-                        ]
-                    },
-                    {
-                        \\"prim\\": \\"SWAP\\"
                     },
                     {
                         \\"prim\\": \\"DUP\\"
