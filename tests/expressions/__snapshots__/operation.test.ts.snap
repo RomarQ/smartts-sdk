@@ -633,7 +633,7 @@ exports[`Transaction operation Build operation (Desugared version) 1`] = `
             template_id (static_id 0 (\\"operation.test.ts\\" 22))
             storage (unit)
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 25) ((set_type (params (\\"operation.test.ts\\" 25)) \\"unit\\" (\\"operation.test.ts\\" 36)) (set (operations (\\"operation.test.ts\\" 25)) (cons (transfer (params (\\"operation.test.ts\\" 25)) (literal (mutez 100) (\\"operation.test.ts\\" 25)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (operations (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 25) ((set_type (params (\\"operation.test.ts\\" 25)) \\"unit\\" (\\"operation.test.ts\\" 36)) (set (operations (\\"operation.test.ts\\" 25)) (cons (transfer (params (\\"operation.test.ts\\" 25)) (literal (mutez 100) (\\"operation.test.ts\\" 25)) (openVariant (contract \\"\\" \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (operations (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)) (\\"operation.test.ts\\" 25)))))
             flags ()
             privates ()
             views ()
@@ -646,7 +646,7 @@ exports[`Transaction operation Build operation (Desugared version) 1`] = `
 
 exports[`Transaction operation Build operation (Desugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    NIL operation;\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\";\\\\n    CONTRACT %default unit;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    PUSH mutez 100;\\\\n    DIG 3;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    NIL operation;\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\";\\\\n    CONTRACT unit;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    PUSH mutez 100;\\\\n    DIG 3;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -699,9 +699,6 @@ exports[`Transaction operation Build operation (Desugared version) 2`] = `
                             {
                                 \\"prim\\": \\"unit\\"
                             }
-                        ],
-                        \\"annots\\": [
-                            \\"%default\\"
                         ]
                     },
                     {
@@ -758,7 +755,7 @@ exports[`Transaction operation Build operation (Desugared version) 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(params, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = 'CONTRACT_NOT_FOUND'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(params, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')).open_some(message = 'CONTRACT_NOT_FOUND'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -768,7 +765,7 @@ exports[`Transaction operation Build operation (Sugared version) 1`] = `
             template_id (static_id 0 (\\"operation.test.ts\\" 39))
             storage (unit)
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 42) ((set_type (params (\\"operation.test.ts\\" 42)) \\"unit\\" (\\"operation.test.ts\\" 47)) (set (operations (\\"operation.test.ts\\" 42)) (cons (transfer (unit) (literal (mutez 100) (\\"operation.test.ts\\" 42)) (openVariant (contract default \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (operations (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 42) ((set_type (params (\\"operation.test.ts\\" 42)) \\"unit\\" (\\"operation.test.ts\\" 47)) (set (operations (\\"operation.test.ts\\" 42)) (cons (transfer (unit) (literal (mutez 100) (\\"operation.test.ts\\" 42)) (openVariant (contract \\"\\" \\"unit\\" (literal (address tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (operations (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)) (\\"operation.test.ts\\" 42)))))
             flags ()
             privates ()
             views ()
@@ -781,7 +778,7 @@ exports[`Transaction operation Build operation (Sugared version) 1`] = `
 
 exports[`Transaction operation Build operation (Sugared version) 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\";\\\\n    CONTRACT %default unit;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    PUSH mutez 100;\\\\n    UNIT;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   unit;\\\\ncode\\\\n  {\\\\n    CDR;\\\\n    NIL operation;\\\\n    PUSH address \\\\\\"tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN\\\\\\";\\\\n    CONTRACT unit;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"CONTRACT_NOT_FOUND\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    PUSH mutez 100;\\\\n    UNIT;\\\\n    TRANSFER_TOKENS;\\\\n    CONS;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -834,9 +831,6 @@ exports[`Transaction operation Build operation (Sugared version) 2`] = `
                             {
                                 \\"prim\\": \\"unit\\"
                             }
-                        ],
-                        \\"annots\\": [
-                            \\"%default\\"
                         ]
                     },
                     {
@@ -888,7 +882,7 @@ exports[`Transaction operation Build operation (Sugared version) 2`] = `
             ]
         }
     ],
-    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN'), entry_point='default').open_some(message = 'CONTRACT_NOT_FOUND'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TUnit)\\\\n    self.init()\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    sp.transfer(sp.unit, sp.mutez(100), sp.contract(sp.TUnit, sp.address('tz1gTnKMA65qaKVpp6x4cgMLU2UyKF2zjHYN')).open_some(message = 'CONTRACT_NOT_FOUND'))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
 
@@ -898,7 +892,7 @@ exports[`Transaction operation Build operation to an originated contract 1`] = `
             template_id (static_id 0 (\\"operation.test.ts\\" 50))
             storage (unit)
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"operation.test.ts\\" 53) ((set_type (params (\\"operation.test.ts\\" 53)) \\"nat\\" (\\"operation.test.ts\\" 64)) (set (operations (\\"operation.test.ts\\" 55)) (cons (transfer (params (\\"operation.test.ts\\" 53)) (literal (mutez 100) (\\"operation.test.ts\\" 55)) (openVariant (contract ep1 \\"nat\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (operations (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)))))
+            messages ((ep1 True False False True (\\"operation.test.ts\\" 53) ((set_type (params (\\"operation.test.ts\\" 53)) \\"nat\\" (\\"operation.test.ts\\" 64)) (set (operations (\\"operation.test.ts\\" 55)) (cons (transfer (params (\\"operation.test.ts\\" 53)) (literal (mutez 100) (\\"operation.test.ts\\" 55)) (openVariant (contract \\"ep1\\" \\"nat\\" (literal (address KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) \\"Some\\" (literal (string \\"CONTRACT_NOT_FOUND\\") (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (operations (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)) (\\"operation.test.ts\\" 55)))))
             flags ()
             privates ()
             views ()

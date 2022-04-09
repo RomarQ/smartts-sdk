@@ -27,7 +27,7 @@ import { MichelsonType } from '../core/enums/type';
  */
 export const ToContract = (
     address: IExpression<MichelsonType.address>,
-    entrypoint = 'default',
+    entrypoint = '',
     argumentType: IType = TUnit(),
     errorMsg: IExpression = String('CONTRACT_NOT_FOUND'),
     line = new LineInfo(),
@@ -51,11 +51,11 @@ export const ToContract = (
  */
 export const GetContract = (
     address: IExpression<MichelsonType.address>,
-    entrypoint = 'default',
+    entrypoint = '',
     argumentType: IType = TUnit(),
     line = new LineInfo(),
 ): IExpression<MichelsonType.option> =>
-    new Expression(ExpressionAtom.contract, entrypoint, argumentType, address, line);
+    new Expression(ExpressionAtom.contract, `"${entrypoint}"`, argumentType, address, line);
 
 /**
  * Get the address of a contract value.
