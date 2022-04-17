@@ -19,7 +19,7 @@ exports[`Compile Contract Contract 1 1`] = `
 
 exports[`Compile Contract Contract 1 2`] = `
 "{
-    \\"micheline\\": \\"parameter (list %ep1 nat);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\";\\\\n    SENDER;\\\\n    COMPARE;\\\\n    EQ;\\\\n    IF\\\\n      {}\\\\n      {\\\\n        PUSH string \\\\\\"Not Admin!\\\\\\";\\\\n        FAILWITH;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"micheline\\": \\"parameter (list %ep1 nat);\\\\nstorage   (list nat);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    PUSH address \\\\\\"KT1R9M3MDffw7qSVSnbJs46aMC9YzzZz3aGT\\\\\\";\\\\n    SENDER;\\\\n    COMPARE;\\\\n    EQ;\\\\n    IF\\\\n      {}\\\\n      {\\\\n        PUSH string \\\\\\"Not Admin!\\\\\\";\\\\n        FAILWITH;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\\\nview\\\\n  \\\\\\"view\\\\\\" bool bool\\\\n  CAR;;\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -156,7 +156,7 @@ exports[`Compile Contract Contract 2 1`] = `
 
 exports[`Compile Contract Contract 2 2`] = `
 "{
-    \\"micheline\\": \\"parameter (bool %entry_point_1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SELF_ADDRESS;\\\\n    SWAP;\\\\n    VIEW \\\\\\"negate\\\\\\" nat;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not call view\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"micheline\\": \\"parameter (bool %entry_point_1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SELF_ADDRESS;\\\\n    SWAP;\\\\n    VIEW \\\\\\"negate\\\\\\" nat;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH string \\\\\\"Could not call view\\\\\\";\\\\n        FAILWITH;\\\\n      }\\\\n      {};\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\\\nview\\\\n  \\\\\\"negate\\\\\\" bool nat\\\\n  {\\\\n    CAR;\\\\n    IF\\\\n      {\\\\n        PUSH nat 1;\\\\n      }\\\\n      {\\\\n        PUSH nat 0;\\\\n      };\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",

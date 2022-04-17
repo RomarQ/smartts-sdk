@@ -19,7 +19,7 @@ exports[`View expressions CallView 1`] = `
 
 exports[`View expressions CallView 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SELF_ADDRESS;\\\\n    SWAP;\\\\n    VIEW \\\\\\"some_view\\\\\\" string;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %entry_point_1);\\\\nstorage   (option string);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    SELF_ADDRESS;\\\\n    SWAP;\\\\n    VIEW \\\\\\"some_view\\\\\\" string;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\\\nview\\\\n  \\\\\\"some_view\\\\\\" nat string\\\\n  {\\\\n    CAR;\\\\n    PUSH nat 2;\\\\n    COMPARE;\\\\n    LT;\\\\n    IF\\\\n      {\\\\n        PUSH string \\\\\\"YES\\\\\\";\\\\n      }\\\\n      {\\\\n        PUSH string \\\\\\"NO\\\\\\";\\\\n      };\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
