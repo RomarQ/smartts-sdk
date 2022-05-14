@@ -33,7 +33,7 @@ describe('Inlined Michelson', () => {
                 new EntryPoint('ep1').code(() => [
                     SetValue(
                         ContractStorage(),
-                        CallMichelson(inlinedMichelson, String('Hello World'), String('Hello')),
+                        CallMichelson(inlinedMichelson, undefined, String('Hello World'), String('Hello')),
                     ),
                 ]),
             );

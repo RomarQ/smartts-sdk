@@ -1,5 +1,6 @@
 import { MichelsonType } from '../core/enums/type';
 import { CallMichelson, InlinedMichelson } from '../expression';
+import { LineInfo } from '../misc/utils';
 import { TBool, TString } from '../type';
 import { IExpression } from '../typings/expression';
 
@@ -11,7 +12,11 @@ import { IExpression } from '../typings/expression';
  *
  * @returns {IExpression} An expression of types `TBool()`.
  */
-export const StartsWith = (text: IExpression<MichelsonType.string>, prefix: IExpression<MichelsonType.string>) => {
+export const StartsWith = (
+    text: IExpression<MichelsonType.string>,
+    prefix: IExpression<MichelsonType.string>,
+    line?: LineInfo,
+) => {
     const inlinedMichelson = InlinedMichelson(
         `
         DUP;
@@ -33,5 +38,5 @@ export const StartsWith = (text: IExpression<MichelsonType.string>, prefix: IExp
         [TString(), TString()],
         [TBool()],
     );
-    return CallMichelson(inlinedMichelson, text, prefix);
+    return CallMichelson(inlinedMichelson, line, text, prefix);
 };

@@ -53,6 +53,6 @@ export const InlinedMichelson = (micheline: string, inputTypes: IType[], outType
  *
  * @returns {IExpression} An expression
  */
-export const CallMichelson = (inlinedMicheline: IExpression, ...args: IExpression[]) => {
-    return new Expression(ExpressionAtom.call_michelson, inlinedMicheline, new LineInfo(), ...args);
+export const CallMichelson = (inlinedMicheline: IExpression, line = new LineInfo(), ...args: IExpression[]) => {
+    return new Expression(ExpressionAtom.call_michelson, inlinedMicheline, line, ...args);
 };
