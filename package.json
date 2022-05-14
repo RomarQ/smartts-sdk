@@ -1,6 +1,6 @@
 {
     "name": "@tezwell/smartts-sdk",
-    "version": "0.8.5",
+    "version": "0.8.6",
     "description": "SmartTS SDK is a metaprogramming framework for building Tezos smart contracts from Javascript.",
     "keywords": [
         "Tezos",
@@ -22,6 +22,7 @@
         "./compiler": "./compiler/index.js",
         "./type": "./type/index.js",
         "./expression": "./expression/index.js",
+        "./lib": "./lib/index.js",
         "./statement": "./statement/index.js",
         "./misc/utils": "./misc/utils.js",
         "./contracts/fa2": "./contracts/fa2.js"

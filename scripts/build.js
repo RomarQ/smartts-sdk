@@ -12,6 +12,7 @@ generateBundle([
     './src/type/index.ts',
     './src/expression/index.ts',
     './src/statement/index.ts',
+    './src/lib/index.ts',
     './src/misc/utils.ts',
     './src/contracts/fa2.ts',
 ]);

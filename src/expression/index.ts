@@ -22,3 +22,4 @@ export * from './variables';
 export * from './variant';
 export * from './view';
 export * from './set';
+export * from './michelson';

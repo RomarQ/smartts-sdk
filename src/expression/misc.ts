@@ -39,7 +39,7 @@ export const Concat = (list: IExpression<MichelsonType.list>, line = new LineInf
  * @returns {IExpression} An expression of type `TOption(TBytes())`.
  */
 export const Slice = (
-    bytes: IExpression<MichelsonType.bytes>,
+    bytes: IExpression<MichelsonType.bytes | MichelsonType.string>,
     offset: IExpression<MichelsonType.nat>,
     length: IExpression<MichelsonType.nat>,
     line = new LineInfo(),

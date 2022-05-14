@@ -74,7 +74,7 @@ export const If = (
  * @returns {IStatement} A statement
  */
 export const MatchVariant = (
-    variant: IExpression<MichelsonType.or>,
+    variant: IExpression<MichelsonType.or | MichelsonType.option>,
     argumentName = `__MATCH_${VariantMatchStatement.nextID}__`,
     line = new LineInfo(),
 ) => new VariantMatchStatement(variant, argumentName, line);

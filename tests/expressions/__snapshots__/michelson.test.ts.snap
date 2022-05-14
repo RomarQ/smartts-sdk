@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Inlined Michelson Call inlined michelson 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"michelson.test.ts\\" 30))
+            storage ()
+            storage_type (\\"bool\\")
+            messages ((ep1 True False False True (\\"michelson.test.ts\\" 33) ((set_type (params (\\"michelson.test.ts\\" 33)) \\"unit\\" (\\"michelson.test.ts\\" 41)) (set (data) (call_michelson (op \\"
+            DUP;
+            SIZE;
+            DIG 2;
+            SWAP;
+            PUSH nat 0;
+            SLICE;
+            IF_NONE
+                {
+                    DROP;
+                    PUSH bool False;
+                }
+                {
+                    COMPARE;
+                    EQ;
+                };
+            \\" \\"string\\" \\"string\\" out \\"bool\\") (\\"michelson.test.ts\\" 33) (literal (string \\"Hello World\\") (\\"michelson.test.ts\\" 33)) (literal (string \\"Hello\\") (\\"michelson.test.ts\\" 33))) (\\"michelson.test.ts\\" 33)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"michelson.test.ts\\" 30))
+        )
+        "
+`;
+
+exports[`Inlined Michelson Call inlined michelson 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   bool;\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    PUSH string \\\\\\"Hello\\\\\\";\\\\n    PUSH string \\\\\\"Hello World\\\\\\";\\\\n    DUP;\\\\n    SIZE;\\\\n    DIG 2;\\\\n    SWAP;\\\\n    PUSH nat 0;\\\\n    SLICE;\\\\n    IF_NONE\\\\n      {\\\\n        DROP;\\\\n        PUSH bool False;\\\\n      }\\\\n      {\\\\n        COMPARE;\\\\n        EQ;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"bool\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"string\\"
+                            },
+                            {
+                                \\"string\\": \\"Hello\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"string\\"
+                            },
+                            {
+                                \\"string\\": \\"Hello World\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"SIZE\\"
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"0\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SLICE\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF_NONE\\",
+                        \\"args\\": [
+                            [
+                                {
+                                    \\"prim\\": \\"DROP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"bool\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"False\\"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    \\"prim\\": \\"COMPARE\\"
+                                },
+                                {
+                                    \\"prim\\": \\"EQ\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TBool)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    self.data = sp.michelson(\\\\\\"\\\\\\\\n            DUP;\\\\\\\\n            SIZE;\\\\\\\\n            DIG 2;\\\\\\\\n            SWAP;\\\\\\\\n            PUSH nat 0;\\\\\\\\n            SLICE;\\\\\\\\n            IF_NONE\\\\\\\\n                {\\\\\\\\n                    DROP;\\\\\\\\n                    PUSH bool False;\\\\\\\\n                }\\\\\\\\n                {\\\\\\\\n                    COMPARE;\\\\\\\\n                    EQ;\\\\\\\\n                };\\\\\\\\n            \\\\\\")('Hello World', 'Hello')\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;

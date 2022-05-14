@@ -55,7 +55,9 @@ export enum ExpressionAtom {
     toInt = 'toInt',
     isNat = 'isNat',
     abs = 'abs',
-    // Generic
+    //
+    call_michelson = 'call_michelson',
+    op = 'op',
     slice = 'slice',
     size = 'size',
     concat = 'concat',
