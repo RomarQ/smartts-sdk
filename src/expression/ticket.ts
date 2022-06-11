@@ -27,3 +27,21 @@ export const CreateTicket = (
 ) => {
     return new Expression(ExpressionAtom.ticket, content, amount, line);
 };
+
+/**
+ * Retrieve the information stored in a ticket. Also return the ticket.
+ *
+ * ```typescript
+ * ReadTicket(some_ticket);
+ * ```
+ *
+ * @category | Ticket
+ *
+ * @param ticket The ticket to be read.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} A value of type `TPair(TPair(TAddress(), t, TNat()), TTicket(t))`.
+ */
+export const ReadTicket = (ticket: IExpression<MichelsonType.ticket>, line = new LineInfo()) => {
+    return new Expression(ExpressionAtom.read_ticket, ticket, line);
+};

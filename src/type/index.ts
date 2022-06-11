@@ -293,7 +293,8 @@ export const TBig_map = (keyType: IType, valueType: IType) => new ContainerType(
  *
  * @return {IType<TypeAtom.tuple>} A type
  */
-export const TPair = (left: IType, right: IType) => new ContainerType(TypeAtom.tuple, [left, right]);
+export const TPair = (left: IType, right: IType, ...more: IType[]) =>
+    new ContainerType(TypeAtom.tuple, [left, right, ...more]);
 
 /**
  * ```typescript

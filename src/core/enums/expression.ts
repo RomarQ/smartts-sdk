@@ -91,6 +91,7 @@ export enum ExpressionAtom {
     cons = 'cons',
     elements = 'elements',
     ticket = 'ticket',
+    read_ticket = 'read_ticket',
 }
 
 export default ExpressionAtom;

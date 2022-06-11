@@ -3,16 +3,16 @@
 exports[`Ticket expressions Create a ticket 1`] = `
 "
         (
-            template_id (static_id 0 (\\"ticket.test.ts\\" 9))
+            template_id (static_id 0 (\\"ticket.test.ts\\" 17))
             storage ()
             storage_type ((ticket \\"string\\"))
-            messages ((ep1 True False False True (\\"ticket.test.ts\\" 12) ((set_type (params (\\"ticket.test.ts\\" 12)) \\"string\\" (\\"ticket.test.ts\\" 17)) (set (data) (ticket (params (\\"ticket.test.ts\\" 12)) (literal (nat 10) (\\"ticket.test.ts\\" 14)) (\\"ticket.test.ts\\" 14)) (\\"ticket.test.ts\\" 14)))))
+            messages ((ep1 True False False True (\\"ticket.test.ts\\" 20) ((set_type (params (\\"ticket.test.ts\\" 20)) \\"string\\" (\\"ticket.test.ts\\" 25)) (set (data) (ticket (params (\\"ticket.test.ts\\" 20)) (literal (nat 10) (\\"ticket.test.ts\\" 22)) (\\"ticket.test.ts\\" 22)) (\\"ticket.test.ts\\" 22)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"ticket.test.ts\\" 9))
+            balance (literal (mutez 0) (\\"ticket.test.ts\\" 17))
         )
         "
 `;
@@ -85,5 +85,123 @@ exports[`Ticket expressions Create a ticket 2`] = `
         }
     ],
     \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TTicket(sp.TString))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TString)\\\\n    self.data = sp.ticket(params, 10)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Ticket expressions Read ticket 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"ticket.test.ts\\" 28))
+            storage ()
+            storage_type ((tuple (tuple \\"address\\" \\"string\\" \\"nat\\") (ticket \\"string\\")))
+            messages ((ep1 True False False True (\\"ticket.test.ts\\" 31) ((set_type (params (\\"ticket.test.ts\\" 31)) \\"string\\" (\\"ticket.test.ts\\" 39)) (defineLocal \\"ticket\\" (ticket (params (\\"ticket.test.ts\\" 31)) (literal (nat 10) (\\"ticket.test.ts\\" 33)) (\\"ticket.test.ts\\" 33)) True (\\"ticket.test.ts\\" 33)) (set (data) (read_ticket (getLocal \\"ticket\\" (\\"ticket.test.ts\\" 33)) (\\"ticket.test.ts\\" 33)) (\\"ticket.test.ts\\" 33)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"ticket.test.ts\\" 28))
+        )
+        "
+`;
+
+exports[`Ticket expressions Read ticket 2`] = `
+"{
+    \\"micheline\\": \\"parameter (string %ep1);\\\\nstorage   (pair (pair address (pair string nat)) (ticket string));\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    PUSH nat 10;\\\\n    SWAP;\\\\n    TICKET;\\\\n    READ_TICKET;\\\\n    PAIR;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"pair\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"pair\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"address\\"
+                                },
+                                {
+                                    \\"prim\\": \\"pair\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"string\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            \\"prim\\": \\"ticket\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"string\\"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"string\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"10\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"TICKET\\"
+                    },
+                    {
+                        \\"prim\\": \\"READ_TICKET\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TPair(sp.TTuple(sp.TAddress, sp.TString, sp.TNat), sp.TTicket(sp.TString)))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TString)\\\\n    ticket = sp.local(\\\\\\"ticket\\\\\\", sp.ticket(params, 10))\\\\n    self.data = sp.read_ticket_raw(ticket.value)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
 }"
 `;
