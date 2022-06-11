@@ -90,6 +90,7 @@ export enum ExpressionAtom {
     pairing_check = 'pairing_check',
     cons = 'cons',
     elements = 'elements',
+    ticket = 'ticket',
 }
 
 export default ExpressionAtom;

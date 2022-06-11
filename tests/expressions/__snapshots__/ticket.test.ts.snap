@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ticket expressions Create a ticket 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"ticket.test.ts\\" 9))
+            storage ()
+            storage_type ((ticket \\"string\\"))
+            messages ((ep1 True False False True (\\"ticket.test.ts\\" 12) ((set_type (params (\\"ticket.test.ts\\" 12)) \\"string\\" (\\"ticket.test.ts\\" 17)) (set (data) (ticket (params (\\"ticket.test.ts\\" 12)) (literal (nat 10) (\\"ticket.test.ts\\" 14)) (\\"ticket.test.ts\\" 14)) (\\"ticket.test.ts\\" 14)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"ticket.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`Ticket expressions Create a ticket 2`] = `
+"{
+    \\"micheline\\": \\"parameter (string %ep1);\\\\nstorage   (ticket string);\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    PUSH nat 10;\\\\n    SWAP;\\\\n    TICKET;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"ticket\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"string\\"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"string\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"10\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"TICKET\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TTicket(sp.TString))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TString)\\\\n    self.data = sp.ticket(params, 10)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
