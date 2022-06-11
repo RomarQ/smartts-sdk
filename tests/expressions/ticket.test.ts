@@ -3,6 +3,7 @@ import {
     CreateTicket,
     GetElementsFromSet,
     GetVariable,
+    JoinTicket,
     Nat,
     ReadTicket,
     SetContainsElement,
@@ -48,6 +49,21 @@ describe('Ticket expressions', () => {
                     .code((arg) => [
                         NewVariable('ticket', CreateTicket(arg, Nat(10))),
                         SetValue(ContractStorage(), SplitTicket(GetVariable('ticket'), Nat(2), Nat(8))),
+                    ]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+    it('Join tickets', () => {
+        const contract = new Contract()
+            .setStorageType(TOption(TTicket(TString())))
+            .addEntrypoint(
+                new EntryPoint('ep1')
+                    .setInputType(TString())
+                    .code((arg) => [
+                        NewVariable('ticket1', CreateTicket(arg, Nat(10))),
+                        NewVariable('ticket2', CreateTicket(arg, Nat(10))),
+                        SetValue(ContractStorage(), JoinTicket(GetVariable('ticket1'), GetVariable('ticket2'))),
                     ]),
             );
 

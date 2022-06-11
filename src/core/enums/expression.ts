@@ -93,6 +93,7 @@ export enum ExpressionAtom {
     ticket = 'ticket',
     read_ticket = 'read_ticket',
     split_ticket = 'split_ticket',
+    join_tickets = 'join_tickets',
 }
 
 export default ExpressionAtom;

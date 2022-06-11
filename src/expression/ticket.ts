@@ -57,15 +57,40 @@ export const ReadTicket = (ticket: IExpression<MichelsonType.ticket>, line = new
  * @category | Ticket
  *
  * @param ticket The ticket to be split.
+ * @param qty1 The quantity that the first new ticket will have.
+ * @param qty2 The quantity that the second new ticket will have.
  * @param {LineInfo} line Source code line information (Used in error messages)
  *
- * @returns {IExpression} A value of type TOption(TPair(TTicket(t), TTicket(t)))`.
+ * @returns {IExpression} A value of type `TOption(TPair(TTicket(t), TTicket(t)))`.
  */
 export const SplitTicket = (
     ticket: IExpression<MichelsonType.ticket>,
-    amount1: IExpression<MichelsonType.nat>,
-    amount2: IExpression<MichelsonType.nat>,
+    qty1: IExpression<MichelsonType.nat>,
+    qty2: IExpression<MichelsonType.nat>,
     line = new LineInfo(),
 ) => {
-    return new Expression(ExpressionAtom.split_ticket, ticket, Pair(amount1, amount2), line);
+    return new Expression(ExpressionAtom.split_ticket, ticket, Pair(qty1, qty2), line);
+};
+
+/**
+ * Join two tickets into one.
+ *
+ * ```typescript
+ * JoinTicket(some_ticket, some_other_ticket);
+ * ```
+ *
+ * @category | Ticket
+ *
+ * @param ticket A ticket to be merged.
+ * @param ticket Another ticket to be merged.
+ * @param {LineInfo} line Source code line information (Used in error messages)
+ *
+ * @returns {IExpression} A value of type `TTicket(t)`.
+ */
+export const JoinTicket = (
+    ticket1: IExpression<MichelsonType.ticket>,
+    ticket2: IExpression<MichelsonType.ticket>,
+    line = new LineInfo(),
+) => {
+    return new Expression(ExpressionAtom.join_tickets, Pair(ticket1, ticket2), line);
 };

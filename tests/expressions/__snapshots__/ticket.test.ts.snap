@@ -3,16 +3,16 @@
 exports[`Ticket expressions Create a ticket 1`] = `
 "
         (
-            template_id (static_id 0 (\\"ticket.test.ts\\" 18))
+            template_id (static_id 0 (\\"ticket.test.ts\\" 19))
             storage ()
             storage_type ((ticket \\"string\\"))
-            messages ((ep1 True False False True (\\"ticket.test.ts\\" 21) ((set_type (params (\\"ticket.test.ts\\" 21)) \\"string\\" (\\"ticket.test.ts\\" 26)) (set (data) (ticket (params (\\"ticket.test.ts\\" 21)) (literal (nat 10) (\\"ticket.test.ts\\" 23)) (\\"ticket.test.ts\\" 23)) (\\"ticket.test.ts\\" 23)))))
+            messages ((ep1 True False False True (\\"ticket.test.ts\\" 22) ((set_type (params (\\"ticket.test.ts\\" 22)) \\"string\\" (\\"ticket.test.ts\\" 27)) (set (data) (ticket (params (\\"ticket.test.ts\\" 22)) (literal (nat 10) (\\"ticket.test.ts\\" 24)) (\\"ticket.test.ts\\" 24)) (\\"ticket.test.ts\\" 24)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"ticket.test.ts\\" 18))
+            balance (literal (mutez 0) (\\"ticket.test.ts\\" 19))
         )
         "
 `;
@@ -88,19 +88,146 @@ exports[`Ticket expressions Create a ticket 2`] = `
 }"
 `;
 
-exports[`Ticket expressions Read ticket 1`] = `
+exports[`Ticket expressions Join tickets 1`] = `
 "
         (
-            template_id (static_id 0 (\\"ticket.test.ts\\" 29))
+            template_id (static_id 0 (\\"ticket.test.ts\\" 58))
             storage ()
-            storage_type ((tuple (tuple \\"address\\" \\"string\\" \\"nat\\") (ticket \\"string\\")))
-            messages ((ep1 True False False True (\\"ticket.test.ts\\" 32) ((set_type (params (\\"ticket.test.ts\\" 32)) \\"string\\" (\\"ticket.test.ts\\" 40)) (defineLocal \\"ticket\\" (ticket (params (\\"ticket.test.ts\\" 32)) (literal (nat 10) (\\"ticket.test.ts\\" 34)) (\\"ticket.test.ts\\" 34)) True (\\"ticket.test.ts\\" 34)) (set (data) (read_ticket (getLocal \\"ticket\\" (\\"ticket.test.ts\\" 34)) (\\"ticket.test.ts\\" 34)) (\\"ticket.test.ts\\" 34)))))
+            storage_type ((option (ticket \\"string\\")))
+            messages ((ep1 True False False True (\\"ticket.test.ts\\" 61) ((set_type (params (\\"ticket.test.ts\\" 61)) \\"string\\" (\\"ticket.test.ts\\" 70)) (defineLocal \\"ticket1\\" (ticket (params (\\"ticket.test.ts\\" 61)) (literal (nat 10) (\\"ticket.test.ts\\" 63)) (\\"ticket.test.ts\\" 63)) True (\\"ticket.test.ts\\" 63)) (defineLocal \\"ticket2\\" (ticket (params (\\"ticket.test.ts\\" 61)) (literal (nat 10) (\\"ticket.test.ts\\" 63)) (\\"ticket.test.ts\\" 63)) True (\\"ticket.test.ts\\" 63)) (set (data) (join_tickets (tuple (\\"ticket.test.ts\\" 63) (getLocal \\"ticket1\\" (\\"ticket.test.ts\\" 63)) (getLocal \\"ticket2\\" (\\"ticket.test.ts\\" 63))) (\\"ticket.test.ts\\" 63)) (\\"ticket.test.ts\\" 63)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"ticket.test.ts\\" 29))
+            balance (literal (mutez 0) (\\"ticket.test.ts\\" 58))
+        )
+        "
+`;
+
+exports[`Ticket expressions Join tickets 2`] = `
+"{
+    \\"micheline\\": \\"parameter (string %ep1);\\\\nstorage   (option (ticket string));\\\\ncode\\\\n  {\\\\n    CAR;\\\\n    DUP;\\\\n    PUSH nat 10;\\\\n    SWAP;\\\\n    TICKET;\\\\n    PUSH nat 10;\\\\n    DIG 2;\\\\n    TICKET;\\\\n    SWAP;\\\\n    PAIR;\\\\n    JOIN_TICKETS;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"option\\",
+                    \\"args\\": [
+                        {
+                            \\"prim\\": \\"ticket\\",
+                            \\"args\\": [
+                                {
+                                    \\"prim\\": \\"string\\"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"string\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"CAR\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"10\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"TICKET\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"10\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"DIG\\",
+                        \\"args\\": [
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"TICKET\\"
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"JOIN_TICKETS\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TOption(sp.TTicket(sp.TString)))\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TString)\\\\n    ticket1 = sp.local(\\\\\\"ticket1\\\\\\", sp.ticket(params, 10))\\\\n    ticket2 = sp.local(\\\\\\"ticket2\\\\\\", sp.ticket(params, 10))\\\\n    self.data = sp.join_tickets_raw((ticket1.value, ticket2.value))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Ticket expressions Read ticket 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"ticket.test.ts\\" 30))
+            storage ()
+            storage_type ((tuple (tuple \\"address\\" \\"string\\" \\"nat\\") (ticket \\"string\\")))
+            messages ((ep1 True False False True (\\"ticket.test.ts\\" 33) ((set_type (params (\\"ticket.test.ts\\" 33)) \\"string\\" (\\"ticket.test.ts\\" 41)) (defineLocal \\"ticket\\" (ticket (params (\\"ticket.test.ts\\" 33)) (literal (nat 10) (\\"ticket.test.ts\\" 35)) (\\"ticket.test.ts\\" 35)) True (\\"ticket.test.ts\\" 35)) (set (data) (read_ticket (getLocal \\"ticket\\" (\\"ticket.test.ts\\" 35)) (\\"ticket.test.ts\\" 35)) (\\"ticket.test.ts\\" 35)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"ticket.test.ts\\" 30))
         )
         "
 `;
@@ -209,16 +336,16 @@ exports[`Ticket expressions Read ticket 2`] = `
 exports[`Ticket expressions Split ticket 1`] = `
 "
         (
-            template_id (static_id 0 (\\"ticket.test.ts\\" 43))
+            template_id (static_id 0 (\\"ticket.test.ts\\" 44))
             storage ()
             storage_type ((option (tuple (ticket \\"string\\") (ticket \\"string\\"))))
-            messages ((ep1 True False False True (\\"ticket.test.ts\\" 46) ((set_type (params (\\"ticket.test.ts\\" 46)) \\"string\\" (\\"ticket.test.ts\\" 54)) (defineLocal \\"ticket\\" (ticket (params (\\"ticket.test.ts\\" 46)) (literal (nat 10) (\\"ticket.test.ts\\" 48)) (\\"ticket.test.ts\\" 48)) True (\\"ticket.test.ts\\" 48)) (set (data) (split_ticket (getLocal \\"ticket\\" (\\"ticket.test.ts\\" 48)) (tuple (\\"ticket.test.ts\\" 48) (literal (nat 2) (\\"ticket.test.ts\\" 48)) (literal (nat 8) (\\"ticket.test.ts\\" 48))) (\\"ticket.test.ts\\" 48)) (\\"ticket.test.ts\\" 48)))))
+            messages ((ep1 True False False True (\\"ticket.test.ts\\" 47) ((set_type (params (\\"ticket.test.ts\\" 47)) \\"string\\" (\\"ticket.test.ts\\" 55)) (defineLocal \\"ticket\\" (ticket (params (\\"ticket.test.ts\\" 47)) (literal (nat 10) (\\"ticket.test.ts\\" 49)) (\\"ticket.test.ts\\" 49)) True (\\"ticket.test.ts\\" 49)) (set (data) (split_ticket (getLocal \\"ticket\\" (\\"ticket.test.ts\\" 49)) (tuple (\\"ticket.test.ts\\" 49) (literal (nat 2) (\\"ticket.test.ts\\" 49)) (literal (nat 8) (\\"ticket.test.ts\\" 49))) (\\"ticket.test.ts\\" 49)) (\\"ticket.test.ts\\" 49)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"ticket.test.ts\\" 43))
+            balance (literal (mutez 0) (\\"ticket.test.ts\\" 44))
         )
         "
 `;
