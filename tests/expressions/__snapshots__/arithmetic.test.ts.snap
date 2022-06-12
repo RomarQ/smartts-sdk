@@ -3,16 +3,16 @@
 exports[`Arithmetic expressions Addition 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 70))
-            storage (record (\\"arithmetic.test.ts\\" 72) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 73))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 74))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 75))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 76))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 77))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 78))))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 73))
+            storage (record (\\"arithmetic.test.ts\\" 75) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 76))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 77))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 78))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 79))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 80))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 81))))
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 82) ((set_type (params (\\"arithmetic.test.ts\\" 82)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (nat 1) (\\"arithmetic.test.ts\\" 82)) (literal (nat 1) (\\"arithmetic.test.ts\\" 82)) (\\"arithmetic.test.ts\\" 82)) (\\"arithmetic.test.ts\\" 82)) (\\"arithmetic.test.ts\\" 82)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 85) ((set_type (params (\\"arithmetic.test.ts\\" 85)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (int 1) (\\"arithmetic.test.ts\\" 85)) (literal (int 1) (\\"arithmetic.test.ts\\" 85)) (\\"arithmetic.test.ts\\" 85)) (\\"arithmetic.test.ts\\" 85)) (\\"arithmetic.test.ts\\" 85)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 88) ((set_type (params (\\"arithmetic.test.ts\\" 88)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (mutez 1) (\\"arithmetic.test.ts\\" 88)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 88)) (\\"arithmetic.test.ts\\" 88)) (\\"arithmetic.test.ts\\" 88)) (\\"arithmetic.test.ts\\" 88)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 91) ((set_type (params (\\"arithmetic.test.ts\\" 91)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 91)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 91)) (\\"arithmetic.test.ts\\" 91)) (\\"arithmetic.test.ts\\" 91)) (\\"arithmetic.test.ts\\" 91)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 96) ((set_type (params (\\"arithmetic.test.ts\\" 96)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 96)) (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 96)) (\\"arithmetic.test.ts\\" 96)) (\\"arithmetic.test.ts\\" 96)) (\\"arithmetic.test.ts\\" 96)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 113) ((set_type (params (\\"arithmetic.test.ts\\" 113)) \\"unit\\" (\\"arithmetic.test.ts\\" 130)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 113)) (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 113)) (\\"arithmetic.test.ts\\" 113)) (\\"arithmetic.test.ts\\" 113)) (\\"arithmetic.test.ts\\" 113)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 85) ((set_type (params (\\"arithmetic.test.ts\\" 85)) \\"unit\\" (\\"arithmetic.test.ts\\" 133)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (nat 1) (\\"arithmetic.test.ts\\" 85)) (literal (nat 1) (\\"arithmetic.test.ts\\" 85)) (\\"arithmetic.test.ts\\" 85)) (\\"arithmetic.test.ts\\" 85)) (\\"arithmetic.test.ts\\" 85)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 88) ((set_type (params (\\"arithmetic.test.ts\\" 88)) \\"unit\\" (\\"arithmetic.test.ts\\" 133)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (int 1) (\\"arithmetic.test.ts\\" 88)) (literal (int 1) (\\"arithmetic.test.ts\\" 88)) (\\"arithmetic.test.ts\\" 88)) (\\"arithmetic.test.ts\\" 88)) (\\"arithmetic.test.ts\\" 88)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 91) ((set_type (params (\\"arithmetic.test.ts\\" 91)) \\"unit\\" (\\"arithmetic.test.ts\\" 133)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (mutez 1) (\\"arithmetic.test.ts\\" 91)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 91)) (\\"arithmetic.test.ts\\" 91)) (\\"arithmetic.test.ts\\" 91)) (\\"arithmetic.test.ts\\" 91)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 94) ((set_type (params (\\"arithmetic.test.ts\\" 94)) \\"unit\\" (\\"arithmetic.test.ts\\" 133)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 94)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 94)) (\\"arithmetic.test.ts\\" 94)) (\\"arithmetic.test.ts\\" 94)) (\\"arithmetic.test.ts\\" 94)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 99) ((set_type (params (\\"arithmetic.test.ts\\" 99)) \\"unit\\" (\\"arithmetic.test.ts\\" 133)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 99)) (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 99)) (\\"arithmetic.test.ts\\" 99)) (\\"arithmetic.test.ts\\" 99)) (\\"arithmetic.test.ts\\" 99)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 116) ((set_type (params (\\"arithmetic.test.ts\\" 116)) \\"unit\\" (\\"arithmetic.test.ts\\" 133)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (add (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 116)) (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 116)) (\\"arithmetic.test.ts\\" 116)) (\\"arithmetic.test.ts\\" 116)) (\\"arithmetic.test.ts\\" 116)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 70))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 73))
         )
         "
 `;
@@ -479,19 +479,837 @@ exports[`Arithmetic expressions Addition 2`] = `
 }"
 `;
 
-exports[`Arithmetic expressions EuclideanDivision 1`] = `
+exports[`Arithmetic expressions Compute Median 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 38))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 240))
             storage ()
-            storage_type ((option (tuple \\"nat\\" \\"nat\\")))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 41) ((set_type (params (\\"arithmetic.test.ts\\" 41)) \\"unit\\" (\\"arithmetic.test.ts\\" 44)) (set (data) (ediv (literal (nat 13) (\\"arithmetic.test.ts\\" 41)) (literal (nat 3) (\\"arithmetic.test.ts\\" 41)) (\\"arithmetic.test.ts\\" 41)) (\\"arithmetic.test.ts\\" 41)))))
+            storage_type (\\"nat\\")
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 243) ((set_type (params (\\"arithmetic.test.ts\\" 243)) \\"unit\\" (\\"arithmetic.test.ts\\" 249)) (set (data) (call_lambda (lambda 1 None False \\"lambda_arg\\" (\\"arithmetic.test.ts\\" 243) ((defineLocal \\"hist\\" (map (\\"arithmetic.test.ts\\" 243) ) True (\\"arithmetic.test.ts\\" 243)) (forGroup \\"__ITERATOR_FOREACH_1__\\" (lambdaParams 1 \\"lambda_arg\\" (\\"arithmetic.test.ts\\" 243) (unknown 0)) ((ifBlock (contains (getLocal \\"hist\\" (\\"arithmetic.test.ts\\" 243)) (iter \\"__ITERATOR_FOREACH_1__\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) ((set (getItem (getLocal \\"hist\\" (\\"arithmetic.test.ts\\" 243)) (iter \\"__ITERATOR_FOREACH_1__\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (add (getItem (getLocal \\"hist\\" (\\"arithmetic.test.ts\\" 243)) (iter \\"__ITERATOR_FOREACH_1__\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (literal (nat 1) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243))) (\\"arithmetic.test.ts\\" 243)) (elseBlock ((set (getItem (getLocal \\"hist\\" (\\"arithmetic.test.ts\\" 243)) (iter \\"__ITERATOR_FOREACH_1__\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (literal (nat 1) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243))))) (\\"arithmetic.test.ts\\" 243)) (defineLocal \\"list_size\\" (size (lambdaParams 1 \\"lambda_arg\\" (\\"arithmetic.test.ts\\" 243) (unknown 0)) (\\"arithmetic.test.ts\\" 243)) True (\\"arithmetic.test.ts\\" 243)) (defineLocal \\"result\\" (literal (nat 0) (\\"arithmetic.test.ts\\" 243)) True (\\"arithmetic.test.ts\\" 243)) (defineLocal \\"half\\" (truediv (getLocal \\"list_size\\" (\\"arithmetic.test.ts\\" 243)) (literal (nat 2) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) True (\\"arithmetic.test.ts\\" 243)) (defineLocal \\"use_average\\" (eq (mul_overloaded (getLocal \\"half\\" (\\"arithmetic.test.ts\\" 243)) (literal (nat 2) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (getLocal \\"list_size\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) True (\\"arithmetic.test.ts\\" 243)) (defineLocal \\"i\\" (literal (nat 0) (\\"arithmetic.test.ts\\" 243)) True (\\"arithmetic.test.ts\\" 243)) (forGroup \\"__ITERATOR_FOREACH_2__\\" (items (getLocal \\"hist\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) ((ifBlock (getLocal \\"use_average\\" (\\"arithmetic.test.ts\\" 243)) ((ifBlock (lt (getLocal \\"i\\" (\\"arithmetic.test.ts\\" 243)) (getLocal \\"half\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) ((set (getLocal \\"result\\" (\\"arithmetic.test.ts\\" 243)) (attr (iter \\"__ITERATOR_FOREACH_2__\\" (\\"arithmetic.test.ts\\" 243)) \\"key\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (set (getLocal \\"i\\" (\\"arithmetic.test.ts\\" 243)) (add (getLocal \\"i\\" (\\"arithmetic.test.ts\\" 243)) (attr (iter \\"__ITERATOR_FOREACH_2__\\" (\\"arithmetic.test.ts\\" 243)) \\"value\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (ifBlock (gt (getLocal \\"i\\" (\\"arithmetic.test.ts\\" 243)) (getLocal \\"half\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) ((set (getLocal \\"use_average\\" (\\"arithmetic.test.ts\\" 243)) (literal (bool False) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243))) (\\"arithmetic.test.ts\\" 243))) (\\"arithmetic.test.ts\\" 243)) (elseBlock ((set (getLocal \\"result\\" (\\"arithmetic.test.ts\\" 243)) (add (getLocal \\"result\\" (\\"arithmetic.test.ts\\" 243)) (attr (iter \\"__ITERATOR_FOREACH_2__\\" (\\"arithmetic.test.ts\\" 243)) \\"key\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (set (getLocal \\"result\\" (\\"arithmetic.test.ts\\" 243)) (truediv (getLocal \\"result\\" (\\"arithmetic.test.ts\\" 243)) (literal (nat 2) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (set (getLocal \\"use_average\\" (\\"arithmetic.test.ts\\" 243)) (literal (bool False) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (set (getLocal \\"i\\" (\\"arithmetic.test.ts\\" 243)) (add (getLocal \\"i\\" (\\"arithmetic.test.ts\\" 243)) (attr (iter \\"__ITERATOR_FOREACH_2__\\" (\\"arithmetic.test.ts\\" 243)) \\"value\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243))))) (\\"arithmetic.test.ts\\" 243)) (elseBlock ((ifBlock (le (getLocal \\"i\\" (\\"arithmetic.test.ts\\" 243)) (getLocal \\"half\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) ((set (getLocal \\"result\\" (\\"arithmetic.test.ts\\" 243)) (attr (iter \\"__ITERATOR_FOREACH_2__\\" (\\"arithmetic.test.ts\\" 243)) \\"key\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (set (getLocal \\"i\\" (\\"arithmetic.test.ts\\" 243)) (add (getLocal \\"i\\" (\\"arithmetic.test.ts\\" 243)) (attr (iter \\"__ITERATOR_FOREACH_2__\\" (\\"arithmetic.test.ts\\" 243)) \\"value\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243))) (\\"arithmetic.test.ts\\" 243))))) (\\"arithmetic.test.ts\\" 243)) (result (getLocal \\"result\\" (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)))) (list (\\"arithmetic.test.ts\\" 243) (literal (nat 1) (\\"arithmetic.test.ts\\" 243)) (literal (nat 2) (\\"arithmetic.test.ts\\" 243)) (literal (nat 3) (\\"arithmetic.test.ts\\" 243))) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (verify (eq (data) (literal (nat 2) (\\"arithmetic.test.ts\\" 243)) (\\"arithmetic.test.ts\\" 243)) (unit) (\\"arithmetic.test.ts\\" 243)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 38))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 240))
+        )
+        "
+`;
+
+exports[`Arithmetic expressions Compute Median 2`] = `
+"{
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    LAMBDA\\\\n      (list nat)\\\\n      nat\\\\n      {\\\\n        DUP;\\\\n        EMPTY_MAP nat nat;\\\\n        SWAP;\\\\n        ITER\\\\n          {\\\\n            SWAP;\\\\n            DUP;\\\\n            DUG 2;\\\\n            SWAP;\\\\n            DUP;\\\\n            DUG 2;\\\\n            MEM;\\\\n            IF\\\\n              {\\\\n                SWAP;\\\\n                DUP;\\\\n                DIG 2;\\\\n                DUP;\\\\n                DUG 2;\\\\n                GET;\\\\n                IF_NONE\\\\n                  {\\\\n                    PUSH int 243;\\\\n                    FAILWITH;\\\\n                  }\\\\n                  {};\\\\n                PUSH nat 1;\\\\n                ADD;\\\\n                SOME;\\\\n                SWAP;\\\\n                UPDATE;\\\\n              }\\\\n              {\\\\n                SWAP;\\\\n                PUSH (option nat) (Some 1);\\\\n                DIG 2;\\\\n                UPDATE;\\\\n              };\\\\n          };\\\\n        SWAP;\\\\n        DUP;\\\\n        DUG 2;\\\\n        SIZE;\\\\n        PUSH nat 0;\\\\n        PUSH nat 2;\\\\n        DUP 3;\\\\n        EDIV;\\\\n        IF_NONE\\\\n          {\\\\n            PUSH int 243;\\\\n            FAILWITH;\\\\n          }\\\\n          {\\\\n            CAR;\\\\n          };\\\\n        DUP 3;\\\\n        PUSH nat 2;\\\\n        DUP 3;\\\\n        MUL;\\\\n        COMPARE;\\\\n        EQ;\\\\n        PUSH nat 0;\\\\n        DUP 6;\\\\n        ITER\\\\n          {\\\\n            DUP 3;\\\\n            IF\\\\n              {\\\\n                DUP 4;\\\\n                DUP 3;\\\\n                COMPARE;\\\\n                LT;\\\\n                IF\\\\n                  {\\\\n                    DIG 4;\\\\n                    DROP;\\\\n                    DUP;\\\\n                    CAR;\\\\n                    DUG 4;\\\\n                    DUP;\\\\n                    DUG 2;\\\\n                    CDR;\\\\n                    ADD;\\\\n                    SWAP;\\\\n                    DUP 4;\\\\n                    DUP 3;\\\\n                    COMPARE;\\\\n                    GT;\\\\n                    IF\\\\n                      {\\\\n                        DIG 2;\\\\n                        DROP 2;\\\\n                        PUSH bool False;\\\\n                        SWAP;\\\\n                      }\\\\n                      {\\\\n                        DROP;\\\\n                      };\\\\n                  }\\\\n                  {\\\\n                    DIG 2;\\\\n                    DROP;\\\\n                    DIG 3;\\\\n                    SWAP;\\\\n                    DUP;\\\\n                    DUG 2;\\\\n                    CAR;\\\\n                    ADD;\\\\n                    PUSH nat 2;\\\\n                    SWAP;\\\\n                    EDIV;\\\\n                    IF_NONE\\\\n                      {\\\\n                        PUSH int 243;\\\\n                        FAILWITH;\\\\n                      }\\\\n                      {\\\\n                        CAR;\\\\n                      };\\\\n                    DUG 3;\\\\n                    PUSH bool False;\\\\n                    DUG 2;\\\\n                    CDR;\\\\n                    ADD;\\\\n                  };\\\\n              }\\\\n              {\\\\n                DUP 4;\\\\n                DUP 3;\\\\n                COMPARE;\\\\n                LE;\\\\n                IF\\\\n                  {\\\\n                    DIG 4;\\\\n                    DROP;\\\\n                    DUP;\\\\n                    CAR;\\\\n                    DUG 4;\\\\n                    CDR;\\\\n                    ADD;\\\\n                  }\\\\n                  {\\\\n                    DROP;\\\\n                  };\\\\n              };\\\\n          };\\\\n        DROP 3;\\\\n        SWAP;\\\\n        DROP;\\\\n        SWAP;\\\\n        DROP;\\\\n        SWAP;\\\\n        DROP;\\\\n      };\\\\n    PUSH (list nat) {1; 2; 3};\\\\n    EXEC;\\\\n    DUP;\\\\n    PUSH nat 2;\\\\n    COMPARE;\\\\n    EQ;\\\\n    IF\\\\n      {}\\\\n      {\\\\n        UNIT;\\\\n        FAILWITH;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"nat\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"unit\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"DROP\\"
+                    },
+                    {
+                        \\"prim\\": \\"LAMBDA\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"list\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"nat\\"
+                                    }
+                                ]
+                            },
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            [
+                                {
+                                    \\"prim\\": \\"DUP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"EMPTY_MAP\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"ITER\\",
+                                    \\"args\\": [
+                                        [
+                                            {
+                                                \\"prim\\": \\"SWAP\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"DUP\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"DUG\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"2\\"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"SWAP\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"DUP\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"DUG\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"2\\"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"MEM\\"
+                                            },
+                                            {
+                                                \\"prim\\": \\"IF\\",
+                                                \\"args\\": [
+                                                    [
+                                                        {
+                                                            \\"prim\\": \\"SWAP\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"DUP\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"DIG\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"int\\": \\"2\\"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"DUP\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"DUG\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"int\\": \\"2\\"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"GET\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"IF_NONE\\",
+                                                            \\"args\\": [
+                                                                [
+                                                                    {
+                                                                        \\"prim\\": \\"PUSH\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"prim\\": \\"int\\"
+                                                                            },
+                                                                            {
+                                                                                \\"int\\": \\"243\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"FAILWITH\\"
+                                                                    }
+                                                                ],
+                                                                []
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"PUSH\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"prim\\": \\"nat\\"
+                                                                },
+                                                                {
+                                                                    \\"int\\": \\"1\\"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"ADD\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"SOME\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"SWAP\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"UPDATE\\"
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            \\"prim\\": \\"SWAP\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"PUSH\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"prim\\": \\"option\\",
+                                                                    \\"args\\": [
+                                                                        {
+                                                                            \\"prim\\": \\"nat\\"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    \\"prim\\": \\"Some\\",
+                                                                    \\"args\\": [
+                                                                        {
+                                                                            \\"int\\": \\"1\\"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"DIG\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"int\\": \\"2\\"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"UPDATE\\"
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        ]
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DUG\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"SIZE\\"
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"0\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"DUP\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"3\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"EDIV\\"
+                                },
+                                {
+                                    \\"prim\\": \\"IF_NONE\\",
+                                    \\"args\\": [
+                                        [
+                                            {
+                                                \\"prim\\": \\"PUSH\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"prim\\": \\"int\\"
+                                                    },
+                                                    {
+                                                        \\"int\\": \\"243\\"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"FAILWITH\\"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                \\"prim\\": \\"CAR\\"
+                                            }
+                                        ]
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"DUP\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"3\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"2\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"DUP\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"3\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"MUL\\"
+                                },
+                                {
+                                    \\"prim\\": \\"COMPARE\\"
+                                },
+                                {
+                                    \\"prim\\": \\"EQ\\"
+                                },
+                                {
+                                    \\"prim\\": \\"PUSH\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"prim\\": \\"nat\\"
+                                        },
+                                        {
+                                            \\"int\\": \\"0\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"DUP\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"6\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"ITER\\",
+                                    \\"args\\": [
+                                        [
+                                            {
+                                                \\"prim\\": \\"DUP\\",
+                                                \\"args\\": [
+                                                    {
+                                                        \\"int\\": \\"3\\"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \\"prim\\": \\"IF\\",
+                                                \\"args\\": [
+                                                    [
+                                                        {
+                                                            \\"prim\\": \\"DUP\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"int\\": \\"4\\"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"DUP\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"int\\": \\"3\\"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"COMPARE\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"LT\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"IF\\",
+                                                            \\"args\\": [
+                                                                [
+                                                                    {
+                                                                        \\"prim\\": \\"DIG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"4\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DROP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"CAR\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"4\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"2\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"CDR\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"ADD\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"SWAP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUP\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"4\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUP\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"3\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"COMPARE\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"GT\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"IF\\",
+                                                                        \\"args\\": [
+                                                                            [
+                                                                                {
+                                                                                    \\"prim\\": \\"DIG\\",
+                                                                                    \\"args\\": [
+                                                                                        {
+                                                                                            \\"int\\": \\"2\\"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    \\"prim\\": \\"DROP\\",
+                                                                                    \\"args\\": [
+                                                                                        {
+                                                                                            \\"int\\": \\"2\\"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    \\"prim\\": \\"PUSH\\",
+                                                                                    \\"args\\": [
+                                                                                        {
+                                                                                            \\"prim\\": \\"bool\\"
+                                                                                        },
+                                                                                        {
+                                                                                            \\"prim\\": \\"False\\"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    \\"prim\\": \\"SWAP\\"
+                                                                                }
+                                                                            ],
+                                                                            [
+                                                                                {
+                                                                                    \\"prim\\": \\"DROP\\"
+                                                                                }
+                                                                            ]
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                [
+                                                                    {
+                                                                        \\"prim\\": \\"DIG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"2\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DROP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DIG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"3\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"SWAP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"2\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"CAR\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"ADD\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"PUSH\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"prim\\": \\"nat\\"
+                                                                            },
+                                                                            {
+                                                                                \\"int\\": \\"2\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"SWAP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"EDIV\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"IF_NONE\\",
+                                                                        \\"args\\": [
+                                                                            [
+                                                                                {
+                                                                                    \\"prim\\": \\"PUSH\\",
+                                                                                    \\"args\\": [
+                                                                                        {
+                                                                                            \\"prim\\": \\"int\\"
+                                                                                        },
+                                                                                        {
+                                                                                            \\"int\\": \\"243\\"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    \\"prim\\": \\"FAILWITH\\"
+                                                                                }
+                                                                            ],
+                                                                            [
+                                                                                {
+                                                                                    \\"prim\\": \\"CAR\\"
+                                                                                }
+                                                                            ]
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"3\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"PUSH\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"prim\\": \\"bool\\"
+                                                                            },
+                                                                            {
+                                                                                \\"prim\\": \\"False\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"2\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"CDR\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"ADD\\"
+                                                                    }
+                                                                ]
+                                                            ]
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            \\"prim\\": \\"DUP\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"int\\": \\"4\\"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"DUP\\",
+                                                            \\"args\\": [
+                                                                {
+                                                                    \\"int\\": \\"3\\"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"COMPARE\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"LE\\"
+                                                        },
+                                                        {
+                                                            \\"prim\\": \\"IF\\",
+                                                            \\"args\\": [
+                                                                [
+                                                                    {
+                                                                        \\"prim\\": \\"DIG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"4\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DROP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUP\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"CAR\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"DUG\\",
+                                                                        \\"args\\": [
+                                                                            {
+                                                                                \\"int\\": \\"4\\"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"CDR\\"
+                                                                    },
+                                                                    {
+                                                                        \\"prim\\": \\"ADD\\"
+                                                                    }
+                                                                ],
+                                                                [
+                                                                    {
+                                                                        \\"prim\\": \\"DROP\\"
+                                                                    }
+                                                                ]
+                                                            ]
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        ]
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"DROP\\",
+                                    \\"args\\": [
+                                        {
+                                            \\"int\\": \\"3\\"
+                                        }
+                                    ]
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DROP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DROP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"SWAP\\"
+                                },
+                                {
+                                    \\"prim\\": \\"DROP\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"list\\",
+                                \\"args\\": [
+                                    {
+                                        \\"prim\\": \\"nat\\"
+                                    }
+                                ]
+                            },
+                            [
+                                {
+                                    \\"int\\": \\"1\\"
+                                },
+                                {
+                                    \\"int\\": \\"2\\"
+                                },
+                                {
+                                    \\"int\\": \\"3\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"EXEC\\"
+                    },
+                    {
+                        \\"prim\\": \\"DUP\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"nat\\"
+                            },
+                            {
+                                \\"int\\": \\"2\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"COMPARE\\"
+                    },
+                    {
+                        \\"prim\\": \\"EQ\\"
+                    },
+                    {
+                        \\"prim\\": \\"IF\\",
+                        \\"args\\": [
+                            [],
+                            [
+                                {
+                                    \\"prim\\": \\"UNIT\\"
+                                },
+                                {
+                                    \\"prim\\": \\"FAILWITH\\"
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TNat)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TUnit)\\\\n    def flambda_arg(lambda_arg):\\\\n      hist = sp.local(\\\\\\"hist\\\\\\", {})\\\\n      sp.for __ITERATOR_FOREACH_1__ in lambda_arg:\\\\n        sp.if hist.value.contains(__ITERATOR_FOREACH_1__):\\\\n          hist.value[__ITERATOR_FOREACH_1__] += 1\\\\n        sp.else:\\\\n          hist.value[__ITERATOR_FOREACH_1__] = 1\\\\n      list_size = sp.local(\\\\\\"list_size\\\\\\", sp.len(lambda_arg))\\\\n      result = sp.local(\\\\\\"result\\\\\\", 0)\\\\n      half = sp.local(\\\\\\"half\\\\\\", list_size.value // 2)\\\\n      use_average = sp.local(\\\\\\"use_average\\\\\\", sp.mul(half.value, 2) == list_size.value)\\\\n      i = sp.local(\\\\\\"i\\\\\\", 0)\\\\n      sp.for __ITERATOR_FOREACH_2__ in hist.value.items():\\\\n        sp.if use_average.value:\\\\n          sp.if i.value < half.value:\\\\n            result.value = __ITERATOR_FOREACH_2__.key\\\\n            i.value += __ITERATOR_FOREACH_2__.value\\\\n            sp.if i.value > half.value:\\\\n              use_average.value = False\\\\n          sp.else:\\\\n            result.value += __ITERATOR_FOREACH_2__.key\\\\n            result.value //= 2\\\\n            use_average.value = False\\\\n            i.value += __ITERATOR_FOREACH_2__.value\\\\n        sp.else:\\\\n          sp.if i.value <= half.value:\\\\n            result.value = __ITERATOR_FOREACH_2__.key\\\\n            i.value += __ITERATOR_FOREACH_2__.value\\\\n      sp.result(result.value)\\\\n    self.data = sp.build_lambda(flambda_arg)(sp.list([1, 2, 3]))\\\\n    sp.verify(self.data == 2, sp.unit)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`Arithmetic expressions EuclideanDivision 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 41))
+            storage ()
+            storage_type ((option (tuple \\"nat\\" \\"nat\\")))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 44) ((set_type (params (\\"arithmetic.test.ts\\" 44)) \\"unit\\" (\\"arithmetic.test.ts\\" 47)) (set (data) (ediv (literal (nat 13) (\\"arithmetic.test.ts\\" 44)) (literal (nat 3) (\\"arithmetic.test.ts\\" 44)) (\\"arithmetic.test.ts\\" 44)) (\\"arithmetic.test.ts\\" 44)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 41))
         )
         "
 `;
@@ -586,23 +1404,23 @@ exports[`Arithmetic expressions EuclideanDivision 2`] = `
 exports[`Arithmetic expressions Mod 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 47))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 50))
             storage ()
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 49) ((set_type (params (\\"arithmetic.test.ts\\" 49)) \\"unit\\" (\\"arithmetic.test.ts\\" 51)) (set (data) (mod (literal (nat 13) (\\"arithmetic.test.ts\\" 49)) (literal (nat 3) (\\"arithmetic.test.ts\\" 49)) (\\"arithmetic.test.ts\\" 49)) (\\"arithmetic.test.ts\\" 49)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 52) ((set_type (params (\\"arithmetic.test.ts\\" 52)) \\"unit\\" (\\"arithmetic.test.ts\\" 54)) (set (data) (mod (literal (nat 13) (\\"arithmetic.test.ts\\" 52)) (literal (nat 3) (\\"arithmetic.test.ts\\" 52)) (\\"arithmetic.test.ts\\" 52)) (\\"arithmetic.test.ts\\" 52)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 47))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 50))
         )
         "
 `;
 
 exports[`Arithmetic expressions Mod 2`] = `
 "{
-    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    PUSH nat 3;\\\\n    PUSH nat 13;\\\\n    EDIV;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 49;\\\\n        FAILWITH;\\\\n      }\\\\n      {\\\\n        CDR;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"micheline\\": \\"parameter (unit %ep1);\\\\nstorage   nat;\\\\ncode\\\\n  {\\\\n    DROP;\\\\n    PUSH nat 3;\\\\n    PUSH nat 13;\\\\n    EDIV;\\\\n    IF_NONE\\\\n      {\\\\n        PUSH int 52;\\\\n        FAILWITH;\\\\n      }\\\\n      {\\\\n        CDR;\\\\n      };\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
     \\"json\\": [
         {
             \\"prim\\": \\"storage\\",
@@ -666,7 +1484,7 @@ exports[`Arithmetic expressions Mod 2`] = `
                                             \\"prim\\": \\"int\\"
                                         },
                                         {
-                                            \\"int\\": \\"49\\"
+                                            \\"int\\": \\"52\\"
                                         }
                                     ]
                                 },
@@ -703,16 +1521,16 @@ exports[`Arithmetic expressions Mod 2`] = `
 exports[`Arithmetic expressions Multiplication 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 162))
-            storage (record (\\"arithmetic.test.ts\\" 174) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 175))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 176))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 177))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 178))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 179))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 180))))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 165))
+            storage (record (\\"arithmetic.test.ts\\" 177) (nat (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 178))) (int (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 179))) (mutez (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 180))) (bls12_381_fr (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 181))) (bls12_381_g1 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 182))) (bls12_381_g2 (variant \\"None\\" (unit) (\\"arithmetic.test.ts\\" 183))))
             storage_type ((record ((nat (option \\"nat\\")) (int (option \\"int\\")) (mutez (option \\"mutez\\")) (bls12_381_fr (option \\"bls12_381_fr\\")) (bls12_381_g1 (option \\"bls12_381_g1\\")) (bls12_381_g2 (option \\"bls12_381_g2\\"))) (Some ((\\"nat\\") ((\\"int\\") ((\\"mutez\\") ((\\"bls12_381_fr\\") ((\\"bls12_381_g1\\") (\\"bls12_381_g2\\"))))))) (\\"\\" -1)))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 184) ((set_type (params (\\"arithmetic.test.ts\\" 184)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 184)) (literal (nat 1) (\\"arithmetic.test.ts\\" 184)) (\\"arithmetic.test.ts\\" 184)) (\\"arithmetic.test.ts\\" 184)) (\\"arithmetic.test.ts\\" 184)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 187) ((set_type (params (\\"arithmetic.test.ts\\" 187)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 187)) (literal (int 1) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 187)) (literal (int 1) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 193) ((set_type (params (\\"arithmetic.test.ts\\" 193)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (mutez 1) (\\"arithmetic.test.ts\\" 193)) (literal (nat 1) (\\"arithmetic.test.ts\\" 193)) (\\"arithmetic.test.ts\\" 193)) (\\"arithmetic.test.ts\\" 193)) (\\"arithmetic.test.ts\\" 193)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 196) ((set_type (params (\\"arithmetic.test.ts\\" 196)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 196)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 196)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 196)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 203) ((set_type (params (\\"arithmetic.test.ts\\" 203)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 203)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 203)) (\\"arithmetic.test.ts\\" 203)) (\\"arithmetic.test.ts\\" 203)) (\\"arithmetic.test.ts\\" 203)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 218) ((set_type (params (\\"arithmetic.test.ts\\" 218)) \\"unit\\" (\\"arithmetic.test.ts\\" 233)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 218)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 218)) (\\"arithmetic.test.ts\\" 218)) (\\"arithmetic.test.ts\\" 218)) (\\"arithmetic.test.ts\\" 218)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 187) ((set_type (params (\\"arithmetic.test.ts\\" 187)) \\"unit\\" (\\"arithmetic.test.ts\\" 236)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 187)) (literal (nat 1) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)) (\\"arithmetic.test.ts\\" 187)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 190) ((set_type (params (\\"arithmetic.test.ts\\" 190)) \\"unit\\" (\\"arithmetic.test.ts\\" 236)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 190)) (literal (int 1) (\\"arithmetic.test.ts\\" 190)) (\\"arithmetic.test.ts\\" 190)) (\\"arithmetic.test.ts\\" 190)) (\\"arithmetic.test.ts\\" 190)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 190)) (literal (int 1) (\\"arithmetic.test.ts\\" 190)) (\\"arithmetic.test.ts\\" 190)) (\\"arithmetic.test.ts\\" 190)) (\\"arithmetic.test.ts\\" 190)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 196) ((set_type (params (\\"arithmetic.test.ts\\" 196)) \\"unit\\" (\\"arithmetic.test.ts\\" 236)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (mutez 1) (\\"arithmetic.test.ts\\" 196)) (literal (nat 1) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)) (\\"arithmetic.test.ts\\" 196)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 199) ((set_type (params (\\"arithmetic.test.ts\\" 199)) \\"unit\\" (\\"arithmetic.test.ts\\" 236)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (nat 1) (\\"arithmetic.test.ts\\" 199)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 199)) (\\"arithmetic.test.ts\\" 199)) (\\"arithmetic.test.ts\\" 199)) (\\"arithmetic.test.ts\\" 199)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (int 1) (\\"arithmetic.test.ts\\" 199)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 199)) (\\"arithmetic.test.ts\\" 199)) (\\"arithmetic.test.ts\\" 199)) (\\"arithmetic.test.ts\\" 199)) (set (attr (data) \\"bls12_381_fr\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 199)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 199)) (\\"arithmetic.test.ts\\" 199)) (\\"arithmetic.test.ts\\" 199)) (\\"arithmetic.test.ts\\" 199)))) (ep5 True False False True (\\"arithmetic.test.ts\\" 206) ((set_type (params (\\"arithmetic.test.ts\\" 206)) \\"unit\\" (\\"arithmetic.test.ts\\" 236)) (set (attr (data) \\"bls12_381_g1\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g1 0x0572cbea904d67468808c8eb50a9450c9721db309128012543902d0ac358a62ae28f75bb8f1c7c42c39a8c5529bf0f4e166a9d8cabc673a322fda673779d8e3822ba3ecb8670e461f73bb9021d5fd76a4c56d9d4cd16bd1bba86881979749d28) (\\"arithmetic.test.ts\\" 206)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 206)) (\\"arithmetic.test.ts\\" 206)) (\\"arithmetic.test.ts\\" 206)) (\\"arithmetic.test.ts\\" 206)))) (ep6 True False False True (\\"arithmetic.test.ts\\" 221) ((set_type (params (\\"arithmetic.test.ts\\" 221)) \\"unit\\" (\\"arithmetic.test.ts\\" 236)) (set (attr (data) \\"bls12_381_g2\\" (\\"expression.ts\\" 28)) (variant \\"Some\\" (mul_overloaded (literal (bls12_381_g2 0x13e02b6052719f607dacd3a088274f65596bd0d09920b61ab5da61bbdc7f5049334cf11213945d57e5ac7d055d042b7e024aa2b2f08f0a91260805272dc51051c6e47ad4fa403b02b4510b647ae3d1770bac0326a805bbefd48056c8c121bdb813fa4d4a0ad8b1ce186ed5061789213d993923066dddaf1040bc3ff59f825c78df74f2d75467e25e0f55f8a00fa030ed0d1b3cc2c7027888be51d9ef691d77bcb679afda66c73f17f9ee3837a55024f78c71363275a75d75d86bab79f74782aa) (\\"arithmetic.test.ts\\" 221)) (literal (bls12_381_fr 1) (\\"arithmetic.test.ts\\" 221)) (\\"arithmetic.test.ts\\" 221)) (\\"arithmetic.test.ts\\" 221)) (\\"arithmetic.test.ts\\" 221)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 162))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 165))
         )
         "
 `;
@@ -1275,16 +2093,16 @@ exports[`Arithmetic expressions Multiplication 2`] = `
 exports[`Arithmetic expressions ShiftLeft 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 54))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 57))
             storage ()
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 56) ((set_type (params (\\"arithmetic.test.ts\\" 56)) \\"unit\\" (\\"arithmetic.test.ts\\" 58)) (set (data) (lsl (literal (nat 13) (\\"arithmetic.test.ts\\" 56)) (literal (nat 3) (\\"arithmetic.test.ts\\" 56)) (\\"arithmetic.test.ts\\" 56)) (\\"arithmetic.test.ts\\" 56)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 59) ((set_type (params (\\"arithmetic.test.ts\\" 59)) \\"unit\\" (\\"arithmetic.test.ts\\" 61)) (set (data) (lsl (literal (nat 13) (\\"arithmetic.test.ts\\" 59)) (literal (nat 3) (\\"arithmetic.test.ts\\" 59)) (\\"arithmetic.test.ts\\" 59)) (\\"arithmetic.test.ts\\" 59)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 54))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 57))
         )
         "
 `;
@@ -1366,16 +2184,16 @@ exports[`Arithmetic expressions ShiftLeft 2`] = `
 exports[`Arithmetic expressions ShiftRight 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 61))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 64))
             storage ()
             storage_type (\\"nat\\")
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 64) ((set_type (params (\\"arithmetic.test.ts\\" 64)) \\"unit\\" (\\"arithmetic.test.ts\\" 67)) (set (data) (lsr (literal (nat 13) (\\"arithmetic.test.ts\\" 64)) (literal (nat 3) (\\"arithmetic.test.ts\\" 64)) (\\"arithmetic.test.ts\\" 64)) (\\"arithmetic.test.ts\\" 64)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 67) ((set_type (params (\\"arithmetic.test.ts\\" 67)) \\"unit\\" (\\"arithmetic.test.ts\\" 70)) (set (data) (lsr (literal (nat 13) (\\"arithmetic.test.ts\\" 67)) (literal (nat 3) (\\"arithmetic.test.ts\\" 67)) (\\"arithmetic.test.ts\\" 67)) (\\"arithmetic.test.ts\\" 67)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 61))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 64))
         )
         "
 `;
@@ -1457,16 +2275,16 @@ exports[`Arithmetic expressions ShiftRight 2`] = `
 exports[`Arithmetic expressions Subtraction 1`] = `
 "
         (
-            template_id (static_id 0 (\\"arithmetic.test.ts\\" 134))
+            template_id (static_id 0 (\\"arithmetic.test.ts\\" 137))
             storage ()
             storage_type ((record ((nat \\"int\\") (int \\"int\\") (mutez (option \\"mutez\\")) (timestamp \\"int\\")) (Some ((\\"nat\\") ((\\"int\\") ((\\"mutez\\") (\\"timestamp\\"))))) (\\"\\" -1)))
-            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 144) ((set_type (params (\\"arithmetic.test.ts\\" 144)) \\"unit\\" (\\"arithmetic.test.ts\\" 158)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (sub (literal (nat 1) (\\"arithmetic.test.ts\\" 144)) (literal (nat 1) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)) (\\"arithmetic.test.ts\\" 144)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 147) ((set_type (params (\\"arithmetic.test.ts\\" 147)) \\"unit\\" (\\"arithmetic.test.ts\\" 158)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (sub (literal (int 1) (\\"arithmetic.test.ts\\" 147)) (literal (int 1) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 150) ((set_type (params (\\"arithmetic.test.ts\\" 150)) \\"unit\\" (\\"arithmetic.test.ts\\" 158)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (sub (literal (mutez 1) (\\"arithmetic.test.ts\\" 150)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 153) ((set_type (params (\\"arithmetic.test.ts\\" 153)) \\"unit\\" (\\"arithmetic.test.ts\\" 158)) (set (attr (data) \\"timestamp\\" (\\"expression.ts\\" 28)) (sub (literal (timestamp 1) (\\"arithmetic.test.ts\\" 153)) (literal (timestamp 1) (\\"arithmetic.test.ts\\" 153)) (\\"arithmetic.test.ts\\" 153)) (\\"arithmetic.test.ts\\" 153)))))
+            messages ((ep1 True False False True (\\"arithmetic.test.ts\\" 147) ((set_type (params (\\"arithmetic.test.ts\\" 147)) \\"unit\\" (\\"arithmetic.test.ts\\" 161)) (set (attr (data) \\"nat\\" (\\"expression.ts\\" 28)) (sub (literal (nat 1) (\\"arithmetic.test.ts\\" 147)) (literal (nat 1) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)) (\\"arithmetic.test.ts\\" 147)))) (ep2 True False False True (\\"arithmetic.test.ts\\" 150) ((set_type (params (\\"arithmetic.test.ts\\" 150)) \\"unit\\" (\\"arithmetic.test.ts\\" 161)) (set (attr (data) \\"int\\" (\\"expression.ts\\" 28)) (sub (literal (int 1) (\\"arithmetic.test.ts\\" 150)) (literal (int 1) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)) (\\"arithmetic.test.ts\\" 150)))) (ep3 True False False True (\\"arithmetic.test.ts\\" 153) ((set_type (params (\\"arithmetic.test.ts\\" 153)) \\"unit\\" (\\"arithmetic.test.ts\\" 161)) (set (attr (data) \\"mutez\\" (\\"expression.ts\\" 28)) (sub (literal (mutez 1) (\\"arithmetic.test.ts\\" 153)) (literal (mutez 1) (\\"arithmetic.test.ts\\" 153)) (\\"arithmetic.test.ts\\" 153)) (\\"arithmetic.test.ts\\" 153)))) (ep4 True False False True (\\"arithmetic.test.ts\\" 156) ((set_type (params (\\"arithmetic.test.ts\\" 156)) \\"unit\\" (\\"arithmetic.test.ts\\" 161)) (set (attr (data) \\"timestamp\\" (\\"expression.ts\\" 28)) (sub (literal (timestamp 1) (\\"arithmetic.test.ts\\" 156)) (literal (timestamp 1) (\\"arithmetic.test.ts\\" 156)) (\\"arithmetic.test.ts\\" 156)) (\\"arithmetic.test.ts\\" 156)))))
             flags ()
             privates ()
             views ()
             entry_points_layout ()
             initial_metadata ()
-            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 134))
+            balance (literal (mutez 0) (\\"arithmetic.test.ts\\" 137))
         )
         "
 `;

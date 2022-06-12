@@ -4,8 +4,11 @@ import {
     Bls12_381_g1,
     Bls12_381_g2,
     ContractStorage,
+    Equal,
     EuclideanDivision,
     Int,
+    List,
+    Median,
     Mod,
     Multiply,
     Mutez,
@@ -20,7 +23,7 @@ import {
 } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
-import { SetValue } from '../../src/statement';
+import { Require, SetValue } from '../../src/statement';
 import {
     TBls12_381_fr,
     TBls12_381_g1,
@@ -227,6 +230,19 @@ describe('Arithmetic expressions', () => {
                             ),
                         ),
                     ),
+                ]),
+            );
+
+        verifyContractCompilationOutput(contract);
+    });
+
+    it('Compute Median', () => {
+        const contract = new Contract()
+            .setStorageType(TNat())
+            .addEntrypoint(
+                new EntryPoint('ep1').code(() => [
+                    SetValue(ContractStorage(), Median(List([Nat(1), Nat(2), Nat(3)]))),
+                    Require(Equal(ContractStorage(), Nat(2))),
                 ]),
             );
 

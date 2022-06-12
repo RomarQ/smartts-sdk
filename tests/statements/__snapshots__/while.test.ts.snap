@@ -6,7 +6,7 @@ exports[`Test (While) statement Loop while condition is true 1`] = `
             template_id (static_id 0 (\\"while.test.ts\\" 9))
             storage (literal (nat 1) (\\"while.test.ts\\" 10))
             storage_type ((unknown 0))
-            messages ((ep1 True False False True (\\"while.test.ts\\" 12) ((set_type (params (\\"while.test.ts\\" 12)) \\"nat\\" (\\"while.test.ts\\" 21)) (whileBlock (le (data) (params (\\"while.test.ts\\" 12)) (\\"comparison.ts\\" 58)) ((set (data) (add (data) (literal (nat 1) (\\"while.test.ts\\" 14)) (\\"math.ts\\" 22)) (\\"while.test.ts\\" 14))) (\\"while.test.ts\\" 14)))))
+            messages ((ep1 True False False True (\\"while.test.ts\\" 12) ((set_type (params (\\"while.test.ts\\" 12)) \\"nat\\" (\\"while.test.ts\\" 21)) (whileBlock (le (data) (params (\\"while.test.ts\\" 12)) (\\"comparison.ts\\" 58)) ((set (data) (add (data) (literal (nat 1) (\\"while.test.ts\\" 14)) (\\"math.ts\\" 31)) (\\"while.test.ts\\" 14))) (\\"while.test.ts\\" 14)))))
             flags ()
             privates ()
             views ()
