@@ -72,5 +72,5 @@ export const AddHours = (
     hours: IExpression<MichelsonType.int>,
     line = new LineInfo(),
 ) => {
-    return AddSeconds(timestamp, Multiply(hours, Int(120)), line);
+    return AddSeconds(timestamp, Multiply(hours, Int(3600)), line);
 };
