@@ -10,7 +10,6 @@ import { AccessMapByKey, GetMapEntries, MapContainsKey } from './map';
 import { SizeOf } from './misc';
 import { Equal } from './equality';
 import { GreaterThan, LessThan, LessThanOrEqual } from './comparison';
-import { TList, TNat } from '../type';
 import { GetProperty, GetVariable } from './variables';
 
 /**
@@ -47,7 +46,7 @@ export const Add = (left: IExpression, right: IExpression, line = new LineInfo()
  * @returns {IExpression} An expression
  */
 export const Multiply = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new Expression(ExpressionAtom.mul_overloaded, left, right, line);
+    new Expression<any>(ExpressionAtom.mul_overloaded, left, right, line);
 
 /**
  * Subtract two numerical values
@@ -65,7 +64,7 @@ export const Multiply = (left: IExpression, right: IExpression, line = new LineI
  * @returns {IExpression} An expression
  */
 export const Subtract = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new Expression(ExpressionAtom.sub, left, right, line);
+    new Expression<any>(ExpressionAtom.sub, left, right, line);
 
 /**
  * Division operation.
@@ -83,7 +82,7 @@ export const Subtract = (left: IExpression, right: IExpression, line = new LineI
  * @returns {IExpression} An expression
  */
 export const Divide = (left: IExpression, right: IExpression, line = new LineInfo()) =>
-    new Expression(ExpressionAtom.truediv, left, right, line);
+    new Expression<any>(ExpressionAtom.truediv, left, right, line);
 
 /**
  * Euclidean Division
@@ -125,7 +124,7 @@ export const Mod = (
     left: IExpression<MichelsonType.nat | MichelsonType.int | MichelsonType.mutez>,
     right: IExpression<MichelsonType.nat | MichelsonType.int | MichelsonType.mutez>,
     line = new LineInfo(),
-) => new Expression(ExpressionAtom.mod, left, right, line);
+) => new Expression<any>(ExpressionAtom.mod, left, right, line);
 
 /**
  * Logical left shift

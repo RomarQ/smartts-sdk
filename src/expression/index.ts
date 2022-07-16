@@ -24,3 +24,4 @@ export * from './view';
 export * from './set';
 export * from './michelson';
 export * from './ticket';
+export * from './timestamp';

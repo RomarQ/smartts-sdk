@@ -1,7 +1,7 @@
 import { ContractStorage, GetElementsFromSet, Nat, SetContainsElement } from '../../src/expression';
 import { Contract, EntryPoint } from '../../src/core';
 import { verifyContractCompilationOutput } from '../util';
-import { RemoveElementFromSet, AddElementToSet, SetValue } from '../../src/statement';
+import { SetValue } from '../../src/statement';
 import { TBool, TList, TNat, TSet } from '../../src/type';
 
 describe('Set expressions', () => {

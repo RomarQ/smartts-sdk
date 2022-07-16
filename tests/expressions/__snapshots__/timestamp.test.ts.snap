@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`timestamp expressions Add hours 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"timestamp.test.ts\\" 31))
+            storage ()
+            storage_type (\\"timestamp\\")
+            messages ((ep1 True False False True (\\"timestamp.test.ts\\" 34) ((set_type (params (\\"timestamp.test.ts\\" 34)) \\"int\\" (\\"timestamp.test.ts\\" 39)) (set (data) (add_seconds (data) (mul_overloaded (params (\\"timestamp.test.ts\\" 34)) (literal (int 120) (\\"timestamp.test.ts\\" 36)) (\\"timestamp.test.ts\\" 36)) (\\"timestamp.test.ts\\" 36)) (\\"timestamp.test.ts\\" 36)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"timestamp.test.ts\\" 31))
+        )
+        "
+`;
+
+exports[`timestamp expressions Add hours 2`] = `
+"{
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   timestamp;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    PUSH int 120;\\\\n    SWAP;\\\\n    MUL;\\\\n    ADD;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"timestamp\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"int\\"
+                            },
+                            {
+                                \\"int\\": \\"120\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"MUL\\"
+                    },
+                    {
+                        \\"prim\\": \\"ADD\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TTimestamp)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TInt)\\\\n    self.data = sp.add_seconds(self.data, sp.mul(params, 120))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`timestamp expressions Add minutes 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"timestamp.test.ts\\" 20))
+            storage ()
+            storage_type (\\"timestamp\\")
+            messages ((ep1 True False False True (\\"timestamp.test.ts\\" 23) ((set_type (params (\\"timestamp.test.ts\\" 23)) \\"int\\" (\\"timestamp.test.ts\\" 28)) (set (data) (add_seconds (data) (mul_overloaded (params (\\"timestamp.test.ts\\" 23)) (literal (int 60) (\\"timestamp.test.ts\\" 25)) (\\"timestamp.test.ts\\" 25)) (\\"timestamp.test.ts\\" 25)) (\\"timestamp.test.ts\\" 25)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"timestamp.test.ts\\" 20))
+        )
+        "
+`;
+
+exports[`timestamp expressions Add minutes 2`] = `
+"{
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   timestamp;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    PUSH int 60;\\\\n    SWAP;\\\\n    MUL;\\\\n    ADD;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"timestamp\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"PUSH\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"int\\"
+                            },
+                            {
+                                \\"int\\": \\"60\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"SWAP\\"
+                    },
+                    {
+                        \\"prim\\": \\"MUL\\"
+                    },
+                    {
+                        \\"prim\\": \\"ADD\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TTimestamp)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TInt)\\\\n    self.data = sp.add_seconds(self.data, sp.mul(params, 60))\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;
+
+exports[`timestamp expressions Add seconds 1`] = `
+"
+        (
+            template_id (static_id 0 (\\"timestamp.test.ts\\" 9))
+            storage ()
+            storage_type (\\"timestamp\\")
+            messages ((ep1 True False False True (\\"timestamp.test.ts\\" 12) ((set_type (params (\\"timestamp.test.ts\\" 12)) \\"int\\" (\\"timestamp.test.ts\\" 17)) (set (data) (add_seconds (data) (params (\\"timestamp.test.ts\\" 12)) (\\"timestamp.test.ts\\" 14)) (\\"timestamp.test.ts\\" 14)))))
+            flags ()
+            privates ()
+            views ()
+            entry_points_layout ()
+            initial_metadata ()
+            balance (literal (mutez 0) (\\"timestamp.test.ts\\" 9))
+        )
+        "
+`;
+
+exports[`timestamp expressions Add seconds 2`] = `
+"{
+    \\"micheline\\": \\"parameter (int %ep1);\\\\nstorage   timestamp;\\\\ncode\\\\n  {\\\\n    UNPAIR;\\\\n    ADD;\\\\n    NIL operation;\\\\n    PAIR;\\\\n  };\\",
+    \\"json\\": [
+        {
+            \\"prim\\": \\"storage\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"timestamp\\"
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"parameter\\",
+            \\"args\\": [
+                {
+                    \\"prim\\": \\"int\\",
+                    \\"annots\\": [
+                        \\"%ep1\\"
+                    ]
+                }
+            ]
+        },
+        {
+            \\"prim\\": \\"code\\",
+            \\"args\\": [
+                [
+                    {
+                        \\"prim\\": \\"UNPAIR\\"
+                    },
+                    {
+                        \\"prim\\": \\"ADD\\"
+                    },
+                    {
+                        \\"prim\\": \\"NIL\\",
+                        \\"args\\": [
+                            {
+                                \\"prim\\": \\"operation\\"
+                            }
+                        ]
+                    },
+                    {
+                        \\"prim\\": \\"PAIR\\"
+                    }
+                ]
+            ]
+        }
+    ],
+    \\"smartpy\\": \\"import smartpy as sp\\\\n\\\\nclass Contract(sp.Contract):\\\\n  def __init__(self):\\\\n    self.init_type(sp.TTimestamp)\\\\n\\\\n  @sp.entry_point\\\\n  def ep1(self, params):\\\\n    sp.set_type(params, sp.TInt)\\\\n    self.data = sp.add_seconds(self.data, params)\\\\n\\\\nsp.add_compilation_target(\\\\\\"visualtez_compilation\\\\\\", Contract())\\"
+}"
+`;

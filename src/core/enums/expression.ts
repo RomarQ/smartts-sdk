@@ -94,6 +94,7 @@ export enum ExpressionAtom {
     read_ticket = 'read_ticket',
     split_ticket = 'split_ticket',
     join_tickets = 'join_tickets',
+    add_seconds = 'add_seconds',
 }
 
 export default ExpressionAtom;
